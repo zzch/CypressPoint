@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" 
+   >
+    <LinearLayout 
+         
+         android:layout_width="100dip"
+         android:layout_height="70dip"
+         android:orientation="vertical"
+         android:gravity="center"
+        >
+        <!-- 球洞列表1~18 -->
+        <TextView 
+            android:id="@+id/pol_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:background="@drawable/u420_normal"
+            android:textSize="28dip"
+            android:gravity="center"
+            />
+        <LinearLayout 
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal" 
+             android:gravity="center_horizontal"
+            >
+       <!-- 标准杆 -->
+            <TextView 
+            android:id="@+id/par"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4"
+            />
+            <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="P"
+            />
+       <!-- 开球T台到球洞的距离 -->
+            <TextView 
+            android:id="@+id/distance_from_hole_to_tee_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:text="439"
+            />
+            <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Y"
+            />
+        </LinearLayout>
+      
+    </LinearLayout>
+    
+    
+    
+ 
+     <LinearLayout 
+             android:layout_width="match_parent"
+             android:layout_height="70dip"
+             android:orientation="vertical" 
+             android:layout_marginLeft="40dip"
+              android:gravity="center"
+           >
+    <LinearLayout 
+            android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal" 
+             
+             android:gravity="center"   
+        >
+     <!-- 罚杆 -->   
+        <TextView 
+             android:id="@+id/penalties"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="2"
+             android:gravity="center"
+             
+             android:layout_marginTop="10dip"
+            />
+        <!-- 成绩 --> 
+        <TextView
+             android:id="@+id/scorecard_scr"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="4"
+             android:textSize="28dip"
+             android:layout_marginLeft="10dip"
+             android:gravity="center"
+            />
+       <!-- 推杆--> 
+        <TextView 
+             android:id="@+id/putt"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="2"
+             android:gravity="center"
+             android:layout_marginLeft="10dip"
+             android:layout_marginTop="10dip"
+            />
+    
+        
+    </LinearLayout>
+    
+       <LinearLayout 
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal" 
+           >
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/u1632_normal"
+            android:layout_marginLeft="20dip"
+            />
+        <!-- 最佳码数 -->
+         <TextView 
+             android:id="@+id/yardage"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="225"
+             android:layout_marginLeft="10dip"
+             
+             />
+          <TextView 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="码"
+             />
+         <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/u1644_normal"
+            android:layout_marginLeft="30dip"
+            />
+         <!-- 球道命中方向 -->
+         <TextView
+           android:id="@+id/mingzhonglv"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="命中"
+           android:layout_marginLeft="10dip"
+          />
+        </LinearLayout>
+    </LinearLayout>
+     
+</LinearLayout>
+
+
+
+
+
+
+
+

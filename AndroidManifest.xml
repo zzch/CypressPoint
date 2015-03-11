@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.com.zcty.ILovegolf.activity"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="17" />
+    
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+     <supports-screens 
+       android:anyDensity="true" 
+       android:largeScreens="true" 
+       android:normalScreens="true" 
+       android:smallScreens="true" 
+       android:xlargeScreens="true" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.login_register.SplashActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.login_register.LoginActivity"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.login_register.RegisterActivity"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.login_register.ForGetPasswordActivity"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.SocreCardUpDateActivity"></activity>
+        
+         <activity android:name="cn.com.zcty.ILovegolf.activity.exercise.search.SearchPitchActivity"></activity>
+        
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.TabHostActivity"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.SchematicScoreActivity"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.myself.Myself"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.count.CountActivity"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.ExerciseActivity"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.ChoosePitchActivity"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.PlaySetActivity"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.QuickScoreActivity"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.ScoreCardActivity"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.PlayerStateActivity"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.ListChoosePitchActivity"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.HistoryScoreCardActivity"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.HuntActivity"></activity>
+    </application>
+
+</manifest>
