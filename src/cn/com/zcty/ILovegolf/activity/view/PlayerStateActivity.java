@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.Window;
 
 /**
- * 技术统计
+ * 鎶�鏈粺璁￠〉
  * @author deii
  *
  */

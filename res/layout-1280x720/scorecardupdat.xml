@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+   >
+   <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="60dp"
+       android:orientation="horizontal"
+         >
+         <Button 
+           android:id="@+id/scorecard_cancel"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="取消"
+          android:layout_marginLeft="10dip"
+           android:onClick="onClick"
+             />
+         <TextView 
+           android:id="@+id/ball_hole"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="A5洞"
+           android:gravity="center"
+           android:textSize="25sp"
+           android:layout_marginLeft="50dip"
+             />
+           <Button 
+           android:id="@+id/scorecard_save"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="保存"
+           android:layout_marginLeft="65dip"
+           android:onClick="onClick"
+             />
+     </LinearLayout>
+     
+   
+   
+   
+   <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:gravity="center"
+       >
+       <TextView 
+         android:layout_width="90dip"
+         android:layout_height="wrap_content"
+         android:text="总杆数"
+         android:textSize="20dip"
+         android:layout_marginLeft="10dip"
+         android:gravity="center_vertical"
+           />
+       <Button 
+         android:id="@+id/but_jian_one"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="减"
+         
+           />
+       
+        <TextView 
+           android:id="@+id/tv_update_one"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="18dip"
+           android:text="6"
+           android:gravity="center"
+           android:layout_marginLeft="30dip"
+           android:background="@drawable/u1162_normal"
+           /> 
+       
+         <Button 
+           android:id="@+id/but_add_one"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="加"
+           android:layout_marginLeft="30dip"
+           />
+   </LinearLayout>
+    
+   
+   
+
+     <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:gravity="center_vertical"
+       >
+       <TextView 
+         android:layout_width="90dip"
+         android:layout_height="wrap_content"
+         android:text="推杆数"
+         android:layout_marginLeft="10dip"
+          android:textSize="20dip"
+         android:gravity="center_vertical"
+           />
+       <Button 
+           android:id="@+id/but_jian_two"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="减"
+         
+           />
+       
+        <TextView 
+            android:id="@+id/tv_update_two"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="18dip"
+           android:text="2"
+           android:gravity="center"
+           android:layout_marginLeft="30dip"
+           android:background="@drawable/u1162_normal"
+           /> 
+       
+         <Button 
+           android:id="@+id/but_add_two"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="加"
+           android:layout_marginLeft="30dip"
+           />
+   </LinearLayout>
+    
+     
+      <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:gravity="center_vertical"
+       >
+       <TextView 
+         android:layout_width="90dip"
+         android:layout_height="wrap_content"
+         android:text="罚杆数"
+         android:layout_marginLeft="10dip"
+         android:textSize="20dip"
+         android:gravity="center_vertical"
+           />
+       <Button 
+           android:id="@+id/but_jian_three"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="减"
+         
+           />
+       
+        <TextView 
+           android:id="@+id/tv_update_three"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="18dip"
+           android:text="2"
+           android:gravity="center"
+           android:layout_marginLeft="30dip"
+           android:background="@drawable/u1162_normal"
+           /> 
+       
+         <Button 
+           android:id="@+id/but_add_three"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="加"
+           android:layout_marginLeft="30dip"
+           />
+   </LinearLayout>
+   
+   
+      
+      
+      
+      
+      
+      
+      <LinearLayout 
+          android:id="@+id/layout_chooise"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          android:onClick="onClick"
+          >
+ 
+      <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:gravity="center"
+       >
+      <TextView 
+          android:layout_width="150dip"
+          android:layout_height="wrap_content"
+          android:text="开球距离"
+          android:textSize="18dip"
+         android:layout_marginLeft="30dip"
+          />
+       <TextView 
+          android:layout_width="150dip"
+          android:layout_height="wrap_content"
+          android:text="开球命中"
+          android:textSize="18dip"
+          android:gravity="center"
+          />
+      
+      </LinearLayout>
+      
+      
+       <LinearLayout 
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           >
+
+           <TextView
+               android:id="@+id/tv_mashu"
+               android:layout_width="150dip"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="30dip"
+               android:text="120码" />
+
+        <TextView 
+            android:id="@+id/tv_mingzhong"
+           android:layout_width="150dip"
+           android:layout_height="wrap_content"
+           android:text="命中"
+           android:gravity="center"
+           />
+       </LinearLayout>
+    </LinearLayout>
+    
+      
+     <LinearLayout 
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="horizontal"
+           android:id="@+id/layout_updatecard"
+           android:gravity="center"
+         >
+       
+         <ListView 
+             android:id="@+id/listview_mashu"
+             android:layout_width="100dip"
+             android:layout_height="wrap_content"
+             android:fadingEdge="none"
+             android:layout_gravity="center"
+             android:transcriptMode="alwaysScroll"
+          android:layout_marginTop="20dip"
+             >
+             
+         </ListView>
+         
+         <ListView 
+             android:id="@+id/listview_mingzhong"
+             android:layout_width="100dip"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="40dip"
+             android:fadingEdge="none"
+             android:layout_gravity="center"
+             android:transcriptMode="alwaysScroll"
+            android:layout_marginTop="20dip"
+             >
+             
+         </ListView>
+      <!--   
+         <cn.com.zcty.ILovegolf.activity.tools.WheelView android:id="@+id/mashu"
+			android:layout_height="wrap_content"
+			android:layout_width="fill_parent"
+			android:layout_weight="1"/>
+		<cn.com.zcty.ILovegolf.activity.tools.WheelView android:id="@+id/mingzhong"
+			android:layout_height="wrap_content"
+			android:layout_width="fill_parent"
+			android:layout_weight="1"/>
+			
+			-->  
+      </LinearLayout>
+
+</LinearLayout>

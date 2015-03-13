@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+     <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="60dp"
+       android:orientation="horizontal"
+         >
+         <Button
+           android:id="@+id/search_back"   
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="取消"
+           android:layout_marginLeft="10dip"
+           android:background="@null"
+             />
+         <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="搜索球场"
+           android:gravity="center"
+           android:textSize="25dip"
+           android:layout_marginLeft="35dip"
+             />
+           <Button 
+           android:id="@+id/button1"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="搜索"
+           android:layout_marginLeft="35dip"
+           android:background="@null"
+             />
+     </LinearLayout>
+
+    <cn.com.zcty.ILovegolf.activity.exercise.city.ClearEditText
+        android:id="@+id/filter_edit"
+        android:layout_marginTop="5dip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/search_bar_edit_selector"
+        android:drawableLeft="@drawable/search_bar_icon_normal"
+        android:hint="请输入关键字"
+        android:singleLine="true"
+        android:textSize="15.0dip" />
+
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <ExpandableListView
+            android:id="@+id/country_lvcountry"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:divider="@null" />
+
+        
+    </FrameLayout>
+
+</LinearLayout>

@@ -26,21 +26,24 @@ import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.LinearLayout;
 
 
 /**
- * ¿ì½İ¼Ç·ÖÀà
+ * ç®€å•è®°åˆ†å¡
  * @author deii
  *
  */
 public class QuickScoreActivity extends Activity implements IXListViewListener {
     
-    private  XListView mListView; //listView ¿Ø¼ş
+    private  XListView mListView; //listViewæ§ä»¶
     private  Intent intent;
-   // private QuickScoreAdapter quickScoreAdapter;    //ÊÊÅäÆ÷
-    private List<QuickContent> quickContent=new ArrayList<QuickContent>();           //ÀúÊ·ÈüÊÂµÄĞÅÏ¢¼¯ºÏ
+    private List<QuickContent> quickContent=new ArrayList<QuickContent>();           
     private Handler mHandler;
+    private LinearLayout image_layout;
+    private LinearLayout XListView_layout;
     private  int pag=1;
+    private String path;
     private  DisplayMetrics dm = new DisplayMetrics();
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +52,9 @@ public class QuickScoreActivity extends Activity implements IXListViewListener {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_quick_score);
 		init();
-		mListView=(XListView) findViewById(R.id.xListView);
+		mListView = (XListView) findViewById(R.id.xListView);
+		image_layout = (LinearLayout) findViewById(R.id.image_layout);
+		XListView_layout = (LinearLayout) findViewById(R.id.XListView_layout);
 		//mListView.setAdapter(new QuickScoreAdapter(this,quickContent));
 		mListView.setPullLoadEnable(true);
 		mListView.setXListViewListener(this);
@@ -57,14 +62,14 @@ public class QuickScoreActivity extends Activity implements IXListViewListener {
 		
 	     getWindowManager().getDefaultDisplay().getMetrics(dm);
 		mHandler = new Handler();
-		//listviewµã»÷ÊÂ¼ş£¬Ò³ÃæÌø×ªµ½¼Ç·Ö¿¨Ò³
+		//listviewå­æ¡ç›®çš„ç‚¹å‡»äº‹ä»¶
 		mListView.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
 				// TODO Auto-generated method stub
 				intent =new Intent(QuickScoreActivity.this,ScoreCardActivity.class);
-				//intent´«Öµ
+				//intentä¼ å€¼
 				intent.putExtra("uuid", quickContent.get(position).getUuid());
 				startActivity(intent);
 				finish();
@@ -75,16 +80,16 @@ public class QuickScoreActivity extends Activity implements IXListViewListener {
     
   
     /**
-     * ÎªlistViewÉèÖÃË¢ĞÂºÍ¼ÓÔØµÄ·½·¨
+     * ä¸ºlistViewè®¾ç½®åˆ·æ–°å’ŒåŠ è½½çš„æ–¹æ³•
      */
     private void onLoad() {
 		mListView.stopRefresh();
 		mListView.stopLoadMore();
-		mListView.setRefreshTime("¸Õ¸Õ");
+		mListView.setRefreshTime("åˆšåˆš");
 	}
     
     /**
-     * ÏÂÀ­Ë¢ĞÂ
+     * ä¸‹æ‹‰åˆ·æ–°
      */
     @Override
    	public void onRefresh() {
@@ -98,7 +103,7 @@ public class QuickScoreActivity extends Activity implements IXListViewListener {
     	}, 2000);
    	}
      /**
-      * ÉÏÀ­¼ÓÔØ
+      * ä¸Šæ‹‰åŠ è½½
       */
    	@Override
    	public void onLoadMore() {
@@ -113,10 +118,13 @@ public class QuickScoreActivity extends Activity implements IXListViewListener {
    	}
     
     /**
-     * ´Ó·şÎñÆ÷»ñÈ¡Êı¾İ
+     * ä»æœåŠ¡å™¨è·å–æ•°æ®
      */
     public void init(){
     	new AsyncTask<Void, Void, Void>(){
+    		
+			
+			
 			@Override
 			protected Void doInBackground(Void... arg0) {
 				// TODO Auto-generated method stub
@@ -124,7 +132,7 @@ public class QuickScoreActivity extends Activity implements IXListViewListener {
 				String page=Integer.toHexString(pag);
 				String token=sp.getString("token", "token");
 				Log.i("token------>>", ""+token);
-				String path;
+				
 				try {
 					path = APIService.MATCHES_LIST+"page="+URLEncoder.encode(page,"utf-8")+"&token="+URLEncoder.encode(token, "utf-8");
 					quickContent=JsonUtil.getQuickScore_json(path);
@@ -146,17 +154,17 @@ public class QuickScoreActivity extends Activity implements IXListViewListener {
     }	 
    
    
-    //µã»÷ÊÂ¼ş
+    //ç‚¹å‡»äº‹ä»¶
 	public void onclick(View v){
 		
 		switch(v.getId()){
-		//·µ»Ø°´Å¥
+		//è¿”å›æŒ‰é’®
 		case R.id.k_back:
 			intent=new Intent(QuickScoreActivity.this,TabHostActivity.class);
 			startActivity(intent);
 			finish();	
 			break;
-	    //ĞÂ½¨°´Å¥
+	    //æ–°å»ºæŒ‰é’®
 		case R.id.k_build:
 			 intent=new Intent(QuickScoreActivity.this,ChoosePitchActivity.class);
 			 startActivity(intent);

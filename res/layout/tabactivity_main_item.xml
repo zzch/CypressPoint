@@ -2,25 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center"    
+    android:gravity="center"  
+    android:background="@drawable/e_buttom_06"  
     android:orientation="vertical" >
 
     <ImageView 
         android:id="@+id/lianxi_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/u1632_normal"
+        android:src="@drawable/e_exec_03"
         />
-    
-    <TextView 
-        android:id="@+id/lianxi_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="练习"
-        android:textColor="#99000000"
-        android:textSize="12sp"
-        />
-  
 </LinearLayout>
 
 

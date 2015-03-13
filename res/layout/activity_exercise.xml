@@ -1,57 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center"    
-    android:orientation="vertical" >
+    android:layout_height="match_parent" 
+    android:orientation="vertical" 
+    android:background="@color/black"
+    >
 
-   
-    <TextView 
+    <LinearLayout 
+      android:layout_width="match_parent"
+      android:layout_height="96px"
+      android:gravity="center"
+      android:orientation="horizontal"
+      android:background="@drawable/e_daohang_01"
+      >
+     <TextView 
      android:layout_width="match_parent"
-     android:layout_height="60dp"
-     android:text="选择积分卡"
-     android:textSize="25dip"
+     android:layout_height="wrap_content"
+     android:text="@string/title"
+     android:textSize="36px"
      android:gravity="center"
     
-        />
+     android:textColor="@color/white"
+        /> 
+    </LinearLayout>
    
-    <LinearLayout 
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:orientation="vertical"
-       android:gravity="center"
-       android:layout_marginTop="60dip"
-       >
-       <Button 
-         android:id="@+id/shiyitu_one"
-          android:layout_width="180dip"
-          android:layout_height="wrap_content"
-          android:text="专业记分卡"
-          android:background="@drawable/button"
-          android:onClick="shiyitu"
-           />
-       <TextView 
-          android:layout_width="180dip"
-          android:layout_height="wrap_content"
-          android:hint="记录更加精准，能得到更多维度的数据分析"
-          android:layout_below="@id/shiyitu_one"
-           />
-       <Button 
-          android:id="@+id/kuaijie_one"
-          android:layout_width="180dip"
-          android:layout_height="wrap_content"
-          android:text="简单记分卡"
-          android:layout_marginTop="60dip"
-          android:background="@drawable/button"
-          android:onClick="kuaijie"
-           />
-       <TextView 
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:hint="快速开始记分，简单易用"
-          android:layout_below="@id/kuaijie_one"
-           />
-       
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="215px"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/shiyitu_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/e_button_02"
+            android:onClick="shiyitu"
+            android:text="@string/major_card"
+            android:textColor="@color/green" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45px"
+            android:text="@string/text_1"
+            android:textColor="@color/gray"
+            />
+         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_3"
+            android:textColor="@color/gray"
+            />
+
+        <Button
+            android:id="@+id/kuaijie_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="170px"
+            android:background="@drawable/e_button_02"
+            android:onClick="kuaijie"
+            android:text="@string/easy_card"
+            android:textColor="@color/green" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45px"
+            android:hint="@string/text_2"
+            android:textColor="@color/gray" />
     </LinearLayout>
   
 </LinearLayout>

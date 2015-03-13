@@ -1,23 +1,23 @@
 package cn.com.zcty.ILovegolf.utils;
 
 public class APIService {
-	//Ò»¼ü×¢²á
+	//ä¸€é”®æ³¨å†Œ
 	  public static final String ONE_REGISTER="http://augusta.aforeti.me/api/v1/users/sign_up_simple";
 
-	  //Çò³¡ĞÅÏ¢     ¸ù¾İÇò³¡ĞÅÏ¢µÄuuidÀ´»ñÈ¡¸ÃÇò³¡µÄ¾ßÌåĞÅÏ¢   ´òÇòÉèÖÃÀà
+	  //çƒåœºä¿¡æ¯ï¼Œ   æ ¹æ®çƒåœºä¿¡æ¯çš„uuidæ¥è·å–è¯¥çƒåœºçš„å…·ä½“ä¿¡æ¯ï¼Œæ‰“çƒè®¾ç½®ç±»
 	  public static final String COURSE_INFO="http://augusta.aforeti.me/api/v1/courses/show?";
 	  
-	  //ÀúÊ·ÈüÊÂÁĞ±í
+	  //å†å²èµ›äº‹åˆ—è¡¨
 	  public static final String MATCHES_LIST="http://augusta.aforeti.me/api/v1/matches?";
 	  
-	  //ÀúÊ·ÈüÊÂ¼Ç·Ö¿¨ĞÅÏ¢   
+	  //å†å²èµ›äº‹è®¡åˆ†å¡ä¿¡æ¯   
 	  public static final String SCORECARD_SHOW="http://augusta.aforeti.me/api/v1/matches/show?";
 	  
-	  //°´Ê¡·İ»®·ÖµÄÇò³¡ÁĞ±í
+	  //æŒ‰çœä»½åˆ’åˆ†çš„çƒåœºåˆ—è¡¨
 	  public static final String SEARCH_COURSE="http://augusta.aforeti.me/api/v1/courses/sectionalized_by_province?";
 	  
-	  //¾àÀë×î½üµÄÇò³¡ÁĞ±í
+	  //è·ç¦»æœ€è¿‘çš„çƒåœºåˆ—è¡¨
 	  public static final String NEAREST_COURSE="http://augusta.aforeti.me/api/v1/courses/nearest?";
-      //É¾³ıÀúÊ·ÈüÊÂĞÅÏ¢
+      //åˆ é™¤å†å²èµ›äº‹ä¿¡æ¯
 	  public static final String DELETE_MATCHES="http://augusta.aforeti.me/api/v1/matches?";
 }

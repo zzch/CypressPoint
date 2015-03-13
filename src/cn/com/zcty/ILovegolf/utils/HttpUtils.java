@@ -69,6 +69,12 @@ public class HttpUtils
 		}
 		return null;
 	}
+	/**
+	 * 采用HttpClient的POST请求发送数据
+	 * @param url
+	 * @param map
+	 * @return
+	 */
 	public static String HttpClientPost(String url,Map<String,String> map){
 		 HttpPost post = new HttpPost(url);
 	     String str = "";
@@ -90,7 +96,6 @@ public class HttpUtils
 	          e.printStackTrace();
 	     }
 	     return str;
-		
 	}
 	/**
 	 * 采用HttpClient发送Get请求
@@ -105,6 +110,7 @@ public class HttpUtils
 		HttpClient client=new DefaultHttpClient();
 		//创建请求路径的HttpGet对象
 		HttpGet httpGet=new HttpGet(path);
+		Log.i("---path", "path==="+path);
 		try {
 			//让HttpClient往服务器发送数据
 			HttpResponse response=client.execute(httpGet);
@@ -116,7 +122,6 @@ public class HttpUtils
 				//InputStream is=response.getEntity().getContent();
 				str = EntityUtils.toString(response.getEntity(), "utf-8");
 				Log.i("is---->>", ""+str);
-				
 			}
 			
 		} catch (Exception e) {
@@ -124,7 +129,12 @@ public class HttpUtils
 		}
 		return str;
 	}
-	
+	/**
+	 * 采用HttpClient的DELETE请求发送数据
+	 * @param path
+	 * @return
+	 * @throws Exception
+	 */
 	public static List<QuickContent> HttpClientDelete(String path)throws Exception{
 		
 	   String str = "";
@@ -142,5 +152,4 @@ public class HttpUtils
 		}
 		return null;
 	}
-
 }

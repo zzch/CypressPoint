@@ -23,14 +23,14 @@ import android.widget.ListView;
 
 
 /**
- * Ñ¡ÔñÇò³¡Àà
+ * é€‰æ‹©çƒåœºç±»
  * @author deii
  *
  */
 public class ChoosePitchActivity extends Activity {
    
-	private ListView listpich;//Çò³¡ÁĞ±í£¬²¢ÏÔÊ¾¾àÀë
-	private List<QiuChangList> qiuchanglists;//´Ó·şÎñÆ÷¶Ë»ñÈ¡¹ıÀ´µÄÇò³¡ÁĞ±íĞÅÏ¢
+	private ListView listpich;//çƒåœºåˆ—è¡¨ï¼Œå¹¶æ˜¾ç¤ºè·ç¦»
+	private List<QiuChangList> qiuchanglists;//ä»æœåŠ¡å™¨ç«¯è·å–è¿‡æ¥çš„çƒåœºåˆ—è¡¨ä¿¡æ¯
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -38,10 +38,10 @@ public class ChoosePitchActivity extends Activity {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_choosepitch);
 		
-		//ÕÒ¿Ø¼ş
+		//æ‰¾æ§ä»¶
 		listpich=(ListView) findViewById(R.id.listpich);
 		init();
-		//×ÓÌõÄ¿µã»÷ÊÂ¼ş
+		//å­æ¡ç›®ç‚¹å‡»äº‹ä»¶
 		listpich.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
@@ -49,7 +49,7 @@ public class ChoosePitchActivity extends Activity {
 				// TODO Auto-generated method stub
 				Intent intent=new Intent(ChoosePitchActivity.this,PlaySetActivity.class);
 				intent.putExtra("uuid", qiuchanglists.get(position).getUuid());
-				Log.i("--->>uuid", "Çò³¡uuid"+qiuchanglists.get(position).getUuid());
+				Log.i("--->>uuid", "uuid"+qiuchanglists.get(position).getUuid());
 				startActivity(intent);
 				finish();
 			}
@@ -58,7 +58,7 @@ public class ChoosePitchActivity extends Activity {
 	}
 	
 	
-	//»ñÈ¡Çò³¡ÁĞ±íĞÅÏ¢
+	//è·å–çƒåœºåˆ—è¡¨ä¿¡æ¯
 			public void init(){
 				try {
 					new AsyncTask<Void, Void, Void>() {
@@ -80,7 +80,7 @@ public class ChoosePitchActivity extends Activity {
 						}
 							return null;
 						}
-						//Í¨ÖªÊÊÅäÆ÷Êı¾İ·¢Éú±ä»¯
+						//é€šçŸ¥é€‚é…å™¨æ•°æ®å‘ç”Ÿå˜åŒ–
 					@Override				
 					protected void onPostExecute(Void result) {
 						listpich.setAdapter(new PitchAdapter(ChoosePitchActivity.this,qiuchanglists));
@@ -94,13 +94,23 @@ public class ChoosePitchActivity extends Activity {
 			}
 	
 	
-	//·µ»Ø°´Å¥µã»÷ÊÂ¼ş
+	//è¿”å›æŒ‰é’®ç‚¹å‡»äº‹ä»¶
 	public void choosepith_back(View v){
-		Intent intent=new Intent(ChoosePitchActivity.this,QuickScoreActivity.class);
-		startActivity(intent);
-		finish();
+		Intent w = getIntent();
+		int n=w.getIntExtra("number", 1);
+		Log.i("====n", "n----"+n);
+		if(n==1){
+			Intent intent=new Intent(ChoosePitchActivity.this,SchematicScoreActivity.class);
+			startActivity(intent);
+			finish();
+		}else{
+			Intent intent=new Intent(ChoosePitchActivity.this,QuickScoreActivity.class);
+			startActivity(intent);
+			finish();
+		}
+	
 	}
-	//ËÑË÷°´Å¥µã»÷ÊÂ¼ş
+	//æœç´¢æŒ‰é’®ç‚¹å‡»äº‹ä»¶
 	public void qiehuan(View v){
 		Intent intent=new Intent(ChoosePitchActivity.this,ListChoosePitchActivity.class);
 		startActivity(intent);

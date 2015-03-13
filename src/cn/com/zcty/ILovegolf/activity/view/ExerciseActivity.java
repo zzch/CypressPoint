@@ -14,7 +14,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 /**
- * ��ϰ��ҳ
+ * 练习首页
  * @author deii
  *
  */
@@ -28,13 +28,13 @@ public class ExerciseActivity extends Activity {
         setContentView(R.layout.activity_exercise);
        
     }
-    //רҵ�Ƿֵ���¼�
-     public void shiyitu(View v){
+    //专业记分点击事件ר
+    public void shiyitu(View v){
 	   Intent intent=new Intent(ExerciseActivity.this,SchematicScoreActivity.class);
 		startActivity(intent);
 		finish();
      }
-     //�򵥼Ƿֵ���¼�
+     //简单记分点击事件
      public void kuaijie(View v){
     	Intent intent=new Intent(ExerciseActivity.this,QuickScoreActivity.class);
  		  startActivity(intent);

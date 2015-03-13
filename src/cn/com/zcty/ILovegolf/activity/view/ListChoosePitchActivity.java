@@ -30,11 +30,10 @@ import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnGroupClickListener;
 
 /**
- * °´³ÇÊĞËÑË÷Çò³¡ÁĞ±í
+ * æŒ‰åŸå¸‚æœç´¢çƒåœºåˆ—è¡¨
  * @author deii
  *
  */
-
 public class ListChoosePitchActivity extends Activity {
 	private List<String> citys=new ArrayList<String>();
 	private Button huntButton;
@@ -47,22 +46,21 @@ public class ListChoosePitchActivity extends Activity {
     private boolean flase;
 	private List<SortModel> sortModels;
 
-	
-	//ÔËÓÃHandler½øĞĞÏß³Ì´¦Àí
+	//ç”¨Handlerè¿›è¡Œçº¿ç¨‹å¤„ç†
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
 			if(msg.arg1==1){
-               //ÊÊÅä
+               //é€‚é…
 				 adapter = new SortAdapter(ListChoosePitchActivity.this, citys, child);
 				 sortListView.setAdapter(adapter);
 				
-				//Ä¬ÈÏÕ¹¿ª
+				//é»˜è®¤å±•å¼€
 				if(adapter!=null){		
 				for (int i = 0; i < citys.size(); i++) { 
 					sortListView.expandGroup(i); 
 				  }
 				}
-				//groups---×éµÄµã»÷ÊÂ¼ş
+				//groups---ç»„çš„ç‚¹å‡»äº‹ä»¶
 				sortListView.setOnGroupClickListener(new OnGroupClickListener() {
 					
 					@Override
@@ -84,7 +82,7 @@ public class ListChoosePitchActivity extends Activity {
 		new Citys().start();
 	}
 	/**
-	 * °´Å¥µã»÷ÊÂ¼ş
+	 * æŒ‰é’®ç‚¹å‡»äº‹ä»¶
 	 */
 	private void setListeners() {
 		huntButton.setOnClickListener(new OnClickListener() {
@@ -98,7 +96,7 @@ public class ListChoosePitchActivity extends Activity {
 					for(int j=0;j<adapter.getChildrenCount(i);j++){
 						
 						String name_city = adapter.getChildName(i, j);
-						//ÔÚÎÄ±¾¿òÖĞÊÇ·ñ°üº¬³ÇÊĞÃû×ÖµÄ×ÓÏî
+						//
 						 if(name_city.indexOf(name)!=-1){
 							citys_name.add(name_city);
 							flase = true;
@@ -128,7 +126,7 @@ public class ListChoosePitchActivity extends Activity {
 		});	
 		
 	}
-	//ÕÒ¿Ø¼ş
+	//æ‰¾æ§ä»¶
 	public void initView(){
 		sortListView = (ExpandableListView) findViewById(R.id.country_lvcountry);
 		keyword = (ClearEditText) findViewById(R.id.filter_edit);
@@ -177,7 +175,6 @@ public class ListChoosePitchActivity extends Activity {
 					Log.i("erro", "erro");
 					e.printStackTrace();
 				}
-		    
 		}
 	
    }

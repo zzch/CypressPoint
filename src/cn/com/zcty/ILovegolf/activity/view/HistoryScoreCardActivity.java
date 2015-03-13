@@ -23,7 +23,7 @@ import cn.com.zcty.ILovegolf.utils.JsonUtil;
 
 	
 	/**
-	 * ÀúÊ·¼Ç·Ö¿¨Àà
+	 * å†å²è®°åˆ†å¡
 	 * @author deii
 	 *
 	 */
@@ -37,18 +37,16 @@ import cn.com.zcty.ILovegolf.utils.JsonUtil;
 			super.onCreate(savedInstanceState);
 			this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 			setContentView(R.layout.activity_scorecard);
-			//ÕÒ¿Ø¼ş
+			//æ‰¾æ§ä»¶
 			list_scorecard=(ListView) findViewById(R.id.list_scorecard);
-			//È¡Öµ
+			//å–å€¼
 			Intent intent=getIntent();
 			uuid=intent.getStringExtra("uuid");
 			
 			init();
-			//ÊÊÅä
-			//list_scorecard.setAdapter(new ScoreCardAdapter(this));
-			//¼àÌı
+			
 		}
-		//ÍøÂçÇëÇó
+		//ä»æœåŠ¡å™¨ç«¯è·å–æ•°æ®
 		public void init(){
 			new AsyncTask<Void, Void, Void>() {
 				
@@ -81,13 +79,13 @@ import cn.com.zcty.ILovegolf.utils.JsonUtil;
 		public void onclick(View v){
 			Intent intent;
 			switch(v.getId()){
-			//¼Ç·Ö¿¨·µ»Ø°´Å¥
+			//è®°åˆ†å¡è¿”å›æŒ‰é’®
 			case R.id.scorecard_back:
 				intent=new Intent(HistoryScoreCardActivity.this,QuickScoreActivity.class);
 				startActivity(intent);
 				finish();
 				break;
-			//µã»÷Í³¼Æ°´Å¥
+			//ç»Ÿè®¡æŒ‰é’®
 			case R.id.scorecard_score:
 				intent=new Intent(HistoryScoreCardActivity.this,PlayerStateActivity.class);
 				startActivity(intent);

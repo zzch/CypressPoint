@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+   <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="60dp"
+       android:orientation="horizontal"
+         >
+         <Button 
+           android:id="@+id/scorecard_back"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="返回"
+          android:layout_marginLeft="10dip"
+           android:onClick="onclick"
+             />
+         <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="记分卡"
+           android:gravity="center"
+           android:textSize="25sp"
+           android:layout_marginLeft="45dip"
+             />
+           <Button 
+           android:id="@+id/scorecard_score"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="成绩"
+           android:layout_marginLeft="50dip"
+           android:onClick="onclick"
+             />
+     </LinearLayout>
+   
+       
+     <ListView 
+         android:id="@+id/list_scorecard"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         >
+         
+     </ListView>   
+   
+</LinearLayout>

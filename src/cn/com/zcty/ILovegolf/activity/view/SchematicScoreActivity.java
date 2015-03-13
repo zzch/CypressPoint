@@ -12,11 +12,14 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 /**
- * ×¨Òµ¼Ç·ÖÀà
+ * ä¸“ä¸šç§¯åˆ†å¡
  * @author deii
  *
  */
 public class SchematicScoreActivity extends Activity {
+	
+	
+	
 
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -27,15 +30,18 @@ public class SchematicScoreActivity extends Activity {
 	public void onclick(View v){
 		Intent intent;
 		switch(v.getId()){
-		//·µ»Ø°´Å¥µã»÷ÊÂ¼ş
+		//è¿”å›æŒ‰é’®ç‚¹å‡»äº‹ä»¶
 		case R.id.shiyitu_back:
 			intent=new Intent(SchematicScoreActivity.this,TabHostActivity.class);
+			
 			startActivity(intent);
 			finish();
 			break;
-	    //ĞÂ½¨°´Å¥µã»÷ÊÂ¼ş
+	    //æ–°å»ºæŒ‰é’®ç‚¹å‡»äº‹ä»¶
 		case R.id.s_build:
+			
 			intent=new Intent(SchematicScoreActivity.this,ChoosePitchActivity.class);
+			intent.putExtra("number", 1);
 			startActivity(intent);
 			finish();
 			break;

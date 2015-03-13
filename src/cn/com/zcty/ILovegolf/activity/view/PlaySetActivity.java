@@ -6,6 +6,7 @@ import java.util.List;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.exercise.adapter.PlaySetExpandAdapter;
 import cn.com.zcty.ILovegolf.model.PlaySet;
+import cn.com.zcty.ILovegolf.model.QiuChangList;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.JsonUtil;
 import android.app.Activity;
@@ -25,53 +26,55 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 /**
- * ´òÇòÉèÖÃÀà
+ * æ‰“çƒè®¾ç½®ç±»
  * @author deii
  *
  */
 public class PlaySetActivity extends Activity implements OnClickListener {
     /**
-     * ¶ÔÏóÊµÀı»¯
+     * å¯¹è±¡å®ä¾‹åŒ–
      */
 	private ExpandableListView  expandableListView;
 	String color_name;
 	private TextView t_name;
 	private PlaySetExpandAdapter playSetExpandAdapter;
 	private List<PlaySet> playSets;
+	private List<QiuChangList> qiuchanglists;
+	private int position;
+    private String uuid;
 	@Override 
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_playset);
-		//ÕÒ¿Ø¼ş
+		//è·å–çƒåœºä¿¡æ¯uuidçš„å€¼
+		Intent intent=getIntent();
+		uuid=intent.getStringExtra("uuid");
+		//æ‰¾æ§ä»¶
 		expandableListView=(ExpandableListView) findViewById(R.id.expandableListView);
-		expandableListView.setGroupIndicator(null);//È¥µô×Ô´øµÄÍ¼±ê
-		//µã»÷ÊÂ¼ş
-		expandableListView.setOnChildClickListener(new OnChildClickListenerImpl());
-		expandableListView.setOnGroupClickListener(new OnGroupClickListenerImpl());
-		//ExpandableListViewµÄÊÊÅä
+		expandableListView.setGroupIndicator(null);//å»æ‰è‡ªå¸¦çš„å›¾æ ‡
+
+		//ExpandableListViewçš„é€‚é…
 		expandableListView.setAdapter(new PlaySetExpandAdapter(this));
 		init();
        
 	} 
 	public void init(){
+			
 		new AsyncTask<Void, Void, Void>() {
-			@Override
 			protected Void doInBackground(Void... arg0) {
-				//È¡Çò³¡ĞÅÏ¢uuidµÄÖµ
-				Intent intent=getIntent();
-				String uuid=intent.getStringExtra("uuid");
+				
 				Log.i("uuid---->>", ""+uuid);
-				//ÓÃ»§µÄtoken
+				//ç”¨æˆ·çš„token
 				SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 				String token=sp.getString("token", "token");
 				Log.i("token---->>", ""+token);
 				try {
-					//¸ù¾İÇò³¡ĞÅÏ¢µÄuuidÀ´»ñÈ¡¸ÃÇò³¡µÄ¾ßÌåĞÅÏ¢µÄ·ÃÎÊurl
+					//æ ¹æ®çƒåœºä¿¡æ¯çš„uuidæ¥è·å–è¯¥çƒåœºçš„å…·ä½“ä¿¡æ¯çš„è®¿é—®URL
 					String path=APIService.COURSE_INFO+"uuid="+URLEncoder.encode(uuid,"utf-8")+"&token="+URLEncoder.encode(token,"utf-8");
 					playSets=JsonUtil.getPlaySetExpland_json(path);
-					//Log.i("Çò³¡µÄ¾ßÌåĞÅÏ¢", ""+);
+					//Log.i("çƒåœºçš„å…·ä½“ä¿¡æ¯", ""+);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -87,53 +90,24 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		Intent intent;
 		switch(v.getId()){
-		//µã»÷·µ»Ø°´Å¥
+		//ç‚¹å‡»è¿”å›æŒ‰é’®
 		case R.id.playset_back:
 			intent=new Intent(PlaySetActivity.this,ChoosePitchActivity.class);
 			startActivity(intent);
 			finish();
+			
 			break;
-		//µã»÷¿ªÊ¼°´Å¥
+		//ç‚¹å‡»å¼€å§‹æŒ‰é’®
 		case R.id.playset_start:
 			intent=new Intent(PlaySetActivity.this,ScoreCardActivity.class);
+			intent.putExtra("playsetuuid", "uuid");
+			Log.i("--->>uuid", "çƒåœºuuid---"+uuid);
 			startActivity(intent);
 			finish();
 			break;
 		}
 	}
 	
-	/**
-	 * childµã»÷ÊÂ¼ş
-	 * @author deii
-	 *
-	 */
-	class  OnChildClickListenerImpl implements OnChildClickListener {
-		@Override
-		public boolean onChildClick(ExpandableListView parent, View v,
-				int groupPosition, int childPosition, long id) {
-			// TODO Auto-generated method stub
-			//ÕÒµ½childrenÖĞµÄÒªÈ¡ÖµµÄ¿Ø¼ş
-			t_name=(TextView) v.findViewById(R.id.t_name);
-			//È¡Öµ²¢½«Öµ¸³¸øcolor_name
-			color_name= (String) t_name.getText();
-			//½«È¡µ½µÄÖµ±£´æ
-			Toast.makeText(PlaySetActivity.this, "¿ªÇòTÌ¨µÄÖµÊÇ£º"+color_name,Toast.LENGTH_LONG).show();
-			return false;
-		}
-	}
-  /**
-   * groupµã»÷ÊÂ¼ş
-   * @author deii
-   *
-   */
-	class OnGroupClickListenerImpl implements OnGroupClickListener{
-		@Override
-		public boolean onGroupClick(ExpandableListView parent, View v,
-				int groupPosition, long id) {
-			// TODO Auto-generated method stub
-			return false;
-		}
-	}
 	
 }
 	
