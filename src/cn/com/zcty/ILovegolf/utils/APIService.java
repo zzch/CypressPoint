@@ -20,4 +20,6 @@ public class APIService {
 	  public static final String NEAREST_COURSE="http://augusta.aforeti.me/api/v1/courses/nearest?";
       //删除历史赛事信息
 	  public static final String DELETE_MATCHES="http://augusta.aforeti.me/api/v1/matches?";
+	  //创建练习赛事
+	  public static final String CREATE_PRACTICE_EVENTS="http://augusta.aforeti.me/api/v1/matches/practice.json?";
 }

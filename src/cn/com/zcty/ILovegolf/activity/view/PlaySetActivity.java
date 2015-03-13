@@ -2,138 +2,408 @@ package cn.com.zcty.ILovegolf.activity.view;
 
 
 import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.List;
-import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.exercise.adapter.PlaySetExpandAdapter;
-import cn.com.zcty.ILovegolf.model.PlaySet;
-import cn.com.zcty.ILovegolf.utils.APIService;
-import cn.com.zcty.ILovegolf.utils.JsonUtil;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+
+import android.R.integer;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
-import android.widget.ExpandableListView;
-import android.widget.ExpandableListView.OnChildClickListener;
-import android.widget.ExpandableListView.OnGroupClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
+import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.exercise.adapter.PlaySetListViewAdapter;
+import cn.com.zcty.ILovegolf.model.Diamond;
+import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 /**
- * ´òÇòÉèÖÃÀà
+ * æ‰“çƒè®¾ç½®ç±»
  * @author deii
  *
  */
 public class PlaySetActivity extends Activity implements OnClickListener {
     /**
-     * ¶ÔÏóÊµÀı»¯
+     * å¯¹è±¡å®ä¾‹åŒ–
      */
-	private ExpandableListView  expandableListView;
 	String color_name;
 	private TextView t_name;
-	private PlaySetExpandAdapter playSetExpandAdapter;
-	private List<PlaySet> playSets;
+	private Button button_Start;
+	private Button playset_back;
+	private ListView listViewPlaySet;
+	private ListView listViewPlaySet_t;
+	private List<String> playset = new ArrayList<String>();
+	private List<String> playset_t = new ArrayList<String>();
+	private ArrayList<String> diamond_t = new ArrayList<String>();
+	private LinearLayout linearLayout;
+	private ArrayList<String> diamond = new  ArrayList<String>();
+	private ArrayList<String> color = new ArrayList<String>();
+	private ArrayList<Integer> diamodDong = new ArrayList<Integer>();
+	private ArrayList<String> uuids = new ArrayList<String>();
+	private PickDialog pickDialog;
+	private PlaySetListViewAdapter adapter;
+	private PlaySetListViewAdapter adapter_t;
+	private String uuid;
+	private String c;
+	private String uuid_t;
+	Handler handler = new Handler(){
+		public void handleMessage(Message msg) {
+			if(msg.what==1){
+				if(diamond.size()==1){
+					playset.add(diamond.get(0));
+					playset.add("å¼€çƒTå°");
+					uuid = uuids.get(0);
+					Log.i("uuid", uuid+"zzz");
+					adapter = new PlaySetListViewAdapter(playset, PlaySetActivity.this);
+					listViewPlaySet.setAdapter(adapter);
+					if(diamodDong.get(0)==9){
+						Log.i("count", diamodDong.get(0)+"");
+						listViewPlaySet_t.setVisibility(View.VISIBLE);
+					}else{
+						listViewPlaySet_t.setVisibility(View.INVISIBLE);
+					}
+				}else{
+					playset.add("é€‰æ‹©å­åœº");
+					playset.add("å¼€çƒTå°");
+					adapter = new PlaySetListViewAdapter(playset, PlaySetActivity.this);
+					listViewPlaySet.setAdapter(adapter);
+				}
+				if(diamond_t.size()==1){
+					playset_t.add(diamond_t.get(0));
+					playset_t.add("å¼€çƒTå°");
+					adapter_t = new PlaySetListViewAdapter(playset_t, PlaySetActivity.this);
+					
+				}else{
+					playset_t.add("é€‰æ‹©å­åœº");
+					playset_t.add("å¼€çƒTå°");
+					adapter_t = new PlaySetListViewAdapter(playset_t, PlaySetActivity.this);
+					
+				}
+				listViewPlaySet_t.setAdapter(adapter_t);
+				
+				
+			}else{
+				
+			}
+			setListeners();
+		}
+		
+		
+	};
 	@Override 
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_playset);
-		//ÕÒ¿Ø¼ş
-		expandableListView=(ExpandableListView) findViewById(R.id.expandableListView);
-		expandableListView.setGroupIndicator(null);//È¥µô×Ô´øµÄÍ¼±ê
-		//µã»÷ÊÂ¼ş
-		expandableListView.setOnChildClickListener(new OnChildClickListenerImpl());
-		expandableListView.setOnGroupClickListener(new OnGroupClickListenerImpl());
-		//ExpandableListViewµÄÊÊÅä
-		expandableListView.setAdapter(new PlaySetExpandAdapter(this));
-		init();
-       
+		initView();	
+        new Mytask().start();
+        
 	} 
-	public void init(){
-		new AsyncTask<Void, Void, Void>() {
+	private void setListeners() {
+		listViewPlaySet.setOnItemClickListener(new OnItemClickListener() {
+
+			private View mTempView;
+			
 			@Override
-			protected Void doInBackground(Void... arg0) {
-				//È¡Çò³¡ĞÅÏ¢uuidµÄÖµ
-				Intent intent=getIntent();
-				String uuid=intent.getStringExtra("uuid");
-				Log.i("uuid---->>", ""+uuid);
-				//ÓÃ»§µÄtoken
-				SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
-				String token=sp.getString("token", "token");
-				Log.i("token---->>", ""+token);
-				try {
-					//¸ù¾İÇò³¡ĞÅÏ¢µÄuuidÀ´»ñÈ¡¸ÃÇò³¡µÄ¾ßÌåĞÅÏ¢µÄ·ÃÎÊurl
-					String path=APIService.COURSE_INFO+"uuid="+URLEncoder.encode(uuid,"utf-8")+"&token="+URLEncoder.encode(token,"utf-8");
-					playSets=JsonUtil.getPlaySetExpland_json(path);
-					//Log.i("Çò³¡µÄ¾ßÌåĞÅÏ¢", ""+);
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+			public void onItemClick(AdapterView<?> arg0, View v, int position,
+					long arg3) {
+				this.mTempView = v;
+				if(position==0){
+					pickDialog = new PickDialog(PlaySetActivity.this, "é€‰æ‹©å­åœº", new PickDialogListener() {
+
+						@Override
+						public void onRightBtnClick() {
+							
+						}
+						
+						@Override
+						public void onListItemLongClick(int position, String string) {
+							
+						}
+						
+						@Override
+						public void onListItemClick(int position, String string) {
+									playset.set(0, diamond.get(position));	
+									uuid = uuids.get(position);
+									Log.i("uuid", uuid+"zzz");
+									if(diamodDong.get(position)==9){
+										Log.i("count", diamodDong.get(position)+"");
+										listViewPlaySet_t.setVisibility(View.VISIBLE);
+										
+									}else{
+										listViewPlaySet_t.setVisibility(View.INVISIBLE);
+									}
+									adapter.notifyDataSetChanged();
+						}
+						
+						@Override
+						public void onLeftBtnClick() {
+							
+						}
+						
+						@Override
+						public void onCancel() {
+							
+						}
+						
+					});
+
+					pickDialog.show();
+					pickDialog.initListViewData(diamond);		
+					
 				}
-				// TODO Auto-generated method stub
-				return null;
+				if(position==1&&!playset.get(0).equals("é€‰æ‹©å­åœº")){
+					pickDialog = new PickDialog(PlaySetActivity.this, "å¼€çƒTå°", new PickDialogListener() {
+						
+						@Override
+						public void onRightBtnClick() {
+							// TODO Auto-generated method stub
+							
+						}
+						
+						@Override
+						public void onListItemLongClick(int position, String string) {
+							
+						}
+						
+						@Override
+						public void onListItemClick(int position, String string) {
+							final int i = position;
+							c = color.get(position);
+							//final String colors = color.get(position);
+							
+							playset.set(1, color.get(position));
+							
+							//textview.setTextColor(Color.BLACK);
+							adapter.notifyDataSetChanged();
+							
+							if(listViewPlaySet_t.getVisibility()!=0){
+								button_Start.setTextColor(Color.BLACK);
+								button_Start.setOnClickListener(new OnClickListener() {
+									
+									@Override
+									public void onClick(View v) {
+										Intent intent = new Intent(PlaySetActivity.this,ScoreCardActivity.class);									
+										intent.putExtra("uuid", uuid);
+										intent.putExtra("color", c);
+										Log.i("uuid", uuid+c+1);
+										startActivity(intent);
+										finish();
+									}
+								});
+							}
+							
+							
+						}
+						
+						@Override
+						public void onLeftBtnClick() {
+							
+						}
+						
+						@Override
+						public void onCancel() {
+							
+						}
+					});
+					pickDialog.show();
+					pickDialog.initListViewData(color);	
+				}
+				
 			}
-		}.execute();
+		});
+		listViewPlaySet_t.setOnItemClickListener(new OnItemClickListener() {
+
+			private View mTempView;
+			
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View v, int position,
+					long arg3) {
+				this.mTempView = v;
+				
+				if(position==0){
+					pickDialog = new PickDialog(PlaySetActivity.this, "é€‰æ‹©å­åœº", new PickDialogListener() {
+
+						@Override
+						public void onRightBtnClick() {
+							
+						}
+						
+						@Override
+						public void onListItemLongClick(int position, String string) {
+							
+						}
+						
+						@Override
+						public void onListItemClick(int position, String string) {
+									uuid_t = uuids.get(position);
+									playset_t.set(0, diamond_t.get(position));								
+									adapter_t.notifyDataSetChanged();
+						}
+						
+						@Override
+						public void onLeftBtnClick() {
+							
+						}
+						
+						@Override
+						public void onCancel() {
+							
+						}
+						
+					});
+
+					pickDialog.show();
+					pickDialog.initListViewData(diamond_t);		
+					
+				}
+				if(position==1&&!playset_t.get(0).equals("é€‰æ‹©å­åœº")){
+					pickDialog = new PickDialog(PlaySetActivity.this, "å¼€çƒTå°", new PickDialogListener() {
+						
+						@Override
+						public void onRightBtnClick() {
+							// TODO Auto-generated method stub
+							
+						}
+						
+						@Override
+						public void onListItemLongClick(int position, String string) {
+							
+						}
+						
+						@Override
+						public void onListItemClick(int position, String string) {
+							final int i = position;
+							final String colors = color.get(position);
+							playset_t.set(1, colors);
+							//textview.setTextColor(Color.BLACK);
+							adapter_t.notifyDataSetChanged();
+							
+								button_Start.setTextColor(Color.BLACK);
+								button_Start.setOnClickListener(new OnClickListener() {
+									
+									@Override
+									public void onClick(View v) {
+										Intent intent = new Intent(PlaySetActivity.this,ScoreCardActivity.class);
+										
+										String c_t = colors;
+										intent.putExtra("uuid_t", uuid_t);
+										intent.putExtra("uuid", uuid);
+										intent.putExtra("color", c);
+										intent.putExtra("color_t", c_t);
+										startActivity(intent);
+										finish();
+									}
+								});
+							
+							
+						}
+						
+						@Override
+						public void onLeftBtnClick() {
+							
+						}
+						
+						@Override
+						public void onCancel() {
+							
+						}
+					});
+					pickDialog.show();
+					pickDialog.initListViewData(color);	
+				}
+				}
+		});
+	
+		
+		
+	};
+	private void initView() {
+		listViewPlaySet = (ListView) findViewById(R.id.listView1);	
+		listViewPlaySet_t = (ListView) findViewById(R.id.listView2);
+		button_Start = (Button) findViewById(R.id.playset_start);
+		playset_back = (Button) findViewById(R.id.playset_back);
+		playset_back.setOnClickListener(this);
 	}
+	
 	
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
 		Intent intent;
 		switch(v.getId()){
-		//µã»÷·µ»Ø°´Å¥
+		//ç‚¹å‡»è¿”å›æŒ‰é’®
 		case R.id.playset_back:
 			intent=new Intent(PlaySetActivity.this,ChoosePitchActivity.class);
 			startActivity(intent);
 			finish();
 			break;
-		//µã»÷¿ªÊ¼°´Å¥
-		case R.id.playset_start:
-			intent=new Intent(PlaySetActivity.this,ScoreCardActivity.class);
-			startActivity(intent);
-			finish();
-			break;
+		
+		}
+	}
+	class Mytask extends Thread{
+		
+		@Override
+		public void run() {
+			super.run();
+			getData();
+		}
+		public void getData(){
+			//å–çƒåœºä¿¡æ¯uuidçš„å€¼
+			Intent intent=getIntent();
+			String uuid=intent.getStringExtra("uuid");
+			//ç”¨æˆ·çš„token
+			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
+			String token=sp.getString("token", "token");
+			try {
+				//æ ¹æ®çƒåœºä¿¡æ¯çš„uuidæ¥è·å–è¯¥çƒåœºçš„å…·ä½“ä¿¡æ¯çš„è®¿é—®url
+			String path=APIService.COURSE_INFO+"uuid="+URLEncoder.encode(uuid,"utf-8")+"&token="+URLEncoder.encode(token,"utf-8");
+			String jsonData=HttpUtils.HttpClientGet(path);
+			JSONObject jsonObj=new JSONObject(jsonData);
+			JSONArray subArray=jsonObj.getJSONArray("groups");
+			Log.i("name", jsonData);
+			for(int j=0;j<subArray.length();j++){
+				JSONObject jsonobj=subArray.getJSONObject(j); 
+				diamond.add(jsonobj.getString("name")+"åœº("+jsonobj.getString("holes_count")+"æ´)");
+				if(Integer.parseInt(jsonobj.getString("holes_count"))==9){					
+					diamond_t.add(jsonobj.getString("name")+"åœº("+jsonobj.getString("holes_count")+"æ´)");
+				}
+				diamodDong.add(Integer.parseInt(jsonobj.getString("holes_count")));
+				Log.i("name", jsonobj.getString("holes_count"));
+				JSONArray jj = jsonobj.getJSONArray("tee_boxes");
+				for(int i=0;i<jj.length();i++){
+					color.add(jj.getString(i));
+				}
+				uuids.add(jsonobj.getString("uuid"));
+			}
+
+			Message msg = handler.obtainMessage();
+			msg.what = 1;
+			handler.sendMessage(msg);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
-	/**
-	 * childµã»÷ÊÂ¼ş
-	 * @author deii
-	 *
-	 */
-	class  OnChildClickListenerImpl implements OnChildClickListener {
-		@Override
-		public boolean onChildClick(ExpandableListView parent, View v,
-				int groupPosition, int childPosition, long id) {
-			// TODO Auto-generated method stub
-			//ÕÒµ½childrenÖĞµÄÒªÈ¡ÖµµÄ¿Ø¼ş
-			t_name=(TextView) v.findViewById(R.id.t_name);
-			//È¡Öµ²¢½«Öµ¸³¸øcolor_name
-			color_name= (String) t_name.getText();
-			//½«È¡µ½µÄÖµ±£´æ
-			Toast.makeText(PlaySetActivity.this, "¿ªÇòTÌ¨µÄÖµÊÇ£º"+color_name,Toast.LENGTH_LONG).show();
-			return false;
-		}
-	}
-  /**
-   * groupµã»÷ÊÂ¼ş
-   * @author deii
-   *
-   */
-	class OnGroupClickListenerImpl implements OnGroupClickListener{
-		@Override
-		public boolean onGroupClick(ExpandableListView parent, View v,
-				int groupPosition, long id) {
-			// TODO Auto-generated method stub
-			return false;
-		}
-	}
+	
 	
 }
 	

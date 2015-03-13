@@ -28,13 +28,13 @@ public class ExerciseActivity extends Activity {
         setContentView(R.layout.activity_exercise);
        
     }
-    //专业记分点击事件
+    //示意图记分点击事件
      public void shiyitu(View v){
 	   Intent intent=new Intent(ExerciseActivity.this,SchematicScoreActivity.class);
 		startActivity(intent);
 		finish();
      }
-     //简单记分点击事件
+     //快捷记分点击事件
      public void kuaijie(View v){
     	Intent intent=new Intent(ExerciseActivity.this,QuickScoreActivity.class);
  		  startActivity(intent);

@@ -100,7 +100,7 @@ public class ChoosePitchActivity extends Activity {
 		startActivity(intent);
 		finish();
 	}
-	//搜索按钮点击事件
+	//切换按钮点击事件
 	public void qiehuan(View v){
 		Intent intent=new Intent(ChoosePitchActivity.this,ListChoosePitchActivity.class);
 		startActivity(intent);

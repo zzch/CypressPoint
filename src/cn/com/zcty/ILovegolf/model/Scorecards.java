@@ -8,11 +8,11 @@ public class Scorecards {
 	/**
 	 * 球洞列表1~18
 	 */
-	private int number;
+	private String number;
 	/**
 	 * 标准杆
 	 */
-	private int par;
+	private String par;
 	/**
 	 * 开球T台
 	 */
@@ -20,7 +20,7 @@ public class Scorecards {
 	/**
 	 * 开球T台到球洞的距离
 	 */
-	private int distance_from_hole_to_tee_box;
+	private String distance_from_hole_to_tee_box;
 	/**
 	 * 成绩
 	 */
@@ -44,37 +44,6 @@ public class Scorecards {
     
     public Scorecards(){}
 
-	public Scorecards(String uuid, int number, int par, String tee_box_color,
-			int distance_from_hole_to_tee_box, String score, String putts,
-			String penalties, String driving_distance, String direction) {
-		super();
-		this.uuid = uuid;
-		this.number = number;
-		this.par = par;
-		this.tee_box_color = tee_box_color;
-		this.distance_from_hole_to_tee_box = distance_from_hole_to_tee_box;
-		this.score = score;
-		this.putts = putts;
-		this.penalties = penalties;
-		this.driving_distance = driving_distance;
-		this.direction = direction;
-	}
-
-	public Scorecards(int number, int par, String tee_box_color,
-			int distance_from_hole_to_tee_box, String score, String putts,
-			String penalties, String driving_distance, String direction) {
-		super();
-		this.number = number;
-		this.par = par;
-		this.tee_box_color = tee_box_color;
-		this.distance_from_hole_to_tee_box = distance_from_hole_to_tee_box;
-		this.score = score;
-		this.putts = putts;
-		this.penalties = penalties;
-		this.driving_distance = driving_distance;
-		this.direction = direction;
-	}
-
 	public String getUuid() {
 		return uuid;
 	}
@@ -83,19 +52,19 @@ public class Scorecards {
 		this.uuid = uuid;
 	}
 
-	public int getNumber() {
+	public String getNumber() {
 		return number;
 	}
 
-	public void setNumber(int number) {
+	public void setNumber(String number) {
 		this.number = number;
 	}
 
-	public int getPar() {
+	public String getPar() {
 		return par;
 	}
 
-	public void setPar(int par) {
+	public void setPar(String par) {
 		this.par = par;
 	}
 
@@ -107,11 +76,12 @@ public class Scorecards {
 		this.tee_box_color = tee_box_color;
 	}
 
-	public int getDistance_from_hole_to_tee_box() {
+	public String getDistance_from_hole_to_tee_box() {
 		return distance_from_hole_to_tee_box;
 	}
 
-	public void setDistance_from_hole_to_tee_box(int distance_from_hole_to_tee_box) {
+	public void setDistance_from_hole_to_tee_box(
+			String distance_from_hole_to_tee_box) {
 		this.distance_from_hole_to_tee_box = distance_from_hole_to_tee_box;
 	}
 
@@ -154,6 +124,19 @@ public class Scorecards {
 	public void setDirection(String direction) {
 		this.direction = direction;
 	}
+
+	@Override
+	public String toString() {
+		return "Scorecards [uuid=" + uuid + ", number=" + number + ", par="
+				+ par + ", tee_box_color=" + tee_box_color
+				+ ", distance_from_hole_to_tee_box="
+				+ distance_from_hole_to_tee_box + ", score=" + score
+				+ ", putts=" + putts + ", penalties=" + penalties
+				+ ", driving_distance=" + driving_distance + ", direction="
+				+ direction + "]";
+	}
+
+
 
 	
 }

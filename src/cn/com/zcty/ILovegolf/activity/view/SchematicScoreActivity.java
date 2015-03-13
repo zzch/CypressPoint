@@ -12,7 +12,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 /**
- * 专业记分类
+ * 示意图记分类
  * @author deii
  *
  */

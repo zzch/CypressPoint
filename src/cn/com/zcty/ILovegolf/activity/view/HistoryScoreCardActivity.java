@@ -23,11 +23,12 @@ import cn.com.zcty.ILovegolf.utils.JsonUtil;
 
 	
 	/**
-	 * 历史记分卡类
+	 * 记分卡类
 	 * @author deii
 	 *
 	 */
 	public class HistoryScoreCardActivity extends Activity {
+
 		private ListView list_scorecard;
 		private String uuid;
 		private List<Scorecards> scorecards;
@@ -37,8 +38,9 @@ import cn.com.zcty.ILovegolf.utils.JsonUtil;
 			super.onCreate(savedInstanceState);
 			this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 			setContentView(R.layout.activity_scorecard);
+	        
 			//找控件
-			list_scorecard=(ListView) findViewById(R.id.list_scorecard);
+			//list_scorecard=(ListView) findViewById(R.id.list_scorecard);
 			//取值
 			Intent intent=getIntent();
 			uuid=intent.getStringExtra("uuid");
@@ -60,7 +62,7 @@ import cn.com.zcty.ILovegolf.utils.JsonUtil;
 					String token=sp.getString("token", "token");
 					Log.i("token------>>", ""+token);
 				    String path=APIService.SCORECARD_SHOW+"uuid="+URLEncoder.encode(uuid,"utf-8")+"&token="+URLEncoder.encode(token, "utf-8");
-				    scorecards=JsonUtil.getScorecards_json(path);
+				   // scorecards=JsonUtil.getScorecards_json(path);
 				    
 					} catch (Exception e) {
 						// TODO Auto-generated catch block

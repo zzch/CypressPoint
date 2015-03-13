@@ -48,11 +48,11 @@ public class ListChoosePitchActivity extends Activity {
 	private List<SortModel> sortModels;
 
 	
-	//运用Handler进行线程处理
+	
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
 			if(msg.arg1==1){
-               //适配
+
 				 adapter = new SortAdapter(ListChoosePitchActivity.this, citys, child);
 				 sortListView.setAdapter(adapter);
 				
@@ -62,7 +62,6 @@ public class ListChoosePitchActivity extends Activity {
 					sortListView.expandGroup(i); 
 				  }
 				}
-				//groups---组的点击事件
 				sortListView.setOnGroupClickListener(new OnGroupClickListener() {
 					
 					@Override
@@ -71,6 +70,7 @@ public class ListChoosePitchActivity extends Activity {
 						return true;
 					}
 				});
+			    
 				setListeners();
 		};}
 	};
@@ -82,23 +82,19 @@ public class ListChoosePitchActivity extends Activity {
 		setContentView(R.layout.activity_citylist);
 		initView();
 		new Citys().start();
+		
 	}
-	/**
-	 * 按钮点击事件
-	 */
 	private void setListeners() {
 		huntButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				
 				ArrayList<String> citys_name = new ArrayList<String>();
 				String name = keyword.getText().toString();	
 				for(int i=0;i<adapter.getGroupCount();i++){
 					for(int j=0;j<adapter.getChildrenCount(i);j++){
 						
 						String name_city = adapter.getChildName(i, j);
-						//在文本框中是否包含城市名字的子项
 						 if(name_city.indexOf(name)!=-1){
 							citys_name.add(name_city);
 							flase = true;
@@ -128,14 +124,12 @@ public class ListChoosePitchActivity extends Activity {
 		});	
 		
 	}
-	//找控件
 	public void initView(){
 		sortListView = (ExpandableListView) findViewById(R.id.country_lvcountry);
 		keyword = (ClearEditText) findViewById(R.id.filter_edit);
 		huntButton = (Button) findViewById(R.id.button1);
 		search_back= (Button) findViewById(R.id.search_back);
 	}
-	
 	class Citys extends Thread{
 		public Citys() {
 		}
@@ -145,6 +139,7 @@ public class ListChoosePitchActivity extends Activity {
 		}
 		public void getData(){
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
+			
 			 try {		    	
 				 String token=sp.getString("token", "token");
 				 String path=APIService.SEARCH_COURSE+"&token="+token;
@@ -158,7 +153,7 @@ public class ListChoosePitchActivity extends Activity {
 			    		JSONArray subArray=json.getJSONArray("courses");
 			    		childs = new ArrayList<Course>();			    		
 			    		for(int j=0;j<subArray.length();j++){		
-			    			 Course course = new Course();
+			    			Course course = new Course();
 							 JSONObject jsonObj =subArray.getJSONObject(j);
 							 course.setName(jsonObj.getString("name"));
 							 course.setAddress(jsonObj.getString("address"));
@@ -168,6 +163,7 @@ public class ListChoosePitchActivity extends Activity {
 						 }
 			    		child.add(childs);
 			    	}
+			    	
 			    	Message msg = handler.obtainMessage();
 					msg.arg1 = 1;
 					handler.sendMessage(msg);

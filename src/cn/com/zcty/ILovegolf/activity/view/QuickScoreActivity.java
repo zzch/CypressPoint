@@ -152,7 +152,7 @@ public class QuickScoreActivity extends Activity implements IXListViewListener {
 		switch(v.getId()){
 		//·µ»Ø°´Å¥
 		case R.id.k_back:
-			intent=new Intent(QuickScoreActivity.this,TabHostActivity.class);
+			intent=new Intent(QuickScoreActivity.this,ExerciseActivity.class);
 			startActivity(intent);
 			finish();	
 			break;

@@ -59,8 +59,10 @@ public class JsonUtil {
 			 JSONObject JSONobj=jsonarray.getJSONObject(i);
 			 sortModel.setTitleName(JSONobj.getString("name"));
 			 Log.i("----->>>城市名称", ""+sortModel.getName()+"");
+			 
 			 JSONArray subArray=JSONobj.getJSONArray("courses");
 			 Log.i("courses------>>subArray", ""+subArray);
+			 //List<Courses> coursess=new ArrayList<Courses>();
 			 for(int j=0;j<subArray.length();j++){
 				 JSONObject jsonObj =subArray.getJSONObject(j);
 				
@@ -71,7 +73,10 @@ public class JsonUtil {
 				 sortModel.setAddress(jsonObj.getString("address"));
 				 Log.i("---->>球场信息", ""+sortModel.getAddress());
 				 sortModels.add(sortModel);
-			    }
+			 }
+			
+			 
+			
 			 }
 		 Log.i("---->>集合的大小：", ""+sortModels.size());
 		return sortModels;
@@ -93,13 +98,9 @@ public class JsonUtil {
 					JSONObject jsonobj=subArray.getJSONObject(j);
 					
 					groups.setUuid(jsonobj.getString("uuid"));
-					Log.i("groups----uuid----->>>", ""+groups.getUuid());
 					groups.setName(jsonobj.getString("name"));
-					Log.i("groups----name--->>", ""+groups.getName());
 					groups.setHoles_count(jsonobj.getString("holes_count"));
-					Log.i("groups----holes_count-->>", ""+groups.getHoles_count());
 					groups.setTee_boxes(jsonobj.getString("tee_boxes"));
-					Log.i("groups----tee_booxes", ""+groups.getTee_boxes());
 					groupss.add(groups);
 				}
 				playSet.setGroups(groupss);
@@ -138,7 +139,7 @@ public static List<QuickContent> getQuickScore_json(String path)throws Exception
 		   }
 		 return quickContents;
 	 }
-  public static List<Scorecards> getScorecards_json(String path)throws Exception{
+/*public static List<Scorecards> getScorecards_json(String path)throws Exception{
 	List<TypeScorecard> typeScorecards = new ArrayList<TypeScorecard>();
 	String jsonDate=HttpUtils.HttpClientGet(path);
 	JSONObject jsonObj= new JSONObject(jsonDate);
@@ -175,5 +176,5 @@ public static List<QuickContent> getQuickScore_json(String path)throws Exception
 		typeScorecard.setScorecards(scorecardss);
 		typeScorecards.add(typeScorecard);
 	return scorecardss;
-}
+}*/
 }

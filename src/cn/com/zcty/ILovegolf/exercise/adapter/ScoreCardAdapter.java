@@ -54,6 +54,7 @@ public class ScoreCardAdapter extends BaseAdapter
 		TextView mingzhonglv = (TextView) view.findViewById(R.id.mingzhonglv);
 		
 		pol_number.setText(scorecards.get(position).getNumber()+"");
+		Log.i("=======Çò¶´", "Çò¶´ÐòºÅ===="+scorecards.get(position).getNumber());
 		pars.setText(scorecards.get(position).getPar()+"");
 		distance_from_hole_to_tee_box.setText(scorecards.get(position).getDistance_from_hole_to_tee_box()+"");
 		penalties.setText(scorecards.get(position).getPenalties()+"");

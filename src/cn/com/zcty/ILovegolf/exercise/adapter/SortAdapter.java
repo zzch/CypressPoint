@@ -21,7 +21,6 @@ public class SortAdapter extends BaseExpandableListAdapter {
 	private List<String> group;
 	private List<List<Course>> child;
 	private LayoutInflater inflater;
-	
 	public SortAdapter(Context context,List<String> group,List<List<Course>> child){
 		this.context = context;
 		this.group = group;
@@ -110,7 +109,7 @@ public class SortAdapter extends BaseExpandableListAdapter {
 	public boolean isChildSelectable(int groupPosition, int childPosition) {
 		return true;
 	}
-	class ItemHolder{
+	   class ItemHolder{
            TextView name;
            TextView address;
    }
