@@ -7,7 +7,7 @@
 package cn.com.zcty.ILovegolf.activity.exercise.city;
 
 /**
- * Javaºº×Ö×ª»»ÎªÆ´Òô
+ * Java
  * 
  */
 public class CharacterParser {
@@ -73,7 +73,7 @@ public class CharacterParser {
 		this.resource = resource;
 	}
 
-	/** * ºº×Ö×ª³ÉASCIIÂë * * @param chs * @return */
+	/** * ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ASCIIï¿½ï¿½ * * @param chs * @return */
 	private int getChsAscii(String chs) {
 		int asc = 0;
 		try {
@@ -95,7 +95,7 @@ public class CharacterParser {
 		return asc;
 	}
 
-	/** * µ¥×Ö½âÎö * * @param str * @return */
+	/** * ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½ * * @param str * @return */
 	public String convert(String str) {
 		String result = null;
 		int ascii = getChsAscii(str);
@@ -112,7 +112,7 @@ public class CharacterParser {
 		return result;
 	}
 
-	/** * ´Ê×é½âÎö * * @param chs * @return */
+	/** * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ * * @param chs * @return */
 	public String getSelling(String chs) {
 		String key, value;
 		buffer = new StringBuilder();
