@@ -26,7 +26,7 @@ import android.view.Window;
 import android.widget.GridView;
 
 /**
- * ¼Ç·Ö¿¨Àà
+ * è®°åˆ†å¡ç±»
  * @author deii
  *
  */
@@ -60,7 +60,7 @@ public class ScoreCardActivity extends Activity {
 	}
 
 	/**
-	 * ³õÊ¼»¯
+	 * åˆå§‹åŒ–
 	 */
 	private void initView() {
 		grid_scorecard = (GridView) findViewById(R.id.gridView1);
@@ -70,13 +70,13 @@ public class ScoreCardActivity extends Activity {
 	public void onclick(View v){
 		Intent intent;
 		switch(v.getId()){
-		//¼Ç·Ö¿¨·µ»Ø°´Å¥
+		//è®°åˆ†å¡è¿”å›æŒ‰é’®
 		case R.id.scorecard_back:
 			intent=new Intent(ScoreCardActivity.this,PlaySetActivity.class);
 			startActivity(intent);
 			finish();
 			break;
-			//µã»÷³É¼¨°´Å¥
+			//ç‚¹å‡»æˆç»©æŒ‰é’®
 		case R.id.scorecard_score:
 			intent=new Intent(ScoreCardActivity.this,PlayerStateActivity.class);
 			startActivity(intent);

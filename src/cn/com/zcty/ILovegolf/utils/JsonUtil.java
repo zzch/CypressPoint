@@ -18,7 +18,7 @@ import cn.com.zcty.ILovegolf.model.TypeScorecard;
 
 public class JsonUtil {
 	 /**
-	  * json½âÎö
+	  * jsonè§£æ
 	  * @param path
 	  * @param longitude
 	  * @param latitude
@@ -58,7 +58,7 @@ public class JsonUtil {
 			 SortModel sortModel=new SortModel();
 			 JSONObject JSONobj=jsonarray.getJSONObject(i);
 			 sortModel.setTitleName(JSONobj.getString("name"));
-			 Log.i("----->>>³ÇÊĞÃû³Æ", ""+sortModel.getName()+"");
+			 Log.i("----->>>åŸå¸‚åç§°", ""+sortModel.getName()+"");
 			 
 			 JSONArray subArray=JSONobj.getJSONArray("courses");
 			 Log.i("courses------>>subArray", ""+subArray);
@@ -67,18 +67,18 @@ public class JsonUtil {
 				 JSONObject jsonObj =subArray.getJSONObject(j);
 				
 				 sortModel.setUuid(jsonObj.getString("uuid"));
-				 Log.i("---->>Çò³¡ĞÅÏ¢", ""+sortModel.getUuid());
+				 Log.i("---->>çƒåœºä¿¡æ¯", ""+sortModel.getUuid());
 				 sortModel.setName(jsonObj.getString("name"));
-				 Log.i("---->>Çò³¡ĞÅÏ¢", ""+sortModel.getName());
+				 Log.i("---->>çƒåœºä¿¡æ¯", ""+sortModel.getName());
 				 sortModel.setAddress(jsonObj.getString("address"));
-				 Log.i("---->>Çò³¡ĞÅÏ¢", ""+sortModel.getAddress());
+				 Log.i("---->>çƒåœºä¿¡æ¯", ""+sortModel.getAddress());
 				 sortModels.add(sortModel);
 			 }
 			
 			 
 			
 			 }
-		 Log.i("---->>¼¯ºÏµÄ´óĞ¡£º", ""+sortModels.size());
+		 Log.i("---->>é›†åˆçš„å¤§å°ï¼š", ""+sortModels.size());
 		return sortModels;
 		 }
 	 
@@ -116,7 +116,7 @@ public static List<QuickContent> getQuickScore_json(String path)throws Exception
 		 JSONArray jsonarray=new JSONArray(JsonData);
 		 //Log.i("jsonarray----->>", ""+jsonarray);
 		for(int i=0;i<jsonarray.length();i++){
-			 //ÊµÀı»¯
+			 //å®ä¾‹åŒ–
 			 QuickContent quickContent=new QuickContent(); 
 			 JSONObject jsonObj=jsonarray.getJSONObject(i);
 			 quickContent.setUuid(jsonObj.getString("uuid"));

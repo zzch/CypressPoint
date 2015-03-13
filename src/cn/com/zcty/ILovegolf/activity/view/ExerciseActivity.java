@@ -14,7 +14,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 /**
- * Á·Ï°Ê×Ò³
+ * ç»ƒä¹ é¦–é¡µ
  * @author deii
  *
  */
@@ -28,13 +28,13 @@ public class ExerciseActivity extends Activity {
         setContentView(R.layout.activity_exercise);
        
     }
-    //Ê¾ÒâÍ¼¼Ç·Öµã»÷ÊÂ¼ş
+    //ç¤ºæ„å›¾è®°åˆ†ç‚¹å‡»äº‹ä»¶
      public void shiyitu(View v){
 	   Intent intent=new Intent(ExerciseActivity.this,SchematicScoreActivity.class);
 		startActivity(intent);
 		finish();
      }
-     //¿ì½İ¼Ç·Öµã»÷ÊÂ¼ş
+     //å¿«æ·è®°åˆ†ç‚¹å‡»äº‹ä»¶
      public void kuaijie(View v){
     	Intent intent=new Intent(ExerciseActivity.this,QuickScoreActivity.class);
  		  startActivity(intent);

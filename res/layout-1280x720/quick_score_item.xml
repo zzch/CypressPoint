@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/hsv"
+    android:layout_width="wrap_content"
+    android:layout_height="80dip"
+    android:scrollbars="none" >
+
+  <LinearLayout 
+    android:id="@+id/hsv"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout 
+    android:id="@+id/content"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+     <LinearLayout 
+         android:id="@+id/layout"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+         >
+          <TextView 
+           android:id="@+id/kpitname"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="北京燕西高尔夫球俱乐部"
+           android:textSize="18dip"
+          />
+          
+          <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+              >
+              <TextView 
+               android:id="@+id/time"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="2013-6-16 15:40"
+               android:layout_marginTop="10dip"
+              /> 
+              <TextView
+               android:id="@+id/practice"
+               android:layout_width="50dip"
+               android:layout_height="30dip" 
+               android:text="练习赛"
+               android:gravity="center"
+               android:layout_marginTop="10dip"
+               android:background="@drawable/u1233_normal"
+              />
+               <TextView 
+               android:id="@+id/gan_number"
+               android:layout_width="50dip"
+               android:layout_height="30dip"
+               android:text="2/18"
+               android:gravity="center"
+               android:layout_marginTop="10dip"
+              android:background="@drawable/u1233_normal"
+              /> 
+          </LinearLayout>
+          
+     </LinearLayout>
+    
+      <LinearLayout 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          android:gravity="center"
+          android:layout_marginTop="15dip"
+          android:layout_marginLeft="10dip"
+          android:background="@drawable/u1695_normal"
+          >
+           <TextView 
+           android:id="@+id/zongganshu"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="总杆数"
+      
+           />
+            <TextView 
+           android:id="@+id/Pole_number"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="8"
+            />
+      </LinearLayout>
+
+      <ImageView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="20dip"
+          android:src="@drawable/u1095_normal" />
+      
+     </LinearLayout>
+       <LinearLayout 
+       android:id="@+id/action"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       >
+       
+       <Button
+           android:id="@+id/butDelete"
+           android:layout_width="60dip"
+           android:layout_height="wrap_content"
+           android:text="删除" 
+           android:layout_marginLeft="15dip"
+           android:layout_marginTop="10dip"
+           android:textColor="#ff0000"
+           />
+       </LinearLayout>
+</LinearLayout>
+</HorizontalScrollView>

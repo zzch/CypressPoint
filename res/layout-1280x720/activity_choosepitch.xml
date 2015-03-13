@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+     >
+     <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="60dp"
+       android:orientation="horizontal"
+         >
+         <Button 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="返回"
+           android:layout_marginLeft="10dip"
+          android:onClick="choosepith_back"
+             />
+         <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="选择球场"
+           android:gravity="center"
+           android:textSize="25dip"
+           android:layout_marginLeft="35dip"
+             />
+           <Button 
+           android:id="@+id/qiehuan"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="切换"
+           android:layout_marginLeft="35dip"
+          android:onClick="qiehuan"
+             />
+     </LinearLayout>
+
+     <LinearLayout 
+          android:id="@+id/layout_listview_one"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+         >
+      <ListView 
+            android:id="@+id/listpich"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+         />
+       </LinearLayout>
+       
+     <LinearLayout 
+          android:id="@+id/layout_listview_two"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          android:visibility="gone"
+         >
+      <ListView 
+            android:id="@+id/searchlistview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+         />
+       </LinearLayout>
+</LinearLayout>
+
+
+
+
+
+
+
+
+

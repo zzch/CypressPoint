@@ -20,7 +20,6 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 	private Context context;
 	private LayoutInflater inflater_scorecars;
 	private LayoutInflater inflater_setscorecard;
-	private int count = 0;
 	public ScoreCardGridViewAdapter(List<Scorecards> scorecarsArray,
 			List<Setcard> setcardsArray, Context context) {
 		super();
@@ -34,7 +33,7 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 	@Override
 	public int getCount() {
 		Log.i("name1", "1");
-		return 18;
+		return 36;
 	}
 
 	@Override
@@ -87,7 +86,7 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 				}				
 				if(position==0){	
 					sHolder = (ScardsHolder) convertView.getTag();
-					if(scorecarsArray.get(position).getNumber()!=null){
+					if(scorecarsArray.get(position).getNumber()!=null&&sHolder!=null){
 						sHolder.numberRod.setText(scorecarsArray.get(position).getNumber());
 						sHolder.par.setText(scorecarsArray.get(position).getPar());
 						sHolder.te.setText(scorecarsArray.get(position).getDistance_from_hole_to_tee_box());
@@ -155,8 +154,8 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 	class SetscardsHolder{
 		TextView numberRod;
 		TextView par;
-		TextView te;//¬Î
-		TextView penalties;//∑£
-		TextView putts;//Õ∆∏À
+		TextView te;//Á†Å
+		TextView penalties;//ÁΩö
+		TextView putts;//Êé®ÊùÜ
 	}
 }

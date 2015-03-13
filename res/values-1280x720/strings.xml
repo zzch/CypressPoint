@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  	<dimen name="txsize_large_xxx">45px</dimen>
+  	<dimen name="txsize_large_xx">39px</dimen>
+  	<dimen name="txsize_large_x">36px</dimen>
+  	
+  	<dimen name="txsize_mid_xxx">30px</dimen>
+  	<dimen name="txsize_mid_xx">27px</dimen>
+  	<dimen name="txsize_mid_x">24px</dimen>
+  	
+  	<dimen name="txsize_small_xxx">21px</dimen>
+  	<dimen name="txsize_small_xx">18px</dimen>
+  	<dimen name="txsize_small_x">15px</dimen>
+  	
+  	 <!-- 各种需要适配的宽度值 -->
+  	<dimen name="view_large_xxx">160dip</dimen>
+  	<dimen name="view_large_xx">140dip</dimen>
+  	<dimen name="view_large_x">120dip</dimen>
+  	
+  	<dimen name="view_mid_xxx">100dip</dimen>
+  	<dimen name="view_mid_xx">90dip</dimen>
+  	<dimen name="view_mid_x">80dip</dimen>
+  	
+  	<dimen name="view_small_xxx">70dip</dimen>
+  	<dimen name="view_small_xx">60dip</dimen>
+  	<dimen name="view_small_x">50dip</dimen>
+  	
+  	
+</resources>

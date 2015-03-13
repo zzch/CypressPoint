@@ -30,7 +30,7 @@ import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnGroupClickListener;
 
 /**
- * °´³ÇÊĞËÑË÷Çò³¡ÁĞ±í
+ * æŒ‰åŸå¸‚æœç´¢çƒåœºåˆ—è¡¨
  * @author deii
  *
  */
@@ -56,7 +56,7 @@ public class ListChoosePitchActivity extends Activity {
 				 adapter = new SortAdapter(ListChoosePitchActivity.this, citys, child);
 				 sortListView.setAdapter(adapter);
 				
-				//Ä¬ÈÏÕ¹¿ª
+				//é»˜è®¤å±•å¼€
 				if(adapter!=null){		
 				for (int i = 0; i < citys.size(); i++) { 
 					sortListView.expandGroup(i); 

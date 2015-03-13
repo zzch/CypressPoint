@@ -4,11 +4,13 @@
     android:layout_height="wrap_content"
     android:gravity="center"    
     android:orientation="vertical" >
+
+    
     <TextView 
         android:id="@+id/lianxi_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="自己"
+        android:text="统计哈哈哈哈哈"
         android:textColor="#99000000"
         android:textSize="25sp"
         />

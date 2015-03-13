@@ -23,7 +23,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 /**
- * A5¶´---¼Ç·Ö¿¨ĞŞ¸ÄÒ³
+ * A5æ´---è®°åˆ†å¡ä¿®æ”¹é¡µ
  * @author deii
  *
  */
@@ -31,7 +31,7 @@ public class SocreCardUpDateActivity extends Activity implements OnClickListener
 	 private LinearLayout layout_updatecard;
 	 private Button but_jian_one,but_jian_two,but_jian_three,but_add_one,but_add_two,but_add_three;
 	 private TextView tv_update_one,tv_update_two,tv_update_three;
-	 private TextView tv_mashu,tv_mingzhong;//ÂëÊı    ÃüÖĞÎ»ÖÃ
+	 private TextView tv_mashu,tv_mingzhong;//ç æ•°    å‘½ä¸­ä½ç½®
 	 private ListView listview_mashu,listview_mingzhong;
 	 private Intent intent;
 	 private String tv_update_1;
@@ -44,7 +44,7 @@ public class SocreCardUpDateActivity extends Activity implements OnClickListener
 	    public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
 	        setContentView(R.layout.scorecardupdat);
-	        //ÕÒ¿Ø¼ş
+	        //æ‰¾æ§ä»¶
 	        but_jian_one=(Button) findViewById(R.id.but_jian_one);
 	        but_jian_two=(Button) findViewById(R.id.but_jian_two);
 	        but_jian_three=(Button) findViewById(R.id.but_jian_three);
@@ -63,7 +63,7 @@ public class SocreCardUpDateActivity extends Activity implements OnClickListener
 	        listview_mingzhong=(ListView) findViewById(R.id.listview_mingzhong);
 	        
 	        layout_updatecard=(LinearLayout) findViewById(R.id.layout_updatecard);
-	        //¼àÌıÊÂ¼ş
+	        //ç›‘å¬äº‹ä»¶
 	        but_jian_one.setOnClickListener(this);
 	        but_jian_two.setOnClickListener(this);
 	        but_jian_three.setOnClickListener(this);
@@ -71,11 +71,11 @@ public class SocreCardUpDateActivity extends Activity implements OnClickListener
 	        but_add_two.setOnClickListener(this);
 	        but_add_three.setOnClickListener(this);
 	        
-	        //ÊÊÅäÆ÷
+	        //é€‚é…å™¨
 	        //listview_mashu.setAdapter(new ArrayAdapter<String>(this,R.layout.list_text_item,getmashu()));
 	       // listview_mingzhong.setAdapter(new ArrayAdapter<String>(this,R.layout.list_text_item,getData()));
 	        
-	        //È¡Öµ
+	        //å–å€¼
 	        tv_update_1=tv_update_one.getText().toString().trim();
 	   	    tv_update_2=tv_update_two.getText().toString().trim();
             tv_update_3=tv_update_three.getText().toString().trim();
@@ -84,16 +84,16 @@ public class SocreCardUpDateActivity extends Activity implements OnClickListener
 	       
 	      
 	}
-     //listview_mingzhongÊÊÅäÊı¾İ
+     //listview_mingzhongé€‚é…æ•°æ®
 	 private List<String> getData(){    
 	     List<String> data = new ArrayList<String>();    
-	  data.add("×ó²à");    
-	  data.add("ÃüÖĞ");    
-	  data.add("ÓÒ²à");        
+	  data.add("å·¦ä¾§");    
+	  data.add("å‘½ä¸­");    
+	  data.add("å³ä¾§");        
 	  return data;    
 	    }   
 	 
-	//listview_mingzhongÊÊÅäÊı¾İ
+	//listview_mingzhongé€‚é…æ•°æ®
 		 private List<String> getmashu(){    
 		     List<String> data = new ArrayList<String>();    
 		  data.add("5");    
@@ -116,16 +116,16 @@ public class SocreCardUpDateActivity extends Activity implements OnClickListener
 		int n=Integer.valueOf(tv_update_2).intValue();
 		int k=Integer.valueOf(tv_update_3).intValue();
 		switch(v.getId()){
-		//·µ»Ø
+		//è¿”å›
 		case R.id.scorecard_cancel:
 			intent =new Intent(this,PlaySetActivity.class);
 			startActivity(intent);
 			finish();
 			break;
-		//ĞŞ¸ÄÍêºó½«Êı¾İ±£´æµ½¼Ç·Ö¿¨Ò³Ãæ
+		//ä¿®æ”¹å®Œåå°†æ•°æ®ä¿å­˜åˆ°è®°åˆ†å¡é¡µé¢
 		case R.id.scorecard_save:
 			intent =new Intent(this,ScoreCardActivity.class);
-			 //±£´æÖµ
+			 //ä¿å­˜å€¼
 	        sp=getSharedPreferences("save", Context.MODE_PRIVATE);
 	        Editor editor=sp.edit();
 	        editor.putString("update_1", tv_update_1);
