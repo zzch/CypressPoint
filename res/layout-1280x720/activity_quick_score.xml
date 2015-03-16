@@ -34,8 +34,8 @@
 
          <Button
              android:id="@+id/k_back"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
+             android:layout_width="96px"
+             android:layout_height="96px"
              android:layout_alignParentBottom="true"
              android:layout_alignParentLeft="true"
              android:background="@drawable/back_button"
@@ -47,12 +47,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-      android:visibility="gone"
+        android:visibility="gone"
         >
         <ImageView 
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:src="@drawable/e_imageview_o7"
+           android:src="@drawable/e_imageview_07"
          />
     </LinearLayout>
     
@@ -61,7 +61,6 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:orientation="horizontal"
-      
         >
       <cn.com.zcty.ILovegolf.tools.XListView
         android:id="@+id/xListView"

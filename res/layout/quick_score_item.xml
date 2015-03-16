@@ -41,7 +41,14 @@
                android:layout_height="wrap_content"
                android:text="2013-6-16 15:40"
                android:layout_marginTop="10dip"
-              /> 
+              />
+
+              <ImageView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="20dip"
+                  android:src="@drawable/u1095_normal" />
+ 
               <TextView
                android:id="@+id/practice"
                android:layout_width="50dip"
@@ -87,12 +94,6 @@
            android:text="8"
             />
       </LinearLayout>
-
-      <ImageView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="20dip"
-          android:src="@drawable/u1095_normal" />
       
      </LinearLayout>
        <LinearLayout 

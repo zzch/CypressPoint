@@ -34,7 +34,7 @@
             android:id="@+id/shiyitu_one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/e_button_02"
+            android:background="@drawable/button"
             android:onClick="shiyitu"
             android:text="@string/major_card"
             android:textColor="@color/green"
@@ -60,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="170px"
-            android:background="@drawable/e_button_02"
+            android:background="@drawable/button"
             android:onClick="kuaijie"
             android:text="@string/easy_card"
             android:textColor="@color/green" />
