@@ -18,16 +18,16 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 	private List<Scorecards> scorecarsArray;
 	private List<Setcard> setcardsArray;
 	private Context context;
-	private LayoutInflater inflater_scorecars;
-	private LayoutInflater inflater_setscorecard;
+	private LayoutInflater inflater;
+	
 	public ScoreCardGridViewAdapter(List<Scorecards> scorecarsArray,
 			List<Setcard> setcardsArray, Context context) {
 		super();
 		this.scorecarsArray = scorecarsArray;
 		this.setcardsArray = setcardsArray;
 		this.context = context;
-		inflater_scorecars = LayoutInflater.from(context);
-		inflater_setscorecard = LayoutInflater.from(context);
+		inflater = LayoutInflater.from(context);
+		
 	}
 
 	@Override
@@ -66,91 +66,49 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 		return position;
 	}
 
+
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		
-		SetscardsHolder setHolder;		
-		Log.i("name1", "4");
-
-			if(position%2==0||position==0){		
-				ScardsHolder sHolder = null;
-				if(convertView==null){
-					sHolder = new ScardsHolder();
-					convertView = inflater_scorecars.inflate(R.layout.scards, null);
-					sHolder.numberRod = (TextView) convertView.findViewById(R.id.textView1);
-					sHolder.par = (TextView) convertView.findViewById(R.id.textView2);
-					sHolder.te = (TextView) convertView.findViewById(R.id.textView3);
-					convertView.setTag(sHolder);
-				}else{
-					
-				}				
-				if(position==0){	
-					sHolder = (ScardsHolder) convertView.getTag();
-					if(scorecarsArray.get(position).getNumber()!=null&&sHolder!=null){
-						sHolder.numberRod.setText(scorecarsArray.get(position).getNumber());
-						sHolder.par.setText(scorecarsArray.get(position).getPar());
-						sHolder.te.setText(scorecarsArray.get(position).getDistance_from_hole_to_tee_box());
-					}
-					
-					
-				}else{
-					//sHolder = (ScardsHolder) convertView.getTag();
-					sHolder = new ScardsHolder();
-					convertView = inflater_scorecars.inflate(R.layout.scards, null);
-					sHolder.numberRod = (TextView) convertView.findViewById(R.id.textView1);
-					sHolder.par = (TextView) convertView.findViewById(R.id.textView2);
-					sHolder.te = (TextView) convertView.findViewById(R.id.textView3);
-					sHolder.numberRod.setText(scorecarsArray.get(position/2).getNumber());
-					sHolder.par.setText(scorecarsArray.get(position/2).getPar());
-					sHolder.te.setText(scorecarsArray.get(position/2).getDistance_from_hole_to_tee_box());
-				}
-				return convertView;
+		SetscardsHolder holder;
+		if(convertView==null){
+			convertView = inflater.inflate(R.layout.setcards, null);
+			holder = new SetscardsHolder();
+			holder.numberRod = (TextView) convertView.findViewById(R.id.numberRod);
+			holder.penalties = (TextView) convertView.findViewById(R.id.textView2);
+			holder.putts = (TextView) convertView.findViewById(R.id.textView3);
+			holder.par = (TextView) convertView.findViewById(R.id.textView4);
+			holder.te = (TextView) convertView.findViewById(R.id.textView5);
+			convertView.setTag(holder);
+		}else{
+			holder = (SetscardsHolder) convertView.getTag();
+		}
+		if(position%2==0){
+			holder.numberRod.setText(scorecarsArray.get(position/2).getNumber());
+			holder.par.setText(scorecarsArray.get(position/2).getPar());
+			holder.te.setText(scorecarsArray.get(position/2).getDistance_from_hole_to_tee_box());		
+			holder.penalties.setVisibility(View.INVISIBLE);
+			holder.putts.setVisibility(View.INVISIBLE);
+		}else{
+			if(setcardsArray.size()>0){
+				holder.penalties.setVisibility(View.VISIBLE);
+				holder.putts.setVisibility(View.VISIBLE);
+				holder.numberRod.setText(setcardsArray.get(position/2).getRodNum());
+				holder.penalties.setText(setcardsArray.get(position/2).getPenalties());
+				holder.putts.setText(setcardsArray.get(position/2).getPutts());
+				holder.par.setText(setcardsArray.get(position/2).getPar());
+				holder.te.setText(setcardsArray.get(position/2).getTe());	
 			}else{
-				
-					setHolder = new SetscardsHolder();
-					convertView = inflater_setscorecard.inflate(R.layout.setcards, null);
-					setHolder.numberRod = (TextView) convertView.findViewById(R.id.textView1);
-					setHolder.penalties = (TextView) convertView.findViewById(R.id.textView2);
-					setHolder.putts = (TextView) convertView.findViewById(R.id.textView3);
-					setHolder.te = (TextView) convertView.findViewById(R.id.textView4);
-					setHolder.par = (TextView) convertView.findViewById(R.id.textView5);
-					convertView.setTag(setHolder);
-				
-					//setHolder = (SetscardsHolder) convertView.getTag();
-				
-			if(setcardsArray.size()==0){
-				
-//				setHolder.numberRod.setText("");
-//				setHolder.penalties.setText("");
-//				setHolder.putts.setText("");
-//				setHolder.te.setText("");
-//				setHolder.par.setText("");
-				
-			}else{
-				if(position==1){
-					setHolder.numberRod.setText(setcardsArray.get(position).getRodNum());
-					setHolder.penalties.setText(setcardsArray.get(position).getPenalties());
-					setHolder.putts.setText(setcardsArray.get(position).getPutts());
-					setHolder.te.setText(setcardsArray.get(position).getTe());
-					setHolder.par.setText(setcardsArray.get(position).getPar());
-				}else{
-					setHolder.numberRod.setText(setcardsArray.get(position/2).getRodNum());
-					setHolder.penalties.setText(setcardsArray.get(position/2).getPenalties());
-					setHolder.putts.setText(setcardsArray.get(position/2).getPutts());
-					setHolder.te.setText(setcardsArray.get(position/2).getTe());
-					setHolder.par.setText(setcardsArray.get(position/2).getPar());
-			}}
-			return convertView;
+				holder.numberRod.setText("");
+				holder.penalties.setText("");
+				holder.putts.setText("");
+				holder.par.setText("");
+				holder.te.setText("");
 			}
-		
-		
-		//return convertView;
+		}
+		return convertView;
+	
 	}
-	class ScardsHolder{
-		TextView numberRod;
-		TextView par;
-		TextView te;
-	}
+
 	class SetscardsHolder{
 		TextView numberRod;
 		TextView par;

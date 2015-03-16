@@ -57,6 +57,7 @@ public class ScoreCardActivity extends Activity {
 	private void setListeners() {
 		adapter = new ScoreCardGridViewAdapter(scorecarsArray, setcardsArray, this);
 		grid_scorecard.setAdapter(adapter);
+		
 	}
 
 	/**
