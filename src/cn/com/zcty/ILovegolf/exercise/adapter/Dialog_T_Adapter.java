@@ -43,20 +43,20 @@ public class Dialog_T_Adapter extends BaseAdapter{
 		// TODO Auto-generated method stub
 		Holder holder =null;
 		if(convertView==null){
-			convertView=LayoutInflater.from(context).inflate(R.layout., null);
+			convertView=LayoutInflater.from(context).inflate(R.layout.blend_dialog_t_item, null);
 			holder=new Holder();
-			holder.blend_dialog_list_item_textview=(TextView) convertView.findViewById(R.id.blend_dialog_list_item_textview);
+			holder.blend_dialog_t_item_textview=(TextView) convertView.findViewById(R.id.blend_dialog_t_item_textview);
 			
 			convertView.setTag(holder);
 		}else{
 			holder=(Holder) convertView.getTag();
 		}
-		holder.blend_dialog_list_item_textview.setText(list.get(position));
+		holder.blend_dialog_t_item_textview.setText(list.get(position));
 		
 		return convertView;
 	}
 	class Holder{
-		TextView blend_dialog_list_item_textview;
+		TextView blend_dialog_t_item_textview;
 
 	}
 

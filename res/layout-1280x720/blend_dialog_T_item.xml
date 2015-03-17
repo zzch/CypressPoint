@@ -16,7 +16,7 @@
         android:minHeight="48dp"
         />
     <TextView
-        android:id="@+id/blend_dialog_list_item_textview"
+        android:id="@+id/blend_dialog_t_item_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 		android:minHeight="48dp"

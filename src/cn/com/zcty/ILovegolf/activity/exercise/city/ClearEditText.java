@@ -1,6 +1,7 @@
 package cn.com.zcty.ILovegolf.activity.exercise.city;
 
 
+import cn.com.zcty.ILovegolf.activity.R;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.text.Editable;
@@ -41,7 +42,7 @@ public class ClearEditText extends EditText implements
     	mClearDrawable = getCompoundDrawables()[2]; 
         if (mClearDrawable == null) { 
         	mClearDrawable = getResources() 
-                    .getDrawable(R..drawable.emotionstore_progresscancelbtn); 
+                    .getDrawable(R.drawable.emotionstore_progresscancelbtn); 
         } 
         mClearDrawable.setBounds(0, 0, mClearDrawable.getIntrinsicWidth(), mClearDrawable.getIntrinsicHeight()); 
         setClearIconVisible(false); 

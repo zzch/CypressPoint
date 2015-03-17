@@ -228,7 +228,7 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 						}
 					});
 					pickDialog.show();
-					pickDialog.initListViewData(color);	
+					pickDialog.init_t_Data(color);	
 				}
 				
 			}
@@ -306,7 +306,6 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 									@Override
 									public void onClick(View v) {
 										Intent intent = new Intent(PlaySetActivity.this,ScoreCardActivity.class);
-										
 										String c_t = colors;
 										intent.putExtra("uuid_t", uuid_t);
 										intent.putExtra("uuid", uuid);
@@ -316,8 +315,6 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 										finish();
 									}
 								});
-							
-							
 						}
 						
 						@Override
@@ -331,13 +328,11 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 						}
 					});
 					pickDialog.show();
-					pickDialog.initListViewData(color);	
+					pickDialog.init_t_Data(color);	
 				}
 				}
 		});
 	
-		
-		
 	};
 	private void initView() {
 		listViewPlaySet = (ListView) findViewById(R.id.listView1);	
@@ -346,7 +341,6 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 		playset_back = (Button) findViewById(R.id.playset_back);
 		playset_back.setOnClickListener(this);
 	}
-	
 	
 	@Override
 	public void onClick(View v) {
@@ -396,7 +390,6 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 				}
 				uuids.add(jsonobj.getString("uuid"));
 			}
-
 			Message msg = handler.obtainMessage();
 			msg.what = 1;
 			handler.sendMessage(msg);

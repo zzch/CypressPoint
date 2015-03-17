@@ -3,6 +3,8 @@ package cn.com.zcty.ILovegolf.exercise.adapter;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.com.zcty.ILovegolf.activity.R;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;

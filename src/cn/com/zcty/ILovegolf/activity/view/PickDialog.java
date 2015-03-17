@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.exercise.adapter.DialogListViewAdapter;
+import cn.com.zcty.ILovegolf.exercise.adapter.Dialog_T_Adapter;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -24,6 +25,7 @@ public class PickDialog extends Dialog{
 	private ArrayList<String> items=new ArrayList<String>();
 	private PickDialogListener pickDialogListener;
 	DialogListViewAdapter adapter;
+	Dialog_T_Adapter t_adapter;
 
 	public PickDialog(Context context,String title,PickDialogListener pickDialogListener) {
 		super(context, R.style.blend_theme_dialog);
@@ -58,18 +60,6 @@ public class PickDialog extends Dialog{
 				dismiss();
 			}
 		});
-		/*cancleTextView.setOnClickListener(new View.OnClickListener() {
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				dismiss();
-				
-			}
-
-			
-		});*/
-		
 		
 		this.setContentView(layout);
 	}
@@ -91,8 +81,23 @@ public class PickDialog extends Dialog{
 			}
 		});
 	}
-
-
+  public void init_t_Data(ArrayList<String> list){
+	    items=list;
+		blend_dialog_preview.setVisibility(View.GONE);
+		blend_dialog_nextview.setVisibility(View.VISIBLE); 
+		t_adapter = new Dialog_T_Adapter(context, list);
+		blend_dialog_nextview.setAdapter(t_adapter);
+		blend_dialog_nextview.setOnItemClickListener(new ListView.OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				dismiss();
+				if(pickDialogListener!=null){
+					pickDialogListener.onListItemClick(position, items.get(position));
+				}
+			}
+		});
+  }
 
 
 }

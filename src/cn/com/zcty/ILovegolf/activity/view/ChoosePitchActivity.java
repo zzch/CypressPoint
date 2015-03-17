@@ -99,7 +99,6 @@ public class ChoosePitchActivity extends Activity {
 		Intent intent=new Intent(ChoosePitchActivity.this,QuickScoreActivity.class);
 		startActivity(intent);
 		finish();
-	
 	}
 
 	//搜索按钮点击事件
