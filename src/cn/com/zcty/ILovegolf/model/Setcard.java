@@ -1,9 +1,11 @@
 package cn.com.zcty.ILovegolf.model;
 
-public class Setcard {
-	private String rodNum;//¸ËÊı
-	private String putts;//ÍÆ¸Ë
-	private String penalties;//·£¸Ë
+import java.io.Serializable;
+
+public class Setcard implements Serializable{
+	private String rodNum;//æ†æ•°
+	private String putts;//æ¨æ†
+	private String penalties;//ç½šå¹²
 	private String te;
 	private String par;
 	public Setcard() {

@@ -36,7 +36,7 @@
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.login_register.LoginActivity"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.login_register.RegisterActivity"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.login_register.ForGetPasswordActivity"></activity>
-        <activity android:name="cn.com.zcty.ILovegolf.activity.view.SocreCardUpDateActivity"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.ScoreCardUpDateActivity"></activity>
         
          <activity android:name="cn.com.zcty.ILovegolf.activity.exercise.search.SearchPitchActivity"></activity>
         
@@ -53,6 +53,7 @@
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.ListChoosePitchActivity"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.HistoryScoreCardActivity"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.HuntActivity"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.StatisticsAvtivity"></activity>
     </application>
 
 </manifest>

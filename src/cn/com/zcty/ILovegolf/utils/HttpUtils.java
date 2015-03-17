@@ -22,6 +22,7 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpPut;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
@@ -63,9 +64,8 @@ public class HttpUtils
 			}
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return null;
+			
 		}
 		return null;
 	}
@@ -129,6 +129,34 @@ public class HttpUtils
 		}
 		return str;
 	}
+	public static String HttpClientPut(String path)
+	{
+		String str = "";
+		//创建HttpClient对象
+		HttpClient client=new DefaultHttpClient();
+		//创建请求路径的HttpGet对象
+		HttpPut httpPut=new HttpPut(path);
+		Log.i("---path", "path==="+path);
+		try {
+			//让HttpClient往服务器发送数据
+			HttpResponse response=client.execute(httpPut);
+			//找到服务返回的状态码 200表示成功
+			int code=response.getStatusLine().getStatusCode();
+			Log.i("code----->>>", ""+code);
+			if(code==HttpStatus.SC_OK)
+			{
+				//InputStream is=response.getEntity().getContent();
+				str = EntityUtils.toString(response.getEntity(), "utf-8");
+				Log.i("is---->>", ""+str);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();		
+		}
+		return str;
+	}
+	
+	
 	/**
 	 * 采用HttpClient的DELETE请求发送数据
 	 * @param path

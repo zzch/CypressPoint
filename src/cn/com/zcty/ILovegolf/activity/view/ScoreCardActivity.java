@@ -7,12 +7,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.exercise.adapter.ScoreCardGridViewAdapter;
-import cn.com.zcty.ILovegolf.model.Scorecards;
-import cn.com.zcty.ILovegolf.model.Setcard;
-import cn.com.zcty.ILovegolf.utils.APIService;
-import cn.com.zcty.ILovegolf.utils.HttpUtils;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -23,7 +17,15 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
+import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.exercise.adapter.ScoreCardGridViewAdapter;
+import cn.com.zcty.ILovegolf.model.Scorecards;
+import cn.com.zcty.ILovegolf.model.Setcard;
+import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 /**
  * 记分卡类
@@ -32,9 +34,11 @@ import android.widget.GridView;
  */
 public class ScoreCardActivity extends Activity {
 	private List<Scorecards> scorecarsArray = new ArrayList<Scorecards>();
-	private List<Setcard> setcardsArray = new ArrayList<Setcard>();
+	private List<Setcard> setcardsArray = new ArrayList<Setcard>(19);
 	private GridView grid_scorecard;	
 	private ScoreCardGridViewAdapter adapter;
+	private Setcard setCard;
+	private final int REQUESTCODE=1;//返回的结果码   
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -50,16 +54,52 @@ public class ScoreCardActivity extends Activity {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_scorecard);
 		initView();	
+		getData();
 		new MyTask().start();
 	
 	}
 	
+	private void getData() {
+		for(int i=0;i<=18;i++){
+			Setcard setcard = new Setcard();
+			setcardsArray.add(setcard);
+		}
+	}
+
 	private void setListeners() {
 		adapter = new ScoreCardGridViewAdapter(scorecarsArray, setcardsArray, this);
 		grid_scorecard.setAdapter(adapter);
-		
-	}
+		grid_scorecard.setOnItemClickListener(new OnItemClickListener() {
 
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View View, int position,
+					long arg3) {
+				
+				if(position%2!=0){
+					Intent intent = new Intent(ScoreCardActivity.this,ScoreCardUpDateActivity.class);
+					intent.putExtra("number", scorecarsArray.get(position/2).getNumber());
+					intent.putExtra("par",scorecarsArray.get(position/2).getPar());
+					intent.putExtra("uuid", scorecarsArray.get(position/2).getUuid());
+					intent.putExtra("position", position+"");
+					startActivityForResult(intent, REQUESTCODE);
+				}
+			}
+		});
+	}
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if(requestCode==REQUESTCODE){
+		for(int i=0;i<=18;i++){
+			if (resultCode == i) {
+				int position = Integer.parseInt(data.getStringExtra("position"));
+				setCard = (Setcard) data.getSerializableExtra("scard");
+				setcardsArray.set(position/2, setCard);
+				adapter.notifyDataSetChanged();
+			}
+		}
+		}
+	}
 	/**
 	 * 初始化
 	 */
@@ -73,15 +113,15 @@ public class ScoreCardActivity extends Activity {
 		switch(v.getId()){
 		//记分卡返回按钮
 		case R.id.scorecard_back:
-			intent=new Intent(ScoreCardActivity.this,PlaySetActivity.class);
+			intent=new Intent(ScoreCardActivity.this,ChoosePitchActivity.class);
 			startActivity(intent);
 			finish();
 			break;
 			//点击成绩按钮
 		case R.id.scorecard_score:
-			intent=new Intent(ScoreCardActivity.this,PlayerStateActivity.class);
+			intent=new Intent(ScoreCardActivity.this,StatisticsAvtivity.class);
 			startActivity(intent);
-			finish();
+			
 			break;
 		}
 	}
@@ -108,7 +148,7 @@ public class ScoreCardActivity extends Activity {
 			Log.i("path", path);
 			Log.i("uuid", uuid+boxes+2);
 			String jsonArrayData = HttpUtils.HttpClientPost(path);
-			Log.i("jsonArrayData", jsonArrayData);
+			//Log.i("jsonArrayData", jsonArrayData);
 			try {
 				JSONObject jsonObject = new JSONObject(jsonArrayData);
 				JSONArray jsonArray = jsonObject.getJSONArray("scorecards");

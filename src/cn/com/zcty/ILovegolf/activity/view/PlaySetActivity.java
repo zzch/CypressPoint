@@ -149,6 +149,9 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 										listViewPlaySet_t.setVisibility(View.VISIBLE);
 										
 									}else{
+										
+										uuid_t = null;
+										
 										listViewPlaySet_t.setVisibility(View.INVISIBLE);
 									}
 									adapter.notifyDataSetChanged();

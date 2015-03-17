@@ -20,6 +20,8 @@ public class APIService {
 	  public static final String NEAREST_COURSE="http://123.57.210.52/api/v1/courses/nearest?";
       //删除历史赛事信息
 	  public static final String DELETE_MATCHES="http://123.57.210.52/api/v1/matches?";
-	  //������ϰ����
+	  //创建比赛
 	  public static final String CREATE_PRACTICE_EVENTS="http://123.57.210.52/api/v1/matches/practice.json?";
+	  //修改积分卡
+	  public static final String MODIFYINTEGRAL = "http://123.57.210.52/api/v1/scorecards.json?";
 }

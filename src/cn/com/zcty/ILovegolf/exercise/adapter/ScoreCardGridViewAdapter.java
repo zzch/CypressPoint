@@ -6,6 +6,7 @@ import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.model.Scorecards;
 import cn.com.zcty.ILovegolf.model.Setcard;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -67,6 +68,7 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 	}
 
 
+	@SuppressLint("NewApi")
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		SetscardsHolder holder;
@@ -86,17 +88,17 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 			holder.numberRod.setText(scorecarsArray.get(position/2).getNumber());
 			holder.par.setText(scorecarsArray.get(position/2).getPar());
 			holder.te.setText(scorecarsArray.get(position/2).getDistance_from_hole_to_tee_box());		
-			holder.penalties.setVisibility(View.INVISIBLE);
-			holder.putts.setVisibility(View.INVISIBLE);
+			
 		}else{
-			if(setcardsArray.size()>0){
-				holder.penalties.setVisibility(View.VISIBLE);
-				holder.putts.setVisibility(View.VISIBLE);
+			if(setcardsArray.size()>0&&setcardsArray.get(position/2).getRodNum()!=null){
+		
+				//holder.numberRod.setBackground(null);
 				holder.numberRod.setText(setcardsArray.get(position/2).getRodNum());
 				holder.penalties.setText(setcardsArray.get(position/2).getPenalties());
 				holder.putts.setText(setcardsArray.get(position/2).getPutts());
 				holder.par.setText(setcardsArray.get(position/2).getPar());
 				holder.te.setText(setcardsArray.get(position/2).getTe());	
+				
 			}else{
 				holder.numberRod.setText("");
 				holder.penalties.setText("");
