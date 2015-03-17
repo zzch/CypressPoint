@@ -2,6 +2,9 @@ package cn.com.zcty.ILovegolf.exercise.adapter;
 
 import java.net.URLEncoder;
 import java.util.List;
+
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -27,13 +30,11 @@ public  class QuickScoreAdapter extends BaseAdapter implements OnClickListener{
 	   
 	 private  List<QuickContent> quickContents;
 	 private Context context;
-	 // ÆÁÄ»¿í¶È,ÓÉÓÚÎÒÃÇÓÃµÄÊÇHorizontalScrollView,ËùÒÔ°´Å¥Ñ¡ÏîÓ¦¸ÃÔÚÆÁÄ»Íâ
-	 private int mScreentWidth;
 	 private View view;
-	 public QuickScoreAdapter(Context context,List<QuickContent> quickContents,int screenWidth){
+	 public QuickScoreAdapter(Context context,List<QuickContent> quickContents){
 		this.context=context;
 		this.quickContents= quickContents;
-		this.mScreentWidth =screenWidth;
+		//this.mScreentWidth =screenWidth;
 	 }
 	@Override
 	public int getCount() {
@@ -54,47 +55,47 @@ public  class QuickScoreAdapter extends BaseAdapter implements OnClickListener{
 	public View getView(int position, View convertView, ViewGroup parent) {
 		
        ViewHolder holder=null;
-       // Èç¹ûÃ»ÓĞÉèÖÃ¹ı,³õÊ¼»¯convertView
+       // å¦‚æœæ²¡æœ‰è®¾ç½®è¿‡,åˆå§‹åŒ–convertView
        if(convertView == null){
-    	// »ñµÃÉèÖÃµÄview
+    	// è·å¾—è®¾ç½®çš„view
     	convertView=LayoutInflater.from(context).inflate(R.layout.quick_score_item, parent,false); 
-    	// ³õÊ¼»¯holder
+    	// åˆå§‹åŒ–holder
         holder = new ViewHolder();
         holder.hSView = (HorizontalScrollView) convertView.findViewById(R.id.hsv);
-    	//Çò³¡Ãû³Æ  
+    	//çƒåœºåç§°
         holder.kpitname=(TextView) convertView.findViewById(R.id.kpitname);  
         holder.kpitname.setText(quickContents.get(position).getCourse().get(0).getName());  
-           Log.i("----->>", "Çò³¡Ãû³Æ"+quickContents.get(position).getCourse().get(0).getName());
-  		 //Ê±¼ä
+           Log.i("----->>", "çƒåœºåç§°"+quickContents.get(position).getCourse().get(0).getName());
+  		 //æ—¥æœŸ
            holder.time=(TextView) convertView.findViewById(R.id.time);
            holder.time.setText(quickContents.get(position).getStarted_at());
-  		 //±ÈÈüÀàĞÍ
+  		 //èµ›äº‹ç±»å‹
            holder.type=(TextView) convertView.findViewById(R.id.practice);
            holder.type.setText(quickContents.get(position).getType());
-  		 //ÃüÖĞ¸ËÊı
+  		 //è®°å½•æ‰“äº†å‡ ä¸ªçƒæ´
            holder.gan_number=(TextView) convertView.findViewById(R.id.gan_number);
            holder.gan_number.setText(quickContents.get(position).getStrokes());
-  		 //×Ü¸ËÊı
+  		 //æˆç»©
            holder.Pole_number = (TextView) convertView.findViewById(R.id.Pole_number);  
            holder.Pole_number.setText(quickContents.get(position).getRecorded_scorecards_count());  
-          //É¾³ı
+          //åˆ é™¤
            holder.butDelete = (Button) convertView.findViewById(R.id.butDelete); 
            holder.action = (LinearLayout) convertView.findViewById(R.id.action);
           
-           // ÉèÖÃÄÚÈİviewµÄ´óĞ¡ÎªÆÁÄ»¿í¶È,ÕâÑù°´Å¥¾ÍÕıºÃ±»¼·³öÆÁÄ»Íâ
+           //è®¾ç½®å†…å®¹viewçš„å¤§å°ä¸ºå±å¹•å®½åº¦,è¿™æ ·æŒ‰é’®å°±æ­£å¥½è¢«æŒ¤å‡ºå±å¹•å¤–
            holder.content = (LinearLayout) convertView.findViewById(R.id.content);
            LayoutParams lp = holder.content.getLayoutParams();
-           lp.width = mScreentWidth;
+          // lp.width = mScreentWidth;
            convertView.setTag(holder);
        }else{
     	   
-    	// ÓĞÖ±½Ó»ñµÃViewHolder
+    	// æœ‰ç›´æ¥è·å¾—ViewHolder
            holder = (ViewHolder) convertView.getTag();
        }
-       // °ÑÎ»ÖÃ·Åµ½viewÖĞ,ÕâÑùµã»÷ÊÂ¼ş¾Í¿ÉÒÔÖªµÀµã»÷µÄÊÇÄÄÒ»Ìõitem
+       //  æŠŠä½ç½®æ”¾åˆ°viewä¸­,è¿™æ ·ç‚¹å‡»äº‹ä»¶å°±å¯ä»¥çŸ¥é“ç‚¹å‡»çš„æ˜¯å“ªä¸€æ¡item
        holder.butDelete.setTag(position);
 		
-    // ÉèÖÃ¼àÌıÊÂ¼ş
+    // è®¾ç½®ç›‘å¬äº‹ä»¶
        convertView.setOnTouchListener(new View.OnTouchListener()
        {
 
@@ -109,22 +110,22 @@ public  class QuickScoreAdapter extends BaseAdapter implements OnClickListener{
                      viewHolder1.hSView.smoothScrollTo(0, 0);
                  }
 			 case MotionEvent.ACTION_UP:
-                 // »ñµÃViewHolder
+                 // è·å¾—ViewHolder
                  ViewHolder viewHolder = (ViewHolder) v.getTag();
                  view = v;
-                 // »ñµÃHorizontalScrollView»¬¶¯µÄË®Æ½·½ÏòÖµ.
+                 // è·å¾—HorizontalScrollViewæ»‘åŠ¨çš„æ°´å¹³æ–¹å‘å€¼
                  int scrollX = viewHolder.hSView.getScrollX();
 
-                 // »ñµÃ²Ù×÷ÇøÓòµÄ³¤¶È
+                 // è·å¾—æ“ä½œåŒºåŸŸçš„é•¿åº¦
                  int actionW = viewHolder.action.getWidth();
 
-                 // ×¢ÒâÊ¹ÓÃsmoothScrollTo,ÕâÑùĞ§¹û¿´ÆğÀ´±È½ÏÔ²»¬,²»ÉúÓ²
-                 // Èç¹ûË®Æ½·½ÏòµÄÒÆ¶¯Öµ<²Ù×÷ÇøÓòµÄ³¤¶ÈµÄÒ»°ë,¾Í¸´Ô­
+                 //æ³¨æ„ä½¿ç”¨smoothScrollTo,è¿™æ ·æ•ˆæœçœ‹èµ·æ¥æ¯”è¾ƒåœ†æ»‘,ä¸ç”Ÿç¡¬
+                 // å¦‚æœæ°´å¹³æ–¹å‘çš„ç§»åŠ¨å€¼<æ“ä½œåŒºåŸŸçš„é•¿åº¦çš„ä¸€åŠ,å°±å¤åŸ
                  if (scrollX < actionW / 2)
                  {
                      viewHolder.hSView.smoothScrollTo(0, 0);
                  }
-                 else// ·ñÔòµÄ»°ÏÔÊ¾²Ù×÷ÇøÓò
+                 else// å¦åˆ™çš„è¯æ˜¾ç¤ºæ“ä½œåŒºåŸŸ
                  {
                      viewHolder.hSView.smoothScrollTo(actionW, 0);
                  }
@@ -135,12 +136,12 @@ public  class QuickScoreAdapter extends BaseAdapter implements OnClickListener{
 		} 
        });
 
-       // ÕâÀï·ÀÖ¹É¾³ıÒ»Ìõitemºó,ListView´¦ÓÚ²Ù×÷×´Ì¬,Ö±½Ó»¹Ô­
+       // è¿™é‡Œé˜²æ­¢åˆ é™¤ä¸€æ¡itemå,ListViewå¤„äºæ“ä½œçŠ¶æ€,ç›´æ¥è¿˜åŸ
        if (holder.hSView.getScrollX() != 0) {
            holder.hSView.scrollTo(0, 0);
        }
 
-       // ÉèÖÃ¼àÌıÊÂ¼ş
+       // åˆ é™¤æŒ‰é’®ç‚¹å‡»äº‹ä»¶
        holder.butDelete.setOnClickListener(this);
      
          return convertView;
@@ -161,17 +162,16 @@ public  class QuickScoreAdapter extends BaseAdapter implements OnClickListener{
         case R.id.butDelete:
         	quickContents.remove(position);
         	Log.i("----->>>", "remove"+quickContents.remove(position));
-        	init();
-        	// Ë¢ĞÂListViewÄÚÈİ
+        	initdelete();
+        	// æ›´æ–°ListViewä¸­çš„æ•°æ®
             notifyDataSetChanged();
         	break;
-        	
         default:
             break;
         }
 	}
-	
-	 public void init(){
+	 
+	 public void initdelete(){
 		 new AsyncTask<Void, Void, Void>() {
 
 			@Override

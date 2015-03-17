@@ -3,36 +3,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/black"
      >
-     <LinearLayout 
+    <RelativeLayout 
        android:layout_width="match_parent"
-       android:layout_height="60dp"
-       android:orientation="horizontal"
+       android:layout_height="98px"
+       android:background="@drawable/e_daohang_01"
          >
-         <Button 
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="返回"
-           android:layout_marginLeft="10dip"
-          android:onClick="choosepith_back"
-             />
-         <TextView 
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="选择球场"
-           android:gravity="center"
-           android:textSize="25dip"
-           android:layout_marginLeft="35dip"
-             />
-           <Button 
-           android:id="@+id/qiehuan"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="切换"
-           android:layout_marginLeft="35dip"
+         
+       <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_centerHorizontal="true"
+             android:layout_centerVertical="true"
+             android:gravity="center"
+             android:text="@string/chooisepith"
+             android:textColor="@color/white"
+             android:textSize="@dimen/txsize_large_xx" />
+       <Button 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentBottom="true"
+          android:layout_alignParentRight="true"
+          android:background="@null"
+          android:textColor="@color/white"
+          android:text="@string/qiehuan"
           android:onClick="qiehuan"
              />
-     </LinearLayout>
+        <Button 
+         android:id="@+id/qiehuan"
+         android:layout_width="96px"
+          android:layout_height="96px"
+          android:layout_alignParentBottom="true"
+          android:layout_alignParentLeft="true"
+          android:background="@drawable/back_button"
+          android:onClick="choosepith_back"
+             />
+     </RelativeLayout>
 
      <LinearLayout 
           android:id="@+id/layout_listview_one"

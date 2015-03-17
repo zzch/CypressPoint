@@ -14,6 +14,8 @@ import cn.com.zcty.ILovegolf.tools.XListView.IXListViewListener;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.JsonUtil;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -23,10 +25,13 @@ import android.os.Handler;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 
 /**
@@ -44,7 +49,9 @@ public class QuickScoreActivity extends Activity implements IXListViewListener {
     private LinearLayout XListView_layout;
     private  int pag=1;
     private String path;
-    private  DisplayMetrics dm = new DisplayMetrics();
+    private Button cancel;
+    private Button dialog_ok;
+    private AlertDialog dialog;
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -55,30 +62,36 @@ public class QuickScoreActivity extends Activity implements IXListViewListener {
 		mListView = (XListView) findViewById(R.id.xListView);
 		image_layout = (LinearLayout) findViewById(R.id.image_layout);
 		XListView_layout = (LinearLayout) findViewById(R.id.XListView_layout);
-		//mListView.setAdapter(new QuickScoreAdapter(this,quickContent));
 		mListView.setPullLoadEnable(true);
 		mListView.setXListViewListener(this);
-		
-		
-	     getWindowManager().getDefaultDisplay().getMetrics(dm);
-		mHandler = new Handler();
+	
 		//listview子条目的点击事件
 		mListView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				Toast.makeText(getApplicationContext(), "点击了这一行", Toast.LENGTH_SHORT).show();
+			}
+		});
+		/*mListView.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
 				// TODO Auto-generated method stub
-				intent =new Intent(QuickScoreActivity.this,ScoreCardActivity.class);
+				Log.i("wwwww", "listview_item-----------------------------");
+				Toast.makeText(getApplicationContext(), "点击了这一行", Toast.LENGTH_SHORT).show();
+				intent =new Intent(QuickScoreActivity.this,HistoryScoreCardActivity.class);
 				//intent传值
 				intent.putExtra("uuid", quickContent.get(position).getUuid());
 				startActivity(intent);
 				finish();
 			}
-		});
+		});*/
 		
 	}
-    
-  
+   
     /**
      * 为listView设置刷新和加载的方法
      */
@@ -111,7 +124,7 @@ public class QuickScoreActivity extends Activity implements IXListViewListener {
    		mHandler.postDelayed(new Runnable() {
 			@Override
 			public void run() {
-				mListView.setAdapter(new QuickScoreAdapter(QuickScoreActivity.this,quickContent,dm.widthPixels));
+				mListView.setAdapter(new QuickScoreAdapter(QuickScoreActivity.this,quickContent));
 				onLoad();
 			}
 		}, 2000);
@@ -147,12 +160,39 @@ public class QuickScoreActivity extends Activity implements IXListViewListener {
 			@Override
 			protected void onPostExecute(Void result) {
 				// TODO Auto-generated method stub
-				mListView.setAdapter(new QuickScoreAdapter(QuickScoreActivity.this,quickContent,dm.widthPixels));
+				mListView.setAdapter(new QuickScoreAdapter(QuickScoreActivity.this,quickContent));
 				super.onPostExecute(result);	
 			}
     	}.execute();
     }	 
    
+    public void fristdialog(){
+    	AlertDialog.Builder builder = new Builder(this);
+		View view = View.inflate(this, R.layout.dialog_delete, null);
+		cancel=(Button) view.findViewById(R.id.cancel);
+		dialog_ok=(Button) view.findViewById(R.id.dialog_ok);
+		//取消
+		cancel.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+			
+			}
+		});
+		//好
+		dialog_ok.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		dialog = builder.create();
+		dialog.setView(view, 0, 0, 0, 0);
+		dialog.show();
+       }
    
     //点击事件
 	public void onclick(View v){
@@ -173,7 +213,3 @@ public class QuickScoreActivity extends Activity implements IXListViewListener {
 		}
 	}
    }
-
- 
-  
-

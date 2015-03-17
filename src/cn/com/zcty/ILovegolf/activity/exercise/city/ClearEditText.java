@@ -1,6 +1,6 @@
 package cn.com.zcty.ILovegolf.activity.exercise.city;
 
-import cn.com.zcty.ILovegolf.activity.R;
+
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.text.Editable;
@@ -17,7 +17,7 @@ import android.widget.EditText;
 public class ClearEditText extends EditText implements  
         OnFocusChangeListener, TextWatcher { 
 	/**
-	 * É¾³ı°´Å¥µÄÒıÓÃ
+	 * É¾ï¿½ï¿½Å¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
     private Drawable mClearDrawable; 
  
@@ -26,7 +26,7 @@ public class ClearEditText extends EditText implements
     } 
  
     public ClearEditText(Context context, AttributeSet attrs) { 
-    	//ÕâÀï¹¹Ôì·½·¨Ò²ºÜÖØÒª£¬²»¼ÓÕâ¸öºÜ¶àÊôĞÔ²»ÄÜÔÙXMLÀïÃæ¶¨Òå
+    	//ï¿½ï¿½ï¿½ï¹¹ï¿½ì·½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü¶ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½XMLï¿½ï¿½ï¿½æ¶¨ï¿½ï¿½
     	this(context, attrs, android.R.attr.editTextStyle); 
     } 
     
@@ -37,11 +37,11 @@ public class ClearEditText extends EditText implements
     
     
     private void init() { 
-    	//»ñÈ¡EditTextµÄDrawableRight,¼ÙÈçÃ»ÓĞÉèÖÃÎÒÃÇ¾ÍÊ¹ÓÃÄ¬ÈÏµÄÍ¼Æ¬
+    	//ï¿½ï¿½È¡EditTextï¿½ï¿½DrawableRight,ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½Ê¹ï¿½ï¿½Ä¬ï¿½Ïµï¿½Í¼Æ¬
     	mClearDrawable = getCompoundDrawables()[2]; 
         if (mClearDrawable == null) { 
         	mClearDrawable = getResources() 
-                    .getDrawable(R.drawable.emotionstore_progresscancelbtn); 
+                    .getDrawable(R..drawable.emotionstore_progresscancelbtn); 
         } 
         mClearDrawable.setBounds(0, 0, mClearDrawable.getIntrinsicWidth(), mClearDrawable.getIntrinsicHeight()); 
         setClearIconVisible(false); 
@@ -49,9 +49,9 @@ public class ClearEditText extends EditText implements
         addTextChangedListener(this); 
     } 
     /**
-     * ÒòÎªÎÒÃÇ²»ÄÜÖ±½Ó¸øEditTextÉèÖÃµã»÷ÊÂ¼ş£¬ËùÒÔÎÒÃÇÓÃ¼Ç×¡ÎÒÃÇ°´ÏÂµÄÎ»ÖÃÀ´Ä£Äâµã»÷ÊÂ¼ş
-     * µ±ÎÒÃÇ°´ÏÂµÄÎ»ÖÃ ÔÚ  EditTextµÄ¿í¶È - Í¼±êµ½¿Ø¼şÓÒ±ßµÄ¼ä¾à - Í¼±êµÄ¿í¶È  ºÍ
-     * EditTextµÄ¿í¶È - Í¼±êµ½¿Ø¼şÓÒ±ßµÄ¼ä¾àÖ®¼äÎÒÃÇ¾ÍËãµã»÷ÁËÍ¼±ê£¬ÊúÖ±·½ÏòÃ»ÓĞ¿¼ÂÇ
+     * ï¿½ï¿½Îªï¿½ï¿½ï¿½Ç²ï¿½ï¿½ï¿½Ö±ï¿½Ó¸ï¿½EditTextï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¼ï¿½×¡ï¿½ï¿½ï¿½Ç°ï¿½ï¿½Âµï¿½Î»ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
+     * ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½Âµï¿½Î»ï¿½ï¿½ ï¿½ï¿½  EditTextï¿½Ä¿ï¿½ï¿½ - Í¼ï¿½êµ½ï¿½Ø¼ï¿½ï¿½Ò±ßµÄ¼ï¿½ï¿½ - Í¼ï¿½ï¿½Ä¿ï¿½ï¿½  ï¿½ï¿½
+     * EditTextï¿½Ä¿ï¿½ï¿½ - Í¼ï¿½êµ½ï¿½Ø¼ï¿½ï¿½Ò±ßµÄ¼ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ê£¬ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ğ¿ï¿½ï¿½ï¿½
      */
     @Override 
     public boolean onTouchEvent(MotionEvent event) { 
@@ -70,7 +70,7 @@ public class ClearEditText extends EditText implements
     } 
  
     /**
-     * µ±ClearEditText½¹µã·¢Éú±ä»¯µÄÊ±ºò£¬ÅĞ¶ÏÀïÃæ×Ö·û´®³¤¶ÈÉèÖÃÇå³ıÍ¼±êµÄÏÔÊ¾ÓëÒş²Ø
+     * ï¿½ï¿½ClearEditTextï¿½ï¿½ï¿½ã·¢ï¿½ï¿½ä»¯ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ğ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      */
     @Override 
     public void onFocusChange(View v, boolean hasFocus) { 
@@ -83,7 +83,7 @@ public class ClearEditText extends EditText implements
  
  
     /**
-     * ÉèÖÃÇå³ıÍ¼±êµÄÏÔÊ¾ÓëÒş²Ø£¬µ÷ÓÃsetCompoundDrawablesÎªEditText»æÖÆÉÏÈ¥
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½Ø£ï¿½ï¿½ï¿½ï¿½ï¿½setCompoundDrawablesÎªEditTextï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥
      * @param visible
      */
     protected void setClearIconVisible(boolean visible) { 
@@ -93,7 +93,7 @@ public class ClearEditText extends EditText implements
     } 
      
     /**
-     * µ±ÊäÈë¿òÀïÃæÄÚÈİ·¢Éú±ä»¯µÄÊ±ºò»Øµ÷µÄ·½·¨
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İ·ï¿½ï¿½ï¿½ä»¯ï¿½ï¿½Ê±ï¿½ï¿½Øµï¿½ï¿½Ä·ï¿½ï¿½ï¿½
      */
     @Override 
     public void onTextChanged(CharSequence s, int start, int count, 
@@ -114,7 +114,7 @@ public class ClearEditText extends EditText implements
     
    
     /**
-     * ÉèÖÃ»Î¶¯¶¯»­
+     * ï¿½ï¿½ï¿½Ã»Î¶ï¿½ï¿½ï¿½ï¿½ï¿½
      */
     public void setShakeAnimation(){
     	this.setAnimation(shakeAnimation(5));
@@ -122,8 +122,8 @@ public class ClearEditText extends EditText implements
     
     
     /**
-     * »Î¶¯¶¯»­
-     * @param counts 1ÃëÖÓ»Î¶¯¶àÉÙÏÂ
+     * ï¿½Î¶ï¿½ï¿½ï¿½ï¿½ï¿½
+     * @param counts 1ï¿½ï¿½ï¿½Ó»Î¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      * @return
      */
     public static Animation shakeAnimation(int counts){

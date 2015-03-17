@@ -3,6 +3,8 @@ package cn.com.zcty.ILovegolf.exercise.adapter;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.com.zcty.ILovegolf.activity.R;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,10 +12,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-public class DialogListViewAdapter extends BaseAdapter{
+public class Dialog_T_Adapter extends BaseAdapter{
 	private Context context;
 	private List<String> list=new ArrayList<String>();
-	public DialogListViewAdapter(Context context, List<String> list){
+	public Dialog_T_Adapter(Context context, List<String> list){
 		this.context=context;
 		this.list=list;
 	}
@@ -41,7 +43,7 @@ public class DialogListViewAdapter extends BaseAdapter{
 		// TODO Auto-generated method stub
 		Holder holder =null;
 		if(convertView==null){
-			convertView=LayoutInflater.from(context).inflate(R.layout.blend_dialog_list_item, null);
+			convertView=LayoutInflater.from(context).inflate(R.layout., null);
 			holder=new Holder();
 			holder.blend_dialog_list_item_textview=(TextView) convertView.findViewById(R.id.blend_dialog_list_item_textview);
 			

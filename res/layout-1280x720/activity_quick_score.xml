@@ -60,7 +60,6 @@
       android:id="@+id/XListView_layout" 
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:orientation="horizontal"
         >
       <cn.com.zcty.ILovegolf.tools.XListView
         android:id="@+id/xListView"

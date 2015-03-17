@@ -11,7 +11,11 @@
     <string name="new_build">新建</string>
     <string name="text_1">记录更加精准，</string>
     <string name="pith_name">北京燕西高尔夫球俱乐部</string>
-    
+    <string name="delete">删除</string>
+    <string name="qiehuan">切换</string>
+    <string name="chooisepith">选择球场</string>
+    <string name="playset">打球设置</string>
+    <string name="start">开始</string>
     <string name="text_3">能得到更多维度的数据分析</string>
     <string name="text_2">快速开始记分，简单易用</string>
     <string name="children_1">请选择打球的半场（至少选择一个子场）</string>
@@ -21,5 +25,6 @@
     <string name="xlistview_header_last_time">上次更新时间：</string>
     <string name="xlistview_footer_hint_normal">查看更多</string>
     <string name="xlistview_footer_hint_ready">松开载入更多</string>
+    <string name="delete_card">确认删除历史记分卡吗？</string>
 
 </resources>

@@ -23,7 +23,7 @@ import cn.com.zcty.ILovegolf.utils.JsonUtil;
 
 	
 	/**
-	 * 记分卡类
+	 * 历史赛事记分卡类
 	 * @author deii
 	 *
 	 */

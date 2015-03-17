@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <color name="lightgray">#F7F7F7</color>
+    
+     <!-- 背景色 -->
+     <color name="black">#17191c</color>
+     <!-- 白色 -->
+     <color name="white">#ced1d4</color>
+     <!-- 绿色 -->
+     <color name="green">#25b065</color>
+     <!-- 灰色 -->
+     <color name="gray">#797979</color>
+     
+     <color name="lightgray">#F7F7F7</color>
     <color name="lightblack">#696969</color>
 
     <color name="blend_item_theme_color">#ff005092</color>
     <color name="blend_item_divider_color">#ffededed</color>
     <color name="blend_item_pressed_color_transparent">#19000000</color>
     <color name="blend_item_theme_color_black">#ff393d43</color>
-
-
+      
 </resources>

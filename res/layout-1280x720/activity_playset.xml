@@ -2,43 +2,58 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:id="@+id/linear"
+    android:background="@color/black"
+    >
    
-    <LinearLayout 
+     <RelativeLayout 
        android:layout_width="match_parent"
-       android:layout_height="60dip"
-       android:orientation="horizontal"
-        >
+       android:layout_height="98px"
+       android:background="@drawable/e_daohang_01"
+         >
         <Button 
            android:id="@+id/playset_back"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="返回"
-           android:layout_marginLeft="10dip"
-           android:onClick="onClick"
+           android:layout_width="96px"
+           android:layout_height="96px"
+           android:layout_alignParentBottom="true"
+           android:layout_alignParentLeft="true"
+           android:background="@drawable/back_button"
              />
-         <TextView 
+         <TextView
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:text="打球设置"
+           android:layout_centerHorizontal="true"
+           android:layout_centerVertical="true"
            android:gravity="center"
-           android:textSize="25sp"
-           android:layout_marginLeft="35dip"
-             />
+           android:text="@string/playset"
+           android:textColor="@color/white"
+           android:textSize="@dimen/txsize_large_xx" />
            <Button 
            android:id="@+id/playset_start"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:text="开始"
-           android:layout_marginLeft="35dip"
-           android:onClick="onClick"
-             />
-    </LinearLayout>
-    
-    <ExpandableListView
-        android:id="@+id/expandableListView"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:groupIndicator="@null" >
-    </ExpandableListView>
+           android:layout_alignParentBottom="true"
+           android:layout_alignParentRight="true"
+           android:background="@null"
+           android:textColor="@color/white"
+           android:text="@string/start" 
+         />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#00000000" >
+    </ListView>
+
+  <ListView
+      android:id="@+id/listView2"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:visibility="gone"
+      android:divider="#00000000" >
+
+    </ListView>
 </LinearLayout>
