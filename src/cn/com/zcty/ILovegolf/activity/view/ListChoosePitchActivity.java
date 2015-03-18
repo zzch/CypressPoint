@@ -150,7 +150,7 @@ public class ListChoosePitchActivity extends Activity {
 			    	for(int i=0;i<jsonarray.length();i++){
 			    		JSONObject json=jsonarray.getJSONObject(i);		
 			    		citys.add(json.getString("name"));
-			    		JSONArray subArray=json.getJSONArray("courses");
+			    		JSONArray subArray=json.getJSONArray("venues");
 			    		childs = new ArrayList<Course>();			    		
 			    		for(int j=0;j<subArray.length();j++){		
 			    			Course course = new Course();

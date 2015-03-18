@@ -39,6 +39,9 @@ public class ScoreCardActivity extends Activity {
 	private ScoreCardGridViewAdapter adapter;
 	private Setcard setCard;
 	private final int REQUESTCODE=1;//返回的结果码   
+	private String uuid;
+	private String uuid_t;
+	private String match_uuid;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -120,6 +123,8 @@ public class ScoreCardActivity extends Activity {
 			//点击成绩按钮
 		case R.id.scorecard_score:
 			intent=new Intent(ScoreCardActivity.this,StatisticsAvtivity.class);
+			intent.putExtra("match_uuid", match_uuid);
+
 			startActivity(intent);
 			
 			break;
@@ -136,21 +141,22 @@ public class ScoreCardActivity extends Activity {
 			String token = sp.getString("token", "token");
 			String path;
 			Intent intent=getIntent();
-			String uuid=intent.getStringExtra("uuid");
-			String uuid_t = intent.getStringExtra("uuid_t");
+			 uuid=intent.getStringExtra("uuid");
+			 uuid_t = intent.getStringExtra("uuid_t");
 			String boxes = intent.getStringExtra("color");
 			String boxes_t = intent.getStringExtra("color_t");
 			if(uuid_t==null){
-				 path = APIService.CREATE_PRACTICE_EVENTS+"group_uuids="+uuid+"&tee_boxes="+boxes+"&token="+token;
+				 path = APIService.CREATE_PRACTICE_EVENTS+"course_uuids="+uuid+"&tee_boxes="+boxes+"&token="+token+"&scoring_type=simple";
 			}else{
-				 path = APIService.CREATE_PRACTICE_EVENTS+"group_uuids="+uuid+","+uuid_t+"&tee_boxes="+boxes+","+boxes_t+"&token="+token;
+				 path = APIService.CREATE_PRACTICE_EVENTS+"course_uuids="+uuid+","+uuid_t+"&tee_boxes="+boxes+","+boxes_t+"&token="+token+"&scoring_type=simple";
 			}
 			Log.i("path", path);
 			Log.i("uuid", uuid+boxes+2);
 			String jsonArrayData = HttpUtils.HttpClientPost(path);
-			//Log.i("jsonArrayData", jsonArrayData);
+			Log.i("jj", jsonArrayData);
 			try {
 				JSONObject jsonObject = new JSONObject(jsonArrayData);
+				match_uuid = jsonObject.getString("uuid");
 				JSONArray jsonArray = jsonObject.getJSONArray("scorecards");
 				for(int i=0;i<jsonArray.length();i++){
 					JSONObject jsonObjects = jsonArray.getJSONObject(i);

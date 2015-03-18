@@ -124,7 +124,7 @@ public static List<QuickContent> getQuickScore_json(String path)throws Exception
 			
 			 List<Course> coursees=new ArrayList<Course>();
 				Course course=new Course();
-				JSONObject obj=jsonObj.getJSONObject("course");
+				JSONObject obj=jsonObj.getJSONObject("venue");
 				course.setUuid(obj.getString("uuid"));
 				course.setName(obj.getString("name"));
 				course.setAddress(obj.getString("address"));

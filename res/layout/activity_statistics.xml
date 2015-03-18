@@ -38,8 +38,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-         >
+        android:layout_height="wrap_content" >
 
         <TextView
             android:id="@+id/golf_name"
@@ -47,49 +46,147 @@
             android:layout_height="wrap_content"
             android:text="北京北湖高尔夫" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="26dp"
-            android:background="@null"
-            android:text="前9洞" />
-
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@+id/button2"
-            android:background="@null"
-            android:text="后9洞" />
-
         <TextView
             android:id="@+id/golf_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/button1"
-            android:layout_alignBottom="@+id/button1"
             android:layout_alignParentLeft="true"
+            android:layout_below="@+id/golf_name"
             android:text="2014年6月14日" />
 
+        <RadioGroup
+            android:id="@+id/main_radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/mainTabs_radio_home"
+                android:button="@null"
+                android:text="前9洞"
+                 />
+
+            <RadioButton
+                android:id="@+id/mainTabs_radio_msg"
+                android:button="@null"
+                android:text="后9洞"
+    		/>
+
+
+        </RadioGroup>
+
     </RelativeLayout>
-    <RelativeLayout 
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-        >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffcccccc" >
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <View
+                    android:layout_width="1dip"
+                    android:layout_height="20dp"
+                    android:background="#FF909090" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0.5dip"
+                    android:background="#ffffcc99"
+                    android:text="日/洞" />
+
+                <View
+                    android:layout_width="1dip"
+                    android:layout_height="20dp"
+                    android:background="#FF909090" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <View
+                    android:layout_width="1dip"
+                    android:layout_height="20dp"
+                    android:background="#FF909090" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0.5dip"
+                    android:background="#ffffcc99"
+                    android:text="标准杆" />
+
+                <View
+                    android:layout_width="1dip"
+                    android:layout_height="20dp"
+                    android:background="#FF909090" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <View
+                    android:layout_width="1dip"
+                    android:layout_height="20dp"
+                    android:background="#FF909090" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0.5dip"
+                    android:background="#ffffcc99"
+                    android:text="成绩" />
+
+                <View
+                    android:layout_width="1dip"
+                    android:layout_height="20dp"
+                    android:background="#FF909090" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <View
+                    android:layout_width="1dip"
+                    android:layout_height="20dp"
+                    android:background="#FF909090" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0.5dip"
+                    android:background="#ffffcc99"
+                    android:text="距标准杆" />
+
+                <View
+                    android:layout_width="1dip"
+                    android:layout_height="20dp"
+                    android:background="#FF909090" />
+            </TableRow>
+        </TableLayout>
 
         <android.support.v4.view.ViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true" >
-      
         </android.support.v4.view.ViewPager>
-
-    </RelativeLayout>
+    </LinearLayout>
 
     <GridView
         android:id="@+id/gridView1"
@@ -104,16 +201,6 @@
         android:layout_height="wrap_content" >
     </ListView>
 
-    <ListView
-        android:id="@+id/listView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </ListView>
 
-    <ListView
-        android:id="@+id/listView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </ListView>
 
 </LinearLayout>

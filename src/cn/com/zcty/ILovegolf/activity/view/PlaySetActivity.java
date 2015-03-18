@@ -374,7 +374,7 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 			String path=APIService.COURSE_INFO+"uuid="+URLEncoder.encode(uuid,"utf-8")+"&token="+URLEncoder.encode(token,"utf-8");
 			String jsonData=HttpUtils.HttpClientGet(path);
 			JSONObject jsonObj=new JSONObject(jsonData);
-			JSONArray subArray=jsonObj.getJSONArray("groups");
+			JSONArray subArray=jsonObj.getJSONArray("courses");
 			Log.i("name", jsonData);
 			for(int j=0;j<subArray.length();j++){
 				JSONObject jsonobj=subArray.getJSONObject(j); 
