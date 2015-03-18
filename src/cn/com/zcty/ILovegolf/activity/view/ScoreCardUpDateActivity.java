@@ -32,7 +32,7 @@ import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 /**
- * A5洞---记分卡修改页
+ * ---记分卡修改页
  * @author deii
  *
  */

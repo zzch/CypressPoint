@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Dialog_T_Adapter extends BaseAdapter{
@@ -46,18 +47,33 @@ public class Dialog_T_Adapter extends BaseAdapter{
 			convertView=LayoutInflater.from(context).inflate(R.layout.blend_dialog_t_item, null);
 			holder=new Holder();
 			holder.blend_dialog_t_item_textview=(TextView) convertView.findViewById(R.id.blend_dialog_t_item_textview);
-			
+			holder.image_t=(ImageView) convertView.findViewById(R.id.image_t);
 			convertView.setTag(holder);
 		}else{
 			holder=(Holder) convertView.getTag();
 		}
 		holder.blend_dialog_t_item_textview.setText(list.get(position));
-		
+		if(list.get(position).equals("red")){
+			holder.image_t.setBackgroundResource(R.drawable.e_red);
+			holder.blend_dialog_t_item_textview.setText("红色T台");
+		}else if(list.get(position).equals("white")){
+			holder.image_t.setBackgroundResource(R.drawable.e_white);
+			holder.blend_dialog_t_item_textview.setText("白色T台");
+		}else if(list.get(position).equals("blue")){
+			holder.image_t.setBackgroundResource(R.drawable.e_blue);
+			holder.blend_dialog_t_item_textview.setText("蓝色T台");
+		}else if(list.get(position).equals("black")){
+			holder.image_t.setBackgroundResource(R.drawable.e_black);
+			holder.blend_dialog_t_item_textview.setText("黑色T台");
+		}else{
+			holder.image_t.setBackgroundResource(R.drawable.e_gold);
+			holder.blend_dialog_t_item_textview.setText("金色T台");
+		}
 		return convertView;
 	}
 	class Holder{
 		TextView blend_dialog_t_item_textview;
-
+        ImageView image_t;
 	}
 
 }

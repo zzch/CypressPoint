@@ -26,5 +26,6 @@
     <string name="xlistview_footer_hint_normal">查看更多</string>
     <string name="xlistview_footer_hint_ready">松开载入更多</string>
     <string name="delete_card">确认删除历史记分卡吗？</string>
-
+    <string name="score_card">记分卡</string>
+    <string name="button_count">统计</string>
 </resources>

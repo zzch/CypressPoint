@@ -37,7 +37,7 @@ import cn.com.zcty.ILovegolf.utils.JsonUtil;
 			// TODO Auto-generated method stub
 			super.onCreate(savedInstanceState);
 			this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-			setContentView(R.layout.activity_scorecard);
+			setContentView(R.layout.activity_historyscorecard);
 	        
 			//找控件
 			//list_scorecard=(ListView) findViewById(R.id.list_scorecard);

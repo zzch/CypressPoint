@@ -45,8 +45,6 @@ public class PickDialog extends Dialog{
 
 		TextView titleTextview = (TextView) layout.findViewById(R.id.blend_dialog_title);
 		titleTextview.setText(title);
-		//TextView cancleTextView = (TextView) layout.findViewById(R.id.blend_dialog_cancle_btn);
-		//cancleTextView.setText(context.getResources().getString(R.string.no));
 		blend_dialog_preview = (LinearLayout) layout.findViewById(R.id.blend_dialog_preview);
 		blend_dialog_nextview = (ListView) layout.findViewById(R.id.blend_dialog_nextview);
 		

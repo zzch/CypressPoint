@@ -31,7 +31,6 @@
           android:onClick="qiehuan"
              />
         <Button 
-         android:id="@+id/qiehuan"
          android:layout_width="96px"
           android:layout_height="96px"
           android:layout_alignParentBottom="true"
