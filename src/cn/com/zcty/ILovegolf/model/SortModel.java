@@ -5,11 +5,11 @@ import java.util.List;
 
 public class SortModel {
 
-	private String titleName;   //显示球场所在的省
+	private String titleName;   //锟斤拷示锟斤拷锟斤拷锟节碉拷省
 	private String uuid;
 	private String name;
     private String address;
-	private List<Course> courses;  //显示的球场信息
+	private List<Course> courses;  //锟斤拷示锟斤拷锟斤拷锟斤拷息
 	
 	
 	public SortModel(){}

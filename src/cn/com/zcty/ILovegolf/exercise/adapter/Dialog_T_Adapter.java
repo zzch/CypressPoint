@@ -46,6 +46,8 @@ public class Dialog_T_Adapter extends BaseAdapter{
 		if(convertView==null){
 			convertView=LayoutInflater.from(context).inflate(R.layout.blend_dialog_t_item, null);
 			holder=new Holder();
+			holder.blend_dialog_t_item_textview=(TextView) convertView.findViewById(R.id.blend_dialog_list_item_textview);
+			
 			holder.blend_dialog_t_item_textview=(TextView) convertView.findViewById(R.id.blend_dialog_t_item_textview);
 			holder.image_t=(ImageView) convertView.findViewById(R.id.image_t);
 			convertView.setTag(holder);

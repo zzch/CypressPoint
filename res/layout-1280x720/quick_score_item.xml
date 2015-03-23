@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/hsv"
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="200px"
-    android:scrollbars="none" 
-    
-    >
-
-  <LinearLayout 
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:id="@+id/xlist_item_relayout"
     android:background="@drawable/item_onclick"
  
     >
@@ -101,47 +94,46 @@
                android:layout_marginTop="26px"
                android:background="@drawable/e_normal"
               />
+               <LinearLayout 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/e_normal"
+                android:orientation="horizontal"
+                android:layout_marginTop="26px"
+                android:layout_marginLeft="13px"
+                android:gravity="center"
+                   >
                <TextView 
                android:id="@+id/gan_number"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="2/18"
+               android:text=""
                android:gravity="center"
                android:textColor="@color/gray"
-               android:layout_marginTop="26px"
-               android:layout_marginLeft="13px"
-              android:background="@drawable/e_normal"
+               
               /> 
+              
+               <TextView 
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="/18"
+               android:gravity="center"
+               android:textColor="@color/gray"
+             
+              /> 
+              </LinearLayout>
           </LinearLayout> 
         </LinearLayout>
-     </LinearLayout>
-     
-
-     <ImageView
+        
+      <ImageView
           android:layout_width="60px"
           android:layout_height="wrap_content"
           android:layout_gravity="center"
           android:src="@drawable/e_icon_arrow" />
+     </LinearLayout>
      
+
+    
      
-       <LinearLayout 
-       android:id="@+id/action"
-       android:layout_width="200px"
-       android:layout_height="200px"
-       android:gravity="center"
-       android:background="#131517"
-       android:layout_marginLeft="20px"
-       >
-       
-       <Button
-           android:id="@+id/butDelete"
-           android:layout_width="60dip"
-           android:layout_height="wrap_content"
-           android:text="@string/delete" 
-           android:gravity="center"
-           android:textColor="#ff0000"
-           android:background="@null"
-           />
-       </LinearLayout>
+      
    </LinearLayout>
-</HorizontalScrollView>

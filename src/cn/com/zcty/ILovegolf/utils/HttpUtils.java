@@ -163,7 +163,7 @@ public class HttpUtils
 	 * @return
 	 * @throws Exception
 	 */
-	public static List<QuickContent> HttpClientDelete(String path)throws Exception{
+	public static String HttpClientDelete(String path)throws Exception{
 		
 	   String str = "";
 		//创建一个http客户端  
@@ -173,11 +173,11 @@ public class HttpUtils
 		//向服务器发送DELETE请求并获取服务器返回的结果，可能是删除成功，或者失败等信息  
 		HttpResponse response=client.execute(httpDelete); 
 		int code=response.getStatusLine().getStatusCode();
-		Log.i("---->>", "code---"+code);
+		Log.i("---->>", "code---"+code+"aaaaa");
 		if(code==200){
 			str = EntityUtils.toString(response.getEntity(),"utf-8");
 			Log.i("is---->>", ""+str);
 		}
-		return null;
+		return str;
 	}
 }

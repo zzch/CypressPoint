@@ -53,7 +53,12 @@
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.ListChoosePitchActivity"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.HistoryScoreCardActivity"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.HuntActivity"></activity>
-        <activity android:name="cn.com.zcty.ILovegolf.activity.view.StatisticsAvtivity"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.StatisticsAvtivity"
+            	 android:configChanges="orientation|screenSize"
+            ></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.StatisticsActivityLand"
+            	 android:configChanges="orientation|screenSize"
+            ></activity>
     </application>
 
 </manifest>

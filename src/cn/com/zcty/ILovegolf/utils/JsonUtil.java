@@ -75,8 +75,6 @@ public class JsonUtil {
 				 sortModels.add(sortModel);
 			 }
 			
-			 
-			
 			 }
 		 Log.i("---->>集合的大小：", ""+sortModels.size());
 		return sortModels;
@@ -96,7 +94,6 @@ public class JsonUtil {
 					
 					Groups groups=new Groups();
 					JSONObject jsonobj=subArray.getJSONObject(j);
-					
 					groups.setUuid(jsonobj.getString("uuid"));
 					groups.setName(jsonobj.getString("name"));
 					groups.setHoles_count(jsonobj.getString("holes_count"));
@@ -115,6 +112,7 @@ public static List<QuickContent> getQuickScore_json(String path)throws Exception
 		 Log.i("JsonData----->>", ""+JsonData);
 		 JSONArray jsonarray=new JSONArray(JsonData);
 		 //Log.i("jsonarray----->>", ""+jsonarray);
+		 List<Course> coursees=new ArrayList<Course>();
 		for(int i=0;i<jsonarray.length();i++){
 			 //实例化
 			 QuickContent quickContent=new QuickContent(); 
@@ -122,7 +120,7 @@ public static List<QuickContent> getQuickScore_json(String path)throws Exception
 			 quickContent.setUuid(jsonObj.getString("uuid"));
 			 quickContent.setType(jsonObj.getString("type"));
 			
-			 List<Course> coursees=new ArrayList<Course>();
+			 
 				Course course=new Course();
 				JSONObject obj=jsonObj.getJSONObject("venue");
 				course.setUuid(obj.getString("uuid"));
@@ -139,7 +137,7 @@ public static List<QuickContent> getQuickScore_json(String path)throws Exception
 		   }
 		 return quickContents;
 	 }
-/*public static List<Scorecards> getScorecards_json(String path)throws Exception{
+public static List<Scorecards> getScorecards_json(String path)throws Exception{
 	List<TypeScorecard> typeScorecards = new ArrayList<TypeScorecard>();
 	String jsonDate=HttpUtils.HttpClientGet(path);
 	JSONObject jsonObj= new JSONObject(jsonDate);
@@ -154,13 +152,13 @@ public static List<QuickContent> getQuickScore_json(String path)throws Exception
 			JSONObject obj=jsonArray.getJSONObject(i);
 			scorecards.setUuid(obj.getString("uuid"));
 			Log.i("uuid=======", "uuid----"+scorecards.getUuid());
-			scorecards.setNumber(obj.getInt("number"));
+			scorecards.setNumber(obj.getString("number"));
 			Log.i("number====", "number---"+scorecards.getNumber());
-			scorecards.setPar(obj.getInt("par"));
+			scorecards.setPar(obj.getString("par"));
 			Log.i("par====", "par---"+scorecards.getPar());
 			scorecards.setTee_box_color(obj.getString("tee_box_color"));
 			Log.i("tee_box_color==", "tee_box_color---"+scorecards.getTee_box_color());
-			scorecards.setDistance_from_hole_to_tee_box(obj.getInt("distance_from_hole_to_tee_box"));
+			scorecards.setDistance_from_hole_to_tee_box(obj.getString("distance_from_hole_to_tee_box"));
 			scorecards.setScore(obj.getString("score"));
 			Log.i("score=====", "score--"+scorecards.getScore());
 			scorecards.setPutts(obj.getString("putts"));
@@ -176,5 +174,5 @@ public static List<QuickContent> getQuickScore_json(String path)throws Exception
 		typeScorecard.setScorecards(scorecardss);
 		typeScorecards.add(typeScorecard);
 	return scorecardss;
-}*/
+}
 }

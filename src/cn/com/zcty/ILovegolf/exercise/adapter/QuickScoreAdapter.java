@@ -1,40 +1,50 @@
 package cn.com.zcty.ILovegolf.exercise.adapter;
 
 import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
+
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.activity.view.QuickScoreActivity;
 import cn.com.zcty.ILovegolf.model.QuickContent;
+import cn.com.zcty.ILovegolf.tools.SlidingDeleteSlideView;
+import cn.com.zcty.ILovegolf.tools.SlidingDeleteSlideView.OnSlideListener;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
-public  class QuickScoreAdapter extends BaseAdapter implements OnClickListener{
+public  class QuickScoreAdapter extends BaseAdapter {
 	   
 	 private  List<QuickContent> quickContents;
 	 private Context context;
 	 private View view;
-	 public QuickScoreAdapter(Context context,List<QuickContent> quickContents){
+	 private OnSlideListener onSlideListener;
+     private OnDeleteListener onDeleteListen;
+	 private boolean isLongState;
+	 private LayoutInflater mInflater;
+	 private ArrayList<String> nameArrayList;
+	 private HashMap<Integer, Boolean> checkedItemMap = new HashMap<Integer, Boolean>();
+	 public QuickScoreAdapter(Context context,List<QuickContent> quickContents,ArrayList<String> nameArrayList, OnSlideListener onSlideListener,
+				OnDeleteListener onDeleteListen){
 		this.context=context;
-		this.quickContents= quickContents;
-		//this.mScreentWidth =screenWidth;
+		this.quickContents= quickContents;;
+		this.onSlideListener = onSlideListener;
+		this.onDeleteListen = onDeleteListen;
+		this.nameArrayList = nameArrayList;
+		mInflater = LayoutInflater.from(context);
 	 }
 	@Override
 	public int getCount() {
@@ -52,144 +62,84 @@ public  class QuickScoreAdapter extends BaseAdapter implements OnClickListener{
 		return position;
 	}
 	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
+	public View getView(final int position,final View convertView, ViewGroup parent) {
 		
-       ViewHolder holder=null;
+       ViewHolder holder;
+       SlidingDeleteSlideView slideView = (SlidingDeleteSlideView) convertView;
        // 如果没有设置过,初始化convertView
-       if(convertView == null){
+       if(slideView == null){
     	// 获得设置的view
-    	convertView=LayoutInflater.from(context).inflate(R.layout.quick_score_item, parent,false); 
-    	// 初始化holder
-        holder = new ViewHolder();
-        holder.hSView = (HorizontalScrollView) convertView.findViewById(R.id.hsv);
-    	//球场名称
-        holder.kpitname=(TextView) convertView.findViewById(R.id.kpitname);  
-        holder.kpitname.setText(quickContents.get(position).getCourse().get(0).getName());  
-           Log.i("----->>", "球场名称"+quickContents.get(position).getCourse().get(0).getName());
-  		 //日期
-           holder.time=(TextView) convertView.findViewById(R.id.time);
-           holder.time.setText(quickContents.get(position).getStarted_at());
-  		 //赛事类型
-           holder.type=(TextView) convertView.findViewById(R.id.practice);
-           holder.type.setText(quickContents.get(position).getType());
-  		 //记录打了几个球洞
-           holder.gan_number=(TextView) convertView.findViewById(R.id.gan_number);
-           holder.gan_number.setText(quickContents.get(position).getStrokes());
-  		 //成绩
-           holder.Pole_number = (TextView) convertView.findViewById(R.id.Pole_number);  
-           holder.Pole_number.setText(quickContents.get(position).getRecorded_scorecards_count());  
-          //删除
-           holder.butDelete = (Button) convertView.findViewById(R.id.butDelete); 
-           holder.action = (LinearLayout) convertView.findViewById(R.id.action);
-          
-           //设置内容view的大小为屏幕宽度,这样按钮就正好被挤出屏幕外
-           holder.content = (LinearLayout) convertView.findViewById(R.id.content);
-           LayoutParams lp = holder.content.getLayoutParams();
-          // lp.width = mScreentWidth;
-           convertView.setTag(holder);
+    	   View itemView = mInflater.inflate(R.layout.quick_score_item, null); 
+    	   slideView = new SlidingDeleteSlideView(context);
+			slideView.setContentView(itemView);
+			holder = new ViewHolder(slideView);
+			
+			slideView.setOnSlideListener(onSlideListener);
+			slideView.setTag(holder);
+			
        }else{
     	   
     	// 有直接获得ViewHolder
            holder = (ViewHolder) convertView.getTag();
        }
-       //  把位置放到view中,这样点击事件就可以知道点击的是哪一条item
-       holder.butDelete.setTag(position);
-		
-    // 设置监听事件
-       convertView.setOnTouchListener(new View.OnTouchListener()
-       {
-
-		@Override
-		public boolean onTouch(View v, MotionEvent event) {
-			// TODO Auto-generated method stub
-			switch (event.getAction())
-			{
-			 case MotionEvent.ACTION_DOWN:
-				 if (view != null) {
-                     ViewHolder viewHolder1 = (ViewHolder) view.getTag();
-                     viewHolder1.hSView.smoothScrollTo(0, 0);
-                 }
-			 case MotionEvent.ACTION_UP:
-                 // 获得ViewHolder
-                 ViewHolder viewHolder = (ViewHolder) v.getTag();
-                 view = v;
-                 // 获得HorizontalScrollView滑动的水平方向值
-                 int scrollX = viewHolder.hSView.getScrollX();
-
-                 // 获得操作区域的长度
-                 int actionW = viewHolder.action.getWidth();
-
-                 //注意使用smoothScrollTo,这样效果看起来比较圆滑,不生硬
-                 // 如果水平方向的移动值<操作区域的长度的一半,就复原
-                 if (scrollX < actionW / 2)
-                 {
-                     viewHolder.hSView.smoothScrollTo(0, 0);
-                 }
-                 else// 否则的话显示操作区域
-                 {
-                     viewHolder.hSView.smoothScrollTo(actionW, 0);
-                 }
-                 return true;
-             }
-			
-			return false;
-		} 
-       });
-
-       // 这里防止删除一条item后,ListView处于操作状态,直接还原
-       if (holder.hSView.getScrollX() != 0) {
-           holder.hSView.scrollTo(0, 0);
-       }
-
-       // 删除按钮点击事件
-       holder.butDelete.setOnClickListener(this);
-     
-         return convertView;
+       QuickContent item = quickContents.get(position);
+		item.slideView = slideView;
+		item.slideView.shrinkByFast();
+		 holder.kpitname.setText(nameArrayList.get(position));
+		 holder.time.setText(quickContents.get(position).getStarted_at());
+		 holder.type.setText(quickContents.get(position).getType());
+		 holder.gan_number.setText(quickContents.get(position).getRecorded_scorecards_count());
+		 holder.Pole_number.setText(quickContents.get(position).getStrokes()); 
+       holder.deleteHolder.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				onDeleteListen.onDelete(convertView, position);
+			}
+		});
+         return slideView;
 	 }
 	
-	public class ViewHolder{
-		TextView kpitname,time,type,gan_number,Pole_number;
-		Button butDelete;
-		HorizontalScrollView hSView;
-		LinearLayout action,content;
+	public static class ViewHolder{
+		public TextView kpitname;
+		public TextView time;
+		public TextView type;
+		public TextView gan_number;
+		public TextView Pole_number;
+		public ViewGroup deleteHolder;
+		
+		LinearLayout xlist_item_relayout;
+		
+		ViewHolder(View view) {
+			xlist_item_relayout = (LinearLayout) view.findViewById(R.id.xlist_item_relayout);
+			 //球场名称
+	           kpitname=(TextView) view.findViewById(R.id.kpitname);  
+	           
+	        
+	  		 //日期
+	           time=(TextView) view.findViewById(R.id.time);
+	         
+	  		 //赛事类型
+	           type=(TextView) view.findViewById(R.id.practice);
+	           
+	  		 //记录打了几个球洞
+	          gan_number=(TextView) view.findViewById(R.id.gan_number);
+	         
+	  		 //成绩
+	           Pole_number = (TextView) view.findViewById(R.id.Pole_number);  
+	         
+	           deleteHolder = (ViewGroup) view.findViewById(R.id.holder);
+		}
 	 }
 
-	@Override
-	public void onClick(View v) {
-		// TODO Auto-generated method stub
-		int position = (Integer) v.getTag();
-        switch (v.getId()) {
-        case R.id.butDelete:
-        	quickContents.remove(position);
-        	Log.i("----->>>", "remove"+quickContents.remove(position));
-        	initdelete();
-        	// 更新ListView中的数据
-            notifyDataSetChanged();
-        	break;
-        default:
-            break;
-        }
+
+	public interface OnDeleteListener {
+		public void onDelete(View view, int position);
 	}
-	 
-	 public void initdelete(){
-		 new AsyncTask<Void, Void, Void>() {
 
-			@Override
-			protected Void doInBackground(Void... arg0) {
-				// TODO Auto-generated method stub
-				try {
-		        	SharedPreferences sp=context.getSharedPreferences("register",Context.MODE_PRIVATE);
-		        	String token=sp.getString("token", "token");
-		        	String uuid=quickContents.get(0).getUuid();
-		        	String path=APIService.DELETE_MATCHES+"uuid="+URLEncoder.encode(uuid,"utf-8")+"&token="+URLEncoder.encode(token, "utf-8");	
-		        	quickContents=HttpUtils.HttpClientDelete(path);
-		        	Log.i("---->>", "path-->>"+path);
-					} catch (Exception e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				return null;
-			}
-		}.execute();
-	 }
+	public void setIsLongState(boolean isLongState) {
+		this.isLongState = isLongState;
+	}
+
+	public void setCheckItemMap(HashMap<Integer, Boolean> checkedItemMap) {
+		this.checkedItemMap = checkedItemMap;
+	}
 }   

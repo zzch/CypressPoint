@@ -35,12 +35,12 @@
              />
      </LinearLayout>
 
-      <cn.com.zcty.ILovegolf.tools.XListView
+      <cn.com.zcty.ILovegolf.tools.SlidingDeleteListView
         android:id="@+id/xListView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:cacheColorHint="#00000000">
-        </cn.com.zcty.ILovegolf.tools.XListView>
+        </cn.com.zcty.ILovegolf.tools.SlidingDeleteListView>
         
 </LinearLayout>
 

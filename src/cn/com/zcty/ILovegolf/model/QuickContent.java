@@ -2,32 +2,35 @@ package cn.com.zcty.ILovegolf.model;
 
 import java.util.List;
 
+import cn.com.zcty.ILovegolf.tools.SlidingDeleteSlideView;
+
 public class QuickContent {
 	/**
-	 * ÓÃ»§uuid
+	 * ï¿½Ã»ï¿½uuid
 	 */
 	private String uuid;
 	/**
-	 * ÈüÊÂÀàĞÍ
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	private String type;
     /**
-     * Çò³¡ĞÅÏ¢
+     * ï¿½ï¿½ï¿½ï¿½Ï¢
      */
 	private List<Course> course;
 	/**
-	 * ÃüÖĞ¸ËÊı
+	 * ï¿½ï¿½ï¿½Ğ¸ï¿½ï¿½ï¿½
 	 */
 	private String strokes;
 	/**
-	 * ×Ü¸ËÊı
+	 * ï¿½Ü¸ï¿½ï¿½ï¿½
 	 */
 	private String recorded_scorecards_count;
 	/**
-	 * ´òÇòÊ±¼ä
+	 * ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
 	 */
 	private String started_at;
-   
+
+	 public SlidingDeleteSlideView slideView;
 	
     public QuickContent(){}
 

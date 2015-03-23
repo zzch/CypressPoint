@@ -31,6 +31,7 @@ public class ChoosePitchActivity extends Activity {
    
 	private ListView listpich;//球场列表，并显示距离
 	private List<QiuChangList> qiuchanglists;//从服务器端获取过来的球场列表信息
+	private SharedPreferences ss;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -47,9 +48,17 @@ public class ChoosePitchActivity extends Activity {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
 				// TODO Auto-generated method stub
+				ss = getSharedPreferences("name", MODE_PRIVATE);
+				SharedPreferences.Editor editor = ss.edit();
+				editor.putString("name", qiuchanglists.get(position).getName());
+				editor.commit();
 				Intent intent=new Intent(ChoosePitchActivity.this,PlaySetActivity.class);
 				intent.putExtra("uuid", qiuchanglists.get(position).getUuid());
 				Log.i("--->>uuid", "uuid"+qiuchanglists.get(position).getUuid());
+				SharedPreferences ss = getSharedPreferences("key", MODE_PRIVATE);
+				SharedPreferences.Editor editors = ss.edit();
+				editors.putString("key", qiuchanglists.get(position).getUuid());
+				editors.commit();
 				startActivity(intent);
 				finish();
 			}

@@ -11,6 +11,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.media.audiofx.BassBoost.Settings;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -45,7 +47,7 @@ public class ScoreCardActivity extends Activity {
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
-				Log.i("name1", scorecarsArray.get(0).toString());
+				//Log.i("name1", scorecarsArray.get(0).toString());
 				setListeners();
 			}
 		};
@@ -57,17 +59,14 @@ public class ScoreCardActivity extends Activity {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_scorecard);
 		initView();	
-		getData();
+	
 		new MyTask().start();
 	
 	}
 	
-	private void getData() {
-		for(int i=0;i<=18;i++){
-			Setcard setcard = new Setcard();
-			setcardsArray.add(setcard);
-		}
-	}
+	/*private void getData() {
+		
+	}*/
 
 	private void setListeners() {
 		adapter = new ScoreCardGridViewAdapter(scorecarsArray, setcardsArray, this);
@@ -116,14 +115,14 @@ public class ScoreCardActivity extends Activity {
 		switch(v.getId()){
 		//记分卡返回按钮
 		case R.id.scorecard_back:
-			intent=new Intent(ScoreCardActivity.this,ChoosePitchActivity.class);
+			intent=new Intent(ScoreCardActivity.this,QuickScoreActivity.class);
 			startActivity(intent);
 			finish();
 			break;
 			//点击成绩按钮
 		case R.id.scorecard_score:
 			intent=new Intent(ScoreCardActivity.this,StatisticsAvtivity.class);
-			intent.putExtra("match_uuid", match_uuid);
+			//intent.putExtra("match_uuid", match_uuid);
 
 			startActivity(intent);
 			
@@ -139,38 +138,126 @@ public class ScoreCardActivity extends Activity {
 		public void getData(){
 			SharedPreferences sp = getSharedPreferences("register", Context.MODE_PRIVATE);
 			String token = sp.getString("token", "token");
+			SharedPreferences ss = getSharedPreferences("edit",Activity.MODE_PRIVATE);
+			SharedPreferences.Editor editor = ss.edit();
+			
 			String path;
+			
 			Intent intent=getIntent();
 			 uuid=intent.getStringExtra("uuid");
+			 Log.i("jjs", uuid);
 			 uuid_t = intent.getStringExtra("uuid_t");
 			String boxes = intent.getStringExtra("color");
 			String boxes_t = intent.getStringExtra("color_t");
-			if(uuid_t==null){
+	
+			if(uuid_t==null&&boxes!=null){
 				 path = APIService.CREATE_PRACTICE_EVENTS+"course_uuids="+uuid+"&tee_boxes="+boxes+"&token="+token+"&scoring_type=simple";
-			}else{
+				String  jsonArrayData = HttpUtils.HttpClientPost(path);
+				  try {
+						JSONObject jsonObject = new JSONObject(jsonArrayData);
+						Log.i("jjs", jsonArrayData);
+						match_uuid = jsonObject.getString("uuid");
+						editor.putString("match_uuid", match_uuid);
+						editor.commit();
+						JSONArray jsonArray = jsonObject.getJSONArray("scorecards");
+						Log.i("jjjs", jsonArrayData);
+						for(int i=0;i<jsonArray.length();i++){
+							JSONObject jsonObjects = jsonArray.getJSONObject(i);
+							Scorecards scorecards = new Scorecards();
+							scorecards.setUuid(jsonObjects.getString("uuid"));						
+							scorecards.setNumber(jsonObjects.getString("number"));						
+							scorecards.setPar(jsonObjects.getString("par"));					
+							scorecards.setTee_box_color(jsonObjects.getString("tee_box_color"));						
+							scorecards.setDistance_from_hole_to_tee_box(jsonObjects.getString("distance_from_hole_to_tee_box"));						
+							scorecarsArray.add(scorecards);
+						}
+					} catch (JSONException e) {
+						e.printStackTrace();
+					}
+				  for(int i=0;i<=18;i++){
+						Setcard setcard = new Setcard();
+						setcardsArray.add(setcard);
+					}
+			}else if(boxes==null){
+				 for(int i=0;i<=18;i++){
+						Setcard setcard = new Setcard();
+						setcardsArray.add(setcard);
+					}
+				  editor.putString("match_uuid", uuid);
+				  editor.commit();
+				  path = APIService.LIANXISAISHI+"uuid="+uuid+"&token="+token;
+				  String jsonArrayData = HttpUtils.HttpClientGet(path);	 
+				  try {
+					  String direction;
+					
+					  Log.i("jjs",jsonArrayData);
+					  	JSONObject jsonObj = new JSONObject(jsonArrayData);
+					  	
+						JSONArray jsonArray = jsonObj.getJSONArray("scorecards");
+						Log.i("jjjs", jsonArrayData);
+						for(int i=0;i<jsonArray.length();i++){
+							JSONObject jsonObjects = jsonArray.getJSONObject(i);
+							Scorecards scorecards = new Scorecards();
+							scorecards.setUuid(jsonObjects.getString("uuid"));							
+							scorecards.setNumber(jsonObjects.getString("number"));						
+							scorecards.setPar(jsonObjects.getString("par"));							
+							scorecards.setTee_box_color(jsonObjects.getString("tee_box_color"));							
+							scorecards.setDistance_from_hole_to_tee_box(jsonObjects.getString("distance_from_hole_to_tee_box"));							
+							scorecarsArray.add(scorecards);
+							Setcard setcard = new Setcard();
+							setcard.setRodNum(jsonObjects.getString("score"));
+							Log.i("jjs", jsonObjects.getString("score"));
+							if(jsonObjects.getString("direction").equals("pure")){
+								direction = "命中";
+							}else if(jsonObjects.getString("direction").equals("slice")){
+								direction = "右侧";
+							}else{
+								direction = "左侧";
+							}
+							setcard.setPar(direction);
+							setcard.setPutts(jsonObjects.getString("putts"));
+							setcard.setPenalties(jsonObjects.getString("penalties"));
+							setcard.setTe(jsonObjects.getString("driving_distance"));
+							setcardsArray.set(i, setcard);
+						}
+					} catch (JSONException e) {
+						e.printStackTrace();
+					}
+			}
+			else{
 				 path = APIService.CREATE_PRACTICE_EVENTS+"course_uuids="+uuid+","+uuid_t+"&tee_boxes="+boxes+","+boxes_t+"&token="+token+"&scoring_type=simple";
+				String  jsonArrayData = HttpUtils.HttpClientPost(path);
+				  try {
+						JSONObject jsonObject = new JSONObject(jsonArrayData);
+						Log.i("jjs", jsonArrayData);
+						match_uuid = jsonObject.getString("uuid");
+						editor.putString("match_uuid", match_uuid);
+						editor.commit();
+						JSONArray jsonArray = jsonObject.getJSONArray("scorecards");
+						Log.i("jjjs", jsonArrayData);
+						for(int i=0;i<jsonArray.length();i++){
+							JSONObject jsonObjects = jsonArray.getJSONObject(i);
+							Scorecards scorecards = new Scorecards();
+							scorecards.setUuid(jsonObjects.getString("uuid"));							
+							scorecards.setNumber(jsonObjects.getString("number"));						
+							scorecards.setPar(jsonObjects.getString("par"));							
+							scorecards.setTee_box_color(jsonObjects.getString("tee_box_color"));							
+							scorecards.setDistance_from_hole_to_tee_box(jsonObjects.getString("distance_from_hole_to_tee_box"));
+							
+							scorecarsArray.add(scorecards);
+						}
+					} catch (JSONException e) {
+						e.printStackTrace();
+					}
+				  for(int i=0;i<=18;i++){
+						Setcard setcard = new Setcard();
+						setcardsArray.add(setcard);
+					}
 			}
-			Log.i("path", path);
-			Log.i("uuid", uuid+boxes+2);
-			String jsonArrayData = HttpUtils.HttpClientPost(path);
-			Log.i("jj", jsonArrayData);
-			try {
-				JSONObject jsonObject = new JSONObject(jsonArrayData);
-				match_uuid = jsonObject.getString("uuid");
-				JSONArray jsonArray = jsonObject.getJSONArray("scorecards");
-				for(int i=0;i<jsonArray.length();i++){
-					JSONObject jsonObjects = jsonArray.getJSONObject(i);
-					Scorecards scorecards = new Scorecards();
-					scorecards.setUuid(jsonObjects.getString("uuid"));
-					scorecards.setNumber(jsonObjects.getString("number"));
-					scorecards.setPar(jsonObjects.getString("par"));
-					scorecards.setTee_box_color(jsonObjects.getString("tee_box_color"));
-					scorecards.setDistance_from_hole_to_tee_box(jsonObjects.getString("distance_from_hole_to_tee_box"));
-					scorecarsArray.add(scorecards);
-				}
-			} catch (JSONException e) {
-				e.printStackTrace();
-			}
+			
+			
+			
+			
 			Message msg = handler.obtainMessage();
 			msg.what=1;
 			handler.sendMessage(msg);

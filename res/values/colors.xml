@@ -17,5 +17,6 @@
     <color name="blend_item_divider_color">#ffededed</color>
     <color name="blend_item_pressed_color_transparent">#19000000</color>
     <color name="blend_item_theme_color_black">#ff393d43</color>
-      
+    <color name="grays">#ffcccccc</color>
+    <color name="textview">#ffffcc99</color>
 </resources>

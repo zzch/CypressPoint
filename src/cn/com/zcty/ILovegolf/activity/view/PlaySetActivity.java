@@ -204,6 +204,8 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 									
 									@Override
 									public void onClick(View v) {
+										 
+										
 										Intent intent = new Intent(PlaySetActivity.this,ScoreCardActivity.class);									
 										intent.putExtra("uuid", uuid);
 										intent.putExtra("color", c);
@@ -311,6 +313,7 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 										intent.putExtra("uuid", uuid);
 										intent.putExtra("color", c);
 										intent.putExtra("color_t", c_t);
+										Log.i("asdf", uuid+"zhouhe"+uuid);
 										startActivity(intent);
 										finish();
 									}
@@ -366,6 +369,7 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 			//取球场信息uuid的值
 			Intent intent=getIntent();
 			String uuid=intent.getStringExtra("uuid");
+			Log.i("uz", uuid);
 			//用户的token
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String token=sp.getString("token", "token");

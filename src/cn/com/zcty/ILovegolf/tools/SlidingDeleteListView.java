@@ -8,7 +8,9 @@
  */
 package cn.com.zcty.ILovegolf.tools;
 
+
 import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.model.QuickContent;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -23,7 +25,7 @@ import android.widget.RelativeLayout;
 import android.widget.Scroller;
 import android.widget.TextView;
 
-public class XListView extends ListView implements OnScrollListener {
+public class SlidingDeleteListView extends ListView implements OnScrollListener {
 
 	private float mLastY = -1; // save event y
 	private Scroller mScroller; // used for scroll back
@@ -48,6 +50,9 @@ public class XListView extends ListView implements OnScrollListener {
 	private boolean mPullLoading;
 	private boolean mIsFooterReady = false;
 
+	// -----slide view
+	private boolean mEnableSlidingDelete = true;
+
 	// total list items, used to detect is at the bottom of listview.
 	private int mTotalItemCount;
 
@@ -62,21 +67,31 @@ public class XListView extends ListView implements OnScrollListener {
 														// load more.
 	private final static float OFFSET_RADIO = 1.8f; // support iOS like pull
 													// feature.
+	private MotionEvent lastMotionEvent;
+	private SlidingDeleteSlideView mFocusedItemView;
+	
+	/* 记录最后滚动位置*/
+	private int lastPosition = 0;
+	private int scrollTop = 0;
+	
+	
+	private IXListViewOnTouchEvent mListViewOnTouchEvent = null;
+	
 
 	/**
 	 * @param context
 	 */
-	public XListView(Context context) {
+	public SlidingDeleteListView(Context context) {
 		super(context);
 		initWithContext(context);
 	}
 
-	public XListView(Context context, AttributeSet attrs) {
+	public SlidingDeleteListView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		initWithContext(context);
 	}
 
-	public XListView(Context context, AttributeSet attrs, int defStyle) {
+	public SlidingDeleteListView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		initWithContext(context);
 	}
@@ -108,6 +123,7 @@ public class XListView extends ListView implements OnScrollListener {
 								.removeGlobalOnLayoutListener(this);
 					}
 				});
+		
 	}
 
 	@Override
@@ -224,8 +240,10 @@ public class XListView extends ListView implements OnScrollListener {
 			finalHeight = mHeaderViewHeight;
 		}
 		mScrollBack = SCROLLBACK_HEADER;
+		
 		mScroller.startScroll(0, height, 0, finalHeight - height,
 				SCROLL_DURATION);
+		
 		// trigger computeScroll
 		invalidate();
 	}
@@ -233,16 +251,13 @@ public class XListView extends ListView implements OnScrollListener {
 	private void updateFooterHeight(float delta) {
 		int height = mFooterView.getBottomMargin() + (int) delta;
 		if (mEnablePullLoad && !mPullLoading) {
-			if (height > PULL_LOAD_MORE_DELTA) { // height enough to invoke load
-													// more.
+			if (height > PULL_LOAD_MORE_DELTA) {
 				mFooterView.setState(XListViewFooter.STATE_READY);
 			} else {
 				mFooterView.setState(XListViewFooter.STATE_NORMAL);
 			}
 		}
 		mFooterView.setBottomMargin(height);
-
-		// setSelection(mTotalItemCount - 1); // scroll to bottom
 	}
 
 	private void resetFooterHeight() {
@@ -256,6 +271,7 @@ public class XListView extends ListView implements OnScrollListener {
 	}
 
 	private void startLoadMore() {
+		mListViewListener.onScrollListenerBottom();
 		mPullLoading = true;
 		mFooterView.setState(XListViewFooter.STATE_LOADING);
 		if (mListViewListener != null) {
@@ -271,22 +287,36 @@ public class XListView extends ListView implements OnScrollListener {
 
 		switch (ev.getAction()) {
 		case MotionEvent.ACTION_DOWN:
+			if (mEnableSlidingDelete) {// 横向滑动删除记录
+				int x = (int) ev.getX();
+				int y = (int) ev.getY();
+				int position = pointToPosition(x, y);
+				if (position != INVALID_POSITION) {
+					QuickContent data = (QuickContent) getItemAtPosition(position);
+					try {
+						mFocusedItemView = data.slideView;
+					} catch (Exception e) {
+						mFocusedItemView = null;
+						e.printStackTrace();
+					}
+				}
+			}
 			mLastY = ev.getRawY();
 			break;
 		case MotionEvent.ACTION_MOVE:
+
 			final float deltaY = ev.getRawY() - mLastY;
+			onActionMoveScrollWard(deltaY);
 			mLastY = ev.getRawY();
-			System.out.println("数据监测：" + getFirstVisiblePosition() + "---->"
-					+ getLastVisiblePosition());
-			if (getFirstVisiblePosition() == 0
-					&& (mHeaderView.getVisiableHeight() > 0 || deltaY > 0)) {
-				// the first item is showing, header has shown or pull down.
-				updateHeaderHeight(deltaY / OFFSET_RADIO);
-				invokeOnScrolling();
-			} else if (getLastVisiblePosition() == mTotalItemCount - 1
-					&& (mFooterView.getBottomMargin() > 0 || deltaY < 0)) {
-				// last item, already pulled up or want to pull up.
-				updateFooterHeight(-deltaY / OFFSET_RADIO);
+			if (!isDraggingHorizontally(ev)) {
+				if (getFirstVisiblePosition() == 0
+						&& (mHeaderView.getVisiableHeight() > 0 || deltaY > 0)) {
+					updateHeaderHeight(deltaY / OFFSET_RADIO);
+					invokeOnScrolling();
+				} else if (getLastVisiblePosition() == mTotalItemCount - 1
+						&& (mFooterView.getBottomMargin() > 0 || deltaY < 0)) {
+					updateFooterHeight(-deltaY / OFFSET_RADIO);
+				}
 			}
 			break;
 		default:
@@ -313,7 +343,17 @@ public class XListView extends ListView implements OnScrollListener {
 			}
 			break;
 		}
+		if (mEnableSlidingDelete) {
+			if (mFocusedItemView != null) {
+				mFocusedItemView.onRequireTouchEvent(ev);
+			}
+		}
+		saveLastMotionEvent(ev);
 		return super.onTouchEvent(ev);
+	}
+
+	private void saveLastMotionEvent(MotionEvent event) {
+		lastMotionEvent = MotionEvent.obtain(event);
 	}
 
 	@Override
@@ -337,6 +377,13 @@ public class XListView extends ListView implements OnScrollListener {
 
 	@Override
 	public void onScrollStateChanged(AbsListView view, int scrollState) {
+		if (scrollState == OnScrollListener.SCROLL_STATE_IDLE) {
+			lastPosition = getFirstVisiblePosition();
+			mListViewListener.onScrollListener(lastPosition);
+			if (getChildAt(0) != null)
+				scrollTop = (getChildAt(0) == null) ? 0 : getChildAt(0)
+						.getTop();
+		}
 		if (mScrollListener != null) {
 			mScrollListener.onScrollStateChanged(view, scrollState);
 		}
@@ -365,12 +412,83 @@ public class XListView extends ListView implements OnScrollListener {
 		public void onXScrolling(View view);
 	}
 
+	private boolean isDraggingHorizontally(MotionEvent event) {
+		if (lastMotionEvent == null || event == null)
+			return false;
+		float deltaX = Math.abs(event.getX() - lastMotionEvent.getX());
+		float deltaY = Math.abs(event.getY() - lastMotionEvent.getY());
+		return deltaX > deltaY;
+	}
+
+	private boolean isDraggingVertically(MotionEvent event) {
+		float deltaY = 0.0f;
+		if (lastMotionEvent != null) {
+			deltaY = Math.abs(event.getY() - lastMotionEvent.getY());
+		}
+
+		return deltaY > 20;
+	}
+
 	/**
 	 * implements this interface to get refresh/load more event.
 	 */
 	public interface IXListViewListener {
 		public void onRefresh();
-
 		public void onLoadMore();
+		public void onScrollListener(int position);
+		public void onScrollListenerBottom();
 	}
+
+	/**
+	 * @Function设置是否滑动删除
+	 * */
+	public void setEnableSlidingDelete(boolean mEnableSlidingDelete) {
+		this.mEnableSlidingDelete = mEnableSlidingDelete;
+	}
+
+	public void shrinkListItem(int position) {
+		View item = getChildAt(position);
+
+		if (item != null) {
+			try {
+				((SlidingDeleteSlideView) item).shrink();
+			} catch (ClassCastException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/**
+	 * @Function:本地方法，滚动到指定位置
+	 * */
+	public void setSelectionFromTop() {
+		this.setSelectionFromTop(lastPosition, scrollTop);
+	}
+	/**
+	 * @Function:设置滚动方向监听
+	 * */
+	public void setXListViewOnTouchEvent(IXListViewOnTouchEvent l){
+		mListViewOnTouchEvent = l;
+	}
+	/**
+	 * @Function:滚动方向监听回调调用
+	 * */
+	private void onActionMoveScrollWard(float deltaY) {
+		if (deltaY > 0) {// mListViewOnTouchEvent
+			if (mListViewOnTouchEvent != null)
+				mListViewOnTouchEvent.onScrollUpWard(Math.abs(deltaY));
+		} else {
+			if (mListViewOnTouchEvent != null)
+				mListViewOnTouchEvent.onScrollDownWard(Math.abs(deltaY));
+		}
+	}
+	/**
+	 * @Function:判断滚动方向监听
+	 * */
+	public interface IXListViewOnTouchEvent {
+		public void onScrollUpWard(float value);
+		public void onScrollDownWard(float value);
+
+	}
+
 }

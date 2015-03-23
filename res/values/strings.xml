@@ -28,4 +28,5 @@
     <string name="delete_card">确认删除历史记分卡吗？</string>
     <string name="score_card">记分卡</string>
     <string name="button_count">统计</string>
+    <string name="button_save">保存</string>
 </resources>

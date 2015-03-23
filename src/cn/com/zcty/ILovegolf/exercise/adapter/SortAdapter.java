@@ -9,6 +9,7 @@ import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.model.Course;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -99,7 +100,10 @@ public class SortAdapter extends BaseExpandableListAdapter {
 		groupHolder. textView.setText(group.get(groupPosition));
 		return convertView;
 	}
-
+	public String uuid(int groupPosition,int childPositon){
+		return child.get(groupPosition).get(childPositon).getUuid();
+		
+	}
 	@Override
 	public boolean hasStableIds() {
 		return true;

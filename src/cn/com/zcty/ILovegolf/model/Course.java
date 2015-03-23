@@ -1,17 +1,11 @@
 package cn.com.zcty.ILovegolf.model;
 
 public class Course {
-	/**
-	 * 球场uuid
-	 */
+
 	private String uuid;
-	/**
-	 * 球场名称
-	 */
+
 	private String name;
-	/**
-	 * 球场地址
-	 */
+
 	private String address;
 	
 	public Course(){}

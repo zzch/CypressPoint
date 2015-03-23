@@ -19,7 +19,10 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
@@ -55,6 +58,10 @@ public class ScoreCardUpDateActivity extends Activity{
 	private String result;
 	private Setcard setcard = new Setcard();
 	private String position;
+	private TextView distance_scorecard;
+	private TextView hit_scorecard;
+	private ImageView scorecard_image_up;
+	private LinearLayout wheelview_layout;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -102,11 +109,7 @@ public class ScoreCardUpDateActivity extends Activity{
 
 								}});				
 					dialog.show();
-				
 					
-
-				
-				
 			}
 			if(msg.what==2){
 				String result = (String) msg.obj;
@@ -137,6 +140,7 @@ public class ScoreCardUpDateActivity extends Activity{
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.scorecardupdat);
 		initView();
 		setListener();
@@ -171,15 +175,13 @@ public class ScoreCardUpDateActivity extends Activity{
 			public void onClick(View v) {
 				new MyTaskt().start();
 				
-				
-
 			}
 		});
 		OnWheelChangedListener changed =  new OnWheelChangedListener() {
 
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
-
+				distance_scorecard.setText(newValue+"码");
 				driving_distance = 	adapter.getItem(newValue);
 				driving_distance = driving_distance.substring(0,driving_distance.length()-1);
 			}
@@ -189,7 +191,7 @@ public class ScoreCardUpDateActivity extends Activity{
 
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
-
+				hit_scorecard.setText(cool[newValue]);
 				switch (newValue) {
 				case 0:
 					direction = "pure";
@@ -209,13 +211,17 @@ public class ScoreCardUpDateActivity extends Activity{
 	private void initView() {
 		cacelButton = (Button) findViewById(R.id.scorecard_cancel);
 		saveButton = (Button) findViewById(R.id.scorecard_save);
-		ballHoleTextView=(TextView) findViewById(R.id.ball_hole);
+		ballHoleTextView = (TextView) findViewById(R.id.ball_hole);
 		dataTextView = (TextView) findViewById(R.id.tv_update_one);
 		putTextView = (TextView) findViewById(R.id.tv_update_two);
 		penaltiesTextView = (TextView) findViewById(R.id.tv_update_three);
 		distanceWheelView = (WheelView) findViewById(R.id.passw_1);
 		coolWheelView = (WheelView) findViewById(R.id.passw_2);
-
+		distance_scorecard = (TextView) findViewById(R.id.distance_scorecard);
+		hit_scorecard = (TextView) findViewById(R.id.hit_scorecard);
+		scorecard_image_up = (ImageView) findViewById(R.id.scorecard_image_up);
+		wheelview_layout = (LinearLayout) findViewById(R.id.wheelview_layout);
+		
 	}
 
 
@@ -266,7 +272,11 @@ public class ScoreCardUpDateActivity extends Activity{
 			if(penaltiescount>0){
 				penaltiescount--;
 				penaltiesTextView.setText(penaltiescount+"");
-			}break;
+			}
+			break;
+		case R.id.layout_chooise:
+			wheelview_layout.setVisibility(View.VISIBLE);
+			break;
 		}
 	}
 	class MyTask extends Thread{

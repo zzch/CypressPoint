@@ -25,14 +25,7 @@
            android:textSize="25dip"
            android:layout_marginLeft="35dip"
              />
-           <Button 
-           android:id="@+id/button1"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="搜索"
-           android:layout_marginLeft="35dip"
-           android:background="@null"
-             />
+           
      </LinearLayout>
 
     <cn.com.zcty.ILovegolf.activity.exercise.city.ClearEditText
@@ -57,7 +50,14 @@
             android:layout_height="fill_parent"
             android:layout_gravity="center"
             android:divider="@null" />
-
+		    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+    </ListView>
         
     </FrameLayout>
 

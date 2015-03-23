@@ -1,23 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/hsv"
-    android:layout_width="wrap_content"
-    android:layout_height="80dip"
-    android:scrollbars="none" >
-
-  <LinearLayout 
-    android:id="@+id/hsv"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    >
-
-    <LinearLayout 
-    android:id="@+id/content"
-    android:layout_width="wrap_content"
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/xlist_item_relayout"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     >
      <LinearLayout 
-         android:id="@+id/layout"
+        android:id="@+id/layout"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -70,47 +58,28 @@
           </LinearLayout>
           
      </LinearLayout>
-    
-      <LinearLayout 
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:orientation="vertical"
-          android:gravity="center"
-          android:layout_marginTop="15dip"
-          android:layout_marginLeft="10dip"
-          android:background="@drawable/u1695_normal"
-          >
-           <TextView 
-           android:id="@+id/zongganshu"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="总杆数"
-      
-           />
-            <TextView 
-           android:id="@+id/Pole_number"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="8"
-            />
-      </LinearLayout>
-      
+
+     <LinearLayout
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="10dip"
+         android:layout_marginTop="15dip"
+         android:background="@drawable/u1695_normal"
+         android:gravity="center"
+         android:orientation="vertical" >
+
+         <TextView
+             android:id="@+id/zongganshu"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="总杆数" />
+
+         <TextView
+             android:id="@+id/Pole_number"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="8" />
      </LinearLayout>
-       <LinearLayout 
-       android:id="@+id/action"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       >
-       
-       <Button
-           android:id="@+id/butDelete"
-           android:layout_width="60dip"
-           android:layout_height="wrap_content"
-           android:text="删除" 
-           android:layout_marginLeft="15dip"
-           android:layout_marginTop="10dip"
-           android:textColor="#ff0000"
-           />
-       </LinearLayout>
+      
+      
 </LinearLayout>
-</HorizontalScrollView>

@@ -48,7 +48,7 @@ public class XListViewFooter extends LinearLayout {
 			mProgressBar.setVisibility(View.VISIBLE);
 		} else {
 			mHintView.setVisibility(View.VISIBLE);
-			mHintView.setText(R.string.xlistview_footer_hint_normal);
+			mHintView.setText("");//R.string.xlistview_footer_hint_normal
 		}
 	}
 	
@@ -109,4 +109,6 @@ public class XListViewFooter extends LinearLayout {
 		mProgressBar = moreView.findViewById(R.id.xlistview_footer_progressbar);
 		mHintView = (TextView)moreView.findViewById(R.id.xlistview_footer_hint_textview);
 	}
+	
+	
 }

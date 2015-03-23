@@ -40,7 +40,7 @@ import cn.com.zcty.ILovegolf.utils.JsonUtil;
 			setContentView(R.layout.activity_historyscorecard);
 	        
 			//找控件
-			//list_scorecard=(ListView) findViewById(R.id.list_scorecard);
+			list_scorecard=(ListView) findViewById(R.id.list_scorecard);
 			//取值
 			Intent intent=getIntent();
 			uuid=intent.getStringExtra("uuid");
@@ -62,8 +62,8 @@ import cn.com.zcty.ILovegolf.utils.JsonUtil;
 					String token=sp.getString("token", "token");
 					Log.i("token------>>", ""+token);
 				    String path=APIService.SCORECARD_SHOW+"uuid="+URLEncoder.encode(uuid,"utf-8")+"&token="+URLEncoder.encode(token, "utf-8");
-				   // scorecards=JsonUtil.getScorecards_json(path);
-				    
+				    scorecards=JsonUtil.getScorecards_json(path);
+				    Log.i("HistoryScoreCardActivity", "----------HistoryScoreCardActivity-----"+path);
 					} catch (Exception e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -76,6 +76,7 @@ import cn.com.zcty.ILovegolf.utils.JsonUtil;
 					// TODO Auto-generated method stub
 					super.onPostExecute(result);
 					list_scorecard.setAdapter(new ScoreCardAdapter(HistoryScoreCardActivity.this,scorecards));
+				    Log.i("------------", "scorecards的值"+scorecards);
 				}
 			}.execute();
 		}

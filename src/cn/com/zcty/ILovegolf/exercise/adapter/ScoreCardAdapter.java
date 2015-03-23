@@ -45,6 +45,7 @@ public class ScoreCardAdapter extends BaseAdapter
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View view=View.inflate(context, R.layout.scorecard_item, null);
 		TextView pol_number = (TextView) view.findViewById(R.id.pol_number);
+		
 		TextView pars = (TextView) view.findViewById(R.id.par);
 		TextView distance_from_hole_to_tee_box = (TextView) view.findViewById(R.id.distance_from_hole_to_tee_box);
 		TextView penalties = (TextView) view.findViewById(R.id.penalties);
@@ -54,7 +55,7 @@ public class ScoreCardAdapter extends BaseAdapter
 		TextView mingzhonglv = (TextView) view.findViewById(R.id.mingzhonglv);
 		
 		pol_number.setText(scorecards.get(position).getNumber()+"");
-		Log.i("=======«Ú∂¥", "«Ú∂¥–Ú∫≈===="+scorecards.get(position).getNumber());
+		Log.i("============history", "==========ÁêÉÊ¥û"+scorecards.get(position).getNumber());
 		pars.setText(scorecards.get(position).getPar()+"");
 		distance_from_hole_to_tee_box.setText(scorecards.get(position).getDistance_from_hole_to_tee_box()+"");
 		penalties.setText(scorecards.get(position).getPenalties()+"");
