@@ -175,7 +175,6 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 				}
 				if(position==1&&!playset.get(0).equals("选择子场")){
 					pickDialog = new PickDialog(PlaySetActivity.this, "开球T台", new PickDialogListener() {
-						
 						@Override
 						public void onRightBtnClick() {
 							// TODO Auto-generated method stub
