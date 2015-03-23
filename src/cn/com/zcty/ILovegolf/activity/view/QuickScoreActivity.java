@@ -22,23 +22,33 @@ import cn.com.zcty.ILovegolf.utils.JsonUtil;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
+import android.app.ProgressDialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 
@@ -69,6 +79,7 @@ AdapterView.OnItemLongClickListener,OnClickListener {
     private ArrayList<QuickContent> quickArrayList = new ArrayList<QuickContent>();
     private ArrayList<String> uuidArrayList = new ArrayList<String>();
     private ArrayList<String> nameArrayList = new ArrayList<String>();
+    private FrameLayout frameLayout;
     /** 记录选中listviw选中项*/
 	private HashMap<Integer, Boolean> checkedItemMap = new HashMap<Integer, Boolean>();
 	Handler handler = new Handler(){
@@ -96,20 +107,65 @@ AdapterView.OnItemLongClickListener,OnClickListener {
 				mListView.setEnableSlidingDelete(true);
 				mListView.setAdapter(slideAdapter);
 				mListView.setXListViewListener(QuickScoreActivity.this);
+				frameLayout.setVisibility(View.GONE);
 			}
 		};
 	};
-    @Override
+
+	private BroadcastReceiver connectionReceiver;    @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity_quick_score);
-		
-		initView();
+		setContentView(R.layout.activity_quick_score);	
+		initView();	
 		new MyTask().start();
+		 if (isNetworkAvailable(QuickScoreActivity.this))
+	        {
+	            Toast.makeText(getApplicationContext(), "当前有可用网络！", Toast.LENGTH_LONG).show();
+	        }
+	        else
+	        {
+	            Toast.makeText(getApplicationContext(), "当前没有可用网络,请检查网络", Toast.LENGTH_LONG).show();
+	        }
+		
+
 	}
- 
+
+    public boolean isNetworkAvailable(Activity activity){
+    	Context context = activity.getApplicationContext();
+        // 获取手机所有连接管理对象（包括对wi-fi,net等连接的管理）
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        
+        if (connectivityManager == null)
+        {
+            return false;
+        }
+        else
+        {
+            // 获取NetworkInfo对象
+            NetworkInfo[] networkInfo = connectivityManager.getAllNetworkInfo();
+            
+            if (networkInfo != null && networkInfo.length > 0)
+            {
+                for (int i = 0; i < networkInfo.length; i++)
+                {
+                    System.out.println(i + "===状态===" + networkInfo[i].getState());
+                    System.out.println(i + "===类型===" + networkInfo[i].getTypeName());
+                    // 判断当前网络状态是否为连接状态
+                    if (networkInfo[i].getState() == NetworkInfo.State.CONNECTED)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+
+		return false;
+    	
+    }
+    
+    
     public void initView(){
     	mHandler = new Handler();
     	
@@ -118,8 +174,7 @@ AdapterView.OnItemLongClickListener,OnClickListener {
     	mListView = (SlidingDeleteListView) findViewById(R.id.xListView);
 		image_layout = (LinearLayout) findViewById(R.id.image_layout);
 		XListView_layout = (LinearLayout) findViewById(R.id.XListView_layout);
-		
-	
+		frameLayout = (FrameLayout) findViewById(R.id.frameLayout);
 	
 		
     }
@@ -305,6 +360,8 @@ AdapterView.OnItemLongClickListener,OnClickListener {
 			 
 		}
 	}
+
+
 	class MyTaskDele extends Thread{
 		String uuid;
 		public MyTaskDele(String uuid) {
@@ -319,15 +376,10 @@ AdapterView.OnItemLongClickListener,OnClickListener {
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String token=sp.getString("token", "token");
 			Log.i("ssss", uuid+"zhou");
-			String path = APIService.DELET+"uuid="+uuid+"&token="+token;
-			try {
+			String path = APIService.DELET+"uuid="+uuid+"&token="+token;		
 				String jsonDele = HttpUtils.HttpClientDelete(path);
-				Log.i("ssss", jsonDele+"zhou");
-				//slideAdapter.notifyDataSetChanged();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+				Log.i("ssss", jsonDele+"zhou");	
+			
 		}
 	}
     
@@ -349,4 +401,8 @@ AdapterView.OnItemLongClickListener,OnClickListener {
 		// TODO Auto-generated method stub
 		
 	}
+	
+
+
+	
    }

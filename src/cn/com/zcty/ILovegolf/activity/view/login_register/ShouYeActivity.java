@@ -9,6 +9,7 @@ import cn.com.zcty.ILovegolf.activity.view.TabHostActivity;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -21,7 +22,7 @@ import android.view.Window;
 import android.widget.Toast;
 
 /**
- * Ê×Ò³Àà
+ * ï¿½ï¿½Ò³ï¿½ï¿½
  * @author deii
  *
  */
@@ -39,7 +40,7 @@ public class ShouYeActivity extends Activity {
 	}
 	
 	/**
-	 * Ò»¼ü×¢²á
+	 * Ò»ï¿½ï¿½×¢ï¿½ï¿½
 	 * @param v
 	 */
 	public void but_register(View v){
@@ -49,7 +50,7 @@ public class ShouYeActivity extends Activity {
 			@Override
 			protected Void doInBackground(Void... arg0) {
 				// TODO Auto-generated method stub
-				//ÇëÇóÊý¾Ý
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				String url=APIService.ONE_REGISTER;
 				String data=HttpUtils.HttpClientPost(url);
 				Log.i("Data----->", ""+data);
@@ -57,7 +58,7 @@ public class ShouYeActivity extends Activity {
 				String nickname = null;
 				String token = null;
 				try {
-					//json½âÎö
+					//jsonï¿½ï¿½ï¿½ï¿½
 					JSONObject jsonObject=new JSONObject(data);
 					Log.i("jsonarray----->", ""+data);
 						uuid=jsonObject.getString("uuid");
@@ -70,7 +71,7 @@ public class ShouYeActivity extends Activity {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				//±£´æÊý¾Ý
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 				Editor editor = sp.edit();
 			    editor.putString("uuid", uuid);
@@ -94,7 +95,7 @@ public class ShouYeActivity extends Activity {
 		
 	}
 	/**
-	 * µÇÂ½
+	 * ï¿½ï¿½Â½
 	 * @param v
 	 */
 	public void but_login(View v){
@@ -103,7 +104,7 @@ public class ShouYeActivity extends Activity {
 		finish();
 	}
 	/**
-	 * ÊÖ»ú×¢²á
+	 * ï¿½Ö»ï¿½×¢ï¿½ï¿½
 	 * @param v
 	 */
 	public void but_mobile_reg(View v){

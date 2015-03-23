@@ -1,9 +1,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/kk"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
      >
+
      <LinearLayout 
        android:layout_width="match_parent"
        android:layout_height="60dp"
@@ -34,14 +36,25 @@
            android:onClick="onclick"
              />
      </LinearLayout>
-
+	<FrameLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:id="@+id/frameLayout"
+	    >
+     <ProgressBar
+         android:id="@+id/progressBar1"
+         style="?android:attr/progressBarStyleLarge"
+         android:layout_gravity="center"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content" />
+</FrameLayout>
       <cn.com.zcty.ILovegolf.tools.SlidingDeleteListView
         android:id="@+id/xListView"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:cacheColorHint="#00000000">
         </cn.com.zcty.ILovegolf.tools.SlidingDeleteListView>
-        
+       
 </LinearLayout>
 
 
