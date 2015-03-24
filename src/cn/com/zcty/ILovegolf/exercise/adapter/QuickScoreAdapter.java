@@ -1,6 +1,7 @@
 package cn.com.zcty.ILovegolf.exercise.adapter;
 
 import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -86,10 +87,16 @@ public  class QuickScoreAdapter extends BaseAdapter {
 		item.slideView = slideView;
 		item.slideView.shrinkByFast();
 		 holder.kpitname.setText(nameArrayList.get(position));
-		 holder.time.setText(quickContents.get(position).getStarted_at());
+		SimpleDateFormat  simpleDate = new SimpleDateFormat("yyyy年MM月dd");
+		 String date =	simpleDate.format(Integer.parseInt(quickContents.get(position).getStarted_at()));		 
+		// Log.i("date", d+"");
+		 holder.time.setText(date);
 		 holder.type.setText(quickContents.get(position).getType());
 		 holder.gan_number.setText(quickContents.get(position).getRecorded_scorecards_count());
-		 holder.Pole_number.setText(quickContents.get(position).getStrokes()); 
+		 if(quickContents.get(position).getStrokes().equals("null")){
+			 
+			 holder.Pole_number.setText("未开始"); 
+		 }
        holder.deleteHolder.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				onDeleteListen.onDelete(convertView, position);

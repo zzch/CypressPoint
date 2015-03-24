@@ -9,6 +9,7 @@ import cn.com.zcty.ILovegolf.model.Setcard;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +25,9 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 	private List<Setcard> setcardsArray;
 	private Context context;
 	private LayoutInflater inflater;
-	
+
+
+
 	public ScoreCardGridViewAdapter(List<Scorecards> scorecarsArray,
 			List<Setcard> setcardsArray, Context context) {
 		super();
@@ -71,7 +74,6 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 		return position;
 	}
 
-
 	
 	@SuppressLint("NewApi")
 	@Override
@@ -95,12 +97,14 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 			holder.image =  (ImageView) view.findViewById(R.id.imageView_1);
 			holder.r_2 = (RelativeLayout) view.findViewById(R.id.rrr);
 			view.setTag(holder);
+			
+			
 		}else{
 			holder = (SetscardsHolder) view.getTag();
 			Log.i("position", position+"");
 		}
 		
-		if(position%2==0){
+		if(position%2==0||position==0){
 			Log.i("position", position+"f");
 			holder.image.setVisibility(View.GONE);
 			holder.numberRod.setText(scorecarsArray.get(position/2).getNumber());
@@ -113,12 +117,10 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 			holder.imageView2.setBackground(null);
 			holder.r.setVisibility(View.GONE);
 			holder.r_2.setVisibility(View.VISIBLE);
-			view.setTag(holder);
-			return view;
+			
 		}else{
-			holder.p.setText("");
-			holder.y.setText("");
-			if(setcardsArray.size()>0&&setcardsArray.get(position/2).getRodNum()!=null&&!(setcardsArray.get(position/2).getRodNum().equals("null"))){
+			
+			if(setcardsArray.get(position/2).getRodNum()!=null&&!(setcardsArray.get(position/2).getRodNum().equals("null"))){
 				holder.imageView1.setBackgroundResource(R.drawable.shaozi);
 				holder.image.setVisibility(View.GONE);
 				holder.r_2.setVisibility(View.VISIBLE);
@@ -131,6 +133,8 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 				holder.te.setText(setcardsArray.get(position/2).getPar());
 				holder.imageView1.setText("");
 				holder.imageView2.setText("");
+				holder.p.setText("");
+				holder.y.setText("");
 				if(setcardsArray.get(position/2).getPar().equals("命中")){
 					holder.imageView2.setBackgroundResource(R.drawable.juzhong);
 				}else if(setcardsArray.get(position/2).getPar().equals("左侧")){
@@ -139,9 +143,8 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 					holder.imageView2.setBackgroundResource(R.drawable.right);
 				}
 				holder.r.setVisibility(View.VISIBLE);
-				view.setTag(holder);
-				return view;
-			}else{
+				
+			}else if(setcardsArray.size()<18&&setcardsArray.get(position/2).getRodNum()==null||setcardsArray.get(position/2).getRodNum().equals("null")){
 				holder.r.setVisibility(View.GONE);
 				holder.image.setVisibility(View.VISIBLE);
 				holder.r_2.setVisibility(View.GONE);
@@ -153,11 +156,12 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 				holder.putts.setText("");
 				holder.par.setText("");
 				holder.te.setText("");
-				view.setTag(holder);
-				return view;
+				holder.p.setText("");
+				holder.y.setText("");
+				
 			}
 		}
-		//return view;
+		return view;
 	
 	}
 
