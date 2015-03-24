@@ -18,7 +18,7 @@ import android.widget.EditText;
 public class ClearEditText extends EditText implements  
         OnFocusChangeListener, TextWatcher { 
 	/**
-	 * ɾ��ť������
+	 * 删锟斤拷钮锟斤拷锟斤拷锟斤拷
 	 */
     private Drawable mClearDrawable; 
  
@@ -27,7 +27,7 @@ public class ClearEditText extends EditText implements
     } 
  
     public ClearEditText(Context context, AttributeSet attrs) { 
-    	//���ﹹ�췽��Ҳ����Ҫ����������ܶ����Բ�����XML���涨��
+    	//锟斤拷锟斤构锟届方锟斤拷也锟斤拷锟斤拷要锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷芏锟斤拷锟斤拷圆锟斤拷锟斤拷锟絏ML锟斤拷锟芥定锟斤拷
     	this(context, attrs, android.R.attr.editTextStyle); 
     } 
     
@@ -38,7 +38,7 @@ public class ClearEditText extends EditText implements
     
     
     private void init() { 
-    	//��ȡEditText��DrawableRight,����û���������Ǿ�ʹ��Ĭ�ϵ�ͼƬ
+    	//锟斤拷取EditText锟斤拷DrawableRight,锟斤拷锟斤拷没锟斤拷锟斤拷锟斤拷锟斤拷锟角撅拷使锟斤拷默锟较碉拷图片
     	mClearDrawable = getCompoundDrawables()[2]; 
         if (mClearDrawable == null) { 
         	mClearDrawable = getResources() 
@@ -50,9 +50,9 @@ public class ClearEditText extends EditText implements
         addTextChangedListener(this); 
     } 
     /**
-     * ��Ϊ���ǲ���ֱ�Ӹ�EditText���õ���¼������������ü�ס���ǰ��µ�λ����ģ�����¼�
-     * �����ǰ��µ�λ�� ��  EditText�Ŀ�� - ͼ�굽�ؼ��ұߵļ�� - ͼ��Ŀ��  ��
-     * EditText�Ŀ�� - ͼ�굽�ؼ��ұߵļ��֮�����Ǿ�������ͼ�꣬��ֱ����û�п���
+     * 锟斤拷为锟斤拷锟角诧拷锟斤拷直锟接革拷EditText锟斤拷锟矫碉拷锟斤拷录锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷眉锟阶★拷锟斤拷前锟斤拷碌锟轿伙拷锟斤拷锟侥ｏ拷锟斤拷锟斤拷录锟�
+     * 锟斤拷锟斤拷锟角帮拷锟铰碉拷位锟斤拷 锟斤拷  EditText锟侥匡拷锟�- 图锟疥到锟截硷拷锟揭边的硷拷锟�- 图锟斤拷目锟斤拷  锟斤拷
+     * EditText锟侥匡拷锟�- 图锟疥到锟截硷拷锟揭边的硷拷锟街拷锟斤拷锟斤拷蔷锟斤拷锟斤拷锟斤拷锟酵硷拷辏拷锟街憋拷锟斤拷锟矫伙拷锌锟斤拷锟�
      */
     @Override 
     public boolean onTouchEvent(MotionEvent event) { 
@@ -71,7 +71,7 @@ public class ClearEditText extends EditText implements
     } 
  
     /**
-     * ��ClearEditText���㷢��仯��ʱ���ж������ַ����������ͼ�����ʾ������
+     * 锟斤拷ClearEditText锟斤拷锟姐发锟斤拷浠拷锟绞憋拷锟斤拷卸锟斤拷锟斤拷锟斤拷址锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷图锟斤拷锟斤拷锟绞撅拷锟斤拷锟斤拷锟�
      */
     @Override 
     public void onFocusChange(View v, boolean hasFocus) { 
@@ -84,7 +84,7 @@ public class ClearEditText extends EditText implements
  
  
     /**
-     * �������ͼ�����ʾ�����أ�����setCompoundDrawablesΪEditText������ȥ
+     * 锟斤拷锟斤拷锟斤拷锟酵硷拷锟斤拷锟斤拷示锟斤拷锟斤拷锟截ｏ拷锟斤拷锟斤拷setCompoundDrawables为EditText锟斤拷锟斤拷锟斤拷去
      * @param visible
      */
     protected void setClearIconVisible(boolean visible) { 
@@ -94,7 +94,7 @@ public class ClearEditText extends EditText implements
     } 
      
     /**
-     * ��������������ݷ���仯��ʱ��ص��ķ���
+     * 锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷莘锟斤拷锟戒化锟斤拷时锟斤拷氐锟斤拷姆锟斤拷锟�
      */
     @Override 
     public void onTextChanged(CharSequence s, int start, int count, 
@@ -115,7 +115,7 @@ public class ClearEditText extends EditText implements
     
    
     /**
-     * ���ûζ�����
+     * 锟斤拷锟矫晃讹拷锟斤拷锟斤拷
      */
     public void setShakeAnimation(){
     	this.setAnimation(shakeAnimation(5));
@@ -123,8 +123,8 @@ public class ClearEditText extends EditText implements
     
     
     /**
-     * �ζ�����
-     * @param counts 1���ӻζ�������
+     * 锟轿讹拷锟斤拷锟斤拷
+     * @param counts 1锟斤拷锟接晃讹拷锟斤拷锟斤拷锟斤拷
      * @return
      */
     public static Animation shakeAnimation(int counts){

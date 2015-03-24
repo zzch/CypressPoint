@@ -17,6 +17,7 @@ import java.util.Map;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpDelete;
@@ -27,8 +28,10 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
+import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.model.QuickContent;
 
+import android.app.AlertDialog;
 import android.util.Log;
 
 //Http请求的工具类
@@ -61,6 +64,8 @@ public class HttpUtils
 				System.out.println("is---->"+str);
 				Log.i("is---->", ""+str);
 				return str;
+			}else{
+				return "0";
 			}
 			
 		} catch (Exception e) {
@@ -163,7 +168,7 @@ public class HttpUtils
 	 * @return
 	 * @throws Exception
 	 */
-	public static String HttpClientDelete(String path)throws Exception{
+	public static String HttpClientDelete(String path){
 		
 	   String str = "";
 		//创建一个http客户端  
@@ -171,13 +176,20 @@ public class HttpUtils
 		//创建一个DELETE请求  
 		HttpDelete httpDelete=new HttpDelete(path);  
 		//向服务器发送DELETE请求并获取服务器返回的结果，可能是删除成功，或者失败等信息  
-		HttpResponse response=client.execute(httpDelete); 
-		int code=response.getStatusLine().getStatusCode();
-		Log.i("---->>", "code---"+code+"aaaaa");
-		if(code==200){
-			str = EntityUtils.toString(response.getEntity(),"utf-8");
-			Log.i("is---->>", ""+str);
-		}
+		HttpResponse response;
+		try {
+			response = client.execute(httpDelete);
+			int code=response.getStatusLine().getStatusCode();
+			Log.i("---->>", "code---"+code+"aaaaa");
+			if(code==200){
+				str = EntityUtils.toString(response.getEntity(),"utf-8");
+				Log.i("is---->>", ""+str);}
+		} catch (Exception e) {
+			e.printStackTrace();
+			str = "5";
+		} 
+		
+		
 		return str;
 	}
 }
