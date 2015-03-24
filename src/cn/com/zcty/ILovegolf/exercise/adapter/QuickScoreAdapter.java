@@ -88,8 +88,9 @@ public  class QuickScoreAdapter extends BaseAdapter {
 		item.slideView.shrinkByFast();
 		 holder.kpitname.setText(nameArrayList.get(position));
 		SimpleDateFormat  simpleDate = new SimpleDateFormat("yyyy年MM月dd");
-		 String date =	simpleDate.format(Integer.parseInt(quickContents.get(position).getStarted_at()));		 
-		// Log.i("date", d+"");
+		long d = (Integer.parseInt(quickContents.get(position).getStarted_at()))*1000;
+		 String date =	simpleDate.format(d);		 
+		Log.i("date", d+"");
 		 holder.time.setText(date);
 		 holder.type.setText(quickContents.get(position).getType());
 		 holder.gan_number.setText(quickContents.get(position).getRecorded_scorecards_count());

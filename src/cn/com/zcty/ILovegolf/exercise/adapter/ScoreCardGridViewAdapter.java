@@ -117,7 +117,7 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 			holder.imageView2.setBackground(null);
 			holder.r.setVisibility(View.GONE);
 			holder.r_2.setVisibility(View.VISIBLE);
-			
+			return view;
 		}else{
 			
 			if(setcardsArray.get(position/2).getRodNum()!=null&&!(setcardsArray.get(position/2).getRodNum().equals("null"))){
@@ -143,8 +143,8 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 					holder.imageView2.setBackgroundResource(R.drawable.right);
 				}
 				holder.r.setVisibility(View.VISIBLE);
-				
-			}else if(setcardsArray.size()<18&&setcardsArray.get(position/2).getRodNum()==null||setcardsArray.get(position/2).getRodNum().equals("null")){
+				return view;
+			}else{
 				holder.r.setVisibility(View.GONE);
 				holder.image.setVisibility(View.VISIBLE);
 				holder.r_2.setVisibility(View.GONE);
@@ -158,10 +158,10 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 				holder.te.setText("");
 				holder.p.setText("");
 				holder.y.setText("");
-				
+				return view;
 			}
 		}
-		return view;
+		//return view;
 	
 	}
 
