@@ -1,4 +1,4 @@
-package cn.com.zcty.ILovegolf.activity.view;
+ package cn.com.zcty.ILovegolf.activity.view;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +29,7 @@ import android.widget.ExpandableListView.OnGroupClickListener;
 import android.widget.ListView;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.exercise.city.ClearEditText;
+import cn.com.zcty.ILovegolf.exercise.adapter.SearchCityAdapter;
 import cn.com.zcty.ILovegolf.exercise.adapter.SortAdapter;
 import cn.com.zcty.ILovegolf.model.Course;
 import cn.com.zcty.ILovegolf.model.SortModel;
@@ -149,7 +150,8 @@ public class ListChoosePitchActivity extends Activity {
 							}
 						}
 					}
-						ArrayAdapter<String> adapters = new ArrayAdapter<String>(ListChoosePitchActivity.this, android.R.layout.simple_list_item_1,citys_name);
+					   SearchCityAdapter adapters = new SearchCityAdapter(citys_name,ListChoosePitchActivity.this);
+						
 						cityList.setAdapter(adapters);
 						adapters.notifyDataSetChanged();
 						

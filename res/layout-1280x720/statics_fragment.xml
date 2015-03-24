@@ -2,12 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:background="@color/black"    >
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ffcccccc" >
+        
+        android:background="@color/black" >
 
         <TableRow
             android:id="@+id/tableRow1"
@@ -20,131 +22,161 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="1" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="2" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="3" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="4" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+               android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="5" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="6" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="7" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="8" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="9" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="前" />
 
             <View
                 android:id="@+id/v"
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
         </TableRow>
 
         <TableRow
@@ -158,13 +190,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="1" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+               android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:id="@+id/t2"
@@ -172,13 +207,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="2" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:id="@+id/t3"
@@ -186,13 +224,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="3" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:id="@+id/t4"
@@ -200,13 +241,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="4" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:id="@+id/t5"
@@ -214,13 +258,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="5" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black"/>
 
             <TextView
                 android:id="@+id/t6"
@@ -228,13 +275,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="6" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black"/>
 
             <TextView
                 android:id="@+id/t7"
@@ -242,13 +292,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="7" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+               android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black"/>
 
             <TextView
                 android:id="@+id/t8"
@@ -256,13 +309,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="8" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+               android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:id="@+id/t9"
@@ -270,13 +326,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="9" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:id="@+id/t10"
@@ -284,14 +343,17 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="前" />
 
             <View
                 android:id="@+id/v"
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black"/>
         </TableRow>
 
         <TableRow
@@ -304,13 +366,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="1" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:id="@+id/tt2"
@@ -318,13 +383,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="2" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:id="@+id/tt3"
@@ -332,13 +400,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="3" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:id="@+id/tt4"
@@ -346,13 +417,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="4" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:id="@+id/tt5"
@@ -360,13 +434,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="5" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:id="@+id/tt6"
@@ -374,13 +451,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="6" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black"/>
 
             <TextView
                 android:id="@+id/tt7"
@@ -388,13 +468,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="7" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:id="@+id/tt8"
@@ -402,13 +485,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="8" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black"/>
 
             <TextView
                 android:id="@+id/tt9"
@@ -416,13 +502,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="9" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:id="@+id/tt10"
@@ -430,14 +519,17 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="前" />
 
             <View
                 android:id="@+id/v"
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
             
         </TableRow>
 
@@ -452,13 +544,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="1" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:id="@+id/ttt2"
@@ -466,13 +561,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="2" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:id="@+id/ttt3"
@@ -480,13 +578,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="3" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:id="@+id/ttt4"
@@ -494,13 +595,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="4" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                 android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black"  />
 
             <TextView
                 android:id="@+id/ttt5"
@@ -508,13 +612,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="5" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:id="@+id/ttt6"
@@ -522,13 +629,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="6" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:id="@+id/ttt7"
@@ -536,13 +646,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="7" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:id="@+id/ttt8"
@@ -550,13 +663,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="8" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black" />
 
             <TextView
                 android:id="@+id/ttt9"
@@ -564,13 +680,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="9" />
 
             <View
-                android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_width="0dip"
+                android:layout_height="0dp"
+                android:background="@color/black"/>
 
             <TextView
                 android:id="@+id/ttt10"
@@ -578,14 +697,17 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="前" />
 
             <View
                 android:id="@+id/v"
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                android:background="@color/black" />
         </TableRow>
     </TableLayout>
 

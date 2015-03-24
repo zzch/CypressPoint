@@ -25,6 +25,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -38,6 +39,7 @@ import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.view.fragment.StaticsFragmentOne;
 import cn.com.zcty.ILovegolf.activity.view.fragment.StaticsFragmentTwo;
+import cn.com.zcty.ILovegolf.exercise.adapter.StatisticAdapter;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
@@ -50,6 +52,7 @@ public class StatisticsAvtivity extends FragmentActivity{
 	private RadioButton radioButton_hou;
 	private TextView golfnameTextView;
 	private GridView gridView;
+	private ArrayList<String> scoregrid = new ArrayList<String>();
 	private ArrayList<Fragment> arrayFragment = new ArrayList<Fragment>();
 	private ArrayList<String> parArrayList = new ArrayList<String>();
 	private ArrayList<String> scoreArrayList = new ArrayList<String>();
@@ -67,6 +70,7 @@ public class StatisticsAvtivity extends FragmentActivity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		int a = this.getWindowManager().getDefaultDisplay().getRotation();
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_statistics);
 		Log.i("zhouhe", a+"");
 		initView();
@@ -103,7 +107,8 @@ public void onConfigurationChanged(Configuration newConfig) {
 		arrayFragment.add(new StaticsFragmentOne(parArrayList,scoreArrayList,statusArrayList));
 		arrayFragment.add(new StaticsFragmentTwo(parArrayList,scoreArrayList,statusArrayList));
 		tablePager.setAdapter(new MyFragmentPagerAdapter(getSupportFragmentManager()));
-		gridView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, scoresArrayList));
+		StatisticAdapter sadapter = new StatisticAdapter(this, scoresArrayList,scoregrid);
+		gridView.setAdapter(sadapter);
 		
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日");
 		String date = simpleDateFormat.format(new Date());
@@ -129,15 +134,15 @@ public void onConfigurationChanged(Configuration newConfig) {
 
 				switch (group.getCheckedRadioButtonId()) {
 				case R.id.mainTabs_radio_qian:
-					radioButton_qian.setBackgroundResource(R.color.grays);
-					radioButton_hou.setBackground(null);
+					radioButton_qian.setBackgroundResource(R.drawable.group_1);
+					radioButton_hou.setBackgroundResource(R.drawable.group_2);
 					tablePager.setCurrentItem(0);
 					
 					break;
 
 				case R.id.mainTabs_radio_hou:
-					radioButton_hou.setBackgroundResource(R.color.grays);
-					radioButton_qian.setBackground(null);
+					radioButton_hou.setBackgroundResource(R.drawable.group_3);
+					radioButton_qian.setBackgroundResource(R.drawable.group_4);
 					tablePager.setCurrentItem(1);
 					break;
 				}
@@ -182,7 +187,7 @@ public void onConfigurationChanged(Configuration newConfig) {
 		radioButton_qian = (RadioButton) findViewById(R.id.mainTabs_radio_qian);
 		radioButton_hou = (RadioButton) findViewById(R.id.mainTabs_radio_hou);
 		radioButton_qian.setChecked(true);
-		radioButton_qian.setBackgroundResource(R.color.grays);
+		radioButton_qian.setBackgroundResource(R.drawable.group_1);
 		gridView = (GridView) findViewById(R.id.gridView1);
 		dateText = (TextView) findViewById(R.id.golf_date);
 		golfnameTextView = (TextView) findViewById(R.id.golf_name);
@@ -223,13 +228,14 @@ public void onConfigurationChanged(Configuration newConfig) {
 			try {
 				JSONObject jsonObject = new JSONObject(jsonData);
 				String jsonArray = jsonObject.getString("scorecards");
-				scoresArrayList.add(jsonObject.getString("score")+"  成绩");
-				Log.i("aa", jsonObject.getString("score"));
-				Log.i("aa", jsonObject.getString("net"));
-				Log.i("aa", jsonObject.getString("putts"));
-				scoresArrayList.add(jsonObject.getString("net")+"  净杆");
-				scoresArrayList.add(jsonObject.getString("putts")+"  推杆");
-				scoresArrayList.add(jsonObject.getString("penalties")+"  罚杆");
+				scoresArrayList.add(jsonObject.getString("score"));
+				scoregrid.add("成绩");
+				scoresArrayList.add(jsonObject.getString("net"));
+				scoregrid.add("净杆");
+				scoresArrayList.add(jsonObject.getString("putts"));
+				scoregrid.add("推杆");
+				scoresArrayList.add(jsonObject.getString("penalties"));
+				scoregrid.add("罚杆");
 				Log.i("par",jsonArray);
 				JSONObject jsonObject2 = new JSONObject(jsonArray);
 				JSONArray jsonArray2 = jsonObject2.getJSONArray("par");

@@ -66,6 +66,7 @@ AdapterView.OnItemLongClickListener,OnClickListener {
     private Button dialog_ok;
     private AlertDialog dialog;
     String a ;
+    private MyTask myTask;
     private ArrayList<QuickContent> quickArrayList = new ArrayList<QuickContent>();
     private ArrayList<String> uuidArrayList = new ArrayList<String>();
     private ArrayList<String> nameArrayList = new ArrayList<String>();
@@ -86,9 +87,10 @@ AdapterView.OnItemLongClickListener,OnClickListener {
 						//intent传值
 						Log.i("qqqqqqq", position+"zhou");
 						//intent.putExtra("uuit_t",a);
-						intent.putExtra("uuid", quickArrayList.get(position-1).getUuid());		
+						intent.putExtra("uuid", quickArrayList.get(position-1).getUuid());	
 						startActivity(intent);
 						finish();
+						
 						
 					}
 				});
@@ -107,7 +109,8 @@ AdapterView.OnItemLongClickListener,OnClickListener {
 		setContentView(R.layout.activity_quick_score);
 		
 		initView();
-		new MyTask().start();
+		myTask =  new MyTask();
+		myTask.start();
 	}
  
     public void initView(){

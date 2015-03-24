@@ -91,7 +91,7 @@ public class SortAdapter extends BaseExpandableListAdapter {
 		if(convertView==null){
 		groupHolder = new GroupHolder();
 		convertView = inflater.inflate(R.layout.ex_item, null);
-		groupHolder. textView = (TextView) convertView.findViewById(R.id.textView1 );
+		groupHolder.textView = (TextView) convertView.findViewById(R.id.textView1 );
 		convertView.setTag(groupHolder);
 
 		}else{

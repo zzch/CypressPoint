@@ -8,11 +8,15 @@ import cn.com.zcty.ILovegolf.model.Setcard;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class ScoreCardGridViewAdapter extends BaseAdapter{
@@ -68,54 +72,108 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 	}
 
 
+	
 	@SuppressLint("NewApi")
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		SetscardsHolder holder;
-		if(convertView==null){
-			convertView = inflater.inflate(R.layout.setcards, null);
+		SetscardsHolder holder=null;
+		View view = convertView;
+		if(view==null){		
+			Log.i("position", position+"zhou");
+			view = inflater.inflate(R.layout.setcards, null);
 			holder = new SetscardsHolder();
-			holder.numberRod = (TextView) convertView.findViewById(R.id.numberRod);
-			holder.penalties = (TextView) convertView.findViewById(R.id.textView2);
-			holder.putts = (TextView) convertView.findViewById(R.id.textView3);
-			holder.par = (TextView) convertView.findViewById(R.id.textView4);
-			holder.te = (TextView) convertView.findViewById(R.id.textView5);
-			convertView.setTag(holder);
+			holder.numberRod = (TextView) view.findViewById(R.id.numberRod);
+			holder.penalties = (TextView) view.findViewById(R.id.textView2);
+			holder.putts = (TextView) view.findViewById(R.id.textView3);
+			holder.par = (TextView) view.findViewById(R.id.textView4);
+			holder.te = (TextView) view.findViewById(R.id.textView5);
+			holder.imageView1 = (TextView) view.findViewById(R.id.image1);
+			holder.imageView2 = (TextView) view.findViewById(R.id.image2);
+			holder.r = (RelativeLayout) view.findViewById(R.id.r_gone);
+			holder.p = (TextView) view.findViewById(R.id.t1);
+			holder.y = (TextView) view.findViewById(R.id.t2);
+			holder.image =  (ImageView) view.findViewById(R.id.imageView_1);
+			holder.r_2 = (RelativeLayout) view.findViewById(R.id.rrr);
+			view.setTag(holder);
 		}else{
-			holder = (SetscardsHolder) convertView.getTag();
+			holder = (SetscardsHolder) view.getTag();
+			Log.i("position", position+"");
 		}
+		
 		if(position%2==0){
+			Log.i("position", position+"f");
+			holder.image.setVisibility(View.GONE);
 			holder.numberRod.setText(scorecarsArray.get(position/2).getNumber());
 			holder.par.setText(scorecarsArray.get(position/2).getPar());
 			holder.te.setText(scorecarsArray.get(position/2).getDistance_from_hole_to_tee_box());		
-			
+			holder.p.setText("P");
+			holder.y.setText("Y");
+			holder.imageView1.setBackground(null);
+			holder.numberRod.setBackgroundResource(R.drawable.e_card_yuan);
+			holder.imageView2.setBackground(null);
+			holder.r.setVisibility(View.GONE);
+			holder.r_2.setVisibility(View.VISIBLE);
+			view.setTag(holder);
+			return view;
 		}else{
-			if(setcardsArray.size()>0&&setcardsArray.get(position/2).getRodNum()!=null){
-		
-				//holder.numberRod.setBackground(null);
+			holder.p.setText("");
+			holder.y.setText("");
+			if(setcardsArray.size()>0&&setcardsArray.get(position/2).getRodNum()!=null&&!(setcardsArray.get(position/2).getRodNum().equals("null"))){
+				holder.imageView1.setBackgroundResource(R.drawable.shaozi);
+				holder.image.setVisibility(View.GONE);
+				holder.r_2.setVisibility(View.VISIBLE);
+				holder.numberRod.setBackground(null);
+				holder.penalties.setTextColor(Color.RED);
 				holder.numberRod.setText(setcardsArray.get(position/2).getRodNum());
 				holder.penalties.setText(setcardsArray.get(position/2).getPenalties());
 				holder.putts.setText(setcardsArray.get(position/2).getPutts());
-				holder.par.setText(setcardsArray.get(position/2).getPar());
-				holder.te.setText(setcardsArray.get(position/2).getTe());	
-				
+				holder.par.setText(setcardsArray.get(position/2).getTe());
+				holder.te.setText(setcardsArray.get(position/2).getPar());
+				holder.imageView1.setText("");
+				holder.imageView2.setText("");
+				if(setcardsArray.get(position/2).getPar().equals("命中")){
+					holder.imageView2.setBackgroundResource(R.drawable.juzhong);
+				}else if(setcardsArray.get(position/2).getPar().equals("左侧")){
+					holder.imageView2.setBackgroundResource(R.drawable.lelf);
+				}else{
+					holder.imageView2.setBackgroundResource(R.drawable.right);
+				}
+				holder.r.setVisibility(View.VISIBLE);
+				view.setTag(holder);
+				return view;
 			}else{
+				holder.r.setVisibility(View.GONE);
+				holder.image.setVisibility(View.VISIBLE);
+				holder.r_2.setVisibility(View.GONE);
+				holder.imageView1.setBackground(null);
+				holder.numberRod.setBackground(null);
+				holder.imageView2.setBackground(null);
 				holder.numberRod.setText("");
 				holder.penalties.setText("");
 				holder.putts.setText("");
 				holder.par.setText("");
 				holder.te.setText("");
+				view.setTag(holder);
+				return view;
 			}
 		}
-		return convertView;
+		//return view;
 	
 	}
 
 	class SetscardsHolder{
+		RelativeLayout r;
+		RelativeLayout r_2;
 		TextView numberRod;
 		TextView par;
 		TextView te;//码
 		TextView penalties;//罚
 		TextView putts;//推杆
+		TextView imageView1;
+		TextView imageView2;
+		TextView p;
+		TextView y;
+		ImageView image;
 	}
+	
 }

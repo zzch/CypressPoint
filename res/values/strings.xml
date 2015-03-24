@@ -29,4 +29,7 @@
     <string name="score_card">记分卡</string>
     <string name="button_count">统计</string>
     <string name="button_save">保存</string>
+    <string name="text_statistics">技术统计</string>
+    <string name="text_share">分享</string>
+    <string name="searchpith">搜索球场</string>
 </resources>

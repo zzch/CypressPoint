@@ -11,6 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.exercise.adapter.StatisticAdapter;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 import android.annotation.SuppressLint;
@@ -26,6 +27,7 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
@@ -38,6 +40,7 @@ public class StatisticsActivityLand extends Activity{
 	private ArrayList<String> scoreArrayList = new ArrayList<String>();
 	private ArrayList<String> statusArrayList = new ArrayList<String>();
 	private ArrayList<String> scoresArrayList = new ArrayList<String>();
+	private ArrayList<String> scoregrid = new ArrayList<String>();
 	private TextView dateText;
 	private Button backButton;
 	private GridView gridView;
@@ -53,6 +56,7 @@ public class StatisticsActivityLand extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_statistics_land);
 		initView();
 		setListener();
@@ -68,7 +72,8 @@ public class StatisticsActivityLand extends Activity{
 		
 	}
 	private void getData() {
-		gridView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, scoresArrayList));
+		StatisticAdapter sadapter = new StatisticAdapter(this, scoresArrayList,scoregrid);
+		gridView.setAdapter(sadapter);
 
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日");
 		String date = simpleDateFormat.format(new Date());
@@ -253,13 +258,14 @@ public class StatisticsActivityLand extends Activity{
 			try {
 				JSONObject jsonObject = new JSONObject(jsonData);
 				String jsonArray = jsonObject.getString("scorecards");
-				scoresArrayList.add(jsonObject.getString("score")+"  成绩");
-				Log.i("aa", jsonObject.getString("score"));
-				Log.i("aa", jsonObject.getString("net"));
-				Log.i("aa", jsonObject.getString("putts"));
-				scoresArrayList.add(jsonObject.getString("net")+"  净杆");
-				scoresArrayList.add(jsonObject.getString("putts")+"  推杆");
-				scoresArrayList.add(jsonObject.getString("penalties")+"  罚杆");
+				scoresArrayList.add(jsonObject.getString("score"));
+				scoregrid.add("成绩");
+				scoresArrayList.add(jsonObject.getString("net"));
+				scoregrid.add("净杆");
+				scoresArrayList.add(jsonObject.getString("putts"));
+				scoregrid.add("推杆");
+				scoresArrayList.add(jsonObject.getString("penalties"));
+				scoregrid.add("罚杆");
 				Log.i("par",jsonArray);
 				JSONObject jsonObject2 = new JSONObject(jsonArray);
 				JSONArray jsonArray2 = jsonObject2.getJSONArray("par");

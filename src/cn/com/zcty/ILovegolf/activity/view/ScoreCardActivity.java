@@ -49,6 +49,7 @@ public class ScoreCardActivity extends Activity {
 			if(msg.what==1){
 				//Log.i("name1", scorecarsArray.get(0).toString());
 				setListeners();
+				adapter.notifyDataSetChanged();
 			}
 		};
 	};
@@ -85,6 +86,7 @@ public class ScoreCardActivity extends Activity {
 					intent.putExtra("position", position+"");
 					startActivityForResult(intent, REQUESTCODE);
 				}
+				
 			}
 		});
 	}
