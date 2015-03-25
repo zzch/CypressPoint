@@ -1,21 +1,16 @@
 package cn.com.zcty.ILovegolf.exercise.adapter;
 
-import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-
-
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup.LayoutParams;
+import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -23,8 +18,7 @@ import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.model.QuickContent;
 import cn.com.zcty.ILovegolf.tools.SlidingDeleteSlideView;
 import cn.com.zcty.ILovegolf.tools.SlidingDeleteSlideView.OnSlideListener;
-import cn.com.zcty.ILovegolf.utils.APIService;
-import cn.com.zcty.ILovegolf.utils.HttpUtils;
+import cn.com.zcty.ILovegolf.utils.TimeUtil;
 
 public  class QuickScoreAdapter extends BaseAdapter {
 	   
@@ -86,10 +80,17 @@ public  class QuickScoreAdapter extends BaseAdapter {
 		item.slideView = slideView;
 		item.slideView.shrinkByFast();
 		 holder.kpitname.setText(nameArrayList.get(position));
-		 holder.time.setText(quickContents.get(position).getStarted_at());
+		SimpleDateFormat  simpleDate = new SimpleDateFormat("yyyy年MM月dd");
+		long d = (Integer.parseInt(quickContents.get(position).getStarted_at()));
+		 String date =	TimeUtil.utc2Local(TimeUtil.secondTurnMs(d), TimeUtil.LOCAL_TIME_PATTERN);		 
+		//Log.i("date", d+"");
+		 holder.time.setText(date);
 		 holder.type.setText(quickContents.get(position).getType());
 		 holder.gan_number.setText(quickContents.get(position).getRecorded_scorecards_count());
-		 holder.Pole_number.setText(quickContents.get(position).getStrokes()); 
+		 if(quickContents.get(position).getStrokes().equals("null")){
+			 
+			 holder.Pole_number.setText("未开始"); 
+		 }
        holder.deleteHolder.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				onDeleteListen.onDelete(convertView, position);

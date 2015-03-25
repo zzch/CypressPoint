@@ -26,11 +26,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.activity.widget.ArrayWheelAdapter;
-import cn.com.zcty.ILovegolf.activity.widget.NumericWheelAdapter;
-import cn.com.zcty.ILovegolf.activity.widget.OnWheelChangedListener;
-import cn.com.zcty.ILovegolf.activity.widget.WheelView;
 import cn.com.zcty.ILovegolf.model.Setcard;
+import cn.com.zcty.ILovegolf.tools.ArrayWheelAdapter;
+import cn.com.zcty.ILovegolf.tools.NumericWheelAdapter;
+import cn.com.zcty.ILovegolf.tools.OnWheelChangedListener;
+import cn.com.zcty.ILovegolf.tools.WheelView;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
