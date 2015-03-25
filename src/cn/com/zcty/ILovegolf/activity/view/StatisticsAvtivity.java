@@ -30,6 +30,7 @@ import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TableRow;
@@ -39,6 +40,7 @@ import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.view.fragment.StaticsFragmentOne;
 import cn.com.zcty.ILovegolf.activity.view.fragment.StaticsFragmentTwo;
+import cn.com.zcty.ILovegolf.exercise.adapter.CountCoolAdapter;
 import cn.com.zcty.ILovegolf.exercise.adapter.StatisticAdapter;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
@@ -52,12 +54,15 @@ public class StatisticsAvtivity extends FragmentActivity{
 	private RadioButton radioButton_hou;
 	private TextView golfnameTextView;
 	private GridView gridView;
+	private ListView countListView;
 	private ArrayList<String> scoregrid = new ArrayList<String>();
 	private ArrayList<Fragment> arrayFragment = new ArrayList<Fragment>();
 	private ArrayList<String> parArrayList = new ArrayList<String>();
 	private ArrayList<String> scoreArrayList = new ArrayList<String>();
 	private ArrayList<String> statusArrayList = new ArrayList<String>();
 	private ArrayList<String> scoresArrayList = new ArrayList<String>();
+	private ArrayList<String> countCool = new ArrayList<String>();
+	private ArrayList<String> countCoolResult = new ArrayList<String>();
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -87,8 +92,7 @@ public class StatisticsAvtivity extends FragmentActivity{
 public void onConfigurationChanged(Configuration newConfig) {
 	super.onConfigurationChanged(newConfig);
 	if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) { 
-		Log.i("zhouhe", "zhouhea");
-		
+		Log.i("zhouhe", "zhouhea");		
 		Intent intent = new Intent(this,StatisticsActivityLand.class);
 		startActivity(intent);
 		finish();
@@ -113,7 +117,7 @@ public void onConfigurationChanged(Configuration newConfig) {
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日");
 		String date = simpleDateFormat.format(new Date());
 		dateText.setText(date);
-
+		countListView.setAdapter(new CountCoolAdapter(this, countCool, countCoolResult));
 		
 	}
 
@@ -193,6 +197,8 @@ public void onConfigurationChanged(Configuration newConfig) {
 		golfnameTextView = (TextView) findViewById(R.id.golf_name);
 		SharedPreferences ss = getSharedPreferences("name", MODE_PRIVATE);
 		golfnameTextView.setText(ss.getString("name", "name"));
+		
+		countListView = (ListView) findViewById(R.id.count);
 	}
 	class MyFragmentPagerAdapter  extends FragmentPagerAdapter{
 
@@ -236,6 +242,43 @@ public void onConfigurationChanged(Configuration newConfig) {
 				scoregrid.add("推杆");
 				scoresArrayList.add(jsonObject.getString("penalties"));
 				scoregrid.add("罚杆");
+				countCoolResult.add(jsonObject.getString("longest_drive_length"));
+				countCool.add("最远开球距离");
+				countCoolResult.add(jsonObject.getString("average_drive_length"));
+				Log.i("juli", jsonObject.getString("average_drive_length"));
+				countCool.add("平均开球距离");
+				countCoolResult.add(jsonObject.getString("drive_fairways_hit"));
+				countCool.add("开球命中率");
+				countCoolResult.add(jsonObject.getString("scrambles"));
+				countCool.add("救球成功率");
+				countCoolResult.add(jsonObject.getString("bounce"));
+				countCool.add("反弹率");
+				countCoolResult.add(jsonObject.getString("advantage_transformation"));
+				countCool.add("优势转化率");
+				countCoolResult.add(jsonObject.getString("greens_in_regulation"));
+				countCool.add("攻果岭率");
+				countCoolResult.add(jsonObject.getString("putts_per_gir"));
+				countCool.add("标准杆上果岭的平均推杆");
+				countCoolResult.add(jsonObject.getString("score_par_3"));
+				countCool.add("3杆洞");
+				countCoolResult.add(jsonObject.getString("score_par_4"));
+				countCool.add("4杆洞");
+				countCoolResult.add(jsonObject.getString("score_par_5"));
+				countCool.add("5杆洞");
+				countCoolResult.add(jsonObject.getString("double_eagle"));
+				countCool.add("信天翁球");
+				countCoolResult.add(jsonObject.getString("eagle"));
+				countCool.add("老鹰球");
+				countCoolResult.add(jsonObject.getString("birdie"));
+				countCool.add("小鸟球");
+				countCoolResult.add(jsonObject.getString("par"));
+				countCool.add("标准杆");
+				countCoolResult.add(jsonObject.getString("birdie"));
+				countCool.add("小鸟球");
+				countCoolResult.add(jsonObject.getString("bogey"));
+				countCool.add("柏忌球");
+				countCoolResult.add(jsonObject.getString("double_bogey"));
+				countCool.add("双柏忌球");
 				Log.i("par",jsonArray);
 				JSONObject jsonObject2 = new JSONObject(jsonArray);
 				JSONArray jsonArray2 = jsonObject2.getJSONArray("par");
