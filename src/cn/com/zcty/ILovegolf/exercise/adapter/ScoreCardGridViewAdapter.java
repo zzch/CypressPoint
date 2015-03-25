@@ -91,11 +91,9 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 			holder.te = (TextView) view.findViewById(R.id.textView5);
 			holder.imageView1 = (TextView) view.findViewById(R.id.image1);
 			holder.imageView2 = (TextView) view.findViewById(R.id.image2);
-			holder.r = (RelativeLayout) view.findViewById(R.id.r_gone);
 			holder.p = (TextView) view.findViewById(R.id.t1);
 			holder.y = (TextView) view.findViewById(R.id.t2);
 			holder.image =  (ImageView) view.findViewById(R.id.imageView_1);
-			holder.r_2 = (RelativeLayout) view.findViewById(R.id.rrr);
 			view.setTag(holder);
 			
 			
@@ -115,15 +113,14 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 			holder.imageView1.setBackground(null);
 			holder.numberRod.setBackgroundResource(R.drawable.e_card_yuan);
 			holder.imageView2.setBackground(null);
-			holder.r.setVisibility(View.GONE);
-			holder.r_2.setVisibility(View.VISIBLE);
-			return view;
+			holder.putts.setText("");
+			holder.penalties.setText("");
+	
 		}else{
 			
 			if(setcardsArray.get(position/2).getRodNum()!=null&&!(setcardsArray.get(position/2).getRodNum().equals("null"))){
 				holder.imageView1.setBackgroundResource(R.drawable.shaozi);
 				holder.image.setVisibility(View.GONE);
-				holder.r_2.setVisibility(View.VISIBLE);
 				holder.numberRod.setBackground(null);
 				holder.penalties.setTextColor(Color.RED);
 				holder.numberRod.setText(setcardsArray.get(position/2).getRodNum());
@@ -142,12 +139,9 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 				}else{
 					holder.imageView2.setBackgroundResource(R.drawable.right);
 				}
-				holder.r.setVisibility(View.VISIBLE);
-				return view;
-			}else{
-				holder.r.setVisibility(View.GONE);
+				//return view;
+			}else if(setcardsArray.size()<36){
 				holder.image.setVisibility(View.VISIBLE);
-				holder.r_2.setVisibility(View.GONE);
 				holder.imageView1.setBackground(null);
 				holder.numberRod.setBackground(null);
 				holder.imageView2.setBackground(null);
@@ -158,16 +152,14 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 				holder.te.setText("");
 				holder.p.setText("");
 				holder.y.setText("");
-				return view;
+				//return view;
 			}
 		}
-		//return view;
+		return view;
 	
 	}
 
 	class SetscardsHolder{
-		RelativeLayout r;
-		RelativeLayout r_2;
 		TextView numberRod;
 		TextView par;
 		TextView te;//码

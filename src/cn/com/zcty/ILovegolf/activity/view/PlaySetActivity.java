@@ -31,6 +31,8 @@ import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.exercise.adapter.PlaySetListViewAdapter;
 import cn.com.zcty.ILovegolf.model.Diamond;
+import cn.com.zcty.ILovegolf.tools.PickDialog;
+import cn.com.zcty.ILovegolf.tools.PickDialogListener;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 

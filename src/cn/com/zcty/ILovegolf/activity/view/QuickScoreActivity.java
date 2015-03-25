@@ -4,6 +4,8 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Timer;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -19,9 +21,11 @@ import cn.com.zcty.ILovegolf.tools.SlidingDeleteSlideView;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 import cn.com.zcty.ILovegolf.utils.JsonUtil;
+import cn.com.zcty.ILovegolf.utils.ProgressDialogUtil;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -65,10 +69,11 @@ AdapterView.OnItemLongClickListener,OnClickListener {
     private Button cancel;
     private Button dialog_ok;
     private AlertDialog dialog;
-    String a ;
+    private ProgressDialog progressDialog;
     private ArrayList<QuickContent> quickArrayList = new ArrayList<QuickContent>();
     private ArrayList<String> uuidArrayList = new ArrayList<String>();
     private ArrayList<String> nameArrayList = new ArrayList<String>();
+    private MyTask thread;
     /** 记录选中listviw选中项*/
 	private HashMap<Integer, Boolean> checkedItemMap = new HashMap<Integer, Boolean>();
 	Handler handler = new Handler(){
@@ -96,7 +101,10 @@ AdapterView.OnItemLongClickListener,OnClickListener {
 				mListView.setEnableSlidingDelete(true);
 				mListView.setAdapter(slideAdapter);
 				mListView.setXListViewListener(QuickScoreActivity.this);
+				hideProgressDialog();
+				//progressDialog.dismiss();
 			}
+			
 		};
 	};
     @Override
@@ -104,27 +112,58 @@ AdapterView.OnItemLongClickListener,OnClickListener {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity_quick_score);
-		
+		setContentView(R.layout.activity_quick_score);		
 		initView();
-		new MyTask().start();
+		thread = new MyTask();
+		thread.start();
+		
 	}
  
     public void initView(){
-    	mHandler = new Handler();
-    	
+    	mHandler = new Handler();    	
     	slideAdapter = new QuickScoreAdapter(this, quickArrayList,nameArrayList,
 				new onSlideListener(), new onDeleteListen());
     	mListView = (SlidingDeleteListView) findViewById(R.id.xListView);
 		image_layout = (LinearLayout) findViewById(R.id.image_layout);
 		XListView_layout = (LinearLayout) findViewById(R.id.XListView_layout);
+		showProgressDialog("提示", "正在加载");
 		
-	
-	
+		
+		
 		
     }
-    
-    
+/*	Thread task = new Thread(){
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			super.run();
+			Message msg = handler.obtainMessage();
+			msg.what = 2;
+			handler.sendMessageDelayed(msg, 5000);
+		}
+	};*/
+    /*
+	 * 提示加载
+	 */
+	public  void  showProgressDialog(String title,String message){
+		if(progressDialog==null){
+			progressDialog = ProgressDialog.show(this, title, message,true,false);
+			
+		}else if(progressDialog.isShowing()){
+			progressDialog.setTitle(title);
+			progressDialog.setMessage(message);
+		}
+		progressDialog.show();
+		
+	}
+	/*
+	 * 隐藏加载
+	 */
+	public  void hideProgressDialog(){
+		if(progressDialog !=null &&progressDialog.isShowing()){
+			progressDialog.dismiss();
+		}
+	}
     /**
 	 * @Function:加载更多，刷新完成
 	 * */
