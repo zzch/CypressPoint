@@ -50,9 +50,9 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:text="@string/pith_name"
-          android:textColor="#a4a4a4"
-          android:textSize="26px"
-           android:layout_marginTop="30px"
+           android:textColor="#a4a4a4"
+           android:textSize="26px"
+           android:layout_marginTop="15px"
           />
           
           <LinearLayout 

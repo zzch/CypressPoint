@@ -245,7 +245,6 @@ public class ScoreCardActivity extends Activity {
 							scorecards.setPar(jsonObjects.getString("par"));							
 							scorecards.setTee_box_color(jsonObjects.getString("tee_box_color"));							
 							scorecards.setDistance_from_hole_to_tee_box(jsonObjects.getString("distance_from_hole_to_tee_box"));
-							
 							scorecarsArray.add(scorecards);
 						}
 					} catch (JSONException e) {

@@ -11,28 +11,33 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 public class GpsGetLocation {
 
-
+	private static LocationManager lm;
+    private static Criteria criteria;
+    
 	public static List<String> getGpsLocationInfo(Context context)
 	{
 		
 		 final List<String> list = new ArrayList<String>();
-		 Criteria criteria = new Criteria();
-		// »ñÈ¡¾«È·µÄÎ»ÖÃ
-		criteria.setAccuracy(Criteria.ACCURACY_FINE);
-		criteria.setCostAllowed(false);
-		criteria.setPowerRequirement(Criteria.POWER_LOW); //µçÁ¿ÏûºÄµÍ  
-		criteria.setAltitudeRequired(false); //²»ĞèÒªº£°Î  
+		// ç”Ÿæˆä¸€ä¸ªCriteriaå¯¹è±¡
+		 criteria = new Criteria();
+		criteria.setAccuracy(Criteria.ACCURACY_FINE);//è®¾ç½®å‡†ç¡®è€Œéç²—ç³™çš„ç²¾åº¦
+		criteria.setCostAllowed(false);     // ä¸èƒ½äº§ç”Ÿè´¹ç”¨
+		criteria.setPowerRequirement(Criteria.POWER_LOW); //è®¾ç½®ç›¸å¯¹çœç”µè€Œéè€—ç”µï¼Œä¸€èˆ¬é«˜è€—ç”µé‡ä¼šæ¢æ¥æ›´ç²¾ç¡®çš„ä½ç½®ä¿¡æ¯
+		criteria.setAltitudeRequired(false); //æ˜¯å¦æŸ¥è¯¢æ–¹ä½è§’ : å¦ 
 		criteria.setPowerRequirement(Criteria.POWER_HIGH);
 		
-		// µÃµ½Ò»¸ö×îºÏÊÊµÄÎ»ÖÃÌá¹©Õß
-		LocationManager lm = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+		
+		lm = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
 		Log.i("---------LocationManager", ""+lm);
 		String provider = lm.getBestProvider(criteria, true);
-		// ×¢²áÒ»¸öÎ»ÖÃ¼àÌıÆ÷.
-		LocationListener locationListener =new LocationListener() {        
+		// ä½ç½®å˜åŒ–çš„ç›‘å¬
+		LocationListener locationListener =new LocationListener() {     
+
+   
 		        @Override 
 		        public void onStatusChanged(String provider, int status, Bundle extras) { 
 		            // TODO Auto-generated method stub 
@@ -46,18 +51,24 @@ public class GpsGetLocation {
 		        @Override 
 		        public void onProviderDisabled(String provider) { 
 		                     
-		        }        
+		        }  
+		        //æ‰‹æœºä½ç½®å‘ç”Ÿå˜åŒ–
 		        @Override 
 		        public void onLocationChanged(Location location) { 
-		        	//¾­¶È
+		        	//çº¬åº¦
 		        	list.add(location.getLatitude()+"");
-		        	//Î³¶È
+		        	Log.i("vv", "vv"+location.getLatitude()+"");
+		        	//ç»åº¦
 		        	list.add(location.getLongitude()+"");
+		        	Log.i("ude", "ude"+location.getLatitude()+"");
 		        }
 			
 		    }; 
 		    
-		    lm.requestLocationUpdates(provider, 0, 0, locationListener);
+		    lm.requestLocationUpdates(provider, 2000, 10, locationListener);
 		return list;
 	}
+	
 }
+
+

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" 
-   
+    android:background="@drawable/e_scorecard_bg"
 	
     >
 
@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="122px"
         android:layout_gravity="center"
+        android:layout_marginTop="38px"
         android:background="@drawable/e_card_yuan"
         android:gravity="center"
         android:textColor="@color/white"

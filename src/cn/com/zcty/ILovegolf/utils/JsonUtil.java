@@ -26,7 +26,7 @@ public class JsonUtil {
 	  * @return
 	  * @throws Exception
 	  */
-	 public static List<QiuChangList> getChoosePitch_json(String path,String longitude,String latitude,String token)throws Exception{
+	 public static List<QiuChangList> getChoosePitch_json(String path)throws Exception{
 		 
 		 List<QiuChangList> qiuchanglists=new ArrayList<QiuChangList>();
 		 String jsonData = HttpUtils.HttpClientGet(path);
