@@ -65,14 +65,14 @@ public class WheelView extends View {
 	private static final int ITEMS_TEXT_COLOR = 0xFF000000;
 
 	/** Top and bottom shadows colors */
-	private static final int[] SHADOWS_COLORS = new int[] { 0xFF111111,
-			0x00AAAAAA, 0x00AAAAAA };
+	private static final int[] SHADOWS_COLORS = new int[] { 0xFF17191c,
+			0x00131517, 0x00131517 };
 
 	/** Additional items height (is added to standard text item height) */
-	private static final int ADDITIONAL_ITEM_HEIGHT = 15;
+	private static final int ADDITIONAL_ITEM_HEIGHT = 25;
 
 	/** Text size */
-	private static final int TEXT_SIZE = 24;
+	private static final int TEXT_SIZE = 50;
 
 	/** Top and bottom items offset (to hide that) */
 	private static final int ITEM_OFFSET = TEXT_SIZE / 5;

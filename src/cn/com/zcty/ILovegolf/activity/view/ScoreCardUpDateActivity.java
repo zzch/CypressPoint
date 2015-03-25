@@ -61,7 +61,7 @@ public class ScoreCardUpDateActivity extends Activity{
 	private TextView distance_scorecard;
 	private TextView hit_scorecard;
 	private ImageView scorecard_image_up;
-	private LinearLayout wheelview_layout;
+	
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -220,7 +220,7 @@ public class ScoreCardUpDateActivity extends Activity{
 		distance_scorecard = (TextView) findViewById(R.id.distance_scorecard);
 		hit_scorecard = (TextView) findViewById(R.id.hit_scorecard);
 		scorecard_image_up = (ImageView) findViewById(R.id.scorecard_image_up);
-		wheelview_layout = (LinearLayout) findViewById(R.id.wheelview_layout);
+		
 		
 	}
 
@@ -275,7 +275,7 @@ public class ScoreCardUpDateActivity extends Activity{
 			}
 			break;
 		case R.id.layout_chooise:
-			wheelview_layout.setVisibility(View.VISIBLE);
+			
 			break;
 		}
 	}

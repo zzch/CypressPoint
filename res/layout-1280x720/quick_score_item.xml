@@ -26,10 +26,10 @@
          <ImageView
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-             android:src="@drawable/e_image_o8" 
-             android:layout_marginLeft="20dip"
-             android:layout_marginTop="30dip"
-             />
+             android:layout_marginRight="20dip"
+             android:layout_marginTop="25dip"
+             android:src="@drawable/e_image_o8" />
+
       </LinearLayout>
       
 
@@ -41,7 +41,7 @@
      <LinearLayout 
          android:id="@+id/layout"
         android:layout_width="414px"
-        android:layout_height="wrap_content"
+        android:layout_height="200px"
         android:orientation="vertical"
         android:gravity="center_vertical"
          >
@@ -52,18 +52,20 @@
            android:text="@string/pith_name"
            android:textColor="#a4a4a4"
            android:textSize="26px"
-           android:layout_marginTop="15px"
+           android:gravity="center_vertical"
           />
           
           <LinearLayout 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginTop="15px"
+            android:gravity="center_vertical"
               >
               <ImageView 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="26px"
+               
                 android:src="@drawable/calendar" 
                   />
               <TextView 
@@ -73,7 +75,6 @@
                android:text="02月02号"
                android:textSize="30px"
                android:textColor="#ced1d4"
-               android:layout_marginTop="28px"
                android:layout_marginLeft="20px"
               /> 
              
@@ -83,6 +84,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal" 
+            android:gravity="center_vertical"
+            android:layout_marginTop="15px"
               >
                <TextView
                android:id="@+id/practice"
@@ -91,7 +94,6 @@
                android:text="练习赛"
                android:gravity="center"
                android:textColor="@color/gray"
-               android:layout_marginTop="26px"
                android:background="@drawable/e_normal"
               />
                <LinearLayout 
@@ -99,7 +101,6 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/e_normal"
                 android:orientation="horizontal"
-                android:layout_marginTop="26px"
                 android:layout_marginLeft="13px"
                 android:gravity="center"
                    >

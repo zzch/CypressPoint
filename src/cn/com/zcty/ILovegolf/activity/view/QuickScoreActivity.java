@@ -229,6 +229,7 @@ AdapterView.OnItemLongClickListener,OnClickListener {
 	private class onDeleteListen implements QuickScoreAdapter.OnDeleteListener {
 		@Override
 		public void onDelete(View view, int position) {
+			//fristdialog();
 			Toast.makeText(QuickScoreActivity.this, "点击了删除", Toast.LENGTH_LONG).show();
 			quickArrayList.remove(position);
 			slideAdapter.notifyDataSetChanged();
@@ -236,6 +237,38 @@ AdapterView.OnItemLongClickListener,OnClickListener {
 		}
 
 	}
+	
+	
+	 /**
+	    * 删除按钮的dialog
+	    */
+	    public void fristdialog(){
+	    	AlertDialog.Builder builder = new Builder(this);
+			View view = View.inflate(this, R.layout.dialog_delete, null);
+			cancel=(Button) view.findViewById(R.id.cancel);
+			dialog_ok=(Button) view.findViewById(R.id.dialog_ok);
+			//取消
+			cancel.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+				dialog.dismiss();
+				}
+			});
+			//好
+			dialog_ok.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					
+				}
+			});
+			dialog = builder.create();
+			dialog.setView(view, 0, 0, 0, 0);
+			dialog.show();
+	       }
 	
 	/**
 	 * @Function:收集选中listview item 状态

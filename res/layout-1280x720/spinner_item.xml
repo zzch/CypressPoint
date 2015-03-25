@@ -10,9 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
        android:layout_marginTop="2px"
-        android:background="@null"
         android:textSize="32px"
         android:textColor="@color/white"
+        android:background="@drawable/e_playset_item"
         android:gravity="center"
         android:text="TextView" />
 
