@@ -61,54 +61,65 @@ public class ScoreCardUpDateActivity extends Activity{
 	private TextView distance_scorecard;
 	private TextView hit_scorecard;
 	private ImageView scorecard_image_up;
-	
+	private boolean flase_1 = false;
+	private boolean flase_2 = false;
+	private boolean flase_3 = false;
+	private boolean flase_4 = false;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
-				final String result = (String) msg.obj;
-				Log.i("result", result);
-				
-					AlertDialog.Builder dialog = new Builder(ScoreCardUpDateActivity.this)
-					.setTitle("提示")
-					.setMessage("是否保存")
-					.setPositiveButton("保存", new DialogInterface.OnClickListener() {//添加确定按钮   
+			   if(flase_1||flase_2||flase_3||flase_4){
+				   final String result = (String) msg.obj;
+					Log.i("result", result);
+					
+						AlertDialog.Builder dialog = new Builder(ScoreCardUpDateActivity.this)
+						.setTitle("提示")
+						.setMessage("是否保存")
+						.setPositiveButton("保存", new DialogInterface.OnClickListener() {//添加确定按钮   
 
 
-						@Override  
-						public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件   
-							if(result.equals("success")){
-								Intent intent = new Intent();
-								intent.putExtra("scard", setcard);
-								intent.putExtra("position", position);
-								setResult(0, intent);
-								finish();
-							}else{
-								//当没有网的时候弹出框提醒
-								AlertDialog.Builder dialogl = new Builder(ScoreCardUpDateActivity.this)
-								.setMessage("请检查网络")
-								.setNegativeButton("取消", new DialogInterface.OnClickListener() {//添加确定按钮   
+							@Override  
+							public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件   
+								if(result.equals("success")){
+									Intent intent = new Intent();
+									intent.putExtra("scard", setcard);
+									intent.putExtra("position", position);
+									setResult(0, intent);
+									finish();
+								}else{
+									//当没有网的时候弹出框提醒
+									AlertDialog.Builder dialogl = new Builder(ScoreCardUpDateActivity.this)
+									.setMessage("请检查网络")
+									.setNegativeButton("取消", new DialogInterface.OnClickListener() {//添加确定按钮   
 
 
+										public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件   
+
+											finish();
+
+										}});		
+									dialogl.show();
+								}
+								
+							}}  
+
+								).setNegativeButton("取消", new DialogInterface.OnClickListener() {//添加确定按钮   
+
+
+									@Override  
 									public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件   
-
+										Intent intent = new Intent();
+										setResult(30, intent);
 										finish();
 
-									}});		
-								dialogl.show();
-							}
-							
-						}}  
 
-							).setNegativeButton("取消", new DialogInterface.OnClickListener() {//添加确定按钮   
-
-
-								@Override  
-								public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件   
-
-
-
-								}});				
-					dialog.show();
+									}});				
+						dialog.show();
+			   }else{
+				   Intent intent = new Intent();
+					setResult(30, intent);
+					finish();			   }
+				
 					
 			}
 			if(msg.what==2){
@@ -191,6 +202,7 @@ public class ScoreCardUpDateActivity extends Activity{
 
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
+				flase_4 = true;
 				hit_scorecard.setText(cool[newValue]);
 				switch (newValue) {
 				case 0:
@@ -230,11 +242,13 @@ public class ScoreCardUpDateActivity extends Activity{
 		case R.id.but_add_one:
 			count++;
 			dataTextView.setText(count+"");
+			flase_1 = true;
 			break;
 		case R.id.but_jian_one:
 			if(count>0){
 				count--;
 				dataTextView.setText(count+"");
+				
 			}
 			if(penaltiescount>0){
 				penaltiescount--;
@@ -243,6 +257,7 @@ public class ScoreCardUpDateActivity extends Activity{
 				putcount--;
 				putTextView.setText(putcount+"");
 			}
+			flase_1 = true;
 			break;
 		case R.id.but_add_two:
 			int c = putcount;
@@ -252,12 +267,14 @@ public class ScoreCardUpDateActivity extends Activity{
 				count = (c-putcount)+(penaltiescount*2)+1;
 				dataTextView.setText(count+"");
 			}
+			flase_2 = true;
 			break;
 		case R.id.but_jian_two:
 			if(putcount>0){
 				putcount--;
 				putTextView.setText(putcount+"");
 			}
+			flase_2 = true;
 			break;
 		case R.id.but_add_three:
 			int j = penaltiescount;
@@ -267,12 +284,14 @@ public class ScoreCardUpDateActivity extends Activity{
 				count = putcount+((j-penaltiescount)*2)+1;
 				dataTextView.setText(count+"");
 			}
+			flase_3 = true;
 			break;
 		case R.id.but_jian_three:
 			if(penaltiescount>0){
 				penaltiescount--;
 				penaltiesTextView.setText(penaltiescount+"");
 			}
+			flase_3 = true;
 			break;
 		case R.id.layout_chooise:
 			
