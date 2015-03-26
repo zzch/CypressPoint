@@ -345,15 +345,15 @@
     <GridView
         android:id="@+id/gridView1"
         android:layout_width="match_parent"
-        android:layout_height="130px"
+        android:layout_height="100dp"
         android:numColumns="2" >
     </GridView>
-
- <ListView
+	    <ListView
         android:id="@+id/count"
         android:layout_width="match_parent"
         android:layout_height="400dp" >
     </ListView>
+
 </LinearLayout>
     
 </ScrollView>
