@@ -147,7 +147,7 @@ AdapterView.OnItemLongClickListener,OnClickListener {
 	 */
 	public  void  showProgressDialog(String title,String message){
 		if(progressDialog==null){
-			progressDialog = ProgressDialog.show(this, title, message,true,false);
+			progressDialog = ProgressDialog.show(this, title, message,true,true);
 			
 		}else if(progressDialog.isShowing()){
 			progressDialog.setTitle(title);
