@@ -2,57 +2,70 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-	<ScrollView 
-	       android:layout_width="match_parent"
-    android:layout_height="match_parent" 
-	    >
-	    <LinearLayout 
-	           android:layout_width="match_parent"
-    android:layout_height="match_parent" 
-     android:orientation="vertical"
-	        >
-    <RelativeLayout
+    android:orientation="vertical" 
+    android:background="@color/black"
+    >
+<ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+    android:layout_height="wrap_content"
+    >
+    <LinearLayout 
+            android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+        >
+    <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="98px"
+       android:background="@drawable/e_daohang_01">
 
         <Button
-            android:id="@+id/back1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:background="@null"
-            android:onClick="onClick"
-            android:text="返回" />
+          android:id="@+id/back1"
+          android:layout_width="96px"
+          android:layout_height="96px"
+          android:layout_alignParentBottom="true"
+          android:layout_alignParentLeft="true"
+          android:background="@drawable/back_button"
+          android:onClick="onClick"
+           />
 
         <TextView
-            android:id="@+id/statistics"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:text="技术统计"
-            android:textSize="36px" />
+             android:id="@+id/statistics"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_centerHorizontal="true"
+             android:layout_centerVertical="true"
+             android:gravity="center"
+             android:text="@string/text_statistics"
+             android:textColor="@color/white"
+             android:textSize="39px"  />
 
         <Button
-            android:id="@+id/share"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:background="@null"
-            android:text="分享" />
+          android:id="@+id/share"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentBottom="true"
+          android:layout_alignParentRight="true"
+          android:background="@null"
+          android:textColor="@color/white"
+          android:text="@string/text_share"/>
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content" 
+        android:background="@drawable/e_statistic_bg_one"
+        android:gravity="center_vertical"
+        >
 
         <TextView
             android:id="@+id/golf_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="北京北湖高尔夫" />
+            android:text="北京北湖高尔夫" 
+            android:textColor="@color/white"
+            android:textSize="32px"
+            />
 
         <TextView
             android:id="@+id/golf_date"
@@ -60,13 +73,12 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/golf_name"
-            android:text="2014年6月14日" />
-
-       
-
+            android:text="2014年6月14日" 
+            android:textColor="@color/white"
+            android:textSize="24px"
+            />
 
       
-
     </RelativeLayout>
 
     <LinearLayout
@@ -76,7 +88,7 @@
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#ffcccccc" >
+            android:background="@color/black" >
 
             <TableRow
                 android:id="@+id/tableRow1"
@@ -85,294 +97,359 @@
 
                 <View
                     android:layout_width="1dip"
-                    android:layout_height="20dp"
-                    android:background="#FF909090" />
+                    android:layout_height="0dp"
+                   />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="0.5dip"
-                    android:background="#ffffcc99"
-                    android:text="日/洞" />
+                    android:background="@drawable/e_statistic_bg_one"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="24px"
+                    android:text="洞" />
 
                 <View
                     android:layout_width="1dip"
-                    android:layout_height="20dp"
-                    android:background="#FF909090" />
+                    android:layout_height="0dp"
+                    />
                  <TextView
                 android:id="@+id/t"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="1" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="2" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="3" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+              />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+               android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="4" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="5" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="6" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+               />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="7" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+               />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="8" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+              />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="9" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+            />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="前" />
 
             <View
                 android:id="@+id/v"
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
-                        <TextView
-      
+                android:layout_height="0dp"
+                />
+             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="10" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="11" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+               />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="12" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+               />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="13" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+               android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="14" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+             />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="15" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="16" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+               />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="17" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+               />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="18" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="后" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="总" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                />
             
             </TableRow>
 
@@ -383,33 +460,39 @@
 
                 <View
                     android:layout_width="1dip"
-                    android:layout_height="20dp"
-                    android:background="#FF909090" />
+                    android:layout_height="0dp"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="0.5dip"
-                    android:background="#ffffcc99"
+                    android:background="@drawable/e_statistic_bg_one"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="24px"
                     android:text="标准杆" />
 
                 <View
                     android:layout_width="1dip"
-                    android:layout_height="20dp"
-                    android:background="#FF909090" />
+                    android:layout_height="0dp"
+                     />
                  <TextView
                 android:id="@+id/t1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="1" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/t2"
@@ -417,13 +500,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="2" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/t3"
@@ -431,13 +517,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="3" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                />
 
             <TextView
                 android:id="@+id/t4"
@@ -445,13 +534,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="4" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/t5"
@@ -459,13 +551,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+               android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="5" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/t6"
@@ -473,13 +568,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="6" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/t7"
@@ -487,13 +585,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="7" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+               />
 
             <TextView
                 android:id="@+id/t8"
@@ -501,13 +602,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="8" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/t9"
@@ -515,13 +619,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="9" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+               />
 
             <TextView
                 android:id="@+id/t10"
@@ -529,27 +636,33 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="前" />
 
             <View
                 android:id="@+id/v"
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                />
             <TextView
                 android:id="@+id/th1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="1" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+              />
 
             <TextView
                 android:id="@+id/th2"
@@ -557,13 +670,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="2" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+              />
 
             <TextView
                 android:id="@+id/th3"
@@ -571,13 +687,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="3" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                />
 
             <TextView
                 android:id="@+id/th4"
@@ -585,13 +704,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="4" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+               />
 
             <TextView
                 android:id="@+id/th5"
@@ -599,13 +721,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="5" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/th6"
@@ -613,13 +738,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="6" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/th7"
@@ -627,13 +755,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="7" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                />
 
             <TextView
                 android:id="@+id/th8"
@@ -641,13 +772,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="8" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/th9"
@@ -655,13 +789,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="9" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/th10"
@@ -669,13 +806,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="前" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/th11"
@@ -683,7 +823,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="总计" />
             </TableRow>
 
@@ -694,33 +837,39 @@
 
                 <View
                     android:layout_width="1dip"
-                    android:layout_height="20dp"
-                    android:background="#FF909090" />
+                    android:layout_height="0dp"
+                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="0.5dip"
-                    android:background="#ffffcc99"
+                    android:background="@drawable/e_statistic_bg_one"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                     android:textSize="24px"
                     android:text="成绩" />
 
                 <View
                     android:layout_width="1dip"
-                    android:layout_height="20dp"
-                    android:background="#FF909090" />
+                    android:layout_height="0dp"
+                     />
                 <TextView
                 android:id="@+id/tt1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="1" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/tt2"
@@ -728,13 +877,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px" 
                 android:text="2" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/tt3"
@@ -742,13 +894,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="3" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                />
 
             <TextView
                 android:id="@+id/tt4"
@@ -756,13 +911,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="4" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/tt5"
@@ -770,13 +928,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="5" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/tt6"
@@ -784,13 +945,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="6" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/tt7"
@@ -798,13 +962,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="7" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/tt8"
@@ -812,13 +979,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="8" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/tt9"
@@ -826,13 +996,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="9" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/tt10"
@@ -840,27 +1013,33 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="前" />
 
             <View
                 android:id="@+id/v"
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                />
             <TextView
                 android:id="@+id/tth1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="1" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/tth2"
@@ -868,13 +1047,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="2" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/tth3"
@@ -882,13 +1064,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="3" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/tth4"
@@ -896,13 +1081,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="4" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                />
 
             <TextView
                 android:id="@+id/tth5"
@@ -910,13 +1098,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="5" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/tth6"
@@ -924,13 +1115,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="6" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                />
 
             <TextView
                 android:id="@+id/tth7"
@@ -938,13 +1132,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="7" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/tth8"
@@ -952,13 +1149,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="8" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/tth9"
@@ -966,13 +1166,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="9" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/tth10"
@@ -980,13 +1183,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="前" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/tth11"
@@ -994,7 +1200,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="总计" />
             </TableRow>
 
@@ -1005,33 +1214,39 @@
 
                 <View
                     android:layout_width="1dip"
-                    android:layout_height="20dp"
-                    android:background="#FF909090" />
+                    android:layout_height="0dp"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="0.5dip"
-                    android:background="#ffffcc99"
+                    android:background="@drawable/e_statistic_bg_one"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="24px"
                     android:text="距标准杆" />
 
                 <View
                     android:layout_width="1dip"
-                    android:layout_height="20dp"
-                    android:background="#FF909090" />
+                    android:layout_height="0dp"
+                     />
                  <TextView
                 android:id="@+id/ttt1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="1" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+                 />
 
             <TextView
                 android:id="@+id/ttt2"
@@ -1039,13 +1254,16 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="2" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"
+               />
 
             <TextView
                 android:id="@+id/ttt3"
@@ -1053,13 +1271,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="3" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+               android:layout_height="0dp" />
 
             <TextView
                 android:id="@+id/ttt4"
@@ -1067,13 +1287,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="4" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp" />
 
             <TextView
                 android:id="@+id/ttt5"
@@ -1081,13 +1303,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="5" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+               android:layout_height="0dp"/>
 
             <TextView
                 android:id="@+id/ttt6"
@@ -1095,13 +1319,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="6" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+               android:layout_height="0dp" />
 
             <TextView
                 android:id="@+id/ttt7"
@@ -1109,13 +1335,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="7" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp" />
 
             <TextView
                 android:id="@+id/ttt8"
@@ -1123,13 +1351,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="8" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+               android:layout_height="0dp"/>
 
             <TextView
                 android:id="@+id/ttt9"
@@ -1137,13 +1367,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="9" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp" />
 
             <TextView
                 android:id="@+id/ttt10"
@@ -1151,27 +1383,31 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="前" />
 
             <View
                 android:id="@+id/v"
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+               android:layout_height="0dp" />
              <TextView
                 android:id="@+id/ttth1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="1" />
 
             <View
                 android:layout_width="1dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+               android:layout_height="0dp" />
 
             <TextView
                 android:id="@+id/ttth2"
@@ -1179,13 +1415,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="2" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp" />
 
             <TextView
                 android:id="@+id/ttth3"
@@ -1193,13 +1431,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="3" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp"/>
 
             <TextView
                 android:id="@+id/ttth4"
@@ -1207,13 +1447,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="4" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+               android:layout_height="0dp" />
 
             <TextView
                 android:id="@+id/ttth5"
@@ -1221,13 +1463,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="5" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+               android:layout_height="0dp" />
 
             <TextView
                 android:id="@+id/ttth6"
@@ -1235,13 +1479,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="6" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp" />
 
             <TextView
                 android:id="@+id/ttth7"
@@ -1249,13 +1495,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="7" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+               android:layout_height="0dp"/>
 
             <TextView
                 android:id="@+id/ttth8"
@@ -1263,13 +1511,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="8" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+                android:layout_height="0dp" />
 
             <TextView
                 android:id="@+id/ttth9"
@@ -1277,13 +1527,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="9" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+               android:layout_height="0dp" />
 
             <TextView
                 android:id="@+id/ttth10"
@@ -1291,13 +1543,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="前" />
 
             <View
                 android:layout_width="0.5dip"
-                android:layout_height="20dp"
-                android:background="#FF909090" />
+               android:layout_height="0dp"/>
 
             <TextView
                 android:id="@+id/ttth11"
@@ -1305,27 +1559,140 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:background="#ffffcc99"
+                android:background="@drawable/e_statistic_bg_one"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="24px"
                 android:text="总计" />
             </TableRow>
         </TableLayout>
 
         
     </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"  
+        android:orientation="horizontal"
+        android:background="@drawable/e_statistic_bg_one"
+        >
+        <ImageView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:layout_gravity="center"
+          android:layout_marginLeft="20px"
+          android:src="@drawable/xintianwen" 
+            />
+        <TextView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:layout_gravity="center"
+          android:textSize="24px"
+          android:layout_marginLeft="10px"
+          android:text="信天翁"
+          android:textColor="@color/white"
+            />
+        
+        <ImageView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:layout_gravity="center"
+          android:layout_marginLeft="30px"
+          android:src="@drawable/laoying" 
+            />
+        <TextView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:layout_gravity="center"
+          android:textSize="24px"
+          android:layout_marginLeft="10px"
+          android:text="老鹰"
+          android:textColor="@color/white"
+            />
+        
+        <ImageView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:layout_gravity="center"
+          android:layout_marginLeft="30px"
+          android:src="@drawable/xiaoniao" 
+            />
+        <TextView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:layout_gravity="center"
+          android:textSize="24px"
+          android:layout_marginLeft="10px"
+          android:text="小鸟"
+          android:textColor="@color/white"
+            />
+        
+        <ImageView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:layout_gravity="center"
+          android:layout_marginLeft="30px"
+          android:src="@drawable/biaozhun" 
+            />
+        <TextView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:layout_gravity="center"
+          android:textSize="24px"
+          android:layout_marginLeft="10px"
+          android:text="标准"
+          android:textColor="@color/white"
+            />
+        
+        <ImageView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:layout_gravity="center"
+          android:layout_marginLeft="30px"
+          android:src="@drawable/baiji" 
+            />
+        <TextView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:layout_gravity="center"
+          android:textSize="24px"
+          android:layout_marginLeft="10px"
+          android:text="柏忌"
+          android:textColor="@color/white"
+            />
+        
+        <ImageView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:layout_gravity="center"
+          android:layout_marginLeft="30px"
+          android:src="@drawable/shuangbaiji" 
+            />
+        <TextView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:layout_gravity="center"
+          android:textSize="24px"
+          android:layout_marginLeft="10px"
+          android:text="双柏忌+"
+          android:textColor="@color/white"
+            />
+    </LinearLayout>
 
     <GridView
         android:id="@+id/gridView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="130dp"
         android:numColumns="2" >
     </GridView>
-
-    <ListView
+	  <ListView
         android:id="@+id/count"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="400dp" >
     </ListView>
+
 </LinearLayout>
+    
 </ScrollView>
 
 </LinearLayout>

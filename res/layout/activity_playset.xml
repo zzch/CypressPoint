@@ -4,40 +4,42 @@
     android:layout_height="match_parent"
     android:orientation="vertical" 
     android:id="@+id/linear"
+    android:background="@color/black"
     >
    
-    <LinearLayout 
+     <RelativeLayout 
        android:layout_width="match_parent"
-       android:layout_height="60dip"
-       android:orientation="horizontal"
-        >
+       android:layout_height="98px"
+       android:background="@drawable/e_daohang_01"
+         >
         <Button 
            android:id="@+id/playset_back"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="返回"
-           android:layout_marginLeft="10dip"
-           android:background="@null"
-           
+           android:layout_width="96px"
+           android:layout_height="96px"
+           android:layout_alignParentBottom="true"
+           android:layout_alignParentLeft="true"
+           android:background="@drawable/back_button"
              />
-         <TextView 
+         <TextView
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:text="打球设置"
+           android:layout_centerHorizontal="true"
+           android:layout_centerVertical="true"
            android:gravity="center"
-           android:textSize="25sp"
-           android:layout_marginLeft="35dip"
-             />
+           android:text="@string/playset"
+           android:textColor="@color/white"
+           android:textSize="39px" />
            <Button 
            android:id="@+id/playset_start"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:textColor="#79797979"
-           android:text="开始"
-           android:layout_marginLeft="35dip"
+           android:layout_alignParentBottom="true"
+           android:layout_alignParentRight="true"
            android:background="@null"
-             />
-    </LinearLayout>
+           android:textColor="@color/white"
+           android:text="@string/start" 
+         />
+    </RelativeLayout>
 
     <ListView
         android:id="@+id/listView1"

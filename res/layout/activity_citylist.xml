@@ -2,43 +2,49 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
-    
-     <LinearLayout 
-       android:layout_width="match_parent"
-       android:layout_height="60dp"
-       android:orientation="horizontal"
+    android:orientation="vertical" 
+    android:background="@color/black"
+     >
+    <RelativeLayout  
+      android:layout_width="match_parent"
+       android:layout_height="98px"
+       android:background="@drawable/e_daohang_01"
          >
          <Button
            android:id="@+id/search_back"   
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="取消"
-           android:layout_marginLeft="10dip"
-           android:background="@null"
+           android:layout_width="96px"
+           android:layout_height="96px"
+           android:layout_alignParentBottom="true"
+           android:layout_alignParentLeft="true"
+           android:background="@drawable/back_button"
              />
          <TextView 
            android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="搜索球场"
-           android:gravity="center"
-           android:textSize="25dip"
-           android:layout_marginLeft="35dip"
+             android:layout_height="wrap_content"
+             android:layout_centerHorizontal="true"
+             android:layout_centerVertical="true"
+             android:gravity="center"
+             android:text="@string/searchpith"
+             android:textColor="@color/white"
+             android:textSize="@dimen/txsize_large_xx"
              />
            
-     </LinearLayout>
+     </RelativeLayout>
+     
+   
 
     <cn.com.zcty.ILovegolf.activity.exercise.city.ClearEditText
         android:id="@+id/filter_edit"
         android:layout_marginTop="5dip"
+        android:layout_marginLeft="20px"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/search_bar_edit_selector"
+        android:background="@drawable/search_bar_edit_pressed"
         android:drawableLeft="@drawable/search_bar_icon_normal"
-        android:hint="请输入关键字"
+        android:hint="   请输入关键字"
         android:singleLine="true"
         android:textSize="15.0dip" />
-
+    
 
     <FrameLayout
         android:layout_width="fill_parent"

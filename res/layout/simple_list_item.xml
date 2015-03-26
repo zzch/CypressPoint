@@ -9,16 +9,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="自己"
-        android:textColor="#99000000"
-        android:textSize="25sp"
+        android:textColor="@color/green"
+        android:textSize="36px"
         />
    <TextView 
         android:id="@+id/lianxi_name_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="自己"
-        android:textColor="#99000000"
-        android:textSize="25sp"
+        android:textColor="#797979"
+        android:textSize="28px"
         />
 </LinearLayout>
 

@@ -14,12 +14,12 @@
   	<dimen name="txsize_small_x">15px</dimen>
   	
   	 <!-- 各种需要适配的宽度值 -->
-  	<dimen name="view_large_xxx">160dip</dimen>
+  	<dimen name="view_large_xxx">215px</dimen>
   	<dimen name="view_large_xx">140dip</dimen>
   	<dimen name="view_large_x">120dip</dimen>
   	
   	<dimen name="view_mid_xxx">100dip</dimen>
-  	<dimen name="view_mid_xx">90dip</dimen>
+  	<dimen name="view_mid_xx">96px</dimen>
   	<dimen name="view_mid_x">80dip</dimen>
   	
   	<dimen name="view_small_xxx">70dip</dimen>

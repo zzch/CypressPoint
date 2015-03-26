@@ -2,57 +2,70 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:background="@color/black"
+    >
 <ScrollView 
         android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     >
     <LinearLayout 
             android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
         >
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+       android:layout_width="match_parent"
+       android:layout_height="98px"
+       android:background="@drawable/e_daohang_01" >
 
         <Button
-            android:id="@+id/back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:background="@null"
-            android:onClick="onClick"
-            android:text="返回" />
+          android:id="@+id/back"
+          android:layout_width="96px"
+          android:layout_height="96px"
+          android:layout_alignParentBottom="true"
+          android:layout_alignParentLeft="true"
+          android:background="@drawable/back_button"
+          android:onClick="onClick"
+            />
 
         <TextView
             android:id="@+id/statistics"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:text="技术统计"
-            android:textSize="36px" />
+             android:layout_height="wrap_content"
+             android:layout_centerHorizontal="true"
+             android:layout_centerVertical="true"
+             android:gravity="center"
+             android:text="@string/text_statistics"
+             android:textColor="@color/white"
+             android:textSize="39px"/>
 
         <Button
             android:id="@+id/share"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:background="@null"
-            android:text="分享" />
+           android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentBottom="true"
+          android:layout_alignParentRight="true"
+          android:background="@null"
+          android:textColor="@color/white"
+          android:text="@string/text_share" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="120px" 
+        
+        android:gravity="center_vertical"
+        >
 
         <TextView
             android:id="@+id/golf_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="北京北湖高尔夫" />
+            android:text="北京北湖高尔夫" 
+            android:textColor="@color/white"
+           android:textSize="32px"
+            />
 
         <TextView
             android:id="@+id/golf_date"
@@ -60,7 +73,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/golf_name"
-            android:text="2014年6月14日" />
+            android:text="2014年6月14日" 
+            android:textColor="@color/white"
+            android:textSize="24px"
+            />
 
         <RadioGroup
             android:id="@+id/main_radio"
@@ -73,12 +89,21 @@
                 android:id="@+id/mainTabs_radio_qian"
                 android:button="@null"
                 android:text="前9洞"
+                android:textSize="24px"
+                android:textColor="@color/white"
+                android:gravity="center"
+               android:background="@drawable/group_1"
                  />
 
             <RadioButton
                 android:id="@+id/mainTabs_radio_hou"
                 android:button="@null"
                 android:text="后9洞"
+                android:textColor="@color/white"
+                android:textSize="24px"
+                android:gravity="center"
+                android:background="@drawable/group_2" 
+                android:layout_marginRight="20px"
     		/>
 
 
@@ -93,7 +118,7 @@
         <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#ffcccccc" >
+            android:background="@color/black" >
 
             <TableRow
                 android:id="@+id/tableRow1"
@@ -103,19 +128,21 @@
                 <View
                     android:layout_width="1dip"
                     android:layout_height="20dp"
-                    android:background="#FF909090" />
+                    android:background="@color/black" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="129px"
                     android:layout_height="wrap_content"
                     android:layout_margin="0.5dip"
-                    android:background="#ffffcc99"
-                    android:text="日/洞" />
+                    android:text="洞" 
+                    android:textColor="@color/white"
+                    android:background="@drawable/e_statistic_bg_one"
+                    android:gravity="center"/>
 
                 <View
                     android:layout_width="1dip"
                     android:layout_height="20dp"
-                    android:background="#FF909090" />
+                    android:background="@color/black" />
             </TableRow>
 
             <TableRow
@@ -126,19 +153,22 @@
                 <View
                     android:layout_width="1dip"
                     android:layout_height="20dp"
-                    android:background="#FF909090" />
+                    android:background="@color/black"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="0.5dip"
-                    android:background="#ffffcc99"
-                    android:text="标准杆" />
+                   android:background="@drawable/e_statistic_bg_one"
+                    android:text="标准杆" 
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    />
 
                 <View
                     android:layout_width="1dip"
                     android:layout_height="20dp"
-                    android:background="#FF909090" />
+                    android:background="@color/black" />
             </TableRow>
 
             <TableRow
@@ -149,19 +179,22 @@
                 <View
                     android:layout_width="1dip"
                     android:layout_height="20dp"
-                    android:background="#FF909090" />
+                   android:background="@color/black"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="0.5dip"
-                    android:background="#ffffcc99"
-                    android:text="成绩" />
+                    android:background="@drawable/e_statistic_bg_one"
+                    android:text="成绩" 
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    />
 
                 <View
                     android:layout_width="1dip"
                     android:layout_height="20dp"
-                    android:background="#FF909090" />
+                    android:background="@color/black" />
             </TableRow>
 
             <TableRow
@@ -172,19 +205,22 @@
                 <View
                     android:layout_width="1dip"
                     android:layout_height="20dp"
-                    android:background="#FF909090" />
+                   android:background="@color/black" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="0.5dip"
-                    android:background="#ffffcc99"
-                    android:text="距标准杆" />
+                    android:background="@drawable/e_statistic_bg_one"
+                    android:text="距标准杆" 
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    />
 
                 <View
                     android:layout_width="1dip"
                     android:layout_height="20dp"
-                    android:background="#FF909090" />
+                    android:background="@color/black" />
             </TableRow>
         </TableLayout>
 
@@ -195,20 +231,131 @@
 
         </android.support.v4.view.ViewPager>
     </LinearLayout>
+    
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"  
+        android:orientation="horizontal"
+        android:background="@drawable/e_statistic_bg_one"
+        >
+        <ImageView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:layout_gravity="center"
+          android:layout_marginLeft="20px"
+          android:src="@drawable/xintianwen" 
+            />
+        <TextView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:layout_gravity="center"
+          android:textSize="24px"
+          android:layout_marginLeft="10px"
+          android:text="信天翁"
+          android:textColor="@color/white"
+            />
+        
+        <ImageView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:layout_gravity="center"
+          android:layout_marginLeft="30px"
+          android:src="@drawable/laoying" 
+            />
+        <TextView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:layout_gravity="center"
+          android:textSize="24px"
+          android:layout_marginLeft="10px"
+          android:text="老鹰"
+          android:textColor="@color/white"
+            />
+        
+        <ImageView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:layout_gravity="center"
+          android:layout_marginLeft="30px"
+          android:src="@drawable/xiaoniao" 
+            />
+        <TextView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:layout_gravity="center"
+          android:textSize="24px"
+          android:layout_marginLeft="10px"
+          android:text="小鸟"
+          android:textColor="@color/white"
+            />
+        
+        <ImageView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:layout_gravity="center"
+          android:layout_marginLeft="30px"
+          android:src="@drawable/biaozhun" 
+            />
+        <TextView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:layout_gravity="center"
+          android:textSize="24px"
+          android:layout_marginLeft="10px"
+          android:text="标准"
+          android:textColor="@color/white"
+            />
+        
+        <ImageView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:layout_gravity="center"
+          android:layout_marginLeft="30px"
+          android:src="@drawable/baiji" 
+            />
+        <TextView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:layout_gravity="center"
+          android:textSize="24px"
+          android:layout_marginLeft="10px"
+          android:text="柏忌"
+          android:textColor="@color/white"
+            />
+        
+        <ImageView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:layout_gravity="center"
+          android:layout_marginLeft="30px"
+          android:src="@drawable/shuangbaiji" 
+            />
+        <TextView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" 
+          android:layout_gravity="center"
+          android:textSize="24px"
+          android:layout_marginLeft="10px"
+          android:text="双柏忌+"
+          android:textColor="@color/white"
+            />
+    </LinearLayout>
 
     <GridView
         android:id="@+id/gridView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:numColumns="2" >
     </GridView>
-
-    <ListView
+	    <ListView
         android:id="@+id/count"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="400dp" >
     </ListView>
 
 </LinearLayout>
+    
 </ScrollView>
+
 </LinearLayout>

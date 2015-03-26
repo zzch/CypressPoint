@@ -2,38 +2,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+     android:background="@color/black"
+     >
 
-   <LinearLayout 
+    <RelativeLayout 
        android:layout_width="match_parent"
-       android:layout_height="60dp"
-       android:orientation="horizontal"
+       android:layout_height="98px"
+       android:background="@drawable/e_daohang_01"
          >
          <Button 
            android:id="@+id/scorecard_back"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="返回"
-          android:layout_marginLeft="10dip"
+           android:layout_width="96px"
+           android:layout_height="96px"
+           android:layout_alignParentBottom="true"
+           android:layout_alignParentLeft="true"
+           android:background="@drawable/back_button"
            android:onClick="onclick"
-             />
-         <TextView 
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="记分卡"
-           android:gravity="center"
-           android:textSize="25sp"
-           android:layout_marginLeft="45dip"
-             />
+           />
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_centerHorizontal="true"
+             android:layout_centerVertical="true"
+             android:gravity="center"
+             android:text="@string/score_card"
+             android:textColor="@color/white"
+             android:textSize="39px" />
            <Button 
            android:id="@+id/scorecard_score"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:text="统计"
-           android:layout_marginLeft="50dip"
+           android:layout_alignParentBottom="true"
+           android:layout_alignParentRight="true"
+           android:background="@null"
+           android:textColor="@color/white"
+           android:text="@string/button_count"
            android:onClick="onclick"
              />
-     </LinearLayout>
+     </RelativeLayout>
 
    <GridView
        android:id="@+id/gridView1"
