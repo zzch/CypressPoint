@@ -16,20 +16,30 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.model.QuickContent;
+import cn.com.zcty.ILovegolf.tools.SlidingDeleteSlideView;
+import cn.com.zcty.ILovegolf.tools.SlidingDeleteSlideView.OnSlideListener;
 import cn.com.zcty.ILovegolf.utils.TimeUtil;
 
 public  class QuickScoreAdapter extends BaseAdapter {
-
-	private  List<QuickContent> quickContents;
-	private Context context;
-	private LayoutInflater mInflater;
-	private ArrayList<String> nameArrayList;
-	public QuickScoreAdapter(Context context,List<QuickContent> quickContents,ArrayList<String> nameArrayList){
+	   
+	 private  List<QuickContent> quickContents;
+	 private Context context;
+	 private View view;
+	 private OnSlideListener onSlideListener;
+     private OnDeleteListener onDeleteListen;
+	 private boolean isLongState;
+	 private LayoutInflater mInflater;
+	 private ArrayList<String> nameArrayList;
+	 private HashMap<Integer, Boolean> checkedItemMap = new HashMap<Integer, Boolean>();
+	 public QuickScoreAdapter(Context context,List<QuickContent> quickContents,ArrayList<String> nameArrayList, OnSlideListener onSlideListener,
+				OnDeleteListener onDeleteListen){
 		this.context=context;
 		this.quickContents= quickContents;;
+		this.onSlideListener = onSlideListener;
+		this.onDeleteListen = onDeleteListen;
 		this.nameArrayList = nameArrayList;
 		mInflater = LayoutInflater.from(context);
-	}
+	 }
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
@@ -46,48 +56,49 @@ public  class QuickScoreAdapter extends BaseAdapter {
 		return position;
 	}
 	@Override
-	public View getView(final int position, View convertView, ViewGroup parent) {
-
-		ViewHolder holder;
-		if(convertView == null){
-			convertView = mInflater.inflate(R.layout.quick_score_item, null); 
-			holder = new ViewHolder();
-			//holder.xlist_item_relayout = (LinearLayout) view.findViewById(R.id.xlist_item_relayout);
-			//球场名称
-			holder.kpitname=(TextView) convertView.findViewById(R.id.kpitname);     
-			//日期
-			holder.time=(TextView) convertView.findViewById(R.id.time);    
-			//赛事类型
-			holder.type=(TextView) convertView.findViewById(R.id.practice);	           
-			//记录打了几个球洞
-			holder.gan_number=(TextView) convertView.findViewById(R.id.gan_number);	         
-			//成绩
-			holder.Pole_number = (TextView) convertView.findViewById(R.id.Pole_number);  
-			holder.coating = (TextView) convertView.findViewById(R.id.tv_coating);
-			holder.functions = (TextView) convertView.findViewById(R.id.tv_functions);
-			convertView.setTag(holder);
-
-		}else{
-
-			// 有直接获得ViewHolder
-			holder = (ViewHolder) convertView.getTag();
-		}
-		holder.kpitname.setText(nameArrayList.get(position));
+	public View getView(final int position,final View convertView, ViewGroup parent) {
+		
+       ViewHolder holder;
+       SlidingDeleteSlideView slideView = (SlidingDeleteSlideView) convertView;
+       // 如果没有设置过,初始化convertView
+       if(slideView == null){
+    	// 获得设置的view
+    	   View itemView = mInflater.inflate(R.layout.quick_score_item, null); 
+    	   slideView = new SlidingDeleteSlideView(context);
+			slideView.setContentView(itemView);
+			holder = new ViewHolder(slideView);
+			
+			slideView.setOnSlideListener(onSlideListener);
+			slideView.setTag(holder);
+			
+       }else{
+    	   
+    	// 有直接获得ViewHolder
+           holder = (ViewHolder) convertView.getTag();
+       }
+       QuickContent item = quickContents.get(position);
+		item.slideView = slideView;
+		item.slideView.shrinkByFast();
+		 holder.kpitname.setText(nameArrayList.get(position));
 		SimpleDateFormat  simpleDate = new SimpleDateFormat("yyyy年MM月dd");
 		long d = (Integer.parseInt(quickContents.get(position).getStarted_at()));
-		String date =	TimeUtil.utc2Local(TimeUtil.secondTurnMs(d), TimeUtil.LOCAL_TIME_PATTERN);		 
-		holder.time.setText(date);
-		holder.type.setText(quickContents.get(position).getType());
-		holder.gan_number.setText(quickContents.get(position).getRecorded_scorecards_count());
-		if(quickContents.get(position).getStrokes().equals("null")){
-
-			holder.Pole_number.setText("未开始"); 
-		}
-		holder.coating.setVisibility(View.VISIBLE);
-		holder.functions.setClickable(false);
-		return convertView;
-	}
-
+		 String date =	TimeUtil.utc2Local(TimeUtil.secondTurnMs(d), TimeUtil.LOCAL_TIME_PATTERN);		 
+		//Log.i("date", d+"");
+		 holder.time.setText(date);
+		 holder.type.setText(quickContents.get(position).getType());
+		 holder.gan_number.setText(quickContents.get(position).getRecorded_scorecards_count());
+		 if(quickContents.get(position).getStrokes().equals("null")){
+			 
+			 holder.Pole_number.setText("未开始"); 
+		 }
+       holder.deleteHolder.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				onDeleteListen.onDelete(convertView, position);
+			}
+		});
+         return slideView;
+	 }
+	
 	public static class ViewHolder{
 		public TextView kpitname;
 		public TextView time;
@@ -95,12 +106,41 @@ public  class QuickScoreAdapter extends BaseAdapter {
 		public TextView gan_number;
 		public TextView Pole_number;
 		public ViewGroup deleteHolder;
-		public TextView coating;
-		public TextView functions;
-		//LinearLayout xlist_item_relayout;
+		
+		LinearLayout xlist_item_relayout;
+		
+		ViewHolder(View view) {
+			xlist_item_relayout = (LinearLayout) view.findViewById(R.id.xlist_item_relayout);
+			 //球场名称
+	           kpitname=(TextView) view.findViewById(R.id.kpitname);  
+	           
+	        
+	  		 //日期
+	           time=(TextView) view.findViewById(R.id.time);
+	         
+	  		 //赛事类型
+	           type=(TextView) view.findViewById(R.id.practice);
+	           
+	  		 //记录打了几个球洞
+	          gan_number=(TextView) view.findViewById(R.id.gan_number);
+	         
+	  		 //成绩
+	           Pole_number = (TextView) view.findViewById(R.id.Pole_number);  
+	         
+	           deleteHolder = (ViewGroup) view.findViewById(R.id.holder);
+		}
+	 }
 
+
+	public interface OnDeleteListener {
+		public void onDelete(View view, int position);
 	}
 
+	public void setIsLongState(boolean isLongState) {
+		this.isLongState = isLongState;
+	}
 
-
+	public void setCheckItemMap(HashMap<Integer, Boolean> checkedItemMap) {
+		this.checkedItemMap = checkedItemMap;
+	}
 }   

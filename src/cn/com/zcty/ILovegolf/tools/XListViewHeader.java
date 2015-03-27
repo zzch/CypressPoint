@@ -4,8 +4,10 @@
  * @author Maxwin
  * @description XListView's header
  */
-package cn.com.zcty.ILovegolf.view;
+package cn.com.zcty.ILovegolf.tools;
 
+
+import cn.com.zcty.ILovegolf.activity.R;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.Gravity;
@@ -17,7 +19,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import cn.com.zcty.ILovegolf.activity.R;
 
 public class XListViewHeader extends LinearLayout {
 	private LinearLayout mContainer;

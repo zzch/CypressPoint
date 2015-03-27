@@ -12,7 +12,11 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 /**
+<<<<<<< HEAD
+ * Ê¾ÒâÍ¼¼Ç·ÖÀà
+=======
  * ä¸“ä¸šç§¯åˆ†å¡
+>>>>>>> origin/master
  * @author deii
  *
  */

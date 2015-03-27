@@ -17,10 +17,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
-import android.view.View.OnTouchListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
@@ -36,8 +34,7 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
  * @author deii
  *
  */
-public class ScoreCardActivity extends Activity implements OnTouchListener{
-	private float x, upx;
+public class ScoreCardActivity extends Activity {
 	private List<Scorecards> scorecarsArray = new ArrayList<Scorecards>();
 	private List<Setcard> setcardsArray = new ArrayList<Setcard>(19);
 	private GridView grid_scorecard;	
@@ -266,20 +263,6 @@ public class ScoreCardActivity extends Activity implements OnTouchListener{
 			msg.what=1;
 			handler.sendMessage(msg);
 		}
-	}
-	@Override
-	public boolean onTouch(View v, MotionEvent event) {
-		if (event.getAction() == MotionEvent.ACTION_DOWN) {
-			x = event.getX();
-		}
-		if (event.getAction() == MotionEvent.ACTION_UP) {
-			upx = event.getX();
-			if (Math.abs(x - upx) > 20) {
-				this.finish();
-				overridePendingTransition(0, R.anim.slide_out_to_right);
-			}
-		}
-		return true;
 	}
 }
 
