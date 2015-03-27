@@ -4,7 +4,7 @@
  * @author Maxwin
  * @description XListView's footer
  */
-package cn.com.zcty.ILovegolf.tools;
+package cn.com.zcty.ILovegolf.view;
 
 
 import cn.com.zcty.ILovegolf.activity.R;

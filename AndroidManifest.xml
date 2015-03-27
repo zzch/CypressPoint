@@ -46,6 +46,7 @@
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.count.CountActivity" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.ExerciseActivity" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.ChoosePitchActivity" android:screenOrientation="portrait"></activity>
+        
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.PlaySetActivity" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.QuickScoreActivity" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.ScoreCardActivity" android:screenOrientation="portrait"></activity>

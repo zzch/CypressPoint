@@ -62,12 +62,12 @@
       android:layout_height="wrap_content"
         >
       
-      <cn.com.zcty.ILovegolf.tools.SlidingDeleteListView
+      <cn.com.zcty.ILovegolf.view.XListView
         android:id="@+id/xListView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:cacheColorHint="#00000000">
-        </cn.com.zcty.ILovegolf.tools.SlidingDeleteListView>
+        </cn.com.zcty.ILovegolf.view.XListView>
       </LinearLayout>  
 </LinearLayout>
 
