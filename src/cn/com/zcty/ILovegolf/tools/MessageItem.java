@@ -5,5 +5,4 @@ public class MessageItem {
      public String title;
      public String msg;
      public String time;
-     public SlidingDeleteSlideView slideView;
 }

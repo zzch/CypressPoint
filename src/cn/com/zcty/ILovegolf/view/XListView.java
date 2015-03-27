@@ -6,26 +6,32 @@
  * @description An ListView support (a) Pull down to refresh, (b) Pull up to load more.
  * 		Implement IXListViewListener, and see stopRefresh() / stopLoadMore().
  */
-package cn.com.zcty.ILovegolf.tools;
-
+package cn.com.zcty.ILovegolf.view;
 
 import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.model.QuickContent;
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
+import android.view.VelocityTracker;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
 import android.view.animation.DecelerateInterpolator;
+import android.view.animation.ScaleAnimation;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Scroller;
 import android.widget.TextView;
 
-public class SlidingDeleteListView extends ListView implements OnScrollListener {
+public class XListView extends ListView implements OnScrollListener {
 
 	private float mLastY = -1; // save event y
 	private Scroller mScroller; // used for scroll back
@@ -33,7 +39,6 @@ public class SlidingDeleteListView extends ListView implements OnScrollListener 
 
 	// the interface to trigger refresh and load more.
 	private IXListViewListener mListViewListener;
-
 	// -- header view
 	private XListViewHeader mHeaderView;
 	// header view content, use it to calculate the Header's height. And hide it
@@ -43,15 +48,11 @@ public class SlidingDeleteListView extends ListView implements OnScrollListener 
 	private int mHeaderViewHeight; // header view's height
 	private boolean mEnablePullRefresh = true;
 	private boolean mPullRefreshing = false; // is refreashing.
-
 	// -- footer view
 	private XListViewFooter mFooterView;
 	private boolean mEnablePullLoad;
 	private boolean mPullLoading;
 	private boolean mIsFooterReady = false;
-
-	// -----slide view
-	private boolean mEnableSlidingDelete = true;
 
 	// total list items, used to detect is at the bottom of listview.
 	private int mTotalItemCount;
@@ -67,33 +68,49 @@ public class SlidingDeleteListView extends ListView implements OnScrollListener 
 														// load more.
 	private final static float OFFSET_RADIO = 1.8f; // support iOS like pull
 													// feature.
-	private MotionEvent lastMotionEvent;
-	private SlidingDeleteSlideView mFocusedItemView;
-	
-	/* 记录最后滚动位置*/
-	private int lastPosition = 0;
-	private int scrollTop = 0;
-	
-	
-	private IXListViewOnTouchEvent mListViewOnTouchEvent = null;
-	
 
+	
+	private int slidePosition, preSlidePosition;
+	private int downY;
+	private int downX;
+	public static View itemView, preItemView;
+//	private Scroller scroller;
+	private static final int SNAP_VELOCITY = 600;
+	private VelocityTracker velocityTracker;
+	public static boolean isSlide = false;
+	private boolean isResponse = true;
+	public static boolean isObstruct = true;
+	private int mTouchSlop;
+	private RemoveListener mRemoveListener;
+
+	private static Animation scaleHideAnimation;
+	private static Animation scaleShowAnimation;
+	
+	
+	
+	
 	/**
 	 * @param context
 	 */
-	public SlidingDeleteListView(Context context) {
+
+	public XListView(Context context) {
 		super(context);
 		initWithContext(context);
+		mTouchSlop = ViewConfiguration.get(getContext()).getScaledTouchSlop();
+		
 	}
 
-	public SlidingDeleteListView(Context context, AttributeSet attrs) {
+	public XListView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		initWithContext(context);
+		mTouchSlop = ViewConfiguration.get(getContext()).getScaledTouchSlop();
 	}
 
-	public SlidingDeleteListView(Context context, AttributeSet attrs, int defStyle) {
+	public XListView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
+//		mScroller = new Scroller(context, new DecelerateInterpolator());
 		initWithContext(context);
+		mTouchSlop = ViewConfiguration.get(getContext()).getScaledTouchSlop();
 	}
 
 	private void initWithContext(Context context) {
@@ -211,6 +228,7 @@ public class SlidingDeleteListView extends ListView implements OnScrollListener 
 	}
 
 	private void updateHeaderHeight(float delta) {
+
 		mHeaderView.setVisiableHeight((int) delta
 				+ mHeaderView.getVisiableHeight());
 		if (mEnablePullRefresh && !mPullRefreshing) { // 未处于刷新状态，更新箭头
@@ -240,10 +258,8 @@ public class SlidingDeleteListView extends ListView implements OnScrollListener 
 			finalHeight = mHeaderViewHeight;
 		}
 		mScrollBack = SCROLLBACK_HEADER;
-		
 		mScroller.startScroll(0, height, 0, finalHeight - height,
 				SCROLL_DURATION);
-		
 		// trigger computeScroll
 		invalidate();
 	}
@@ -251,13 +267,16 @@ public class SlidingDeleteListView extends ListView implements OnScrollListener 
 	private void updateFooterHeight(float delta) {
 		int height = mFooterView.getBottomMargin() + (int) delta;
 		if (mEnablePullLoad && !mPullLoading) {
-			if (height > PULL_LOAD_MORE_DELTA) {
+			if (height > PULL_LOAD_MORE_DELTA) { // height enough to invoke load
+													// more.
 				mFooterView.setState(XListViewFooter.STATE_READY);
 			} else {
 				mFooterView.setState(XListViewFooter.STATE_NORMAL);
 			}
 		}
 		mFooterView.setBottomMargin(height);
+
+		// setSelection(mTotalItemCount - 1); // scroll to bottom
 	}
 
 	private void resetFooterHeight() {
@@ -271,52 +290,181 @@ public class SlidingDeleteListView extends ListView implements OnScrollListener 
 	}
 
 	private void startLoadMore() {
-		mListViewListener.onScrollListenerBottom();
 		mPullLoading = true;
 		mFooterView.setState(XListViewFooter.STATE_LOADING);
 		if (mListViewListener != null) {
 			mListViewListener.onLoadMore();
 		}
 	}
+	
+	//RemoveListener
 
-	@Override
+	public void setRemoveListener(RemoveListener removeListener) {
+		this.mRemoveListener = removeListener;
+	}
+	
+	
+	public boolean dispatchTouchEvent(MotionEvent event) {
+		switch (event.getAction()) {
+		case MotionEvent.ACTION_DOWN: {
+
+			Log.e("lg", "dispatchTouchEvent ACTION_DOWN isSlide1111 = " + isSlide);
+
+			addVelocityTracker(event);
+
+			downX = (int) event.getX();
+			downY = (int) event.getY();
+
+			slidePosition = pointToPosition(downX, downY);
+
+			if (slidePosition == AdapterView.INVALID_POSITION) {
+				return super.dispatchTouchEvent(event);
+			}
+
+		/*	if (preItemView != null && preItemView.findViewById(R.id.tv_coating).getVisibility() == View.GONE) {
+				itemView = preItemView;
+				slidePosition = preSlidePosition;
+			}*/ else {
+				itemView = getChildAt(slidePosition - getFirstVisiblePosition());
+				preItemView = itemView;
+				preSlidePosition = slidePosition;
+			}
+
+			break;
+		}
+		case MotionEvent.ACTION_MOVE: {
+			if (Math.abs(getScrollVelocity()) > SNAP_VELOCITY || (Math.abs(event.getX() - downX) > mTouchSlop && Math.abs(event.getY() - downY) < mTouchSlop)) {
+				isSlide = true;
+			}
+			break;
+		}
+		case MotionEvent.ACTION_UP:
+			recycleVelocityTracker();
+			isObstruct = true;
+			break;
+		}
+
+		return super.dispatchTouchEvent(event);
+	}
+	
+	public boolean onInterceptTouchEvent(MotionEvent ev) {
+		switch (ev.getAction()) {
+		
+		case MotionEvent.ACTION_MOVE:
+			//if (itemView.findViewById(R.id.tv_coating).getVisibility() == View.VISIBLE) {
+				isSlide = false;
+			//} else {
+		//		isSlide = true;
+			//}
+			break;
+
+		default:
+			break;
+		}
+		return super.onInterceptTouchEvent(ev);
+	}
+	
+	
+	//dispatchTouchEvent ACTION_DOWN isSlide
+
+//	@Override  dispatchTouchEvent
 	public boolean onTouchEvent(MotionEvent ev) {
+		
+	
+		if (isSlide && slidePosition != AdapterView.INVALID_POSITION) {
+			addVelocityTracker(ev);
+			final int action = ev.getAction();
+			switch (action) {
+			case MotionEvent.ACTION_MOVE:
+				if (isObstruct) {
+					
+					if (itemView.findViewById(R.id.tv_coating).getVisibility() == View.VISIBLE && isResponse == true) {
+
+						scaleHideAnimation = new ScaleAnimation(1.0f, 0.0f, 1.0f, 1.0f);
+						scaleHideAnimation.setDuration(250);
+						scaleHideAnimation.setAnimationListener(new AnimationListener() {
+
+							public void onAnimationStart(Animation animation) {
+								isResponse = false;
+								isObstruct = false;
+							}
+
+							public void onAnimationRepeat(Animation animation) {
+
+							}
+
+							public void onAnimationEnd(Animation animation) {
+								isResponse = true;
+								itemView.findViewById(R.id.tv_coating).setVisibility(View.GONE);
+								itemView.findViewById(R.id.tv_functions).setClickable(true);
+								itemView.findViewById(R.id.tv_functions).setOnClickListener(new OnClickListener() {
+
+									public void onClick(View v) {
+										mRemoveListener.removeItem(slidePosition);
+									}
+
+								});
+
+							}
+						});
+
+						itemView.findViewById(R.id.tv_coating).startAnimation(scaleHideAnimation);
+
+					} else if (itemView.findViewById(R.id.tv_coating).getVisibility() == View.GONE && isResponse == true) {
+
+						scaleShowAnimation = new ScaleAnimation(0.0f, 1.0f, 1.0f, 1.0f);
+						scaleShowAnimation.setDuration(250);
+						scaleShowAnimation.setAnimationListener(new AnimationListener() {
+
+							public void onAnimationStart(Animation animation) {
+								isResponse = false;
+								isObstruct = false;
+							}
+
+							public void onAnimationRepeat(Animation animation) {
+
+							}
+
+							public void onAnimationEnd(Animation animation) {
+								isSlide = false;
+								isResponse = true;
+								itemView.findViewById(R.id.tv_coating).setVisibility(View.VISIBLE);
+							}
+						});
+
+						itemView.findViewById(R.id.tv_coating).startAnimation(scaleShowAnimation);
+					}
+				}
+				break;
+			case MotionEvent.ACTION_UP:
+				isObstruct = true;
+				recycleVelocityTracker();
+				isSlide = true;
+				break;
+			}
+			return true;
+		}
+		
 		if (mLastY == -1) {
 			mLastY = ev.getRawY();
 		}
 
 		switch (ev.getAction()) {
 		case MotionEvent.ACTION_DOWN:
-			if (mEnableSlidingDelete) {// 横向滑动删除记录
-				int x = (int) ev.getX();
-				int y = (int) ev.getY();
-				int position = pointToPosition(x, y);
-				if (position != INVALID_POSITION) {
-					QuickContent data = (QuickContent) getItemAtPosition(position);
-					try {
-						mFocusedItemView = data.slideView;
-					} catch (Exception e) {
-						mFocusedItemView = null;
-						e.printStackTrace();
-					}
-				}
-			}
 			mLastY = ev.getRawY();
 			break;
 		case MotionEvent.ACTION_MOVE:
-
 			final float deltaY = ev.getRawY() - mLastY;
-			onActionMoveScrollWard(deltaY);
 			mLastY = ev.getRawY();
-			if (!isDraggingHorizontally(ev)) {
-				if (getFirstVisiblePosition() == 0
-						&& (mHeaderView.getVisiableHeight() > 0 || deltaY > 0)) {
-					updateHeaderHeight(deltaY / OFFSET_RADIO);
-					invokeOnScrolling();
-				} else if (getLastVisiblePosition() == mTotalItemCount - 1
-						&& (mFooterView.getBottomMargin() > 0 || deltaY < 0)) {
-					updateFooterHeight(-deltaY / OFFSET_RADIO);
-				}
+			if (getFirstVisiblePosition() == 0
+					&& (mHeaderView.getVisiableHeight() > 0 || deltaY > 0)) {
+				// the first item is showing, header has shown or pull down.
+				updateHeaderHeight(deltaY / OFFSET_RADIO);
+				invokeOnScrolling();
+			} else if (getLastVisiblePosition() == mTotalItemCount - 1
+					&& (mFooterView.getBottomMargin() > 0 || deltaY < 0)) {
+				// last item, already pulled up or want to pull up.
+				updateFooterHeight(-deltaY / OFFSET_RADIO);
 			}
 			break;
 		default:
@@ -332,28 +480,25 @@ public class SlidingDeleteListView extends ListView implements OnScrollListener 
 					}
 				}
 				resetHeaderHeight();
-			}
-			if (getLastVisiblePosition() == mTotalItemCount - 1) {
+			} else if (getLastVisiblePosition() == mTotalItemCount - 1) {
 				// invoke load more.
 				if (mEnablePullLoad
-						&& mFooterView.getBottomMargin() > PULL_LOAD_MORE_DELTA) {
+						&& mFooterView.getBottomMargin() > PULL_LOAD_MORE_DELTA
+						&& !mPullLoading) {
 					startLoadMore();
 				}
 				resetFooterHeight();
 			}
 			break;
 		}
-		if (mEnableSlidingDelete) {
-			if (mFocusedItemView != null) {
-				mFocusedItemView.onRequireTouchEvent(ev);
-			}
-		}
-		saveLastMotionEvent(ev);
+		
+		
+		
+		
+		
+		
 		return super.onTouchEvent(ev);
-	}
-
-	private void saveLastMotionEvent(MotionEvent event) {
-		lastMotionEvent = MotionEvent.obtain(event);
+//		return super.onTouchEvent(ev);
 	}
 
 	@Override
@@ -366,9 +511,46 @@ public class SlidingDeleteListView extends ListView implements OnScrollListener 
 			}
 			postInvalidate();
 			invokeOnScrolling();
+			
+			if (mScroller.isFinished()) {
+				if (mRemoveListener == null) {
+					throw new NullPointerException("RemoveListener is null, we should called setRemoveListener()");
+				}
+
+				itemView.scrollTo(0, 0);
+			}
 		}
 		super.computeScroll();
 	}
+	
+	
+	//addVelocityTracker
+	
+	private void addVelocityTracker(MotionEvent event) {
+		if (velocityTracker == null) {
+			velocityTracker = VelocityTracker.obtain();
+		}
+		velocityTracker.addMovement(event);
+	}
+
+	private void recycleVelocityTracker() {
+		if (velocityTracker != null) {
+			velocityTracker.recycle();
+			velocityTracker = null;
+		}
+	}
+	
+	private int getScrollVelocity() {
+		velocityTracker.computeCurrentVelocity(1000);
+		int velocity = (int) velocityTracker.getXVelocity();
+		return velocity;
+	}
+
+	public interface RemoveListener {
+		public void removeItem(int position);
+	}
+	
+	
 
 	@Override
 	public void setOnScrollListener(OnScrollListener l) {
@@ -377,13 +559,6 @@ public class SlidingDeleteListView extends ListView implements OnScrollListener 
 
 	@Override
 	public void onScrollStateChanged(AbsListView view, int scrollState) {
-		if (scrollState == OnScrollListener.SCROLL_STATE_IDLE) {
-			lastPosition = getFirstVisiblePosition();
-			mListViewListener.onScrollListener(lastPosition);
-			if (getChildAt(0) != null)
-				scrollTop = (getChildAt(0) == null) ? 0 : getChildAt(0)
-						.getTop();
-		}
 		if (mScrollListener != null) {
 			mScrollListener.onScrollStateChanged(view, scrollState);
 		}
@@ -399,6 +574,11 @@ public class SlidingDeleteListView extends ListView implements OnScrollListener 
 					totalItemCount);
 		}
 	}
+	
+	
+	
+	
+	
 
 	public void setXListViewListener(IXListViewListener l) {
 		mListViewListener = l;
@@ -412,83 +592,12 @@ public class SlidingDeleteListView extends ListView implements OnScrollListener 
 		public void onXScrolling(View view);
 	}
 
-	private boolean isDraggingHorizontally(MotionEvent event) {
-		if (lastMotionEvent == null || event == null)
-			return false;
-		float deltaX = Math.abs(event.getX() - lastMotionEvent.getX());
-		float deltaY = Math.abs(event.getY() - lastMotionEvent.getY());
-		return deltaX > deltaY;
-	}
-
-	private boolean isDraggingVertically(MotionEvent event) {
-		float deltaY = 0.0f;
-		if (lastMotionEvent != null) {
-			deltaY = Math.abs(event.getY() - lastMotionEvent.getY());
-		}
-
-		return deltaY > 20;
-	}
-
 	/**
 	 * implements this interface to get refresh/load more event.
 	 */
 	public interface IXListViewListener {
 		public void onRefresh();
+
 		public void onLoadMore();
-		public void onScrollListener(int position);
-		public void onScrollListenerBottom();
 	}
-
-	/**
-	 * @Function设置是否滑动删除
-	 * */
-	public void setEnableSlidingDelete(boolean mEnableSlidingDelete) {
-		this.mEnableSlidingDelete = mEnableSlidingDelete;
-	}
-
-	public void shrinkListItem(int position) {
-		View item = getChildAt(position);
-
-		if (item != null) {
-			try {
-				((SlidingDeleteSlideView) item).shrink();
-			} catch (ClassCastException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-	
-	/**
-	 * @Function:本地方法，滚动到指定位置
-	 * */
-	public void setSelectionFromTop() {
-		this.setSelectionFromTop(lastPosition, scrollTop);
-	}
-	/**
-	 * @Function:设置滚动方向监听
-	 * */
-	public void setXListViewOnTouchEvent(IXListViewOnTouchEvent l){
-		mListViewOnTouchEvent = l;
-	}
-	/**
-	 * @Function:滚动方向监听回调调用
-	 * */
-	private void onActionMoveScrollWard(float deltaY) {
-		if (deltaY > 0) {// mListViewOnTouchEvent
-			if (mListViewOnTouchEvent != null)
-				mListViewOnTouchEvent.onScrollUpWard(Math.abs(deltaY));
-		} else {
-			if (mListViewOnTouchEvent != null)
-				mListViewOnTouchEvent.onScrollDownWard(Math.abs(deltaY));
-		}
-	}
-	/**
-	 * @Function:判断滚动方向监听
-	 * */
-	public interface IXListViewOnTouchEvent {
-		public void onScrollUpWard(float value);
-		public void onScrollDownWard(float value);
-
-	}
-
 }
