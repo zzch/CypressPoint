@@ -121,13 +121,11 @@ public class ScoreCardActivity extends Activity {
 			startActivity(intent);
 			finish();
 			break;
-			//点击成绩按钮
+			//点击统计按钮
 		case R.id.scorecard_score:
 			intent=new Intent(ScoreCardActivity.this,StatisticsAvtivity.class);
-			//intent.putExtra("match_uuid", match_uuid);
-
 			startActivity(intent);
-			
+			finish();
 			break;
 		}
 	}

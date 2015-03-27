@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/xlist_item_relayout"
     android:background="@drawable/item_onclick"
  
     >
         <LinearLayout 
-          android:layout_width="246px"
-          android:layout_height="200px"
+          android:layout_width="@dimen/view_large_x"
+          android:layout_height="@dimen/view_mid_xxx"
           android:orientation="horizontal"
           android:gravity="center"
           
@@ -17,9 +17,9 @@
            android:id="@+id/Pole_number"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:layout_marginLeft="40dp"
+           android:layout_marginLeft="30dp"
            android:text="77"
-           android:textSize="50px"
+           android:textSize="@dimen/txsize_large_x"
            android:textColor="@color/green"
             />
 
@@ -35,13 +35,13 @@
 
     <LinearLayout 
     android:id="@+id/content"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     >
      <LinearLayout 
          android:id="@+id/layout"
-        android:layout_width="414px"
-        android:layout_height="200px"
+        android:layout_width="@dimen/view_large_xxx"
+        android:layout_height="@dimen/view_mid_xxx"
         android:orientation="vertical"
         android:gravity="center_vertical"
          >
@@ -51,7 +51,7 @@
            android:layout_height="wrap_content"
            android:text="@string/pith_name"
            android:textColor="#a4a4a4"
-           android:textSize="26px"
+           android:textSize="@dimen/txsize_small_x"
            android:gravity="center_vertical"
           />
           
@@ -59,13 +59,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="15px"
+            android:layout_marginTop="@dimen/view_small_x"
             android:gravity="center_vertical"
               >
               <ImageView 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-               
+                android:layout_width="@dimen/view_small_xx_w"
+                android:layout_height="@dimen/view_small_xx_w"
                 android:src="@drawable/calendar" 
                   />
               <TextView 
@@ -73,9 +72,9 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:text="02月02号"
-               android:textSize="30px"
+               android:textSize="@dimen/txsize_small_x"
                android:textColor="#ced1d4"
-               android:layout_marginLeft="20px"
+               android:layout_marginLeft="@dimen/view_small_x"
               /> 
              
            </LinearLayout>
@@ -85,23 +84,25 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal" 
             android:gravity="center_vertical"
-            android:layout_marginTop="15px"
+            android:layout_marginTop="@dimen/view_small_x"
               >
                <TextView
                android:id="@+id/practice"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content" 
+               android:layout_width="@dimen/view_mid_xx_x"
+               android:layout_height="@dimen/view_small_xx" 
                android:text="练习赛"
                android:gravity="center"
                android:textColor="@color/gray"
                android:background="@drawable/e_normal"
+               
+               
               />
                <LinearLayout 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/view_mid_xx_x"
+                android:layout_height="@dimen/view_small_xx" 
                 android:background="@drawable/e_normal"
                 android:orientation="horizontal"
-                android:layout_marginLeft="13px"
+                android:layout_marginLeft="@dimen/view_small_x"
                 android:gravity="center"
                    >
                <TextView 
@@ -120,15 +121,15 @@
                android:text="/18"
                android:gravity="center"
                android:textColor="@color/gray"
-             
+               
               /> 
               </LinearLayout>
           </LinearLayout> 
         </LinearLayout>
         
       <ImageView
-          android:layout_width="60px"
-          android:layout_height="wrap_content"
+          android:layout_width="@dimen/view_small_xx"
+          android:layout_height="@dimen/view_small_xx"
           android:layout_gravity="center"
           android:src="@drawable/e_icon_arrow" />
      </LinearLayout>

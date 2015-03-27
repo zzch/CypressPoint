@@ -26,7 +26,7 @@
       android:layout_width="260dip"
       android:layout_height="40dip"
       android:orientation="horizontal"
-      android:background="@drawable/u99_normal"
+      android:background="@null"
       android:gravity="center_vertical"
        android:layout_marginTop="50dip"
       >
@@ -45,7 +45,7 @@
       android:layout_width="260dip"
       android:layout_height="40dip"
       android:orientation="horizontal"
-      android:background="@drawable/u99_normal"
+      android:background="@null"
        android:gravity="center_vertical"
        android:layout_marginTop="25dip"
       >
@@ -65,7 +65,7 @@
       android:layout_width="260dip"
       android:layout_height="40dip"
       android:orientation="horizontal"
-      android:background="@drawable/u99_normal"
+      android:background="@null"
      android:gravity="center_vertical"
        android:layout_marginTop="25dip"
       >

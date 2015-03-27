@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/view_mid_xx"
+        android:layout_height="@dimen/view_mid_xx_title"
         android:background="@drawable/e_daohang_01"
         android:gravity="center"
         android:orientation="horizontal" >
@@ -19,21 +19,21 @@
             android:gravity="center"
             android:text="@string/title"
             android:textColor="@color/white"
-            android:textSize="@dimen/txsize_large_xx" />
+            android:textSize="@dimen/txsize_mid_x" />
     </LinearLayout>
    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/view_large_xxx"
+        android:layout_marginTop="@dimen/view_large_x"
         android:gravity="center"
         android:orientation="vertical" >
      
 
         <Button
             android:id="@+id/shiyitu_one"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="@dimen/view_mid_xx_title"
             android:background="@drawable/button"
             android:onClick="shiyitu"
             android:text="@string/major_card"
@@ -43,7 +43,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="45px"
+            android:layout_marginTop="@dimen/view_small_x"
             android:text="@string/text_1"
             android:textColor="@color/gray"
             />
@@ -56,9 +56,9 @@
 
           <Button
             android:id="@+id/kuaijie_one"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="170px"
+            android:layout_width="300dp"
+            android:layout_height="@dimen/view_mid_xx_title"
+            android:layout_marginTop="@dimen/view_mid_xx"
             android:background="@drawable/button"
             android:onClick="kuaijie"
             android:text="@string/easy_card"
@@ -67,7 +67,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="45px"
+            android:layout_marginTop="@dimen/view_small_x"
             android:hint="@string/text_2"
             android:textColor="@color/gray" />
         

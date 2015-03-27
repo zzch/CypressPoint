@@ -123,10 +123,10 @@ public void onConfigurationChanged(Configuration newConfig) {
 
 	private void setListener() {
 		backButton.setOnClickListener(new OnClickListener() {
-
+     
 			@Override
 			public void onClick(View v) {
-
+            
 				finish();
 			}
 		});

@@ -5,45 +5,44 @@
     android:orientation="vertical" 
     android:background="@color/black"
      >
-    <RelativeLayout  
-      android:layout_width="match_parent"
-       android:layout_height="98px"
-       android:background="@drawable/e_daohang_01"
-         >
-         <Button
-           android:id="@+id/search_back"   
-           android:layout_width="96px"
-           android:layout_height="96px"
-           android:layout_alignParentBottom="true"
-           android:layout_alignParentLeft="true"
-           android:background="@drawable/back_button"
-             />
-         <TextView 
-           android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_centerHorizontal="true"
-             android:layout_centerVertical="true"
-             android:gravity="center"
-             android:text="@string/searchpith"
-             android:textColor="@color/white"
-             android:textSize="@dimen/txsize_large_xx"
-             />
-           
-     </RelativeLayout>
-     
-   
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_mid_xx_title"
+        android:background="@drawable/e_daohang_01" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/searchpith"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_mid_x" />
+
+        <Button
+            android:id="@+id/search_back"
+            android:layout_width="@dimen/view_mid_xx"
+            android:layout_height="@dimen/view_mid_x"
+            android:layout_alignBaseline="@+id/textView1"
+            android:layout_alignBottom="@+id/textView1"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/back_button" />
+    </RelativeLayout>
 
     <cn.com.zcty.ILovegolf.activity.exercise.city.ClearEditText
         android:id="@+id/filter_edit"
-        android:layout_marginTop="5dip"
-        android:layout_marginLeft="20px"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_mid_x"
         android:background="@drawable/search_bar_edit_pressed"
         android:drawableLeft="@drawable/search_bar_icon_normal"
         android:hint="   请输入关键字"
         android:singleLine="true"
-        android:textSize="15.0dip" />
+        android:textSize="@dimen/txsize_small_x" />
     
 
     <FrameLayout

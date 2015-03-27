@@ -7,20 +7,37 @@
     android:background="@drawable/count"
     >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30px"
-        android:textColor="#ced1d4"
-        android:text="TextView" />
+   <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_small_x"
+            android:layout_marginTop="@dimen/view_small_xx_w"
+            android:text="@string/pith_name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_x"/>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="26px"
-        android:textColor="#797979"
-        android:text="TextView" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="@dimen/view_small_xx_w"
+                android:layout_height="@dimen/view_small_xx_w"
+                android:layout_marginLeft="@dimen/view_small_x"
+                android:layout_marginTop="@dimen/view_small_x"
+                android:src="@drawable/e_address_image" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_small_x"
+                android:layout_marginTop="8dp"
+                android:text="北京市*******路*****号"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/txsize_small_x" />
+        </LinearLayout>
 
 </LinearLayout>

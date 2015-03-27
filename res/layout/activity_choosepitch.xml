@@ -5,40 +5,44 @@
     android:orientation="vertical"
     android:background="@color/black"
      >
-    <RelativeLayout 
-       android:layout_width="match_parent"
-       android:layout_height="98px"
-       android:background="@drawable/e_daohang_01"
-         >
-         
-       <TextView
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_centerHorizontal="true"
-             android:layout_centerVertical="true"
-             android:gravity="center"
-             android:text="@string/chooisepith"
-             android:textColor="@color/white"
-             android:textSize="@dimen/txsize_large_xx" />
-       <Button 
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignParentBottom="true"
-          android:layout_alignParentRight="true"
-          android:background="@null"
-          android:textColor="@color/white"
-          android:text="@string/qiehuan"
-          android:onClick="qiehuan"
-             />
-        <Button 
-          android:layout_width="96px"
-          android:layout_height="96px"
-          android:layout_alignParentBottom="true"
-          android:layout_alignParentLeft="true"
-          android:background="@drawable/back_button"
-          android:onClick="choosepith_back"
-             />
-     </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_mid_xx_title"
+        android:background="@drawable/e_daohang_01" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/chooisepith"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xxx" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="@dimen/view_mid_xx"
+            android:layout_height="@dimen/view_mid_x"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/back_button"
+            android:onClick="choosepith_back" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/button1"
+            android:background="@null"
+            android:onClick="qiehuan"
+            android:text="@string/qiehuan"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xx" />
+
+    </RelativeLayout>
 
      <LinearLayout 
           android:id="@+id/layout_listview_one"

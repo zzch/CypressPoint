@@ -200,7 +200,7 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 							adapter.notifyDataSetChanged();
 							
 							if(listViewPlaySet_t.getVisibility()!=0){
-								button_Start.setTextColor(Color.BLACK);
+								button_Start.setTextColor(Color.WHITE);
 								button_Start.setOnClickListener(new OnClickListener() {
 									
 									@Override

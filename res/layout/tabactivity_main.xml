@@ -19,7 +19,7 @@
 		        <TabWidget 
 		            android:id="@android:id/tabs"
 		            android:layout_width="fill_parent"
-		            android:layout_height="60dip"
+		            android:layout_height="50dp"
 		            android:layout_alignParentBottom="true"
 		            android:background="@drawable/e_buttom_06"
 		            >
@@ -29,7 +29,7 @@
 		        <FrameLayout
 		            android:layout_width="fill_parent"
 		            android:layout_height="fill_parent"
-		            android:layout_marginBottom="60dip"
+		            android:layout_marginBottom="50dip"
 		            android:id="@android:id/tabcontent"
 		            >
 		            

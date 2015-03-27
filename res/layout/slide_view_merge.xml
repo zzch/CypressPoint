@@ -12,7 +12,7 @@
 
     <RelativeLayout
         android:id="@+id/holder"
-        android:layout_width="120dp"
+        android:layout_width="@dimen/view_large_x"
         android:layout_height="match_parent"
         android:background="#131517"
         android:clickable="true" >

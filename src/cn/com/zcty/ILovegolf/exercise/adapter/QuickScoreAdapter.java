@@ -88,7 +88,7 @@ public  class QuickScoreAdapter extends BaseAdapter {
 		 holder.type.setText(quickContents.get(position).getType());
 		 holder.gan_number.setText(quickContents.get(position).getRecorded_scorecards_count());
 		 if(quickContents.get(position).getStrokes().equals("null")){
-			 
+			 holder.Pole_number.setTextSize(24);
 			 holder.Pole_number.setText("未开始"); 
 		 }
        holder.deleteHolder.setOnClickListener(new OnClickListener() {

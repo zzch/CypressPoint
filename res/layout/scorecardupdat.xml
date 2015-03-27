@@ -7,13 +7,13 @@
    >
    <RelativeLayout 
        android:layout_width="match_parent"
-       android:layout_height="98px"
+       android:layout_height="@dimen/view_mid_xx_title"
        android:background="@drawable/e_daohang_01"
          >
          <Button 
            android:id="@+id/scorecard_cancel"
-           android:layout_width="96px"
-           android:layout_height="96px"
+           android:layout_width="@dimen/view_mid_xx"
+           android:layout_height="@dimen/view_mid_x"
            android:layout_alignParentBottom="true"
            android:layout_alignParentLeft="true"
            android:background="@drawable/back_button"
@@ -27,7 +27,7 @@
              android:layout_centerVertical="true"
              android:gravity="center"
              android:textColor="@color/white"
-             android:textSize="39px"
+             android:textSize="@dimen/txsize_mid_x"
              />
            <Button 
            android:id="@+id/scorecard_save"
@@ -36,6 +36,7 @@
            android:layout_alignParentBottom="true"
            android:layout_alignParentRight="true"
            android:background="@null"
+           android:textSize="@dimen/txsize_small_xx"
            android:textColor="@color/white"
            android:text="@string/button_save"
            android:onClick="onClick"
@@ -47,7 +48,7 @@
    
    <LinearLayout 
        android:layout_width="match_parent"
-       android:layout_height="wrap_content"
+       android:layout_height="@dimen/view_mid_xx_xx"
        android:orientation="horizontal"
        android:gravity="center"
        android:background="@drawable/score_card_item_bg"
@@ -56,24 +57,23 @@
           android:layout_width="90dip"
          android:layout_height="wrap_content"
          android:text="总杆数"
-       
-         android:textSize="32px"
+         android:textSize="@dimen/txsize_small_x"
          android:textColor="@color/white"
          android:gravity="center_vertical"
            />
        <Button 
          android:id="@+id/but_jian_one"
-         android:layout_width="59px"
-         android:layout_height="59px"
+         android:layout_width="@dimen/view_small_xxx"
+         android:layout_height="@dimen/view_small_xxx"
          android:onClick="onClick"
          android:background="@drawable/e_jian"
            />
        
         <TextView 
            android:id="@+id/tv_update_one"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:textSize="40px"
+           android:layout_width="@dimen/view_small_xxx"
+           android:layout_height="@dimen/view_small_xxx"
+           android:textSize="@dimen/txsize_small_xx"
            android:text="6"
            android:textColor="@color/green"
            android:gravity="center"
@@ -83,8 +83,8 @@
        
          <Button 
            android:id="@+id/but_add_one"
-           android:layout_width="59px"
-           android:layout_height="59px"
+           android:layout_width="@dimen/view_small_xxx"
+           android:layout_height="@dimen/view_small_xxx"
            android:onClick="onClick"
            android:background="@drawable/add"
            android:layout_marginLeft="30dip"
@@ -96,24 +96,24 @@
 
      <LinearLayout 
        android:layout_width="match_parent"
-       android:layout_height="120px"
+       android:layout_height="@dimen/view_mid_xx_xx"
        android:orientation="horizontal"
        android:gravity="center"
-        android:background="@drawable/score_card_item_bg"
+       android:background="@drawable/score_card_item_bg"
        >
        <TextView 
          android:layout_width="90dip"
          android:layout_height="wrap_content"
          android:text="推杆数"
         
-         android:textSize="32px"
+         android:textSize="@dimen/txsize_small_x"
          android:textColor="@color/white"
          android:gravity="center_vertical"
            />
        <Button 
            android:id="@+id/but_jian_two"
-         android:layout_width="59px"
-         android:layout_height="59px"
+         android:layout_width="@dimen/view_small_xxx"
+         android:layout_height="@dimen/view_small_xxx"
           android:onClick="onClick"
          android:background="@drawable/e_jian"
          
@@ -121,9 +121,9 @@
        
         <TextView 
             android:id="@+id/tv_update_two"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:textSize="40px"
+           android:layout_width="@dimen/view_small_xxx"
+           android:layout_height="@dimen/view_small_xxx"
+           android:textSize="@dimen/txsize_small_xx"
            android:text="2"
            android:textColor="@color/green"
            android:gravity="center"
@@ -133,8 +133,8 @@
        
          <Button 
            android:id="@+id/but_add_two"
-           android:layout_width="59px"
-           android:layout_height="59px"
+           android:layout_width="@dimen/view_small_xxx"
+           android:layout_height="@dimen/view_small_xxx"
             android:onClick="onClick"
           android:background="@drawable/add"
            android:layout_marginLeft="30dip"
@@ -144,7 +144,7 @@
      
       <LinearLayout 
        android:layout_width="match_parent"
-       android:layout_height="120px"
+       android:layout_height="@dimen/view_mid_xx_xx"
        android:orientation="horizontal"
        android:gravity="center"
        android:background="@drawable/score_card_item_bg"
@@ -154,14 +154,14 @@
          android:layout_height="wrap_content"
          android:text="罚杆数"
          
-         android:textSize="32px"
+          android:textSize="@dimen/txsize_small_x"
          android:textColor="@color/white"
          android:gravity="center_vertical"
            />
        <Button 
            android:id="@+id/but_jian_three"
-           android:layout_width="59px"
-           android:layout_height="59px"
+           android:layout_width="@dimen/view_small_xxx"
+           android:layout_height="@dimen/view_small_xxx"
            android:onClick="onClick"
            android:background="@drawable/e_jian"
          
@@ -169,9 +169,9 @@
        
         <TextView 
            android:id="@+id/tv_update_three"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:textSize="40px"
+           android:layout_width="@dimen/view_small_xxx"
+           android:layout_height="@dimen/view_small_xxx"
+           android:textSize="@dimen/txsize_small_xx"
            android:text="2"
            android:textColor="@color/green"
            android:gravity="center"
@@ -181,8 +181,8 @@
        
          <Button 
            android:id="@+id/but_add_three"
-           android:layout_width="59px"
-           android:layout_height="59px"
+           android:layout_width="@dimen/view_small_xxx"
+           android:layout_height="@dimen/view_small_xxx"
            android:onClick="onClick"
            android:background="@drawable/add"
            android:layout_marginLeft="30dip"
@@ -194,9 +194,9 @@
      <LinearLayout 
        android:id="@+id/layout_chooise"
        android:layout_width="match_parent"
-       android:layout_height="wrap_content"
+       android:layout_height="@dimen/view_mid_xx_x"
        android:orientation="horizontal"
-       android:gravity="center_vertical"
+       android:gravity="center"
        android:onClick="onClick"
        android:background="@drawable/scorecard_layout_bg"
        
@@ -205,14 +205,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginLeft="120px"
+        android:layout_marginLeft="@dimen/view_small_xx"
         android:gravity="center"
            >
            <TextView 
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text="开球距离"
-          android:textSize="32px"
+          android:textSize="@dimen/txsize_small_xx"
           android:textColor="@color/white"
           
           />
@@ -221,7 +221,7 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text=""
-          android:textSize="30px"
+          android:textSize="@dimen/txsize_small_x"
           android:textColor="@color/green"
          
           />
@@ -232,36 +232,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginLeft="220px"
         android:gravity="center"
+        android:layout_marginLeft="@dimen/view_mid_xxx"
         >
       
        <TextView 
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text="开球命中"
-          android:textSize="32px"
+          android:textSize="@dimen/txsize_small_xx"
           android:textColor="@color/white"
           
           />
        
         <TextView 
-            android:id="@+id/hit_scorecard"
+          android:id="@+id/hit_scorecard"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text=""
-          android:textSize="30px"
+          android:textSize="@dimen/txsize_small_x"
           android:textColor="@color/green"
-          
           />
          </LinearLayout>
          
        <ImageView 
            android:id="@+id/scorecard_image_up"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
+           android:layout_width="@dimen/view_small_xx"
+           android:layout_height="@dimen/view_small_xx"
            android:src="@drawable/image_down"
-           android:layout_marginLeft="50px"
+           android:layout_gravity="center_vertical"
+           android:layout_marginLeft="@dimen/view_small_x"
+           android:layout_marginBottom="8dp"
            />
       </LinearLayout>
       
@@ -272,18 +273,17 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:background="@drawable/wheelview_bg"
-
-       android:layout_marginTop="30px"
+       android:layout_marginTop="@dimen/view_mid_xx"
 		>
 	
       <cn.com.zcty.ILovegolf.tools.WheelView 
 		    android:id="@+id/passw_1"
 		    android:layout_weight="1"
-			android:layout_height="370px"
+			android:layout_height="@dimen/view_large_xx"
 			android:layout_width="wrap_content"/>
 		<cn.com.zcty.ILovegolf.tools.WheelView 
 		     android:id="@+id/passw_2"
-			android:layout_height="370px"
+			android:layout_height="@dimen/view_large_xx"
 			android:layout_width="wrap_content"
 			android:layout_weight="1"/>
 		

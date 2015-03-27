@@ -8,9 +8,10 @@
         android:gravity="center_vertical"
         android:id="@+id/textView1"
         android:layout_width="match_parent"
-        android:layout_height="100px"
+        android:layout_height="@dimen/view_mid_xx_xx"
         android:background="#131517"
         android:textColor="#ced1d4"
+        android:textSize="@dimen/txsize_small_xxx"
         android:text="TextView" />
 
 </LinearLayout>

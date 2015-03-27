@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="@dimen/view_small_xxx" 
+    android:gravity="center"
+    android:background="@drawable/e_statistic_bg_one"
+    >
 
     <TextView
         android:id="@+id/count_cool"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:textSize="@dimen/txsize_small_xx"
+        android:textColor="@color/white"
+        android:text="TextView1" />
 
     <TextView
         android:id="@+id/count_cool_result"
@@ -15,7 +20,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginRight="68dp"
+        android:layout_marginLeft="@dimen/view_mid_xx"
+        android:textColor="@color/green"
+        android:textSize="@dimen/txsize_mid_x"
         android:text="TextView" />
 
 </RelativeLayout>

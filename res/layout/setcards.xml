@@ -8,30 +8,29 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="122px" 
+        android:layout_height="@dimen/view_mid_xx_x" 
         android:layout_gravity="center_vertical"
-        android:layout_marginTop="20px"
+        android:layout_marginTop="@dimen/view_small_x"
         >
-           <ImageView
+         <ImageView
         android:id="@+id/imageView_1"
-        android:layout_width="wrap_content"
-        android:layout_height="122px"
-        android:layout_centerHorizontal="true"
-       android:layout_marginTop="20dp"
+        android:layout_width="@dimen/view_mid_xx_title"
+        android:layout_height="@dimen/view_mid_xx_title"
+        android:layout_centerHorizontal="true"  
+        android:layout_marginTop="30dp"
         android:src="@drawable/imagetextview_button"
          />
-           <TextView
+        <TextView
         android:id="@+id/numberRod"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/view_mid_xx_xx"
+        android:layout_height="@dimen/view_mid_xx_xx"
         android:layout_gravity="center"
-       
         android:layout_centerHorizontal="true"
         android:background="@drawable/e_card_yuan"
         android:gravity="center"
         android:text=""
         android:textColor="@color/white"
-        android:textSize="70px" />
+        android:textSize="@dimen/txsize_large_xx" />
     </RelativeLayout>
 
  
@@ -47,15 +46,18 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="132px"
-            android:text="" />
+            android:layout_marginLeft="@dimen/view_mid_x"
+            android:text="" 
+            android:textSize="@dimen/txsize_small_x"
+            />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="132px"
+            android:layout_marginRight="@dimen/view_mid_x"
+            android:textSize="@dimen/txsize_small_x"
             android:text=""
             android:textColor="@color/white" />
     </RelativeLayout>
@@ -67,10 +69,10 @@
 
         <TextView
             android:id="@+id/image1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/view_small_xx"
+            android:layout_height="@dimen/view_small_xx"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="61px"
+            android:layout_marginLeft="@dimen/view_small_xx"
             android:text="" />
 
         <TextView
@@ -81,7 +83,7 @@
             android:layout_marginRight="30px"
             android:text="1"
             android:textColor="@color/white"
-            android:textSize="50px" />
+            android:textSize="@dimen/txsize_small_xxx" />
 
         <TextView
             android:id="@+id/textView4"
@@ -91,12 +93,12 @@
             android:layout_toRightOf="@+id/image1"
             android:text="1"
             android:textColor="@color/white"
-            android:textSize="50px" />
+            android:textSize="@dimen/txsize_small_xxx"/>
 
         <TextView
             android:id="@+id/image2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/view_small_xx"
+            android:layout_height="@dimen/view_small_xx"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/textView5"
             android:text="" />
@@ -109,7 +111,7 @@
             android:layout_toRightOf="@+id/textView4"
             android:text=""
             android:textColor="@color/white"
-            android:textSize="30px" />
+           android:textSize="@dimen/txsize_small_x" />
 
         <TextView
             android:id="@+id/t2"
@@ -119,7 +121,7 @@
             android:layout_alignParentRight="true"
             android:text="2"
             android:textColor="@color/white"
-            android:textSize="30px" />
+            android:textSize="@dimen/txsize_small_x"/>
     </RelativeLayout>
 
 </LinearLayout>

@@ -16,8 +16,8 @@
 		android:paddingBottom="8dp"
         android:gravity="center_vertical"
         android:singleLine="true"
-        android:textColor="@color/white"
-        android:textSize="30px" 
+        android:textColor="@color/black"
+         android:textSize="@dimen/txsize_small_x"
         />
 
 </LinearLayout>
