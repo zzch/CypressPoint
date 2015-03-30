@@ -112,7 +112,7 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 	public void removeItem(int position) {
 		mListView.isSlide = false;
 		//mListView.itemView.findViewById(R.id.tv_coating).setVisibility(View.VISIBLE);
-		Toast.makeText(QuickScoreActivity.this, "点击了删除", Toast.LENGTH_LONG).show();
+		//Toast.makeText(QuickScoreActivity.this, "点击了删除", Toast.LENGTH_LONG).show();
 		quickArrayList.remove(position-1);
 		slideAdapter.notifyDataSetChanged();
 		new MyTaskDele(uuidArrayList.get(position-1)).start();
@@ -191,7 +191,7 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 
 					quickContent.setStrokes(jsonObj.getString("score"));
 					quickContent.setRecorded_scorecards_count(jsonObj.getString("recorded_scorecards_count"));
-
+                     Log.i("cc", "cc----"+quickContent.getRecorded_scorecards_count());
 					quickContent.setStarted_at(jsonObj.getString("started_at"));
 					quickContent.setCourse(arrayCouse);
 					quickArrayList.add(quickContent);

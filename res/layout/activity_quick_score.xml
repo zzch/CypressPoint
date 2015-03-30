@@ -6,9 +6,9 @@
     android:background="@color/black"
      >
      <RelativeLayout 
-       android:layout_width="match_parent"
-       android:layout_height="98px"
-       android:background="@drawable/e_daohang_01"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_mid_xx_title"
+        android:background="@drawable/e_daohang_01" 
          >
 
          <TextView
@@ -19,7 +19,7 @@
              android:gravity="center"
              android:text="@string/easy_card"
              android:textColor="@color/white"
-             android:textSize="39px" />
+            android:textSize="@dimen/txsize_small_xxx" />
 
          <Button
              android:id="@+id/k_build"
@@ -34,8 +34,8 @@
 
          <Button
              android:id="@+id/k_back"
-             android:layout_width="96px"
-             android:layout_height="96px"
+             android:layout_width="@dimen/view_mid_xx"
+            android:layout_height="@dimen/view_mid_x"
              android:layout_alignParentBottom="true"
              android:layout_alignParentLeft="true"
              android:background="@drawable/back_button"

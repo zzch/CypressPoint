@@ -8,15 +8,14 @@
 	    android:layout_width="wrap_content" 
 	    android:layout_height="wrap_content"
 	     android:id="@+id/xlist_item_relayout"
-	      android:background="@drawable/item_onclick"
 	      android:layout_centerVertical="true"
 	      >
 	    
 	    
 	    
     <LinearLayout
-        android:layout_width="246px"
-        android:layout_height="200px"
+        android:layout_width="@dimen/view_large_x"
+        android:layout_height="@dimen/view_mid_xxx"
         android:gravity="center"
         android:orientation="horizontal" >
 
@@ -24,12 +23,14 @@
             android:id="@+id/Pole_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:text="77"
+            android:layout_marginLeft="25dp"
+            android:gravity="center"
+            android:text="33"
             android:textColor="@color/green"
-            android:textSize="50px" />
+            android:textSize="@dimen/txsize_large_x" />
 
         <ImageView
+            android:id="@+id/image_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dip"
@@ -44,8 +45,8 @@
 
         <LinearLayout
             android:id="@+id/layout"
-            android:layout_width="134dp"
-            android:layout_height="200px"
+            android:layout_width="@dimen/view_large_xxx"
+            android:layout_height="@dimen/view_mid_xxx"
             android:gravity="center_vertical"
             android:orientation="vertical" >
 
@@ -56,50 +57,50 @@
                 android:gravity="center_vertical"
                 android:text="@string/pith_name"
                 android:textColor="#a4a4a4"
-                android:textSize="26px" />
+                android:textSize="@dimen/txsize_small_x" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15px"
+                android:layout_marginTop="@dimen/view_small_x"
                 android:gravity="center_vertical"
                 android:orientation="horizontal" >
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/view_small_xx_w"
+                    android:layout_height="@dimen/view_small_xx_w"
                     android:src="@drawable/calendar" />
 
                 <TextView
                     android:id="@+id/time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20px"
+                    android:layout_marginLeft="@dimen/view_small_x"
                     android:text="02月02号"
                     android:textColor="#ced1d4"
-                    android:textSize="30px" />
+                    android:textSize="@dimen/txsize_small_x" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15px"
+                android:layout_marginTop="@dimen/view_small_x"
                 android:gravity="center_vertical"
                 android:orientation="horizontal" >
 
                 <TextView
                     android:id="@+id/practice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/view_mid_xx_x"
+                    android:layout_height="@dimen/view_small_xx"
                     android:background="@drawable/e_normal"
                     android:gravity="center"
                     android:text="练习赛"
                     android:textColor="@color/gray" />
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="13px"
+                    android:layout_width="@dimen/view_mid_xx_x"
+                    android:layout_height="@dimen/view_small_xx" 
+                    android:layout_marginLeft="@dimen/view_small_x"
                     android:background="@drawable/e_normal"
                     android:gravity="center"
                     android:orientation="horizontal" >
@@ -122,36 +123,37 @@
             </LinearLayout>
         </LinearLayout>
 
-        <ImageView
-            android:layout_width="60px"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/e_icon_arrow" />
+       
     </LinearLayout>
 </LinearLayout>
     <FrameLayout
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/view_mid_xxx"
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
+       
         android:padding="15dp" >
 
         <TextView
             android:id="@+id/tv_functions"
-            android:layout_width="90dp"
+            android:layout_width="@dimen/view_mid_xxx"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:background="@drawable/btn_del_bg"
+            android:layout_marginLeft="@dimen/view_small_xx_w"
             android:gravity="center"
             android:text="删除"
-            android:textColor="@android:color/white" />
+            android:textColor="#ff0000" 
+            
+            />
 
-       <TextView
+       <ImageView
             android:id="@+id/tv_coating"
-            android:layout_width="90dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimen/view_mid_xxx"
+            android:layout_height="@dimen/view_small_xx"
             android:layout_gravity="center"
-            android:background="@android:color/black"
+            android:layout_marginLeft="@dimen/view_small_xx"
+            android:background="@color/black"
+            android:src="@drawable/e_icon_arrow" 
             android:visibility="gone" /> 
     </FrameLayout>
 
