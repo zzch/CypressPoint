@@ -79,6 +79,16 @@ public class ScoreCardActivity extends Activity {
 					long arg3) {
 				
 				if(position%2!=0){
+					SharedPreferences sp = getSharedPreferences("setCard", MODE_PRIVATE);
+					SharedPreferences.Editor editor = sp.edit();
+					if(adapter.getResult(position).getRodNum()!=null){
+						editor.putString("rodnum", adapter.getResult(position).getRodNum());
+						editor.putString("putts", adapter.getResult(position).getPutts());
+						editor.putString("penalties", adapter.getResult(position).getPenalties());
+						editor.putString("te", adapter.getResult(position).getTe());
+						editor.putString("direction", adapter.getResult(position).getPar());
+						editor.commit();
+					}
 					Intent intent = new Intent(ScoreCardActivity.this,ScoreCardUpDateActivity.class);
 					intent.putExtra("number", scorecarsArray.get(position/2).getNumber());
 					intent.putExtra("par",scorecarsArray.get(position/2).getPar());

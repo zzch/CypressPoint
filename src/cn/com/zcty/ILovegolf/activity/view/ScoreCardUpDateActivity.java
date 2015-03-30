@@ -163,9 +163,25 @@ public class ScoreCardUpDateActivity extends Activity{
 		ballHoleTextView.setText("球洞"+intent.getStringExtra("number"));
 		String par = intent.getStringExtra("par");
 		position = intent.getStringExtra("position");
+		SharedPreferences sp = getSharedPreferences("setCard",MODE_PRIVATE);	
+		if( !sp.getString("rodnum", "pass").equals("null")){
+			dataTextView.setText(sp.getString("rodnum", par));
+			par = sp.getString("rodnum", par);
+			putTextView.setText(sp.getString("putts", putcount+""));
+			putcount = Integer.parseInt(sp.getString("putts", putcount+""));
+			penaltiesTextView.setText(sp.getString("penalties", penaltiescount+""));
+			penaltiescount = Integer.parseInt(sp.getString("penalties", penaltiescount+""));
+			for(int i=0;i<cool.length;i++){
+				if(cool[i].equals(sp.getString("direction", "命中"))){
+					coolWheelView.setCurrentItem(i);
+				}
+			}
+			distanceWheelView.setCurrentItem(Integer.parseInt(sp.getString("te", "0")));
+		}else{
 		dataTextView.setText(par);
 		putTextView.setText(putcount+"");
 		penaltiesTextView.setText(penaltiescount+"");
+		}
 		count = Integer.parseInt(par);
 		adapter = 	new NumericWheelAdapter(0, 400);
 		distanceWheelView.setAdapter(adapter);	

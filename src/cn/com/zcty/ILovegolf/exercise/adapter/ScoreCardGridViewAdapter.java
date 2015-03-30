@@ -74,7 +74,11 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 		return position;
 	}
 
-	
+	public Setcard getResult(int position){
+		
+		return setcardsArray.get(position/2);
+		
+	}
 	@SuppressLint("NewApi")
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
