@@ -10,15 +10,6 @@
        android:layout_height="@dimen/view_mid_xx_title"
        android:background="@drawable/e_daohang_01"
          >
-         <Button 
-           android:id="@+id/scorecard_cancel"
-           android:layout_width="@dimen/view_mid_xx"
-           android:layout_height="@dimen/view_mid_x"
-           android:layout_alignParentBottom="true"
-           android:layout_alignParentLeft="true"
-           android:background="@drawable/back_button"
-
-             />
          <TextView 
              android:id="@+id/ball_hole"
              android:layout_width="wrap_content"
@@ -41,6 +32,14 @@
            android:text="@string/button_save"
            android:onClick="onClick"
              />
+
+           <Button
+               android:id="@+id/scorecard_cancel"
+               android:layout_width="@dimen/view_mid_xx"
+               android:layout_height="@dimen/view_mid_x"
+               android:layout_alignParentLeft="true"
+               android:layout_centerVertical="true"
+               android:background="@drawable/back_button" />
      </RelativeLayout>
      
    
@@ -50,30 +49,44 @@
        android:layout_width="match_parent"
        android:layout_height="@dimen/view_mid_xx_xx"
        android:orientation="horizontal"
-       android:gravity="center"
+       android:gravity="center_vertical"
        android:background="@drawable/score_card_item_bg"
        >
-       <TextView 
-          android:layout_width="90dip"
-         android:layout_height="wrap_content"
-         android:text="总杆数"
-         android:textSize="@dimen/txsize_small_x"
-         android:textColor="@color/white"
-         android:gravity="center_vertical"
-           />
+
+     
+           
+       <LinearLayout 
+       android:layout_width="@dimen/view_large_x"
+       android:layout_height="@dimen/view_mid_xx_xx"
+       android:gravity="center"
+       android:background="@drawable/score_card_item_bg"
+           >
+         <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:gravity="center_vertical"
+           android:text="总杆数"
+           android:textColor="@color/white"
+           android:textSize="@dimen/txsize_small_x" />
+       </LinearLayout>
+          <View
+             android:layout_width="2dip"
+             android:layout_height="match_parent"
+             android:background="@drawable/line" />
        <Button 
          android:id="@+id/but_jian_one"
          android:layout_width="@dimen/view_small_xxx"
          android:layout_height="@dimen/view_small_xxx"
          android:onClick="onClick"
          android:background="@drawable/e_jian"
+         android:layout_marginLeft="@dimen/view_small_xx"
            />
        
         <TextView 
            android:id="@+id/tv_update_one"
-           android:layout_width="@dimen/view_small_xxx"
-           android:layout_height="@dimen/view_small_xxx"
-           android:textSize="@dimen/txsize_small_xx"
+           android:layout_width="@dimen/view_mid_x"
+           android:layout_height="@dimen/view_mid_x"
+           android:textSize="@dimen/txsize_mid_x"
            android:text="6"
            android:textColor="@color/green"
            android:gravity="center"
@@ -98,11 +111,18 @@
        android:layout_width="match_parent"
        android:layout_height="@dimen/view_mid_xx_xx"
        android:orientation="horizontal"
-       android:gravity="center"
+       android:gravity="center_vertical"
        android:background="@drawable/score_card_item_bg"
        >
+         
+          <LinearLayout 
+       android:layout_width="@dimen/view_large_x"
+       android:layout_height="@dimen/view_mid_xx_xx"
+       android:gravity="center"
+       android:background="@drawable/score_card_item_bg"
+           >
        <TextView 
-         android:layout_width="90dip"
+         android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:text="推杆数"
         
@@ -110,20 +130,26 @@
          android:textColor="@color/white"
          android:gravity="center_vertical"
            />
+       
+       </LinearLayout>
+          <View
+             android:layout_width="2dip"
+             android:layout_height="match_parent"
+             android:background="@drawable/line" />
        <Button 
            android:id="@+id/but_jian_two"
-         android:layout_width="@dimen/view_small_xxx"
-         android:layout_height="@dimen/view_small_xxx"
-          android:onClick="onClick"
-         android:background="@drawable/e_jian"
-         
+           android:layout_width="@dimen/view_small_xxx"
+           android:layout_height="@dimen/view_small_xxx"
+           android:onClick="onClick"
+           android:background="@drawable/e_jian"
+           android:layout_marginLeft="@dimen/view_small_xx"
            />
        
         <TextView 
             android:id="@+id/tv_update_two"
-           android:layout_width="@dimen/view_small_xxx"
-           android:layout_height="@dimen/view_small_xxx"
-           android:textSize="@dimen/txsize_small_xx"
+           android:layout_width="@dimen/view_mid_x"
+           android:layout_height="@dimen/view_mid_x"
+           android:textSize="@dimen/txsize_mid_x"
            android:text="2"
            android:textColor="@color/green"
            android:gravity="center"
@@ -135,8 +161,8 @@
            android:id="@+id/but_add_two"
            android:layout_width="@dimen/view_small_xxx"
            android:layout_height="@dimen/view_small_xxx"
-            android:onClick="onClick"
-          android:background="@drawable/add"
+           android:onClick="onClick"
+           android:background="@drawable/add"
            android:layout_marginLeft="30dip"
            />
    </LinearLayout>
@@ -146,32 +172,43 @@
        android:layout_width="match_parent"
        android:layout_height="@dimen/view_mid_xx_xx"
        android:orientation="horizontal"
-       android:gravity="center"
+       android:gravity="center_vertical"
        android:background="@drawable/score_card_item_bg"
        >
+          <LinearLayout 
+       android:layout_width="@dimen/view_large_x"
+       android:layout_height="@dimen/view_mid_xx_xx"
+       android:gravity="center"
+       android:background="@drawable/score_card_item_bg"
+           >
        <TextView 
-         android:layout_width="90dip"
+         android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:text="罚杆数"
-         
-          android:textSize="@dimen/txsize_small_x"
+         android:textSize="@dimen/txsize_small_x"
          android:textColor="@color/white"
          android:gravity="center_vertical"
            />
+       
+       </LinearLayout>
+          <View
+             android:layout_width="2dip"
+             android:layout_height="match_parent"
+             android:background="@drawable/line" />
        <Button 
            android:id="@+id/but_jian_three"
            android:layout_width="@dimen/view_small_xxx"
            android:layout_height="@dimen/view_small_xxx"
            android:onClick="onClick"
            android:background="@drawable/e_jian"
-         
+           android:layout_marginLeft="@dimen/view_small_xx"
            />
        
         <TextView 
            android:id="@+id/tv_update_three"
-           android:layout_width="@dimen/view_small_xxx"
-           android:layout_height="@dimen/view_small_xxx"
-           android:textSize="@dimen/txsize_small_xx"
+           android:layout_width="@dimen/view_mid_x"
+           android:layout_height="@dimen/view_mid_x"
+           android:textSize="@dimen/txsize_mid_x"
            android:text="2"
            android:textColor="@color/green"
            android:gravity="center"
@@ -254,7 +291,7 @@
           android:textColor="@color/green"
           />
          </LinearLayout>
-         
+      
        <ImageView 
            android:id="@+id/scorecard_image_up"
            android:layout_width="@dimen/view_small_xx"

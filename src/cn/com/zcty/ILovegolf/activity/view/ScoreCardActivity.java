@@ -135,7 +135,7 @@ public class ScoreCardActivity extends Activity {
 		case R.id.scorecard_score:
 			intent=new Intent(ScoreCardActivity.this,StatisticsAvtivity.class);
 			startActivity(intent);
-			finish();
+			
 			break;
 		}
 	}
@@ -155,7 +155,7 @@ public class ScoreCardActivity extends Activity {
 			
 			Intent intent=getIntent();
 			 uuid=intent.getStringExtra("uuid");
-			 Log.i("jjs", uuid);
+			// Log.i("jjs", uuid);
 			 uuid_t = intent.getStringExtra("uuid_t");
 			String boxes = intent.getStringExtra("color");
 			String boxes_t = intent.getStringExtra("color_t");
@@ -209,7 +209,8 @@ public class ScoreCardActivity extends Activity {
 							JSONObject jsonObjects = jsonArray.getJSONObject(i);
 							Scorecards scorecards = new Scorecards();
 							scorecards.setUuid(jsonObjects.getString("uuid"));							
-							scorecards.setNumber(jsonObjects.getString("number"));						
+							scorecards.setNumber(jsonObjects.getString("number"));
+							Log.i("numb", ""+scorecards.getNumber());
 							scorecards.setPar(jsonObjects.getString("par"));							
 							scorecards.setTee_box_color(jsonObjects.getString("tee_box_color"));							
 							scorecards.setDistance_from_hole_to_tee_box(jsonObjects.getString("distance_from_hole_to_tee_box"));							

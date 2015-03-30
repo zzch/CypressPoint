@@ -303,7 +303,7 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 							//textview.setTextColor(Color.BLACK);
 							adapter_t.notifyDataSetChanged();
 							
-								button_Start.setTextColor(Color.BLACK);
+								button_Start.setTextColor(Color.WHITE);
 								button_Start.setOnClickListener(new OnClickListener() {
 									
 									@Override

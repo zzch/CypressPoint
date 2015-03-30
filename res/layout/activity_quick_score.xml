@@ -5,13 +5,14 @@
     android:orientation="vertical"
     android:background="@color/black"
      >
-     <RelativeLayout 
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/view_mid_xx_title"
-        android:background="@drawable/e_daohang_01" 
-         >
+
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:layout_height="@dimen/view_mid_xx_title"
+         android:background="@drawable/e_daohang_01" >
 
          <TextView
+             android:id="@+id/textView1"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:layout_centerHorizontal="true"
@@ -19,7 +20,7 @@
              android:gravity="center"
              android:text="@string/easy_card"
              android:textColor="@color/white"
-            android:textSize="@dimen/txsize_small_xxx" />
+             android:textSize="@dimen/txsize_small_xxx" />
 
          <Button
              android:id="@+id/k_build"
@@ -29,19 +30,20 @@
              android:layout_alignParentRight="true"
              android:background="@null"
              android:onClick="onclick"
-             android:textColor="@color/white"
-             android:text="@string/new_build" />
+             android:text="@string/new_build"
+             android:textColor="@color/white" />
 
          <Button
              android:id="@+id/k_back"
              android:layout_width="@dimen/view_mid_xx"
-            android:layout_height="@dimen/view_mid_x"
-             android:layout_alignParentBottom="true"
+             android:layout_height="@dimen/view_mid_x"
+             android:layout_alignBaseline="@+id/textView1"
+             android:layout_alignBottom="@+id/textView1"
              android:layout_alignParentLeft="true"
              android:background="@drawable/back_button"
              android:onClick="onclick" />
-
      </RelativeLayout>
+
     <LinearLayout
         android:id="@+id/image_layout" 
         android:layout_width="match_parent"

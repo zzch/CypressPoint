@@ -2,16 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+     android:background="#131517"
+    >
 
     <TextView
         android:gravity="center_vertical"
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="@dimen/view_mid_xx_xx"
-        android:background="#131517"
+       
         android:textColor="#ced1d4"
         android:textSize="@dimen/txsize_small_xxx"
+        android:layout_marginLeft="@dimen/view_small_x"
         android:text="TextView" />
 
 </LinearLayout>

@@ -126,7 +126,7 @@ public void onConfigurationChanged(Configuration newConfig) {
      
 			@Override
 			public void onClick(View v) {
-            
+			
 				finish();
 			}
 		});

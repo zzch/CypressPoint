@@ -22,13 +22,10 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.exercise.adapter.ArrayWheelAdapter;
 import cn.com.zcty.ILovegolf.model.Setcard;
-import cn.com.zcty.ILovegolf.tools.ArrayWheelAdapter;
-import cn.com.zcty.ILovegolf.tools.NumericWheelAdapter;
 import cn.com.zcty.ILovegolf.tools.OnWheelChangedListener;
 import cn.com.zcty.ILovegolf.tools.WheelView;
 import cn.com.zcty.ILovegolf.utils.APIService;
@@ -51,7 +48,7 @@ public class ScoreCardUpDateActivity extends Activity{
 	private int count;
 	private int putcount = 2;
 	private int penaltiescount = 0;
-	private NumericWheelAdapter adapter;
+	private ArrayWheelAdapter adapter;
 	private String driving_distance = "0";//距离
 	private String direction = "pure"; //开球方向
 	private String[] cool = {"命中","右侧","左侧"};
@@ -65,6 +62,7 @@ public class ScoreCardUpDateActivity extends Activity{
 	private boolean flase_2 = false;
 	private boolean flase_3 = false;
 	private boolean flase_4 = false;
+	private	String[] item = new String[200];
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -154,16 +152,24 @@ public class ScoreCardUpDateActivity extends Activity{
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.scorecardupdat);
 		initView();
+		for(int i=0;i<200;i++){
+			int a = i+5;
+			item[i]=a+"码";	
+		Log.i("ceshizhifa", a+"");
+		}
 		setListener();
 		getData();
 	}
 
 	private void getData() {
-		adapter = 	new NumericWheelAdapter(0, 400);
-		distanceWheelView.setAdapter(adapter);	
-		coolWheelView.setAdapter(new ArrayWheelAdapter<String>(cool));
+		
+		
+		
+		adapter = 	new ArrayWheelAdapter(this, item);		
+		distanceWheelView.setViewAdapter(adapter);
+		coolWheelView.setViewAdapter(new ArrayWheelAdapter<String>(this,cool));
 		Intent intent = getIntent();
-		ballHoleTextView.setText("球洞"+intent.getStringExtra("number"));
+		ballHoleTextView.setText(intent.getStringExtra("number")+"号洞");
 		String par = intent.getStringExtra("par");
 		position = intent.getStringExtra("position");
 		SharedPreferences sp = getSharedPreferences("setCard",MODE_PRIVATE);	
@@ -205,16 +211,16 @@ public class ScoreCardUpDateActivity extends Activity{
 				
 			}
 		});
-		OnWheelChangedListener changed =  new OnWheelChangedListener() {
-
+		
+		distanceWheelView.addChangingListener(new OnWheelChangedListener() {
+			
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
-				distance_scorecard.setText(newValue+"码");
-				driving_distance = 	adapter.getItem(newValue);
+				distance_scorecard.setText(item[newValue]);
+				driving_distance = item[newValue];
 				driving_distance = driving_distance.substring(0,driving_distance.length()-1);
 			}
-		};
-		distanceWheelView.addChangingListener(changed);
+		});
 		coolWheelView.addChangingListener(new OnWheelChangedListener() {
 
 			@Override

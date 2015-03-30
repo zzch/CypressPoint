@@ -239,7 +239,7 @@ public class StatisticsActivityLand extends Activity{
 
 			@Override
 			public void onClick(View v) {
-
+				
 				finish();
 			}
 		});
