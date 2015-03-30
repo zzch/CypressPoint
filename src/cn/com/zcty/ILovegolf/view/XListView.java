@@ -1,3 +1,4 @@
+package cn.com.zcty.ILovegolf.view;
 /**
  * @file XListView.java
  * @package me.maxwin.view
@@ -6,13 +7,10 @@
  * @description An ListView support (a) Pull down to refresh, (b) Pull up to load more.
  * 		Implement IXListViewListener, and see stopRefresh() / stopLoadMore().
  */
-package cn.com.zcty.ILovegolf.view;
 
-import cn.com.zcty.ILovegolf.activity.R;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
@@ -30,6 +28,7 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Scroller;
 import android.widget.TextView;
+import cn.com.zcty.ILovegolf.activity.R;
 
 public class XListView extends ListView implements OnScrollListener {
 
@@ -97,7 +96,6 @@ public class XListView extends ListView implements OnScrollListener {
 		super(context);
 		initWithContext(context);
 		mTouchSlop = ViewConfiguration.get(getContext()).getScaledTouchSlop();
-		
 	}
 
 	public XListView(Context context, AttributeSet attrs) {
@@ -140,7 +138,6 @@ public class XListView extends ListView implements OnScrollListener {
 								.removeGlobalOnLayoutListener(this);
 					}
 				});
-		
 	}
 
 	@Override
@@ -321,10 +318,10 @@ public class XListView extends ListView implements OnScrollListener {
 				return super.dispatchTouchEvent(event);
 			}
 
-		/*	if (preItemView != null && preItemView.findViewById(R.id.tv_coating).getVisibility() == View.GONE) {
+			if (preItemView != null && preItemView.findViewById(R.id.tv_coating).getVisibility() == View.GONE) {
 				itemView = preItemView;
 				slidePosition = preSlidePosition;
-			}*/ else {
+			} else {
 				itemView = getChildAt(slidePosition - getFirstVisiblePosition());
 				preItemView = itemView;
 				preSlidePosition = slidePosition;
@@ -349,13 +346,12 @@ public class XListView extends ListView implements OnScrollListener {
 	
 	public boolean onInterceptTouchEvent(MotionEvent ev) {
 		switch (ev.getAction()) {
-		
 		case MotionEvent.ACTION_MOVE:
-			//if (itemView.findViewById(R.id.tv_coating).getVisibility() == View.VISIBLE) {
+			if (itemView.findViewById(R.id.tv_coating).getVisibility() == View.VISIBLE) {
 				isSlide = false;
-			//} else {
-		//		isSlide = true;
-			//}
+			} else {
+				isSlide = true;
+			}
 			break;
 
 		default:
@@ -377,7 +373,7 @@ public class XListView extends ListView implements OnScrollListener {
 			switch (action) {
 			case MotionEvent.ACTION_MOVE:
 				if (isObstruct) {
-					
+
 					if (itemView.findViewById(R.id.tv_coating).getVisibility() == View.VISIBLE && isResponse == true) {
 
 						scaleHideAnimation = new ScaleAnimation(1.0f, 0.0f, 1.0f, 1.0f);

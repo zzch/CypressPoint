@@ -6,14 +6,13 @@
  */
 package cn.com.zcty.ILovegolf.view;
 
-
-import cn.com.zcty.ILovegolf.activity.R;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import cn.com.zcty.ILovegolf.activity.R;
 
 public class XListViewFooter extends LinearLayout {
 	public final static int STATE_NORMAL = 0;
@@ -48,7 +47,7 @@ public class XListViewFooter extends LinearLayout {
 			mProgressBar.setVisibility(View.VISIBLE);
 		} else {
 			mHintView.setVisibility(View.VISIBLE);
-			mHintView.setText("");//R.string.xlistview_footer_hint_normal
+			mHintView.setText(R.string.xlistview_footer_hint_normal);
 		}
 	}
 	
@@ -63,6 +62,7 @@ public class XListViewFooter extends LinearLayout {
 		LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams)mContentView.getLayoutParams();
 		return lp.bottomMargin;
 	}
+	
 	
 	/**
 	 * normal status

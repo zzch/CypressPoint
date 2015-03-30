@@ -259,12 +259,14 @@ public void onConfigurationChanged(Configuration newConfig) {
 				countCool.add("攻果岭率");
 				countCoolResult.add(jsonObject.getString("putts_per_gir"));
 				countCool.add("标准杆上果岭的平均推杆");
+				countCool.add("");
 				countCoolResult.add(jsonObject.getString("score_par_3"));
 				countCool.add("3杆洞");
 				countCoolResult.add(jsonObject.getString("score_par_4"));
 				countCool.add("4杆洞");
 				countCoolResult.add(jsonObject.getString("score_par_5"));
 				countCool.add("5杆洞");
+				countCool.add("");
 				countCoolResult.add(jsonObject.getString("double_eagle"));
 				countCool.add("信天翁球");
 				countCoolResult.add(jsonObject.getString("eagle"));
