@@ -6,6 +6,8 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import com.baidu.location.ad;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -54,6 +56,7 @@ public class ListChoosePitchActivity extends Activity {
 	private List<String> uuidList = new ArrayList<String>();
 	private SharedPreferences ss;
 	private ArrayList<String> citys_name;
+	private List<String> citys_address;
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
 			if(msg.arg1==1){
@@ -139,18 +142,21 @@ public class ListChoosePitchActivity extends Activity {
 					cityList.setVisibility(View.VISIBLE);
 					sortListView.setVisibility(View.GONE);
 					citys_name = new ArrayList<String>();
+					citys_address = new ArrayList<String>();
 					String name = keyword.getText().toString();	
 					for(int i=0;i<adapter.getGroupCount();i++){
 						for(int j=0;j<adapter.getChildrenCount(i);j++){
 							
 							String name_city = adapter.getChildName(i, j);
+							String name_address = adapter.getChildAddress(i, j);
 							 if(name_city.indexOf(name)!=-1){
 								citys_name.add(name_city);
+								citys_address.add(name_address);
 								uuidList.add(adapter.uuid(i, j));
 							}
 						}
 					}
-					   SearchCityAdapter adapters = new SearchCityAdapter(citys_name,ListChoosePitchActivity.this);
+					   SearchCityAdapter adapters = new SearchCityAdapter(citys_name,citys_address,ListChoosePitchActivity.this);
 						
 						cityList.setAdapter(adapters);
 						adapters.notifyDataSetChanged();
@@ -211,7 +217,7 @@ public class ListChoosePitchActivity extends Activity {
 							 course.setUuid(jsonObj.getString("uuid"));
 							 childs.add(course);
 							 
-							Log.i("cc", jsonObj.getString("name"));
+							Log.i("golf_address", jsonObj.getString("address"));
 						 }
 			    		child.add(childs);
 			    	}

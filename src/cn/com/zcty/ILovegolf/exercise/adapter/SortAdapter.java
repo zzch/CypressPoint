@@ -63,6 +63,10 @@ public class SortAdapter extends BaseExpandableListAdapter {
 		return child.get(groupPosition).get(childPosition).getName();
 		
 	}
+	public String getChildAddress(int groupPosition, int childPosition){
+		return child.get(groupPosition).get(childPosition).getAddress();
+		
+	}
 
 	@Override
 	public int getChildrenCount(int groupPosition) {

@@ -1,6 +1,7 @@
 package cn.com.zcty.ILovegolf.exercise.adapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.exercise.adapter.StatisticAdapter.Holder;
@@ -15,13 +16,14 @@ import android.widget.TextView;
 public class SearchCityAdapter extends BaseAdapter {
 	
 	private ArrayList<String> citys_name;
+	private List<String> citys_address;
 	private Context context;
 	private LayoutInflater inflater;
 	
 	
 
-	public SearchCityAdapter(ArrayList<String> citys_name, Context context) {
-		
+	public SearchCityAdapter(ArrayList<String> citys_name,List<String> citys_address,Context context) {
+		this.citys_address = citys_address;
 		this.citys_name = citys_name;
 		this.context = context;
 		inflater = LayoutInflater.from(context);
@@ -59,7 +61,7 @@ public class SearchCityAdapter extends BaseAdapter {
 		   holder = (Holder) convertView.getTag();
 	   }
 		holder.pitchname.setText(citys_name.get(position));
-		holder.address.setText(citys_name.get(position));
+		holder.address.setText(citys_address.get(position));
 		return convertView;
 
 		
