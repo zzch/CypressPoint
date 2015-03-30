@@ -159,6 +159,9 @@ public class ScoreCardUpDateActivity extends Activity{
 	}
 
 	private void getData() {
+		adapter = 	new NumericWheelAdapter(0, 400);
+		distanceWheelView.setAdapter(adapter);	
+		coolWheelView.setAdapter(new ArrayWheelAdapter<String>(cool));
 		Intent intent = getIntent();
 		ballHoleTextView.setText("球洞"+intent.getStringExtra("number"));
 		String par = intent.getStringExtra("par");
@@ -183,9 +186,7 @@ public class ScoreCardUpDateActivity extends Activity{
 		penaltiesTextView.setText(penaltiescount+"");
 		}
 		count = Integer.parseInt(par);
-		adapter = 	new NumericWheelAdapter(0, 400);
-		distanceWheelView.setAdapter(adapter);	
-		coolWheelView.setAdapter(new ArrayWheelAdapter<String>(cool));
+		
 	}
 
 	private void setListener() {
