@@ -75,7 +75,8 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 		mListView.setOnItemClickListener(this);
 		mListView.setPullLoadEnable(true);
 		mListView.setRemoveListener(this);
-		
+		mListView.setPullLoadEnable(false);
+
 	}
 	//点击事件
 	public void onclick(View v){
@@ -135,7 +136,7 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 	private void onLoad() {
 		
 		mListView.stopRefresh();
-		//mListView.stopLoadMore();
+		mListView.stopLoadMore();
 		mListView.setRefreshTime("刚刚");
 	}
 	@Override

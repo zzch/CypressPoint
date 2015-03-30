@@ -65,6 +65,7 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 	private String uuid;
 	private String c;
 	private String uuid_t;
+	private String tiTai[]={"红色T台","白色T台","蓝色T台","黑色T台","金色T台"};
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
 			if(msg.what==1){
@@ -156,7 +157,12 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 										
 										listViewPlaySet_t.setVisibility(View.INVISIBLE);
 									}
+									playset.set(1, "开球T台");
+									playset_t.set(0, "选择子场");
+									playset_t.set(1, "开球T台");
 									adapter.notifyDataSetChanged();
+									button_Start.setClickable(false);
+									button_Start.setTextColor(Color.GRAY);
 						}
 						
 						@Override
@@ -194,13 +200,14 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 							c = color.get(position);
 							//final String colors = color.get(position);
 							
-							playset.set(1, color.get(position));
+							playset.set(1, tiTai[position]);
 							
 							//textview.setTextColor(Color.BLACK);
 							adapter.notifyDataSetChanged();
 							
-							if(listViewPlaySet_t.getVisibility()!=0){
+							if(listViewPlaySet_t.getVisibility()!=0&&!playset.equals("开球T台")){
 								button_Start.setTextColor(Color.WHITE);
+								button_Start.setClickable(false);
 								button_Start.setOnClickListener(new OnClickListener() {
 									
 									@Override
@@ -261,7 +268,10 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 						@Override
 						public void onListItemClick(int position, String string) {
 									uuid_t = uuids.get(position);
-									playset_t.set(0, diamond_t.get(position));								
+									playset_t.set(0, diamond_t.get(position));	
+									playset_t.set(1, "开球T台");
+									button_Start.setClickable(false);
+									button_Start.setTextColor(Color.GRAY);
 									adapter_t.notifyDataSetChanged();
 						}
 						
@@ -299,26 +309,29 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 						public void onListItemClick(int position, String string) {
 							final int i = position;
 							final String colors = color.get(position);
-							playset_t.set(1, colors);
+							playset_t.set(1, tiTai[position]);
 							//textview.setTextColor(Color.BLACK);
 							adapter_t.notifyDataSetChanged();
-							
-								button_Start.setTextColor(Color.WHITE);
-								button_Start.setOnClickListener(new OnClickListener() {
-									
-									@Override
-									public void onClick(View v) {
-										Intent intent = new Intent(PlaySetActivity.this,ScoreCardActivity.class);
-										String c_t = colors;
-										intent.putExtra("uuid_t", uuid_t);
-										intent.putExtra("uuid", uuid);
-										intent.putExtra("color", c);
-										intent.putExtra("color_t", c_t);
-										Log.i("asdf", uuid+"zhouhe"+uuid);
-										startActivity(intent);
-										finish();
-									}
-								});
+								if(!playset_t.equals("开球T台")){
+									button_Start.setClickable(true);
+									button_Start.setTextColor(Color.WHITE);
+									button_Start.setOnClickListener(new OnClickListener() {
+										
+										@Override
+										public void onClick(View v) {
+											Intent intent = new Intent(PlaySetActivity.this,ScoreCardActivity.class);
+											String c_t = colors;
+											intent.putExtra("uuid_t", uuid_t);
+											intent.putExtra("uuid", uuid);
+											intent.putExtra("color", c);
+											intent.putExtra("color_t", c_t);
+											Log.i("asdf", uuid+"zhouhe"+uuid);
+											startActivity(intent);
+											finish();
+										}
+									});
+								}
+								
 						}
 						
 						@Override

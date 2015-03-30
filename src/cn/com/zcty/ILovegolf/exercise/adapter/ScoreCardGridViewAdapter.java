@@ -126,6 +126,7 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 				holder.imageView1.setBackgroundResource(R.drawable.shaozi);
 				holder.image.setVisibility(View.GONE);
 				holder.numberRod.setBackground(null);
+				holder.numberRod.setTextSize(65);
 				holder.penalties.setTextColor(Color.RED);
 				holder.numberRod.setText(setcardsArray.get(position/2).getRodNum());
 				holder.penalties.setText(setcardsArray.get(position/2).getPenalties());
