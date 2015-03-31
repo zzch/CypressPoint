@@ -309,15 +309,17 @@
        android:layout_gravity="center_horizontal"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:background="@drawable/wheelview_bg"
-       android:layout_marginTop="@dimen/view_mid_xx"
+       android:layout_marginTop="@dimen/view_mid_x"
+       
 		>
 	
       <cn.com.zcty.ILovegolf.tools.WheelView 
 		    android:id="@+id/passw_1"
 		    android:layout_weight="1"
 			android:layout_height="@dimen/view_large_xx"
-			android:layout_width="wrap_content"/>
+			android:layout_width="wrap_content"
+			
+			/>
 		<cn.com.zcty.ILovegolf.tools.WheelView 
 		     android:id="@+id/passw_2"
 			android:layout_height="@dimen/view_large_xx"

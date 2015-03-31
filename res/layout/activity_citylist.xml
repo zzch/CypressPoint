@@ -39,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="@dimen/view_mid_x"
         android:background="@drawable/search_bar_edit_pressed"
-        android:drawablePadding="5dp"
+        
         android:drawableLeft="@drawable/search_bar_icon_normal"
         android:hint="请输入关键字"
         android:singleLine="true"

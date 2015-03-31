@@ -81,28 +81,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="right"
+                    android:layout_marginTop="5dp"
                     android:orientation="horizontal" >
 
                     <RadioButton
                         android:id="@+id/mainTabs_radio_qian"
-                        android:layout_width="@dimen/view_mid_xx"
-                        android:layout_height="@dimen/view_small_xx"
+                        android:layout_width="@dimen/view_mid_xx_title"
+                        android:layout_height="@dimen/view_small_xxx"
                         android:background="@drawable/group_1"
                         android:button="@null"
                         android:gravity="center"
-                        android:text="前9"
+                        android:text="前九"
                         android:textColor="@color/white"
                         android:textSize="@dimen/txsize_small_x" />
 
                     <RadioButton
                         android:id="@+id/mainTabs_radio_hou"
-                        android:layout_width="@dimen/view_mid_xx"
-                        android:layout_height="@dimen/view_small_xx"
+                        android:layout_width="@dimen/view_mid_xx_title"
+                        android:layout_height="@dimen/view_small_xxx"
                         android:layout_marginRight="@dimen/view_small_x"
                         android:background="@drawable/group_2"
                         android:button="@null"
                         android:gravity="center"
-                        android:text="后9"
+                        android:text="后九"
                         android:textColor="@color/white"
                         android:textSize="@dimen/txsize_small_x" />
                 </RadioGroup>

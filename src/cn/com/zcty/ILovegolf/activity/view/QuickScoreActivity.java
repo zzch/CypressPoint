@@ -19,6 +19,9 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import cn.com.zcty.ILovegolf.activity.R;
@@ -33,6 +36,7 @@ import cn.com.zcty.ILovegolf.view.XListView.RemoveListener;
 
 public class QuickScoreActivity extends Activity implements IXListViewListener ,RemoveListener,OnItemClickListener{
 	private XListView mListView;
+	private ImageView image_tishi;
 	private QuickScoreAdapter slideAdapter;
 	private ArrayList<QuickContent> quickArrayList = new ArrayList<QuickContent>();
 	private ArrayList<String> uuidArrayList = new ArrayList<String>();
@@ -48,11 +52,17 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 
 
 				getData();
-
-
 				//hideProgressDialog();
+				Log.i("shuzhijieguo", quickArrayList.size()+"");
+				if(quickArrayList.size()!=0){
+					image_tishi.setVisibility(View.INVISIBLE);
+					mListView.setVisibility(View.VISIBLE);
+				}else{
+					image_tishi.setVisibility(View.VISIBLE);
+					mListView.setVisibility(View.GONE);
+				}
 			}
-
+			hideProgressDialog();
 		};
 	};
 	@Override
@@ -63,11 +73,13 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 		initView();	
 		new MyTask().start();
 		mHandler= new Handler();
+		showProgressDialog("提示","正在努力加载数据！");
 	}
 	private void initView() {
 		mListView = (XListView) findViewById(R.id.xListView);
 		mListView.setXListViewListener(this);
-
+		image_tishi = (ImageView) findViewById(R.id.tishi);
+		
 	}
 	private void getData() {
 		slideAdapter = new QuickScoreAdapter(this, quickArrayList,nameArrayList);
@@ -76,6 +88,7 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 		mListView.setPullLoadEnable(true);
 		mListView.setRemoveListener(this);
 		mListView.setPullLoadEnable(false);
+		
 
 	}
 	//点击事件
@@ -115,8 +128,15 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 		//mListView.itemView.findViewById(R.id.tv_coating).setVisibility(View.VISIBLE);
 		//Toast.makeText(QuickScoreActivity.this, "点击了删除", Toast.LENGTH_LONG).show();
 		quickArrayList.remove(position-1);
-		slideAdapter.notifyDataSetChanged();
 		new MyTaskDele(uuidArrayList.get(position-1)).start();
+		slideAdapter.notifyDataSetChanged();
+		if(quickArrayList.size()!=0){
+			image_tishi.setVisibility(View.INVISIBLE);
+			mListView.setVisibility(View.VISIBLE);
+		}else{
+			image_tishi.setVisibility(View.VISIBLE);
+			mListView.setVisibility(View.GONE);
+		}
 	}
 	@Override
 	public void onRefresh() {
@@ -151,8 +171,10 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 				new MyTask().start();
 				slideAdapter.notifyDataSetChanged();
 				onLoad();
+				
 			}
 		}, 2000);
+		
 
 	}
 	class MyTask extends Thread{
@@ -197,6 +219,7 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 					quickContent.setCourse(arrayCouse);
 					quickArrayList.add(quickContent);
 				}
+				
 				Message msg = handler.obtainMessage();
 				msg.what = 1;
 				handler.sendMessage(msg);
@@ -231,6 +254,13 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+			}
+			if(quickArrayList.size()!=0){
+				image_tishi.setVisibility(View.INVISIBLE);
+				mListView.setVisibility(View.VISIBLE);
+			}else{
+				image_tishi.setVisibility(View.VISIBLE);
+				mListView.setVisibility(View.GONE);
 			}
 		}
 	}
