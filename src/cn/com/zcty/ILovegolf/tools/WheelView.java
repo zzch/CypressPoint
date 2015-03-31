@@ -36,6 +36,7 @@ import android.view.ViewGroup.LayoutParams;
 import android.view.animation.Interpolator;
 import android.widget.LinearLayout;
 import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.exercise.adapter.WheelViewAdapter;
 
 /**
  * Numeric wheel view.

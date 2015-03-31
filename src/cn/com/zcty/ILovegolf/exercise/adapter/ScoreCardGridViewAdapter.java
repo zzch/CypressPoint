@@ -89,15 +89,18 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 			view = inflater.inflate(R.layout.setcards, null);
 			holder = new SetscardsHolder();
 			holder.numberRod = (TextView) view.findViewById(R.id.numberRod);
-			holder.penalties = (TextView) view.findViewById(R.id.textView2);
-			holder.putts = (TextView) view.findViewById(R.id.textView3);
-			holder.par = (TextView) view.findViewById(R.id.textView4);
-			holder.te = (TextView) view.findViewById(R.id.textView5);
-			holder.imageView1 = (TextView) view.findViewById(R.id.image1);
-			holder.imageView2 = (TextView) view.findViewById(R.id.image2);
-			holder.p = (TextView) view.findViewById(R.id.t1);
-			holder.y = (TextView) view.findViewById(R.id.t2);
+			holder.penalties = (TextView) view.findViewById(R.id.penalties);
+			holder.putts = (TextView) view.findViewById(R.id.putts);
+			holder.par = (TextView) view.findViewById(R.id.par);
+			holder.par_p = (TextView) view.findViewById(R.id.par_p);
+			holder.distance_count = (TextView) view.findViewById(R.id.distance_count);
+			holder.distance_image = (ImageView) view.findViewById(R.id.distance_image);
+			holder.distance = (TextView) view.findViewById(R.id.distance);
+			holder.cool_image = (ImageView) view.findViewById(R.id.cool_image);
+			holder.cool = (TextView) view.findViewById(R.id.cool);
 			holder.image =  (ImageView) view.findViewById(R.id.imageView_1);
+			holder.distance_y = (TextView) view.findViewById(R.id.distance_y);
+			
 			view.setTag(holder);
 			
 			
@@ -111,53 +114,69 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 			holder.image.setVisibility(View.GONE);
 			holder.numberRod.setText(scorecarsArray.get(position/2).getNumber());
 			holder.par.setText(scorecarsArray.get(position/2).getPar());
-			holder.te.setText(scorecarsArray.get(position/2).getDistance_from_hole_to_tee_box());		
-			holder.p.setText("P");
-			holder.y.setText("Y");
-			holder.imageView1.setBackground(null);
-			holder.numberRod.setBackgroundResource(R.drawable.e_card_yuan);
-			holder.imageView2.setBackground(null);
+			holder.distance_count.setText(scorecarsArray.get(position/2).getDistance_from_hole_to_tee_box());		
+			holder.par_p.setText("P");
+			holder.distance_y.setText("Y");
+			holder.distance_image.setVisibility(View.GONE);
+			Log.i("teecolor", scorecarsArray.get(position/2).getTee_box_color());
+			if(scorecarsArray.get(position/2).getTee_box_color().equals("white")){
+				Log.i("teecolor", "baise");
+				holder.numberRod.setBackgroundResource(R.drawable.baise);
+			}else if(scorecarsArray.get(position/2).getTee_box_color().equals("black")){
+				holder.numberRod.setBackgroundResource(R.drawable.hei);
+			}else if(scorecarsArray.get(position/2).getTee_box_color().equals("yellow")){
+				holder.numberRod.setBackgroundResource(R.drawable.huang);
+			}else if(scorecarsArray.get(position/2).getTee_box_color().equals("red")){
+				holder.numberRod.setBackgroundResource(R.drawable.hong);
+			}else{
+				holder.numberRod.setBackgroundResource(R.drawable.lan);
+			}
+			//holder.numberRod.setBackgroundResource(R.drawable.e_card_yuan);
+			holder.cool_image.setVisibility(View.GONE);
 			holder.putts.setText("");
 			holder.penalties.setText("");
-	
+			holder.distance.setText("");
+			holder.cool.setText("");
 		}else{
 			
 			if(setcardsArray.get(position/2).getRodNum()!=null&&!(setcardsArray.get(position/2).getRodNum().equals("null"))){
-				holder.imageView1.setBackgroundResource(R.drawable.shaozi);
+				holder.distance_image.setVisibility(View.VISIBLE);
+				
 				holder.image.setVisibility(View.GONE);
 				holder.numberRod.setBackground(null);
-				holder.numberRod.setTextSize(65);
 				holder.penalties.setTextColor(Color.RED);
 				holder.numberRod.setText(setcardsArray.get(position/2).getRodNum());
 				holder.penalties.setText(setcardsArray.get(position/2).getPenalties());
 				holder.putts.setText(setcardsArray.get(position/2).getPutts());
-				holder.par.setText(setcardsArray.get(position/2).getTe());
-				holder.te.setText(setcardsArray.get(position/2).getPar());
-				holder.imageView1.setText("");
-				holder.imageView2.setText("");
-				holder.p.setText("");
-				holder.y.setText("");
+				holder.cool.setText(setcardsArray.get(position/2).getPar());
+				holder.distance.setText(setcardsArray.get(position/2).getTe());
+				holder.par_p.setText("");
+				holder.distance_y.setText("");
+				holder.par.setText("");
+				holder.distance_count.setText("");
+				holder.cool_image.setVisibility(View.VISIBLE);
 				if(setcardsArray.get(position/2).getPar().equals("命中")){
-					holder.imageView2.setBackgroundResource(R.drawable.juzhong);
+					holder.cool_image.setImageResource(R.drawable.juzhong);
 				}else if(setcardsArray.get(position/2).getPar().equals("左侧")){
-					holder.imageView2.setBackgroundResource(R.drawable.lelf);
+					holder.cool_image.setImageResource(R.drawable.lelf);
 				}else{
-					holder.imageView2.setBackgroundResource(R.drawable.right);
+					holder.cool_image.setImageResource(R.drawable.right);
 				}
-				//return view;
 			}else if(setcardsArray.size()<36){
 				holder.image.setVisibility(View.VISIBLE);
-				holder.imageView1.setBackground(null);
+				holder.cool_image.setVisibility(View.GONE);
+				holder.distance_image.setVisibility(View.GONE);
 				holder.numberRod.setBackground(null);
-				holder.imageView2.setBackground(null);
 				holder.numberRod.setText("");
 				holder.penalties.setText("");
 				holder.putts.setText("");
 				holder.par.setText("");
-				holder.te.setText("");
-				holder.p.setText("");
-				holder.y.setText("");
-				//return view;
+				holder.distance.setText("");
+				holder.par_p.setText("");
+				holder.distance_y.setText("");
+				holder.par.setText("");
+				holder.distance_count.setText("");
+				holder.cool.setText("");
 			}
 		}
 		return view;
@@ -166,15 +185,17 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 
 	class SetscardsHolder{
 		TextView numberRod;
-		TextView par;
-		TextView te;//码
 		TextView penalties;//罚
 		TextView putts;//推杆
-		TextView imageView1;
-		TextView imageView2;
-		TextView p;
-		TextView y;
 		ImageView image;
+		ImageView distance_image;
+		TextView distance_count;
+		ImageView cool_image;
+		TextView cool;
+		TextView par;
+		TextView par_p;
+		TextView distance;
+		TextView distance_y;
 	}
 	
 }

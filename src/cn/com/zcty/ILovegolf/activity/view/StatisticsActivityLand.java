@@ -49,6 +49,12 @@ public class StatisticsActivityLand extends Activity{
 	private TextView golfnameTextView;
 	private ArrayList<String> countCool = new ArrayList<String>();
 	private ArrayList<String> countCoolResult = new ArrayList<String>();
+	private ArrayList<String> qiuDong = new ArrayList<String>();
+	private ArrayList<String> qiuDongResult = new ArrayList<String>();
+	private ArrayList<String> qiuType = new ArrayList<String>();
+	private ArrayList<String> qiuTypeResult = new ArrayList<String>();
+	private ListView qiudongListView;
+	private ListView qiudongTypeListView;
 	private ListView countListView;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
@@ -75,6 +81,8 @@ public class StatisticsActivityLand extends Activity{
 		SharedPreferences ss = getSharedPreferences("name", MODE_PRIVATE);
 		golfnameTextView.setText(ss.getString("name", "name"));
 		countListView = (ListView) findViewById(R.id.count);
+		qiudongListView = (ListView) findViewById(R.id.qiudong);
+		qiudongTypeListView = (ListView) findViewById(R.id.qiutype);
 	}
 	private void getData() {
 		StatisticAdapter sadapter = new StatisticAdapter(this, scoresArrayList,scoregrid);
@@ -84,7 +92,9 @@ public class StatisticsActivityLand extends Activity{
 		String date = simpleDateFormat.format(new Date());
 		dateText.setText(date);
 		countListView.setAdapter(new CountCoolAdapter(this, countCool, countCoolResult));
-
+		qiudongListView.setAdapter(new CountCoolAdapter(this, qiuDong, qiuDongResult));
+		qiudongTypeListView.setAdapter(new CountCoolAdapter(this, qiuType, qiuTypeResult));
+		
 		TextView tv1 = (TextView)findViewById(R.id.t1);
 		tv1.setText(parArrayList.get(0));
 		TextView tv2 = (TextView)findViewById(R.id.t2);
@@ -272,7 +282,6 @@ public class StatisticsActivityLand extends Activity{
 				scoregrid.add("推杆");
 				scoresArrayList.add(jsonObject.getString("penalties"));
 				scoregrid.add("罚杆");
-				
 				countCoolResult.add(jsonObject.getString("longest_drive_length"));
 				countCool.add("最远开球距离");
 				countCoolResult.add(jsonObject.getString("average_drive_length"));
@@ -288,31 +297,29 @@ public class StatisticsActivityLand extends Activity{
 				countCool.add("优势转化率");
 				countCoolResult.add(jsonObject.getString("greens_in_regulation"));
 				countCool.add("攻果岭率");
-				
 				countCoolResult.add(jsonObject.getString("putts_per_gir"));
 				countCool.add("标准杆上果岭的平均推杆");
 				countCool.add("");
-				countCoolResult.add(jsonObject.getString("score_par_3"));
-				countCool.add("3杆洞");
-				countCoolResult.add(jsonObject.getString("score_par_4"));
-				countCool.add("4杆洞");
-				countCoolResult.add(jsonObject.getString("score_par_5"));
-				countCool.add("5杆洞");
-				countCoolResult.add(jsonObject.getString("double_eagle"));
-				countCool.add("");
-				countCool.add("信天翁球");
-				countCoolResult.add(jsonObject.getString("eagle"));
-				countCool.add("老鹰球");
-				countCoolResult.add(jsonObject.getString("birdie"));
-				countCool.add("小鸟球");
-				countCoolResult.add(jsonObject.getString("par"));
-				countCool.add("标准杆");
-				countCoolResult.add(jsonObject.getString("birdie"));
-				countCool.add("小鸟球");
-				countCoolResult.add(jsonObject.getString("bogey"));
-				countCool.add("柏忌球");
-				countCoolResult.add(jsonObject.getString("double_bogey"));
-				countCool.add("双柏忌球");
+				qiuDongResult.add(jsonObject.getString("score_par_3"));
+				qiuDong.add("3杆洞");
+				qiuDongResult.add(jsonObject.getString("score_par_4"));
+				qiuDong.add("4杆洞");
+				qiuDongResult.add(jsonObject.getString("score_par_5"));
+				qiuDong.add("5杆洞");
+				qiuDong.add("");
+				qiuTypeResult.add(jsonObject.getString("double_eagle"));
+				qiuType.add("信天翁球");
+				qiuTypeResult.add(jsonObject.getString("eagle"));
+				qiuType.add("老鹰球");
+				qiuTypeResult.add(jsonObject.getString("birdie"));
+				qiuType.add("小鸟球");
+				qiuTypeResult.add(jsonObject.getString("par"));
+				qiuType.add("标准杆");
+				qiuTypeResult.add(jsonObject.getString("bogey"));
+				qiuType.add("柏忌球");
+				qiuTypeResult.add(jsonObject.getString("double_bogey"));
+				qiuType.add("双柏忌球");
+				Log.i("par",jsonArray);
 				JSONObject jsonObject2 = new JSONObject(jsonArray);
 				JSONArray jsonArray2 = jsonObject2.getJSONArray("par");
 				for(int i=0;i<jsonArray2.length();i++){

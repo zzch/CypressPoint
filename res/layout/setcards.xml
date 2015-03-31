@@ -2,132 +2,158 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
+    android:orientation="vertical"
     android:background="@drawable/e_scorecard_bg"
-    >
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/view_mid_xx_x" 
-        android:layout_gravity="center_vertical"
-        android:layout_marginTop="@dimen/view_small_x"
-        >
-         <ImageView
-        android:id="@+id/imageView_1"
-        android:layout_width="@dimen/view_mid_xx_title"
-        android:layout_height="@dimen/view_mid_xx_title"
-        android:layout_centerHorizontal="true"  
-        android:layout_marginTop="30dp"
-        android:src="@drawable/imagetextview_button"
-         />
-
-        <TextView
-            android:id="@+id/numberRod"
-            android:layout_width="@dimen/view_mid_xx_x"
-            android:layout_height="@dimen/view_mid_xx_x"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/e_card_yuan"
-            android:gravity="center" 
-            android:textColor="@color/white"
-            android:textSize="@dimen/txsize_large_xx" />
-
-    </RelativeLayout>
-    
-     <RelativeLayout
-            android:id="@+id/r_gone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/numberRod"
-            android:layout_alignParentLeft="true" >
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="38dp"
-                android:text="qqqqq"
-                android:textSize="@dimen/txsize_small_xx" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginRight="41dp"
-                android:text="ss"
-                android:textColor="@color/white"
-                android:textSize="@dimen/txsize_small_xx" />
-
-        </RelativeLayout>
+     >
 
     <RelativeLayout
         android:id="@+id/rrr"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30px" >
 
-        <TextView
-            android:id="@+id/image1"
-            android:layout_width="28dp"
-            android:layout_height="20dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/view_small_xx"
-            android:text="" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_mid_xx_x"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="@dimen/view_small_x" >
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
+            <ImageView
+                android:id="@+id/imageView_1"
+                android:layout_width="@dimen/view_mid_xx_title"
+                android:layout_height="@dimen/view_mid_xx_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/imagetextview_button" />
+
+            <TextView
+                android:id="@+id/numberRod"
+                android:layout_width="@dimen/view_mid_xx_x"
+                android:layout_height="@dimen/view_mid_xx_x"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/e_card_yuan"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txsize_large_xx" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/r_gone"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="30px"
-            android:text="116px"
-            android:textColor="@color/white"
-            android:textSize="@dimen/txsize_small_xxx" />
+            android:layout_marginTop="127px" >
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"   
-            android:layout_toRightOf="@+id/image1"
-            android:text="1"
-            android:textColor="@color/white"
-            android:textSize="@dimen/txsize_small_xxx"/>
+            <TextView
+                android:id="@+id/penalties"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="112px"
+                android:text="qqqqq"
+                android:textSize="@dimen/txsize_small_xx" />
 
-        <TextView
-            android:id="@+id/image2"
-            android:layout_width="@dimen/view_small_xx"
-            android:layout_height="@dimen/view_small_xx"
-            android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/textView5"
-            android:text="" />
-
-        <TextView
-            android:id="@+id/t1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@+id/textView4"
-            android:text=""
-            android:textColor="@color/white"
-           android:textSize="@dimen/txsize_small_x" />
-
-        <TextView
-            android:id="@+id/t2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:text="2"
-            android:textColor="@color/white"
-            android:textSize="@dimen/txsize_small_x"/>
+            <TextView
+                android:id="@+id/putts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="112px"
+                android:text="ss"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txsize_small_xx" />
+        </RelativeLayout>
     </RelativeLayout>
-    
-      <View
-           android:layout_width="1dip"
-           android:layout_height="match_parent"
-           android:background="@drawable/line" />
+	
+    <RelativeLayout
+        android:id="@+id/rrr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22px" >
+
+        <ImageView
+            android:id="@+id/distance_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="61px"
+            android:src="@drawable/shaozi" />
+
+        <TextView
+            android:id="@+id/distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/distance_image"
+            android:layout_centerVertical="true"
+            android:textSize="30px"
+            android:textColor="#ced1d4"
+            android:layout_marginLeft="65px"
+            android:text="distance" />
+
+        <TextView
+            android:id="@+id/cool"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="59px"
+            android:textColor="#ced1d4"
+            android:textSize="30px"
+            android:text="cool" />
+
+        <ImageView
+            android:id="@+id/cool_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="134px"
+            android:src="@drawable/juzhong" />
+        
+        <TextView
+            android:id="@+id/par"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="70px"
+            android:text="4"
+            android:textSize="50px" />
+
+        <TextView
+            android:id="@+id/par_p"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/par"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="29px"
+            android:text="p"
+            android:textSize="24px" />
+
+        <TextView
+            android:id="@+id/distance_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="123px"
+            android:text="335"
+            android:textSize="50px" />
+
+        <TextView
+            android:id="@+id/distance_y"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/par"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="137px"
+            android:text="y"
+            android:textSize="24px" />
+    </RelativeLayout>
+
+	
+    <View
+        android:layout_width="1dip"
+        android:layout_height="match_parent"
+        android:background="@drawable/line" />
 
 </LinearLayout>

@@ -24,7 +24,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.exercise.adapter.ArrayNumberWheelAdapter;
 import cn.com.zcty.ILovegolf.exercise.adapter.ArrayWheelAdapter;
+import cn.com.zcty.ILovegolf.exercise.adapter.NumericWheelAdapter;
 import cn.com.zcty.ILovegolf.model.Setcard;
 import cn.com.zcty.ILovegolf.tools.OnWheelChangedListener;
 import cn.com.zcty.ILovegolf.tools.WheelView;
@@ -48,7 +50,7 @@ public class ScoreCardUpDateActivity extends Activity{
 	private int count;
 	private int putcount = 2;
 	private int penaltiescount = 0;
-	private ArrayWheelAdapter adapter;
+	private ArrayNumberWheelAdapter adapter;
 	private String driving_distance = "0";//距离
 	private String direction = "pure"; //开球方向
 	private String[] cool = {"命中","右侧","左侧"};
@@ -62,14 +64,23 @@ public class ScoreCardUpDateActivity extends Activity{
 	private boolean flase_2 = false;
 	private boolean flase_3 = false;
 	private boolean flase_4 = false;
-	private	String[] item = new String[200];
+	private boolean flase_5 = false;
+	private String coolResult;
+	private String distanceResult;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
+			
 			if(msg.what==1){
-			   if(flase_1||flase_2||flase_3||flase_4){
+				if(!coolResult.equals(hit_scorecard.getText().toString())){
+					flase_4 = true;
+				}
+				if(!distanceResult.equals(distance_scorecard.getText().toString())){
+					flase_5 = true;
+				}
+				Log.i("resultk", flase_1+""+flase_2+flase_3+flase_4+"");
+			   if(flase_1||flase_2||flase_3||flase_4||flase_5){
 				   final String result = (String) msg.obj;
 					Log.i("result", result);
-					
 						AlertDialog.Builder dialog = new Builder(ScoreCardUpDateActivity.this)
 						.setTitle("提示")
 						.setMessage("是否保存")
@@ -152,11 +163,6 @@ public class ScoreCardUpDateActivity extends Activity{
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.scorecardupdat);
 		initView();
-		for(int i=0;i<200;i++){
-			int a = i+5;
-			item[i]=a+"码";	
-		Log.i("ceshizhifa", a+"");
-		}
 		setListener();
 		getData();
 	}
@@ -165,7 +171,7 @@ public class ScoreCardUpDateActivity extends Activity{
 		
 		
 		
-		adapter = 	new ArrayWheelAdapter(this, item);		
+		adapter = 	new ArrayNumberWheelAdapter(this);		
 		distanceWheelView.setViewAdapter(adapter);
 		coolWheelView.setViewAdapter(new ArrayWheelAdapter<String>(this,cool));
 		Intent intent = getIntent();
@@ -185,12 +191,15 @@ public class ScoreCardUpDateActivity extends Activity{
 					coolWheelView.setCurrentItem(i);
 				}
 			}
-			distanceWheelView.setCurrentItem(Integer.parseInt(sp.getString("te", "0")));
+			distanceWheelView.setCurrentItem(Integer.parseInt(sp.getString("te", "0"))/5);
 		}else{
+		distanceWheelView.setCurrentItem(40);
 		dataTextView.setText(par);
 		putTextView.setText(putcount+"");
 		penaltiesTextView.setText(penaltiescount+"");
 		}
+		coolResult = hit_scorecard.getText().toString();
+		distanceResult = distance_scorecard.getText().toString();
 		count = Integer.parseInt(par);
 		
 	}
@@ -216,16 +225,18 @@ public class ScoreCardUpDateActivity extends Activity{
 			
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
-				distance_scorecard.setText(item[newValue]);
-				driving_distance = item[newValue];
+			
+				distance_scorecard.setText(adapter.getItemText(newValue));
+				driving_distance = (String) adapter.getItemText(newValue);
 				driving_distance = driving_distance.substring(0,driving_distance.length()-1);
+				
 			}
 		});
 		coolWheelView.addChangingListener(new OnWheelChangedListener() {
 
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
-				flase_4 = true;
+	
 				hit_scorecard.setText(cool[newValue]);
 				switch (newValue) {
 				case 0:
@@ -376,7 +387,7 @@ public class ScoreCardUpDateActivity extends Activity{
 			getData();
 		}
 		public void getData(){
-
+			
 			SharedPreferences sp = getSharedPreferences("register", Context.MODE_PRIVATE);
 			String token = sp.getString("token", "token");
 			Intent intent = getIntent();

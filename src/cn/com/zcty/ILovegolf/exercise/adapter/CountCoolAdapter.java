@@ -51,7 +51,12 @@ public class CountCoolAdapter extends BaseAdapter{
 			holder = (Holder) convertView.getTag();
 		}
 		holder.countCoolTextView.setText(countCool.get(position));
-		holder.countCoolResultTextView.setText(countCoolResult.get(position));
+		if(holder.countCoolTextView.getText().toString().equals("")){
+			holder.countCoolResultTextView.setText("");
+		}else{
+			holder.countCoolResultTextView.setText(countCoolResult.get(position));
+		}
+		
 		return convertView;
 	}
 	class Holder{

@@ -337,7 +337,17 @@
             <ListView
                 android:id="@+id/count"
                 android:layout_width="match_parent"
-                android:layout_height="610dp" >
+                android:layout_height="450dp" >
+            </ListView>
+             <ListView
+                android:id="@+id/qiudong"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" >
+            </ListView>
+            <ListView
+                android:id="@+id/qiutype"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" >
             </ListView>
         </LinearLayout>
     </ScrollView>

@@ -55,6 +55,8 @@ public class StatisticsAvtivity extends FragmentActivity{
 	private TextView golfnameTextView;
 	private GridView gridView;
 	private ListView countListView;
+	private ListView qiudongListView;
+	private ListView qiudongTypeListView;
 	private ArrayList<String> scoregrid = new ArrayList<String>();
 	private ArrayList<Fragment> arrayFragment = new ArrayList<Fragment>();
 	private ArrayList<String> parArrayList = new ArrayList<String>();
@@ -63,6 +65,10 @@ public class StatisticsAvtivity extends FragmentActivity{
 	private ArrayList<String> scoresArrayList = new ArrayList<String>();
 	private ArrayList<String> countCool = new ArrayList<String>();
 	private ArrayList<String> countCoolResult = new ArrayList<String>();
+	private ArrayList<String> qiuDong = new ArrayList<String>();
+	private ArrayList<String> qiuDongResult = new ArrayList<String>();
+	private ArrayList<String> qiuType = new ArrayList<String>();
+	private ArrayList<String> qiuTypeResult = new ArrayList<String>();
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -118,7 +124,8 @@ public void onConfigurationChanged(Configuration newConfig) {
 		String date = simpleDateFormat.format(new Date());
 		dateText.setText(date);
 		countListView.setAdapter(new CountCoolAdapter(this, countCool, countCoolResult));
-		
+		qiudongListView.setAdapter(new CountCoolAdapter(this, qiuDong, qiuDongResult));
+		qiudongTypeListView.setAdapter(new CountCoolAdapter(this, qiuType, qiuTypeResult));
 	}
 
 	private void setListener() {
@@ -199,6 +206,8 @@ public void onConfigurationChanged(Configuration newConfig) {
 		golfnameTextView.setText(ss.getString("name", "name"));
 		
 		countListView = (ListView) findViewById(R.id.count);
+		qiudongListView = (ListView) findViewById(R.id.qiudong);
+		qiudongTypeListView = (ListView) findViewById(R.id.qiutype);
 	}
 	class MyFragmentPagerAdapter  extends FragmentPagerAdapter{
 
@@ -260,27 +269,25 @@ public void onConfigurationChanged(Configuration newConfig) {
 				countCoolResult.add(jsonObject.getString("putts_per_gir"));
 				countCool.add("标准杆上果岭的平均推杆");
 				countCool.add("");
-				countCoolResult.add(jsonObject.getString("score_par_3"));
-				countCool.add("3杆洞");
-				countCoolResult.add(jsonObject.getString("score_par_4"));
-				countCool.add("4杆洞");
-				countCoolResult.add(jsonObject.getString("score_par_5"));
-				countCool.add("5杆洞");
-				countCool.add("");
-				countCoolResult.add(jsonObject.getString("double_eagle"));
-				countCool.add("信天翁球");
-				countCoolResult.add(jsonObject.getString("eagle"));
-				countCool.add("老鹰球");
-				countCoolResult.add(jsonObject.getString("birdie"));
-				countCool.add("小鸟球");
-				countCoolResult.add(jsonObject.getString("par"));
-				countCool.add("标准杆");
-				countCoolResult.add(jsonObject.getString("birdie"));
-				countCool.add("小鸟球");
-				countCoolResult.add(jsonObject.getString("bogey"));
-				countCool.add("柏忌球");
-				countCoolResult.add(jsonObject.getString("double_bogey"));
-				countCool.add("双柏忌球");
+				qiuDongResult.add(jsonObject.getString("score_par_3"));
+				qiuDong.add("3杆洞");
+				qiuDongResult.add(jsonObject.getString("score_par_4"));
+				qiuDong.add("4杆洞");
+				qiuDongResult.add(jsonObject.getString("score_par_5"));
+				qiuDong.add("5杆洞");
+				qiuDong.add("");
+				qiuTypeResult.add(jsonObject.getString("double_eagle"));
+				qiuType.add("信天翁球");
+				qiuTypeResult.add(jsonObject.getString("eagle"));
+				qiuType.add("老鹰球");
+				qiuTypeResult.add(jsonObject.getString("birdie"));
+				qiuType.add("小鸟球");
+				qiuTypeResult.add(jsonObject.getString("par"));
+				qiuType.add("标准杆");
+				qiuTypeResult.add(jsonObject.getString("bogey"));
+				qiuType.add("柏忌球");
+				qiuTypeResult.add(jsonObject.getString("double_bogey"));
+				qiuType.add("双柏忌球");
 				Log.i("par",jsonArray);
 				JSONObject jsonObject2 = new JSONObject(jsonArray);
 				JSONArray jsonArray2 = jsonObject2.getJSONArray("par");
