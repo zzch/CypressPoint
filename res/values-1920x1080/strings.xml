@@ -27,6 +27,7 @@
   	<dimen name="view_mid_x">40dp</dimen>
   	
   	<dimen name="view_small_xxx">35dp</dimen>
+  	<dimen name="view_small_xx_j">20dp</dimen>
   	<dimen name="view_small_xx">20dp</dimen>
     <dimen name="view_small_xx_w">15dp</dimen>
   	<dimen name="view_small_x">10dp</dimen>

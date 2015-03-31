@@ -47,7 +47,6 @@ public class ScoreCardActivity extends Activity {
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
-				//Log.i("name1", scorecarsArray.get(0).toString());
 				setListeners();
 				adapter.notifyDataSetChanged();
 			}

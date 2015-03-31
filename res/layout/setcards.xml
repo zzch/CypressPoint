@@ -48,8 +48,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="112px"
+                android:layout_marginTop="@dimen/view_small_xx_j"
+                android:layout_marginLeft="@dimen/view_mid_x"
                 android:text="qqqqq"
                 android:textSize="@dimen/txsize_small_xx" />
 
@@ -58,8 +58,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginRight="112px"
+                android:layout_marginTop="@dimen/view_small_xx_j"
+                android:layout_marginRight="40dp"
                 android:text="ss"
                 android:textColor="@color/white"
                 android:textSize="@dimen/txsize_small_xx" />
@@ -74,8 +74,8 @@
 
         <ImageView
             android:id="@+id/distance_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="22dp"
+            android:layout_height="16dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="61px"
             android:src="@drawable/shaozi" />
@@ -86,7 +86,7 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/distance_image"
             android:layout_centerVertical="true"
-            android:textSize="30px"
+            android:textSize="@dimen/txsize_small_xxx"
             android:textColor="#ced1d4"
             android:layout_marginLeft="65px"
             android:text="distance" />
@@ -97,18 +97,18 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="59px"
+            android:layout_marginRight="@dimen/view_small_xx"
             android:textColor="#ced1d4"
-            android:textSize="30px"
+            android:textSize="@dimen/txsize_small_xx"
             android:text="cool" />
 
         <ImageView
             android:id="@+id/cool_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="22dp"
+            android:layout_height="16dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="134px"
+            android:layout_marginRight="60dp"
             android:src="@drawable/juzhong" />
         
         <TextView
@@ -116,9 +116,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="70px"
+            android:layout_marginLeft="@dimen/view_mid_x"
             android:text="4"
-            android:textSize="50px" />
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_mid_xx" />
 
         <TextView
             android:id="@+id/par_p"
@@ -126,18 +127,20 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/par"
             android:layout_alignParentBottom="true"
-            android:layout_marginLeft="29px"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/white"
             android:text="p"
-            android:textSize="24px" />
+            android:textSize="@dimen/txsize_small_x" />
 
         <TextView
             android:id="@+id/distance_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="123px"
+            android:layout_marginLeft="80dp"
+            android:textColor="@color/white"
             android:text="335"
-            android:textSize="50px" />
+            android:textSize="@dimen/txsize_mid_xx"  />
 
         <TextView
             android:id="@+id/distance_y"
@@ -145,9 +148,10 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/par"
             android:layout_alignParentBottom="true"
-            android:layout_marginLeft="137px"
+            android:layout_marginLeft="85dp"
+            android:textColor="@color/white"
             android:text="y"
-            android:textSize="24px" />
+            android:textSize="@dimen/txsize_small_x" />
     </RelativeLayout>
 
 	
