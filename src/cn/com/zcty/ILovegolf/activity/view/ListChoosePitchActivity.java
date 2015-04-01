@@ -89,6 +89,7 @@ public class ListChoosePitchActivity extends Activity {
 						editor.putString("name", child.get(groupPosition).get(childPosition).getName());
 						editor.commit();
 						Intent intent = new Intent(ListChoosePitchActivity.this,PlaySetActivity.class);
+						intent.putExtra("sign", "1");
 						intent.putExtra("uuid", child.get(groupPosition).get(childPosition).getUuid());	
 						startActivity(intent);
 						return false;
@@ -177,6 +178,7 @@ public class ListChoosePitchActivity extends Activity {
 				editor.putString("name", citys_name.get(arg2));
 				editor.commit();
 				Intent intent = new Intent(ListChoosePitchActivity.this,PlaySetActivity.class);
+				intent.putExtra("sign", "1");
 				intent.putExtra("uuid",uuidList.get(arg2));	
 				startActivity(intent);
 			}
