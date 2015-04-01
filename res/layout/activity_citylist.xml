@@ -36,10 +36,9 @@
     <cn.com.zcty.ILovegolf.activity.exercise.city.ClearEditText
         android:id="@+id/filter_edit"
         android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
+        android:layout_width="340dp"
         android:layout_height="@dimen/view_mid_x"
         android:background="@drawable/search_bar_edit_pressed"
-        
         android:drawableLeft="@drawable/search_bar_icon_normal"
         android:hint="请输入关键字"
         android:singleLine="true"

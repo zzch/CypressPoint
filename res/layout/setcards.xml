@@ -88,7 +88,7 @@
             android:layout_centerVertical="true"
             android:textSize="@dimen/txsize_small_xxx"
             android:textColor="#ced1d4"
-            android:layout_marginLeft="65px"
+            android:layout_marginLeft="@dimen/view_small_xx"
             android:text="distance" />
 
         <TextView

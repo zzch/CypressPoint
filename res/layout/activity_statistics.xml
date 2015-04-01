@@ -332,18 +332,22 @@
                 android:id="@+id/gridView1"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/view_large_x"
+                android:background="@drawable/count_score_bg"
                 android:numColumns="2" >
             </GridView>
 
             <ListView
                 android:id="@+id/count"
                 android:layout_width="match_parent"
-                android:layout_height="450dp" >
+                android:layout_height="@dimen/view_large_xxx_x" >
             </ListView>
+            
              <ListView
                 android:id="@+id/qiudong"
                 android:layout_width="match_parent"
-                android:layout_height="200dp" >
+                android:layout_height="@dimen/view_large_xxx"
+               android:layout_marginTop="@dimen/view_small_xx"
+                 >
             </ListView>
             <ListView
                 android:id="@+id/qiutype"
