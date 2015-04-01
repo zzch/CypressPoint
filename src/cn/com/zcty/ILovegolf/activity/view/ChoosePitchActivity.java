@@ -1,13 +1,9 @@
 package cn.com.zcty.ILovegolf.activity.view;
 import java.net.URLEncoder;
 import java.util.List;
-
-
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.PitchAdapter;
 import cn.com.zcty.ILovegolf.model.QiuChangList;
-
-import cn.com.zcty.ILovegolf.tools.GpsGetLocation;
 import cn.com.zcty.ILovegolf.tools.MyApplication;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.JsonUtil;

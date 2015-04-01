@@ -2,7 +2,6 @@ package cn.com.zcty.ILovegolf.model;
 
 import java.util.List;
 
-import cn.com.zcty.ILovegolf.tools.SlidingDeleteSlideView;
 
 public class QuickContent {
 	/**
@@ -30,7 +29,7 @@ public class QuickContent {
 	 */
 	private String started_at;
 
-	 public SlidingDeleteSlideView slideView;
+
 	
     public QuickContent(){}
 
