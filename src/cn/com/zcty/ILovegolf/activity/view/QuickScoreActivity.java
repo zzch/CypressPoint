@@ -119,14 +119,13 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 		//intent传值
 		intent.putExtra("uuid", quickArrayList.get(position-1).getUuid());		
 		startActivity(intent);
-		//overridePendingTransition(R.anim.slide_in_from_right, R.anim.remain_original_location);
+		overridePendingTransition(R.anim.slide_in_from_right, R.anim.remain_original_location);
 		finish();
 	}
 	@Override
 	public void removeItem(int position) {
 		mListView.isSlide = false;
-		//mListView.itemView.findViewById(R.id.tv_coating).setVisibility(View.VISIBLE);
-		//Toast.makeText(QuickScoreActivity.this, "点击了删除", Toast.LENGTH_LONG).show();
+		mListView.itemView.findViewById(R.id.tv_coating).setVisibility(View.VISIBLE);
 		quickArrayList.remove(position-1);
 		new MyTaskDele(uuidArrayList.get(position-1)).start();
 		slideAdapter.notifyDataSetChanged();
