@@ -141,8 +141,7 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 	@Override
 	public void removeItem(int position) {
 		mListView.isSlide = false;
-		//mListView.itemView.findViewById(R.id.tv_coating).setVisibility(View.VISIBLE);
-		//Toast.makeText(QuickScoreActivity.this, "点击了删除", Toast.LENGTH_LONG).show();
+		mListView.itemView.findViewById(R.id.tv_coating).setVisibility(View.VISIBLE);
 		quickArrayList.remove(position-1);
 		new MyTaskDele(uuidArrayList.get(position-1)).start();
 		slideAdapter.notifyDataSetChanged();
