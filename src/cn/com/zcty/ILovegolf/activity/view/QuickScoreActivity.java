@@ -25,14 +25,14 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.exercise.adapter.QuickScoreAdapter;
+import cn.com.zcty.ILovegolf.activity.adapter.QuickScoreAdapter;
 import cn.com.zcty.ILovegolf.model.Course;
 import cn.com.zcty.ILovegolf.model.QuickContent;
+import cn.com.zcty.ILovegolf.tools.XListView;
+import cn.com.zcty.ILovegolf.tools.XListView.IXListViewListener;
+import cn.com.zcty.ILovegolf.tools.XListView.RemoveListener;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
-import cn.com.zcty.ILovegolf.view.XListView;
-import cn.com.zcty.ILovegolf.view.XListView.IXListViewListener;
-import cn.com.zcty.ILovegolf.view.XListView.RemoveListener;
 
 public class QuickScoreActivity extends Activity implements IXListViewListener ,RemoveListener,OnItemClickListener{
 	private XListView mListView;

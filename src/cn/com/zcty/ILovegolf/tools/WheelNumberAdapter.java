@@ -15,7 +15,7 @@
  */
 package cn.com.zcty.ILovegolf.tools;
 
-import cn.com.zcty.ILovegolf.exercise.adapter.AbstractWheelTextAdapter;
+import cn.com.zcty.ILovegolf.activity.adapter.AbstractWheelTextAdapter;
 import android.content.Context;
 
 /**

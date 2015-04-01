@@ -23,7 +23,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.exercise.adapter.ScoreCardGridViewAdapter;
+import cn.com.zcty.ILovegolf.activity.adapter.ScoreCardGridViewAdapter;
 import cn.com.zcty.ILovegolf.model.Scorecards;
 import cn.com.zcty.ILovegolf.model.Setcard;
 import cn.com.zcty.ILovegolf.utils.APIService;

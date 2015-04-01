@@ -1,4 +1,4 @@
-package cn.com.zcty.ILovegolf.exercise.adapter;
+package cn.com.zcty.ILovegolf.activity.adapter;
 
 import java.util.ArrayList;
 

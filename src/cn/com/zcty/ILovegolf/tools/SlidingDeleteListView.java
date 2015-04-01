@@ -11,8 +11,6 @@ package cn.com.zcty.ILovegolf.tools;
 
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.model.QuickContent;
-import cn.com.zcty.ILovegolf.view.XListViewFooter;
-import cn.com.zcty.ILovegolf.view.XListViewHeader;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;

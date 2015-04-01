@@ -4,7 +4,7 @@
  * @author Maxwin
  * @description XListView's footer
  */
-package cn.com.zcty.ILovegolf.view;
+package cn.com.zcty.ILovegolf.tools;
 
 import android.content.Context;
 import android.util.AttributeSet;

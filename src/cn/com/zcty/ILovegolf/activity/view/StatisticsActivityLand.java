@@ -11,8 +11,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.exercise.adapter.CountCoolAdapter;
-import cn.com.zcty.ILovegolf.exercise.adapter.StatisticAdapter;
+import cn.com.zcty.ILovegolf.activity.adapter.CountCoolAdapter;
+import cn.com.zcty.ILovegolf.activity.adapter.StatisticAdapter;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 import android.annotation.SuppressLint;

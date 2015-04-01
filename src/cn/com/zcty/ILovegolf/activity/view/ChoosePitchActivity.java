@@ -4,7 +4,7 @@ import java.util.List;
 
 
 import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.exercise.adapter.PitchAdapter;
+import cn.com.zcty.ILovegolf.activity.adapter.PitchAdapter;
 import cn.com.zcty.ILovegolf.model.QiuChangList;
 
 import cn.com.zcty.ILovegolf.tools.GpsGetLocation;

@@ -1,10 +1,10 @@
-package cn.com.zcty.ILovegolf.exercise.adapter;
+package cn.com.zcty.ILovegolf.activity.adapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.exercise.adapter.StatisticAdapter.Holder;
+import cn.com.zcty.ILovegolf.activity.adapter.StatisticAdapter.Holder;
 
 import android.content.Context;
 import android.view.LayoutInflater;

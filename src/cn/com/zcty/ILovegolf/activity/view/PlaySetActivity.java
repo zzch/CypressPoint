@@ -29,7 +29,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.exercise.adapter.PlaySetListViewAdapter;
+import cn.com.zcty.ILovegolf.activity.adapter.PlaySetListViewAdapter;
 import cn.com.zcty.ILovegolf.model.Diamond;
 import cn.com.zcty.ILovegolf.tools.PickDialog;
 import cn.com.zcty.ILovegolf.tools.PickDialogListener;

@@ -1,4 +1,4 @@
-package cn.com.zcty.ILovegolf.view;
+package cn.com.zcty.ILovegolf.tools;
 /**
  * @file XListView.java
  * @package me.maxwin.view
