@@ -21,6 +21,7 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup.MarginLayoutParams;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -69,6 +70,7 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
 			if(msg.what==1){
+				
 				if(diamond.size()==1){
 					playset.add(diamond.get(0));
 					playset.add("开球T台");
@@ -121,6 +123,8 @@ public class PlaySetActivity extends Activity implements OnClickListener {
         
 	} 
 	private void setListeners() {
+		Intent intent = getIntent();
+		final String sign = intent.getStringExtra("sign");
 		listViewPlaySet.setOnItemClickListener(new OnItemClickListener() {
 
 			private View mTempView;
@@ -212,9 +216,13 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 									
 									@Override
 									public void onClick(View v) {
-										 
-										
-										Intent intent = new Intent(PlaySetActivity.this,ScoreCardActivity.class);									
+										Intent intent;
+										if(sign.equals("0")){										
+											intent = new Intent(PlaySetActivity.this,MajorScoreCardActivity.class);									
+										}else{
+											intent = new Intent(PlaySetActivity.this,ScoreCardActivity.class);									
+
+										}
 										intent.putExtra("uuid", uuid);
 										intent.putExtra("color", c);
 										Log.i("uuid", uuid+c+1);
@@ -319,7 +327,13 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 										
 										@Override
 										public void onClick(View v) {
-											Intent intent = new Intent(PlaySetActivity.this,ScoreCardActivity.class);
+											Intent intent;
+											if(sign.equals("0")){										
+												intent = new Intent(PlaySetActivity.this,MajorScoreCardActivity.class);									
+											}else{
+												intent = new Intent(PlaySetActivity.this,ScoreCardActivity.class);									
+
+											}											
 											String c_t = colors;
 											intent.putExtra("uuid_t", uuid_t);
 											intent.putExtra("uuid", uuid);

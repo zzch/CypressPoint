@@ -66,6 +66,7 @@ public class ChoosePitchActivity extends Activity {
 				editor.putString("name", qiuchanglists.get(position).getName());
 				editor.commit();
 				Intent intent=new Intent(ChoosePitchActivity.this,PlaySetActivity.class);
+				intent.putExtra("sign", "1");
 				intent.putExtra("uuid", qiuchanglists.get(position).getUuid());
 				Log.i("--->>uuid", "uuid"+qiuchanglists.get(position).getUuid());
 				SharedPreferences ss = getSharedPreferences("key", MODE_PRIVATE);
