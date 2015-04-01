@@ -24,14 +24,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.exercise.adapter.ArrayNumberWheelAdapter;
-import cn.com.zcty.ILovegolf.exercise.adapter.ArrayWheelAdapter;
-import cn.com.zcty.ILovegolf.exercise.adapter.NumericWheelAdapter;
+import cn.com.zcty.ILovegolf.activity.adapter.ArrayNumberWheelAdapter;
+import cn.com.zcty.ILovegolf.activity.adapter.ArrayWheelAdapter;
+import cn.com.zcty.ILovegolf.activity.adapter.NumericWheelAdapter;
 import cn.com.zcty.ILovegolf.model.Setcard;
 import cn.com.zcty.ILovegolf.tools.OnWheelChangedListener;
-import cn.com.zcty.ILovegolf.tools.WheelView;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
+import cn.com.zcty.ILovegolf.view.WheelView;
 
 /**
  * ---记分卡修改页
@@ -67,6 +67,8 @@ public class ScoreCardUpDateActivity extends Activity{
 	private boolean flase_5 = false;
 	private String coolResult;
 	private String distanceResult;
+	private	int	puttsstart;
+	private int penaltiesstart;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			
@@ -201,7 +203,8 @@ public class ScoreCardUpDateActivity extends Activity{
 		coolResult = hit_scorecard.getText().toString();
 		distanceResult = distance_scorecard.getText().toString();
 		count = Integer.parseInt(par);
-		
+		puttsstart = Integer.parseInt(putTextView.getText().toString());
+		penaltiesstart = Integer.parseInt(penaltiesTextView.getText().toString());
 	}
 
 	private void setListener() {
@@ -270,7 +273,6 @@ public class ScoreCardUpDateActivity extends Activity{
 		
 	}
 
-
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.but_add_one:
@@ -294,11 +296,11 @@ public class ScoreCardUpDateActivity extends Activity{
 			flase_1 = true;
 			break;
 		case R.id.but_add_two:
-			int c = putcount;
+			
 			putcount++;
 			putTextView.setText(putcount+"");
-			if(count<(c-putcount)+(penaltiescount*2)+1){
-				count = (c-putcount)+(penaltiescount*2)+1;
+			if(count<(putcount-puttsstart)+(penaltiescount*2)+1){
+				count = (putcount-puttsstart)+(penaltiescount*2)+1;
 				dataTextView.setText(count+"");
 			}
 			flase_2 = true;
@@ -311,11 +313,11 @@ public class ScoreCardUpDateActivity extends Activity{
 			flase_2 = true;
 			break;
 		case R.id.but_add_three:
-			int j = penaltiescount;
+			
 			penaltiescount++;
 			penaltiesTextView.setText(penaltiescount+"");
-			if(count<(putcount+((j-penaltiescount)*2)+1)){
-				count = putcount+((j-penaltiescount)*2)+1;
+			if(count<(putcount+((penaltiescount-penaltiesstart)*2)+1)){
+				count = putcount+((penaltiescount-penaltiesstart)*2)+1;
 				dataTextView.setText(count+"");
 			}
 			flase_3 = true;

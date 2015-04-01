@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-package cn.com.zcty.ILovegolf.exercise.adapter;
+package cn.com.zcty.ILovegolf.activity.adapter;
 
 import java.util.LinkedList;
 import java.util.List;

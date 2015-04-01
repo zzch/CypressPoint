@@ -1,7 +1,8 @@
-package cn.com.zcty.ILovegolf.tools;
+package cn.com.zcty.ILovegolf.view;
 
 
 import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.tools.Logger;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;

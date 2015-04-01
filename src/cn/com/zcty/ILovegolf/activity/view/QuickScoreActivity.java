@@ -22,7 +22,7 @@ import android.widget.AdapterView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.exercise.adapter.QuickScoreAdapter;
+import cn.com.zcty.ILovegolf.activity.adapter.QuickScoreAdapter;
 import cn.com.zcty.ILovegolf.model.Course;
 import cn.com.zcty.ILovegolf.model.QuickContent;
 import cn.com.zcty.ILovegolf.utils.APIService;

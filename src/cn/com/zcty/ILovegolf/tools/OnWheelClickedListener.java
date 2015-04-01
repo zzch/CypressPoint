@@ -16,6 +16,8 @@
 
 package cn.com.zcty.ILovegolf.tools;
 
+import cn.com.zcty.ILovegolf.view.WheelView;
+
 /**
  * Wheel clicked listener interface.
  * <p>The onItemClicked() method is called whenever a wheel item is clicked

@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-package cn.com.zcty.ILovegolf.exercise.adapter;
+package cn.com.zcty.ILovegolf.activity.adapter;
 
 import android.database.DataSetObserver;
 import android.view.View;

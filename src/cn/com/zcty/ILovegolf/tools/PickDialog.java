@@ -3,8 +3,8 @@ package cn.com.zcty.ILovegolf.tools;
 import java.util.ArrayList;
 
 import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.exercise.adapter.DialogListViewAdapter;
-import cn.com.zcty.ILovegolf.exercise.adapter.Dialog_T_Adapter;
+import cn.com.zcty.ILovegolf.activity.adapter.DialogListViewAdapter;
+import cn.com.zcty.ILovegolf.activity.adapter.Dialog_T_Adapter;
 
 import android.app.Dialog;
 import android.content.Context;

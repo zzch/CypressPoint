@@ -6,7 +6,7 @@
  * @description An ListView support (a) Pull down to refresh, (b) Pull up to load more.
  * 		Implement IXListViewListener, and see stopRefresh() / stopLoadMore().
  */
-package cn.com.zcty.ILovegolf.tools;
+package cn.com.zcty.ILovegolf.view;
 
 
 import cn.com.zcty.ILovegolf.activity.R;
