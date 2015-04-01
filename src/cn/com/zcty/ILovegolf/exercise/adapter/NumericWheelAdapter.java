@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-package cn.com.zcty.ILovegolf.activity.adapter;
+package cn.com.zcty.ILovegolf.exercise.adapter;
 
 import android.content.Context;
 

@@ -14,10 +14,12 @@
  *  limitations under the License.
  */
 
-package cn.com.zcty.ILovegolf.activity.adapter;
+package cn.com.zcty.ILovegolf.exercise.adapter;
 
 import java.util.LinkedList;
 import java.util.List;
+
+import cn.com.zcty.ILovegolf.tools.WheelViewAdapter;
 
 
 import android.database.DataSetObserver;

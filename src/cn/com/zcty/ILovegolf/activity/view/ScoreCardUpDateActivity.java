@@ -24,14 +24,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.activity.adapter.ArrayNumberWheelAdapter;
-import cn.com.zcty.ILovegolf.activity.adapter.ArrayWheelAdapter;
-import cn.com.zcty.ILovegolf.activity.adapter.NumericWheelAdapter;
+import cn.com.zcty.ILovegolf.exercise.adapter.ArrayNumberWheelAdapter;
+import cn.com.zcty.ILovegolf.exercise.adapter.ArrayWheelAdapter;
+import cn.com.zcty.ILovegolf.exercise.adapter.NumericWheelAdapter;
 import cn.com.zcty.ILovegolf.model.Setcard;
 import cn.com.zcty.ILovegolf.tools.OnWheelChangedListener;
+import cn.com.zcty.ILovegolf.tools.WheelView;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
-import cn.com.zcty.ILovegolf.view.WheelView;
 
 /**
  * ---记分卡修改页

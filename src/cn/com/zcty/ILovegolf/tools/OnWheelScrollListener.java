@@ -16,7 +16,6 @@
 
 package cn.com.zcty.ILovegolf.tools;
 
-import cn.com.zcty.ILovegolf.view.WheelView;
 
 
 /**

@@ -13,16 +13,15 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package cn.com.zcty.ILovegolf.activity.adapter;
+package cn.com.zcty.ILovegolf.exercise.adapter;
 
 import android.content.Context;
-import android.util.Log;
 
 /**
  * The simple Array wheel adapter
  * @param <T> the element type
  */
-public class ArrayNumberWheelAdapter extends AbstractWheelTextAdapter {
+public class ArrayWheelAdapter<String> extends AbstractWheelTextAdapter {
     
     // items
     private String items[];
@@ -32,34 +31,27 @@ public class ArrayNumberWheelAdapter extends AbstractWheelTextAdapter {
      * @param context the current context
      * @param items the items
      */
-    public ArrayNumberWheelAdapter(Context context) {
+    public ArrayWheelAdapter(Context context, String items[]) {
         super(context);
         
         //setEmptyItemResource(TEXT_VIEW_ITEM_RESOURCE);
-       
+        this.items = items;
     }
     
-	@Override
+    @Override
     public CharSequence getItemText(int index) {
-		 int a = 0; 
-	    	String items[] = new String[200];
-	        for(int i=0;i<82;i++){
-	        	items[i] = a+"";
-	        	a = a+5;
-	        	
-	        }
         if (index >= 0 && index < items.length) {
         	String item = items[index];
             if (item instanceof CharSequence) {
-                return (CharSequence) item+"码";
+                return (CharSequence) item;
             }
-            return item.toString()+"码";
+            return item.toString();
         }
         return null;
     }
 
     @Override
     public int getItemsCount() {
-        return 81;
+        return items.length;
     }
 }

@@ -10,7 +10,7 @@
          android:layout_width="match_parent"
          android:layout_height="@dimen/view_mid_xx_title"
          android:background="@drawable/e_daohang_01" >
-
+	
          <TextView
              android:id="@+id/textView1"
              android:layout_width="wrap_content"
@@ -43,34 +43,22 @@
              android:background="@drawable/back_button"
              android:onClick="onclick" />
      </RelativeLayout>
-
-    <LinearLayout
-        android:id="@+id/image_layout" 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:visibility="gone"
-        >
-        <ImageView 
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:src="@drawable/e_imageview_07"
-         />
-    </LinearLayout>
+   
     
-    <LinearLayout
-      android:id="@+id/XListView_layout" 
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-        >
-      
+   
       <cn.com.zcty.ILovegolf.view.XListView
         android:id="@+id/xListView"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:cacheColorHint="#00000000">
         </cn.com.zcty.ILovegolf.view.XListView>
-      </LinearLayout>  
+          <ImageView 
+	       android:id="@+id/tishi"
+           android:layout_width="match_parent"
+           android:layout_height="90dp"
+           android:layout_marginTop="10dp" 
+           android:src="@drawable/e_imageview_07"
+         /> 
 </LinearLayout>
 
 

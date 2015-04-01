@@ -38,10 +38,10 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.activity.adapter.CountCoolAdapter;
-import cn.com.zcty.ILovegolf.activity.adapter.StatisticAdapter;
 import cn.com.zcty.ILovegolf.activity.view.fragment.StaticsFragmentOne;
 import cn.com.zcty.ILovegolf.activity.view.fragment.StaticsFragmentTwo;
+import cn.com.zcty.ILovegolf.exercise.adapter.CountCoolAdapter;
+import cn.com.zcty.ILovegolf.exercise.adapter.StatisticAdapter;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 

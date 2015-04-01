@@ -22,7 +22,6 @@ package cn.com.zcty.ILovegolf.tools;
 import java.util.LinkedList;
 import java.util.List;
 
-import cn.com.zcty.ILovegolf.view.WheelView;
 
 import android.view.View;
 import android.widget.LinearLayout;

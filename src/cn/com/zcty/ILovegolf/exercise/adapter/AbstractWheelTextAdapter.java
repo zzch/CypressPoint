@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package cn.com.zcty.ILovegolf.activity.adapter;
+package cn.com.zcty.ILovegolf.exercise.adapter;
 
 import android.content.Context;
 import android.graphics.Typeface;

@@ -2,7 +2,7 @@ package cn.com.zcty.ILovegolf.model;
 
 import java.util.List;
 
-import cn.com.zcty.ILovegolf.view.SlidingDeleteSlideView;
+import cn.com.zcty.ILovegolf.tools.SlidingDeleteSlideView;
 
 public class QuickContent {
 	/**
