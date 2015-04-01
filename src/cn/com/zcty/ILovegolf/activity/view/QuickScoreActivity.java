@@ -36,7 +36,7 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 public class QuickScoreActivity extends Activity implements IXListViewListener ,RemoveListener,OnItemClickListener{
 	private XListView mListView;
-	private ImageView image_tishi;
+	//private ImageView image_tishi;
 	private QuickScoreAdapter slideAdapter;
 	private ArrayList<QuickContent> quickArrayList = new ArrayList<QuickContent>();
 	private ArrayList<String> uuidArrayList = new ArrayList<String>();
@@ -54,13 +54,13 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 				getData();
 				//hideProgressDialog();
 				Log.i("shuzhijieguo", quickArrayList.size()+"");
-				if(quickArrayList.size()!=0){
+				/*if(quickArrayList.size()!=0){
 					image_tishi.setVisibility(View.INVISIBLE);
 					mListView.setVisibility(View.VISIBLE);
 				}else{
 					image_tishi.setVisibility(View.VISIBLE);
 					mListView.setVisibility(View.GONE);
-				}
+				}*/
 			}
 			hideProgressDialog();
 		};
@@ -78,7 +78,7 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 	private void initView() {
 		mListView = (XListView) findViewById(R.id.xListView);
 		mListView.setXListViewListener(this);
-		image_tishi = (ImageView) findViewById(R.id.tishi);
+		//image_tishi = (ImageView) findViewById(R.id.tishi);
 		
 	}
 	private void getData() {
@@ -130,13 +130,13 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 		quickArrayList.remove(position-1);
 		new MyTaskDele(uuidArrayList.get(position-1)).start();
 		slideAdapter.notifyDataSetChanged();
-		if(quickArrayList.size()!=0){
+		/*if(quickArrayList.size()!=0){
 			image_tishi.setVisibility(View.INVISIBLE);
 			mListView.setVisibility(View.VISIBLE);
 		}else{
 			image_tishi.setVisibility(View.VISIBLE);
 			mListView.setVisibility(View.GONE);
-		}
+		}*/
 	}
 	@Override
 	public void onRefresh() {
@@ -255,13 +255,13 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			if(quickArrayList.size()!=0){
+			/*if(quickArrayList.size()!=0){
 				image_tishi.setVisibility(View.INVISIBLE);
 				mListView.setVisibility(View.VISIBLE);
 			}else{
 				image_tishi.setVisibility(View.VISIBLE);
 				mListView.setVisibility(View.GONE);
-			}
+			}*/
 		}
 	}
 	/*

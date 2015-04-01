@@ -1,4 +1,3 @@
-package cn.com.zcty.ILovegolf.tools;
 /**
  * @file XListView.java
  * @package me.maxwin.view
@@ -7,6 +6,7 @@ package cn.com.zcty.ILovegolf.tools;
  * @description An ListView support (a) Pull down to refresh, (b) Pull up to load more.
  * 		Implement IXListViewListener, and see stopRefresh() / stopLoadMore().
  */
+package cn.com.zcty.ILovegolf.tools;
 
 import android.content.Context;
 import android.util.AttributeSet;
