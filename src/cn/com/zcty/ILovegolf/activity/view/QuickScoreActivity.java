@@ -46,6 +46,7 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 	private  int pag=1;
 	private ProgressDialog progressDialog;
 	private Handler mHandler;
+	private String result = "shipai";
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -63,6 +64,16 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 				}
 			}
 			hideProgressDialog();
+			if(msg.what==2){
+				if(result.equals("success")){
+				Toast.makeText(QuickScoreActivity.this, "删除成功", Toast.LENGTH_LONG).show();
+				slideAdapter.notifyDataSetChanged();
+			}else{
+				Toast.makeText(QuickScoreActivity.this, "删除失败,当前网络不稳定", Toast.LENGTH_LONG).show();
+				image_tishi.setVisibility(View.INVISIBLE);
+				mListView.setVisibility(View.VISIBLE);
+			}
+			}
 		};
 	};
 	@Override
@@ -136,6 +147,7 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 			image_tishi.setVisibility(View.VISIBLE);
 			mListView.setVisibility(View.GONE);
 		}
+		
 	}
 	@Override
 	public void onRefresh() {
@@ -153,7 +165,6 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 
 	}
 	private void onLoad() {
-		
 		mListView.stopRefresh();
 		mListView.stopLoadMore();
 		mListView.setRefreshTime("刚刚");
@@ -167,7 +178,6 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 			public void run() {
 				
 				quickArrayList.clear();
-				new MyTask().start();
 				slideAdapter.notifyDataSetChanged();
 				onLoad();
 				
@@ -249,6 +259,9 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 			try {
 				String jsonDele = HttpUtils.HttpClientDelete(path);
 				Log.i("ssss", jsonDele+"zhou");
+				JSONObject json = new JSONObject(jsonDele);
+				result = json.getString("result");
+				
 				//slideAdapter.notifyDataSetChanged();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -261,6 +274,9 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 				image_tishi.setVisibility(View.VISIBLE);
 				mListView.setVisibility(View.GONE);
 			}
+			Message msg = handler.obtainMessage();
+			msg.what = 2;
+			handler.sendMessage(msg);
 		}
 	}
 	/*

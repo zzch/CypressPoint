@@ -55,7 +55,8 @@
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.HistoryScoreCardActivity" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.HuntActivity" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.MajorChoosePitchActivity" android:screenOrientation="portrait"></activity>
-        <activity android:name="cn.com.zcty.ILovegolf.activity.view.MajorScoreCardActivity" android:screenOrientation="portrait"></activity>        
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.MajorScoreCardActivity" android:screenOrientation="portrait"></activity>  
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.MajorScoreActivity" android:screenOrientation="portrait"></activity>      
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.StatisticsAvtivity"
             	 android:configChanges="orientation|screenSize"
             ></activity>

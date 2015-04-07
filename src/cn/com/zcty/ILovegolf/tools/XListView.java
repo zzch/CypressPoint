@@ -513,7 +513,7 @@ public class XListView extends ListView implements OnScrollListener {
 					throw new NullPointerException("RemoveListener is null, we should called setRemoveListener()");
 				}
 
-				itemView.scrollTo(0, 0);
+				//itemView.scrollTo(0, 0);
 			}
 		}
 		super.computeScroll();

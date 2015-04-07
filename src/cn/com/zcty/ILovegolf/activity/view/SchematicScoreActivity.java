@@ -8,18 +8,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.activity.R.layout;
-import cn.com.zcty.ILovegolf.activity.adapter.QuickScoreAdapter;
-import cn.com.zcty.ILovegolf.activity.view.QuickScoreActivity.MyTask;
-import cn.com.zcty.ILovegolf.activity.view.QuickScoreActivity.MyTaskDele;
-import cn.com.zcty.ILovegolf.model.Course;
-import cn.com.zcty.ILovegolf.model.QuickContent;
-import cn.com.zcty.ILovegolf.tools.XListView;
-import cn.com.zcty.ILovegolf.tools.XListView.IXListViewListener;
-import cn.com.zcty.ILovegolf.tools.XListView.RemoveListener;
-import cn.com.zcty.ILovegolf.utils.APIService;
-import cn.com.zcty.ILovegolf.utils.HttpUtils;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -31,13 +19,20 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup.MarginLayoutParams;
 import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.activity.adapter.QuickScoreAdapter;
+import cn.com.zcty.ILovegolf.model.Course;
+import cn.com.zcty.ILovegolf.model.QuickContent;
+import cn.com.zcty.ILovegolf.tools.XListView;
+import cn.com.zcty.ILovegolf.tools.XListView.IXListViewListener;
+import cn.com.zcty.ILovegolf.tools.XListView.RemoveListener;
+import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 /**
 <<<<<<< HEAD
@@ -60,6 +55,7 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 	private  int pag=1;
 	private ProgressDialog progressDialog;
 	private Handler mHandler;
+	private String result = "shibai";
 	private TextView titleName;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
@@ -78,6 +74,16 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 				}
 			}
 			hideProgressDialog();
+			if(msg.what==2){
+				if(result.equals("success")){
+				Toast.makeText(SchematicScoreActivity.this, "删除成功", Toast.LENGTH_LONG).show();
+				slideAdapter.notifyDataSetChanged();
+			}else{
+				Toast.makeText(SchematicScoreActivity.this, "删除失败,当前网络不稳定", Toast.LENGTH_LONG).show();
+				image_tishi.setVisibility(View.INVISIBLE);
+				mListView.setVisibility(View.VISIBLE);
+			}
+			}
 		};
 	};
 	@Override
@@ -135,7 +141,7 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 		//intent传值
 		intent.putExtra("uuid", quickArrayList.get(position-1).getUuid());		
 		startActivity(intent);
-		//overridePendingTransition(R.anim.slide_in_from_right, R.anim.remain_original_location);
+		overridePendingTransition(R.anim.slide_in_from_right, R.anim.remain_original_location);
 		finish();
 	}
 	@Override
@@ -152,6 +158,7 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 			image_tishi.setVisibility(View.VISIBLE);
 			mListView.setVisibility(View.GONE);
 		}
+		
 	}
 	@Override
 	public void onRefresh() {
@@ -169,7 +176,6 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 
 	}
 	private void onLoad() {
-		
 		mListView.stopRefresh();
 		mListView.stopLoadMore();
 		mListView.setRefreshTime("刚刚");
@@ -183,7 +189,6 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 			public void run() {
 				
 				quickArrayList.clear();
-				new MyTask().start();
 				slideAdapter.notifyDataSetChanged();
 				onLoad();
 				
@@ -203,7 +208,7 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String page=Integer.toHexString(pag);
 			String token=sp.getString("token", "token");
-			path = APIService.MATCHES_LIST+"page="+page+"&token="+token;
+			path = APIService.MATCHES_LIST+"page="+page+"&token="+token+"&scoring_type=professional";
 			String JsonData=HttpUtils.HttpClientGet(path);
 			Log.i("asdf", JsonData);
 			try {
@@ -265,6 +270,9 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 			try {
 				String jsonDele = HttpUtils.HttpClientDelete(path);
 				Log.i("ssss", jsonDele+"zhou");
+				JSONObject json = new JSONObject(jsonDele);
+				result = json.getString("result");
+				
 				//slideAdapter.notifyDataSetChanged();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -277,6 +285,9 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 				image_tishi.setVisibility(View.VISIBLE);
 				mListView.setVisibility(View.GONE);
 			}
+			Message msg = handler.obtainMessage();
+			msg.what = 2;
+			handler.sendMessage(msg);
 		}
 	}
 	/*
@@ -303,4 +314,3 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 	}
 
 }
-

@@ -180,7 +180,7 @@ public class HttpUtils
 		try {
 			response = client.execute(httpDelete);
 			int code=response.getStatusLine().getStatusCode();
-			Log.i("---->>", "code---"+code+"aaaaa");
+			Log.i("---->>", "delecode---"+code+"aaaaa");
 			if(code==200){
 				str = EntityUtils.toString(response.getEntity(),"utf-8");
 				Log.i("is---->>", ""+str);}
