@@ -30,7 +30,11 @@
       android:gravity="center_vertical"
        android:layout_marginTop="50dip"
       >
-        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户名："
+            />
             
            <EditText 
            android:id="@+id/et_mobile_reg"
@@ -49,16 +53,46 @@
        android:gravity="center_vertical"
        android:layout_marginTop="25dip"
       >
+           <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="密    码："
+               />
           
            <EditText 
            android:id="@+id/et_password_reg"
            android:layout_width="150dip"
            android:layout_height="wrap_content"
+            android:password="true"
            android:hint="至少6位密码"
              />
            
   </LinearLayout>
   
+      
+       <LinearLayout 
+      android:layout_width="300dip"
+      android:layout_height="40dip"
+      android:orientation="horizontal"
+      android:background="@null"
+       android:gravity="center_vertical"
+       android:layout_marginTop="25dip"
+      >
+           <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="确认密码："
+               />
+          
+           <EditText 
+           android:id="@+id/et_confirm_password"
+           android:layout_width="150dip"
+           android:layout_height="wrap_content"
+            android:password="true"
+           android:hint="请确认您的密码"
+             />
+           
+  </LinearLayout>
       
   
        <LinearLayout 
@@ -69,7 +103,11 @@
      android:gravity="center_vertical"
        android:layout_marginTop="25dip"
       >
-          
+          <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="验证码"
+            />
            <EditText 
            android:id="@+id/et_yanzhengma_reg"
            android:layout_width="150dip"

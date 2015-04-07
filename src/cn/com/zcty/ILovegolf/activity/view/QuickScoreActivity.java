@@ -197,9 +197,10 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String page=Integer.toHexString(pag);
 			String token=sp.getString("token", "token");
+			Log.i("tokens", token);
+
 			path = APIService.MATCHES_LIST+"page="+page+"&token="+token;
 			String JsonData=HttpUtils.HttpClientGet(path);
-			Log.i("asdf", JsonData);
 			try {
 				JSONArray jsonarray=new JSONArray(JsonData);
 				List<Course> arrayCouse = new ArrayList<Course>();
@@ -253,7 +254,6 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 		public void getData(){
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String token=sp.getString("token", "token");
-			Log.i("ssss", uuid+"zhou");
 			String path = APIService.DELET+"uuid="+uuid+"&token="+token;
 			try {
 				String jsonDele = HttpUtils.HttpClientDelete(path);
