@@ -81,22 +81,43 @@ public class MajorScoreActivity extends Activity {
 	private String id;
 	private int biaoshi;
 	private int shanchuid;
+	private ArrayList<String> idArrayList = new ArrayList<String>();
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
 			if(msg.what==1){
+				SharedPreferences sp = MajorScoreActivity.this.getPreferences(MODE_PRIVATE);
+				SharedPreferences.Editor editor = sp.edit();
+				editor.putString("score", score);
+				editor.putString("penalties", penalties);
+				editor.commit();
 				scoreText.setText(score);
 				scorePentaisText.setText(penalties);
 				count++;
 				orderText.setText(count+1+"");
 			}
 			if(msg.what==2){
+				SharedPreferences sp = MajorScoreActivity.this.getPreferences(MODE_PRIVATE);
+				SharedPreferences.Editor editor = sp.edit();
+				editor.putString("score", score);
+				editor.putString("penalties", penalties);
+				editor.commit();
 				Toast.makeText(MajorScoreActivity.this, "删除成功", Toast.LENGTH_LONG).show();
 				scoreText.setText(score);
 				scorePentaisText.setText(penalties);
 				orderText.setText(count+"");
 			}
 			if(msg.what==3){
-				count = Integer.parseInt(majorArray.get(majorArray.size()-1).getOrder());
+				if(majorArray.size()>0){	
+					count = Integer.parseInt(majorArray.get(majorArray.size()-1).getOrder());
+				}else{
+					count = 0;
+					
+				}
+				SharedPreferences sp = MajorScoreActivity.this.getPreferences(MODE_PRIVATE);
+				score = sp.getString("score", "score");
+				penalties = sp.getString("penalties", "penalties");
+				scoreText.setText(score);
+				scorePentaisText.setText(penalties);
 				orderText.setText(count+1+"");
 				adapter =	new MajorScoresAdapter(MajorScoreActivity.this, majorArray);
 				dataList.setAdapter(adapter);
@@ -104,6 +125,11 @@ public class MajorScoreActivity extends Activity {
 				setListViewHeightBasedOnChildren(dataList);
 			}
 			if(msg.what==4){
+				SharedPreferences sp = MajorScoreActivity.this.getPreferences(MODE_PRIVATE);
+				SharedPreferences.Editor editor = sp.edit();
+				editor.putString("score", score);
+				editor.putString("penalties", penalties);
+				editor.commit();
 				scoreText.setText(score);
 				scorePentaisText.setText(penalties);
 			}
@@ -265,8 +291,8 @@ public class MajorScoreActivity extends Activity {
 		public void HalfSwipeListView(int position) {
 			Log.i("zhouhehehe", position+"");
 			String uid;
-			uid = majorArray.get(shanchuid).getUuid();
 			shanchuid = position;
+			uid = idArrayList.get(shanchuid);
 			majorArray.remove(position);
 		//	count--;
 			new DeleTask(uid).start();
@@ -522,6 +548,7 @@ public class MajorScoreActivity extends Activity {
 				for(int i=0;i<jsonArray.length();i++){
 					JSONObject jsonObject = jsonArray.getJSONObject(i);
 					MajorScore score = new MajorScore();
+					idArrayList.add(jsonObject.getString("uuid"));
 					score.setUuid(jsonObject.getString("uuid"));
 					score.setOrder(jsonObject.getString("sequence"));
 					score.setDistance(jsonObject.getString("distance_from_hole"));
