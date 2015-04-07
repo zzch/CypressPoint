@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+
+    <TextView
+        android:id="@+id/major_order_item"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="10dp"    
+        android:text="1" />
+
+    <TextView
+        android:id="@+id/major_distance_item"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="82dp"
+        android:text="1" />
+
+    <TextView
+        android:id="@+id/major_cool_item"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="164dp"
+        android:text="1" />
+
+    <TextView
+        android:id="@+id/major_pentails_item"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="251dp"
+        android:text="1" />
+
+    <TextView
+        android:id="@+id/major_count_item"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:layout_weight="1"
+        android:layout_marginLeft="300dp"
+        android:text="1" />
+    
+  
+</RelativeLayout>

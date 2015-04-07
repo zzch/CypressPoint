@@ -33,10 +33,29 @@
     <string name="text_share">分享</string>
     <string name="searchpith">搜索球场</string>
     
+
     <!--登录注册 -->
     <string name="zhuce">一键注册</string>
     <string name="userlogin">用户登录</string>
     <string name="mobileregister">手机注册</string>
     <string name="login">登录</string>
     <string name="register">注册</string>
+
+     
+    <string name="NoChoose">0/3</string>
+    <string name="ChooseOne">1/3</string>
+    <string name="ChooseTow">2/3</string>
+    <string name="ChooseThree">3/3</string>
+    <string name="exitHint">再按一次退出程序</string>
+    <string name="ChooseEnough">最多只可选择三个标签</string>
+    <string name="ChooseHint">请先在上一页选择标签</string>
+    <string name="basic_action_1">删除</string>
+    <string name="basic_action_2">Action_2</string>
+    <string name="basic_del">Delete</string>
+    <string name="str_orange">#fe7b27</string>
+    <string name="str_green">#3cac69</string>
+    <string name="str_red">#FF4444</string>
+    <string name="str_yellow">#FFBB33</string>
+    <string name="str_sky_blue">#33B5E5</string>
+
 </resources>

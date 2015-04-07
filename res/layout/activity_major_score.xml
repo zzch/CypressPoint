@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff" >
+
+        <Button
+            android:id="@+id/scorecard_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:onClick="onclick"
+            android:text="返回" />
+
+        <TextView
+            android:id="@+id/major_title_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="球洞17"
+            android:textColor="#000000"
+            android:textSize="@dimen/txsize_mid_x" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff" >
+
+        <TextView
+            android:id="@+id/major_par"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="4标准杆"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/major_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/major_par"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="60dp"
+            android:text="564码"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/major_t"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/major_distance"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="50dp"
+            android:text="黑T"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/major_t"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="50dp"
+            android:text="本洞成绩"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/major_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:text="6"
+            android:textColor="#000000"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/major_score_penaits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:paddingTop="10dp"
+            android:text="2"
+            android:textColor="#000000"
+            android:textSize="10dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#000000"
+            android:text="序号"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#000000"
+            android:text="距离球洞/码"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#000000"
+            android:text="球的状态"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#000000"
+            android:text="罚干"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#000000"
+            android:text="球杆"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+			<RelativeLayout
+			    android:id="@+id/major_adds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff" >
+            <ListView
+                android:id="@+id/major_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@null"
+                android:listSelector="@android:color/transparent"/>
+           
+			</RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/major_rea_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff" >
+
+                <TextView
+                    android:id="@+id/major_add_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="1" />
+
+                <Button
+                    android:id="@+id/major_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="添加" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/major_add_count"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#ffffff"
+                android:visibility="gone" >
+
+                <Button
+                    android:id="@+id/major_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:text="取消" />
+
+                <Button
+                    android:id="@+id/major_queding"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:text="确定" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/major_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/view_mid_x"
+                android:visibility="gone" >
+
+                <cn.com.zcty.ILovegolf.tools.WheelView
+                    android:id="@+id/major_wheel_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/view_large_xx"
+                    android:layout_weight="1" />
+
+                <cn.com.zcty.ILovegolf.tools.WheelView
+                    android:id="@+id/major_wheel_cool"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/view_large_xx"
+                    android:layout_weight="1" />
+
+                <cn.com.zcty.ILovegolf.tools.WheelView
+                    android:id="@+id/major_wheel_pentail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/view_large_xx"
+                    android:layout_weight="1" />
+
+                <cn.com.zcty.ILovegolf.tools.WheelView
+                    android:id="@+id/major_wheel_pole"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/view_large_xx"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

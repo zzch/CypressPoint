@@ -23,7 +23,9 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.activity.adapter.MajorScoreCardGridViewAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.ScoreCardGridViewAdapter;
+import cn.com.zcty.ILovegolf.model.MajorScore;
 import cn.com.zcty.ILovegolf.model.Scorecards;
 import cn.com.zcty.ILovegolf.model.Setcard;
 import cn.com.zcty.ILovegolf.utils.APIService;
@@ -38,12 +40,13 @@ public class MajorScoreCardActivity extends Activity {
 	private List<Scorecards> scorecarsArray = new ArrayList<Scorecards>();
 	private List<Setcard> setcardsArray = new ArrayList<Setcard>(19);
 	private GridView grid_scorecard;	
-	private ScoreCardGridViewAdapter adapter;
+	private MajorScoreCardGridViewAdapter adapter;
 	private Setcard setCard;
 	private final int REQUESTCODE=1;//返回的结果码   
 	private String uuid;
 	private String uuid_t;
 	private String match_uuid;
+	private ArrayList<MajorScore> majorArray;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -61,7 +64,7 @@ public class MajorScoreCardActivity extends Activity {
 		initView();	
 	
 		new MyTask().start();
-	
+		Log.i("shizhegejiemian", "shizhegejiemian");
 	}
 	
 	/*private void getData() {
@@ -69,7 +72,7 @@ public class MajorScoreCardActivity extends Activity {
 	}*/
 
 	private void setListeners() {
-		adapter = new ScoreCardGridViewAdapter(scorecarsArray, setcardsArray, this);
+		adapter = new MajorScoreCardGridViewAdapter(scorecarsArray, setcardsArray, this);
 		grid_scorecard.setAdapter(adapter);
 		grid_scorecard.setOnItemClickListener(new OnItemClickListener() {
 
@@ -78,7 +81,7 @@ public class MajorScoreCardActivity extends Activity {
 					long arg3) {
 				
 				if(position%2!=0){
-					SharedPreferences sp = getSharedPreferences("setCard", MODE_PRIVATE);
+					/*SharedPreferences sp = getSharedPreferences("setCard", MODE_PRIVATE);
 					SharedPreferences.Editor editor = sp.edit();
 					if(adapter.getResult(position).getRodNum()!=null){
 						editor.putString("rodnum", adapter.getResult(position).getRodNum());
@@ -87,11 +90,13 @@ public class MajorScoreCardActivity extends Activity {
 						editor.putString("te", adapter.getResult(position).getTe());
 						editor.putString("direction", adapter.getResult(position).getPar());
 						editor.commit();
-					}
-					Intent intent = new Intent(MajorScoreCardActivity.this,ScoreCardUpDateActivity.class);
+					}*/
+					Intent intent = new Intent(MajorScoreCardActivity.this,MajorScoreActivity.class);
 					intent.putExtra("number", scorecarsArray.get(position/2).getNumber());
 					intent.putExtra("par",scorecarsArray.get(position/2).getPar());
 					intent.putExtra("uuid", scorecarsArray.get(position/2).getUuid());
+					intent.putExtra("diatance", scorecarsArray.get(position/2).getDistance_from_hole_to_tee_box());
+					intent.putExtra("color", scorecarsArray.get(position/2).getTee_box_color());
 					intent.putExtra("position", position+"");
 					startActivityForResult(intent, REQUESTCODE);
 				}
@@ -105,9 +110,17 @@ public class MajorScoreCardActivity extends Activity {
 		if(requestCode==REQUESTCODE){
 		for(int i=0;i<=18;i++){
 			if (resultCode == i) {
-				int position = Integer.parseInt(data.getStringExtra("position"));
-				setCard = (Setcard) data.getSerializableExtra("scard");
+				String score = data.getStringExtra("score");
+				String putts = data.getStringExtra("putts");
+				int position =Integer.parseInt(data.getStringExtra("position"));
+				setCard = new Setcard();
+				setCard.setRodNum(score);
+				setCard.setPutts(putts);
 				setcardsArray.set(position/2, setCard);
+				Log.i("zhouhehe", setCard.getPutts());
+				Log.i("zhouhehe", setcardsArray.get(0).getRodNum());
+				adapter = new MajorScoreCardGridViewAdapter(scorecarsArray, setcardsArray, this);
+				grid_scorecard.setAdapter(adapter);
 				adapter.notifyDataSetChanged();
 			}
 		}
@@ -126,7 +139,7 @@ public class MajorScoreCardActivity extends Activity {
 		switch(v.getId()){
 		//记分卡返回按钮
 		case R.id.scorecard_back:
-			intent=new Intent(MajorScoreCardActivity.this,QuickScoreActivity.class);
+			intent=new Intent(MajorScoreCardActivity.this,MajorChoosePitchActivity.class);
 			startActivity(intent);
 			finish();
 			break;
@@ -154,13 +167,13 @@ public class MajorScoreCardActivity extends Activity {
 			
 			Intent intent=getIntent();
 			 uuid=intent.getStringExtra("uuid");
-			// Log.i("jjs", uuid);
+			Log.i("jjszhouhe", uuid);
 			 uuid_t = intent.getStringExtra("uuid_t");
 			String boxes = intent.getStringExtra("color");
 			String boxes_t = intent.getStringExtra("color_t");
 	
 			if(uuid_t==null&&boxes!=null){
-				 path = APIService.CREATE_PRACTICE_EVENTS+"course_uuids="+uuid+"&tee_boxes="+boxes+"&token="+token+"&scoring_type=simple";
+				 path = APIService.CREATE_PRACTICE_EVENTS+"course_uuids="+uuid+"&tee_boxes="+boxes+"&token="+token+"&scoring_type=professional";
 				String  jsonArrayData = HttpUtils.HttpClientPost(path);
 				  try {
 						JSONObject jsonObject = new JSONObject(jsonArrayData);
@@ -194,16 +207,14 @@ public class MajorScoreCardActivity extends Activity {
 					}
 				  editor.putString("match_uuid", uuid);
 				  editor.commit();
-				  path = APIService.LIANXISAISHI+"uuid="+uuid+"&token="+token;
+				  path = APIService.LIANXISAISHI+"uuid="+uuid+"&token="+token+"&scoring_type=professional";
 				  String jsonArrayData = HttpUtils.HttpClientGet(path);	 
 				  try {
 					  String direction;
 					
-					  Log.i("jjs",jsonArrayData);
 					  	JSONObject jsonObj = new JSONObject(jsonArrayData);
 					  	
 						JSONArray jsonArray = jsonObj.getJSONArray("scorecards");
-						Log.i("jjjs", jsonArrayData);
 						for(int i=0;i<jsonArray.length();i++){
 							JSONObject jsonObjects = jsonArray.getJSONObject(i);
 							Scorecards scorecards = new Scorecards();
@@ -235,7 +246,7 @@ public class MajorScoreCardActivity extends Activity {
 					}
 			}
 			else{
-				 path = APIService.CREATE_PRACTICE_EVENTS+"course_uuids="+uuid+","+uuid_t+"&tee_boxes="+boxes+","+boxes_t+"&token="+token+"&scoring_type=simple";
+				 path = APIService.CREATE_PRACTICE_EVENTS+"course_uuids="+uuid+","+uuid_t+"&tee_boxes="+boxes+","+boxes_t+"&token="+token+"&scoring_type=professional";
 				String  jsonArrayData = HttpUtils.HttpClientPost(path);
 				  try {
 						JSONObject jsonObject = new JSONObject(jsonArrayData);

@@ -115,7 +115,7 @@ public class MajorChoosePitchActivity extends Activity{
 	
 	//返回按钮点击事件
 	public void choosepith_back(View v){
-		Intent intent=new Intent(MajorChoosePitchActivity.this,QuickScoreActivity.class);
+		Intent intent=new Intent(MajorChoosePitchActivity.this,SchematicScoreActivity.class);
 		startActivity(intent);
 		finish();
 	}
