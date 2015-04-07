@@ -1,10 +1,9 @@
 package cn.com.zcty.ILovegolf.activity.view.login_register;
 
 
-
-
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.model.User;
+import cn.com.zcty.ILovegolf.tools.RegexMobile;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +11,8 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -19,7 +20,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 /**
- * µÇÂ¼Àà
+ * ç™»å½•ç±»
  * @author deii
  *
  */
@@ -31,6 +32,15 @@ public class LoginActivity extends Activity {
 	private User user;
 	private String u_name,p_pwd;
 	private SharedPreferences ps;
+	Handler handler = new Handler(){
+
+		@Override
+		public void handleMessage(Message msg) {
+			// TODO Auto-generated method stub
+			super.handleMessage(msg);
+		}
+		
+	};
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -44,8 +54,9 @@ public class LoginActivity extends Activity {
 		ps=getSharedPreferences("mobile", Context.MODE_PRIVATE);
 		
 	}
+	
 	/**
-	 * ×¢²á°´Å¥
+	 * æ³¨å†ŒæŒ‰é’®
 	 * @param v
 	 */
 	public void register(View v){
@@ -54,34 +65,33 @@ public class LoginActivity extends Activity {
 		finish();
 	}
 	/**
-	 * µÇÂ¼°´Å¥
+	 * ç™»å½•æŒ‰é’®
 	 * @param v
 	 */
 	public void login(View v){
 		
-		 Toast.makeText(this, "ÇëÄúÏÈ×¢²á£¡", Toast.LENGTH_LONG);
-		//»ñÈ¡ÓÃ»§Ãû
-		u_name=et_username.getText().toString().trim();
-		//»ñÈ¡ÃÜÂë
-		p_pwd=et_password.getText().toString().trim();
-		if("".equals(u_name))
-		{
-			Toast.makeText(this, "ÓÃ»§Ãû²»ÄÜÎª¿Õ", Toast.LENGTH_SHORT).show();
-			return;
-		}else if(!cn.com.zcty.ILovegolf.tools.RegexMobile.VildateMobile(u_name)){
-			Toast.makeText(this, "ÓÃ»§Ãû²»ºÏ·¨", Toast.LENGTH_SHORT).show();
-			return;
-		}else if("".equals(p_pwd)){
-			Toast.makeText(this, "ÃÜÂë²»ÄÜÎª¿Õ", Toast.LENGTH_SHORT).show();
-			return;
-		}
-			//ÑéÖ¤³É¹¦£¬Ïò·şÎñÆ÷·¢ËÍÇëÇó
-			
-		
+		 //Toast.makeText(this, "è¯·æ‚¨å…ˆæ³¨å†Œï¼", Toast.LENGTH_LONG);
+			//è·å–ç”¨æˆ·å
+			u_name=et_username.getText().toString().trim();
+			//è·å–å¯†ç 
+			p_pwd=et_password.getText().toString().trim();
+			if("".equals(u_name))
+			{
+				Toast.makeText(this, "ç”¨æˆ·åä¸èƒ½ä¸ºç©ºï¼", Toast.LENGTH_SHORT).show();
+				return;
+			}else if(!RegexMobile.VildateMobile(u_name)){
+				Toast.makeText(this, "ç”¨æˆ·åä¸åˆæ³•ï¼", Toast.LENGTH_SHORT).show();
+				return;
+			}else if("".equals(p_pwd)){
+				Toast.makeText(this, "å¯†ç ä¸èƒ½ä¸ºç©ºï¼", Toast.LENGTH_SHORT).show();
+				return;
+			}
+				//éªŒè¯æˆåŠŸï¼Œå‘æœåŠ¡å™¨å‘é€è¯·æ±‚
+				
 	}
 	
 	/**
-	 * Íü¼ÇÃÜÂë°´Å¥
+	 * å¿˜è®°å¯†ç æŒ‰é’®
 	 * @param v
 	 */
 	public void forget_password(View v){

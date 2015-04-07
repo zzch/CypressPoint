@@ -18,7 +18,7 @@ import android.widget.EditText;
 public class ClearEditText extends EditText implements  
         OnFocusChangeListener, TextWatcher { 
 	/**
-	 * 删锟斤拷钮锟斤拷锟斤拷锟斤拷
+	 * 删除按钮的引用
 	 */
     private Drawable mClearDrawable; 
  
@@ -27,7 +27,7 @@ public class ClearEditText extends EditText implements
     } 
  
     public ClearEditText(Context context, AttributeSet attrs) { 
-    	//锟斤拷锟斤构锟届方锟斤拷也锟斤拷锟斤拷要锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷芏锟斤拷锟斤拷圆锟斤拷锟斤拷锟絏ML锟斤拷锟芥定锟斤拷
+    	//这里构造方法也很重要，不加这个很多属性不能再XML里面定义
     	this(context, attrs, android.R.attr.editTextStyle); 
     } 
     
@@ -38,7 +38,7 @@ public class ClearEditText extends EditText implements
     
     
     private void init() { 
-    	//锟斤拷取EditText锟斤拷DrawableRight,锟斤拷锟斤拷没锟斤拷锟斤拷锟斤拷锟斤拷锟角撅拷使锟斤拷默锟较碉拷图片
+    	//获取EditText的DrawableRight,假如没有设置我们就使用默认的图片
     	mClearDrawable = getCompoundDrawables()[2]; 
         if (mClearDrawable == null) { 
         	mClearDrawable = getResources() 
@@ -50,9 +50,9 @@ public class ClearEditText extends EditText implements
         addTextChangedListener(this); 
     } 
     /**
-     * 锟斤拷为锟斤拷锟角诧拷锟斤拷直锟接革拷EditText锟斤拷锟矫碉拷锟斤拷录锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷眉锟阶★拷锟斤拷前锟斤拷碌锟轿伙拷锟斤拷锟侥ｏ拷锟斤拷锟斤拷录锟�
-     * 锟斤拷锟斤拷锟角帮拷锟铰碉拷位锟斤拷 锟斤拷  EditText锟侥匡拷锟�- 图锟疥到锟截硷拷锟揭边的硷拷锟�- 图锟斤拷目锟斤拷  锟斤拷
-     * EditText锟侥匡拷锟�- 图锟疥到锟截硷拷锟揭边的硷拷锟街拷锟斤拷锟斤拷蔷锟斤拷锟斤拷锟斤拷锟酵硷拷辏拷锟街憋拷锟斤拷锟矫伙拷锌锟斤拷锟�
+     * 因为我们不能直接给EditText设置点击事件，所以我们用记住我们按下的位置来模拟点击事件
+     * 当我们按下的位置 在  EditText的宽度 - 图标到控件右边的间距 - 图标的宽度  和
+     * EditText的宽度 - 图标到控件右边的间距之间我们就算点击了图标，竖直方向没有考虑
      */
     @Override 
     public boolean onTouchEvent(MotionEvent event) { 
@@ -71,7 +71,7 @@ public class ClearEditText extends EditText implements
     } 
  
     /**
-     * 锟斤拷ClearEditText锟斤拷锟姐发锟斤拷浠拷锟绞憋拷锟斤拷卸锟斤拷锟斤拷锟斤拷址锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷图锟斤拷锟斤拷锟绞撅拷锟斤拷锟斤拷锟�
+     * 当ClearEditText焦点发生变化的时候，判断里面字符串长度设置清除图标的显示与隐藏
      */
     @Override 
     public void onFocusChange(View v, boolean hasFocus) { 
@@ -84,7 +84,7 @@ public class ClearEditText extends EditText implements
  
  
     /**
-     * 锟斤拷锟斤拷锟斤拷锟酵硷拷锟斤拷锟斤拷示锟斤拷锟斤拷锟截ｏ拷锟斤拷锟斤拷setCompoundDrawables为EditText锟斤拷锟斤拷锟斤拷去
+     * 设置清除图标的显示与隐藏，调用setCompoundDrawables为EditText绘制上去
      * @param visible
      */
     protected void setClearIconVisible(boolean visible) { 
@@ -94,7 +94,7 @@ public class ClearEditText extends EditText implements
     } 
      
     /**
-     * 锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷莘锟斤拷锟戒化锟斤拷时锟斤拷氐锟斤拷姆锟斤拷锟�
+     * 当输入框里面内容发生变化的时候回调的方法
      */
     @Override 
     public void onTextChanged(CharSequence s, int start, int count, 
@@ -115,7 +115,7 @@ public class ClearEditText extends EditText implements
     
    
     /**
-     * 锟斤拷锟矫晃讹拷锟斤拷锟斤拷
+     * 设置晃动动画
      */
     public void setShakeAnimation(){
     	this.setAnimation(shakeAnimation(5));
@@ -123,8 +123,8 @@ public class ClearEditText extends EditText implements
     
     
     /**
-     * 锟轿讹拷锟斤拷锟斤拷
-     * @param counts 1锟斤拷锟接晃讹拷锟斤拷锟斤拷锟斤拷
+     * 晃动动画
+     * @param counts 1秒钟晃动多少下
      * @return
      */
     public static Animation shakeAnimation(int counts){

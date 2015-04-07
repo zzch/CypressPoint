@@ -22,7 +22,7 @@ import android.view.Window;
 import android.widget.Toast;
 
 /**
- * ��ҳ��
+ * 首页类
  * @author deii
  *
  */
@@ -40,7 +40,7 @@ public class ShouYeActivity extends Activity {
 	}
 	
 	/**
-	 * һ��ע��
+	 * 一键注册
 	 * @param v
 	 */
 	public void but_register(View v){
@@ -50,7 +50,7 @@ public class ShouYeActivity extends Activity {
 			@Override
 			protected Void doInBackground(Void... arg0) {
 				// TODO Auto-generated method stub
-				//�������
+				//请求数据
 				String url=APIService.ONE_REGISTER;
 				String data=HttpUtils.HttpClientPost(url);
 				Log.i("Data----->", ""+data);
@@ -58,7 +58,7 @@ public class ShouYeActivity extends Activity {
 				String nickname = null;
 				String token = null;
 				try {
-					//json����
+					//json解析
 					JSONObject jsonObject=new JSONObject(data);
 					Log.i("jsonarray----->", ""+data);
 						uuid=jsonObject.getString("uuid");
@@ -71,7 +71,7 @@ public class ShouYeActivity extends Activity {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				//�������
+				//保存数据
 				SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 				Editor editor = sp.edit();
 			    editor.putString("uuid", uuid);
@@ -95,7 +95,7 @@ public class ShouYeActivity extends Activity {
 		
 	}
 	/**
-	 * ��½
+	 * 登陆
 	 * @param v
 	 */
 	public void but_login(View v){
@@ -104,7 +104,7 @@ public class ShouYeActivity extends Activity {
 		finish();
 	}
 	/**
-	 * �ֻ�ע��
+	 * 手机注册
 	 * @param v
 	 */
 	public void but_mobile_reg(View v){

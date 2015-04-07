@@ -31,4 +31,9 @@ public class APIService {
 	  
 	  //删除练习赛事
 	  public static final String DELET = "http://123.57.210.52/api/v1/matches/practice.json?";
+	  
+	  //用户注册
+	  public static final String USERREGISTER = "http://123.57.210.52/api/v1/users/sign_up.json?";
+      //发送验证码
+	 public static final String  YANZHENGMA = "http://123.57.210.52/api/v1/verification_code/send.json?";
 }

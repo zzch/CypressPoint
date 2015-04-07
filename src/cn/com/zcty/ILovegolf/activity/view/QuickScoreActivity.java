@@ -210,7 +210,6 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 					nameArrayList.add(obj.getString("name"));
 					course.setAddress(obj.getString("address"));
 					arrayCouse.add(course);
-
 					quickContent.setStrokes(jsonObj.getString("score"));
 					quickContent.setRecorded_scorecards_count(jsonObj.getString("recorded_scorecards_count"));
                      Log.i("cc", "cc----"+quickContent.getRecorded_scorecards_count());

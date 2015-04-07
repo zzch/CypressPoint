@@ -1,13 +1,23 @@
 package cn.com.zcty.ILovegolf.activity.view.login_register;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.HttpUtils;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -15,7 +25,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 /**
- * ×¢²áÀà
+ * æ³¨å†Œç±»
  * @author deii
  *
  */
@@ -24,40 +34,55 @@ public class RegisterActivity extends Activity implements OnClickListener{
 	private Button yanzhengma;
 	private AlertDialog dialog;
 	private Button confirm;
-	private EditText et_mobile_reg;//ÊÖ»úºÅ
-	private EditText et_password_reg;//ÃÜÂë
-	private EditText et_yanzhengma_reg;//ÑéÖ¤Âë
+	private EditText et_mobile_reg;//æ‰‹æœºå·
+	private EditText et_password_reg;//å¯†ç 
+	private EditText et_yanzhengma_reg;//éªŒè¯ç 
+	Handler handler = new Handler(){
+
+		@Override
+		public void handleMessage(Message msg) {
+			
+		}
+		
+	};
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_register);
-		//ÕÒ¿Ø¼ş
+		//æ‰¾æ§ä»¶
 		et_mobile_reg=(EditText) findViewById(R.id.et_mobile_reg);
 		et_password_reg=(EditText) findViewById(R.id.et_password_reg);
 		et_yanzhengma_reg=(EditText) findViewById(R.id.et_yanzhengma_reg);
 		yanzhengma=(Button) findViewById(R.id.but_getyanzhengma);
 	}
 	/**
-	 * »ñÈ¡ÑéÖ¤Âë°´Å¥
+	 * è·å–éªŒè¯ç æŒ‰é’®
 	 * @param v
 	 */
 	public void on_yanzhengma(View v){
 		
 		new AsyncTask<Void, Void, Void>() {
+			
+			
 			@Override
 			protected void onPreExecute() {
 				// TODO Auto-generated method stub
 				super.onPreExecute();
-				//µ¹¼ÆÊ±
+				//å€’è®¡æ—¶
 				daojishi();
+				SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
+				String token=sp.getString("token", "token");
+				String m_mobile = et_mobile_reg.getText().toString().trim();
+				String path=APIService.YANZHENGMA+"m_mobile="+m_mobile+"&token"+token;	
+				
+				
 			}
-
 			@Override
 			protected Void doInBackground(Void... arg0) {
 				// TODO Auto-generated method stub
-				//»ñÈ¡·¢ËÍµ½ÊÖ»úÉÏµÄÑéÖ¤Âë
+				//è·å–å‘é€åˆ°æ‰‹æœºä¸Šçš„éªŒè¯ç 
 				return null;
 			}
 
@@ -72,7 +97,7 @@ public class RegisterActivity extends Activity implements OnClickListener{
 		
 	}
 	
-	//µã»÷×¢²á°´Å¥
+	//ç‚¹å‡»æ³¨å†ŒæŒ‰é’®
     public void on_but_zhuce(View v){
     	new AsyncTask<Void, Void, Void>(){
 
@@ -80,7 +105,7 @@ public class RegisterActivity extends Activity implements OnClickListener{
 			protected void onPostExecute(Void result) {
 				// TODO Auto-generated method stub
 				super.onPostExecute(result);
-				//µ¯³öÒ»¸öDialog
+				//å¼¹å‡ºä¸€ä¸ªDialog
 				fristdialog();
 			}
 
@@ -88,7 +113,14 @@ public class RegisterActivity extends Activity implements OnClickListener{
 			protected void onPreExecute() {
 				// TODO Auto-generated method stub
 				super.onPreExecute();
-				//Ïò·şÎñÆ÷·¢ËÍ×¢²áÊı¾İ
+				//å‘æœåŠ¡å™¨å‘é€æ³¨å†Œæ•°æ®
+				SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
+				String token=sp.getString("token", "token");
+				String m_mobile = et_mobile_reg.getText().toString().trim();
+				String p_password = et_password_reg.getText().toString().trim();
+				String y_yanzhengma = et_yanzhengma_reg.getText().toString().trim();
+				String url=APIService.USERREGISTER+"m_mobile="+m_mobile+"&p_password="+p_password+"&y_yanzhengma="+y_yanzhengma+"&token="+token;
+				//String data=HttpUtils.HttpClientPost(url);
 			}
 
 			@Override
@@ -102,37 +134,37 @@ public class RegisterActivity extends Activity implements OnClickListener{
        }
     
     /**
-	 * µã»÷»ñÈ¡ÑéÖ¤ÂëÊ±£¬µ¹¼ÆÊ±
-	 */
-	public void daojishi(){
-		//ÅĞ¶Ï»ñÈ¡ÑéÖ¤ÂëÊÇ·ñ±»µã»÷
-		boolean isChecked=false;
-		if(isChecked){
-			//Î´µã»÷ÏÔÊ¾
-			yanzhengma.setText("»ñÈ¡ÑéÖ¤Âë");
-		}else{
-			//µ¹¼ÆÊ±  µã»÷ºó
-			new CountDownTimer(60*1000, 1000){
+   	 * ç‚¹å‡»è·å–éªŒè¯ç æ—¶ï¼Œå€’è®¡æ—¶
+   	 */
+   	public void daojishi(){
+   		//åˆ¤æ–­è·å–éªŒè¯ç æ˜¯å¦è¢«ç‚¹å‡»
+   		boolean isChecked=false;
+   		if(isChecked){
+   			//æœªç‚¹å‡»æ˜¾ç¤º
+   			yanzhengma.setText("è·å–éªŒè¯ç ");
+   		}else{
+   			//å€’è®¡æ—¶  ç‚¹å‡»å
+   			new CountDownTimer(60*1000, 1000){
 
-				//¼ÆÊ±½áÊø
-				@Override
-				public void onFinish() {
-					// TODO Auto-generated method stub
-					yanzhengma.setText("»ñÈ¡ÑéÖ¤Âë");
-				}
-                //ÕıÔÚ¼ÆÊ±
-				@Override
-				public void onTick(long millisUntilFinished) {
-					// TODO Auto-generated method stub
-					yanzhengma.setText(""+millisUntilFinished/1000+"");
-				}
-				
-			}.start();
+   				//è®¡æ—¶ç»“æŸ
+   				@Override
+   				public void onFinish() {
+   					// TODO Auto-generated method stub
+   					yanzhengma.setText("è·å–éªŒè¯ç ");
+   				}
+                   //æ­£åœ¨è®¡æ—¶
+   				@Override
+   				public void onTick(long millisUntilFinished) {
+   					// TODO Auto-generated method stub
+   					yanzhengma.setText(""+millisUntilFinished/1000+"");
+   				}
+   				
+   			}.start();
 		   }
 		}
     
-    /**
-     * µã»÷×¢²á°´Å¥ºóµ¯³öÒ»¸öDialog
+   	/**
+     * ç‚¹å‡»æ³¨å†ŒæŒ‰é’®åå¼¹å‡ºä¸€ä¸ªDialog
      */
     public void fristdialog(){
     	AlertDialog.Builder builder = new Builder(this);
@@ -144,9 +176,9 @@ public class RegisterActivity extends Activity implements OnClickListener{
 		dialog.show();
        }
 
-      /**
-       * dialogÖĞÈ·¶¨°´Å¥µÄµã»÷ÊÂ¼ş
-       */
+    /**
+     * dialogä¸­ç¡®å®šæŒ‰é’®çš„ç‚¹å‡»äº‹ä»¶
+     */
 	  @Override
 	   public void onClick(View v) {
 		// TODO Auto-generated method stub
