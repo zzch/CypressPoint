@@ -63,7 +63,15 @@ public class MajorScoreActivity extends Activity {
 	private String[] coolArray = {"果岭","球道外左侧","球道","球道外右侧","沙坑","不可打"};;
 	private String[] pentailsArray = {"1","2","3"};
 	private String[] pentailsArray_ = {""};
-	private String[] countArray = {"1W"};
+	private String[] countArray = {"Driver","Putter","3 Wood","5 Wood","7 Wood",
+			"2 Hybrid","3 Hybrid","4 Hybrid","5 Hybrid","1 Iron","2 Iron",
+			"3 Iron","4 Iron","5 Iron","6 Iron","7 Iron","8 Iron","9 Iron","PW","GW","SW","LW"};
+	private String[] countArrays = {"1w","pt","3w","5w","7w",
+								"2h","3h","4h","5h","1i","2i",
+								"3i","4i","5i","6i","7i",
+								"8i","9i","pw","gw","sw","lw"};
+	
+	private String po;
 	private ArrayList<MajorScore> majorArray = new ArrayList<MajorScore>();
 	private MajorArrayNumberWheelAdapter majorNumberAdapter;
 	private MajorScoresAdapter adapter;
@@ -166,6 +174,7 @@ public class MajorScoreActivity extends Activity {
 					intent.putExtra("score", score);
 					intent.putExtra("putts", putts);
 					intent.putExtra("position", position);
+					intent.putExtra("penalties", penalties);
 					setResult(1,intent);
 					finish();
 				}else{
@@ -209,7 +218,8 @@ public class MajorScoreActivity extends Activity {
 
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
-				popal = countArray[newValue];
+				popal = countArrays[newValue];
+				po = countArray[newValue];
 			}
 		});
 		addButton.setOnClickListener(new OnClickListener() {
@@ -237,7 +247,8 @@ public class MajorScoreActivity extends Activity {
 				majorScore.setOrder(count+"");							
 				majorScore.setDistance(distance);
 				majorScore.setPentails(pentails);
-				majorScore.setCount(popal);				
+				majorScore.setCount(popal);
+				Log.i("guofen", po+"aaa");
 				if(flase){	
 					majorArray.add(majorScore);					
 					adapter =	new MajorScoresAdapter(MajorScoreActivity.this, majorArray);
@@ -256,7 +267,6 @@ public class MajorScoreActivity extends Activity {
 				resultLinearLayout.setVisibility(View.GONE);
 				setListViewHeightBasedOnChildren(dataList);
 				dataList.setAdapter(adapter);
-				
 				
 			}
 		});
@@ -468,7 +478,7 @@ public class MajorScoreActivity extends Activity {
 		
 			String path = APIService.Jilu+"token="+token+"&scorecard_uuid="+uuid
 					+"&distance_from_hole="+majorArray.get(majorArray.size()-1).getDistance()+"&point_of_fall="+c+
-					"&penalties="+majorArray.get(majorArray.size()-1).getPentails()+"&club="+"1w";
+					"&penalties="+majorArray.get(majorArray.size()-1).getPentails()+"&club="+popal;
 			try {
 				String jsonArray = HttpUtils.HttpClientPost(path);
 				Log.i("dashujuzhouhe", jsonArray);
@@ -553,8 +563,11 @@ public class MajorScoreActivity extends Activity {
 					score.setOrder(jsonObject.getString("sequence"));
 					score.setDistance(jsonObject.getString("distance_from_hole"));
 					score.setCool(jsonObject.getString("point_of_fall"));
+					Log.i("zhouhel", jsonObject.getString("point_of_fall"));
 					score.setCount(jsonObject.getString("club"));
 					score.setPentails(jsonObject.getString("penalties"));
+					
+	
 					majorArray.add(score);
 				}
 			} catch (JSONException e) {
@@ -597,7 +610,7 @@ public class MajorScoreActivity extends Activity {
 		
 			String path = APIService.Jilu+"token="+token+"&uuid="+id
 					+"&distance_from_hole="+distance+"&point_of_fall="+c+
-					"&penalties="+pentails+"&club="+"1w";
+					"&penalties="+pentails+"&club="+popal;
 			try {
 				String jsonArray = HttpUtils.HttpClientPut(path);
 				JSONObject jsObject = new JSONObject(jsonArray);	

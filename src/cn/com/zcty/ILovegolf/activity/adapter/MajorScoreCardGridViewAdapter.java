@@ -146,11 +146,19 @@ public class MajorScoreCardGridViewAdapter extends BaseAdapter{
 				holder.image.setVisibility(View.GONE);
 				holder.numberRod.setBackground(null);
 				//holder.numberRod.setTextSize(60);
-				//holder.penalties.setTextColor(Color.RED);
-					Log.i("zhouhehe", setcardsArray.get(position/2).getRodNum()+"zhou");
+				holder.penalties.setTextColor(Color.RED);				
 				holder.numberRod.setText(setcardsArray.get(position/2).getRodNum());
-				holder.penalties.setText("");
-				holder.putts.setText(setcardsArray.get(position/2).getPutts());
+				if(setcardsArray.get(position/2).getPenalties()==null){
+					holder.penalties.setText("0");
+				}else{
+				holder.penalties.setText(setcardsArray.get(position/2).getPenalties());
+				}
+				if(setcardsArray.get(position/2).getPutts()==null){
+					holder.putts.setText("0");
+
+				}else{					
+					holder.putts.setText(setcardsArray.get(position/2).getPutts());
+				}
 				holder.cool.setText("");
 				holder.distance.setText("");
 				holder.par_p.setText("");

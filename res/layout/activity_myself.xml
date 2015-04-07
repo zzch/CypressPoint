@@ -2,32 +2,99 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center"    
+    android:gravity="center"
     android:orientation="vertical" >
+	<RelativeLayout 
+       android:layout_width="match_parent"
+       android:layout_height="30dp"
+       android:orientation="horizontal"
+         >
+         <Button 
+           android:id="@+id/myself_back"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="返回"
+           android:layout_marginLeft="5dip"
+           android:background="@null"
+           
+             />
+         <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="个人信息"
+           android:layout_centerVertical="true"
+           android:layout_centerHorizontal="true"
+           android:textSize="20dip"
+           android:layout_marginLeft="25dip"
+             />
+           
+     </RelativeLayout>
 
-    
-    <TextView 
-        android:id="@+id/count_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="自己"
-        android:textColor="#99000000"
-        android:textSize="25sp"
-        />
-  
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="106dp" >
+
+        <cn.com.zcty.ILovegolf.tools.CircleImageView
+            android:id="@+id/myself_head"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/hugh" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/e_icon_arrow" />
+
+        <TextView
+            android:id="@+id/myself_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:text="周鹤" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp" >
+
+        <RelativeLayout
+            android:id="@+id/myself_setting"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+             >
+			<ImageView 
+			    android:id="@+id/myself_image"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_centerVertical="true"
+			    android:layout_marginLeft="10dp"
+			    android:src="@android:drawable/ic_input_add"
+			    />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"   
+                android:layout_centerVertical="true"            
+                android:layout_marginLeft="50dp"
+                android:text="设置" />
+            <ImageView 
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_centerVertical="true"
+			    android:layout_alignParentRight="true"
+			    android:layout_marginRight="20dp"
+			    android:src="@drawable/e_icon_arrow"
+			    />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
 </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

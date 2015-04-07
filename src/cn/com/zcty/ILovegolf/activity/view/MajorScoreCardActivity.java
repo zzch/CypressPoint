@@ -112,13 +112,15 @@ public class MajorScoreCardActivity extends Activity {
 			if (resultCode == i) {
 				String score = data.getStringExtra("score");
 				String putts = data.getStringExtra("putts");
+				String penalties = data.getStringExtra("penalties");
 				int position =Integer.parseInt(data.getStringExtra("position"));
 				setCard = new Setcard();
 				setCard.setRodNum(score);
 				setCard.setPutts(putts);
+				setCard.setPenalties(penalties);
 				setcardsArray.set(position/2, setCard);
-				Log.i("zhouhehe", setCard.getPutts());
-				Log.i("zhouhehe", setcardsArray.get(0).getRodNum());
+				//Log.i("zhouhehe", setCard.getPutts());
+				//Log.i("zhouhehe", setcardsArray.get(0).getRodNum());
 				adapter = new MajorScoreCardGridViewAdapter(scorecarsArray, setcardsArray, this);
 				grid_scorecard.setAdapter(adapter);
 				adapter.notifyDataSetChanged();
