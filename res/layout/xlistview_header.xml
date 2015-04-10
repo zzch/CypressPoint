@@ -14,13 +14,14 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:gravity="center"
-            android:orientation="vertical" android:id="@+id/xlistview_header_text">
+            android:orientation="vertical" 
+            android:id="@+id/xlistview_header_text">
 
             <TextView
                 android:id="@+id/xlistview_header_hint_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
+                android:textColor="@color/gold_half"
                 android:text="@string/xlistview_header_hint_normal" />
 
             <LinearLayout
@@ -32,14 +33,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                     android:textColor="@color/white"
+                     android:textColor="@color/gold_half"
                     android:textSize="12sp" /><!-- @string/xlistview_header_last_time -->
 
                 <TextView
                     android:id="@+id/xlistview_header_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                     android:textColor="@color/white"
+                     android:textColor="@color/gold_half"
                     android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
@@ -60,6 +61,7 @@
             android:layout_alignLeft="@id/xlistview_header_text"
             android:layout_centerVertical="true"
             android:layout_marginLeft="-40dp"
+            android:indeterminateDrawable="@drawable/progressbar" 
             android:visibility="invisible" />
     </RelativeLayout>
 

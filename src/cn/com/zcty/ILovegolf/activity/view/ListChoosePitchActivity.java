@@ -44,7 +44,7 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
  *
  */
 
-public class ListChoosePitchActivity extends Activity {
+    public class ListChoosePitchActivity extends Activity {
 	private List<String> citys=new ArrayList<String>();
 	private Button search_back;
     private ExpandableListView sortListView;
@@ -57,10 +57,10 @@ public class ListChoosePitchActivity extends Activity {
 	private SharedPreferences ss;
 	private ArrayList<String> citys_name;
 	private List<String> citys_address;
+	private String sign;
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
 			if(msg.arg1==1){
-
 				 adapter = new SortAdapter(ListChoosePitchActivity.this, citys, child);
 				 sortListView.setAdapter(adapter);
 				
@@ -89,14 +89,15 @@ public class ListChoosePitchActivity extends Activity {
 						editor.putString("name", child.get(groupPosition).get(childPosition).getName());
 						editor.commit();
 						Intent intent = new Intent(ListChoosePitchActivity.this,PlaySetActivity.class);
-						intent.putExtra("sign", "1");
+						intent.putExtra("sign", sign);
 						intent.putExtra("uuid", child.get(groupPosition).get(childPosition).getUuid());	
 						startActivity(intent);
 						return false;
 					}
 				});
 				setListeners();
-		};}
+		  };
+		}
 	};
 	private ListView cityList;
 	@Override
@@ -117,15 +118,13 @@ public class ListChoosePitchActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent intent=new Intent(ListChoosePitchActivity.this,ChoosePitchActivity.class );
+				Intent intent=new Intent(ListChoosePitchActivity.this,MajorChoosePitchActivity.class );
 				startActivity(intent);
 				finish();
 			}
 		});	
 		keyword.addTextChangedListener(new TextWatcher() {
 			
-			
-
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before, int count) {
 				
@@ -178,7 +177,7 @@ public class ListChoosePitchActivity extends Activity {
 				editor.putString("name", citys_name.get(arg2));
 				editor.commit();
 				Intent intent = new Intent(ListChoosePitchActivity.this,PlaySetActivity.class);
-				intent.putExtra("sign", "1");
+				intent.putExtra("sign", sign);
 				intent.putExtra("uuid",uuidList.get(arg2));	
 				startActivity(intent);
 			}
@@ -189,6 +188,8 @@ public class ListChoosePitchActivity extends Activity {
 		keyword = (ClearEditText) findViewById(R.id.filter_edit);
 		search_back= (Button) findViewById(R.id.search_back);
 		cityList = (ListView) findViewById(R.id.listView1);
+		Intent intent = getIntent();
+		sign = intent.getStringExtra("sign");
 	}
 	class Citys extends Thread{
 		public Citys() {

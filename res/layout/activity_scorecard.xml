@@ -3,21 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-     android:background="@color/black"
+    android:background="@anim/pingpu"
      >
 
     <RelativeLayout 
        android:layout_width="match_parent"
        android:layout_height="50dp"
-       android:background="@drawable/e_daohang_01"
+       android:background="@anim/title_pingpu"
          >
          <Button 
              android:id="@+id/scorecard_back"
-             android:layout_width="@dimen/view_mid_xx"
-             android:layout_height="@dimen/view_mid_x"
+             android:layout_width="50dp"
+             android:layout_height="25dp"
              android:layout_alignParentLeft="true"
              android:layout_centerVertical="true"
              android:background="@drawable/back_button"
+             android:layout_marginLeft="10dp"
              android:onClick="onclick"
            />
          <TextView
@@ -27,7 +28,7 @@
              android:layout_centerVertical="true"
              android:gravity="center"
              android:text="@string/score_card"
-             android:textColor="@color/white"
+             android:textColor="@color/gold"
              android:textSize="@dimen/txsize_mid_x" />
            <Button 
            android:id="@+id/scorecard_score"
@@ -36,7 +37,7 @@
            android:layout_alignParentBottom="true"
            android:layout_alignParentRight="true"
            android:background="@null"
-           android:textColor="@color/white"
+           android:textColor="@color/gold"
            android:text="@string/button_count"
            android:onClick="onclick"
            android:textSize="@dimen/txsize_small_xx"

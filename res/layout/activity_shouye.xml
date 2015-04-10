@@ -4,12 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical" 
     android:gravity="center_horizontal"
-    android:background="@color/black"
+    android:background="@anim/pingpu"
    >
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/view_mid_xx_title"
-        android:background="@drawable/e_daohang_01" >
+        android:background="@anim/title_pingpu" >
 
         <TextView
             android:id="@+id/textView1"
@@ -19,7 +19,7 @@
             android:layout_centerVertical="true"
             android:gravity="center"
             android:text="我爱高尔夫"
-            android:textColor="@color/white"
+            android:textColor="@color/gold"
             android:textSize="@dimen/txsize_mid_x" />
 
         
@@ -32,7 +32,7 @@
         android:text="@string/zhuce"
         android:background="@drawable/button"
         android:gravity="center"
-        android:textColor="@color/green" 
+        android:textColor="@color/gold" 
         android:onClick="but_register"
         android:layout_marginTop="@dimen/view_mid_x"
         />
@@ -43,7 +43,7 @@
         android:text="@string/mobileregister"
         android:background="@drawable/button"
         android:gravity="center"
-        android:textColor="@color/green" 
+        android:textColor="@color/gold" 
         android:onClick="but_login"
         android:layout_marginTop="@dimen/view_small_xx_w"
         />
@@ -56,34 +56,46 @@
          <TextView 
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:textColor="@color/gold"
              android:textSize="@dimen/txsize_mid_x"
              android:text="登录"
+             android:layout_marginTop="25dp"
              />
          
          <EditText 
              android:id="@+id/et_username"
              android:layout_width="300dp"
-             android:layout_height="wrap_content"
-             android:hint="请输入手机号"
+             android:layout_height="@dimen/view_mid_xx_title"
+             android:hint=" 请输入手机号"
+             android:textColor="@color/gold_half"
+             android:background="@drawable/e_button_pressed"
+             android:layout_marginTop="30dp"
+             android:textColorHint="@color/gold_half"
              />
           <EditText 
              android:id="@+id/et_password"
              android:layout_width="300dp"
-             android:layout_height="wrap_content"
-             android:hint="请输入密码"
+             android:layout_height="@dimen/view_mid_xx_title" 
+             android:hint=" 请输入密码"
+             android:password="true"
+             android:textColor="@color/gold_half"
+             android:background="@drawable/e_button_pressed"
+             android:layout_marginTop="@dimen/view_small_x"
+             android:textColorHint="@color/gold_half"
              />
            <Button 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="忘记密码？"
             android:background="@null"
+            android:textColor="@color/gold_half"
             android:layout_marginLeft="90dip"
             android:layout_marginTop="10dip"
             android:onClick="forget_password"
            
             />
      </LinearLayout>
+     
        <Button 
         android:id="@+id/but_login"
         android:layout_width="300dp"
@@ -91,16 +103,16 @@
         android:text="@string/login"
         android:background="@drawable/button"
         android:gravity="center"
-        android:textColor="@color/green" 
+        android:textColor="@color/gold" 
         android:onClick="login"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         />
        
         <LinearLayout 
           android:layout_width="match_parent"
           android:layout_height="50dip"
           android:orientation="horizontal"
-          android:layout_marginTop="30dip"
+          android:layout_marginTop="20dip"
           android:gravity="center_vertical"
           
             >

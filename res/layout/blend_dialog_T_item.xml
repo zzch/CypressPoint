@@ -10,7 +10,6 @@
         android:id="@+id/image_t"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        
         android:layout_marginLeft="@dimen/view_small_x"
        
         

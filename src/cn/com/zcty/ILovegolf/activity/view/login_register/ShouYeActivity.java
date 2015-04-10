@@ -72,7 +72,7 @@ public class ShouYeActivity extends Activity {
 					}
 				if(msg.arg1==1){
 					if(messg.equals("无效的密码")){
-						//Log.i("mimaceshi", msg.obj+"");
+						
 						 Toast.makeText(ShouYeActivity.this, "密码错误！", Toast.LENGTH_SHORT).show();
 					}
 					else if(messg.equals("未注册过的用户")){
@@ -81,7 +81,7 @@ public class ShouYeActivity extends Activity {
 					}else{
 						new ShouYeTask_login().start();
 					//Toast.makeText(ShouYeActivity.this, "登录成功！", Toast.LENGTH_SHORT).show();		
-					    Intent intent = new Intent(ShouYeActivity.this,QuickScoreActivity.class);
+					    Intent intent = new Intent(ShouYeActivity.this,TabHostActivity.class);
 					    startActivity(intent);
 					    finish();
 					    }

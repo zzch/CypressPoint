@@ -2,18 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" 
- android:background="@color/black"
+    android:background="@drawable/pingpu_onclick"
+    android:orientation="vertical"
     >
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
        android:layout_marginTop="@dimen/view_small_x"
         android:textSize="@dimen/txsize_small_x"
-        android:textColor="@color/white"
-        android:background="@drawable/e_playset_item"
+        android:textColor="@color/gold"
+        android:background="@drawable/pingpu_onclick"
         android:gravity="center"
         android:text="TextView" />
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/gold_half"
+        />
 
 </LinearLayout>

@@ -27,16 +27,16 @@ public class TabHostActivity extends TabActivity {
 			setContentView(R.layout.tabactivity_main);
 			TabHost myTabHost=getTabHost();
 			
-			TabSpec tabSpec1=myTabHost.newTabSpec("");
-			tabSpec1.setIndicator(getIndicatorView("",R.drawable.e_exec_03));
+			TabSpec tabSpec1=myTabHost.newTabSpec("练习");
+			tabSpec1.setIndicator(getIndicatorView("练习",R.drawable.lianxi));
 			tabSpec1.setContent(new Intent(this,ExerciseActivity.class));
 			
-			TabSpec tabSpec2=myTabHost.newTabSpec("");
-			tabSpec2.setIndicator(getIndicatorView("",R.drawable.tongji_04));
+			TabSpec tabSpec2=myTabHost.newTabSpec("统计");
+			tabSpec2.setIndicator(getIndicatorView("统计",R.drawable.tongji));
 			tabSpec2.setContent(new Intent(this,CountActivity.class));
 		
-			TabSpec tabSpec3=myTabHost.newTabSpec("");
-			tabSpec3.setIndicator(getIndicatorView("",R.drawable.wo_05));
+			TabSpec tabSpec3=myTabHost.newTabSpec("我");
+			tabSpec3.setIndicator(getIndicatorView("我",R.drawable.wo));
 			tabSpec3.setContent(new Intent(this,Myself.class));
 			
 			myTabHost.addTab(tabSpec1);
@@ -51,6 +51,8 @@ public class TabHostActivity extends TabActivity {
 			View view=View.inflate(getApplicationContext(), R.layout.tabactivity_main_item, null);
 		    ImageView iv=(ImageView) view.findViewById(R.id.lianxi_item);
 		    iv.setImageResource(icon);
+		    TextView tv=(TextView) view.findViewById(R.id.e_name);
+		    tv.setText(name);
 		    return view;
 		}
 	

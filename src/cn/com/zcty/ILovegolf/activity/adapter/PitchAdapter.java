@@ -5,6 +5,7 @@ import java.util.List;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.model.QiuChangList;
 import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -52,8 +53,10 @@ public class PitchAdapter extends BaseAdapter {
 		TextView  distance=(TextView) view.findViewById(R.id.distance);
           
            pitchname.setText(qiuchanglists.get(poisition).getName());
+          // pitchname.setTextColor(Color.argb(155, 55, 155, 255)); 
             Log.i("-----pitchname-->>", ""+qiuchanglists.get(poisition).getName());
            address.setText(qiuchanglists.get(poisition).getAddress());
+         //  address.setTextColor(0x00000000);
            distance.setText(qiuchanglists.get(poisition).getDistance());
 		return view;
         }
