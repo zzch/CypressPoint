@@ -37,8 +37,31 @@ public class APIService {
 	  public static final String USERREGISTER = "http://123.57.210.52/api/v1/users/sign_up.json?";
       //发送验证码
 	 public static final String  YANZHENGMA = "http://123.57.210.52/api/v1/verification_code/send.json?";
-
-	  //急求记录
+	 
+	  //击球记录
 	  public static final String Jilu = "http://123.57.210.52/api/v1/strokes.json?";
+	  
+	  //更新用户头像
+	  public static final String HEAD = "http://123.57.210.52/api/v1/users/update_portrait.json?";
 
+	  //用户头像
+	  public static final String TOUXIANG = "http://123.57.210.52/api/v1/users/portrait.json?";
+
+	  //更新出生日期
+	  public static final String BRITHDAY = "http://123.57.210.52/api/v1/users/update_birthday.json?";
+	  
+	  //更新签名
+	  public static final String SIGNATURE = "http://123.57.210.52/api/v1/users/update_description.json?";
+	  
+	  //更新性别
+	  public static final String SEX = "http://123.57.210.52/api/v1/users/update_gender.json?";
+	  
+	  //更新昵称
+	  public static final String UPNAME = "http://123.57.210.52/api/v1/users/update_nickname.json?";
+	  
+	  //用户资料
+	  public static final String INFORMATION = "http://123.57.210.52/api/v1/users/details.json?";
+	  
+	  //用户头像
+	  public static final String TITLE = "http://123.57.210.52/api/v1/users/portrait.json?";
 }

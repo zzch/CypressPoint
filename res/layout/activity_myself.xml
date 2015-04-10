@@ -9,15 +9,7 @@
        android:layout_height="30dp"
        android:orientation="horizontal"
          >
-         <Button 
-           android:id="@+id/myself_back"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="返回"
-           android:layout_marginLeft="5dip"
-           android:background="@null"
-           
-             />
+        
          <TextView 
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
@@ -31,8 +23,9 @@
      </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/myself_head_self"
         android:layout_width="match_parent"
-        android:layout_height="106dp" >
+        android:layout_height="143dp" >
 
         <cn.com.zcty.ILovegolf.tools.CircleImageView
             android:id="@+id/myself_head"
@@ -58,6 +51,14 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="30dp"
             android:text="周鹤" />
+        <TextView
+            android:id="@+id/myself_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:text="签名" />
     </RelativeLayout>
 
     <RelativeLayout
