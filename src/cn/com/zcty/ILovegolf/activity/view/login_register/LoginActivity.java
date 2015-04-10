@@ -70,7 +70,7 @@ public class LoginActivity extends Activity {
 	 */
 	public void login(View v){
 		
-		 //Toast.makeText(this, "请您先注册！", Toast.LENGTH_LONG);
+		
 			//获取用户名
 			u_name=et_username.getText().toString().trim();
 			//获取密码

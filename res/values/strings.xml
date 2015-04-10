@@ -36,7 +36,6 @@
 
     <!--登录注册 -->
     <string name="zhuce">一键注册</string>
-    <string name="userlogin">用户登录</string>
     <string name="mobileregister">手机注册</string>
     <string name="login">登录</string>
     <string name="register">注册</string>

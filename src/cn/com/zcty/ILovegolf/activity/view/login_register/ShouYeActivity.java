@@ -1,11 +1,20 @@
 package cn.com.zcty.ILovegolf.activity.view.login_register;
 
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.activity.view.QuickScoreActivity;
 import cn.com.zcty.ILovegolf.activity.view.TabHostActivity;
+import cn.com.zcty.ILovegolf.model.User;
+import cn.com.zcty.ILovegolf.tools.RegexMobile;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 import android.app.Activity;
@@ -16,9 +25,13 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 /**
@@ -30,13 +43,69 @@ public class ShouYeActivity extends Activity {
 
 	 private Intent intent;
 	 private Context context;
-	 
+	 private EditText et_username;
+     private EditText et_password;
+     private Button but_login;
+     private String u_name;
+     private String p_pwd;
+     private int code;
+     private String isBoolean;
+     private String err;
+     private String messg = "";
+     Handler handler = new Handler(){
+
+		@Override
+		public void handleMessage(Message msg) {
+			 switch(msg.what){
+			 case 0:
+				 Toast.makeText(ShouYeActivity.this, "用户名不能为空！", Toast.LENGTH_SHORT).show();
+				 break;
+			 case 1:
+				 Toast.makeText(ShouYeActivity.this, "用户名不合法！", Toast.LENGTH_SHORT).show();
+				 break;
+			 case 2:
+				 Toast.makeText(ShouYeActivity.this, "密码不能为空！", Toast.LENGTH_SHORT).show();
+				 break;
+			 case 3:
+				if(msg.arg1==0){
+				   Toast.makeText(ShouYeActivity.this, "网络异常！", Toast.LENGTH_SHORT).show();
+					}
+				if(msg.arg1==1){
+					if(messg.equals("无效的密码")){
+						//Log.i("mimaceshi", msg.obj+"");
+						 Toast.makeText(ShouYeActivity.this, "密码错误！", Toast.LENGTH_SHORT).show();
+					}
+					else if(messg.equals("未注册过的用户")){
+						Log.i("mimaceshi", msg.obj+"");
+						 Toast.makeText(ShouYeActivity.this, "您还没有注册！", Toast.LENGTH_SHORT).show();
+					}else{
+						new ShouYeTask_login().start();
+					//Toast.makeText(ShouYeActivity.this, "登录成功！", Toast.LENGTH_SHORT).show();		
+					    Intent intent = new Intent(ShouYeActivity.this,QuickScoreActivity.class);
+					    startActivity(intent);
+					    finish();
+					    }
+					}
+					
+				 break;
+			 }
+			
+		}
+    		
+     };
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_shouye);
+		initView();
+	}
+	
+	public void initView(){
+		et_username=(EditText) findViewById(R.id.et_username);
+		et_password=(EditText) findViewById(R.id.et_password);
+		but_login=(Button) findViewById(R.id.but_login);
 	}
 	
 	/**
@@ -95,20 +164,191 @@ public class ShouYeActivity extends Activity {
 		
 	}
 	/**
-	 * 登陆
+	 * 手机注册
 	 * @param v
 	 */
 	public void but_login(View v){
-		intent=new Intent(ShouYeActivity.this,LoginActivity.class);
+		intent=new Intent(ShouYeActivity.this,RegisterActivity.class);
 		startActivity(intent);
 		finish();
 	}
 	/**
-	 * 手机注册
+	 * 登录
 	 * @param v
 	 */
-	public void but_mobile_reg(View v){
+	public void login(View v){
+		
+		new ShouYeTask().start();	
+	}
+	
+	class ShouYeTask extends Thread{
+		public void MyTask(){
+			
+		}
+		public void run(){
+			getData();
+		}
+		
+		public void getData(){
+			
+			SharedPreferences sharedpre=getSharedPreferences("register",Context.MODE_PRIVATE);
+			String token=sharedpre.getString("token", "token");
+			//获取用户名
+			u_name=et_username.getText().toString().trim();
+			//获取密码
+			p_pwd=et_password.getText().toString().trim();
+			Message msg = handler.obtainMessage(); 
+			 
+			if("".equals(u_name))
+			{
+				 msg.what = 0;  
+                 handler.sendMessage(msg); 
+                 return;
+			}else if(!RegexMobile.VildateMobile(u_name)){
+				 msg.what = 1;  
+                 handler.sendMessage(msg);
+                 return;
+			}else if("".equals(p_pwd)){
+				 msg.what = 2;  
+                 handler.sendMessage(msg); 
+                 return;
+			}
+			String url=APIService.USERLOGIN+"phone="+u_name+"&password="+p_pwd+"&token="+token;
+			String data=HttpClientPost(url);
+			Log.i("jsonData======", "----"+data);
+			
+			
+	    		if(code==404||code>=500){
+	    			//弹出框提醒 网络异常
+	    			isBoolean = "0";
+					msg.arg1 = 0;
+	    		}else{
+	    			//json解析
+	    			try {
+	    				msg.arg1 = 1;
+	    	    		isBoolean = "1";
+	    	    		err = "";
+	    	    		messg = "";
+						JSONObject jsonObject=new JSONObject(data);						
+						 err = jsonObject.getString("error_code");
+						 messg = jsonObject.getString("message");
+						 Log.i("mimaceshi", messg);
+					} catch (JSONException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+	    			
+	    		}
+	    		msg.what = 3;	
+	    		handler.sendMessage(msg);
+		}
 		
 	}
+	class ShouYeTask_login extends Thread{
+		public void MyTask(){
+			
+		}
+		public void run(){
+			getData();
+		}
+		
+		public void getData(){
+			
+			SharedPreferences sharedpre=getSharedPreferences("register",Context.MODE_PRIVATE);
+			String token=sharedpre.getString("token", "token");
+			//获取用户名
+			u_name=et_username.getText().toString().trim();
+			//获取密码
+			p_pwd=et_password.getText().toString().trim();
+			Message msg = handler.obtainMessage(); 
+			 
+			if("".equals(u_name))
+			{
+				 msg.what = 0;  
+                 handler.sendMessage(msg); 
+                 return;
+			}else if(!RegexMobile.VildateMobile(u_name)){
+				 msg.what = 1;  
+                 handler.sendMessage(msg);
+                 return;
+			}else if("".equals(p_pwd)){
+				 msg.what = 2;  
+                 handler.sendMessage(msg); 
+                 return;
+			}
+			String url=APIService.USERLOGIN+"phone="+u_name+"&password="+p_pwd+"&token="+token;
+			String data=HttpClientPost(url);
+			Log.i("jsonData======", "----"+data);
+			
+			
+	    		
+	    			//json解析
+	    			try {
+	    				
+	   
+						JSONObject jsonObject=new JSONObject(data);						
+						
+						
+								Log.i("yunxing","zhouhe");
+								String uuid=jsonObject.getString("uuid");
+								String type=jsonObject.getString("type");
+								String nickname=jsonObject.getString("nickname");
+								String token_r=jsonObject.getString("token");	
+								//保存数据
+								SharedPreferences sharedpres=getSharedPreferences("register",Context.MODE_PRIVATE);
+								SharedPreferences.Editor editor = sharedpres.edit();
+							    editor.putString("uuid", uuid);
+							    editor.putString("type", type);
+								editor.putString("nickname", nickname);
+								editor.putString("token", token_r);
+								editor.commit();
+						 
+						 
+					} catch (JSONException e) {
+						e.printStackTrace();
+					}
+	    			
+	    		
+	    			
+	    		
+		}
+		
+	}
+	/**
+	 * 忘记密码按钮
+	 * @param v
+	 */
+	public void forget_password(View v){
+		
+		Intent intent=new Intent(ShouYeActivity.this,ForGetPasswordActivity.class);
+		startActivity(intent);
+		finish();
+		
+	}
+	
+	 public String HttpClientPost(String url)
+		{
+		  String str = "";
+			try {
+				//创建HttpClient对象
+				HttpClient client=new DefaultHttpClient();
+				//创建请求路径的HttpGet对象
+				HttpPost httpPost=new HttpPost(url);   
+				//client将response与httpPost连接
+				HttpResponse response=client.execute(httpPost);			
+				//找到服务返回的状态码 200表示成功
+				code=response.getStatusLine().getStatusCode();
+				Log.i("code---->", ""+code);
+				
+					str = EntityUtils.toString(response.getEntity(), "utf-8");
+					//return str;
+				
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+				
+			}
+			return str;
+		}
  	
 }

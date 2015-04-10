@@ -6,6 +6,25 @@
     android:gravity="center_horizontal"
     android:background="@color/black"
    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_mid_xx_title"
+        android:background="@drawable/e_daohang_01" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="我爱高尔夫"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_mid_x" />
+
+        
+    </RelativeLayout>
+    
     <Button 
         android:id="@+id/but1"
         android:layout_width="300dp"
@@ -15,29 +34,94 @@
         android:gravity="center"
         android:textColor="@color/green" 
         android:onClick="but_register"
-        android:layout_marginTop="@dimen/view_large_xxx_v"
+        android:layout_marginTop="@dimen/view_mid_x"
         />
       <Button 
         android:id="@+id/but2"
-        android:layout_width="300dp"
-        android:layout_height="@dimen/view_mid_xx_title"
-        android:text="@string/userlogin"
-        android:background="@drawable/button"
-        android:gravity="center"
-        android:textColor="@color/green" 
-        android:onClick="but_login"
-        android:layout_marginTop="@dimen/view_mid_xx_title"
-        />
-       <Button 
-        android:id="@+id/but3"
         android:layout_width="300dp"
         android:layout_height="@dimen/view_mid_xx_title"
         android:text="@string/mobileregister"
         android:background="@drawable/button"
         android:gravity="center"
         android:textColor="@color/green" 
-        android:onClick="but_mobile_reg"
-        android:layout_marginTop="@dimen/view_mid_xx_title"
+        android:onClick="but_login"
+        android:layout_marginTop="@dimen/view_small_xx_w"
         />
+     <LinearLayout 
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical"
+          android:gravity="center"
+         >
+         <TextView 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+            android:textColor="@color/white"
+             android:textSize="@dimen/txsize_mid_x"
+             android:text="登录"
+             />
+         
+         <EditText 
+             android:id="@+id/et_username"
+             android:layout_width="300dp"
+             android:layout_height="wrap_content"
+             android:hint="请输入手机号"
+             />
+          <EditText 
+             android:id="@+id/et_password"
+             android:layout_width="300dp"
+             android:layout_height="wrap_content"
+             android:hint="请输入密码"
+             />
+           <Button 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="忘记密码？"
+            android:background="@null"
+            android:layout_marginLeft="90dip"
+            android:layout_marginTop="10dip"
+            android:onClick="forget_password"
+           
+            />
+     </LinearLayout>
+       <Button 
+        android:id="@+id/but_login"
+        android:layout_width="300dp"
+        android:layout_height="@dimen/view_mid_xx_title"
+        android:text="@string/login"
+        android:background="@drawable/button"
+        android:gravity="center"
+        android:textColor="@color/green" 
+        android:onClick="login"
+        android:layout_marginTop="30dp"
+        />
+       
+        <LinearLayout 
+          android:layout_width="match_parent"
+          android:layout_height="50dip"
+          android:orientation="horizontal"
+          android:layout_marginTop="30dip"
+          android:gravity="center_vertical"
+          
+            >
+            <TextView 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="微信"
+             android:layout_marginLeft="70dip"
+                />
+            <TextView 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="微博"
+             android:layout_marginLeft="70dip"
+                />
+            <TextView 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="QQ"
+             android:layout_marginLeft="70dip"
+                />
+        </LinearLayout>
 
 </LinearLayout>

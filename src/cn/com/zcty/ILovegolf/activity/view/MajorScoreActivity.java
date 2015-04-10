@@ -476,7 +476,7 @@ public class MajorScoreActivity extends Activity {
 				c = "unplayable";
 			}
 		
-			String path = APIService.Jilu+"token="+token+"&scorecard_uuid="+uuid
+			String path = APIService.JILU+"token="+token+"&scorecard_uuid="+uuid
 					+"&distance_from_hole="+majorArray.get(majorArray.size()-1).getDistance()+"&point_of_fall="+c+
 					"&penalties="+majorArray.get(majorArray.size()-1).getPentails()+"&club="+popal;
 			try {
@@ -517,7 +517,7 @@ public class MajorScoreActivity extends Activity {
 			SharedPreferences sp = getSharedPreferences("register", Context.MODE_PRIVATE);
 			String token = sp.getString("token", "token");
 
-			String path = APIService.Jilu+"token="+token+"&uuid="+duid;
+			String path = APIService.JILU+"token="+token+"&uuid="+duid;
 			String jsonData = HttpUtils.HttpClientDelete(path);
 			JSONObject jsObject;
 			try {
@@ -550,7 +550,7 @@ public class MajorScoreActivity extends Activity {
 			String uuid = intent.getStringExtra("uuid");
 			
 		
-			String path = APIService.Jilu+"token="+token+"&scorecard_uuid="+uuid;
+			String path = APIService.JILU+"token="+token+"&scorecard_uuid="+uuid;
 			try {
 				String jsonData = HttpUtils.HttpClientGet(path);
 				Log.i("jsondata", jsonData);
@@ -608,7 +608,7 @@ public class MajorScoreActivity extends Activity {
 				c = "unplayable";
 			}
 		
-			String path = APIService.Jilu+"token="+token+"&uuid="+id
+			String path = APIService.JILU+"token="+token+"&uuid="+id
 					+"&distance_from_hole="+distance+"&point_of_fall="+c+
 					"&penalties="+pentails+"&club="+popal;
 			try {

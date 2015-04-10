@@ -2,42 +2,33 @@ package cn.com.zcty.ILovegolf.model;
 
 public class User {
 	
-	private int uuid; 
-	private String nickname;
-	private int token;
+	private String username;
+	private String password;
 	
 	public User(){}
-
-	public User(int uuid, String nickname, int token) {
+	
+	public User(String username, String password) {
 		super();
-		this.uuid = uuid;
-		this.nickname = nickname;
-		this.token = token;
+		this.username = username;
+		this.password = password;
 	}
 
-	public int getUuid() {
-		return uuid;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUuid(int uuid) {
-		this.uuid = uuid;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
-	public String getNickname() {
-		return nickname;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-
-	public int getToken() {
-		return token;
-	}
-
-	public void setToken(int token) {
-		this.token = token;
-	}
-
+	
+	
     
 }
