@@ -1,7 +1,9 @@
 ﻿package cn.com.zcty.ILovegolf.utils;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -14,6 +16,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.http.Header;
+import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
@@ -24,14 +28,25 @@ import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
+import org.apache.http.entity.mime.MultipartEntity;
+import org.apache.http.entity.mime.content.ContentBody;
+import org.apache.http.entity.mime.content.FileBody;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.params.HttpParams;
 import org.apache.http.util.EntityUtils;
+
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.model.QuickContent;
 
 import android.app.AlertDialog;
+import android.app.DownloadManager.Request;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Log;
 
 //Http请求的工具类
@@ -192,4 +207,78 @@ public class HttpUtils
 		
 		return str;
 	}
-}
+	/**
+	 * 上传图片
+	 * 
+	 * @param url
+	 *            上传地址
+	 * @param filepath
+	 *            图片路径
+	 * @return
+	 */
+	@SuppressWarnings("deprecation")
+	public static String uploadImage(String url, String filepath) {
+		String str = "";
+	    File file = new File(filepath);
+
+	    if (!file.exists()) {
+	        Log.i("leslie", "file not exists");
+	        return null;
+	    }
+
+	    HttpClient client = new DefaultHttpClient();
+	    HttpPut put = new HttpPut(url);
+
+	    MultipartEntity entity = new MultipartEntity();
+	    ContentBody fileBody = new FileBody(file);
+	    // image 是服务端读取文件的 key
+	    entity.addPart("portrait", fileBody);
+	    put.setEntity(entity);
+	    HttpResponse response;
+	    try {
+	        response = client.execute(put);
+	        int statusCode = response.getStatusLine().getStatusCode();
+	        String result = EntityUtils.toString(response.getEntity(), "utf-8");
+	        Log.i("ceshishuju", result+"aa");
+	        if (statusCode == 201) {
+	            // upload success
+	            // do something
+	        	//str = EntityUtils.toString(response.getEntity(),"utf-8")
+	        }
+
+	        return result;
+	    } catch (ClientProtocolException e) {
+	        e.printStackTrace();
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+
+	    return null;
+	} 
+	
+	public static Bitmap imageloder(String url){
+		HttpGet httpRequest = new HttpGet(url); 
+		HttpClient httpclient = new DefaultHttpClient();
+		try {
+			HttpResponse httpResponse = httpclient.execute(httpRequest);
+			Log.i("cunzaifou", httpResponse.getStatusLine().getStatusCode()+"");
+			if(httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK){  
+				//取得相关信息 取得HttpEntiy   
+			HttpEntity httpEntity = httpResponse.getEntity();  
+			//获得一个输入流   
+			InputStream is = httpEntity.getContent();  
+			Bitmap bitmap = BitmapFactory.decodeStream(is);  
+			is.close();  
+			
+			return bitmap;
+			}
+		} catch (ClientProtocolException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null; 
+	}
+		 }
+
