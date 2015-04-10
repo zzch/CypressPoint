@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/anlyze_tishi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:text="所有统计数据将基于您有完整记分场次计算" />
+
+    <RelativeLayout
+        android:id="@+id/anlyze_time_start_relative"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/anlyze_tishi"
+        android:layout_marginTop="20dp" >
+
+        <TextView
+            android:id="@+id/anlyze_time_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="开始时间" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="100dp"
+            android:text="2013-12-08" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/anlyze_time_end_relative"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@+id/anlyze_time_start_relative"
+        android:layout_marginTop="20dp" >
+
+        <TextView
+            android:id="@+id/anlyze_time_end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="结束时间" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/analyze_time_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/anlyze_time_end_relative"
+        android:layout_marginTop="20dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <cn.com.zcty.ILovegolf.tools.WheelView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 />
+            <cn.com.zcty.ILovegolf.tools.WheelView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 />
+            <cn.com.zcty.ILovegolf.tools.WheelView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

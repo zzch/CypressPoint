@@ -1,6 +1,8 @@
 package cn.com.zcty.ILovegolf.activity.view.myself;
 
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
@@ -17,6 +19,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -65,6 +68,7 @@ public class Myself extends Activity {
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
 				imageHead.setImageBitmap(bitmap);
+				saveMyBitmap(bitmap);
 			}
 		
 		};
@@ -78,10 +82,12 @@ public class Myself extends Activity {
 		initView();		
 		new Ziliao().start();
 		
-		//Intent intent = getIntent();
-		//if(!intent.getStringExtra("1").equals("1")){
+			if(fileIsExists()){
+				imageHead.setImageBitmap(converToBitmap(100,100));
+			}else{
 			new Touxiang().start();
-		//}
+			}
+	
 	}
 	private void getListeners() {
 		headLayout.setOnClickListener(new OnClickListener() {
@@ -101,7 +107,6 @@ public class Myself extends Activity {
 		headLayout = (RelativeLayout) findViewById(R.id.myself_head_self);
 		signTextView = (TextView) findViewById(R.id.myself_sign);
 		imageHead = (CircleImageView) findViewById(R.id.myself_head);
-		imageHead.setImageBitmap(converToBitmap(30,30));
 		SharedPreferences sp = getSharedPreferences("register", MODE_PRIVATE);
 		String name = sp.getString("nickname", "nickname");
 		nameTextView.setText(name);
@@ -205,5 +210,42 @@ public class Myself extends Activity {
 		handler1.sendMessage(msg);
 	}
 	}
+	/**
+	 * 把bitmap存入手机文件目录
+	 * @param bitName
+	 */
+	@SuppressLint("SdCardPath")
+	public void saveMyBitmap(Bitmap bitName)  {
+        File f = new File("/mnt/sdcard/testfile"); 
+        if(f.exists()){
+        	f.delete();
+        }else{
+        	f.mkdir();
+        }
+        FileOutputStream fOut = null;
+        try {
+                fOut = new FileOutputStream("/mnt/sdcard/testfile/golf.jpg");
+                bitName.compress(Bitmap.CompressFormat.JPEG, 50, fOut);
+            	fOut.flush();
+            	fOut.close();
+        } catch (Exception e) {
+                e.printStackTrace();
+        }
+       
+} 
+	public boolean fileIsExists(){
+
+	              File f=new File("/mnt/sdcard/testfile");
+
+		            if(!f.exists()){
+
+		                       return false;
+
+		               }
+
+		               return true;
+
+		        }
+
 	
 }

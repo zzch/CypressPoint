@@ -12,9 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/view_mid_xx_xx"
        
-        android:textColor="#ced1d4"
+        android:textColor="@color/gold"
         android:textSize="@dimen/txsize_small_xxx"
         android:layout_marginLeft="@dimen/view_small_x"
-        android:text="TextView" />
+        android:text="北京市" />
 
 </LinearLayout>

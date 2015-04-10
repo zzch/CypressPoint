@@ -129,6 +129,7 @@ public class ChoosePitchActivity extends Activity {
 	//搜索按钮点击事件
 	public void qiehuan(View v){
 		Intent intent=new Intent(ChoosePitchActivity.this,ListChoosePitchActivity.class);
+		intent.putExtra("sign", "1");
 		startActivity(intent);
 		finish();
 	}

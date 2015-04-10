@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/e_daohang_01" >
+
+        <Button
+            android:id="@+id/analyze_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:text="下一步"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/txsize_small_xx" />
+
+        <TextView
+            android:id="@+id/analyze_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/playset"
+            android:textColor="@color/white"
+            android:textSize="22dp" />
+        <Button
+            android:id="@+id/analyze_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@null"
+            android:text="返回"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/txsize_small_xx" />
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/analyze_radio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/analyze_bisai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/group_1"
+            android:button="@null"
+            android:text="前九"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+
+        <RadioButton
+            android:id="@+id/analyze_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/group_2"
+            android:button="@null"
+            android:gravity="center"
+            android:text="后九"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+
+        <RadioButton
+            android:id="@+id/analyze_qiuchang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/group_2"
+            android:button="@null"
+            android:gravity="center"
+            android:text="后九"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+    </RadioGroup>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/analyze_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </android.support.v4.view.ViewPager>
+
+</LinearLayout>

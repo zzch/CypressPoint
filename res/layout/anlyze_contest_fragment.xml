@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="所有统计数据将基于您有完整记分场次计算"
+        />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" >
+
+        <Button
+            android:id="@+id/anlyze_contest_5"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="最近5场" />
+
+        <Button
+            android:id="@+id/anlyze_contest_10"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/anlyze_contest_5"
+            android:layout_marginTop="15dp"
+            android:text="最近10场" />
+
+        <Button
+            android:id="@+id/anlyze_contest_30"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/anlyze_contest_10"
+            android:layout_marginTop="15dp"
+            android:text="最近30场" />
+
+        <Button
+            android:id="@+id/anlyze_contest_50"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/anlyze_contest_30"
+            android:layout_marginTop="15dp"
+            android:text="最近50场" />
+
+        <Button
+            android:id="@+id/anlyze_contest_100"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/anlyze_contest_50"
+            android:layout_marginTop="15dp"
+            android:text="最近100场" />
+
+        <Button
+            android:id="@+id/anlyze_contest_all"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/anlyze_contest_100"
+            android:layout_marginTop="15dp"
+            android:text="全部场次" />
+    </RelativeLayout>
+
+</RelativeLayout>

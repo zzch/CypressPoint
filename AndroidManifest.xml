@@ -60,6 +60,7 @@
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.MajorScoreCardActivity" android:screenOrientation="portrait"></activity>  
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.MajorScoreActivity" android:screenOrientation="portrait"></activity> 
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.myself.InformationChangesActivity" android:screenOrientation="portrait"></activity>     
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.count.AnalyzeActivity" android:screenOrientation="portrait"></activity> 
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.myself.SelectPicPopupWindow" android:theme="@style/MyDialogStyleBottom" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.StatisticsAvtivity"
             	 android:configChanges="orientation|screenSize"

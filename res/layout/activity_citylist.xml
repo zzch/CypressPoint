@@ -3,14 +3,14 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" 
-    android:background="@color/black"
+    android:background="@anim/pingpu"
     android:gravity="center"
      >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/view_mid_xx_title"
-        android:background="@drawable/e_daohang_01" >
+        android:background="@anim/title_pingpu" >
 
         <TextView
             android:id="@+id/textView1"
@@ -20,17 +20,19 @@
             android:layout_centerVertical="true"
             android:gravity="center"
             android:text="@string/searchpith"
-            android:textColor="@color/white"
+            android:textColor="@color/gold"
             android:textSize="@dimen/txsize_mid_x" />
 
         <Button
             android:id="@+id/search_back"
-            android:layout_width="@dimen/view_mid_xx"
-            android:layout_height="@dimen/view_mid_x"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
             android:layout_alignBaseline="@+id/textView1"
             android:layout_alignBottom="@+id/textView1"
             android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
             android:background="@drawable/back_button" />
+
     </RelativeLayout>
 
     <cn.com.zcty.ILovegolf.activity.exercise.city.ClearEditText
@@ -39,8 +41,10 @@
         android:layout_width="340dp"
         android:layout_height="@dimen/view_mid_x"
         android:background="@drawable/search_bar_edit_pressed"
-        android:drawableLeft="@drawable/search_bar_icon_normal"
+        android:drawableLeft="@drawable/search_bar_icon"
         android:hint="请输入关键字"
+        android:textColorHint="@color/gold_half"
+        android:textColor="@color/gold_half"
         android:singleLine="true"
         android:textSize="@dimen/txsize_small_x" />
     
@@ -56,6 +60,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_gravity="center"
+            android:groupIndicator="@null"
             android:divider="@null" />
 		    <ListView
         android:id="@+id/listView1"

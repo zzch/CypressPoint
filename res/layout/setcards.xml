@@ -3,8 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/e_scorecard_bg"
+     android:background="@drawable/pingpu_onclick"
      >
+     <!--  
+     <LinearLayout 
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:orientation="vertical"
+    
+         >
+         -->
 
     <RelativeLayout
         android:id="@+id/rrr"
@@ -33,7 +41,7 @@
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/e_card_yuan"
                 android:gravity="center"
-                android:textColor="@color/white"
+                android:textColor="@color/gold"
                 android:textSize="@dimen/txsize_large_xx" />
         </RelativeLayout>
 
@@ -61,7 +69,7 @@
                 android:layout_marginTop="@dimen/view_small_xx_j"
                 android:layout_marginRight="40dp"
                 android:text="ss"
-                android:textColor="@color/white"
+                android:textColor="@color/gold_70"
                 android:textSize="@dimen/txsize_small_xx" />
         </RelativeLayout>
     </RelativeLayout>
@@ -87,7 +95,7 @@
             android:layout_alignLeft="@+id/distance_image"
             android:layout_centerVertical="true"
             android:textSize="@dimen/txsize_small_xxx"
-            android:textColor="#ced1d4"
+            android:textColor="@color/gold_half"
             android:layout_marginLeft="@dimen/view_small_xx"
             android:text="distance" />
 
@@ -98,7 +106,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/view_small_xx"
-            android:textColor="#ced1d4"
+            android:textColor="@color/gold_half"
             android:textSize="@dimen/txsize_small_xx"
             android:text="cool" />
 
@@ -118,7 +126,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/view_mid_x"
             android:text="4"
-            android:textColor="@color/white"
+            android:textColor="@color/gold_70"
             android:textSize="@dimen/txsize_mid_xx" />
 
         <TextView
@@ -128,7 +136,7 @@
             android:layout_alignLeft="@+id/par"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="15dp"
-            android:textColor="@color/white"
+            android:textColor="@color/gold_half"
             android:text="p"
             android:textSize="@dimen/txsize_small_x" />
 
@@ -138,7 +146,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="80dp"
-            android:textColor="@color/white"
+            android:textColor="@color/gold_70"
             android:text="335"
             android:textSize="@dimen/txsize_mid_xx"  />
 
@@ -149,15 +157,22 @@
             android:layout_alignLeft="@+id/par"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="85dp"
-            android:textColor="@color/white"
+            android:textColor="@color/gold_half"
             android:text="y"
             android:textSize="@dimen/txsize_small_x" />
     </RelativeLayout>
 
 	
     <View
-        android:layout_width="1dip"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/gold" />
+   <!--  
+    </LinearLayout>
+     <View
+        android:layout_width="0.2dp"
         android:layout_height="match_parent"
-        android:background="@drawable/line" />
+        android:background="@color/gold" />
+        --> 
 
 </LinearLayout>

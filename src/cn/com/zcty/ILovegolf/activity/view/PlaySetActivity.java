@@ -14,6 +14,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -166,7 +167,7 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 									playset_t.set(1, "开球T台");
 									adapter.notifyDataSetChanged();
 									button_Start.setClickable(false);
-									button_Start.setTextColor(Color.GRAY);
+									button_Start.setTextColor(0x50F8d57a);
 						}
 						
 						@Override
@@ -210,7 +211,7 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 							adapter.notifyDataSetChanged();
 							
 							if(listViewPlaySet_t.getVisibility()!=0&&!playset.equals("开球T台")){
-								button_Start.setTextColor(Color.WHITE);
+								button_Start.setTextColor(0xffF8d57a);
 								button_Start.setClickable(false);
 								button_Start.setOnClickListener(new OnClickListener() {
 									
@@ -235,6 +236,8 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 							
 						}
 						
+						
+
 						@Override
 						public void onLeftBtnClick() {
 							
@@ -279,7 +282,7 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 									playset_t.set(0, diamond_t.get(position));	
 									playset_t.set(1, "开球T台");
 									button_Start.setClickable(false);
-									button_Start.setTextColor(Color.GRAY);
+									button_Start.setTextColor(0x50F8d57a);
 									adapter_t.notifyDataSetChanged();
 						}
 						
@@ -322,7 +325,7 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 							adapter_t.notifyDataSetChanged();
 								if(!playset_t.equals("开球T台")){
 									button_Start.setClickable(true);
-									button_Start.setTextColor(Color.WHITE);
+									button_Start.setTextColor(0xffF8d57a);
 									button_Start.setOnClickListener(new OnClickListener() {
 										
 										@Override

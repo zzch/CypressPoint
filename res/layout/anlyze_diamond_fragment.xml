@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <TextView
+        android:id="@+id/anlyze_tishi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:text="所有统计数据将基于您有完整记分场次计算" />
+    <TextView
+        android:id="@+id/anlyze_tishi_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/anlyze_tishi"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        android:text="历史记录" />
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/anlyze_tishi_1"
+        android:layout_marginTop="10dp" >
+    </ListView>
+
+</RelativeLayout>

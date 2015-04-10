@@ -51,7 +51,9 @@ public class ArrayNumberWheelAdapter extends AbstractWheelTextAdapter {
         if (index >= 0 && index < items.length) {
         	String item = items[index];
             if (item instanceof CharSequence) {
+            	
                 return (CharSequence) item+"码";
+                
             }
             return item.toString()+"码";
         }

@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:text="自己"
         android:layout_marginTop="5dp"
-        android:textColor="@color/green"
+        android:textColor="@color/gold"
         android:textSize="@dimen/txsize_mid_x"
         />
    <TextView 
@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="成绩"
-        android:textColor="#797979"
+        android:textColor="@color/gold_half"
         android:textSize="@dimen/txsize_small_xx"
         />
 </LinearLayout>

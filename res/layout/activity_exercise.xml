@@ -3,13 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" 
     android:orientation="vertical" 
-    android:background="@color/black"
+    android:background="@anim/pingpu"
     >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/view_mid_xx_title"
-        android:background="@drawable/e_daohang_01"
+        android:layout_height="wrap_content"
+        android:background="@anim/title_pingpu"
         android:gravity="center"
         android:orientation="horizontal" >
 
@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/title"
-            android:textColor="@color/white"
+            android:textColor="@color/gold"
             android:textSize="@dimen/txsize_mid_x" />
     </LinearLayout>
    
@@ -33,11 +33,12 @@
         <Button
             android:id="@+id/shiyitu_one"
             android:layout_width="300dp"
-            android:layout_height="@dimen/view_mid_xx_title"
+            android:layout_height="@dimen/view_mid_xx_xx"
             android:background="@drawable/button"
             android:onClick="shiyitu"
             android:text="@string/major_card"
-            android:textColor="@color/green"
+            android:textSize="20dp"
+            android:textColor="@color/gold"
              />
 
         <TextView
@@ -45,31 +46,32 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/view_small_x"
             android:text="@string/text_1"
-            android:textColor="@color/gray"
+            android:textColor="@color/gold_half"
             />
          <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/text_3"
-            android:textColor="@color/gray"
+            android:textColor="@color/gold_half"
             />
 
           <Button
             android:id="@+id/kuaijie_one"
             android:layout_width="300dp"
-            android:layout_height="@dimen/view_mid_xx_title"
+            android:layout_height="@dimen/view_mid_xx_xx"
             android:layout_marginTop="@dimen/view_mid_xx"
             android:background="@drawable/button"
             android:onClick="kuaijie"
             android:text="@string/easy_card"
-            android:textColor="@color/green" />
+            android:textSize="20dp"
+            android:textColor="@color/gold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/view_small_x"
-            android:hint="@string/text_2"
-            android:textColor="@color/gray" />
+            android:text="@string/text_2"
+            android:textColor="@color/gold_half" />
         
     </LinearLayout>
   

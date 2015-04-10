@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical" 
     android:gravity="center_vertical"
-    android:background="@drawable/count"
+    android:background="@drawable/pingpu_onclick"
     >
 
    <TextView
@@ -12,10 +12,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/view_small_x"
-            android:layout_marginTop="@dimen/view_small_xx_w"
+            android:layout_marginTop="10dp"
             android:text="@string/pith_name"
-            android:textColor="@color/white"
-            android:textSize="@dimen/txsize_small_x"/>
+            android:textColor="@color/gold_70"
+            android:textSize="@dimen/txsize_small_x"
+            android:maxEms="13" 
+            android:singleLine="true"
+            android:ellipsize="end"
+            />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -27,7 +31,7 @@
                 android:layout_height="@dimen/view_small_xx_w"
                 android:layout_marginLeft="@dimen/view_small_x"
                 android:layout_marginTop="@dimen/view_small_x"
-                android:src="@drawable/e_address_image" />
+                android:src="@drawable/address_image" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -36,8 +40,19 @@
                 android:layout_marginLeft="@dimen/view_small_x"
                 android:layout_marginTop="8dp"
                 android:text="北京市*******路*****号"
-                android:textColor="@color/gray"
-                android:textSize="@dimen/txsize_small_x" />
+                android:textColor="@color/gold_half"
+                android:textSize="@dimen/txsize_small_x"
+                android:maxEms="13" 
+                android:singleLine="true"
+                android:ellipsize="end"
+               />
         </LinearLayout>
+        
+        <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/gold_half"
+        android:layout_marginTop="10dp"
+       />
 
 </LinearLayout>

@@ -3,11 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center"
+    android:background="@anim/pingpu"
     android:orientation="vertical" >
 	<RelativeLayout 
        android:layout_width="match_parent"
-       android:layout_height="30dp"
+       android:layout_height="@dimen/view_mid_xx_title"
        android:orientation="horizontal"
+       android:background="@drawable/e_daohang_01"
          >
         
          <TextView 
@@ -16,6 +18,7 @@
            android:text="个人信息"
            android:layout_centerVertical="true"
            android:layout_centerHorizontal="true"
+           android:textColor="@color/gold"
            android:textSize="20dip"
            android:layout_marginLeft="25dip"
              />

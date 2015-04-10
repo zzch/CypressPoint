@@ -5,13 +5,14 @@
     android:gravity="center"    
     android:orientation="vertical" >
 
+
   <RelativeLayout
          android:layout_width="match_parent"
          android:layout_height="50dp"
          android:background="@drawable/e_daohang_01" >
 
          <Button
-             android:id="@+id/playset_start"
+             android:id="@+id/count_start"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:layout_alignParentBottom="true"
@@ -34,5 +35,6 @@
 
          
      </RelativeLayout>
+
   
 </LinearLayout>

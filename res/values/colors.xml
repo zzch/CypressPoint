@@ -5,8 +5,13 @@
      <color name="black">#17191c</color>
      <!-- 白色 -->
      <color name="white">#ced1d4</color>
-     <!-- 绿色 -->
-     <color name="green">#25b065</color>
+     <!-- 金色 -->
+     <color name="gold">#F8d57a</color>
+     <!-- 金色透明度50 -->
+     <color name="gold_half">#50F8d57a</color>
+     
+      <!-- 金色透明度70 -->
+     <color name="gold_70">#70F8d57a</color>
      <!-- 灰色 -->
      <color name="gray">#797979</color>
      
@@ -19,7 +24,7 @@
     <color name="blend_item_theme_color_black">#ff393d43</color>
     <color name="grays">#ffcccccc</color>
     <color name="textview">#ffffcc99</color>
-    <color name="province_line_border">#ced1d4</color>
+    <color name="province_line_border">#70F8d57a</color>
     
     
 </resources>
