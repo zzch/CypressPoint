@@ -6,8 +6,8 @@
     
     <!-- 简单计分卡 -->
     <string name="title">选择记分卡</string>
-    <string name="major_card">专业记分卡</string>
-    <string name="easy_card">简单记分卡</string>
+    <string name="major_card">专 业 记 分 卡</string>
+    <string name="easy_card">简 单 记 分 卡</string>
     <string name="new_build">新建</string>
     <string name="text_1">记录更加精准，</string>
     <string name="pith_name">北京燕西高尔夫球俱乐部</string>

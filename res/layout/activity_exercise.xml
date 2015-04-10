@@ -33,10 +33,11 @@
         <Button
             android:id="@+id/shiyitu_one"
             android:layout_width="300dp"
-            android:layout_height="@dimen/view_mid_xx_title"
+            android:layout_height="@dimen/view_mid_xx_xx"
             android:background="@drawable/button"
             android:onClick="shiyitu"
             android:text="@string/major_card"
+            android:textSize="20dp"
             android:textColor="@color/gold"
              />
 
@@ -57,11 +58,12 @@
           <Button
             android:id="@+id/kuaijie_one"
             android:layout_width="300dp"
-            android:layout_height="@dimen/view_mid_xx_title"
+            android:layout_height="@dimen/view_mid_xx_xx"
             android:layout_marginTop="@dimen/view_mid_xx"
             android:background="@drawable/button"
             android:onClick="kuaijie"
             android:text="@string/easy_card"
+            android:textSize="20dp"
             android:textColor="@color/gold" />
 
         <TextView

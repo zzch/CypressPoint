@@ -134,11 +134,7 @@
     
 </LinearLayout>
 
-   <View 
-    android:layout_width="370dp"
-    android:layout_height="0.5dp"
-    android:background="@color/gold_half"
-    />
+   
 
  </LinearLayout>
     <FrameLayout
