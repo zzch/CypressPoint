@@ -58,25 +58,27 @@
         android:layout_marginTop="20dp" >
 
         <LinearLayout
+            android:id="@+id/anlyze_count_wheel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:orientation="horizontal" >
 
             <cn.com.zcty.ILovegolf.tools.WheelView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                 />
+                android:layout_height="150dp"
+                android:layout_weight="1" />
+
             <cn.com.zcty.ILovegolf.tools.WheelView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                 />
+                android:layout_height="150dp"
+                android:layout_weight="1" />
+
             <cn.com.zcty.ILovegolf.tools.WheelView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                 />
+                android:layout_height="150dp"
+                android:layout_weight="1" />
         </LinearLayout>
     </RelativeLayout>
 
