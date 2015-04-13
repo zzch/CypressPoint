@@ -155,12 +155,18 @@ public class Myself extends Activity {
 					birthday = jsonObject.getString("birthday");
 			/*	}else{
 				}*/
-				birthday =Long.parseLong(jsonObject.getString("birthday"))*1000+"";
-				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-				birthday = format.format(Long.parseLong(jsonObject.getString("birthday"))*1000);
-				SimpleDateFormat formats = new SimpleDateFormat("yyyy");
-				year = formats.format(Long.parseLong(jsonObject.getString("birthday"))*1000);
-				Log.i("birthday", birthday);
+					Log.i("birthday", birthday);
+					if(!birthday.equals("null")){					
+						birthday =Long.parseLong(jsonObject.getString("birthday"))*1000+"";
+						SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+						birthday = format.format(Long.parseLong(jsonObject.getString("birthday"))*1000);
+						SimpleDateFormat formats = new SimpleDateFormat("yyyy");
+						year = formats.format(Long.parseLong(jsonObject.getString("birthday"))*1000);
+					}else{
+						year = "1980";
+					}
+				
+				//Log.i("birthday", birthday);
 
 			} catch (JSONException e) {
 				e.printStackTrace();
