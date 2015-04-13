@@ -8,7 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/view_mid_xx_title"
-        android:background="@drawable/e_daohang_01" >
+        android:background="@anim/title_pingpu" >
 
         <TextView
             android:id="@+id/statistics"
@@ -27,12 +27,15 @@
             android:layout_height="@dimen/view_mid_xx_title"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:background="@drawable/share" />
+            android:text="@string/text_share"
+            android:textSize="@dimen/txsize_small_xx" 
+            android:textColor="@color/gold"
+            android:background="@null" />
 
         <Button
             android:id="@+id/back1"
-            android:layout_width="@dimen/view_mid_xx"
-            android:layout_height="@dimen/view_mid_x"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
             android:layout_alignBaseline="@+id/share"
             android:layout_alignBottom="@+id/share"
             android:layout_alignParentLeft="true"
@@ -53,28 +56,37 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/e_statistic_bg_one"
+                android:layout_height="50dp"
+                
                 android:gravity="center_vertical" >
-
-                <TextView
-                    android:id="@+id/golf_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="北京北湖高尔夫"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/txsize_small_xx" />
 
                 <TextView
                     android:id="@+id/golf_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_below="@+id/golf_name"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
                     android:text="2014年6月14日"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/txsize_small_x" />
+                    android:textColor="@color/gold"
+                    android:textSize="@dimen/txsize_small_x"
+                    android:layout_marginRight="10dp" />
+
+                <TextView
+                    android:id="@+id/golf_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="北京北湖高尔夫"
+                    android:textColor="@color/gold"
+                    android:textSize="@dimen/txsize_small_xx" />
+
             </RelativeLayout>
+                    <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/gold_half" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -90,23 +102,23 @@
                         android:layout_height="wrap_content" >
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="67dp"
                             android:layout_margin="0.5dip"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="洞"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/gold" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/t"
@@ -114,151 +126,151 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="1"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                         <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="2"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                         <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="3"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="4"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                         <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="5"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="6"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="7"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="8"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                         <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="9"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="前"
                             android:textColor="@color/white"
@@ -266,186 +278,187 @@
 
                         <View
                             android:id="@+id/v"
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="10"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                         <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="11"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="12"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                         <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="13"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                         <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="14"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                         <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="15"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                         <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="16"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                         <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="17"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                         <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="18"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                         <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                          
                             android:gravity="center"
                             android:text="后"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="总"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                         
                     </TableRow>
+                     <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/gold_half" />
 
                     <TableRow
                         android:id="@+id/tableRow2"
@@ -453,23 +466,23 @@
                         android:layout_height="wrap_content" >
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="67dp"
                             android:layout_margin="0.5dip"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="标准杆"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/gold" />
 
-                        <View
-                            android:layout_width="1dip"
+                      <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/t1"
@@ -477,16 +490,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="1"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/t2"
@@ -494,16 +507,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="2"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                       <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/t3"
@@ -511,16 +524,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="3"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/t4"
@@ -528,16 +541,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="4"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                       <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/t5"
@@ -545,16 +558,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="5"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/t6"
@@ -562,16 +575,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="6"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/t7"
@@ -579,16 +592,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="7"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/t8"
@@ -596,33 +609,32 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="8"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
-
+                            android:background="@color/gold_half" />
                         <TextView
                             android:id="@+id/t9"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="9"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                      <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/t10"
@@ -630,7 +642,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="前"
                             android:textColor="@color/white"
@@ -638,9 +650,9 @@
 
                         <View
                             android:id="@+id/v"
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/th1"
@@ -648,16 +660,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="1"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/th2"
@@ -665,16 +677,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="2"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/th3"
@@ -682,16 +694,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="3"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                       <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/th4"
@@ -699,16 +711,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="4"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/th5"
@@ -716,16 +728,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="5"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/th6"
@@ -733,16 +745,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="6"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                       <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/th7"
@@ -750,16 +762,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="7"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/th8"
@@ -767,16 +779,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="8"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/th9"
@@ -784,16 +796,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="9"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                       <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/th10"
@@ -801,16 +813,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="前"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                       <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/th11"
@@ -818,12 +830,17 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="总计"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
                     </TableRow>
+                    
+                     <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/gold_half" />
 
                     <TableRow
                         android:id="@+id/tableRow3"
@@ -831,23 +848,23 @@
                         android:layout_height="wrap_content" >
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="67dp"
                             android:layout_margin="0.5dip"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="成绩"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/gold" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/tt1"
@@ -855,16 +872,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="1"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/tt2"
@@ -872,16 +889,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="2"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/tt3"
@@ -889,16 +906,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="3"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                       <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/tt4"
@@ -906,16 +923,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="4"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/tt5"
@@ -923,16 +940,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="5"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                       <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/tt6"
@@ -940,16 +957,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="6"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/tt7"
@@ -957,16 +974,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="7"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/tt8"
@@ -974,16 +991,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="8"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/tt9"
@@ -991,16 +1008,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="9"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/tt10"
@@ -1008,7 +1025,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="前"
                             android:textColor="@color/white"
@@ -1016,9 +1033,9 @@
 
                         <View
                             android:id="@+id/v"
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/tth1"
@@ -1026,16 +1043,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="1"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                       <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/tth2"
@@ -1043,16 +1060,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="2"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                       <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/tth3"
@@ -1060,33 +1077,32 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="3"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
-
+                            android:background="@color/gold_half" />
                         <TextView
                             android:id="@+id/tth4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                          
                             android:gravity="center"
                             android:text="4"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/tth5"
@@ -1094,16 +1110,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="5"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                      <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/tth6"
@@ -1111,16 +1127,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="6"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/tth7"
@@ -1128,16 +1144,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="7"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/tth8"
@@ -1145,16 +1161,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="8"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/tth9"
@@ -1162,16 +1178,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="9"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/tth10"
@@ -1179,16 +1195,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="前"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                       <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/tth11"
@@ -1196,12 +1212,17 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="总计"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
                     </TableRow>
+                    
+                     <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/gold_half" />
 
                     <TableRow
                         android:id="@+id/tableRow4"
@@ -1209,23 +1230,23 @@
                         android:layout_height="wrap_content" >
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="67dp"
                             android:layout_margin="0.5dip"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="距标准杆"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/gold" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/ttt1"
@@ -1233,16 +1254,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                         
                             android:gravity="center"
                             android:text="1"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/ttt2"
@@ -1250,16 +1271,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="2"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/ttt3"
@@ -1267,16 +1288,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="3"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/ttt4"
@@ -1284,16 +1305,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="4"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                       <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/ttt5"
@@ -1301,16 +1322,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="5"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/ttt6"
@@ -1318,16 +1339,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="6"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/ttt7"
@@ -1335,16 +1356,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                          
                             android:gravity="center"
                             android:text="7"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                       <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/ttt8"
@@ -1352,16 +1373,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="8"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/ttt9"
@@ -1369,16 +1390,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                          
                             android:gravity="center"
                             android:text="9"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/ttt10"
@@ -1386,7 +1407,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="前"
                             android:textColor="@color/white"
@@ -1394,9 +1415,9 @@
 
                         <View
                             android:id="@+id/v"
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/ttth1"
@@ -1404,16 +1425,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="1"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/ttth2"
@@ -1421,16 +1442,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="2"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/ttth3"
@@ -1438,16 +1459,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="3"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                       <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/ttth4"
@@ -1455,16 +1476,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="4"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                       <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/ttth5"
@@ -1472,16 +1493,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="5"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/ttth6"
@@ -1489,16 +1510,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="6"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/ttth7"
@@ -1506,16 +1527,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="7"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
-                        <View
-                            android:layout_width="1dip"
+                       <View
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/ttth8"
@@ -1523,16 +1544,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="8"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/ttth9"
@@ -1540,16 +1561,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                            
                             android:gravity="center"
                             android:text="9"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/ttth10"
@@ -1557,16 +1578,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="前"
                             android:textColor="@color/white"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                            android:background="@color/gold_half" />
 
                         <TextView
                             android:id="@+id/ttth11"
@@ -1574,7 +1595,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            android:background="@drawable/e_statistic_bg_one"
+                           
                             android:gravity="center"
                             android:text="总计"
                             android:textColor="@color/white"
@@ -1582,11 +1603,16 @@
                     </TableRow>
                 </TableLayout>
             </LinearLayout>
+            
+                   <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/gold_half" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/e_statistic_bg_one"
+                android:layout_height="70dp"
+               
                 android:orientation="horizontal" >
 
                 <ImageView
@@ -1602,7 +1628,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="信天翁"
-                    android:textColor="@color/white"
+                    android:textColor="@color/gold_70"
                     android:textSize="@dimen/txsize_small_xx" />
 
                 <ImageView
@@ -1618,7 +1644,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="老鹰"
-                    android:textColor="@color/white"
+                    android:textColor="@color/gold_70"
                     android:textSize="@dimen/txsize_small_xx" />
 
                 <ImageView
@@ -1634,7 +1660,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="小鸟"
-                    android:textColor="@color/white"
+                    android:textColor="@color/gold_70"
                     android:textSize="@dimen/txsize_small_xx" />
 
                 <ImageView
@@ -1650,7 +1676,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="标准"
-                    android:textColor="@color/white"
+                    android:textColor="@color/gold_70"
                     android:textSize="@dimen/txsize_small_xx" />
 
                 <ImageView
@@ -1666,7 +1692,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="柏忌"
-                    android:textColor="@color/white"
+                    android:textColor="@color/gold_70"
                     android:textSize="@dimen/txsize_small_xx" />
 
                 <ImageView
@@ -1682,35 +1708,43 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="双柏忌+"
-                    android:textColor="@color/white"
+                    android:textColor="@color/gold_70"
                     android:textSize="@dimen/txsize_small_xx" />
             </LinearLayout>
+                     <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/gold_half" />
 
             <GridView
                 android:id="@+id/gridView1"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/view_large_x"
-                android:background="@drawable/count_score_bg"
+                
                 android:numColumns="2" >
             </GridView>
 
              <ListView
                 android:id="@+id/count"
                 android:layout_width="match_parent"
-                android:layout_height="320dp" >
+                android:layout_height="320dp" 
+                android:divider="@null"
+                >
             </ListView>
             
              <ListView
                 android:id="@+id/qiudong"
                 android:layout_width="match_parent"
                 android:layout_height="170dp"
+                android:divider="@null"
                android:layout_marginTop="@dimen/view_small_xx"
                  >
             </ListView>
             <ListView
                 android:id="@+id/qiutype"
                 android:layout_width="match_parent"
-                android:layout_height="300dp" >
+                android:layout_height="300dp" 
+                android:divider="@null">
             </ListView>
         </LinearLayout>
     </ScrollView>

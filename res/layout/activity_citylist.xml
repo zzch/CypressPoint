@@ -68,7 +68,9 @@
         android:layout_height="wrap_content"
         android:visibility="gone"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" >
+        android:layout_alignParentTop="true" 
+        android:divider="@null"
+        >
     </ListView>
         
     </FrameLayout>

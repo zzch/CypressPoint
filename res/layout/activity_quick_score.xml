@@ -26,14 +26,13 @@
              android:id="@+id/k_build"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-           
              android:layout_alignParentRight="true"
              android:background="@null"
              android:onClick="onclick"
              android:layout_centerVertical="true"
              android:text="@string/new_build"
              android:textColor="@color/gold" 
-             android:textSize="18dp"
+             android:textSize="@dimen/txsize_small_xx"
              />
 
          <Button
@@ -53,8 +52,8 @@
         android:id="@+id/xListView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:divider="@color/gold_half"
-        android:dividerHeight="0.5dp"
+        android:divider="@null"
+        
       >
         </cn.com.zcty.ILovegolf.tools.XListView>
       

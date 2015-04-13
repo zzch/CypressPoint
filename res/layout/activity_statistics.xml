@@ -27,7 +27,11 @@
             android:layout_height="@dimen/view_mid_xx_title"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:background="@drawable/share" />
+            android:text="@string/text_share"
+            android:textSize="@dimen/txsize_small_xx" 
+            android:textColor="@color/gold"
+            android:background="@null"
+            />
 
         <Button
             android:id="@+id/back"
@@ -64,7 +68,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="北京北湖高尔夫"
-                    android:textColor="@color/gold_70"
+                    android:textColor="@color/gold"
                     android:textSize="@dimen/txsize_small_xx" />
 
                 <TextView
@@ -74,7 +78,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_below="@+id/golf_name"
                     android:text="2014年6月14日"
-                    android:textColor="@color/gold_half"
+                    android:textColor="@color/gold_70"
                     android:textSize="@dimen/txsize_small_x" />
 
                 <RadioGroup
@@ -93,7 +97,7 @@
                         android:button="@null"
                         android:gravity="center"
                         android:text="前九"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="@dimen/txsize_small_x" />
 
                     <RadioButton
@@ -105,7 +109,7 @@
                         android:button="@null"
                         android:gravity="center"
                         android:text="后九"
-                        android:textColor="@color/white"
+                        android:textColor="@color/gold"
                         android:textSize="@dimen/txsize_small_x" />
                 </RadioGroup>
             </RelativeLayout>
@@ -255,7 +259,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
                     android:text="信天翁"
-                    android:textColor="@color/white"
+                    android:textColor="@color/gold_70"
                     android:textSize="@dimen/txsize_small_s" />
 
                 <ImageView
@@ -271,7 +275,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
                     android:text="老鹰"
-                    android:textColor="@color/white"
+                    android:textColor="@color/gold_70"
                     android:textSize="@dimen/txsize_small_s" />
 
                 <ImageView
@@ -287,7 +291,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
                     android:text="小鸟"
-                    android:textColor="@color/white"
+                    android:textColor="@color/gold_70"
                     android:textSize="@dimen/txsize_small_s" />
 
                 <ImageView
@@ -303,7 +307,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
                     android:text="标准"
-                    android:textColor="@color/white"
+                    android:textColor="@color/gold_70"
                     android:textSize="@dimen/txsize_small_s" />
 
                 <ImageView
@@ -319,7 +323,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
                     android:text="柏忌"
-                    android:textColor="@color/white"
+                    android:textColor="@color/gold_70"
                     android:textSize="@dimen/txsize_small_s" />
 
                 <ImageView
@@ -335,7 +339,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
                     android:text="双柏忌+"
-                    android:textColor="@color/white"
+                    android:textColor="@color/gold_70"
                     android:textSize="@dimen/txsize_small_s" />
             </LinearLayout>
             
@@ -348,14 +352,17 @@
                 android:id="@+id/gridView1"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/view_large_x"
-                android:background="@drawable/count_score_bg"
+                
                 android:numColumns="2" >
             </GridView>
 
+            
             <ListView
                 android:id="@+id/count"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/view_large_xxx_x" >
+                android:layout_height="@dimen/view_large_xxx_x"
+                android:divider="@null"
+                 >
             </ListView>
             
              <ListView
@@ -363,12 +370,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/view_large_xxx"
                android:layout_marginTop="@dimen/view_small_xx"
+               android:divider="@null"
                  >
             </ListView>
             <ListView
                 android:id="@+id/qiutype"
                 android:layout_width="match_parent"
-                android:layout_height="300dp" >
+                android:layout_height="300dp" 
+                android:divider="@null"
+                >
             </ListView>
         </LinearLayout>
     </ScrollView>
