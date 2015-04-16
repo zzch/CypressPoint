@@ -22,7 +22,9 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.ArrayNumberWheelAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.ArrayWheelAdapter;
@@ -60,6 +62,7 @@ public class ScoreCardUpDateActivity extends Activity{
 	private TextView distance_scorecard;
 	private TextView hit_scorecard;
 	private ImageView scorecard_image_up;
+   private LinearLayout wheel_layout;
 	private boolean flase_1 = false;
 	private boolean flase_2 = false;
 	private boolean flase_3 = false;
@@ -175,7 +178,9 @@ public class ScoreCardUpDateActivity extends Activity{
 		
 		adapter = 	new ArrayNumberWheelAdapter(this);		
 		distanceWheelView.setViewAdapter(adapter);
+		
 		coolWheelView.setViewAdapter(new ArrayWheelAdapter<String>(this,cool));
+		distanceWheelView.setVisibleItems(5);
 		Intent intent = getIntent();
 		ballHoleTextView.setText(intent.getStringExtra("number")+"号洞");
 		String par = intent.getStringExtra("par");
@@ -269,41 +274,61 @@ public class ScoreCardUpDateActivity extends Activity{
 		distance_scorecard = (TextView) findViewById(R.id.distance_scorecard);
 		hit_scorecard = (TextView) findViewById(R.id.hit_scorecard);
 		scorecard_image_up = (ImageView) findViewById(R.id.scorecard_image_up);
-		
+		wheel_layout = (LinearLayout)findViewById(R.id.wheel_layout);
+		scorecard_image_up = (ImageView) findViewById(R.id.scorecard_image_up);
 		
 	}
 
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.but_add_one:
-			count++;
-			dataTextView.setText(count+"");
+			
+			if(count<99){
+				count++;
+				dataTextView.setText(count+"");
+			    
+			}else{
+				Toast.makeText(ScoreCardUpDateActivity.this, "您不能再点击了！", Toast.LENGTH_SHORT).show();	
+			}
+			
+			
 			flase_1 = true;
 			break;
 		case R.id.but_jian_one:
 			if(count>0){
-				count--;
-				dataTextView.setText(count+"");
+				if(count<=99){
+					count--;
+					dataTextView.setText(count+"");
+					if(penaltiescount>0){
+						penaltiescount--;
+						penaltiesTextView.setText(penaltiescount+"");
+					}else if(putcount>0){
+						putcount--;
+						putTextView.setText(putcount+"");
+					}
+					flase_1 = true;
+				    
+				}else{
+					Toast.makeText(ScoreCardUpDateActivity.this, "您不能再点击了！", Toast.LENGTH_SHORT).show();	
+				}
 				
 			}
-			if(penaltiescount>0){
-				penaltiescount--;
-				penaltiesTextView.setText(penaltiescount+"");
-			}else if(putcount>0){
-				putcount--;
-				putTextView.setText(putcount+"");
-			}
-			flase_1 = true;
+			
 			break;
 		case R.id.but_add_two:
 			
-			putcount++;
-			putTextView.setText(putcount+"");
-			if(count<(putcount-puttsstart)+(penaltiescount*2)+1){
-				count = (putcount-puttsstart)+(penaltiescount*2)+1;
-				dataTextView.setText(count+"");
+			if(count<=99){
+				putcount++;
+				putTextView.setText(putcount+"");
+				if(count<(putcount-puttsstart)+(penaltiescount*2)+1){
+					count = (putcount-puttsstart)+(penaltiescount*2)+1;
+						dataTextView.setText(count+"");
+				}
+				flase_2 = true;
+			}else{
+				Toast.makeText(ScoreCardUpDateActivity.this, "您不能再点击了！", Toast.LENGTH_SHORT).show();	
 			}
-			flase_2 = true;
+			
 			break;
 		case R.id.but_jian_two:
 			if(putcount>0){
@@ -313,14 +338,18 @@ public class ScoreCardUpDateActivity extends Activity{
 			flase_2 = true;
 			break;
 		case R.id.but_add_three:
-			
-			penaltiescount++;
-			penaltiesTextView.setText(penaltiescount+"");
-			if(count<(putcount+((penaltiescount-penaltiesstart)*2)+1)){
-				count = putcount+((penaltiescount-penaltiesstart)*2)+1;
+			if(count<=99){
 				dataTextView.setText(count+"");
+				penaltiescount++;
+				penaltiesTextView.setText(penaltiescount+"");
+			if(count<(putcount+((penaltiescount-penaltiesstart)*2)+1)){
+				count = putcount+((penaltiescount-penaltiesstart)*2)+1;	
 			}
 			flase_3 = true;
+			}else{
+				Toast.makeText(ScoreCardUpDateActivity.this, "您不能再点击了！", Toast.LENGTH_SHORT).show();
+			}
+			
 			break;
 		case R.id.but_jian_three:
 			if(penaltiescount>0){
@@ -330,7 +359,14 @@ public class ScoreCardUpDateActivity extends Activity{
 			flase_3 = true;
 			break;
 		case R.id.layout_chooise:
-			
+			if(wheel_layout.getVisibility()==View.GONE){				
+				wheel_layout.setVisibility(View.VISIBLE);
+				scorecard_image_up.setImageResource(R.drawable.image_icon);
+			}else{
+				wheel_layout.setVisibility(View.GONE);	
+				scorecard_image_up.setImageResource(R.drawable.image_icon_up);
+				
+			}
 			break;
 		}
 	}

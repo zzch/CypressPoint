@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/view_mid_xx_title"
+         android:layout_height="72dp"
         android:background="@anim/title_pingpu" >
 
         <TextView
@@ -25,7 +25,7 @@
             android:id="@+id/share"
             android:layout_width="@dimen/view_mid_xx_title"
             android:layout_height="@dimen/view_mid_xx_title"
-            android:layout_alignParentBottom="true"
+             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:text="@string/text_share"
             android:textSize="@dimen/txsize_small_xx" 
@@ -39,6 +39,7 @@
             android:layout_alignBaseline="@+id/share"
             android:layout_alignBottom="@+id/share"
             android:layout_alignParentLeft="true"
+             android:layout_centerVertical="true"
             android:background="@drawable/back_button"
             android:onClick="onClick" />
     </RelativeLayout>
@@ -145,7 +146,7 @@
                             
                             android:gravity="center"
                             android:text="2"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                          <View
@@ -161,7 +162,7 @@
                             
                             android:gravity="center"
                             android:text="3"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -177,7 +178,7 @@
                             
                             android:gravity="center"
                             android:text="4"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                          <View
@@ -193,7 +194,7 @@
                             
                             android:gravity="center"
                             android:text="5"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -209,7 +210,7 @@
                            
                             android:gravity="center"
                             android:text="6"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -225,7 +226,7 @@
                            
                             android:gravity="center"
                             android:text="7"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -241,7 +242,7 @@
                            
                             android:gravity="center"
                             android:text="8"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                          <View
@@ -257,7 +258,7 @@
                             
                             android:gravity="center"
                             android:text="9"
-                            android:textColor="@color/white"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -273,7 +274,7 @@
                            
                             android:gravity="center"
                             android:text="前"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -290,7 +291,7 @@
                            
                             android:gravity="center"
                             android:text="10"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                          <View
@@ -306,7 +307,7 @@
                             
                             android:gravity="center"
                             android:text="11"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -322,7 +323,8 @@
                            
                             android:gravity="center"
                             android:text="12"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
+                             
                             android:textSize="@dimen/txsize_small_s" />
 
                          <View
@@ -338,7 +340,7 @@
                             
                             android:gravity="center"
                             android:text="13"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                          <View
@@ -354,7 +356,7 @@
                            
                             android:gravity="center"
                             android:text="14"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                          <View
@@ -370,7 +372,7 @@
                             
                             android:gravity="center"
                             android:text="15"
-                            android:textColor="@color/white"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                          <View
@@ -386,7 +388,7 @@
                            
                             android:gravity="center"
                             android:text="16"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                          <View
@@ -402,7 +404,7 @@
                             
                             android:gravity="center"
                             android:text="17"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                          <View
@@ -418,7 +420,7 @@
                            
                             android:gravity="center"
                             android:text="18"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                          <View
@@ -434,7 +436,7 @@
                           
                             android:gravity="center"
                             android:text="后"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -450,7 +452,7 @@
                             
                             android:gravity="center"
                             android:text="总"
-                            android:textColor="@color/white"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                          
@@ -493,7 +495,7 @@
                            
                             android:gravity="center"
                             android:text="1"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -510,7 +512,7 @@
                             
                             android:gravity="center"
                             android:text="2"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                        <View
@@ -527,7 +529,7 @@
                             
                             android:gravity="center"
                             android:text="3"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -544,7 +546,7 @@
                             
                             android:gravity="center"
                             android:text="4"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                        <View
@@ -561,7 +563,7 @@
                            
                             android:gravity="center"
                             android:text="5"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -578,7 +580,7 @@
                             
                             android:gravity="center"
                             android:text="6"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -595,7 +597,7 @@
                            
                             android:gravity="center"
                             android:text="7"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -612,7 +614,7 @@
                            
                             android:gravity="center"
                             android:text="8"
-                            android:textColor="@color/white"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -628,7 +630,7 @@
                            
                             android:gravity="center"
                             android:text="9"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                       <View
@@ -645,7 +647,7 @@
                            
                             android:gravity="center"
                             android:text="前"
-                            android:textColor="@color/white"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -663,7 +665,7 @@
                            
                             android:gravity="center"
                             android:text="1"
-                            android:textColor="@color/white"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -680,7 +682,7 @@
                            
                             android:gravity="center"
                             android:text="2"
-                            android:textColor="@color/white"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -697,7 +699,7 @@
                            
                             android:gravity="center"
                             android:text="3"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                        <View
@@ -714,7 +716,7 @@
                             
                             android:gravity="center"
                             android:text="4"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -731,7 +733,7 @@
                            
                             android:gravity="center"
                             android:text="5"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -748,7 +750,7 @@
                            
                             android:gravity="center"
                             android:text="6"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                        <View
@@ -765,7 +767,7 @@
                             
                             android:gravity="center"
                             android:text="7"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -782,7 +784,7 @@
                            
                             android:gravity="center"
                             android:text="8"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -799,7 +801,7 @@
                            
                             android:gravity="center"
                             android:text="9"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                        <View
@@ -816,7 +818,7 @@
                            
                             android:gravity="center"
                             android:text="前"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                        <View
@@ -833,7 +835,7 @@
                            
                             android:gravity="center"
                             android:text="总计"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
                     </TableRow>
                     
@@ -875,7 +877,7 @@
                            
                             android:gravity="center"
                             android:text="1"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -892,7 +894,7 @@
                            
                             android:gravity="center"
                             android:text="2"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -909,7 +911,7 @@
                            
                             android:gravity="center"
                             android:text="3"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                        <View
@@ -926,7 +928,7 @@
                             
                             android:gravity="center"
                             android:text="4"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -943,7 +945,7 @@
                             
                             android:gravity="center"
                             android:text="5"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                        <View
@@ -960,7 +962,7 @@
                            
                             android:gravity="center"
                             android:text="6"
-                            android:textColor="@color/white"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -977,7 +979,7 @@
                            
                             android:gravity="center"
                             android:text="7"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -994,7 +996,7 @@
                             
                             android:gravity="center"
                             android:text="8"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1011,7 +1013,7 @@
                             
                             android:gravity="center"
                             android:text="9"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1028,7 +1030,7 @@
                            
                             android:gravity="center"
                             android:text="前"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1046,7 +1048,7 @@
                            
                             android:gravity="center"
                             android:text="1"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                        <View
@@ -1063,7 +1065,7 @@
                            
                             android:gravity="center"
                             android:text="2"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                        <View
@@ -1080,7 +1082,7 @@
                             
                             android:gravity="center"
                             android:text="3"
-                            android:textColor="@color/white"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1096,7 +1098,7 @@
                           
                             android:gravity="center"
                             android:text="4"
-                            android:textColor="@color/white"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1113,7 +1115,7 @@
                            
                             android:gravity="center"
                             android:text="5"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                       <View
@@ -1130,7 +1132,7 @@
                            
                             android:gravity="center"
                             android:text="6"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1147,7 +1149,7 @@
                            
                             android:gravity="center"
                             android:text="7"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1164,7 +1166,7 @@
                            
                             android:gravity="center"
                             android:text="8"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1181,7 +1183,7 @@
                             
                             android:gravity="center"
                             android:text="9"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1198,7 +1200,7 @@
                             
                             android:gravity="center"
                             android:text="前"
-                            android:textColor="@color/white"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                        <View
@@ -1215,7 +1217,7 @@
                             
                             android:gravity="center"
                             android:text="总计"
-                            android:textColor="@color/white"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
                     </TableRow>
                     
@@ -1257,7 +1259,7 @@
                          
                             android:gravity="center"
                             android:text="1"
-                            android:textColor="@color/white"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1274,7 +1276,7 @@
                            
                             android:gravity="center"
                             android:text="2"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1291,7 +1293,7 @@
                            
                             android:gravity="center"
                             android:text="3"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1308,7 +1310,7 @@
                             
                             android:gravity="center"
                             android:text="4"
-                            android:textColor="@color/white"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                        <View
@@ -1325,7 +1327,7 @@
                             
                             android:gravity="center"
                             android:text="5"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1342,7 +1344,7 @@
                            
                             android:gravity="center"
                             android:text="6"
-                            android:textColor="@color/white"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1359,7 +1361,7 @@
                           
                             android:gravity="center"
                             android:text="7"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                        <View
@@ -1376,7 +1378,7 @@
                            
                             android:gravity="center"
                             android:text="8"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1393,7 +1395,7 @@
                           
                             android:gravity="center"
                             android:text="9"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1410,7 +1412,7 @@
                             
                             android:gravity="center"
                             android:text="前"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1428,7 +1430,7 @@
                            
                             android:gravity="center"
                             android:text="1"
-                            android:textColor="@color/white"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1445,7 +1447,7 @@
                             
                             android:gravity="center"
                             android:text="2"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1462,7 +1464,7 @@
                            
                             android:gravity="center"
                             android:text="3"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                        <View
@@ -1479,7 +1481,7 @@
                            
                             android:gravity="center"
                             android:text="4"
-                            android:textColor="@color/white"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                        <View
@@ -1496,7 +1498,7 @@
                            
                             android:gravity="center"
                             android:text="5"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1513,7 +1515,7 @@
                            
                             android:gravity="center"
                             android:text="6"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1530,7 +1532,7 @@
                             
                             android:gravity="center"
                             android:text="7"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                        <View
@@ -1547,7 +1549,7 @@
                            
                             android:gravity="center"
                             android:text="8"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1564,7 +1566,7 @@
                             
                             android:gravity="center"
                             android:text="9"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1581,7 +1583,7 @@
                            
                             android:gravity="center"
                             android:text="前"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1598,7 +1600,7 @@
                            
                             android:gravity="center"
                             android:text="总计"
-                            android:textColor="@color/white"
+                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
                     </TableRow>
                 </TableLayout>
@@ -1710,7 +1712,7 @@
                     android:text="双柏忌+"
                     android:textColor="@color/gold_70"
                     android:textSize="@dimen/txsize_small_xx" />
-            </LinearLayout>
+              </LinearLayout>
                      <View
                             android:layout_width="match_parent"
                             android:layout_height="0.5dp"
@@ -1719,32 +1721,33 @@
             <GridView
                 android:id="@+id/gridView1"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/view_large_x"
+                android:layout_height="60dp"
                 
-                android:numColumns="2" >
+                android:numColumns="4" >
             </GridView>
 
-             <ListView
+              <ListView
                 android:id="@+id/count"
                 android:layout_width="match_parent"
-                android:layout_height="320dp" 
+                android:layout_height="580dp"
                 android:divider="@null"
-                >
+                 >
             </ListView>
             
              <ListView
                 android:id="@+id/qiudong"
                 android:layout_width="match_parent"
-                android:layout_height="170dp"
+                android:layout_height="230dp"
+               
                 android:divider="@null"
-               android:layout_marginTop="@dimen/view_small_xx"
                  >
             </ListView>
             <ListView
                 android:id="@+id/qiutype"
                 android:layout_width="match_parent"
-                android:layout_height="300dp" 
-                android:divider="@null">
+                android:layout_height="430dp" 
+                android:divider="@null"
+                >
             </ListView>
         </LinearLayout>
     </ScrollView>

@@ -35,11 +35,7 @@ import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 /**
-<<<<<<< HEAD
- * ʾ��ͼ�Ƿ���
-=======
  * 专业积分卡
->>>>>>> origin/master
  * @author deii
  *
  */

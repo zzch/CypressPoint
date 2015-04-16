@@ -5,31 +5,24 @@
     android:orientation="vertical"
      android:background="@drawable/pingpu_onclick"
      >
-     <!--  
-     <LinearLayout 
-     android:layout_width="match_parent"
-     android:layout_height="match_parent"
-     android:orientation="vertical"
-    
-         >
-         -->
+
 
     <RelativeLayout
         android:id="@+id/rrr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30px" >
+        android:layout_marginTop="10dp" >
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/view_mid_xx_x"
+            android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
             android:layout_marginTop="@dimen/view_small_x" >
 
             <ImageView
                 android:id="@+id/imageView_1"
-                android:layout_width="@dimen/view_mid_xx_title"
-                android:layout_height="@dimen/view_mid_xx_title"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
                 android:src="@drawable/imagetextview_button" />
@@ -161,18 +154,10 @@
             android:text="y"
             android:textSize="@dimen/txsize_small_x" />
     </RelativeLayout>
-
-	
     <View
-        android:layout_width="360dp"
-        android:layout_height="0.2dp"
-        android:background="@color/gold" />
-   <!--  
-    </LinearLayout>
-     <View
-        android:layout_width="0.2dp"
-        android:layout_height="match_parent"
-        android:background="@color/gold" />
-        --> 
+        android:layout_width="380dp"
+        android:layout_height="1dp"
+        android:background="@color/gold_half" />
+
 
 </LinearLayout>

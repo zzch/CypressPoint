@@ -7,7 +7,7 @@
    >
    <RelativeLayout 
        android:layout_width="match_parent"
-       android:layout_height="@dimen/view_mid_xx_title"
+       android:layout_height="wrap_content"
        android:background="@anim/title_pingpu"
          >
          <TextView 
@@ -41,6 +41,7 @@
                android:onClick="onClick"
                android:text="@string/button_save"
                android:textColor="@color/gold"
+               android:layout_marginRight="10dp"
                android:textSize="@dimen/txsize_small_xx" />
 
      </RelativeLayout>
@@ -70,10 +71,10 @@
            android:gravity="center_vertical"
            android:text="总杆数"
            android:textColor="@color/gold_70"
-           android:textSize="@dimen/txsize_small_x" />
+           android:textSize="@dimen/txsize_small_xx" />
        </LinearLayout>
           <View
-             android:layout_width="0.5dip"
+             android:layout_width="1dp"
              android:layout_height="match_parent"
              android:background="@color/gold_half" />
        <Button 
@@ -109,7 +110,7 @@
     
    <View 
        android:layout_width="match_parent"
-       android:layout_height="0.5dp"
+       android:layout_height="1dp"
        android:background="@color/gold_half"
        />
    
@@ -133,14 +134,14 @@
          android:layout_height="wrap_content"
          android:text="推杆数"
         
-         android:textSize="@dimen/txsize_small_x"
+         android:textSize="@dimen/txsize_small_xx"
          android:textColor="@color/gold_70"
          android:gravity="center_vertical"
            />
        
        </LinearLayout>
           <View
-             android:layout_width="0.5dip"
+             android:layout_width="1dip"
              android:layout_height="match_parent"
              android:background="@color/gold_half" />
        <Button 
@@ -176,7 +177,7 @@
     
      <View 
        android:layout_width="match_parent"
-       android:layout_height="0.5dp"
+       android:layout_height="1dp"
        android:background="@color/gold_half"
        />
       <LinearLayout 
@@ -196,14 +197,14 @@
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:text="罚杆数"
-         android:textSize="@dimen/txsize_small_x"
+         android:textSize="@dimen/txsize_small_xx"
          android:textColor="@color/gold_70"
          android:gravity="center_vertical"
            />
        
        </LinearLayout>
           <View
-             android:layout_width="0.5dip"
+             android:layout_width="1dp"
              android:layout_height="match_parent"
              android:background="@color/gold_half" />
        <Button 
@@ -239,7 +240,7 @@
       
      <View 
        android:layout_width="match_parent"
-       android:layout_height="0.5dp"
+       android:layout_height="1dp"
        android:background="@color/gold_half"
        />
  
@@ -320,29 +321,31 @@
       
       <View 
        android:layout_width="match_parent"
-       android:layout_height="0.5dp"
+       android:layout_height="1dp"
        android:background="@color/gold_half"
        />
        <LinearLayout
-       
-       android:layout_gravity="center_horizontal"
+       android:id="@+id/wheel_layout"
+       android:orientation="horizontal"
        android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:layout_marginTop="@dimen/view_mid_x"
+       android:layout_height="300dp"
+       android:background="#17191c"
        
 		>
 	
       <cn.com.zcty.ILovegolf.tools.WheelView 
 		    android:id="@+id/passw_1"
 		    android:layout_weight="1"
-			android:layout_height="@dimen/view_large_xx"
+			android:layout_height="170dp"
+			android:layout_marginTop="60dp"
 			android:layout_width="wrap_content"
 			
 			/>
 		<cn.com.zcty.ILovegolf.tools.WheelView 
 		     android:id="@+id/passw_2"
-			android:layout_height="@dimen/view_large_xx"
+			android:layout_height="170dp"
 			android:layout_width="wrap_content"
+			android:layout_marginTop="60dp"
 			android:layout_weight="1"/>
 		
 	</LinearLayout> 

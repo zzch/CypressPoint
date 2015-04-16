@@ -96,7 +96,7 @@ public class StaticsFragmentTwo extends Fragment{
 		tv11 = (TextView) view.findViewById(R.id.t11);
 		tv11.setText(parArrayList.get(20));
 		ttv1 = (TextView) view.findViewById(R.id.tt1);
-		ttv1.setText(scoreArrayList.get(10));
+		
 		ttv2 = (TextView) view.findViewById(R.id.tt2);
 		ttv2.setText(scoreArrayList.get(11));
 		ttv3 = (TextView) view.findViewById(R.id.tt3);

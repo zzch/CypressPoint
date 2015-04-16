@@ -14,6 +14,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -152,14 +154,13 @@ public void onConfigurationChanged(Configuration newConfig) {
 					radioButton_hou.setText("后九");
 					radioButton_hou.setTextColor(0xffF8d57a);
 					tablePager.setCurrentItem(0);
-					
 					break;
 
 				case R.id.mainTabs_radio_hou:
-					radioButton_hou.setBackgroundResource(R.drawable.group_4);
+					radioButton_hou.setBackgroundResource(R.drawable.group_3);
 					radioButton_hou.setText("后九");
 					radioButton_hou.setTextColor(0xff17191c);
-					radioButton_qian.setBackgroundResource(R.drawable.group_3);
+					radioButton_qian.setBackgroundResource(R.drawable.group_4);
 					radioButton_qian.setText("前九");
 					radioButton_qian.setTextColor(0xffF8d57a);
 					tablePager.setCurrentItem(1);
@@ -175,12 +176,10 @@ public void onConfigurationChanged(Configuration newConfig) {
 				switch (position) {
 				case 0:
 					radioButton_qian.setChecked(true);
-			
 					break;
 
 				case 1:
 					radioButton_hou.setChecked(true);
-		
 					break;
 				}
 			}
@@ -208,6 +207,7 @@ public void onConfigurationChanged(Configuration newConfig) {
 		radioButton_qian.setChecked(true);
 		radioButton_qian.setBackgroundResource(R.drawable.group_1);
 		gridView = (GridView) findViewById(R.id.gridView1);
+		gridView.setSelector(new ColorDrawable(Color.TRANSPARENT));
 		dateText = (TextView) findViewById(R.id.golf_date);
 		golfnameTextView = (TextView) findViewById(R.id.golf_name);
 		SharedPreferences ss = getSharedPreferences("name", MODE_PRIVATE);
@@ -272,7 +272,7 @@ public void onConfigurationChanged(Configuration newConfig) {
 				countCool.add("反弹率");
 				countCoolResult.add(jsonObject.getString("advantage_transformation"));
 				countCool.add("优势转化率");
-				countCoolResult.add(jsonObject.getString("greens_in_regulation"));
+				countCoolResult.add(jsonObject.getString("gir"));
 				countCool.add("攻果岭率");
 				countCoolResult.add(jsonObject.getString("putts_per_gir"));
 				countCool.add("标准杆上果岭的平均推杆");

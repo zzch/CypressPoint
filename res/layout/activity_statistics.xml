@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/view_mid_xx_title"
+         android:layout_height="72dp"
         android:background="@anim/title_pingpu" >
 
         <TextView
@@ -25,10 +25,11 @@
             android:id="@+id/share"
             android:layout_width="@dimen/view_mid_xx_title"
             android:layout_height="@dimen/view_mid_xx_title"
-            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:text="@string/text_share"
             android:textSize="@dimen/txsize_small_xx" 
+            android:layout_marginRight="10dp"
             android:textColor="@color/gold"
             android:background="@null"
             />
@@ -40,6 +41,7 @@
             android:layout_alignBaseline="@+id/share"
             android:layout_alignBottom="@+id/share"
             android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:background="@drawable/back_button"
             android:onClick="onClick" />
@@ -134,7 +136,7 @@
                         <View
                             android:layout_width="1dip"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                             />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -143,7 +145,7 @@
                             
                             android:gravity="center"
                             android:text="洞"
-                            android:textColor="@color/gold_70" />
+                            android:textColor="@color/gold" />
 
                         <View
                             android:layout_width="0.5dp"
@@ -152,7 +154,12 @@
                            />
                     </TableRow>
                    
-
+                           <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="0.5dp"
+                            android:layout_marginTop="0.5dp"
+                            android:src="@color/gold_half"
+                           />
                     <TableRow
                         android:id="@+id/tableRow2"
                         android:layout_width="wrap_content"
@@ -161,7 +168,7 @@
                         <View
                             android:layout_width="1dip"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                             />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -170,13 +177,19 @@
                            
                             android:gravity="center"
                             android:text="标准杆"
-                            android:textColor="@color/gold_70" />
+                            android:textColor="@color/gold" />
 
                         <View
                             android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
                     </TableRow>
+                     <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="0.5dp"
+                            
+                            android:src="@color/gold_half"
+                           />
 
                     <TableRow
                         android:id="@+id/tableRow3"
@@ -186,7 +199,7 @@
                         <View
                             android:layout_width="1dip"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                             />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -195,13 +208,20 @@
                            
                             android:gravity="center"
                             android:text="成绩"
-                            android:textColor="@color/gold_70" />
+                            android:textColor="@color/gold" />
 
                         <View
                             android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
                     </TableRow>
+                    
+                     <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="0.5dp"
+                            
+                            android:src="@color/gold_half"
+                           />
 
                     <TableRow
                         android:id="@+id/tableRow4"
@@ -211,7 +231,7 @@
                         <View
                             android:layout_width="1dip"
                             android:layout_height="match_parent"
-                            android:background="@drawable/line" />
+                             />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -220,7 +240,7 @@
                            
                             android:gravity="center"
                             android:text="距标准杆"
-                            android:textColor="@color/gold_70" />
+                            android:textColor="@color/gold" />
 
                         <View
                             android:layout_width="0.5dp"
@@ -348,11 +368,12 @@
                        android:layout_height="0.5dp"
                        android:background="@color/gold_half" />
 
+            
             <GridView
                 android:id="@+id/gridView1"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/view_large_x"
-                
+                android:gravity="center"
                 android:numColumns="2" >
             </GridView>
 
@@ -360,7 +381,7 @@
             <ListView
                 android:id="@+id/count"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/view_large_xxx_x"
+                android:layout_height="580dp"
                 android:divider="@null"
                  >
             </ListView>
@@ -368,15 +389,15 @@
              <ListView
                 android:id="@+id/qiudong"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/view_large_xxx"
-               android:layout_marginTop="@dimen/view_small_xx"
-               android:divider="@null"
+                android:layout_height="230dp"
+               
+                android:divider="@null"
                  >
             </ListView>
             <ListView
                 android:id="@+id/qiutype"
                 android:layout_width="match_parent"
-                android:layout_height="300dp" 
+                android:layout_height="430dp" 
                 android:divider="@null"
                 >
             </ListView>

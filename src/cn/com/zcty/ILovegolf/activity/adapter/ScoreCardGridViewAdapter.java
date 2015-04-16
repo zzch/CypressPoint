@@ -146,8 +146,14 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 				holder.numberRod.setBackground(null);
 				//holder.numberRod.setTextSize(60);
 				holder.penalties.setTextColor(Color.RED);
+				
 				holder.numberRod.setText(setcardsArray.get(position/2).getRodNum());
-				holder.penalties.setText(setcardsArray.get(position/2).getPenalties());
+				if(setcardsArray.get(position/2).getPenalties().equals("0")){					
+					holder.penalties.setText("");
+				}else{
+					holder.penalties.setText(setcardsArray.get(position/2).getPenalties());
+
+				}
 				holder.putts.setText(setcardsArray.get(position/2).getPutts());
 				holder.cool.setText(setcardsArray.get(position/2).getPar());
 				holder.distance.setText(setcardsArray.get(position/2).getTe());

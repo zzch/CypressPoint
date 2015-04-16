@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center"
+    android:layout_height="match_parent"
+   
     android:background="@anim/pingpu"
     android:orientation="vertical" >
 	<RelativeLayout 
        android:layout_width="match_parent"
-       android:layout_height="@dimen/view_mid_xx_title"
-       android:orientation="horizontal"
-       android:background="@drawable/e_daohang_01"
+         android:layout_height="wrap_content"
+        android:background="@anim/title_pingpu"
          >
         
          <TextView 
@@ -39,12 +38,12 @@
             android:src="@drawable/hugh" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/view_small_xx"
+           android:layout_height="@dimen/view_small_xx"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="20dp"
-            android:src="@drawable/e_icon_arrow" />
+            android:src="@drawable/icon_arrow" />
 
         <TextView
             android:id="@+id/myself_name"
@@ -53,7 +52,10 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="30dp"
-            android:text="周鹤" />
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_mid_x"
+            android:layout_marginTop="10dp"
+            android:text="游客" />
         <TextView
             android:id="@+id/myself_sign"
             android:layout_width="wrap_content"
@@ -61,6 +63,8 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"
+            android:textColor="@color/gold_70"
+            android:textSize="@dimen/txsize_small_xx"
             android:text="签名" />
     </RelativeLayout>
 
@@ -76,8 +80,8 @@
              >
 			<ImageView 
 			    android:id="@+id/myself_image"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
+			    android:layout_width="@dimen/view_small_xx"
+                android:layout_height="@dimen/view_small_xx"
 			    android:layout_centerVertical="true"
 			    android:layout_marginLeft="10dp"
 			    android:src="@android:drawable/ic_input_add"
@@ -90,12 +94,12 @@
                 android:layout_marginLeft="50dp"
                 android:text="设置" />
             <ImageView 
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
+			    android:layout_width="@dimen/view_small_xx"
+                android:layout_height="@dimen/view_small_xx"
 			    android:layout_centerVertical="true"
 			    android:layout_alignParentRight="true"
 			    android:layout_marginRight="20dp"
-			    android:src="@drawable/e_icon_arrow"
+			    android:src="@drawable/jia"
 			    />
 
         </RelativeLayout>

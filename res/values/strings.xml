@@ -56,5 +56,10 @@
     <string name="str_red">#FF4444</string>
     <string name="str_yellow">#FFBB33</string>
     <string name="str_sky_blue">#33B5E5</string>
+    
+    
+    <!-- 个人 -->
+    <string name="myself">个人信息</string>
+    
 
 </resources>

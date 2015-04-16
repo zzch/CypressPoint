@@ -8,18 +8,20 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/e_daohang_01">
+         android:layout_height="wrap_content"
+        android:background="@anim/title_pingpu">
 
         <Button
             android:id="@+id/scorecard_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:background="@null"
+            android:background="@drawable/back_button"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="7dp"
             android:onClick="onclick"
-            android:text="返回" />
+             />
 
         <TextView
             android:id="@+id/major_title_name"
@@ -28,24 +30,42 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:gravity="center"
-            android:text="球洞17"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_mid_x" />
+        
+         <Button
+            android:id="@+id/major_queding_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:text="确定"
+            android:textColor="@color/gold"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="7dp"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/txsize_small_xx" />
+        
+        
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#ffffff" >
+         >
 
         <TextView
             android:id="@+id/major_par"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            
             android:layout_marginLeft="10dp"
             android:text="4标准杆"
-            android:textColor="#000000" />
+           
+            android:textColor="@color/gold" 
+            android:textSize="18dp"
+            />
 
         <TextView
             android:id="@+id/major_distance"
@@ -53,9 +73,10 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/major_par"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="60dp"
+            android:layout_marginLeft="70dp"
             android:text="564码"
-            android:textColor="#000000" />
+            android:textSize="18dp"
+            android:textColor="@color/gold" />
 
         <TextView
             android:id="@+id/major_t"
@@ -63,9 +84,10 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/major_distance"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="55dp"
             android:text="黑T"
-            android:textColor="#000000" />
+            android:textSize="18dp"
+            android:textColor="@color/gold"/>
 
         <TextView
             android:id="@+id/major_t"
@@ -75,7 +97,8 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="50dp"
             android:text="本洞成绩"
-            android:textColor="#000000" />
+            android:textSize="18dp"
+            android:textColor="@color/gold"/>
 
         <TextView
             android:id="@+id/major_score"
@@ -85,8 +108,8 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="20dp"
             android:text="6"
-            android:textColor="#000000"
-            android:textSize="15dp" />
+            android:textColor="@color/gold"
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/major_score_penaits"
@@ -94,58 +117,78 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="30dp"
+            android:layout_marginRight="37dp"
             android:paddingTop="10dp"
             android:text="2"
-            android:textColor="#000000"
-            android:textSize="10dp" />
+            android:textColor="@color/gold"
+            android:textSize="13dp" />
     </RelativeLayout>
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gold_half"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:layout_height="47dp"
+        android:orientation="horizontal"
+        android:background="#09090b" 
+        android:gravity="center"
+        >
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#000000"
-            android:text="序号"
-            android:textColor="#ffffff" />
+            android:gravity="center"
+            android:text="杆"
+            android:textColor="@color/gold_70"
+            android:textSize="16dp"
+            />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="126dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#000000"
+            android:gravity="center"
             android:text="距离球洞/码"
-            android:textColor="#ffffff" />
+            android:textSize="16dp"
+            android:textColor="@color/gold_70"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="95dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#000000"
+            android:gravity="center"
             android:text="球的状态"
-            android:textColor="#ffffff" />
+            android:textSize="16dp"
+            android:textColor="@color/gold_70"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="73dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#000000"
-            android:text="罚干"
-            android:textColor="#ffffff" />
+            android:gravity="center"
+            android:text="罚杆"
+            android:textSize="16dp"
+            android:textColor="@color/gold_70"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#000000"
+            android:gravity="center"
             android:text="球杆"
-            android:textColor="#ffffff" />
+            android:textSize="16dp"
+            android:textColor="@color/gold_70"/>
     </LinearLayout>
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gold_half"
+        />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -159,42 +202,51 @@
 			    android:id="@+id/major_adds"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#ffffff" >
+                >
             <ListView
                 android:id="@+id/major_count"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:listSelector="#00000000"
                 android:divider="@null"
-                android:listSelector="@android:color/transparent"/>
+                />
            
 			</RelativeLayout>
             <RelativeLayout
                 android:id="@+id/major_rea_add"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#ffffff" >
+                android:layout_height="50dp"
+                android:layout_marginTop="3dp"
+                android:gravity="center_vertical"
+                 >
 
                 <TextView
                     android:id="@+id/major_add_text"
-                    android:layout_width="wrap_content"
+                    android:layout_width="65dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
+                    android:textColor="@color/gold"
+                    android:textSize="22dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="18dp"
                     android:text="1" />
 
                 <Button
                     android:id="@+id/major_add"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:text="添加" />
+                    android:background="@drawable/tianjia_2"
+                     />
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/major_add_count"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="#ffffff"
+                android:background="#50363636"
+                 android:layout_marginTop="@dimen/view_mid_x"
                 android:visibility="gone" >
 
                 <Button
@@ -204,6 +256,9 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
                     android:background="@null"
+                    android:textSize="22dp"
+                     android:textColor="@color/gold_70"
+                     android:layout_marginLeft="25dp"
                     android:text="取消" />
 
                 <Button
@@ -213,40 +268,97 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:background="@null"
-                    android:text="确定" />
+                    android:textSize="22dp"
+                     android:textColor="@color/gold_70"
+                     android:layout_marginRight="25dp"
+                    android:text="完成" />
             </RelativeLayout>
 
             <LinearLayout
                 android:id="@+id/major_result"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/view_mid_x"
+                android:layout_height="300dp"
+                android:orientation="vertical"
+                android:background="#17191c"
+               
                 android:visibility="gone" >
+               
+             <LinearLayout 
+               android:layout_width="match_parent"
+               android:layout_height="53dp"
+               android:orientation="horizontal"
+               android:gravity="center"
+               android:background="#09090b"
+                    >
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+           
+            android:text="距离球洞/码"
+            android:textSize="16dp"
+            android:textColor="@color/gold_70"/>
+
+        <TextView
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:text="球的状态"
+            android:textSize="16dp"
+            android:textColor="@color/gold_70"/>
+
+        <TextView
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:text="罚杆"
+            android:textSize="16dp"
+            android:textColor="@color/gold_70"/>
+
+        <TextView
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            
+            android:text="球杆"
+            android:textSize="16dp"
+            android:textColor="@color/gold_70"/>
+                    
+                 </LinearLayout>
+                <LinearLayout 
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center_horizontal"
+                 
+                 android:layout_marginTop="33dp"
+                    >
 
                 <cn.com.zcty.ILovegolf.tools.WheelView
                     android:id="@+id/major_wheel_distance"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/view_large_xx"
+                    android:layout_height="170dp"
                     android:layout_weight="1" />
 
                 <cn.com.zcty.ILovegolf.tools.WheelView
                     android:id="@+id/major_wheel_cool"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/view_large_xx"
+                    android:layout_height="170dp"
                     android:layout_weight="1" />
 
                 <cn.com.zcty.ILovegolf.tools.WheelView
                     android:id="@+id/major_wheel_pentail"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/view_large_xx"
+                    android:layout_height="170dp"
                     android:layout_weight="1" />
 
                 <cn.com.zcty.ILovegolf.tools.WheelView
                     android:id="@+id/major_wheel_pole"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/view_large_xx"
+                    android:layout_height="170dp"
                     android:layout_weight="1" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

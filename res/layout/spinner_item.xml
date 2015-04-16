@@ -2,16 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" 
-    android:background="@drawable/pingpu_onclick"
     android:orientation="vertical"
     >
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-       android:layout_marginTop="@dimen/view_small_x"
-        android:textSize="@dimen/txsize_small_x"
+        android:layout_height="60dp"
+     
+        android:textSize="@dimen/txsize_small_xxx"
         android:textColor="@color/gold"
         android:background="@drawable/pingpu_onclick"
         android:gravity="center"
@@ -19,7 +18,7 @@
     
     <View 
         android:layout_width="match_parent"
-        android:layout_height="0.2dp"
+        android:layout_height="1dp"
         android:background="@color/gold_half"
         />
 

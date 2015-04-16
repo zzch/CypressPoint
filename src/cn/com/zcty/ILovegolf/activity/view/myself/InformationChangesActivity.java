@@ -39,9 +39,11 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -52,6 +54,7 @@ import cn.com.zcty.ILovegolf.activity.adapter.ArrayMonthNumberWheelAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.ArrayWheelAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.ArrayYearNumberWheelAdapter;
 import cn.com.zcty.ILovegolf.activity.view.BaseActivity;
+import cn.com.zcty.ILovegolf.activity.view.TabHostActivity;
 import cn.com.zcty.ILovegolf.tools.CircleImageView;
 import cn.com.zcty.ILovegolf.tools.OnWheelChangedListener;
 import cn.com.zcty.ILovegolf.tools.WheelView;
@@ -97,7 +100,9 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 	private String upname;
 	private String imageurl;
 	private ProgressDialog progressDialog;
-
+    private ImageView imageView2;
+    private ImageView imageView3;
+    private ImageView imageView5;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -108,7 +113,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_information);
 		initView();
 		setListeners();
@@ -193,7 +198,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
-				sexTextView.setText(sexs[newValue]);
+				sexTextView.setText(" "+sexs[newValue]);
 			}
 		});
 		yearWheelView.addChangingListener(new OnWheelChangedListener() {
@@ -201,11 +206,11 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
 				year =  (String) yearadapter.getItemText(newValue).subSequence(0, yearadapter.getItemText(newValue).length()-1);
-				brithdayTextView.setText(year+"-"+moth+"-"+day);
+				brithdayTextView.setText("  "+year+"-"+moth+"-"+day);
 				years = Integer.parseInt(year);
 				SimpleDateFormat time = new SimpleDateFormat("yyyy");
 				years = Integer.parseInt(time.format(new Date()))-years;
-				nianlingTextView.setText(years+"");
+				nianlingTextView.setText("  "+years+"");
 			}
 		});
 		monthWheelView.addChangingListener(new OnWheelChangedListener() {
@@ -216,7 +221,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 				if(Integer.parseInt(moth)<10){
 					moth = "0"+moth;
 				}
-				brithdayTextView.setText(year+"-"+moth+"-"+day);
+				brithdayTextView.setText("  "+year+"-"+moth+"-"+day);
 			}
 		});
 		dayWheelView.addChangingListener(new OnWheelChangedListener() {
@@ -227,7 +232,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 				if(Integer.parseInt(day)<10){
 					day = "0"+day;
 				}
-				brithdayTextView.setText(year+"-"+moth+"-"+day);
+				brithdayTextView.setText("  "+year+"-"+moth+"-"+day);
 			}
 		});
 		quWheelView.addChangingListener(new OnWheelChangedListener() {
@@ -303,16 +308,23 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		sginEditText = (EditText) findViewById(R.id.information_qianming);
 		upnameEditText = (EditText) findViewById(R.id.information_name);
 		fanhuiButton = (Button) findViewById(R.id.information_back);
+		imageView2 = (ImageView) findViewById(R.id.imageView2);
+		imageView3 = (ImageView) findViewById(R.id.imageView3);
+		imageView5 = (ImageView) findViewById(R.id.imageView5);
 		headMyImage.setImageBitmap(converToBitmap(100,100));
 		SharedPreferences sp = getSharedPreferences("register", MODE_PRIVATE);
 		String name = sp.getString("nickname", "nickname");
-		upnameEditText.setText(name);
+		upnameEditText.setText(" "+name);
 		Intent intent = getIntent();
-		brithdayTextView.setText(intent.getStringExtra("birthday"));
-		int year =Integer.parseInt(intent.getStringExtra("year"));
-		SimpleDateFormat time = new SimpleDateFormat("yyyy");
-		year = Integer.parseInt(time.format(new Date()))-year;
-		nianlingTextView.setText(year+"");
+		brithdayTextView.setText("  "+intent.getStringExtra("birthday"));
+		Log.i("brithdays", intent.getStringExtra("year"));
+	
+			int year =Integer.parseInt(intent.getStringExtra("year"));
+			SimpleDateFormat time = new SimpleDateFormat("yyyy");
+			year = Integer.parseInt(time.format(new Date()))-year;
+			nianlingTextView.setText("  "+year+"");
+		
+		
 	}
 	/**
 	 * 压缩读取图片
@@ -397,31 +409,39 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		case R.id.information_sex:
 			if(sexWheel.getVisibility()==View.GONE){				
 				sexWheel.setVisibility(View.VISIBLE);
+				imageView2.setImageResource(R.drawable.image_icon_up);
 			}else{
 				sexWheel.setVisibility(View.GONE);	
+				imageView2.setImageResource(R.drawable.image_icon);
 				new GenxinSex().start();
 			}
 			break;
 		case R.id.information_brithday:
 			if(brithdayLinearLayout.getVisibility()==View.GONE){				
 				brithdayLinearLayout.setVisibility(View.VISIBLE);
+				imageView3.setImageResource(R.drawable.image_icon_up);
 			}else{
 				brithdayLinearLayout.setVisibility(View.GONE);	
+				imageView3.setImageResource(R.drawable.image_icon);
 				new GenxinBrithday().start();
 			}
 			break;
 		case R.id.information_area:
 			if(areaLinearLayout.getVisibility()==View.GONE){				
 				areaLinearLayout.setVisibility(View.VISIBLE);
+				imageView5.setImageResource(R.drawable.image_icon_up);
 			}else{
 				areaLinearLayout.setVisibility(View.GONE);	
+				imageView5.setImageResource(R.drawable.image_icon);
 				
 			}
 			break;
 		case R.id.information_back:
 			new GenxinSgin().start();
 			new GenxinName().start();
-			Intent intent = new Intent(InformationChangesActivity.this,Myself.class);
+			
+
+			Intent intent = new Intent(InformationChangesActivity.this,TabHostActivity.class);
 			intent.putExtra("1", "1");
 			startActivity(intent);
 			finish();

@@ -2,43 +2,58 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-    <ScrollView 
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-	<LinearLayout 
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:orientation="vertical"
-	    >
+    android:orientation="vertical"
+    android:gravity="center_horizontal" 
+    android:background="@anim/pingpu"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    >
+    
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:orientation="horizontal" >
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+        android:background="@anim/title_pingpu" >
 
         <Button
             android:id="@+id/information_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dip"
-            android:background="@null"
-            android:text="返回" />
+           android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/back_button"
+            android:layout_marginLeft="10dp"
+           />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="25dip"
-            android:text="个人信息"
-            android:textSize="20dip" />
+            android:gravity="center"
+            android:text="@string/myself"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_small_xxx" />
     </RelativeLayout>
+    
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical"
+	    >
 
     <RelativeLayout
         android:id="@+id/information_head_image"
-        android:layout_width="match_parent"
-        android:layout_height="50dp" >
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:gravity="center_horizontal"
+        android:background="@drawable/button_focused"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="3dp"
+         >
 
         <cn.com.zcty.ILovegolf.tools.CircleImageView
             android:id="@+id/information_head"
@@ -50,12 +65,12 @@
 
         <ImageView
             android:id="@+id/imageView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/view_small_xx"
+           android:layout_height="@dimen/view_small_xx"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="20dp"
-            android:src="@drawable/e_icon_arrow" />
+            android:src="@drawable/icon_arrow" />
 
         <TextView
             android:id="@+id/information_tishi"
@@ -63,33 +78,43 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
+            android:textColor="@color/gold"
             android:layout_toRightOf="@+id/information_head"
+            android:textSize="@dimen/txsize_mid_x" 
             android:text="更换头像" />
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp" >
+        android:layout_marginTop="10dp"
+         
+         >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:textColor="@color/gold_70"
+            android:textSize="@dimen/txsize_small_xxx"
             android:text="名称" />
 
         <EditText
             android:id="@+id/information_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_height="50dp"
+             android:layout_marginTop="30dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="30dp"
-            android:text="周鹤" />
+            
+            android:background="@drawable/e_button_pressed"
+           
+            android:textColor="@color/gold"
+            android:text=" " />
     </RelativeLayout>
 
     <RelativeLayout
         
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp" >
 
@@ -97,30 +122,46 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:textColor="@color/gold_70"
+            android:textSize="@dimen/txsize_small_xxx"
             android:text="性别" />
 
         <TextView
             android:id="@+id/information_sex"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+             android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            
             android:layout_marginTop="30dp"
+            android:background="@drawable/button_focused"
+            android:textSize="@dimen/txsize_small_xx"
+            android:textColor="@color/gold"
             android:gravity="center_vertical"
             android:text="  男" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="@dimen/view_small_xx"
+           android:layout_height="@dimen/view_small_xx"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/information_sex"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/image_icon" />
+
     </RelativeLayout>
 
     <cn.com.zcty.ILovegolf.tools.WheelView
         android:id="@+id/information_sex_wheel"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="170dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:onClick="onClick"
         android:visibility="gone" />
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp" >
 
@@ -128,17 +169,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:textColor="@color/gold_70"
+            android:textSize="@dimen/txsize_small_xxx"
             android:text="生日" />
 
         <TextView
             android:id="@+id/information_brithday"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginTop="30dp"
+            android:background="@drawable/button_focused"
+            android:textSize="@dimen/txsize_small_xx"
+            android:textColor="@color/gold"
             android:gravity="center_vertical"
-            android:text="  1989-12-1" />
+            android:lineSpacingExtra="10dp"
+            android:text=" 1989-12-1" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="@dimen/view_small_xx"
+           android:layout_height="@dimen/view_small_xx"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/information_brithday"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/image_icon" />
+
     </RelativeLayout>
     <LinearLayout
         android:id="@+id/information_brithday_wheel"
@@ -153,23 +210,23 @@
         <cn.com.zcty.ILovegolf.tools.WheelView
             android:id="@+id/information_brithday_wheel_year"
             android:layout_width="wrap_content"
-            android:layout_height="150dp"
+            android:layout_height="170dp"
             android:layout_weight="1" />
 
         <cn.com.zcty.ILovegolf.tools.WheelView
             android:id="@+id/information_brithday_wheel_month"
             android:layout_width="wrap_content"
-            android:layout_height="150dp"
+            android:layout_height="170dp"
             android:layout_weight="1" />
 
         <cn.com.zcty.ILovegolf.tools.WheelView
             android:id="@+id/information_brithday_wheel_day"
             android:layout_width="wrap_content"
-            android:layout_height="150dp"
+            android:layout_height="170dp"
             android:layout_weight="1" />
     </LinearLayout>
 <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp" >
 
@@ -177,37 +234,70 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:textColor="@color/gold_70"
+            android:textSize="@dimen/txsize_small_xxx"
             android:text="年龄" />
 
         <TextView
             android:id="@+id/information_year"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            
             android:layout_marginTop="30dp"
             android:gravity="center_vertical"
-            android:text="  24" />
+             android:background="@drawable/button_focused"
+             android:textSize="@dimen/txsize_small_xx"
+            android:textColor="@color/gold"
+            android:text="                       24" 
+           
+            />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="@dimen/view_small_xx"
+            android:layout_height="@dimen/view_small_xx"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/information_year"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/image_icon" />
+
     </RelativeLayout>
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp" >
             <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:textColor="@color/gold_70"
+            android:textSize="@dimen/txsize_small_xxx"
             android:text="地区" />
 
         <TextView
             android:id="@+id/information_area"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+           
             android:layout_marginTop="30dp"
             android:gravity="center_vertical"
-            android:text="  北京市海淀区" />
+             android:background="@drawable/button_focused"
+            android:textSize="@dimen/txsize_small_xx"
+            android:textColor="@color/gold"
+            android:text="   北京市海淀区" />
+        
+         <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="@dimen/view_small_xx"
+           android:layout_height="@dimen/view_small_xx"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/information_area"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/image_icon" />
     </RelativeLayout>
     <LinearLayout
         android:id="@+id/information_area_wheel"
@@ -222,19 +312,19 @@
         <cn.com.zcty.ILovegolf.tools.WheelView
             android:id="@+id/information_brithday_area_qu"
             android:layout_width="wrap_content"
-            android:layout_height="150dp"
+            android:layout_height="170dp"
             android:layout_weight="1" />
 
         <cn.com.zcty.ILovegolf.tools.WheelView
             android:id="@+id/information_brithday_area_shi"
             android:layout_width="wrap_content"
-            android:layout_height="150dp"
+            android:layout_height="170dp"
             android:layout_weight="1" />
 
         <cn.com.zcty.ILovegolf.tools.WheelView
             android:id="@+id/information_brithday_area_xian"
             android:layout_width="wrap_content"
-            android:layout_height="150dp"
+            android:layout_height="170dp"
             android:layout_weight="1" />
     </LinearLayout>
 	 <RelativeLayout
@@ -245,16 +335,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:textColor="@color/gold_70"
+            android:textSize="@dimen/txsize_small_xxx"
             android:text="签名" />
 
         <EditText
             android:id="@+id/information_qianming"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="80dp"
+            android:background="@drawable/e_button_pressed"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="30dp"
-            android:text="我要用为笑带过一切去迎接明天" />
+            android:textSize="@dimen/txsize_small_xx"
+            android:textColor="@color/gold"
+            android:text="  我要用为笑带过一切去迎接明天" />
     </RelativeLayout>
-    </LinearLayout></ScrollView>
+    
+	 <View 
+	     android:layout_width="match_parent"
+	     android:layout_height="50dp"
+	     />
+    </LinearLayout>
+    
+    </ScrollView>
 </LinearLayout>

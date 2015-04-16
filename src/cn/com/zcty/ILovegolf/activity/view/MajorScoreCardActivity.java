@@ -12,6 +12,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.audiofx.BassBoost.Settings;
 import android.os.Bundle;
 import android.os.Handler;
@@ -133,7 +135,7 @@ public class MajorScoreCardActivity extends Activity {
 	 */
 	private void initView() {
 		grid_scorecard = (GridView) findViewById(R.id.gridView1);
-		
+		grid_scorecard.setSelector(new ColorDrawable(Color.TRANSPARENT));
 	}
 	
 	public void onclick(View v){
@@ -141,7 +143,7 @@ public class MajorScoreCardActivity extends Activity {
 		switch(v.getId()){
 		//记分卡返回按钮
 		case R.id.scorecard_back:
-			intent=new Intent(MajorScoreCardActivity.this,MajorChoosePitchActivity.class);
+			intent=new Intent(MajorScoreCardActivity.this,SchematicScoreActivity.class);
 			startActivity(intent);
 			finish();
 			break;

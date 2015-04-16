@@ -21,6 +21,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -76,6 +78,7 @@ public class StatisticsActivityLand extends Activity{
 	private void initView() {
 		backButton = (Button) findViewById(R.id.back1);	
 		gridView = (GridView) findViewById(R.id.gridView1);
+		gridView.setSelector(new ColorDrawable(Color.TRANSPARENT));
 		dateText = (TextView) findViewById(R.id.golf_date);
 		golfnameTextView = (TextView) findViewById(R.id.golf_name);
 		SharedPreferences ss = getSharedPreferences("name", MODE_PRIVATE);
@@ -295,7 +298,7 @@ public class StatisticsActivityLand extends Activity{
 				countCool.add("反弹率");
 				countCoolResult.add(jsonObject.getString("advantage_transformation"));
 				countCool.add("优势转化率");
-				countCoolResult.add(jsonObject.getString("greens_in_regulation"));
+				countCoolResult.add(jsonObject.getString("gir"));
 				countCool.add("攻果岭率");
 				countCoolResult.add(jsonObject.getString("putts_per_gir"));
 				countCool.add("标准杆上果岭的平均推杆");

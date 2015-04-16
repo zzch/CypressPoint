@@ -11,7 +11,7 @@
         android:text="自己"
         android:layout_marginTop="5dp"
         android:textColor="@color/gold"
-        android:textSize="@dimen/txsize_mid_x"
+        android:textSize="@dimen/txsize_mid_xx"
         />
    <TextView 
         android:id="@+id/lianxi_name_1"
@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:text="成绩"
         android:textColor="@color/gold_half"
-        android:textSize="@dimen/txsize_small_xx"
+        android:textSize="19dp"
         />
 </LinearLayout>
 

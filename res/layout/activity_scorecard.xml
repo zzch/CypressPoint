@@ -8,7 +8,7 @@
 
     <RelativeLayout 
        android:layout_width="match_parent"
-       android:layout_height="50dp"
+        android:layout_height="wrap_content"
        android:background="@anim/title_pingpu"
          >
          <Button 
@@ -34,11 +34,12 @@
            android:id="@+id/scorecard_score"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-          android:layout_centerVertical="true"
+           android:layout_centerVertical="true"
            android:layout_alignParentRight="true"
            android:background="@null"
            android:textColor="@color/gold"
            android:text="@string/button_count"
+           android:layout_marginRight="10dp"
            android:onClick="onclick"
            android:textSize="@dimen/txsize_small_xx"
              />
@@ -48,6 +49,7 @@
        android:id="@+id/gridView1"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
+       android:overScrollMode="never"
        android:numColumns="2" >
    </GridView>
    

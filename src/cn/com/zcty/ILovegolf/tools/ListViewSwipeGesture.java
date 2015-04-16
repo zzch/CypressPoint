@@ -66,9 +66,9 @@ public class ListViewSwipeGesture implements OnTouchListener {
     static TouchCallbacks tcallbacks;
 
     //Intermediate Usages
-    String TextColor="#FFFFFF";      //#FF4444
-    String RangeOneColor="#FFD060";   //"#FFD060"
-    String RangeTwoColor="#92C500";
+    String TextColor="#FF0000";      //#FF4444
+    String RangeOneColor="#17191c";   //"#FFD060"
+    String RangeTwoColor="#00ff00";
     String singleColor="#FF4444";
 
     //Functional  Usages
@@ -141,8 +141,8 @@ public class ListViewSwipeGesture implements OnTouchListener {
         HalfTextFinal         =   activity.getResources().getString(R.string.basic_action_1);
         FullText            =   activity.getResources().getString(R.string.basic_action_2);
         FullTextFinal         =   activity.getResources().getString(R.string.basic_action_2);
-        HalfDrawable        =   activity.getResources().getDrawable( R.drawable.rating_good );
-        FullDrawable        =   activity.getResources().getDrawable(R.drawable.content_discard);
+      //  HalfDrawable        =   activity.getResources().getDrawable( R.drawable.rating_good );
+      //  FullDrawable        =   activity.getResources().getDrawable(R.drawable.content_discard);
     }
 
 

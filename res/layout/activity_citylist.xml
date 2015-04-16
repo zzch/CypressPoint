@@ -9,7 +9,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/view_mid_xx_title"
+         android:layout_height="wrap_content"
         android:background="@anim/title_pingpu" >
 
         <TextView
@@ -29,6 +29,7 @@
             android:layout_height="25dp"
             android:layout_alignBaseline="@+id/textView1"
             android:layout_alignBottom="@+id/textView1"
+            android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="10dp"
             android:background="@drawable/back_button" />
@@ -42,7 +43,7 @@
         android:layout_height="@dimen/view_mid_x"
         android:background="@drawable/search_bar_edit_pressed"
         android:drawableLeft="@drawable/search_bar_icon"
-        android:hint="请输入关键字"
+        android:hint="搜索球场的名称"
         android:textColorHint="@color/gold_half"
         android:textColor="@color/gold_half"
         android:singleLine="true"

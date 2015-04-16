@@ -27,7 +27,7 @@
             android:layout_marginTop="@dimen/view_small_x"
             android:text="@string/pith_name"
             android:textColor="@color/gold_70"
-            android:textSize="@dimen/txsize_small_x"
+            android:textSize="@dimen/txsize_small_xx"
             android:maxEms="13" 
             android:singleLine="true"
             android:ellipsize="end"
@@ -54,7 +54,7 @@
                 android:layout_marginTop="8dp"
                 android:text="北京市*******路*****号"
                 android:textColor="@color/gold_half"
-                android:textSize="@dimen/txsize_small_x" 
+                android:textSize="@dimen/txsize_small_xx" 
                 android:maxEms="13" 
                 android:singleLine="true"
                 android:ellipsize="end"
@@ -77,7 +77,7 @@
             android:gravity="center" 
             android:text="12"
             android:textColor="@color/gold"
-             android:textSize="@dimen/txsize_small_x" />
+             android:textSize="@dimen/txsize_mid_x" />
 
         <TextView
             android:id="@+id/distance"
@@ -87,7 +87,7 @@
             
             android:text="km"
             android:textColor="@color/gold"
-            android:textSize="@dimen/txsize_small_x" />
+            android:textSize="@dimen/txsize_mid_x" />
     </LinearLayout>
    </LinearLayout>
    <View 
