@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+	<RelativeLayout 
+	    
+       android:layout_width="match_parent"
+       android:layout_height="50dp"
+       android:background="@anim/title_pingpu"
+         >
+         <Button 
+             android:id="@+id/majorscorecard_sandpit_back"
+             android:layout_width="50dp"
+             android:layout_height="25dp"
+             android:layout_alignParentLeft="true"
+             android:layout_centerVertical="true"
+             android:background="@drawable/back_button"
+             android:layout_marginLeft="10dp"
+             android:onClick="onclick"
+           />
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_centerHorizontal="true"
+             android:layout_centerVertical="true"
+             android:gravity="center"
+             android:text="沙坑救球"
+             android:textColor="@color/gold"
+             android:textSize="@dimen/txsize_mid_x" />
+           
+     </RelativeLayout>
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <RelativeLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <LinearLayout 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                
+            
+	
+    <RelativeLayout
+        android:id="@+id/sand_relative_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout
+            android:id="@+id/putts_relative_1"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/alert_dark_frame" />
+
+            <TextView
+                android:id="@+id/sandpit_average"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="8dp"
+                android:text="1"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="30dp"
+                android:text="沙坑救球"
+                android:textSize="13dp" />
+            <ImageView 
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="120dp"
+                android:src="@drawable/yuan"
+                />
+            
+        </RelativeLayout>
+		<RelativeLayout
+            android:id="@+id/putts_relative_2"
+            android:layout_below="@+id/putts_relative_1"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content" >
+
+
+            <TextView
+                android:id="@+id/sandpit_average_jin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="8dp"
+                android:text="3"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="30dp"
+                android:text="沙坑救球"
+                android:textSize="13dp" />
+            
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/putts_relative_3"
+            android:layout_below="@+id/putts_relative_2"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content" >
+
+
+            <TextView
+                android:id="@+id/sandpit_average_chenggong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="8dp"
+                android:text="30%"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="30dp"
+                android:text="成功率"
+                android:textSize="13dp" />
+            
+        </RelativeLayout>
+        <ImageView
+            android:id="@+id/major_sandpit_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/yuan" />
+    </RelativeLayout>
+
+     <RelativeLayout
+            android:id="@+id/sand_relative_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sand_relative_3" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/alert_dark_frame" />
+
+            <TextView
+                android:id="@+id/sand_average_distance_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="13dp"
+                android:text="距离球洞"
+                android:textSize="13dp" />
+			<TextView
+                android:id="@+id/sand_average_distance_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="13dp"
+                android:text="0 - 10码"
+                android:textSize="13dp" />
+            <ImageView 
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginLeft="180dp"
+                android:src="@drawable/yuan"
+                />
+            <TextView
+                android:id="@+id/sand_average_cishu_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="40dp"
+                android:text="17"
+                android:textSize="20dp" />
+            <TextView
+                android:id="@+id/sand_average_gancount_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="40dp"
+                android:text="1.2"
+                android:textSize="20dp" />
+            
+            <TextView
+                android:id="@+id/sand_average_shengyu_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="240dp"
+                android:layout_marginTop="40dp"
+                android:text="0.12"
+                android:textSize="20dp" />
+               <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="65dp"
+                android:text="尝试次数"
+                 />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="65dp"
+                android:text="平均杆数"
+                 />
+            
+            <TextView             
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="240dp"
+                android:layout_marginTop="65dp"
+                android:text="第一推后剩余平均码数"
+                />
+        </RelativeLayout>
+	<RelativeLayout
+            android:id="@+id/sand_relative_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sand_relative_4" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/alert_dark_frame" />
+
+            <TextView
+                android:id="@+id/sand_average_distance_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="13dp"
+                android:text="距离球洞"
+                android:textSize="13dp" />
+			<TextView
+                android:id="@+id/sand_average_distance_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="13dp"
+                android:text="10 - 20码"
+                android:textSize="13dp" />
+            <ImageView 
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginLeft="180dp"
+                android:src="@drawable/yuan"
+                />
+            <TextView
+                android:id="@+id/sand_average_cishu_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="40dp"
+                android:text="17"
+                android:textSize="20dp" />
+            <TextView
+                android:id="@+id/sand_average_gancount_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="40dp"
+                android:text="1.2"
+                android:textSize="20dp" />
+            
+            <TextView
+                android:id="@+id/sand_average_shengyu_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="240dp"
+                android:layout_marginTop="40dp"
+                android:text="0.12"
+                android:textSize="20dp" />
+               <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="65dp"
+                android:text="尝试次数"
+                 />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="65dp"
+                android:text="平均杆数"
+                 />
+            
+            <TextView             
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="240dp"
+                android:layout_marginTop="65dp"
+                android:text="第一推后剩余平均码数"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/sand_relative_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sand_relative_5" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/alert_dark_frame" />
+
+            <TextView
+                android:id="@+id/putts_average_distance_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="13dp"
+                android:text="距离球洞"
+                android:textSize="13dp" />
+			<TextView
+                android:id="@+id/sand_average_distance_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="13dp"
+                android:text="20 - 50码"
+                android:textSize="13dp" />
+            <ImageView 
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginLeft="180dp"
+                android:src="@drawable/yuan"
+                />
+            <TextView
+                android:id="@+id/sand_average_cishu_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="40dp"
+                android:text="17"
+                android:textSize="20dp" />
+            <TextView
+                android:id="@+id/sand_average_gancount_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="40dp"
+                android:text="1.2"
+                android:textSize="20dp" />
+            
+            <TextView
+                android:id="@+id/sand_average_shengyu_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="240dp"
+                android:layout_marginTop="40dp"
+                android:text="0.12"
+                android:textSize="20dp" />
+               <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="65dp"
+                android:text="尝试次数"
+                 />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="65dp"
+                android:text="平均杆数"
+                 />
+            
+            <TextView             
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="240dp"
+                android:layout_marginTop="65dp"
+                android:text="第一推后剩余平均码数"
+                />
+        </RelativeLayout>
+        </LinearLayout>
+            
+        </RelativeLayout>
+        
+    </ScrollView> 
+</LinearLayout>

@@ -65,5 +65,7 @@ public class APIService {
      //用户登录
 	 public static final String USERLOGIN= "http://123.57.210.52/api/v1/users/sign_in.json?";
 	  
+	 //专业积分统计
+	 public static final String MAJORCOUNT = "http://123.57.210.52/api/v1/matches/practice/statistics/professional.json?";
 
 }

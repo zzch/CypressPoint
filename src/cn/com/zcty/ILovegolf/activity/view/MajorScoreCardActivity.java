@@ -147,7 +147,7 @@ public class MajorScoreCardActivity extends Activity {
 			break;
 			//点击统计按钮
 		case R.id.scorecard_score:
-			intent=new Intent(MajorScoreCardActivity.this,StatisticsAvtivity.class);
+			intent=new Intent(MajorScoreCardActivity.this,MajorStatisticsActivity.class);
 			startActivity(intent);
 			
 			break;
