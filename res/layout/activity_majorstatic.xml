@@ -51,7 +51,7 @@
         </ListView>
 
         <RelativeLayout
-            android:id="@+id/major_qiuga_re"
+            android:id="@+id/major_qiugan_re"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 

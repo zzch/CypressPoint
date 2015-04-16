@@ -2,6 +2,7 @@ package cn.com.zcty.ILovegolf.activity.view;
 
 import java.util.ArrayList;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -22,6 +23,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.MajorStatisticsListViewAdapter;
@@ -36,11 +38,15 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 	private TextView distance2TextView;
 	private TextView distance3TextView;
 	private TextView distance4TextView;
-	private String distance1;
-	private String distance2;
-	private String distance3;
-	private String distance4;
+	private TextView name1TextView;
+	private TextView name2TextView;
+	private TextView name3TextView;
+	private TextView name4TextView;
+	private RelativeLayout r1;
+	private ArrayList<String> distance = new ArrayList<String>();
 	private String JsonData;
+	private ArrayList<String> name = new ArrayList<String>();
+
 	private MajorStatisticsListViewAdapter adapter;
 	private ArrayList<MajorStatisticsModel> statisticsModels = new ArrayList<MajorStatisticsModel>();
 	Handler handler = new Handler(){
@@ -68,9 +74,27 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 		distance2TextView = (TextView) findViewById(R.id.static_distance_2);
 		distance3TextView = (TextView) findViewById(R.id.static_distance_3);
 		distance4TextView = (TextView) findViewById(R.id.static_distance_4);
+		name1TextView = (TextView) findViewById(R.id.static_name_1);
+		name2TextView = (TextView) findViewById(R.id.static_name_2);
+		name3TextView = (TextView) findViewById(R.id.static_name_3);
+		name4TextView = (TextView) findViewById(R.id.static_name_4);
+		r1 = (RelativeLayout) findViewById(R.id.major_qiugan_re);
+		for(int i=0;i<4;i++){
+			distance.add("");
+			name.add("");
+		}
 	}
 	private void setListeners(){
 		backButton.setOnClickListener(this);
+		r1.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent10 = new Intent(MajorStatisticsActivity.this,QiuGanActivity.class);
+				intent10.putExtra("JsonData", JsonData);
+				startActivity(intent10);
+			}
+		});
 		informationListView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -130,10 +154,14 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 		});
 	}
 	private void getData(){
-		distance1TextView.setText(distance1);
-		distance2TextView.setText(distance2);
-		distance3TextView.setText(distance3);
-		distance4TextView.setText(distance4);
+		distance1TextView.setText(distance.get(0));
+		distance2TextView.setText(distance.get(1));
+		distance3TextView.setText(distance.get(2));
+		distance4TextView.setText(distance.get(3));
+		name1TextView.setText(name.get(0));
+		name2TextView.setText(name.get(1));
+		name3TextView.setText(name.get(2));
+		name4TextView.setText(name.get(3));
 		adapter = new MajorStatisticsListViewAdapter(this, statisticsModels);
 		informationListView.setAdapter(adapter);
 	}
@@ -257,14 +285,12 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 				statistics09.setPlace7("柏忌");
 				statisticsModels.add(statistics09);
 				JSONObject jsonObject10 = new JSONObject(jsonObject.getString("item_10"));
-				JSONObject j1 = new JSONObject(jsonObject10.getString("club_1w"));
-				distance1 = j1.getString("maximum_length");
-				JSONObject j2 = new JSONObject(jsonObject10.getString("club_3w"));
-				distance2 = j2.getString("maximum_length");
-				JSONObject j3 = new JSONObject(jsonObject10.getString("club_5w"));
-				distance3 = j3.getString("maximum_length");
-				JSONObject j4 = new JSONObject(jsonObject10.getString("club_7w"));
-				distance4 = j4.getString("maximum_length");
+				JSONArray jsarray10 = jsonObject10.getJSONArray("frequently_used_clubs");
+				for(int i=0;i<jsarray10.length();i++){
+					JSONObject j = jsarray10.getJSONObject(i);
+					distance.set(i, j.getString("maximum_length"));
+					name.set(i, j.getString("name"));
+				}
 				Message msg = handler.obtainMessage();
 				msg.what = 1;
 				handler.sendMessage(msg);
