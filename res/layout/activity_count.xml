@@ -6,36 +6,33 @@
     android:background="@anim/pingpu"
     >
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@drawable/title_bg" >
 
-  <RelativeLayout
-         android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-         android:background="@anim/title_pingpu" >
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/playset"
+            android:textColor="@color/gold"
+            android:textSize="22dp" />
 
-         <Button
-             android:id="@+id/count_start"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_alignParentBottom="true"
-             android:layout_alignParentRight="true"
-             android:background="@null"
-             android:text="分析"
-             android:textColor="@color/gold"
-             android:textSize="@dimen/txsize_small_xx" />
-             
-         <TextView
-             android:id="@+id/textView1"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_centerHorizontal="true"
-             android:layout_centerVertical="true"
-             android:gravity="center"
-             android:text="@string/playset"
-              android:textColor="@color/gold"
-             android:textSize="22dp" />
+        <Button
+            android:id="@+id/count_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:text="分析"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_small_xx" />
 
-         
-     </RelativeLayout>
-
+    </RelativeLayout>
   
 </LinearLayout>

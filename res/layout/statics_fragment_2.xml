@@ -10,7 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
-        
+         <View
+               android:layout_width="match_parent"
+               android:layout_height="0.5dp"
+               android:background="@color/gold_half" />
 
         <TableRow
             android:id="@+id/tableRow1"
@@ -19,7 +22,7 @@
 
             <TextView
                 android:id="@+id/t"
-                android:layout_width="15dp"
+                android:layout_width="30dp"
                 android:layout_height="67dp"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
@@ -30,12 +33,12 @@
                 android:text="10" />
 
           <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
             <TextView
-                android:layout_width="15dp"
+                android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
@@ -45,12 +48,12 @@
                 android:text="11" />
 
             <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
             <TextView
-                android:layout_width="15dp"
+                android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
@@ -60,12 +63,12 @@
                 android:text="12" />
 
            <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
             <TextView
-                android:layout_width="15dp"
+                android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
@@ -75,12 +78,12 @@
                 android:text="13" />
 
           <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
             <TextView
-               android:layout_width="15dp"
+               android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
@@ -90,12 +93,12 @@
                 android:text="14" />
 
             <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
             <TextView
-                android:layout_width="15dp"
+                android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
@@ -105,12 +108,12 @@
                 android:text="15" />
 
           <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
             <TextView
-                android:layout_width="15dp"
+                android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
@@ -120,12 +123,12 @@
                 android:text="16" />
 
              <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
             <TextView
-               android:layout_width="15dp"
+               android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
@@ -135,12 +138,12 @@
                 android:text="17" />
 
           <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
             <TextView
-                android:layout_width="15dp"
+                android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
@@ -150,12 +153,12 @@
                 android:text="18" />
 
           <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
             <TextView
-               android:layout_width="15dp"
+               android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
@@ -165,12 +168,12 @@
                 android:text="后" />
 
          <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
             <TextView
-                android:layout_width="15dp"
+                android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
@@ -181,14 +184,13 @@
 
          
             <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
         </TableRow>
         <View 
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:layout_marginTop="0.5dp"
             android:background="@color/gold_half"
             />
 
@@ -209,7 +211,7 @@
                 android:text="1" />
 
         <View
-                    android:layout_width="1dp"
+                   android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
@@ -225,7 +227,7 @@
                 android:text="2" />
 
          <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
@@ -240,7 +242,7 @@
                 android:textSize="@dimen/txsize_small_s"
                 android:text="3" />
         <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
@@ -256,7 +258,7 @@
                 android:text="4" />
 
          <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
             <TextView
@@ -271,7 +273,7 @@
                 android:text="5" />
 
         <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
@@ -286,7 +288,7 @@
                 android:textSize="@dimen/txsize_small_s"
                 android:text="6" />
           <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
@@ -301,7 +303,7 @@
                 android:textSize="@dimen/txsize_small_s"
                 android:text="7" />
          <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
@@ -317,7 +319,7 @@
                 android:text="8" />
 
          <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
@@ -333,7 +335,7 @@
                 android:text="9" />
 
            <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
@@ -349,7 +351,7 @@
                 android:text="前" />
 
            <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
             <TextView
@@ -363,7 +365,7 @@
                 android:textSize="@dimen/txsize_small_s"
                 android:text="总计" />
             <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
         </TableRow>
@@ -391,7 +393,7 @@
                 android:text="1" />
 
           <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
@@ -407,7 +409,7 @@
                 android:text="2" />
 
             <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
@@ -423,7 +425,7 @@
                 android:text="3" />
 
          <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
@@ -439,7 +441,7 @@
                 android:text="4" />
 
           <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
@@ -455,7 +457,7 @@
                 android:text="5" />
 
            <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
             <TextView
@@ -470,7 +472,7 @@
                 android:text="6" />
 
           <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
@@ -486,7 +488,7 @@
                 android:text="7" />
 
            <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
             <TextView
@@ -501,7 +503,7 @@
                 android:text="8" />
 
         <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
@@ -517,7 +519,7 @@
                 android:text="9" />
 
          <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
             <TextView
@@ -532,7 +534,7 @@
                 android:text="前" />
 
        <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
             <TextView
@@ -547,7 +549,7 @@
                 android:text="总计" />
             
             <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
         </TableRow>
@@ -575,7 +577,7 @@
                 android:text="1" />
 
        <View
-                    android:layout_width="1dp"
+                   android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
             <TextView
@@ -590,7 +592,7 @@
                 android:text="2" />
 
          <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
             <TextView
@@ -605,7 +607,7 @@
                 android:text="3" />
 
         <View
-                    android:layout_width="1dp"
+                   android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
@@ -621,7 +623,7 @@
                 android:text="4" />
 
        <View
-                    android:layout_width="1dp"
+                   android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
             <TextView
@@ -635,7 +637,7 @@
                 android:textSize="@dimen/txsize_small_s"
                 android:text="5" />
           <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
             <TextView
@@ -650,7 +652,7 @@
                 android:text="6" />
 
         <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
@@ -666,7 +668,7 @@
                 android:text="7" />
 
          <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
@@ -682,7 +684,7 @@
                 android:text="8" />
 
          <View
-                    android:layout_width="1dp"
+                   android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
             <TextView
@@ -697,7 +699,7 @@
                 android:text="9" />
 
           <View
-                    android:layout_width="1dp"
+                   android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
@@ -713,7 +715,7 @@
                 android:text="前" />
 
        <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
 
@@ -728,7 +730,7 @@
                 android:textSize="@dimen/txsize_small_s"
                 android:text="总计" />
             <View
-                    android:layout_width="1dp"
+                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
                     android:background="@color/gold_half" />
         </TableRow>

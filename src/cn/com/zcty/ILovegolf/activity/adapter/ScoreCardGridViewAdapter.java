@@ -118,17 +118,18 @@ public class ScoreCardGridViewAdapter extends BaseAdapter{
 			holder.par_p.setText("P");
 			holder.distance_y.setText("Y");
 			holder.distance_image.setVisibility(View.GONE);
-			Log.i("teecolor", scorecarsArray.get(position/2).getTee_box_color());
+			Log.i("teecolor", scorecarsArray.get(position/2).getTee_box_color());		
 			if(scorecarsArray.get(position/2).getTee_box_color().equals("white")){
 				Log.i("teecolor", "baise");
 				holder.numberRod.setBackgroundResource(R.drawable.baise);
 			}else if(scorecarsArray.get(position/2).getTee_box_color().equals("black")){
 				holder.numberRod.setBackgroundResource(R.drawable.hei);
-			}else if(scorecarsArray.get(position/2).getTee_box_color().equals("yellow")){
+			}else if(scorecarsArray.get(position/2).getTee_box_color().equals("gold")){
 				holder.numberRod.setBackgroundResource(R.drawable.huang);
 			}else if(scorecarsArray.get(position/2).getTee_box_color().equals("red")){
 				holder.numberRod.setBackgroundResource(R.drawable.hong);
 			}else{
+				
 				holder.numberRod.setBackgroundResource(R.drawable.lan);
 			}
 			//holder.numberRod.setBackgroundResource(R.drawable.e_card_yuan);

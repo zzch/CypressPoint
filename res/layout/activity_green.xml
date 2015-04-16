@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/yuan" />
+            android:src="@drawable/e_card_yuan" />
     </RelativeLayout>
 
     	<RelativeLayout 
@@ -88,7 +88,7 @@
 	        android:layout_marginLeft="150dp"
 	        android:layout_width="15dp"
 	        android:layout_height="15dp"
-	        android:src="@drawable/yuan"
+	        android:src="@drawable/e_card_yuan"
 	        />
 	    <TextView 
 	        android:id="@+id/par_shuju_1"
@@ -275,7 +275,7 @@
 	        android:layout_marginLeft="230dp"
 	        android:layout_width="15dp"
 	        android:layout_height="15dp"
-	        android:src="@drawable/yuan"
+	        android:src="@drawable/e_card_yuan"
 	        />
 	    <TextView 
 	        android:id="@+id/par_shuju_1_2"

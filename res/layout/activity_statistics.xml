@@ -134,17 +134,19 @@
                         android:layout_height="wrap_content" >
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
+                             android:background="@color/gold_half"
                              />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="79dp"
                             android:layout_height="67dp"
                             android:layout_margin="0.5dip"
                             
                             android:gravity="center"
                             android:text="洞"
+                            android:textSize="20dp"
                             android:textColor="@color/gold" />
 
                         <View
@@ -166,15 +168,16 @@
                         android:layout_height="wrap_content" >
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
+                             android:background="@color/gold_half"
                              />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="67dp"
                             android:layout_margin="0.5dip"
-                           
+                           android:textSize="20dp"
                             android:gravity="center"
                             android:text="标准杆"
                             android:textColor="@color/gold" />
@@ -197,15 +200,16 @@
                         android:layout_height="wrap_content" >
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
+                             android:background="@color/gold_half"
                              />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="67dp"
                             android:layout_margin="0.5dip"
-                           
+                           android:textSize="20dp"
                             android:gravity="center"
                             android:text="成绩"
                             android:textColor="@color/gold" />
@@ -229,15 +233,16 @@
                         android:layout_height="wrap_content" >
 
                         <View
-                            android:layout_width="1dip"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
+                             android:background="@color/gold_half"
                              />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="66dp"
                             android:layout_margin="0.5dip"
-                           
+                           android:textSize="20dp"
                             android:gravity="center"
                             android:text="距标准杆"
                             android:textColor="@color/gold" />
@@ -263,7 +268,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-               
                 android:orientation="horizontal" >
 
                 <ImageView

@@ -121,8 +121,6 @@ public class MajorScoreCardActivity extends Activity {
 				setCard.setPutts(putts);
 				setCard.setPenalties(penalties);
 				setcardsArray.set(position/2, setCard);
-				//Log.i("zhouhehe", setCard.getPutts());
-				//Log.i("zhouhehe", setcardsArray.get(0).getRodNum());
 				adapter = new MajorScoreCardGridViewAdapter(scorecarsArray, setcardsArray, this);
 				grid_scorecard.setAdapter(adapter);
 				adapter.notifyDataSetChanged();

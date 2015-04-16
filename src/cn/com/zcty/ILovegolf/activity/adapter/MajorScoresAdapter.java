@@ -56,19 +56,20 @@ public class MajorScoresAdapter extends BaseAdapter{
 		}else{
 			holder = (Holder) convertView.getTag();
 		}
-		if(majorArrayList.get(position).getCool().equals("fairway")){
+	
+		if(majorArrayList.get(position).getCool().equals("fairway")||majorArrayList.get(position).getCool().equals("球道")){
 			holder.coolText.setText("球道");
 
-		}else if(majorArrayList.get(position).getCool().equals("green")){
+		}else if(majorArrayList.get(position).getCool().equals("green")||majorArrayList.get(position).getCool().equals("果岭")){
 			holder.coolText.setText("果岭");
 		}
-		else if(majorArrayList.get(position).getCool().equals("left_rough")){
+		else if(majorArrayList.get(position).getCool().equals("left_rough")||majorArrayList.get(position).getCool().equals("球道外左侧")){
 			holder.coolText.setText("球道外左侧");
 		}
-		else if(majorArrayList.get(position).getCool().equals("right_rough")){
+		else if(majorArrayList.get(position).getCool().equals("right_rough")||majorArrayList.get(position).getCool().equals("球道外右侧")){
 			holder.coolText.setText("球道外右侧");
 		}
-		else if(majorArrayList.get(position).getCool().equals("bunker")){
+		else if(majorArrayList.get(position).getCool().equals("bunker")||majorArrayList.get(position).getCool().equals("沙坑")){
 			holder.coolText.setText("沙坑");
 		}else{
 			holder.coolText.setText("不可打");

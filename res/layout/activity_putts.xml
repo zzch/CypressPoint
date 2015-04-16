@@ -79,7 +79,7 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="45dp"
                 android:layout_marginLeft="120dp"
-                android:src="@drawable/yuan"
+                android:src="@drawable/e_card_yuan"
                 />
             
         </RelativeLayout>
@@ -116,7 +116,7 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="45dp"
                 android:layout_marginLeft="150dp"
-                android:src="@drawable/yuan"
+                android:src="@drawable/e_card_yuan"
                 />
         </RelativeLayout>
 
@@ -152,7 +152,7 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="45dp"
                 android:layout_marginLeft="190dp"
-                android:src="@drawable/yuan"
+                android:src="@drawable/e_card_yuan"
                 />
         </RelativeLayout>
 
@@ -162,7 +162,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/yuan" />
+            android:src="@drawable/lan" />
     </RelativeLayout>
 
     <RelativeLayout

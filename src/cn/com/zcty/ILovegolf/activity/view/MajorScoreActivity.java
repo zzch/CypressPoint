@@ -62,7 +62,7 @@ public class MajorScoreActivity extends Activity {
 	private Button addButton;
 	private Button quedingButton;
 	private TextView orderText;
-	private String[] coolArray = {"果岭","球道外左侧","球道","球道外右侧","沙坑","不可打"};;
+	private String[] coolArray = {"果岭","球道外左侧","球道","球道外右侧","沙坑","不可打"};
 	private String[] pentailsArray = {"1","2","3"};
 	private String[] pentailsArray_ = {""};
 	private String[] countArray = {"Driver","Putter","3 Wood","5 Wood","7 Wood",
@@ -202,6 +202,8 @@ public class MajorScoreActivity extends Activity {
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
 				cool = coolArray[newValue];
+				
+				
 				if(coolArray[newValue].equals("不可打")){
 					pentails = "1";
 					penaitsWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, pentailsArray));
@@ -253,6 +255,7 @@ public class MajorScoreActivity extends Activity {
 				dataList.setVisibility(View.VISIBLE);
 				tianjia.setVisibility(View.VISIBLE);
 				MajorScore  majorScore = new MajorScore();
+				
 				majorScore.setCool(cool);
 				majorScore.setOrder(count+"");							
 				majorScore.setDistance(distance);

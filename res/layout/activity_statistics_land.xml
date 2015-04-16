@@ -103,7 +103,7 @@
                         android:layout_height="wrap_content" >
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
 
@@ -111,7 +111,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="67dp"
                             android:layout_margin="0.5dip"
-                            
+                            android:textSize="20dp"
                             android:gravity="center"
                             android:text="洞"
                             android:textColor="@color/gold" />
@@ -123,7 +123,7 @@
 
                         <TextView
                             android:id="@+id/t"
-                            android:layout_width="wrap_content"
+                            android:layout_width="25dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
@@ -139,7 +139,7 @@
                             android:background="@color/gold_half" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="25dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
@@ -155,7 +155,7 @@
                             android:background="@color/gold_half" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="25dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
@@ -171,7 +171,7 @@
                             android:background="@color/gold_half" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="25dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
@@ -187,7 +187,7 @@
                             android:background="@color/gold_half" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="25dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
@@ -203,7 +203,7 @@
                             android:background="@color/gold_half" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="25dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
@@ -219,7 +219,7 @@
                             android:background="@color/gold_half" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="25dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
@@ -235,7 +235,7 @@
                             android:background="@color/gold_half" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="25dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
@@ -251,7 +251,7 @@
                             android:background="@color/gold_half" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="25dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
@@ -267,7 +267,7 @@
                             android:background="@color/gold_half" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="25dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
@@ -284,7 +284,7 @@
                             android:background="@color/gold_half" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="25dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
@@ -300,7 +300,7 @@
                             android:background="@color/gold_half" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="25dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
@@ -316,7 +316,7 @@
                             android:background="@color/gold_half" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="25dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
@@ -333,7 +333,7 @@
                             android:background="@color/gold_half" />
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="25dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
@@ -349,7 +349,7 @@
                             android:background="@color/gold_half" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="25dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
@@ -365,7 +365,7 @@
                             android:background="@color/gold_half" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="25dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
@@ -381,7 +381,7 @@
                             android:background="@color/gold_half" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="25dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
@@ -397,7 +397,7 @@
                             android:background="@color/gold_half" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="25dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
@@ -413,7 +413,7 @@
                             android:background="@color/gold_half" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="25dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
@@ -429,7 +429,7 @@
                             android:background="@color/gold_half" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="25dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
@@ -445,7 +445,7 @@
                             android:background="@color/gold_half" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="25dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
@@ -468,7 +468,7 @@
                         android:layout_height="wrap_content" >
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
 
@@ -476,7 +476,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="67dp"
                             android:layout_margin="0.5dip"
-                           
+                           android:textSize="20dp"
                             android:gravity="center"
                             android:text="标准杆"
                             android:textColor="@color/gold" />
@@ -850,7 +850,7 @@
                         android:layout_height="wrap_content" >
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
 
@@ -858,7 +858,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="67dp"
                             android:layout_margin="0.5dip"
-                            
+                            android:textSize="20dp"
                             android:gravity="center"
                             android:text="成绩"
                             android:textColor="@color/gold" />
@@ -1232,7 +1232,7 @@
                         android:layout_height="wrap_content" >
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
 
@@ -1240,7 +1240,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="67dp"
                             android:layout_margin="0.5dip"
-                           
+                            android:textSize="20dp"
                             android:gravity="center"
                             android:text="距标准杆"
                             android:textColor="@color/gold" />
@@ -1621,7 +1621,7 @@
                     android:layout_width="@dimen/view_small_xx_w"
                     android:layout_height="@dimen/view_small_xx_w"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/view_small_xxx"
+                    android:layout_marginLeft="@dimen/view_small_xx_w"
                     android:src="@drawable/xintianwen" />
 
                 <TextView
@@ -1631,7 +1631,7 @@
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="信天翁"
                     android:textColor="@color/gold_70"
-                    android:textSize="@dimen/txsize_small_xx" />
+                    android:textSize="20dp" />
 
                 <ImageView
                     android:layout_width="@dimen/view_small_xx_w"
@@ -1647,7 +1647,7 @@
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="老鹰"
                     android:textColor="@color/gold_70"
-                    android:textSize="@dimen/txsize_small_xx" />
+                    android:textSize="20dp" />
 
                 <ImageView
                     android:layout_width="@dimen/view_small_xx_w"
@@ -1663,7 +1663,7 @@
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="小鸟"
                     android:textColor="@color/gold_70"
-                    android:textSize="@dimen/txsize_small_xx" />
+                    android:textSize="20dp" />
 
                 <ImageView
                     android:layout_width="@dimen/view_small_xx_w"
@@ -1679,7 +1679,7 @@
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="标准"
                     android:textColor="@color/gold_70"
-                    android:textSize="@dimen/txsize_small_xx" />
+                    android:textSize="20dp" />
 
                 <ImageView
                     android:layout_width="@dimen/view_small_xx_w"
@@ -1695,7 +1695,7 @@
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="柏忌"
                     android:textColor="@color/gold_70"
-                    android:textSize="@dimen/txsize_small_xx" />
+                    android:textSize="20dp"/>
 
                 <ImageView
                     android:layout_width="@dimen/view_small_xx_w"
@@ -1711,7 +1711,7 @@
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="双柏忌+"
                     android:textColor="@color/gold_70"
-                    android:textSize="@dimen/txsize_small_xx" />
+                    android:textSize="20dp" />
               </LinearLayout>
                      <View
                             android:layout_width="match_parent"
