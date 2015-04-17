@@ -2,14 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" 
     android:background="@anim/pingpu"
     android:gravity="center"
-     >
+    android:orientation="vertical" >
 
     <RelativeLayout
         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@anim/title_pingpu" >
 
         <TextView
@@ -17,63 +16,66 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:gravity="center"
             android:text="@string/searchpith"
+            android:layout_marginTop="10dp"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_mid_x" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/back_image" />
 
         <Button
             android:id="@+id/search_back"
             android:layout_width="50dp"
             android:layout_height="25dp"
-            android:layout_alignBaseline="@+id/textView1"
-            android:layout_alignBottom="@+id/textView1"
-            android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/back_button" />
-
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="13dp"
+            android:background="@null"
+            android:text="返回"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_small_xx" />
     </RelativeLayout>
 
     <cn.com.zcty.ILovegolf.activity.exercise.city.ClearEditText
         android:id="@+id/filter_edit"
-        android:layout_marginTop="10dp"
         android:layout_width="340dp"
         android:layout_height="@dimen/view_mid_x"
+        android:layout_marginTop="10dp"
         android:background="@drawable/search_bar_edit_pressed"
         android:drawableLeft="@drawable/search_bar_icon"
         android:hint="搜索球场的名称"
-        android:textColorHint="@color/gold_half"
-        android:textColor="@color/gold_half"
         android:singleLine="true"
+        android:textColor="@color/gold_half"
+        android:textColorHint="@color/gold_half"
         android:textSize="@dimen/txsize_small_x" />
-    
 
     <FrameLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" 
-        android:layout_marginTop="10dp"
-        >
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10dp" >
 
         <ExpandableListView
             android:id="@+id/country_lvcountry"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_gravity="center"
-            android:groupIndicator="@null"
-            android:divider="@null" />
-		    <ListView
-        android:id="@+id/listView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" 
-        android:divider="@null"
-        >
-    </ListView>
-        
+            android:divider="@null"
+            android:groupIndicator="@null" />
+
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:divider="@null"
+            android:visibility="gone" >
+        </ListView>
     </FrameLayout>
 
 </LinearLayout>

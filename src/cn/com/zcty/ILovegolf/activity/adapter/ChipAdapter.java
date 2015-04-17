@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.model.Chip;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,8 +43,8 @@ public class ChipAdapter extends BaseAdapter{
 	public View getView(int position, View convertView, ViewGroup parent) {
 		Holder holder;
 		if(convertView==null){
+			convertView = inflater.inflate(R.layout.chip_item, null);
 			holder = new Holder();
-			convertView = inflater.inflate(R.layout.child_item, null);
 			holder.countTextView = (TextView) convertView.findViewById(R.id.chip_count);
 			holder.distanceTextView = (TextView) convertView.findViewById(R.id.chip_distance);
 			holder.puttsDistanceTextView = (TextView) convertView.findViewById(R.id.chip_putts_distance);
@@ -51,6 +52,7 @@ public class ChipAdapter extends BaseAdapter{
 		}else{
 			holder = (Holder) convertView.getTag();
 		}
+		
 		holder.countTextView.setText(position+1+"");
 		holder.distanceTextView.setText(chipArrayList.get(position).getDistance_from_hole());
 		holder.puttsDistanceTextView.setText(chipArrayList.get(position).getPutt_length());

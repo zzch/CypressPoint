@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -212,6 +213,16 @@ public class ScoreCardUpDateActivity extends Activity{
 		penaltiesstart = Integer.parseInt(penaltiesTextView.getText().toString());
 	}
 
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		
+		if(keyCode==KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0){
+			 Intent intent = new Intent();
+				setResult(30, intent);
+				new MyTask().start();
+        }
+		return false;
+	}
 	private void setListener() {
 		cacelButton.setOnClickListener(new OnClickListener() {	
 			@Override

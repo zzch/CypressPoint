@@ -2,32 +2,45 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@anim/pingpu"
+     >
+
     <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@anim/title_pingpu" >
+        android:id="@+id/qiugan_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@anim/title_pingpu" >
 
-            <Button
-                android:id="@+id/major_scorecard_back"
-                android:layout_width="50dp"
-                android:layout_height="25dp"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/back_button"
-                android:onClick="onclick" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/back_image" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:gravity="center"
-                android:text="球杆"
-                android:textColor="@color/gold"
-                android:textSize="@dimen/txsize_mid_x" />
-        </RelativeLayout>
+        <Button
+            android:id="@+id/major_scorecard_back_er"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="13dp"
+            android:background="@null"
+            android:onClick="onclick"
+            android:text="返回"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_small_xx" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="球杆"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_mid_x" />
+    </RelativeLayout>
 
     <ListView
         android:id="@+id/listView1"

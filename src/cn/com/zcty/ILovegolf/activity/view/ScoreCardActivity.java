@@ -24,6 +24,7 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
+import android.widget.RelativeLayout;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.ScoreCardGridViewAdapter;
 import cn.com.zcty.ILovegolf.model.Scorecards;
@@ -46,6 +47,7 @@ public class ScoreCardActivity extends Activity {
 	private String uuid;
 	private String uuid_t;
 	private String match_uuid;
+	private RelativeLayout layout_score_card;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -112,7 +114,7 @@ public class ScoreCardActivity extends Activity {
 				setcardsArray.set(position/2, setCard);
 				adapter.notifyDataSetChanged();
 			}
-		}
+		 }
 		}
 	}
 	/**
@@ -121,6 +123,8 @@ public class ScoreCardActivity extends Activity {
 	private void initView() {
 		grid_scorecard = (GridView) findViewById(R.id.gridView1);
 		grid_scorecard.setSelector(new ColorDrawable(Color.TRANSPARENT));
+		layout_score_card = (RelativeLayout) findViewById(R.id.layout_scord_card);
+		layout_score_card.getBackground().setAlpha(80);
 	}
 	
 	public void onclick(View v){

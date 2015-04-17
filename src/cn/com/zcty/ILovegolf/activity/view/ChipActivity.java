@@ -15,7 +15,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -49,11 +51,12 @@ public class ChipActivity extends Activity{
 					listView.setAdapter(new ChipAdapter(ChipActivity.this, chipArrayList));
 				}
 			}
-		};
+		}
 	};
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_chip);
 		initView();
 		new ChipPitTask().start();
@@ -92,7 +95,9 @@ public class ChipActivity extends Activity{
 					chip.setDistance_from_hole(j.getString("distance_from_hole"));
 					chip.setPutt_length(j.getString("putt_length"));
 					chipArrayList.add(chip);
+					Log.i("xianshijiemian", j.getString("putt_length"));
 				}
+				
 				Message msg = handler.obtainMessage();
 				msg.what = 1;
 				handler.sendMessage(msg);

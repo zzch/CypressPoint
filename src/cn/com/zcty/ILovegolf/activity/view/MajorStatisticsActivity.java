@@ -43,6 +43,7 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 	private TextView name3TextView;
 	private TextView name4TextView;
 	private RelativeLayout r1;
+	private RelativeLayout statistic_layout;
 	private ArrayList<String> distance = new ArrayList<String>();
 	private String JsonData;
 	private ArrayList<String> name = new ArrayList<String>();
@@ -79,6 +80,8 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 		name3TextView = (TextView) findViewById(R.id.static_name_3);
 		name4TextView = (TextView) findViewById(R.id.static_name_4);
 		r1 = (RelativeLayout) findViewById(R.id.major_qiugan_re);
+		statistic_layout = (RelativeLayout) findViewById(R.id.statistic_layout);
+		statistic_layout.getBackground().setAlpha(80);
 		for(int i=0;i<4;i++){
 			distance.add("");
 			name.add("");
@@ -306,7 +309,7 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 		//获取listview的适配器
 		ListAdapter listAdapter = listView.getAdapter();
 		//item的高度
-		int itemHeight = 120;
+		int itemHeight = 160;
 
 
 		if (listAdapter == null) {
