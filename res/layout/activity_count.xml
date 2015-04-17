@@ -2,35 +2,291 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical" 
     android:background="@anim/pingpu"
-    android:orientation="vertical" >
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="72dp"
-        android:background="@anim/title_pingpu" >
+        android:background="@drawable/title_bg" >
 
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
             android:text="@string/playset"
-            android:layout_marginTop="10dp"
             android:textColor="@color/gold"
-            android:textSize="@dimen/txsize_mid_x" />
+            android:textSize="22dp" />
 
         <Button
             android:id="@+id/count_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="13dp"
+            android:layout_centerVertical="true"
             android:background="@null"
             android:text="分析"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_small_xx" />
-    </RelativeLayout>
 
+    </RelativeLayout>
+  
+    <GridView
+        android:id="@+id/gridView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:numColumns="2" >
+
+    </GridView>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+		
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:layout_marginLeft="80dp"          
+            >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/count_image"
+                    android:layout_width="600px"
+                    android:layout_height="600px"
+                    android:layout_marginTop="5px"
+                    android:src="@drawable/white" />
+            </RelativeLayout>
+
+            <cn.com.zcty.ILovegolf.tools.ChartView
+                android:id="@+id/chartView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:layout_width="180px"
+                    android:layout_height="180px"
+                    android:layout_marginLeft="209px"
+                    android:layout_marginTop="205px"
+                    android:src="@drawable/orange" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/count_average"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="290px"
+                    android:layout_marginTop="230px"
+                    android:text="80"
+                    android:textColor="#ffffff" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="237px"
+                    android:layout_marginTop="278px"
+                    android:text="平均数"
+                    android:textColor="#ffffff" />
+            </RelativeLayout>
+        </FrameLayout>
+        <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="230dp"
+         >
+
+        <RelativeLayout 
+            android:id="@+id/re1"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            >
+            <ImageView 
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/e_card_yuan"
+                />
+            <TextView 
+                android:id="@+id/double_eagle_percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginLeft="40dp"
+                android:text="10%"
+                />
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginLeft="90dp"
+                android:text="信天翁"
+                />
+        </RelativeLayout>
+		 <RelativeLayout 
+		    android:id="@+id/re2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+			android:layout_marginLeft="150dp"
+	            >
+            <ImageView 
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/e_card_yuan"
+                />
+            <TextView 
+                android:id="@+id/eagle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginLeft="40dp"
+                android:text="10%"
+                />
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginLeft="90dp"
+                android:text="老鹰"
+                />
+        </RelativeLayout>
+        <RelativeLayout 
+		    android:id="@+id/re3"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/re1"
+            android:layout_marginTop="10dp"
+            
+            >
+            <ImageView 
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/e_card_yuan"
+                />
+            <TextView 
+                android:id="@+id/birdie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginLeft="40dp"
+                android:text="10%"
+                />
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginLeft="90dp"
+                android:text="小鸟球"
+                />
+        </RelativeLayout>
+        <RelativeLayout 
+		    android:id="@+id/re4"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/re2"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="10dp"
+            >
+            <ImageView 
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/e_card_yuan"
+                />
+            <TextView 
+                android:id="@+id/par"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginLeft="40dp"
+                android:text="10%"
+                />
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginLeft="90dp"
+                android:text="标准杆"
+                />
+        </RelativeLayout>
+        <RelativeLayout 
+		    android:id="@+id/re5"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/re3"
+            android:layout_marginTop="10dp"
+            >
+            <ImageView 
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/e_card_yuan"
+                />
+            <TextView 
+                android:id="@+id/bogey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginLeft="40dp"
+                android:text="10%"
+                />
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginLeft="90dp"
+                android:text="柏忌"
+                />
+        </RelativeLayout>
+        <RelativeLayout 
+		    android:id="@+id/re6"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/re4"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="10dp"
+            >
+            <ImageView 
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/e_card_yuan"
+                />
+            <TextView 
+                android:id="@+id/double_bogey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginLeft="40dp"
+                android:text="10%"
+                />
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginLeft="90dp"
+                android:text="双柏忌"
+                />
+        </RelativeLayout>
+        
+    </RelativeLayout>
+    
+    </RelativeLayout>
 </LinearLayout>

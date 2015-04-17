@@ -67,5 +67,7 @@ public class APIService {
 	  
 	 //专业积分统计
 	 public static final String MAJORCOUNT = "http://123.57.210.52/api/v1/matches/practice/statistics/professional.json?";
-
+	 
+	 //统计
+	 public static final String COUNTS = "http://123.57.210.52/api/v1/statistics.json?";
 }

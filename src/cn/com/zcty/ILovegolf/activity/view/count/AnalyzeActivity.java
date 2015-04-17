@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.Window;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import cn.com.zcty.ILovegolf.activity.R;
@@ -21,6 +22,9 @@ public class AnalyzeActivity extends FragmentActivity{
 	private ViewPager viewPager;
 	private ArrayList<Fragment> arrayFragment = new ArrayList<Fragment>();
 	private RadioGroup analyzeRadioGroup;
+	private RadioButton bisaiRadioButton;
+	private RadioButton timeRadioButton;
+	private RadioButton qiuchangRadioButton;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -32,30 +36,57 @@ public class AnalyzeActivity extends FragmentActivity{
 	}
 	private void setListeners() {
 		viewPager.setOnPageChangeListener(new OnPageChangeListener() {
-			
+
 			@Override
-			public void onPageSelected(int arg0) {
-				
+			public void onPageSelected(int position) {
+				switch (position) {
+				case 0:
+					bisaiRadioButton.setChecked(true);
+					timeRadioButton.setChecked(false);
+					qiuchangRadioButton.setChecked(false);
+					break;
+				case 1:
+					bisaiRadioButton.setChecked(false);
+					timeRadioButton.setChecked(true);
+					qiuchangRadioButton.setChecked(false);
+					break;
+				case 2:
+					bisaiRadioButton.setChecked(false);
+					timeRadioButton.setChecked(false);
+					qiuchangRadioButton.setChecked(true);
+					break;
+
+				}
 			}
-			
+
 			@Override
 			public void onPageScrolled(int arg0, float arg1, int arg2) {
-				
+
 			}
-			
+
 			@Override
-			public void onPageScrollStateChanged(int arg0) {
+			public void onPageScrollStateChanged(int position) {
 				
 			}
 		});
 		analyzeRadioGroup.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-			
+
 			@Override
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
-				
+				switch (group.getCheckedRadioButtonId()) {
+				case R.id.analyze_bisai:
+					viewPager.setCurrentItem(0);
+					break;
+				case R.id.analyze_time:
+					viewPager.setCurrentItem(1);
+					break;
+				case R.id.analyze_qiuchang:
+					viewPager.setCurrentItem(2);
+					break;
+				}
 			}
 		});
-		
+
 	}
 	private void getData() {
 		arrayFragment.add(new AnlyzeContestFragment());
@@ -66,6 +97,10 @@ public class AnalyzeActivity extends FragmentActivity{
 	private void initView() {
 		viewPager = (ViewPager) findViewById(R.id.analyze_viewpager);
 		analyzeRadioGroup = (RadioGroup) findViewById(R.id.analyze_radio);
+		bisaiRadioButton = (RadioButton) findViewById(R.id.analyze_bisai);
+		timeRadioButton = (RadioButton) findViewById(R.id.analyze_time);
+		qiuchangRadioButton = (RadioButton) findViewById(R.id.analyze_qiuchang);
+		bisaiRadioButton.setChecked(true);
 	}
 	class MyFragmentPagerAdapter  extends FragmentPagerAdapter{
 
