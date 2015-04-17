@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@anim/pingpu"
     android:orientation="vertical" >
 
     <RelativeLayout
@@ -52,37 +53,38 @@
         <RadioButton
             android:id="@+id/analyze_bisai"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
-            android:background="@drawable/group_1"
+            android:background="@drawable/radio_group_selector"
             android:button="@null"
-            android:text="前九"
-            android:textColor="@color/white"
-            android:textSize="30dp" />
+            android:text="按比赛"
+            android:gravity="center"
+            android:textColor="@drawable/radio_text_selector"
+            android:textSize="25dp" />
 
         <RadioButton
             android:id="@+id/analyze_time"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
-            android:background="@drawable/group_2"
+            android:background="@drawable/radio_group2_selector"
             android:button="@null"
             android:gravity="center"
-            android:text="后九"
-            android:textColor="@color/white"
-            android:textSize="30dp" />
+            android:text="按时间"
+            android:textColor="@drawable/radio_text_selector"
+            android:textSize="25dp" />
 
         <RadioButton
             android:id="@+id/analyze_qiuchang"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
-            android:background="@drawable/group_2"
+            android:background="@drawable/radio_group3_selector"
             android:button="@null"
             android:gravity="center"
-            android:text="后九"
-            android:textColor="@color/white"
-            android:textSize="30dp" />
+            android:text="按球场"
+            android:textColor="@drawable/radio_text_selector"
+            android:textSize="25dp" />
     </RadioGroup>
 
     <android.support.v4.view.ViewPager
