@@ -70,4 +70,7 @@ public class APIService {
 	 
 	 //统计
 	 public static final String COUNTS = "http://123.57.210.52/api/v1/statistics.json?";
+
+	 //已访问球场列表
+	 public static final String VISTTED = "http://123.57.210.52/api/v1/venues/visited.json?";
 }

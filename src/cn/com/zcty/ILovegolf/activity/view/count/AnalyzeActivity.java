@@ -9,7 +9,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
@@ -25,6 +28,8 @@ public class AnalyzeActivity extends FragmentActivity{
 	private RadioButton bisaiRadioButton;
 	private RadioButton timeRadioButton;
 	private RadioButton qiuchangRadioButton;
+	private Button fanhuiButton;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -35,6 +40,13 @@ public class AnalyzeActivity extends FragmentActivity{
 		setListeners();
 	}
 	private void setListeners() {
+		fanhuiButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				finish();
+			}
+		});
 		viewPager.setOnPageChangeListener(new OnPageChangeListener() {
 
 			@Override
@@ -100,6 +112,7 @@ public class AnalyzeActivity extends FragmentActivity{
 		bisaiRadioButton = (RadioButton) findViewById(R.id.analyze_bisai);
 		timeRadioButton = (RadioButton) findViewById(R.id.analyze_time);
 		qiuchangRadioButton = (RadioButton) findViewById(R.id.analyze_qiuchang);
+		fanhuiButton = (Button) findViewById(R.id.analyze_back);
 		bisaiRadioButton.setChecked(true);
 	}
 	class MyFragmentPagerAdapter  extends FragmentPagerAdapter{

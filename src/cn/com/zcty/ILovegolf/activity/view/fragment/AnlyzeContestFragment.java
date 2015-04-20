@@ -1,6 +1,5 @@
 package cn.com.zcty.ILovegolf.activity.view.fragment;
 
-import java.util.zip.Inflater;
 
 import cn.com.zcty.ILovegolf.activity.R;
 
@@ -17,5 +16,8 @@ public class AnlyzeContestFragment extends Fragment{
 			Bundle savedInstanceState) {
 		view = inflater.inflate(R.layout.anlyze_contest_fragment, container, false);	
 		return view;
+	}
+	public void initView(){
+		
 	}
 }
