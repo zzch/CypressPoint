@@ -1,74 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="horizontal" >
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <FrameLayout
+        android:id="@+id/majorstatic_image_item_frame"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
         <ImageView
             android:id="@+id/majorstatic_image_item"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:src="@android:drawable/alert_dark_frame" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/zongchengji_icon_1" />
+    </FrameLayout>
 
-        <TextView
-            android:id="@+id/majorstatic_score"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
-            android:layout_marginTop="20dp"
-            android:text="总成绩" />
-        <TextView
-            android:id="@+id/majorstatic_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"			
-			android:layout_centerVertical="true"
-			android:textSize="20dp"
-            android:text="134" />
-        <TextView
-            android:id="@+id/majorstatic_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="170dp"			
-			android:layout_centerVertical="true"
-			android:textSize="20dp"
-            android:text="135" />
-        <TextView
-            android:id="@+id/majorstatic_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="220dp"			
-			android:layout_centerVertical="true"
-			android:textSize="20dp"
-            android:text="134" />
-         <TextView
-             android:id="@+id/majorstatic_4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"			
-			android:layout_marginTop="70dp"
-			android:textSize="20dp"
-            android:text="总杆" />
-        <TextView
-            android:id="@+id/majorstatic_5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="170dp"			
-			android:layout_marginTop="70dp"
-			android:textSize="20dp"
-            android:text="推杆" />
-        <TextView
-            android:id="@+id/majorstatic_6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="220dp"			
-			android:layout_marginTop="70dp"
-			android:textSize="20dp"
-            android:text="净杆" />
-    </RelativeLayout>
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/gold_half" />
 
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/majorstatic_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+               
+                android:layout_marginTop="10dp"
+                android:text="总成绩"
+                android:textColor="@color/gold"
+                android:textSize="20dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/majorstatic_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="28dp"
+                android:text="总杆"
+                android:textColor="@color/gold"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/majorstatic_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:layout_alignParentRight="true"
+                android:text="134"
+                android:textColor="@color/gold"
+                android:textSize="20dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/majorstatic_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="28dp"
+                android:text="推杆"
+                android:textColor="@color/gold"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/majorstatic_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:layout_alignParentRight="true"
+                android:text="135"
+                android:textColor="@color/gold"
+                android:textSize="20dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/majorstatic_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="28dp"
+                android:layout_alignParentLeft="true"
+                android:text="净杆"
+                android:textColor="@color/gold"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/majorstatic_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                 android:layout_alignParentRight="true"
+                android:text="134"
+                android:textColor="@color/gold"
+                android:textSize="20dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/linearLayout2"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="23dp"
+        android:src="@drawable/icon_arrow" />
+
+</RelativeLayout>

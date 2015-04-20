@@ -15,12 +15,15 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
+import android.widget.TabWidget;
 import android.widget.TextView;
 
 public class TabHostActivity extends TabActivity {
 	private String flase = "0";
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 
@@ -30,7 +33,8 @@ public class TabHostActivity extends TabActivity {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.tabactivity_main);
 		TabHost myTabHost=getTabHost();
-
+		
+		
 		TabSpec tabSpec1=myTabHost.newTabSpec("练习");
 		tabSpec1.setIndicator(getIndicatorView("练习",R.drawable.lianxi));
 		tabSpec1.setContent(new Intent(this,ExerciseActivity.class));
@@ -59,6 +63,10 @@ public class TabHostActivity extends TabActivity {
 	public View getIndicatorView(String name,int icon)
 	{
 		View view=View.inflate(getApplicationContext(), R.layout.tabactivity_main_item, null);
+		
+	    LinearLayout layout_tab_item = (LinearLayout) findViewById(R.id.layout_tab_item);
+		//layout_tab_item.set;
+		//layout_tab_item.invalidate();
 		ImageView iv=(ImageView) view.findViewById(R.id.lianxi_item);
 		iv.setImageResource(icon);
 		TextView tv=(TextView) view.findViewById(R.id.e_name);

@@ -2,27 +2,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-   
     android:background="@anim/pingpu"
     android:orientation="vertical" >
-	<RelativeLayout 
-       android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-        android:background="@anim/title_pingpu"
-         >
-        
-         <TextView 
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="个人信息"
-           android:layout_centerVertical="true"
-           android:layout_centerHorizontal="true"
-           android:textColor="@color/gold"
-           android:textSize="20dip"
-           android:layout_marginLeft="25dip"
-             />
-           
-     </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@anim/title_pingpu" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="个人信息"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_mid_x" />
+    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/myself_head_self"
@@ -39,7 +35,7 @@
 
         <ImageView
             android:layout_width="@dimen/view_small_xx"
-           android:layout_height="@dimen/view_small_xx"
+            android:layout_height="@dimen/view_small_xx"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="20dp"
@@ -52,10 +48,11 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="30dp"
-            android:textColor="@color/gold"
-            android:textSize="@dimen/txsize_mid_x"
             android:layout_marginTop="10dp"
-            android:text="游客" />
+            android:text="游客"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_mid_x" />
+
         <TextView
             android:id="@+id/myself_sign"
             android:layout_width="wrap_content"
@@ -63,9 +60,9 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"
+            android:text="签名"
             android:textColor="@color/gold_70"
-            android:textSize="@dimen/txsize_small_xx"
-            android:text="签名" />
+            android:textSize="@dimen/txsize_small_xx" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -76,32 +73,30 @@
             android:id="@+id/myself_setting"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_centerVertical="true"
-             >
-			<ImageView 
-			    android:id="@+id/myself_image"
-			    android:layout_width="@dimen/view_small_xx"
+            android:layout_centerVertical="true" >
+
+            <ImageView
+                android:id="@+id/myself_image"
+                android:layout_width="@dimen/view_small_xx"
                 android:layout_height="@dimen/view_small_xx"
-			    android:layout_centerVertical="true"
-			    android:layout_marginLeft="10dp"
-			    android:src="@android:drawable/ic_input_add"
-			    />
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@android:drawable/ic_input_add" />
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"   
-                android:layout_centerVertical="true"            
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
                 android:layout_marginLeft="50dp"
                 android:text="设置" />
-            <ImageView 
-			    android:layout_width="@dimen/view_small_xx"
-                android:layout_height="@dimen/view_small_xx"
-			    android:layout_centerVertical="true"
-			    android:layout_alignParentRight="true"
-			    android:layout_marginRight="20dp"
-			    android:src="@drawable/jia"
-			    />
 
+            <ImageView
+                android:layout_width="@dimen/view_small_xx"
+                android:layout_height="@dimen/view_small_xx"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/jia" />
         </RelativeLayout>
     </RelativeLayout>
 

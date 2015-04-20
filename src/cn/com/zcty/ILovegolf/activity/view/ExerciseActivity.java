@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 /**
  * 练习首页
@@ -20,13 +21,14 @@ import android.widget.Button;
  */
 public class ExerciseActivity extends Activity {
 
-	  
+	 // private LinearLayout layout_e;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_exercise);
-       
+        //layout_e = (LinearLayout) findViewById(R.id.layout_e);
+        //layout_e.getBackground().setAlpha(80);
     }
     //示意图记分点击事件
      public void shiyitu(View v){

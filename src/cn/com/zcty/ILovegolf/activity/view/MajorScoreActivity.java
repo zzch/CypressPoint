@@ -19,6 +19,7 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.KeyEvent;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
@@ -155,7 +156,29 @@ public class MajorScoreActivity extends Activity {
 		setListeners();
 		new JiQiuJiLuTask().start();
 	}
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		
+		if(keyCode==KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0){
+			if(score!=null){
 
+				Intent intent = new Intent();
+				intent.putExtra("score", score);
+				intent.putExtra("putts", putts);
+				intent.putExtra("position", position);
+				intent.putExtra("penalties", penalties);
+				setResult(1,intent);
+				finish();
+			}else{
+
+				Intent intent = new Intent();		
+				setResult(30,intent);
+				finish();
+			}
+        }
+		return false;
+	}
+	  
 	private void setListeners() {
 		fanhuiText.setOnClickListener(new OnClickListener() {
 

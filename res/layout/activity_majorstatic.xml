@@ -2,33 +2,45 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@anim/pingpu"
     android:orientation="vertical" >
-	  <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@anim/title_pingpu" >
 
-            <Button
-                android:id="@+id/major_scorecard_back"
-                android:layout_width="50dp"
-                android:layout_height="25dp"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/back_button"
-                android:onClick="onclick" />
+    <RelativeLayout
+        android:id="@+id/statistic_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@anim/title_pingpu" >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:gravity="center"
-                android:text="技术统计"
-                android:textColor="@color/gold"
-                android:textSize="@dimen/txsize_mid_x" />
-        </RelativeLayout>
-    
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/back_image" />
+
+        <Button
+            android:id="@+id/major_scorecard_back"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="13dp"
+            android:background="@null"
+            android:onClick="onclick"
+            android:text="返回"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_small_xx" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="技术统计"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_mid_x" />
+    </RelativeLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
@@ -41,142 +53,157 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical" >
-            
 
-      
-        <ListView
-            android:id="@+id/major_count"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-        </ListView>
+                <ListView
+                    android:id="@+id/major_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:listSelector="@android:color/transparent"
+                    android:divider="@null" >
+                </ListView>
 
-        <RelativeLayout
-            android:id="@+id/major_qiugan_re"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+                <TextView
+                    android:id="@+id/major_static_qiugan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center_horizontal"
+                    android:text="球杆"
+                    android:textColor="@color/gold"
+                    android:textSize="20dp" />
 
-            <TextView
-                android:id="@+id/major_static_qiugan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:gravity="center_horizontal"
-                android:text="球杆" />
+                <RelativeLayout
+                    android:id="@+id/major_qiugan_re"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp" >
 
-            <TextView
-                android:id="@+id/static_name_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/major_static_qiugan"
-                android:layout_marginLeft="60dp"
-                android:layout_marginTop="20dp"
-                android:text="1w" />
+                    <ImageView
+                        android:id="@+id/static_image_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/qiugan_icon" />
 
-            <TextView
-                android:id="@+id/static_name_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/static_name_1"
-                android:layout_below="@+id/major_static_qiugan"
-                android:layout_marginLeft="65dp"
-                android:layout_marginTop="20dp"
-                android:text="3w" />
+                    <ImageView
+                        android:id="@+id/static_image_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/static_image_1"
+                        android:layout_marginLeft="30dp"
+                        android:layout_toRightOf="@+id/static_distance_1"
+                        android:src="@drawable/qiugan_icon" />
 
-            <TextView
-                android:id="@+id/static_name_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/static_name_2"
-                android:layout_below="@+id/major_static_qiugan"
-                android:layout_marginLeft="65dp"
-                android:layout_marginTop="20dp"
-                android:text="5w" />
+                    <TextView
+                        android:id="@+id/static_name_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/static_name_1"
+                        android:layout_alignBottom="@+id/static_name_1"
+                        android:layout_alignLeft="@+id/static_distance_2"
+                        android:text="3w"
+                        android:textColor="@color/gold"
+                        android:textSize="20dp" />
 
-            <TextView
-                android:id="@+id/static_name_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/static_name_3"
-                android:layout_below="@+id/major_static_qiugan"
-                android:layout_marginLeft="65dp"
-                android:layout_marginTop="20dp"
-                android:text="7w" />
+                    <TextView
+                        android:id="@+id/static_name_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/static_distance_1"
+                        android:layout_below="@+id/static_distance_1"
+                        android:text="1w"
+                        android:textColor="@color/gold"
+                        android:textSize="20dp" />
 
-            <ImageView
-                android:id="@+id/static_image_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/static_name_1"
-                android:layout_marginLeft="45dp"
-                android:src="@android:drawable/alert_dark_frame" />
+                    <TextView
+                        android:id="@+id/static_distance_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toRightOf="@+id/static_image_2"
+                        android:text="260"
+                        android:textColor="@color/gold"
+                        android:textSize="30dp" />
 
-            <ImageView
-                android:id="@+id/static_image_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/static_image_1"
-                android:layout_below="@+id/static_name_1"
-                android:layout_marginLeft="65dp"
-                android:src="@android:drawable/alert_dark_frame" />
+                    <ImageView
+                        android:id="@+id/static_image_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/static_image_2"
+                        android:layout_marginLeft="30dp"
+                        android:layout_toRightOf="@+id/static_distance_2"
+                        android:src="@drawable/qiugan_icon" />
 
-            <ImageView
-                android:id="@+id/static_image_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/static_image_2"
-                android:layout_below="@+id/static_name_1"
-                android:layout_marginLeft="65dp"
-                android:src="@android:drawable/alert_dark_frame" />
+                    <TextView
+                        android:id="@+id/static_distance_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/static_name_2"
+                        android:layout_toRightOf="@+id/static_image_3"
+                        android:text="160"
+                        android:textColor="@color/gold"
+                        android:textSize="30dp" />
 
-            <ImageView
-                android:id="@+id/static_image_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/static_image_3"
-                android:layout_below="@+id/static_name_1"
-                android:layout_marginLeft="65dp"
-                android:src="@android:drawable/alert_dark_frame" />
+                    <TextView
+                        android:id="@+id/static_name_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/static_name_2"
+                        android:layout_alignBottom="@+id/static_name_2"
+                        android:layout_alignLeft="@+id/static_distance_3"
+                        android:text="5w"
+                        android:textColor="@color/gold"
+                        android:textSize="20dp" />
 
-            <TextView
-                android:id="@+id/static_distance_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/static_image_1"
-                android:layout_marginLeft="60dp"
-                android:layout_marginTop="10dp"
-                android:text="320" />
+                    <ImageView
+                        android:id="@+id/static_image_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/static_image_3"
+                        android:layout_marginLeft="30dp"
+                        android:layout_toRightOf="@+id/static_distance_3"
+                        android:src="@drawable/qiugan_icon" />
 
-            <TextView
-                android:id="@+id/static_distance_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/static_distance_1"
-                android:layout_below="@+id/static_image_1"
-                android:layout_marginLeft="65dp"
-                android:layout_marginTop="10dp"
-                android:text="260" />
+                    <TextView
+                        android:id="@+id/static_distance_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/static_name_3"
+                        android:layout_toRightOf="@+id/static_image_4"
+                        android:text="145"
+                        android:textColor="@color/gold"
+                        android:textSize="30dp" />
 
-            <TextView
-                android:id="@+id/static_distance_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/static_distance_2"
-                android:layout_below="@+id/static_image_1"
-                android:layout_marginLeft="65dp"
-                android:layout_marginTop="10dp"
-                android:text="160" />
+                    <TextView
+                        android:id="@+id/static_name_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/static_distance_4"
+                        android:layout_below="@+id/static_distance_4"
+                        android:text="7w"
+                        android:textColor="@color/gold"
+                        android:textSize="20dp" />
 
-            <TextView
-                android:id="@+id/static_distance_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/static_distance_3"
-                android:layout_below="@+id/static_image_1"
-                android:layout_marginLeft="65dp"
-                android:layout_marginTop="10dp"
-                android:text="145" />
-        </RelativeLayout>
-        </LinearLayout>
+                    <TextView
+                        android:id="@+id/static_distance_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toRightOf="@+id/static_image_1"
+                        android:text="320"
+                        android:textColor="@color/gold"
+                        android:textSize="30dp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/icon_arrow" />
+
+                </RelativeLayout>
+            </LinearLayout>
         </RelativeLayout>
     </ScrollView>
 

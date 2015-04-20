@@ -1,41 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:gravity="center"  
-   android:background="@anim/tab_pingpu"
-    android:orientation="vertical" >
+    android:layout_height="wrap_content"
+     >
+
+    <LinearLayout
+        android:id="@+id/layout_tab_item"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:background="@anim/tab_pingpu"
+        android:gravity="center"
+        android:orientation="vertical" >
+    
 
     <ImageView
         android:id="@+id/lianxi_item"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:src="@drawable/lianxi_focused" 
         android:layout_marginTop="10dp"
-        />
-    
-    <TextView 
+        android:src="@drawable/lianxi_focused" />
+
+    <TextView
         android:id="@+id/e_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="练习"
-        android:textSize="10dp"
         android:textColor="@drawable/textcolor"
-        />
+        android:textSize="10dp" />
+    </LinearLayout>
 
 </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

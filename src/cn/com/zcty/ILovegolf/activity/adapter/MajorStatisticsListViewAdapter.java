@@ -11,12 +11,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MajorStatisticsListViewAdapter extends BaseAdapter{
 	private ArrayList<MajorStatisticsModel>  statisticsModels;
 	private Context context;
 	private LayoutInflater inflater;
+	
+	private int image[]={R.drawable.zongchengji_icon_1,R.drawable.pingjunganshu_2,R.drawable.tuigan_3,
+			R.drawable.shakengjiuqiu_4,R.drawable.yiqieyitui_5,R.drawable.gongguoling_6,
+			R.drawable.qiudaomingzhong_7,R.drawable.kaiqiujuli_8};
+			              
 	public MajorStatisticsListViewAdapter(Context context,ArrayList<MajorStatisticsModel>  statisticsModels) {
 		this.context = context;
 		this.statisticsModels = statisticsModels;
@@ -24,7 +30,8 @@ public class MajorStatisticsListViewAdapter extends BaseAdapter{
 	}
 	@Override
 	public int getCount() {
-		return statisticsModels.size();
+		
+		return image.length;
 	}
 
 	@Override
@@ -50,6 +57,7 @@ public class MajorStatisticsListViewAdapter extends BaseAdapter{
 			holder.pick05 = (TextView) convertView.findViewById(R.id.majorstatic_4);
 			holder.pick06 = (TextView) convertView.findViewById(R.id.majorstatic_5);
 			holder.pick07 = (TextView) convertView.findViewById(R.id.majorstatic_6);
+			holder.icon = (ImageView) convertView.findViewById(R.id.majorstatic_image_item);
 			convertView.setTag(holder);
 		}else{
 			holder = (VoidHolder) convertView.getTag();
@@ -61,6 +69,8 @@ public class MajorStatisticsListViewAdapter extends BaseAdapter{
 		holder.pick05.setText(statisticsModels.get(position).getPlace5());
 		holder.pick06.setText(statisticsModels.get(position).getPlace6());
 		holder.pick07.setText(statisticsModels.get(position).getPlace7());
+		holder.icon.setImageResource(image[position]);
+		
 		Log.i("tiancaishiwo", statisticsModels.get(6).getPlace1());
 
 		return convertView;
@@ -73,5 +83,6 @@ public class MajorStatisticsListViewAdapter extends BaseAdapter{
 		TextView pick05;
 		TextView pick06;
 		TextView pick07;
+		ImageView icon;
 	}
 }

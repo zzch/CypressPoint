@@ -16,10 +16,12 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.Window;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 
 public class QiuGanActivity extends Activity{
 	private ArrayList<Clubs> clubsArrayList = new ArrayList<Clubs>(); 
 	private ListView listView;
+	RelativeLayout qiugan_layout;
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
 			if(msg.what==1){
@@ -39,6 +41,8 @@ public class QiuGanActivity extends Activity{
 	}
 	private void initView() {
 		listView = (ListView) findViewById(R.id.listView1);
+		qiugan_layout = (RelativeLayout) findViewById(R.id.qiugan_layout);
+		qiugan_layout.getBackground().setAlpha(80);
 	}
 	private void getData() {
 		listView.setAdapter(new ClubsAdapter(this,clubsArrayList));

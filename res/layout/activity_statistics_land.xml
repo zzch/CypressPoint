@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-         android:layout_height="72dp"
+        android:layout_height="72dp"
         android:background="@anim/title_pingpu" >
 
         <TextView
@@ -15,33 +15,42 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:gravity="center"
             android:text="@string/text_statistics"
+           android:layout_marginTop="10dp"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_mid_x" />
 
         <Button
             android:id="@+id/share"
-            android:layout_width="@dimen/view_mid_xx_title"
-            android:layout_height="@dimen/view_mid_xx_title"
-             android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="13dp"
+            android:background="@null"
             android:text="@string/text_share"
-            android:textSize="@dimen/txsize_small_xx" 
             android:textColor="@color/gold"
-            android:background="@null" />
+            android:textSize="@dimen/txsize_small_xx" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/back_image" />
 
         <Button
             android:id="@+id/back1"
             android:layout_width="50dp"
             android:layout_height="25dp"
-            android:layout_alignBaseline="@+id/share"
-            android:layout_alignBottom="@+id/share"
             android:layout_alignParentLeft="true"
-             android:layout_centerVertical="true"
-            android:background="@drawable/back_button"
-            android:onClick="onClick" />
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="13dp"
+            android:background="@null"
+            android:onClick="onClick"
+            android:text="返回"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_small_xx" />
     </RelativeLayout>
 
     <ScrollView
@@ -58,7 +67,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                
                 android:gravity="center_vertical" >
 
                 <TextView
@@ -67,10 +75,10 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
                     android:text="2014年6月14日"
                     android:textColor="@color/gold"
-                    android:textSize="@dimen/txsize_small_x"
-                    android:layout_marginRight="10dp" />
+                    android:textSize="@dimen/txsize_small_x" />
 
                 <TextView
                     android:id="@+id/golf_name"
@@ -82,12 +90,12 @@
                     android:text="北京北湖高尔夫"
                     android:textColor="@color/gold"
                     android:textSize="@dimen/txsize_small_xx" />
-
             </RelativeLayout>
-                    <View
-                            android:layout_width="match_parent"
-                            android:layout_height="0.5dp"
-                            android:background="@color/gold_half" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gold_half" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -111,10 +119,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="67dp"
                             android:layout_margin="0.5dip"
-                            android:textSize="20dp"
                             android:gravity="center"
                             android:text="洞"
-                            android:textColor="@color/gold" />
+                            android:textColor="@color/gold"
+                            android:textSize="20dp" />
 
                         <View
                             android:layout_width="1dp"
@@ -127,13 +135,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="1"
                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                         <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -143,13 +150,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="2"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                         <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -159,10 +165,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="3"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -175,13 +180,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="4"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                         <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -191,10 +195,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="5"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -207,10 +210,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="6"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -223,10 +225,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="7"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -239,13 +240,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="8"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                         <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -255,7 +255,6 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="9"
                             android:textColor="@color/gold_70"
@@ -271,10 +270,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="前"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -288,26 +286,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="10"
-                             android:textColor="@color/gold_70"
-                            android:textSize="@dimen/txsize_small_s" />
-
-                         <View
-                            android:layout_width="1dp"
-                            android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
-
-                        <TextView
-                            android:layout_width="25dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="0.5dip"
-                            android:layout_weight="1"
-                            
-                            android:gravity="center"
-                            android:text="11"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -320,14 +301,27 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
+                            android:gravity="center"
+                            android:text="11"
+                            android:textColor="@color/gold_70"
+                            android:textSize="@dimen/txsize_small_s" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/gold_half" />
+
+                        <TextView
+                            android:layout_width="25dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="0.5dip"
+                            android:layout_weight="1"
                             android:gravity="center"
                             android:text="12"
-                             android:textColor="@color/gold_70"
-                             
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                         <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -337,13 +331,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="13"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                         <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -353,13 +346,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="14"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                         <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -369,13 +361,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="15"
                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                         <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -385,58 +376,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="16"
-                             android:textColor="@color/gold_70"
-                            android:textSize="@dimen/txsize_small_s" />
-
-                         <View
-                            android:layout_width="1dp"
-                            android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
-
-                        <TextView
-                            android:layout_width="25dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="0.5dip"
-                            android:layout_weight="1"
-                            
-                            android:gravity="center"
-                            android:text="17"
-                             android:textColor="@color/gold_70"
-                            android:textSize="@dimen/txsize_small_s" />
-
-                         <View
-                            android:layout_width="1dp"
-                            android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
-
-                        <TextView
-                            android:layout_width="25dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="0.5dip"
-                            android:layout_weight="1"
-                           
-                            android:gravity="center"
-                            android:text="18"
-                             android:textColor="@color/gold_70"
-                            android:textSize="@dimen/txsize_small_s" />
-
-                         <View
-                            android:layout_width="1dp"
-                            android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
-
-                        <TextView
-                            android:layout_width="25dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="0.5dip"
-                            android:layout_weight="1"
-                          
-                            android:gravity="center"
-                            android:text="后"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -449,18 +391,61 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
+                            android:gravity="center"
+                            android:text="17"
+                            android:textColor="@color/gold_70"
+                            android:textSize="@dimen/txsize_small_s" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/gold_half" />
+
+                        <TextView
+                            android:layout_width="25dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="0.5dip"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="18"
+                            android:textColor="@color/gold_70"
+                            android:textSize="@dimen/txsize_small_s" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/gold_half" />
+
+                        <TextView
+                            android:layout_width="25dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="0.5dip"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="后"
+                            android:textColor="@color/gold_70"
+                            android:textSize="@dimen/txsize_small_s" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/gold_half" />
+
+                        <TextView
+                            android:layout_width="25dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="0.5dip"
+                            android:layout_weight="1"
                             android:gravity="center"
                             android:text="总"
                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
-
-                         
                     </TableRow>
-                     <View
-                            android:layout_width="match_parent"
-                            android:layout_height="0.5dp"
-                            android:background="@color/gold_half" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/gold_half" />
 
                     <TableRow
                         android:id="@+id/tableRow2"
@@ -476,12 +461,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="67dp"
                             android:layout_margin="0.5dip"
-                           android:textSize="20dp"
                             android:gravity="center"
                             android:text="标准杆"
-                            android:textColor="@color/gold" />
+                            android:textColor="@color/gold"
+                            android:textSize="20dp" />
 
-                      <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -492,10 +477,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="1"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -509,13 +493,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="2"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                       <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -526,10 +509,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="3"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -543,13 +525,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="4"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                       <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -560,10 +541,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="5"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -577,10 +557,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="6"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -594,10 +573,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="7"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -611,7 +589,6 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="8"
                             android:textColor="@color/gold_70"
@@ -621,19 +598,19 @@
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
+
                         <TextView
                             android:id="@+id/t9"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="9"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                      <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -644,7 +621,6 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="前"
                             android:textColor="@color/gold_70"
@@ -662,7 +638,6 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="1"
                             android:textColor="@color/gold_70"
@@ -679,7 +654,6 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="2"
                             android:textColor="@color/gold_70"
@@ -696,13 +670,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="3"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                       <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -713,10 +686,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="4"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -730,10 +702,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="5"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -747,13 +718,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="6"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                       <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -764,10 +734,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="7"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -781,10 +750,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="8"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -798,13 +766,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="9"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                       <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -815,13 +782,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="前"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                       <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -832,17 +798,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="总计"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
                     </TableRow>
-                    
-                     <View
-                            android:layout_width="match_parent"
-                            android:layout_height="0.5dp"
-                            android:background="@color/gold_half" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/gold_half" />
 
                     <TableRow
                         android:id="@+id/tableRow3"
@@ -858,10 +823,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="67dp"
                             android:layout_margin="0.5dip"
-                            android:textSize="20dp"
                             android:gravity="center"
                             android:text="成绩"
-                            android:textColor="@color/gold" />
+                            android:textColor="@color/gold"
+                            android:textSize="20dp" />
 
                         <View
                             android:layout_width="1dp"
@@ -874,10 +839,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="1"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -891,10 +855,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="2"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -908,13 +871,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="3"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                       <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -925,10 +887,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="4"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -942,13 +903,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="5"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                       <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -959,7 +919,6 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="6"
                             android:textColor="@color/gold_70"
@@ -976,10 +935,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="7"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -993,10 +951,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="8"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1010,10 +967,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="9"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1027,10 +983,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="前"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1045,13 +1000,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="1"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                       <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -1062,13 +1016,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="2"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                       <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -1079,7 +1032,6 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="3"
                             android:textColor="@color/gold_70"
@@ -1089,13 +1041,13 @@
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
+
                         <TextView
                             android:id="@+id/tth4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                          
                             android:gravity="center"
                             android:text="4"
                             android:textColor="@color/gold_70"
@@ -1112,13 +1064,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="5"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                      <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -1129,10 +1080,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="6"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1146,10 +1096,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="7"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1163,10 +1112,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="8"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1180,10 +1128,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="9"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1197,13 +1144,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="前"
                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                       <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -1214,17 +1160,16 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="总计"
                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
                     </TableRow>
-                    
-                     <View
-                            android:layout_width="match_parent"
-                            android:layout_height="0.5dp"
-                            android:background="@color/gold_half" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/gold_half" />
 
                     <TableRow
                         android:id="@+id/tableRow4"
@@ -1240,10 +1185,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="67dp"
                             android:layout_margin="0.5dip"
-                            android:textSize="20dp"
                             android:gravity="center"
                             android:text="距标准杆"
-                            android:textColor="@color/gold" />
+                            android:textColor="@color/gold"
+                            android:textSize="20dp" />
 
                         <View
                             android:layout_width="1dp"
@@ -1256,7 +1201,6 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                         
                             android:gravity="center"
                             android:text="1"
                             android:textColor="@color/gold_70"
@@ -1273,10 +1217,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="2"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1290,10 +1233,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="3"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1307,13 +1249,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="4"
                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                       <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -1324,10 +1265,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="5"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1341,7 +1281,6 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="6"
                             android:textColor="@color/gold_70"
@@ -1358,13 +1297,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                          
                             android:gravity="center"
                             android:text="7"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                       <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -1375,10 +1313,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="8"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1392,10 +1329,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                          
                             android:gravity="center"
                             android:text="9"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1409,10 +1345,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="前"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1427,7 +1362,6 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="1"
                             android:textColor="@color/gold_70"
@@ -1444,10 +1378,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="2"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1461,13 +1394,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="3"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                       <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -1478,13 +1410,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="4"
                             android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                       <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -1495,10 +1426,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="5"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1512,10 +1442,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="6"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1529,13 +1458,12 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="7"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
-                       <View
+                        <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
                             android:background="@color/gold_half" />
@@ -1546,10 +1474,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="8"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1563,10 +1490,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                            
                             android:gravity="center"
                             android:text="9"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1580,10 +1506,9 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="前"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
@@ -1597,24 +1522,22 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
-                           
                             android:gravity="center"
                             android:text="总计"
-                             android:textColor="@color/gold_70"
+                            android:textColor="@color/gold_70"
                             android:textSize="@dimen/txsize_small_s" />
                     </TableRow>
                 </TableLayout>
             </LinearLayout>
-            
-                   <View
-                            android:layout_width="match_parent"
-                            android:layout_height="0.5dp"
-                            android:background="@color/gold_half" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gold_half" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-               
                 android:orientation="horizontal" >
 
                 <ImageView
@@ -1695,7 +1618,7 @@
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="柏忌"
                     android:textColor="@color/gold_70"
-                    android:textSize="20dp"/>
+                    android:textSize="20dp" />
 
                 <ImageView
                     android:layout_width="@dimen/view_small_xx_w"
@@ -1712,42 +1635,39 @@
                     android:text="双柏忌+"
                     android:textColor="@color/gold_70"
                     android:textSize="20dp" />
-              </LinearLayout>
-                     <View
-                            android:layout_width="match_parent"
-                            android:layout_height="0.5dp"
-                            android:background="@color/gold_half" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/gold_half" />
 
             <GridView
                 android:id="@+id/gridView1"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                
                 android:numColumns="4" >
             </GridView>
 
-              <ListView
+            <ListView
                 android:id="@+id/count"
                 android:layout_width="match_parent"
                 android:layout_height="580dp"
-                android:divider="@null"
-                 >
+                android:divider="@null" >
             </ListView>
-            
-             <ListView
+
+            <ListView
                 android:id="@+id/qiudong"
                 android:layout_width="match_parent"
                 android:layout_height="230dp"
-               
-                android:divider="@null"
-                 >
+                android:divider="@null" >
             </ListView>
+
             <ListView
                 android:id="@+id/qiutype"
                 android:layout_width="match_parent"
-                android:layout_height="430dp" 
-                android:divider="@null"
-                >
+                android:layout_height="430dp"
+                android:divider="@null" >
             </ListView>
         </LinearLayout>
     </ScrollView>

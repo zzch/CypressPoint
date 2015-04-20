@@ -1,65 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linear"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:id="@+id/linear"
     android:background="@anim/pingpu"
-    >
-   
-     <RelativeLayout
-         android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-         android:background="@anim/title_pingpu" >
+    android:orientation="vertical" >
 
-         <Button
-             android:id="@+id/playset_start"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_centerVertical="true"
-             android:layout_alignParentRight="true"
-             android:background="@null"
-             android:text="@string/start"
-             android:layout_marginRight="10dp"
-             android:textColor="@color/gold_half"
-             android:textSize="@dimen/txsize_small_xx" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@anim/title_pingpu" >
 
-         <TextView
-             android:id="@+id/textView1"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_centerHorizontal="true"
-             android:layout_centerVertical="true"
-             android:gravity="center"
-             android:text="@string/playset"
-             android:textColor="@color/gold"
-             android:textSize="22dp" />
+        <Button
+            android:id="@+id/playset_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="13dp"
+            android:background="@null"
+            android:text="@string/start"
+            android:textColor="@color/gold_half"
+            android:textSize="@dimen/txsize_small_xx" />
 
-         <Button
-             android:id="@+id/playset_back"
-             android:layout_width="50dp"
-             android:layout_height="25dp"
-             android:layout_alignBaseline="@+id/textView1"
-             android:layout_centerVertical="true"
-             android:layout_alignParentLeft="true"
-             android:layout_marginLeft="10dp"
-             android:background="@drawable/back_button" />
-     </RelativeLayout>
-     
-      <ListView
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/playset"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_mid_x" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/back_image" />
+
+        <Button
+            android:id="@+id/playset_back"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="13dp"
+            android:background="@null"
+            android:text="返回"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_small_xx" />
+    </RelativeLayout>
+
+    <ListView
         android:id="@+id/listView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="#00000000" >
     </ListView>
 
-  <ListView
-      android:id="@+id/listView2"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:visibility="gone"
-      android:divider="#00000000" >
-
+    <ListView
+        android:id="@+id/listView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#00000000"
+        android:visibility="gone" >
     </ListView>
-   
+
 </LinearLayout>

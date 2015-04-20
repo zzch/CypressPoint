@@ -2,55 +2,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@anim/pingpu"
-     >
+    android:orientation="vertical" >
 
-    <RelativeLayout 
-       android:layout_width="match_parent"
+    <RelativeLayout
+        android:id="@+id/layout_scord_card"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-       android:background="@anim/title_pingpu"
-         >
-         <Button 
-             android:id="@+id/scorecard_back"
-             android:layout_width="50dp"
-             android:layout_height="25dp"
-             android:layout_alignParentLeft="true"
-             android:layout_centerVertical="true"
-             android:background="@drawable/back_button"
-             android:layout_marginLeft="10dp"
-             android:onClick="onclick"
-           />
-         <TextView
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_centerHorizontal="true"
-             android:layout_centerVertical="true"
-             android:gravity="center"
-             android:text="@string/score_card"
-             android:textColor="@color/gold"
-             android:textSize="@dimen/txsize_mid_x" />
-           <Button 
-           android:id="@+id/scorecard_score"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_centerVertical="true"
-           android:layout_alignParentRight="true"
-           android:background="@null"
-           android:textColor="@color/gold"
-           android:text="@string/button_count"
-           android:layout_marginRight="10dp"
-           android:onClick="onclick"
-           android:textSize="@dimen/txsize_small_xx"
-             />
-     </RelativeLayout>
+        android:background="@anim/title_pingpu" >
 
-   <GridView
-       android:id="@+id/gridView1"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:overScrollMode="never"
-       android:numColumns="2" >
-   </GridView>
-   
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/back_image" />
+
+        <Button
+            android:id="@+id/scorecard_back"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="13dp"
+            android:background="@null"
+            android:onClick="onclick"
+            android:text="返回"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_small_xx" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="@string/score_card"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_mid_x" />
+
+        <Button
+            android:id="@+id/scorecard_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="13dp"
+            android:background="@null"
+            android:onClick="onclick"
+            android:text="@string/button_count"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_small_xx" />
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/gridView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="2"
+        android:overScrollMode="never" >
+    </GridView>
+
 </LinearLayout>
