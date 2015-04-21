@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@anim/title_pingpu" >
+
+        <Button
+            android:id="@+id/analyze_pk_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="13dp"
+            android:background="@null"
+            android:text="@string/back"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_small_xx" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="@string/analyzepkresult"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_mid_x" />
+
+        <Button
+            android:id="@+id/analyze_pk_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="13dp"
+            android:background="@null"
+            android:text="@string/share"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_small_xx" />
+    </RelativeLayout>
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        
+        >
+        <RelativeLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ListView
+            android:id="@+id/listview_1"
+            android:layout_width="wrap_content"
+            android:layout_height="500dp" >
+        </ListView>
+
+        <ListView
+            android:id="@+id/listview_2"
+            android:layout_width="wrap_content"
+            android:layout_height="500dp" >
+        </ListView>
+
+        <ListView
+            android:id="@+id/listview_3"
+            android:layout_width="wrap_content"
+            android:layout_height="500dp" >
+        </ListView>
+    </LinearLayout>
+</RelativeLayout>
+        
+    </ScrollView>
+</LinearLayout>

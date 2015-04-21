@@ -73,4 +73,7 @@ public class APIService {
 
 	 //已访问球场列表
 	 public static final String VISTTED = "http://123.57.210.52/api/v1/venues/visited.json?";
+	 
+	 //个性统计
+	 public static final String GEXINGCOUNT = "http://123.57.210.52/api/v1/statistics/customize.json?";
 }

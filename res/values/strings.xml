@@ -27,6 +27,7 @@
     <string name="xlistview_footer_hint_normal">查看更多</string>
     <string name="xlistview_footer_hint_ready">松开载入更多</string>
     <string name="delete_card">确认删除历史记分卡吗？</string>
+    
     <string name="score_card">记分卡</string>
     <string name="button_count">统计</string>
     <string name="button_save">保存</string>
@@ -70,6 +71,11 @@
     <string name="count_fenxi">分析</string>
     <string name="count_avg">平均杆数</string>
     <string name="count_next">下一步</string>
+    <string name="analyzepk">PK对手</string>
+    <string name="analyzepkresult">PK结果</string>
+    <string name="anlyzeresult">分析结果</string>
+    <string name="share">分享</string>
+    <string name="pk">PK</string>
      <!--
    
     <string name="myself">个人信息</string>

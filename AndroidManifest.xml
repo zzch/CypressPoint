@@ -61,6 +61,9 @@
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.MajorScoreActivity" android:screenOrientation="portrait"></activity> 
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.myself.InformationChangesActivity" android:screenOrientation="portrait"></activity>     
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.count.AnalyzeActivity" android:screenOrientation="portrait"></activity> 
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.count.AnalyzeResultActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.count.AnalyzePKResultActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.count.AnalyzePKActivity" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.MajorStatisticsActivity" android:screenOrientation="portrait"></activity> 
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.AverageAvtivity" android:screenOrientation="portrait"></activity> 
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.PuttsActivity" android:screenOrientation="portrait"></activity> 
