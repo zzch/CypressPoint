@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="72dp"
         android:background="@anim/title_pingpu" >
 
         <Button
@@ -22,18 +22,15 @@
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_small_xx" />
 
-
         <TextView
             android:id="@+id/analyze_title"
-            android:layout_width="wrap_content"
+             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:gravity="center"
             android:text="@string/playset"
             android:layout_marginTop="10dp"
             android:textColor="@color/gold"
-            android:textSize="@dimen/txsize_mid_x" />
+            android:textSize="@dimen/txsize_mid_x"/>
 
         <ImageView
             android:layout_width="30dp"
@@ -45,14 +42,15 @@
 
         <Button
             android:id="@+id/analyze_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
             android:layout_alignParentLeft="true"
             android:background="@null"
-            android:text="返回"
-            android:textColor="#ffffff"
-            android:textSize="@dimen/txsize_small_xx" />
+            android:text="@string/back"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="13dp"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_small_xx"/>
     </RelativeLayout>
 
     <RadioGroup

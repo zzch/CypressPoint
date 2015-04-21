@@ -35,12 +35,13 @@
   	<dimen name="view_small_xx_j">0dp</dimen>
   	
   	
-  	<dimen name="count_frame">40dp</dimen>
+  	<dimen name="count_frame">35dp</dimen>
+  	<dimen name="count_frame_top">0dp</dimen>
   	<dimen name="count_image_top">26dp</dimen>
   	<dimen name="count_image_left">50dp</dimen>
   	<dimen name="count_orange_left">120dp</dimen>
   	<dimen name="count_orange_top">90dp</dimen>
-  	<dimen name="count_text_left">148dp</dimen>
+  	<dimen name="count_text_left">144dp</dimen>
   	<dimen name="count_text_top">96dp</dimen>
   	<dimen name="count_avg_left">125dp</dimen>
   	<dimen name="count_avg_top">118dp</dimen>

@@ -10,7 +10,7 @@
         android:layout_marginTop="10dp"
         android:gravity="center_horizontal"
         android:textColor="@color/gold_70"
-        android:text="所有统计数据将基于您有完整记分场次计算" />
+        android:text="@string/count_text" />
 
     <RelativeLayout
         android:id="@+id/anlyze_time_start_relative"
@@ -59,6 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="100dp"
+            android:textColor="@color/gold"
             android:text="2013-12-08" />
     </RelativeLayout>
 

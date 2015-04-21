@@ -33,7 +33,7 @@
             android:layout_height="25dp"
             android:layout_alignParentLeft="true"
             android:background="@null"
-            android:text="返回"
+            android:text="@string/back"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="13dp"
             android:textColor="@color/gold"

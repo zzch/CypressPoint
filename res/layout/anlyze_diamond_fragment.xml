@@ -8,7 +8,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="center_horizontal"
-        android:text="所有统计数据将基于您有完整记分场次计算" />
+        android:textColor="@color/gold_70"
+        android:text="@string/count_text" />
     <TextView
         android:id="@+id/anlyze_tishi_1"
         android:layout_width="match_parent"
@@ -16,6 +17,7 @@
         android:layout_below="@+id/anlyze_tishi"
         android:layout_marginTop="30dp"
         android:gravity="center_horizontal"
+        android:textColor="@color/gold_70"
         android:text="历史记录" />
 
     <ListView

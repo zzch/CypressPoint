@@ -36,11 +36,12 @@
   	
   	
   	<dimen name="count_frame">80dp</dimen>
+  	<dimen name="count_frame_top">25dp</dimen>
   	<dimen name="count_image_top">3dp</dimen>
   	<dimen name="count_image_left">0dp</dimen>
   	<dimen name="count_orange_left">67dp</dimen>
   	<dimen name="count_orange_top">65dp</dimen>
-  	<dimen name="count_text_left">95dp</dimen>
+  	<dimen name="count_text_left">91dp</dimen>
   	<dimen name="count_text_top">74dp</dimen>
   	<dimen name="count_avg_left">72dp</dimen>
   	<dimen name="count_avg_top">93dp</dimen>

@@ -15,8 +15,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:text="@string/playset"
             android:layout_marginTop="10dp"
+            android:text="@string/playset"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_mid_x" />
 
@@ -33,27 +33,25 @@
             android:textSize="@dimen/txsize_small_xx" />
     </RelativeLayout>
 
-
-
-
     <GridView
         android:id="@+id/gridView1"
-        android:layout_width="match_parent"
+        android:layout_width="340dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/gridview_bg"
         android:gravity="center"
         android:numColumns="2" >
-
     </GridView>
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
-		
+
         <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" 
-            android:layout_marginLeft="@dimen/count_frame"  
-                    
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/count_frame" 
+            android:layout_marginTop="@dimen/count_frame_top"
             >
 
             <RelativeLayout
@@ -64,8 +62,8 @@
                     android:id="@+id/count_image"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
-                    android:layout_marginTop="@dimen/count_image_top"
                     android:layout_marginLeft="@dimen/count_image_left"
+                    android:layout_marginTop="@dimen/count_image_top"
                     android:src="@drawable/white" />
             </RelativeLayout>
 
@@ -73,8 +71,7 @@
                 android:id="@+id/chartView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-               android:layout_marginTop="@dimen/count_ccc"
-                />
+                android:layout_marginTop="@dimen/count_ccc" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -99,6 +96,7 @@
                     android:layout_marginLeft="@dimen/count_text_left"
                     android:layout_marginTop="@dimen/count_text_top"
                     android:textColor="@color/gold" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -108,215 +106,212 @@
                     android:textColor="@color/gold_70" />
             </RelativeLayout>
         </FrameLayout>
+
         <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="230dp"
-         >
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="230dp" >
 
-        <RelativeLayout 
-            android:id="@+id/re1"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            >
-            <ImageView 
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:src="@drawable/e_card_yuan"
-                />
-            <TextView 
-                android:id="@+id/double_eagle_percentage"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:id="@+id/re1"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:textSize="22dp"
-                android:textColor="@color/gold"
-                android:layout_marginLeft="40dp"
-                android:text="10%"
-                />
-            <TextView 
-                android:layout_width="wrap_content"
+                android:layout_marginLeft="20dp" >
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/icon_xintianwen" />
+
+                <TextView
+                    android:id="@+id/double_eagle_percentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:text="10%"
+                    android:textColor="@color/gold"
+                    android:textSize="22dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/xintianwen"
+                    android:textColor="@color/gold_70"
+                    android:textSize="17dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/re2"
+                android:layout_width="190dp"
                 android:layout_height="wrap_content"
-                android:textSize="17dp"
-                android:layout_marginLeft="90dp"
-                android:layout_marginTop="3dp"
-                android:textColor="@color/gold_70"
-                android:text="@string/xintianwen"
-                />
+                android:layout_marginLeft="200dp" >
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/icon_shuangboji" />
+
+                <TextView
+                    android:id="@+id/double_bogey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:text="10%"
+                    android:textColor="@color/gold"
+                    android:textSize="22dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/shuangbaijijia"
+                    android:textColor="@color/gold_70"
+                    android:textSize="17dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/re3"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/re1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp" >
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/icon_laoying" />
+
+                <TextView
+                    android:id="@+id/eagle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:text="10%"
+                    android:textColor="@color/gold"
+                    android:textSize="22dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/laoyin"
+                    android:textColor="@color/gold_70"
+                    android:textSize="17dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/re4"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/re2"
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="10dp" >
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/icon_biaozhungan" />
+
+                <TextView
+                    android:id="@+id/par"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:text="10%"
+                    android:textColor="@color/gold"
+                    android:textSize="22dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/biaozhungan"
+                    android:textColor="@color/gold_70"
+                    android:textSize="17dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/re5"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/re3"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp" >
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/icon_xiaoniao" />
+
+                <TextView
+                    android:id="@+id/birdie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:text="10%"
+                    android:textColor="@color/gold"
+                    android:textSize="22dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/xiaoniao"
+                    android:textColor="@color/gold_70"
+                    android:textSize="17dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/re6"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/re4"
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="10dp" >
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/icon_baiji" />
+
+                <TextView
+                    android:id="@+id/bogey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:text="10%"
+                    android:textColor="@color/gold"
+                    android:textSize="22dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/baiji"
+                    android:textColor="@color/gold_70"
+                    android:textSize="17dp" />
+            </RelativeLayout>
         </RelativeLayout>
-		 <RelativeLayout 
-		    android:id="@+id/re2"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-			android:layout_marginLeft="170dp"
-	            >
-            <ImageView 
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:src="@drawable/e_card_yuan"
-                />
-            <TextView 
-                android:id="@+id/eagle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="22dp"
-                android:layout_marginLeft="40dp"
-                android:textColor="@color/gold"
-                android:text="10%"
-                />
-            <TextView 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="17dp"
-                android:textColor="@color/gold_70"
-                android:layout_marginLeft="90dp"
-                android:layout_marginTop="3dp"
-                android:text="@string/laoyin"
-                />
-        </RelativeLayout>
-        <RelativeLayout 
-		    android:id="@+id/re3"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/re1"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
-            >
-            <ImageView 
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:src="@drawable/e_card_yuan"
-                />
-            <TextView 
-                android:id="@+id/birdie"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="22dp"
-                android:layout_marginLeft="40dp"
-                android:textColor="@color/gold"
-                android:text="10%"
-                />
-            <TextView 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="17dp"
-                android:layout_marginLeft="90dp"
-                android:textColor="@color/gold_70"
-                android:layout_marginTop="3dp"
-                android:text="@string/xiaoniao"
-                />
-        </RelativeLayout>
-        <RelativeLayout 
-		    android:id="@+id/re4"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/re2"
-            android:layout_marginLeft="170dp"
-            android:layout_marginTop="10dp"
-            >
-            <ImageView 
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:src="@drawable/e_card_yuan"
-                />
-            <TextView 
-                android:id="@+id/par"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="22dp"
-                android:textColor="@color/gold"
-                android:layout_marginLeft="40dp"
-                android:text="10%"
-                />
-            <TextView 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="17dp"
-                android:textColor="@color/gold_70"
-                android:layout_marginTop="3dp"
-                android:layout_marginLeft="90dp"
-                android:text="@string/biaozhungan"
-                />
-        </RelativeLayout>
-        <RelativeLayout 
-		    android:id="@+id/re5"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/re3"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
-            >
-            <ImageView 
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/e_card_yuan"
-                />
-            <TextView 
-                android:id="@+id/bogey"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="22dp"
-                android:layout_marginLeft="40dp"
-                android:textColor="@color/gold"
-                android:text="10%"
-                />
-            <TextView 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="17dp"
-                android:textColor="@color/gold_70"
-                android:layout_marginTop="3dp"
-                android:layout_marginLeft="90dp"
-                android:text="@string/baiji"
-                />
-        </RelativeLayout>
-        <RelativeLayout 
-		    android:id="@+id/re6"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/re4"
-            android:layout_marginLeft="170dp"
-            android:layout_marginTop="10dp"
-            >
-            <ImageView 
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:src="@drawable/e_card_yuan"
-                />
-            <TextView 
-                android:id="@+id/double_bogey"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="22dp"
-                android:layout_marginLeft="40dp"
-                android:textColor="@color/gold"
-                android:text="10%"
-                />
-            <TextView 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="17dp"
-                android:layout_marginLeft="90dp"
-                android:textColor="@color/gold_70"
-                android:layout_marginTop="3dp"
-                android:text="@string/shuangbaiji"
-                />
-        </RelativeLayout>
-        
     </RelativeLayout>
-    
-    </RelativeLayout>
+
 </LinearLayout>
-

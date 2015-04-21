@@ -11,7 +11,7 @@
         android:gravity="center_horizontal"
         android:layout_marginTop="10dp"
         android:textColor="@color/gold_70"
-        android:text="所有统计数据将基于您有完整记分场次计算"
+        android:text="@string/count_text"
         />
 
     <RelativeLayout
@@ -27,7 +27,7 @@
             android:background="@drawable/button"
             android:textColor="@color/gold"
             android:textSize="22dp"
-            android:text="最近5场" />
+            android:text="@string/count_5" />
 
         <Button
             android:id="@+id/anlyze_contest_10"
@@ -38,7 +38,7 @@
             android:background="@drawable/button"
             android:textColor="@color/gold"
             android:textSize="22dp"
-            android:text="最近10场" />
+            android:text="@string/count_10" />
 
         <Button
             android:id="@+id/anlyze_contest_30"
@@ -49,7 +49,7 @@
             android:background="@drawable/button"
             android:textColor="@color/gold"
             android:textSize="22dp"
-            android:text="最近30场" />
+            android:text="@string/count_30" />
 
         <Button
             android:id="@+id/anlyze_contest_50"
@@ -60,7 +60,7 @@
             android:background="@drawable/button"
             android:textColor="@color/gold"
             android:textSize="22dp"
-            android:text="最近50场" />
+            android:text="@string/count_50" />
 
         <Button
             android:id="@+id/anlyze_contest_100"
@@ -71,7 +71,7 @@
             android:background="@drawable/button"
             android:textColor="@color/gold"
             android:textSize="22dp"
-            android:text="最近100场" />
+            android:text="@string/count_100" />
 
         <Button
             android:id="@+id/anlyze_contest_all"
@@ -82,7 +82,7 @@
             android:background="@drawable/button"
             android:textColor="@color/gold"
             android:textSize="22dp"
-            android:text="全部场次" />
+            android:text="@string/count_all"/>
     </RelativeLayout>
 
 </RelativeLayout>
