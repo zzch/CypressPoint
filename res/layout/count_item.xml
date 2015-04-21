@@ -12,7 +12,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:textSize="20dp"
+            android:textSize="24dp"
+            android:textColor="@color/gold"
             android:text="-0.9"
             />
         <TextView 
@@ -21,7 +22,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/count_value"            
-            android:textSize="20dp"
+            android:textSize="19dp"
+            android:textColor="@color/gold_70"
             android:text="差点"
             />
     </RelativeLayout>

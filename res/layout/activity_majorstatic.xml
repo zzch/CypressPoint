@@ -12,10 +12,10 @@
         android:background="@anim/title_pingpu" >
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="7dp"
             android:src="@drawable/back_image" />
 
         <Button
@@ -23,7 +23,7 @@
             android:layout_width="50dp"
             android:layout_height="25dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="23dp"
             android:layout_marginTop="13dp"
             android:background="@null"
             android:onClick="onclick"
@@ -45,13 +45,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+       
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical" >
 
                 <ListView
@@ -61,6 +59,12 @@
                     android:listSelector="@android:color/transparent"
                     android:divider="@null" >
                 </ListView>
+                
+             <RelativeLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="5dp"
+                   >
 
                 <TextView
                     android:id="@+id/major_static_qiugan"
@@ -75,8 +79,19 @@
                 <RelativeLayout
                     android:id="@+id/major_qiugan_re"
                     android:layout_width="match_parent"
+                    android:layout_marginTop="30dp"
                     android:layout_height="80dp" >
 
+                    
+                      <TextView
+                        android:id="@+id/static_distance_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                     
+                        android:layout_toRightOf="@+id/static_image_1"
+                        android:text="320"
+                        android:textColor="@color/gold"
+                        android:textSize="30dp" />
                     <ImageView
                         android:id="@+id/static_image_1"
                         android:layout_width="wrap_content"
@@ -185,15 +200,7 @@
                         android:textColor="@color/gold"
                         android:textSize="20dp" />
 
-                    <TextView
-                        android:id="@+id/static_distance_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_toRightOf="@+id/static_image_1"
-                        android:text="320"
-                        android:textColor="@color/gold"
-                        android:textSize="30dp" />
+                  
 
                     <ImageView
                         android:layout_width="20dp"
@@ -203,8 +210,8 @@
                         android:src="@drawable/icon_arrow" />
 
                 </RelativeLayout>
+              </RelativeLayout>
             </LinearLayout>
-        </RelativeLayout>
     </ScrollView>
 
 </LinearLayout>

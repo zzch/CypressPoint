@@ -16,6 +16,7 @@ import cn.com.zcty.ILovegolf.model.ChartProp;
 import cn.com.zcty.ILovegolf.tools.ChartView;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -61,6 +62,7 @@ public class CountActivity extends Activity implements OnClickListener{
 	private float double_bogey=0f;
 	private String average="0";
 	Handler handler = new Handler(){
+		@SuppressLint("NewApi")
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
 				gridView.setAdapter(new CountAdapter(CountActivity.this, gridArrayList));
@@ -183,8 +185,8 @@ public class CountActivity extends Activity implements OnClickListener{
 			if(!jsonObject.getString("double_bogey").equals("null")){
 				double_bogey = Float.parseFloat(jsonObject.getString("double_bogey"));
 			}
-			percent[0] = double_eagle;
-			percent[1] = double_bogey;
+			percent[0] = 0.5f;
+			percent[1] = 0.5f;
 			percent[2] = eagle;
 			percent[3] = par;
 			percent[4] = birdie;

@@ -12,6 +12,7 @@
     <string name="text_1">记录更加精准，</string>
     <string name="pith_name">北京燕西高尔夫球俱乐部</string>
     <string name="delete">删除</string>
+    <string name="back">返回</string>
     <string name="qiehuan">切换</string>
     <string name="chooisepith">选择球场</string>
     <string name="playset">打球设置</string>
@@ -32,7 +33,15 @@
     <string name="text_statistics">技术统计</string>
     <string name="text_share">分享</string>
     <string name="searchpith">搜索球场</string>
-    
+    <string name="xintianwen">信天翁</string>
+    <string name="laoyin">老鹰</string>
+    <string name="xiaoniao">小鸟球</string>
+    <string name="xiao">小鸟</string>
+    <string name="biaozhungan">标准杆</string>
+      <string name="biaozhun">标准</string>
+    <string name="baiji">柏忌</string>
+    <string name="shuangbaiji">双柏忌</string>
+    <string name="shuangbaijijia">双柏忌+</string>
 
     <!--登录注册 -->
     <string name="zhuce">一键注册</string>
@@ -57,7 +66,15 @@
     <string name="str_yellow">#FFBB33</string>
     <string name="str_sky_blue">#33B5E5</string>
     
-    
+    <!-- 统计 -->
+    <string name="count_fenxi">分析</string>
+    <string name="count_avg">平均杆数</string>
+    <string name="count_next">下一步</string>
+     <!--
+   
+    <string name="myself">个人信息</string>
+    <string name="myself">个人信息</string>
+    -->
     <!-- 个人 -->
     <string name="myself">个人信息</string>
     

@@ -279,6 +279,7 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 				statisticsModels.add(statistics08);
 				JSONObject jsonObject09 = new JSONObject(jsonObject.getString("item_09"));
 				MajorStatisticsModel statistics09 = new MajorStatisticsModel();
+				
 				statistics09.setPlace1("杆数");
 				statistics09.setPlace2(jsonObject09.getString("eagle"));
 				statistics09.setPlace3(jsonObject09.getString("par"));
@@ -309,7 +310,7 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 		//获取listview的适配器
 		ListAdapter listAdapter = listView.getAdapter();
 		//item的高度
-		int itemHeight = 160;
+		int itemHeight = 130;
 
 
 		if (listAdapter == null) {

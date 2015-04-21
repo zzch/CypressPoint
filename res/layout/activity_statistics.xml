@@ -33,10 +33,10 @@
             android:textSize="@dimen/txsize_small_xx" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="7dp"
             android:src="@drawable/back_image" />
 
         <Button
@@ -48,7 +48,7 @@
             android:layout_marginTop="13dp"
             android:background="@null"
             android:onClick="onClick"
-            android:text="返回"
+            android:text="@string/back"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_small_xx" />
     </RelativeLayout>
@@ -281,7 +281,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
-                    android:text="信天翁"
+                    android:text="@string/xintianwen"
                     android:textColor="@color/gold_70"
                     android:textSize="@dimen/txsize_small_s" />
 
@@ -297,7 +297,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
-                    android:text="老鹰"
+                    android:text="@string/laoyin"
                     android:textColor="@color/gold_70"
                     android:textSize="@dimen/txsize_small_s" />
 
@@ -313,7 +313,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
-                    android:text="小鸟"
+                    android:text="@string/xiao"
                     android:textColor="@color/gold_70"
                     android:textSize="@dimen/txsize_small_s" />
 
@@ -329,7 +329,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
-                    android:text="标准"
+                    android:text="@string/biaozhun"
                     android:textColor="@color/gold_70"
                     android:textSize="@dimen/txsize_small_s" />
 
@@ -345,7 +345,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
-                    android:text="柏忌"
+                    android:text="@string/baiji"
                     android:textColor="@color/gold_70"
                     android:textSize="@dimen/txsize_small_s" />
 
@@ -361,7 +361,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
-                    android:text="双柏忌+"
+                    android:text="@string/shuangbaijijia"
                     android:textColor="@color/gold_70"
                     android:textSize="@dimen/txsize_small_s" />
             </LinearLayout>
@@ -383,6 +383,7 @@
                 android:id="@+id/count"
                 android:layout_width="match_parent"
                 android:layout_height="580dp"
+                android:listSelector="@android:color/transparent"
                 android:divider="@null" >
             </ListView>
 
@@ -390,6 +391,7 @@
                 android:id="@+id/qiudong"
                 android:layout_width="match_parent"
                 android:layout_height="230dp"
+                android:listSelector="@android:color/transparent"
                 android:divider="@null" >
             </ListView>
 
@@ -397,6 +399,7 @@
                 android:id="@+id/qiutype"
                 android:layout_width="match_parent"
                 android:layout_height="430dp"
+                android:listSelector="@android:color/transparent"
                 android:divider="@null" >
             </ListView>
         </LinearLayout>

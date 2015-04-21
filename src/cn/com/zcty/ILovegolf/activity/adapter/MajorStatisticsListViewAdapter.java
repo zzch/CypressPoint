@@ -21,7 +21,7 @@ public class MajorStatisticsListViewAdapter extends BaseAdapter{
 	
 	private int image[]={R.drawable.zongchengji_icon_1,R.drawable.pingjunganshu_2,R.drawable.tuigan_3,
 			R.drawable.shakengjiuqiu_4,R.drawable.yiqieyitui_5,R.drawable.gongguoling_6,
-			R.drawable.qiudaomingzhong_7,R.drawable.kaiqiujuli_8};
+			R.drawable.qiudaomingzhong_7,R.drawable.kaiqiujuli_8,R.drawable.a1111};
 			              
 	public MajorStatisticsListViewAdapter(Context context,ArrayList<MajorStatisticsModel>  statisticsModels) {
 		this.context = context;
@@ -71,7 +71,7 @@ public class MajorStatisticsListViewAdapter extends BaseAdapter{
 		holder.pick07.setText(statisticsModels.get(position).getPlace7());
 		holder.icon.setImageResource(image[position]);
 		
-		Log.i("tiancaishiwo", statisticsModels.get(6).getPlace1());
+		Log.i("tiancaishiwo", statisticsModels.get(position).getPlace1());
 
 		return convertView;
 	}

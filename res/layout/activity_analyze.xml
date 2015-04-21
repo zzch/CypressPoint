@@ -21,7 +21,7 @@
             android:layout_marginRight="10dp"
             android:layout_marginTop="13dp"
             android:background="@null"
-            android:text="下一步"
+            android:text="@string/count_next"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_small_xx" />
 
@@ -36,10 +36,10 @@
             android:textSize="@dimen/txsize_mid_x" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="7dp"
             android:src="@drawable/back_image" />
 
         <Button
@@ -72,7 +72,7 @@
             android:text="按比赛"
             android:gravity="center"
             android:textColor="@drawable/radio_text_selector"
-            android:textSize="25dp" />
+            android:textSize="22dp" />
 
         <RadioButton
             android:id="@+id/analyze_time"
@@ -84,7 +84,7 @@
             android:gravity="center"
             android:text="按时间"
             android:textColor="@drawable/radio_text_selector"
-            android:textSize="25dp" />
+            android:textSize="22dp" />
 
         <RadioButton
             android:id="@+id/analyze_qiuchang"
@@ -96,7 +96,7 @@
             android:gravity="center"
             android:text="按球场"
             android:textColor="@drawable/radio_text_selector"
-            android:textSize="25dp" />
+            android:textSize="22dp" />
     </RadioGroup>
 
     <android.support.v4.view.ViewPager
