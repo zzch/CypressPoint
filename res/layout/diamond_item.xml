@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:background="@anim/pingpu" >
+
+        <TextView 
+            android:id="@+id/diamond_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gold"
+            android:layout_marginLeft="5dp"
+            android:textSize="18dp"
+            android:layout_marginTop="10dp"
+            android:text="北京海淀燕西高尔夫球俱乐部"            
+            />
+        <TextView 
+            android:id="@+id/diamond_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/diamond_name"
+            android:textColor="@color/gold"
+            android:textSize="18dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:text="北京海淀区四季青桥"            
+            />
+        <TextView 
+            android:id="@+id/diamond_changci"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/gold"
+            android:textSize="15dp"
+            android:text="11场"            
+            />
+    </RelativeLayout>
+
+</LinearLayout>

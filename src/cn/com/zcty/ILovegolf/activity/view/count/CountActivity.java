@@ -3,7 +3,10 @@ package cn.com.zcty.ILovegolf.activity.view.count;
 
 
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.logging.SimpleFormatter;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -60,6 +63,7 @@ public class CountActivity extends Activity implements OnClickListener{
 	private float par=0f;
 	private float bogey=0f;
 	private float double_bogey=0f;
+	private String total_matches_count;
 	private String average="0";
 	Handler handler = new Handler(){
 		@SuppressLint("NewApi")
@@ -115,7 +119,13 @@ public class CountActivity extends Activity implements OnClickListener{
 		mChartView.setR((int) (width/4.5));
 		mChartView.setStartAngle(30);
 		mChartView.setWizardLineLength(0);
-		
+		SimpleDateFormat time = new SimpleDateFormat("yyyy-MM-dd");
+		String date = time.format(new Date());
+		SharedPreferences sp = getSharedPreferences("date", MODE_PRIVATE);
+		SharedPreferences.Editor editor = sp.edit();
+		editor.putString("date", date);
+		editor.putString("sgin", "0");
+		editor.commit();
 		
 	}
 	private void setListeners() {
@@ -163,7 +173,7 @@ public class CountActivity extends Activity implements OnClickListener{
 			gridArrayList.add(jsonObject.getString("handicap"));
 			gridArrayList.add(jsonObject.getString("rank"));
 			gridArrayList.add(jsonObject.getString("best_score"));
-			gridArrayList.add(jsonObject.getString("finished_matches_count"));
+			gridArrayList.add(jsonObject.getString("finished_matches_count")+"/"+jsonObject.getString("total_matches_count"));
 			if(!jsonObject.getString("average_score").equals("null")){				
 				average = jsonObject.getString("average_score");
 			}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/pop_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/btn_style_alert_dialog_background"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <cn.com.zcty.ILovegolf.tools.WheelView
+            android:id="@+id/anlyze_year"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_weight="1" />
+
+        <cn.com.zcty.ILovegolf.tools.WheelView
+            android:id="@+id/anlyze_month"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_weight="1" />
+
+        <cn.com.zcty.ILovegolf.tools.WheelView
+            android:id="@+id/anlyze_day"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</RelativeLayout>
