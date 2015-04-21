@@ -32,25 +32,19 @@
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_mid_x"/>
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="35dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginTop="7dp"
-            android:src="@drawable/back_image" />
-
-
         <Button
             android:id="@+id/analyze_back"
             android:layout_width="50dp"
             android:layout_height="25dp"
             android:layout_alignParentLeft="true"
             android:background="@null"
+
             android:text="@string/back"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="13dp"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_small_xx"/>
+        
     </RelativeLayout>
 
     <RadioGroup

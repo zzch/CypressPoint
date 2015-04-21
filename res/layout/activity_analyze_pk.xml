@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@anim/pingpu"
+    android:orientation="vertical" >
+
+  	<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@anim/title_pingpu" >
+		<Button
+            android:id="@+id/analyze_result_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="13dp"
+            android:background="@null"
+            android:text="@string/back"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_small_xx" />
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/analyzepk"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_mid_x" />
+
+        <Button
+            android:id="@+id/pk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="13dp"
+            android:background="@null"
+            android:text="@string/pk"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_small_xx" />
+    </RelativeLayout>
+	
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <Button
+            android:id="@+id/anlyze_pk_zhiye"
+            android:layout_centerHorizontal="true"
+            android:layout_width="300dp"
+            android:layout_height="@dimen/view_mid_xx_xx"
+            android:background="@drawable/button"
+            android:textColor="@color/gold"
+            android:textSize="22dp"
+            android:text="职业选手" />
+
+        <Button
+            android:id="@+id/anlyze_pk_70"
+            android:layout_centerHorizontal="true"
+            android:layout_width="300dp"
+            android:layout_height="@dimen/view_mid_xx_xx"
+            android:layout_below="@+id/anlyze_pk_zhiye"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/button"
+            android:textColor="@color/gold"
+            android:textSize="22dp"
+            android:text="70杆选手" />
+
+        <Button
+            android:id="@+id/anlyze_pk_80"
+            android:layout_centerHorizontal="true"
+            android:layout_width="300dp"
+            android:layout_height="@dimen/view_mid_xx_xx"
+            android:layout_below="@+id/anlyze_pk_70"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/button"
+            android:textColor="@color/gold"
+            android:textSize="22dp"
+            android:text="80杆选手" />
+
+        <Button
+            android:id="@+id/anlyze_pk_90"
+            android:layout_centerHorizontal="true"
+            android:layout_width="300dp"
+            android:layout_height="@dimen/view_mid_xx_xx"
+            android:layout_below="@+id/anlyze_pk_80"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/button"
+            android:textColor="@color/gold"
+            android:textSize="22dp"
+            android:text="90杆选手" />
+
+        <Button
+            android:id="@+id/anlyze_pk_100"
+            android:layout_centerHorizontal="true"
+            android:layout_width="300dp"
+            android:layout_height="@dimen/view_mid_xx_xx"
+            android:layout_below="@+id/anlyze_pk_90"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/button"
+            android:textColor="@color/gold"
+            android:textSize="22dp"
+            android:text="100杆选手" />
+
+    </RelativeLayout>
+
+</LinearLayout>

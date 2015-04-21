@@ -7,14 +7,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.activity.adapter.AnlyzeDiamondAdapter;
-import cn.com.zcty.ILovegolf.model.AnlyzeDiamond;
-import cn.com.zcty.ILovegolf.utils.APIService;
-import cn.com.zcty.ILovegolf.utils.HttpUtils;
-
-import android.app.FragmentManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -24,8 +18,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
+import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.activity.adapter.AnlyzeDiamondAdapter;
+import cn.com.zcty.ILovegolf.activity.view.count.AnalyzeResultActivity;
+import cn.com.zcty.ILovegolf.model.AnlyzeDiamond;
+import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 public class AnlyzeDiamondFragment extends Fragment{
 	private View view;
@@ -36,6 +38,7 @@ public class AnlyzeDiamondFragment extends Fragment{
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
 				getData();
+				setListeners();
 			}
 		};
 	};
@@ -44,8 +47,22 @@ public class AnlyzeDiamondFragment extends Fragment{
 			Bundle savedInstanceState) {
 		view = inflater.inflate(R.layout.anlyze_diamond_fragment, container, false);	
 		initView();		
+		
 		new Diamond().start();
 		return view;
+	}
+	private void setListeners() {
+		listView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
+					long arg3) {
+				Intent intent = new Intent(getActivity(),AnalyzeResultActivity.class);
+				intent.putExtra("uuid",anDiamonds.get(position).getUuid());
+				intent.putExtra("fs", "3");
+				startActivity(intent);
+			}
+		});
 	}
 	private void getData() {
 		/*

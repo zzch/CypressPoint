@@ -1,5 +1,9 @@
 package cn.com.zcty.ILovegolf.activity.view.fragment;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,9 +14,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.activity.view.count.AnalyzeResultActivity;
 import cn.com.zcty.ILovegolf.activity.view.count.PicPopupWindow;
 
 
@@ -22,6 +29,7 @@ public class AnlyzeTimeFragment extends Fragment{
 	private RelativeLayout endtimeLayout;
 	private TextView startTextView;
 	private TextView endTextView;
+	private Button sousuoButton;
 	private String date ;
 	private String startdate;
 	private String enddate;
@@ -56,8 +64,34 @@ public class AnlyzeTimeFragment extends Fragment{
 			endTextView.setText(date);
 			enddate = date;
 		}
+		String starttime = startTextView.getText().toString();
+		String endtime = endTextView.getText().toString();
+		final int year =Integer.parseInt(endtime.split("-")[0])-Integer.parseInt(starttime.split("-")[0]);
+		final int month =Integer.parseInt(endtime.split("-")[1])-Integer.parseInt(starttime.split("-")[1]);
+		final int day =Integer.parseInt(endtime.split("-")[2])-Integer.parseInt(starttime.split("-")[2]);
+		
+			sousuoButton.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					if(year>=0&&month>=0&day>=0){
+						String starttime = startTextView.getText().toString();
+						String endtime = endTextView.getText().toString();					
+						Intent intent = new Intent(getActivity(),AnalyzeResultActivity.class);
+						intent.putExtra("start", starttime);
+						intent.putExtra("end", endtime);
+						intent.putExtra("fs", "2");
+						startActivity(intent);
+					}else{
+						Toast.makeText(getActivity(), "请调整你的结束时间", Toast.LENGTH_LONG).show();
+					}
+					
+				}
+			});	
+		
 	}
 	private void setListeners() {
+		
 		
 		startTimeLayout.setOnClickListener(new OnClickListener() {
 			
@@ -88,6 +122,7 @@ public class AnlyzeTimeFragment extends Fragment{
 		endtimeLayout = (RelativeLayout) view.findViewById(R.id.anlyze_time_end_relative);
 		startTextView = (TextView) view.findViewById(R.id.anlyze_time_start);
 		endTextView = (TextView) view.findViewById(R.id.anlyze_time_end);
+		sousuoButton = (Button) view.findViewById(R.id.anlye_time_sousuo);
 	}
 	
 }

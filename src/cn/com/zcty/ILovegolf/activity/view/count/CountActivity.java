@@ -82,7 +82,7 @@ public class CountActivity extends Activity implements OnClickListener{
 				if(eagle==0f&&double_eagle==0f&&birdie==0f&&par==0f&&bogey==0f&&double_bogey==0f){
 					image.setImageAlpha(80);
 				}else{
-					image.setImageAlpha(0);
+					image.setImageAlpha(100);
 
 				}
 				averageTextView.setText(average);
@@ -195,8 +195,8 @@ public class CountActivity extends Activity implements OnClickListener{
 			if(!jsonObject.getString("double_bogey").equals("null")){
 				double_bogey = Float.parseFloat(jsonObject.getString("double_bogey"));
 			}
-			percent[0] = 0.5f;
-			percent[1] = 0.5f;
+			percent[0] = double_eagle;
+			percent[1] = double_bogey;
 			percent[2] = eagle;
 			percent[3] = par;
 			percent[4] = birdie;

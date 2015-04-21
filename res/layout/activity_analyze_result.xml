@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+                
+           
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@anim/title_pingpu" >
+		<Button
+            android:id="@+id/analyze_result_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="13dp"
+            android:background="@null"
+            android:text="@string/back"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_small_xx" />
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/anlyzeresult"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_mid_x" />
+
+        <Button
+            android:id="@+id/pk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="13dp"
+            android:background="@null"
+            android:text="@string/pk"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_small_xx" />
+    </RelativeLayout>
+    <ScrollView 
+        android:id="@+id/s1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <RelativeLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <LinearLayout 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+           	    android:focusableInTouchMode="true"
+                android:orientation="vertical"
+                >
+	<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+		<TextView
+            android:id="@+id/analyze_result_lately"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="13dp"
+            android:text="最近10场"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_small_xx" />
+
+
+        <TextView
+            android:id="@+id/analyze_result_full"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="13dp"
+            android:text="完整场次8场"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_small_xx" />
+    </RelativeLayout>
+	<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        >
+		<TextView
+            android:id="@+id/analyze_result_avager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="13dp"
+            android:text="74"
+            android:textSize="@dimen/txsize_small_xx" />
+
+		<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/analyze_result_avager"
+            android:layout_marginLeft="10dp"
+            android:text="平均杆数"
+            android:textSize="@dimen/txsize_small_xx" />
+        <TextView
+            android:id="@+id/analyze_result_chadian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="13dp"
+            android:text="3"
+            android:textSize="@dimen/txsize_small_xx" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/analyze_result_chadian"
+            android:layout_marginRight="10dp"
+            android:text="差点"
+            android:textSize="@dimen/txsize_small_xx" />
+    </RelativeLayout>
+	<ListView
+	    android:id="@+id/listView1"
+	    android:layout_width="match_parent"
+	    android:layout_height="500dp"
+	    android:listSelector="@android:color/transparent"
+	     >
+	</ListView>
+	<ListView
+	    android:id="@+id/listView2"
+	    android:layout_width="match_parent"
+	    android:layout_height="230dp"
+	    android:listSelector="@android:color/transparent"
+	     >
+	</ListView>
+	<ListView
+	    android:id="@+id/listView3"
+	    android:layout_width="match_parent"
+	    android:layout_height="430dp"
+	    android:listSelector="@android:color/transparent"
+	     >
+	</ListView>
+	 </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+    <TextView 
+        android:id="@+id/tishi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:textColor="@color/gold"
+        android:text="目前没有数据"
+        />
+</LinearLayout>
