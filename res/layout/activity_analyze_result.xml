@@ -125,21 +125,21 @@
 	<ListView
 	    android:id="@+id/listView1"
 	    android:layout_width="match_parent"
-	    android:layout_height="500dp"
+	    android:layout_height="270dp"
 	    android:listSelector="@android:color/transparent"
 	     >
 	</ListView>
 	<ListView
 	    android:id="@+id/listView2"
 	    android:layout_width="match_parent"
-	    android:layout_height="230dp"
+	    android:layout_height="130dp"
 	    android:listSelector="@android:color/transparent"
 	     >
 	</ListView>
 	<ListView
 	    android:id="@+id/listView3"
 	    android:layout_width="match_parent"
-	    android:layout_height="430dp"
+	    android:layout_height="300dp"
 	    android:listSelector="@android:color/transparent"
 	     >
 	</ListView>

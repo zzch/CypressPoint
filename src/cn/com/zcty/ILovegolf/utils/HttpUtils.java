@@ -150,7 +150,7 @@ public class HttpUtils
 		return str;
 	}
 	public static String HttpClientPut(String path)
-	{
+	{	int code = 0;
 		String str = "";
 		//创建HttpClient对象
 		HttpClient client=new DefaultHttpClient();
@@ -161,19 +161,20 @@ public class HttpUtils
 			//让HttpClient往服务器发送数据
 			HttpResponse response=client.execute(httpPut);
 			//找到服务返回的状态码 200表示成功
-			int code=response.getStatusLine().getStatusCode();
+			 code=response.getStatusLine().getStatusCode();
 			Log.i("code----->>>", ""+code);
 			if(code==HttpStatus.SC_OK)
 			{
 				//InputStream is=response.getEntity().getContent();
 				str = EntityUtils.toString(response.getEntity(), "utf-8");
 				Log.i("is---->>", ""+str);
+				return str;
 			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();		
 		}
-		return str;
+		return ""+code+"";
 	}
 	
 	

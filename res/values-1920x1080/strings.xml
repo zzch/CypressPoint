@@ -41,8 +41,8 @@
   	<dimen name="count_image_left">0dp</dimen>
   	<dimen name="count_orange_left">67dp</dimen>
   	<dimen name="count_orange_top">65dp</dimen>
-  	<dimen name="count_text_left">91dp</dimen>
-  	<dimen name="count_text_top">74dp</dimen>
+  	<dimen name="count_text_left">87dp</dimen>
+  	<dimen name="count_text_top">78dp</dimen>
   	<dimen name="count_avg_left">72dp</dimen>
   	<dimen name="count_avg_top">93dp</dimen>
   	<dimen name="count_ccc">17dp</dimen>

@@ -91,8 +91,9 @@
 
                 <TextView
                     android:id="@+id/count_average"
-                    android:layout_width="wrap_content"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
                     android:layout_marginLeft="@dimen/count_text_left"
                     android:layout_marginTop="@dimen/count_text_top"
                     android:textColor="@color/gold" />
