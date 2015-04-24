@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/ll_parent"
     android:layout_width="wrap_content"
-    android:layout_height="match_parent"
+    android:layout_height="@dimen/view_quick_x"
     android:background="@drawable/pith_item_onclick" >
     
     <LinearLayout 
@@ -20,14 +20,14 @@
 	      >
 	  
     <RelativeLayout
-        android:layout_width="@dimen/view_large_x"
+        android:layout_width="@dimen/view_sss_ddd"
         android:layout_height="@dimen/view_mid_xxx"
         android:gravity="center"
         android:orientation="horizontal" >
 
             <TextView
                 android:id="@+id/Pole_number"
-                android:layout_width="wrap_content"
+                android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
@@ -42,10 +42,9 @@
                 android:layout_height="30dp"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginBottom="15dp"
-                android:layout_marginRight="21dp"
+                android:layout_marginBottom="@dimen/easy_shaozi_bottom"
+                android:layout_marginRight="@dimen/easy_shaozi"
                 android:src="@drawable/image_o8" />
-
     </RelativeLayout>
 
     <LinearLayout
@@ -67,7 +66,7 @@
                 android:gravity="center_vertical"
                 android:text="@string/pith_name"
                 android:textColor="@color/gold"
-                android:textSize="@dimen/txsize_small_x" />
+                android:textSize="@dimen/txsize_small_a" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -77,8 +76,8 @@
                 android:orientation="horizontal" >
 
                 <ImageView
-                    android:layout_width="@dimen/view_small_xx_w"
-                    android:layout_height="@dimen/view_small_xx_w"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
                     android:src="@drawable/rili" />
 
                 <TextView
@@ -88,7 +87,7 @@
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="02月02号"
                     android:textColor="@color/gold_70"
-                    android:textSize="@dimen/txsize_small_x" />
+                    android:textSize="@dimen/txsize_small_a" />
             </LinearLayout>
 
             <LinearLayout
@@ -132,25 +131,18 @@
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-
-     
     </LinearLayout>
     
 </LinearLayout>
 
-   <View 
-       android:layout_width="369dp"
-        android:layout_height="1dp"
-        android:background="@color/gold_half"
-       />
-
  </LinearLayout>
     <FrameLayout
         android:layout_width="@dimen/view_mid_xxx"
-        android:layout_height="match_parent"
+        android:layout_height="@dimen/view_quick_x"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:padding="15dp" >
+        android:padding="15dp" 
+        >
 
         <TextView
             android:id="@+id/tv_functions"
@@ -169,13 +161,19 @@
             android:layout_width="@dimen/view_mid_xxx"
             android:layout_height="@dimen/view_small_xx"
             android:layout_gravity="center"
-            android:layout_marginLeft="@dimen/view_small_xx"
+            android:layout_marginLeft="30dp"
             android:background="@drawable/pingpu_onclick"
             android:src="@drawable/icon_arrow" 
             android:visibility="gone" /> 
             
   
     </FrameLayout>
-    
+
+    <View
+        android:layout_width="369dp"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@color/gold_half" />
 
 </RelativeLayout>

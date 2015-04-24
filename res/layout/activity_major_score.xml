@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+         android:layout_height="@dimen/title_height"
         android:background="@anim/title_pingpu" >
 
         <ImageView
@@ -322,7 +322,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="33dp" >
+                    android:layout_marginTop="@dimen/view_wheel_xxx" >
 
                     <cn.com.zcty.ILovegolf.tools.WheelView
                         android:id="@+id/major_wheel_distance"

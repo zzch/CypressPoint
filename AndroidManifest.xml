@@ -73,10 +73,10 @@
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.ScoreHitActivity" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.KickActivity" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.GanCountActivity" android:screenOrientation="portrait"></activity>
-         <activity android:name="cn.com.zcty.ILovegolf.activity.view.QiuGanActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.QiuGanActivity" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.MajorStatisticsActivityScord" android:screenOrientation="portrait"></activity> 
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.myself.SelectPicPopupWindow" android:theme="@style/MyDialogStyleBottom" android:screenOrientation="portrait"></activity>
-       <activity android:name="cn.com.zcty.ILovegolf.activity.view.count.PicPopupWindow" android:theme="@style/MyDialogStyleBottom" android:screenOrientation="portrait"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.count.PicPopupWindow" android:theme="@style/MyDialogStyleBottom" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.StatisticsAvtivity"
             	 android:configChanges="orientation|screenSize"
             ></activity>

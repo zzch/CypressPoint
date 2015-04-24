@@ -18,12 +18,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" >
+        android:layout_marginTop="35dp"
+        >
 
         <Button
             android:id="@+id/anlyze_contest_5"
-             android:layout_width="300dp"
-            android:layout_height="@dimen/view_mid_xx_xx"
+            android:layout_width="@dimen/view_tongyong"
+            android:layout_height="@dimen/view_sss_e"
             android:background="@drawable/button"
             android:textColor="@color/gold"
             android:textSize="22dp"
@@ -31,8 +32,8 @@
 
         <Button
             android:id="@+id/anlyze_contest_10"
-            android:layout_width="300dp"
-            android:layout_height="@dimen/view_mid_xx_xx"
+            android:layout_width="@dimen/view_tongyong"
+            android:layout_height="@dimen/view_sss_e"
             android:layout_below="@+id/anlyze_contest_5"
             android:layout_marginTop="15dp"
             android:background="@drawable/button"
@@ -42,8 +43,8 @@
 
         <Button
             android:id="@+id/anlyze_contest_30"
-            android:layout_width="300dp"
-            android:layout_height="@dimen/view_mid_xx_xx"
+            android:layout_width="@dimen/view_tongyong"
+            android:layout_height="@dimen/view_sss_e"
             android:layout_below="@+id/anlyze_contest_10"
             android:layout_marginTop="15dp"
             android:background="@drawable/button"
@@ -53,8 +54,8 @@
 
         <Button
             android:id="@+id/anlyze_contest_50"
-             android:layout_width="300dp"
-            android:layout_height="@dimen/view_mid_xx_xx"
+            android:layout_width="@dimen/view_tongyong"
+            android:layout_height="@dimen/view_sss_e"
             android:layout_below="@+id/anlyze_contest_30"
             android:layout_marginTop="15dp"
             android:background="@drawable/button"
@@ -64,8 +65,8 @@
 
         <Button
             android:id="@+id/anlyze_contest_100"
-             android:layout_width="300dp"
-            android:layout_height="@dimen/view_mid_xx_xx"
+            android:layout_width="@dimen/view_tongyong"
+            android:layout_height="@dimen/view_sss_e"
             android:layout_below="@+id/anlyze_contest_50"
             android:layout_marginTop="15dp"
             android:background="@drawable/button"
@@ -75,8 +76,8 @@
 
         <Button
             android:id="@+id/anlyze_contest_all"
-            android:layout_width="300dp"
-            android:layout_height="@dimen/view_mid_xx_xx"
+           android:layout_width="@dimen/view_tongyong"
+            android:layout_height="@dimen/view_sss_e"
             android:layout_below="@+id/anlyze_contest_100"
             android:layout_marginTop="15dp"
             android:background="@drawable/button"

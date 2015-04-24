@@ -42,7 +42,7 @@
             android:id="@+id/r_gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="127px" >
+            android:layout_marginTop="@dimen/view_sss_a" >
 
             <TextView
                 android:id="@+id/penalties"
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_marginTop="@dimen/view_small_xx_j"
-                android:layout_marginLeft="@dimen/view_mid_x"
+                android:layout_marginLeft="@dimen/view_sss_aa"
                 android:text="qqqqq"
                 android:textSize="@dimen/txsize_small_xx" />
 
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="@dimen/view_small_xx_j"
-                android:layout_marginRight="40dp"
+                android:layout_marginRight="@dimen/view_sss_aa"
                 android:text="ss"
                 android:textColor="@color/gold_70"
                 android:textSize="@dimen/txsize_small_xx" />
@@ -71,7 +71,7 @@
         android:id="@+id/rrr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22px" >
+        android:layout_marginTop="5dp" >
 
         <ImageView
             android:id="@+id/distance_image"
@@ -98,7 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/view_small_xx"
+            android:layout_marginRight="@dimen/view_mingzhong"
             android:textColor="@color/gold_half"
             android:textSize="@dimen/txsize_small_xx"
             android:text="cool" />
@@ -109,7 +109,7 @@
             android:layout_height="16dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="60dp"
+            android:layout_marginRight="@dimen/view_image"
             android:src="@drawable/juzhong" />
         
         <TextView

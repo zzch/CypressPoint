@@ -10,7 +10,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/title_height"
         android:background="@anim/title_pingpu" >
 
         <ImageView
@@ -244,19 +244,11 @@
                     android:layout_marginTop="30dp"
                     android:background="@drawable/button_focused"
                     android:gravity="center_vertical"
-                    android:text="                       24"
+                    android:text="    24"
                     android:textColor="@color/gold"
                     android:textSize="@dimen/txsize_small_xx" />
 
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="@dimen/view_small_xx"
-                    android:layout_height="@dimen/view_small_xx"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignTop="@+id/information_year"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="14dp"
-                    android:src="@drawable/image_icon" />
+               
             </RelativeLayout>
 
             <RelativeLayout
@@ -280,7 +272,7 @@
                     android:layout_marginTop="30dp"
                     android:background="@drawable/button_focused"
                     android:gravity="center_vertical"
-                    android:text="   北京市海淀区"
+                    android:text="   北京市-海淀区"
                     android:textColor="@color/gold"
                     android:textSize="@dimen/txsize_small_xx" />
 

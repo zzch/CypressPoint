@@ -2,18 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+     android:background="@anim/pingpu"
     android:orientation="vertical" >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="72dp"
+        android:layout_height="@dimen/title_height"
         android:background="@anim/title_pingpu" >
 
+         <ImageView
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="7dp"
+            android:src="@drawable/back_image" />
         <Button
             android:id="@+id/analyze_pk_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+           android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="25dp"
             android:layout_marginTop="13dp"
             android:background="@null"
             android:text="@string/back"

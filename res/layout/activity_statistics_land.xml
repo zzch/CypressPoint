@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="72dp"
+        android:layout_height="@dimen/title_height"
         android:background="@anim/title_pingpu" >
 
         <TextView
@@ -113,11 +113,11 @@
                         <View
                             android:layout_width="0.5dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                           />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="67dp"
+                            android:layout_width="@dimen/view_sss_aaa"
+                            android:layout_height="@dimen/view_sss_bbb"
                             android:layout_margin="0.5dip"
                             android:gravity="center"
                             android:text="洞"
@@ -455,11 +455,11 @@
                         <View
                             android:layout_width="0.5dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            />
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="67dp"
+                            android:layout_height="@dimen/view_sss_bbb"
                             android:layout_margin="0.5dip"
                             android:gravity="center"
                             android:text="标准杆"
@@ -817,11 +817,11 @@
                         <View
                             android:layout_width="0.5dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                             />
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="67dp"
+                            android:layout_height="@dimen/view_sss_bbb"
                             android:layout_margin="0.5dip"
                             android:gravity="center"
                             android:text="成绩"
@@ -1179,11 +1179,11 @@
                         <View
                             android:layout_width="0.5dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                           />
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="67dp"
+                            android:layout_height="@dimen/view_sss_bbb"
                             android:layout_margin="0.5dip"
                             android:gravity="center"
                             android:text="距标准杆"
@@ -1560,7 +1560,7 @@
                     android:layout_width="@dimen/view_small_xx_w"
                     android:layout_height="@dimen/view_small_xx_w"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/view_small_xxx"
+                    android:layout_marginLeft="@dimen/view_sss_c"
                     android:src="@drawable/laoying" />
 
                 <TextView
@@ -1576,7 +1576,7 @@
                     android:layout_width="@dimen/view_small_xx_w"
                     android:layout_height="@dimen/view_small_xx_w"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/view_small_xxx"
+                    android:layout_marginLeft="@dimen/view_sss_c"
                     android:src="@drawable/xiaoniao" />
 
                 <TextView
@@ -1592,7 +1592,7 @@
                     android:layout_width="@dimen/view_small_xx_w"
                     android:layout_height="@dimen/view_small_xx_w"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/view_small_xxx"
+                    android:layout_marginLeft="@dimen/view_sss_c"
                     android:src="@drawable/biaozhun" />
 
                 <TextView
@@ -1608,7 +1608,7 @@
                     android:layout_width="@dimen/view_small_xx_w"
                     android:layout_height="@dimen/view_small_xx_w"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/view_small_xxx"
+                    android:layout_marginLeft="@dimen/view_sss_c"
                     android:src="@drawable/baiji" />
 
                 <TextView
@@ -1624,7 +1624,7 @@
                     android:layout_width="@dimen/view_small_xx_w"
                     android:layout_height="@dimen/view_small_xx_w"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/view_small_xxx"
+                    android:layout_marginLeft="@dimen/view_sss_c"
                     android:src="@drawable/shuangbaiji" />
 
                 <TextView

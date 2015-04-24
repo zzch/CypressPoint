@@ -44,7 +44,7 @@ public abstract class AbstractWheelTextAdapter extends AbstractWheelAdapter {
     public static final int LABEL_COLOR = 0xFFff0000;
     
     /** Default text size */
-    public static final int DEFAULT_TEXT_SIZE = 23;
+    public static final int DEFAULT_TEXT_SIZE = 20;
     
     // Text settings
     private int textColor = DEFAULT_TEXT_COLOR;

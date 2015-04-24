@@ -23,6 +23,7 @@ import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.activity.adapter.AnlyzelistViewAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.StatisticAdapter;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
@@ -129,9 +130,9 @@ public class AnalyzeResultActivity extends Activity{
 		fullTextView.setText("完整场次"+finished_count+"场");
 		averageTextView.setText(score);
 		chadianTextView.setText(handicap);
-		listView1.setAdapter(new StatisticAdapter(this,arrayList1,name1ArrayList));
-		listView2.setAdapter(new StatisticAdapter(this,arrayList2,name2ArrayList));
-		listView3.setAdapter(new StatisticAdapter(this,arrayList3,name3ArrayList));
+		listView1.setAdapter(new AnlyzelistViewAdapter(this,arrayList1,name1ArrayList));
+		listView2.setAdapter(new AnlyzelistViewAdapter(this,arrayList2,name2ArrayList));
+		listView3.setAdapter(new AnlyzelistViewAdapter(this,arrayList3,name3ArrayList));
 		int count = Integer.parseInt(finished_count);
 		Log.i("ssdzd", finished_count);
 		if(count<1){

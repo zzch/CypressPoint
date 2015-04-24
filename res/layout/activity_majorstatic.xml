@@ -8,7 +8,7 @@
     <RelativeLayout
         android:id="@+id/statistic_layout"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+         android:layout_height="@dimen/title_height"
         android:background="@anim/title_pingpu" >
 
         <ImageView
@@ -94,20 +94,22 @@
                         android:textSize="30dp" />
                     <ImageView
                         android:id="@+id/static_image_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/view_sss_ccc"
+                        android:layout_height="@dimen/view_sss_cccc"
                         android:layout_alignParentLeft="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginLeft="10dp"
                         android:src="@drawable/qiugan_icon" />
 
                     <ImageView
                         android:id="@+id/static_image_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/view_sss_ccc"
+                        android:layout_height="@dimen/view_sss_cccc"
                         android:layout_alignTop="@+id/static_image_1"
-                        android:layout_marginLeft="30dp"
+                        android:layout_marginLeft="@dimen/view_image_2"
                         android:layout_toRightOf="@+id/static_distance_1"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
                         android:src="@drawable/qiugan_icon" />
 
                     <TextView
@@ -143,11 +145,13 @@
 
                     <ImageView
                         android:id="@+id/static_image_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/view_sss_ccc"
+                        android:layout_height="@dimen/view_sss_cccc"
                         android:layout_alignTop="@+id/static_image_2"
-                        android:layout_marginLeft="30dp"
+                        android:layout_marginLeft="@dimen/view_image_3"
                         android:layout_toRightOf="@+id/static_distance_2"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
                         android:src="@drawable/qiugan_icon" />
 
                     <TextView
@@ -173,11 +177,13 @@
 
                     <ImageView
                         android:id="@+id/static_image_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/view_sss_ccc"
+                        android:layout_height="@dimen/view_sss_cccc"
                         android:layout_alignTop="@+id/static_image_3"
-                        android:layout_marginLeft="30dp"
+                        android:layout_marginLeft="@dimen/view_image_4"
                         android:layout_toRightOf="@+id/static_distance_3"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
                         android:src="@drawable/qiugan_icon" />
 
                     <TextView
@@ -206,6 +212,7 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_alignParentRight="true"
+                        android:layout_marginRight="7dp"
                         android:layout_centerVertical="true"
                         android:src="@drawable/icon_arrow" />
 
@@ -213,5 +220,4 @@
               </RelativeLayout>
             </LinearLayout>
     </ScrollView>
-
 </LinearLayout>

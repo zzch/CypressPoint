@@ -7,7 +7,7 @@
     <LinearLayout
         android:id="@+id/layout_tab_item"
         android:layout_width="match_parent"
-        android:layout_height="67dp"
+        android:layout_height="@dimen/tab_height_x"
         android:background="@anim/tab_pingpu"
         android:gravity="center"
         android:orientation="vertical" >
@@ -15,10 +15,10 @@
 
     <ImageView
         android:id="@+id/lianxi_item"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_width="@dimen/tab_image_x"
+        android:layout_height="@dimen/tab_image_x"
         android:layout_marginTop="10dp"
-        android:src="@drawable/lianxi_focused" />
+        android:src="@drawable/lianxi_focused" />  
 
     <TextView
         android:id="@+id/e_name"

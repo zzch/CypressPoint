@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="72dp"
+         android:layout_height="@dimen/title_height"
         android:background="@anim/title_pingpu" >
 
         <TextView
@@ -35,17 +35,20 @@
 
     <GridView
         android:id="@+id/gridView1"
-        android:layout_width="340dp"
+        android:layout_width="@dimen/view_sss_ee"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:background="@drawable/gridview_bg"
+        android:layout_marginTop="5dp"
         android:gravity="center"
         android:numColumns="2" >
     </GridView>
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content" 
+        android:layout_marginTop="3dp"
+        >
 
         <FrameLayout
             android:layout_width="wrap_content"
@@ -60,8 +63,8 @@
 
                 <ImageView
                     android:id="@+id/count_image"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
+                    android:layout_width="@dimen/view_sss_eee"
+                    android:layout_height="@dimen/view_sss_eee"
                     android:layout_marginLeft="@dimen/count_image_left"
                     android:layout_marginTop="@dimen/count_image_top"
                     android:src="@drawable/white" />
@@ -78,8 +81,8 @@
                 android:layout_height="wrap_content" >
 
                 <ImageView
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="@dimen/count_orange_size"
+                    android:layout_height="@dimen/count_orange_size"
                     android:layout_marginLeft="@dimen/count_orange_left"
                     android:layout_marginTop="@dimen/count_orange_top"
                     android:src="@drawable/orange" />
@@ -91,8 +94,9 @@
 
                 <TextView
                     android:id="@+id/count_average"
-                    android:layout_width="wrap_content"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:layout_marginLeft="@dimen/count_text_left"
                     android:layout_marginTop="@dimen/count_text_top"
                     android:textColor="@color/gold" />
@@ -110,13 +114,13 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="230dp" >
+            android:layout_marginTop="@dimen/view_sss_f" >
 
             <RelativeLayout
                 android:id="@+id/re1"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp" >
+                android:layout_marginLeft="@dimen/view_sss_ff" >
 
                 <ImageView
                     android:layout_width="20dp"
@@ -127,9 +131,10 @@
 
                 <TextView
                     android:id="@+id/double_eagle_percentage"
-                    android:layout_width="wrap_content"
+                    android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:gravity="center"
                     android:text="10%"
                     android:textColor="@color/gold"
                     android:textSize="22dp" />
@@ -148,7 +153,7 @@
                 android:id="@+id/re2"
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="200dp" >
+                android:layout_marginLeft="@dimen/view_sss_fff" >
 
                 <ImageView
                     android:layout_width="20dp"
@@ -159,10 +164,11 @@
 
                 <TextView
                     android:id="@+id/double_bogey"
-                    android:layout_width="wrap_content"
+                    android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="30dp"
                     android:text="10%"
+                    android:gravity="center"
                     android:textColor="@color/gold"
                     android:textSize="22dp" />
 
@@ -181,8 +187,8 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/re1"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp" >
+                android:layout_marginLeft="@dimen/view_sss_ff"
+                android:layout_marginTop="@dimen/view_Layout_x" >
 
                 <ImageView
                     android:layout_width="20dp"
@@ -193,10 +199,11 @@
 
                 <TextView
                     android:id="@+id/eagle"
-                    android:layout_width="wrap_content"
+                    android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="30dp"
                     android:text="10%"
+                    android:gravity="center"
                     android:textColor="@color/gold"
                     android:textSize="22dp" />
 
@@ -215,8 +222,8 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/re2"
-                android:layout_marginLeft="200dp"
-                android:layout_marginTop="10dp" >
+                android:layout_marginLeft="@dimen/view_sss_fff"
+                android:layout_marginTop="@dimen/view_Layout_x" >
 
                 <ImageView
                     android:layout_width="20dp"
@@ -227,9 +234,10 @@
 
                 <TextView
                     android:id="@+id/par"
-                    android:layout_width="wrap_content"
+                    android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:gravity="center"
                     android:text="10%"
                     android:textColor="@color/gold"
                     android:textSize="22dp" />
@@ -249,8 +257,8 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/re3"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp" >
+                android:layout_marginLeft="@dimen/view_sss_ff"
+                android:layout_marginTop="@dimen/view_Layout_x" >
 
                 <ImageView
                     android:layout_width="20dp"
@@ -261,9 +269,10 @@
 
                 <TextView
                     android:id="@+id/birdie"
-                    android:layout_width="wrap_content"
+                    android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:gravity="center"
                     android:text="10%"
                     android:textColor="@color/gold"
                     android:textSize="22dp" />
@@ -283,8 +292,8 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/re4"
-                android:layout_marginLeft="200dp"
-                android:layout_marginTop="10dp" >
+                android:layout_marginLeft="@dimen/view_sss_fff"
+                android:layout_marginTop="@dimen/view_Layout_x" >
 
                 <ImageView
                     android:layout_width="20dp"
@@ -295,9 +304,10 @@
 
                 <TextView
                     android:id="@+id/bogey"
-                    android:layout_width="wrap_content"
+                    android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:gravity="center"
                     android:text="10%"
                     android:textColor="@color/gold"
                     android:textSize="22dp" />

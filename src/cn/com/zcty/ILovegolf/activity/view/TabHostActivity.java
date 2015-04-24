@@ -65,8 +65,8 @@ public class TabHostActivity extends TabActivity {
 		View view=View.inflate(getApplicationContext(), R.layout.tabactivity_main_item, null);
 		
 	    LinearLayout layout_tab_item = (LinearLayout) findViewById(R.id.layout_tab_item);
-		//layout_tab_item.set;
-		//layout_tab_item.invalidate();
+		
+		
 		ImageView iv=(ImageView) view.findViewById(R.id.lianxi_item);
 		iv.setImageResource(icon);
 		TextView tv=(TextView) view.findViewById(R.id.e_name);

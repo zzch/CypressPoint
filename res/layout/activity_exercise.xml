@@ -9,7 +9,7 @@
     <LinearLayout
       
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+         android:layout_height="@dimen/title_height"
         android:background="@anim/title_pingpu"
         android:gravity="center_horizontal"
         android:orientation="horizontal" >
@@ -35,8 +35,8 @@
 
         <Button
             android:id="@+id/shiyitu_one"
-            android:layout_width="300dp"
-            android:layout_height="@dimen/view_mid_xx_xx"
+            android:layout_width="@dimen/view_tongyong"
+            android:layout_height="@dimen/view_sss_e"
             android:background="@drawable/button"
             android:onClick="shiyitu"
             android:text="@string/major_card"
@@ -60,8 +60,8 @@
 
           <Button
             android:id="@+id/kuaijie_one"
-            android:layout_width="300dp"
-            android:layout_height="@dimen/view_mid_xx_xx"
+            android:layout_width="@dimen/view_tongyong"
+            android:layout_height="@dimen/view_sss_e"
             android:layout_marginTop="@dimen/view_mid_xx"
             android:background="@drawable/button"
             android:onClick="kuaijie"

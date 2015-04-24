@@ -7,16 +7,23 @@
 
   	<RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="72dp"
+        android:layout_height="@dimen/title_height"
         android:background="@anim/title_pingpu" >
+         <ImageView
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="7dp"
+            android:src="@drawable/back_image" />
 		<Button
             android:id="@+id/analyze_result_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="13dp"
+             android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
             android:background="@null"
             android:text="@string/back"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="13dp"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_small_xx" />
         <TextView
@@ -45,13 +52,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
         >
 
         <Button
             android:id="@+id/anlyze_pk_zhiye"
-            android:layout_centerHorizontal="true"
-            android:layout_width="300dp"
-            android:layout_height="@dimen/view_mid_xx_xx"
+            android:layout_width="@dimen/view_tongyong"
+            android:layout_height="@dimen/view_sss_e"
             android:background="@drawable/button"
             android:textColor="@color/gold"
             android:textSize="22dp"
@@ -59,9 +67,8 @@
 
         <Button
             android:id="@+id/anlyze_pk_70"
-            android:layout_centerHorizontal="true"
-            android:layout_width="300dp"
-            android:layout_height="@dimen/view_mid_xx_xx"
+            android:layout_width="@dimen/view_tongyong"
+            android:layout_height="@dimen/view_sss_e"
             android:layout_below="@+id/anlyze_pk_zhiye"
             android:layout_marginTop="15dp"
             android:background="@drawable/button"
@@ -71,9 +78,8 @@
 
         <Button
             android:id="@+id/anlyze_pk_80"
-            android:layout_centerHorizontal="true"
-            android:layout_width="300dp"
-            android:layout_height="@dimen/view_mid_xx_xx"
+            android:layout_width="@dimen/view_tongyong"
+            android:layout_height="@dimen/view_sss_e"
             android:layout_below="@+id/anlyze_pk_70"
             android:layout_marginTop="15dp"
             android:background="@drawable/button"
@@ -83,9 +89,8 @@
 
         <Button
             android:id="@+id/anlyze_pk_90"
-            android:layout_centerHorizontal="true"
-            android:layout_width="300dp"
-            android:layout_height="@dimen/view_mid_xx_xx"
+            android:layout_width="@dimen/view_tongyong"
+            android:layout_height="@dimen/view_sss_e"
             android:layout_below="@+id/anlyze_pk_80"
             android:layout_marginTop="15dp"
             android:background="@drawable/button"
@@ -95,9 +100,8 @@
 
         <Button
             android:id="@+id/anlyze_pk_100"
-            android:layout_centerHorizontal="true"
-            android:layout_width="300dp"
-            android:layout_height="@dimen/view_mid_xx_xx"
+            android:layout_width="@dimen/view_tongyong"
+            android:layout_height="@dimen/view_sss_e"
             android:layout_below="@+id/anlyze_pk_90"
             android:layout_marginTop="15dp"
             android:background="@drawable/button"

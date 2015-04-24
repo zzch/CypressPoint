@@ -8,7 +8,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/title_height"
         android:background="@anim/title_pingpu" >
 
         <TextView
@@ -43,7 +43,7 @@
 
     <cn.com.zcty.ILovegolf.activity.exercise.city.ClearEditText
         android:id="@+id/filter_edit"
-        android:layout_width="340dp"
+        android:layout_width="@dimen/view_citylist_x"
         android:layout_height="@dimen/view_mid_x"
         android:layout_marginTop="10dp"
         android:background="@drawable/search_bar_edit_pressed"

@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="72dp"
+         android:layout_height="@dimen/title_height"
         android:background="@anim/title_pingpu" >
 
         <Button
@@ -32,6 +32,13 @@
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_mid_x"/>
 
+         <ImageView
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="7dp"
+            android:src="@drawable/back_image" />
+         
         <Button
             android:id="@+id/analyze_back"
             android:layout_width="50dp"

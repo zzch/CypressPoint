@@ -23,7 +23,7 @@
             <TextView
                 android:id="@+id/t"
                 android:layout_width="30dp"
-                android:layout_height="67dp"
+                android:layout_height="@dimen/view_sss_bbb"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
                
@@ -39,7 +39,7 @@
 
             <TextView
                android:layout_width="30dp"
-                android:layout_height="67dp"
+               android:layout_height="@dimen/view_sss_bbb"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
                
@@ -170,7 +170,7 @@
             <View
                     android:layout_width="0.5dip"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                   />
         </TableRow>
 
             <View
@@ -185,7 +185,7 @@
             <TextView
                 android:id="@+id/t1"
                 android:layout_width="wrap_content"
-                android:layout_height="67dp"
+                android:layout_height="@dimen/view_sss_bbb"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
                android:textColor="@color/gold_70"
@@ -340,7 +340,7 @@
             <View
                     android:layout_width="0.5dip"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                     />
         </TableRow>
         
         <View
@@ -355,7 +355,7 @@
             <TextView
                 android:id="@+id/tt1"
                 android:layout_width="wrap_content"
-                android:layout_height="67dp"
+                android:layout_height="@dimen/view_sss_bbb"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
                 android:textColor="@color/gold_70"
@@ -509,7 +509,7 @@
             <View
                     android:layout_width="0.5dip"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                   />
             
         </TableRow>
         
@@ -526,7 +526,7 @@
             <TextView
                 android:id="@+id/ttt1"
                 android:layout_width="wrap_content"
-                android:layout_height="66dp"
+                android:layout_height="@dimen/view_sss_bbb"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
                android:textColor="@color/gold_70"
@@ -678,7 +678,7 @@
              <View
                     android:layout_width="0.5dip"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                     />
           
         </TableRow>
             <View

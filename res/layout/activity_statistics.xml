@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="72dp"
+       android:layout_height="@dimen/title_height"
         android:background="@anim/title_pingpu" >
 
         <TextView
@@ -100,7 +100,7 @@
                     <RadioButton
                         android:id="@+id/mainTabs_radio_qian"
                         android:layout_width="@dimen/view_mid_xx_title"
-                        android:layout_height="@dimen/view_small_xxx"
+                        android:layout_height="@dimen/view_image_radio"
                         android:background="@drawable/group_1"
                         android:button="@null"
                         android:gravity="center"
@@ -111,7 +111,7 @@
                     <RadioButton
                         android:id="@+id/mainTabs_radio_hou"
                         android:layout_width="@dimen/view_mid_xx_title"
-                        android:layout_height="@dimen/view_small_xxx"
+                        android:layout_height="@dimen/view_image_radio"
                         android:layout_marginRight="@dimen/view_small_x"
                         android:background="@drawable/group_2"
                         android:button="@null"
@@ -143,11 +143,11 @@
                         <View
                             android:layout_width="0.5dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            />
 
                         <TextView
-                            android:layout_width="79dp"
-                            android:layout_height="67dp"
+                            android:layout_width="@dimen/view_sss_aaa"
+                            android:layout_height="@dimen/view_sss_bbb"
                             android:layout_margin="0.5dip"
                             android:gravity="center"
                             android:text="洞"
@@ -174,11 +174,11 @@
                         <View
                             android:layout_width="0.5dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                             />
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="67dp"
+                           android:layout_height="@dimen/view_sss_bbb"
                             android:layout_margin="0.5dip"
                             android:gravity="center"
                             android:text="标准杆"
@@ -204,11 +204,11 @@
                         <View
                             android:layout_width="0.5dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            />
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="67dp"
+                            android:layout_height="@dimen/view_sss_bbb"
                             android:layout_margin="0.5dip"
                             android:gravity="center"
                             android:text="成绩"
@@ -234,11 +234,11 @@
                         <View
                             android:layout_width="0.5dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                           />
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="66dp"
+                            android:layout_height="@dimen/view_sss_bbb"
                             android:layout_margin="0.5dip"
                             android:gravity="center"
                             android:text="距标准杆"
@@ -273,7 +273,7 @@
                     android:layout_width="@dimen/view_small_x"
                     android:layout_height="@dimen/view_small_x"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="@dimen/view_small_xx_w"
                     android:src="@drawable/xintianwen" />
 
                 <TextView
@@ -289,7 +289,7 @@
                     android:layout_width="@dimen/view_small_x"
                     android:layout_height="@dimen/view_small_x"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/view_small_x"
+                    android:layout_marginLeft="@dimen/view_sss_bb"
                     android:src="@drawable/laoying" />
 
                 <TextView
@@ -305,7 +305,7 @@
                     android:layout_width="@dimen/view_small_x"
                     android:layout_height="@dimen/view_small_x"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/view_small_x"
+                    android:layout_marginLeft="@dimen/view_sss_bb"
                     android:src="@drawable/xiaoniao" />
 
                 <TextView
@@ -321,7 +321,7 @@
                     android:layout_width="@dimen/view_small_x"
                     android:layout_height="@dimen/view_small_x"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/view_small_x"
+                    android:layout_marginLeft="@dimen/view_sss_bb"
                     android:src="@drawable/biaozhun" />
 
                 <TextView
@@ -337,7 +337,7 @@
                     android:layout_width="@dimen/view_small_x"
                     android:layout_height="@dimen/view_small_x"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/view_small_x"
+                    android:layout_marginLeft="@dimen/view_sss_bb"
                     android:src="@drawable/baiji" />
 
                 <TextView
@@ -353,7 +353,7 @@
                     android:layout_width="@dimen/view_small_x"
                     android:layout_height="@dimen/view_small_x"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/view_small_x"
+                    android:layout_marginLeft="@dimen/view_sss_bb"
                     android:src="@drawable/shuangbaiji" />
 
                 <TextView
@@ -374,7 +374,7 @@
             <GridView
                 android:id="@+id/gridView1"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/view_large_x"
+                android:layout_height="@dimen/view_sss_b"
                 android:gravity="center"
                 android:numColumns="2" >
             </GridView>

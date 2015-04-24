@@ -255,7 +255,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
 				mCurrentDistrictName = mDistrictDatasMap.get(mCurrentCityName)[newValue];
 				mCurrentZipCode = mZipcodeDatasMap.get(mCurrentDistrictName);
-				diquTextView.setText(mCurrentProviceName+mCurrentCityName+mCurrentDistrictName);
+				diquTextView.setText("  "+mCurrentProviceName+"-"+mCurrentCityName+"-"+mCurrentDistrictName);
 			}
 		});
 	}
