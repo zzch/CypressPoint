@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    >
+    <cn.com.zcty.ILovegolf.tools.CircleImageView
+            android:id="@+id/myself_head"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/hugh" />
+    <TextView 
+        android:id="@+id/home_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="3dp"
+        android:text="@string/username"
+        />
+    <TextView 
+        android:id="@+id/home_pople_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="10dp"
+        android:text="4人"
+        />
+    <TextView 
+        android:id="@+id/home_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/home_username"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="50dp"
+        android:text="这个位置用来显示创建比赛的名称"
+        />
+    <TextView 
+        android:id="@+id/home_mold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/home_name"
+        android:layout_marginLeft="50dp"
+        android:text="比杆赛"
+        />
+</RelativeLayout>    
+
+</LinearLayout>

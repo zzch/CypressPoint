@@ -210,10 +210,12 @@ public class Myself extends Activity {
 			getData();
 		}
 		public void getData(){
+		if(url==null){		
 		bitmap = HttpUtils.imageloder(url);
 		Message msg = handler1.obtainMessage();
 		msg.what = 1;
-		handler1.sendMessage(msg);
+		handler1.sendMessage(msg);	
+			}
 	}
 	}
 	/**

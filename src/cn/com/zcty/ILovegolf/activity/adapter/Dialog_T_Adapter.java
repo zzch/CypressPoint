@@ -24,7 +24,7 @@ public class Dialog_T_Adapter extends BaseAdapter{
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-		return list.size();
+		return 5;
 	}
 
 	@Override

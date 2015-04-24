@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@anim/pingpu"
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@anim/title_pingpu" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="xxxx球场"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_mid_x" />
+
+          <ImageView
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="7dp"
+            android:src="@drawable/back_image" />
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:background="@null"
+            android:text="@string/back"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="13dp"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_small_xx"
+            android:onClick="choosepith_back" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:onClick="qiehuan"
+            android:text="@string/xinjian"
+            android:textColor="@color/gold"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="13dp"          
+            android:textSize="@dimen/txsize_small_xx" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/competition_listview_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+	
+</LinearLayout>

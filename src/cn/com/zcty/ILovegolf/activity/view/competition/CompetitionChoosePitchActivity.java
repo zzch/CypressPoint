@@ -1,13 +1,6 @@
-package cn.com.zcty.ILovegolf.activity.view;
-
+package cn.com.zcty.ILovegolf.activity.view.competition;
 import java.util.List;
 
-import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.activity.adapter.PitchAdapter;
-import cn.com.zcty.ILovegolf.model.QiuChangList;
-import cn.com.zcty.ILovegolf.tools.MyApplication;
-import cn.com.zcty.ILovegolf.utils.APIService;
-import cn.com.zcty.ILovegolf.utils.JsonUtil;
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -20,10 +13,26 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
+import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.activity.adapter.PitchAdapter;
+import cn.com.zcty.ILovegolf.activity.view.ListChoosePitchActivity;
+import cn.com.zcty.ILovegolf.activity.view.PlaySetActivity;
+import cn.com.zcty.ILovegolf.activity.view.QuickScoreActivity;
+import cn.com.zcty.ILovegolf.model.QiuChangList;
+import cn.com.zcty.ILovegolf.tools.MyApplication;
+import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.JsonUtil;
 
-public class MajorChoosePitchActivity extends Activity{
+
+/**
+ * 选择球场类
+ * @author deii
+ *
+ */
+public class CompetitionChoosePitchActivity extends Activity {
+   
 	private ListView listpich;//球场列表，并显示距离
 	private List<QiuChangList> qiuchanglists;//从服务器端获取过来的球场列表信息
 	private SharedPreferences ss;
@@ -55,9 +64,8 @@ public class MajorChoosePitchActivity extends Activity{
 				SharedPreferences.Editor editor = ss.edit();
 				editor.putString("name", qiuchanglists.get(position).getName());
 				editor.commit();
-				Intent intent=new Intent(MajorChoosePitchActivity.this,PlaySetActivity.class);
+				Intent intent=new Intent(CompetitionChoosePitchActivity.this,CompetitionHomeActivity.class);
 				intent.putExtra("uuid", qiuchanglists.get(position).getUuid());
-				intent.putExtra("sign", "0");
 				Log.i("--->>uuid", "uuid"+qiuchanglists.get(position).getUuid());
 				SharedPreferences ss = getSharedPreferences("key", MODE_PRIVATE);
 				SharedPreferences.Editor editors = ss.edit();
@@ -81,7 +89,9 @@ public class MajorChoosePitchActivity extends Activity{
 				try {
 					new AsyncTask<Void, Void, Void>() {
 						SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
-						String token=sp.getString("token", "token");	
+						String token=sp.getString("token", "token");
+						
+						
 						String path=APIService.NEAREST_COURSE+"longitude="+addres[1]+"&latitude="+addres[0]+"&token="+token;
 						
 						@Override
@@ -100,7 +110,7 @@ public class MajorChoosePitchActivity extends Activity{
 						//通知适配器数据发生变化
 					@Override				
 					protected void onPostExecute(Void result) {
-						listpich.setAdapter(new PitchAdapter(MajorChoosePitchActivity.this,qiuchanglists));
+						listpich.setAdapter(new PitchAdapter(CompetitionChoosePitchActivity.this,qiuchanglists));
 						super.onPostExecute(result);
 					}
 					}.execute();
@@ -113,15 +123,14 @@ public class MajorChoosePitchActivity extends Activity{
 	
 	//返回按钮点击事件
 	public void choosepith_back(View v){
-		Intent intent=new Intent(MajorChoosePitchActivity.this,SchematicScoreActivity.class);
+		Intent intent=new Intent(CompetitionChoosePitchActivity.this,CompetitionScoreActivity.class);
 		startActivity(intent);
 		finish();
 	}
 
-	//切换按钮点击事件
+	//搜索按钮点击事件
 	public void qiehuan(View v){
-		Intent intent=new Intent(MajorChoosePitchActivity.this,MajorListChoosePitchActivity.class);
-		intent.putExtra("sign", "0");
+		Intent intent=new Intent(CompetitionChoosePitchActivity.this,CompetitionListChoosePitchActivity.class);
 		startActivity(intent);
 		finish();
 	}
@@ -157,3 +166,4 @@ public class MajorChoosePitchActivity extends Activity{
 	}
 
 }
+	

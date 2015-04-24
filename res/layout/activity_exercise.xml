@@ -20,8 +20,7 @@
             android:gravity="center"
             android:text="@string/title"
             android:textColor="@color/gold"
-            android:layout_marginTop="10dp"
-           
+            android:layout_marginTop="10dp"           
             android:textSize="@dimen/txsize_mid_x" />
     </LinearLayout>
    
@@ -75,7 +74,23 @@
             android:layout_marginTop="@dimen/view_small_x"
             android:text="@string/text_2"
             android:textColor="@color/gold_half" />
-        
+        <Button
+            android:id="@+id/jingji_one"
+            android:layout_width="300dp"
+            android:layout_height="@dimen/view_mid_xx_xx"
+            android:layout_marginTop="@dimen/view_mid_xx"
+            android:background="@drawable/button"
+            android:onClick="jingji"
+            android:text="@string/athletics"
+            android:textSize="@dimen/txsize_mid_x"
+            android:textColor="@color/gold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_small_x"
+            android:text="@string/text_2"
+            android:textColor="@color/gold_half" />
     </LinearLayout>
   
 </LinearLayout>
