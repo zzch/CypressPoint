@@ -120,7 +120,7 @@ public class MajorChoosePitchActivity extends Activity{
 
 	//切换按钮点击事件
 	public void qiehuan(View v){
-		Intent intent=new Intent(MajorChoosePitchActivity.this,ListChoosePitchActivity.class);
+		Intent intent=new Intent(MajorChoosePitchActivity.this,MajorListChoosePitchActivity.class);
 		intent.putExtra("sign", "0");
 		startActivity(intent);
 		finish();

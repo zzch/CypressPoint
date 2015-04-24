@@ -40,6 +40,7 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
 public class ScoreCardActivity extends Activity {
 	private List<Scorecards> scorecarsArray = new ArrayList<Scorecards>();
 	private List<Setcard> setcardsArray = new ArrayList<Setcard>(19);
+	private List<Setcard> setcardsArray_2 = new ArrayList<Setcard>(19);
 	private GridView grid_scorecard;	
 	private ScoreCardGridViewAdapter adapter;
 	private Setcard setCard;
@@ -192,11 +193,13 @@ public class ScoreCardActivity extends Activity {
 				  for(int i=0;i<=18;i++){
 						Setcard setcard = new Setcard();
 						setcardsArray.add(setcard);
+						//setcardsArray_2.add(setcard);
 					}
 			}else if(boxes==null){
 				 for(int i=0;i<=18;i++){
 						Setcard setcard = new Setcard();
 						setcardsArray.add(setcard);
+						//setcardsArray_2.add(setcard);
 					}
 				  editor.putString("match_uuid", uuid);
 				  editor.commit();

@@ -1,12 +1,10 @@
- package cn.com.zcty.ILovegolf.activity.view;
+ package cn.com.zcty.ILovegolf.activity.view.competition;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-import com.baidu.location.ad;
 
 import android.app.Activity;
 import android.content.Context;
@@ -23,7 +21,6 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
@@ -33,6 +30,7 @@ import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.SearchCityAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.SortAdapter;
 import cn.com.zcty.ILovegolf.activity.exercise.city.ClearEditText;
+import cn.com.zcty.ILovegolf.activity.view.MajorChoosePitchActivity;
 import cn.com.zcty.ILovegolf.model.Course;
 import cn.com.zcty.ILovegolf.model.SortModel;
 import cn.com.zcty.ILovegolf.utils.APIService;
@@ -44,7 +42,7 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
  *
  */
 
-    public class ListChoosePitchActivity extends Activity {
+    public class CompetitionListChoosePitchActivity extends Activity {
 	private List<String> citys=new ArrayList<String>();
 	private Button search_back;
     private ExpandableListView sortListView;
@@ -61,7 +59,7 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
 			if(msg.arg1==1){
-				 adapter = new SortAdapter(ListChoosePitchActivity.this, citys, child);
+				 adapter = new SortAdapter(CompetitionListChoosePitchActivity.this, citys, child);
 				 sortListView.setAdapter(adapter);
 				
 				//默认展开
@@ -88,7 +86,7 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
 						SharedPreferences.Editor editor = ss.edit();
 						editor.putString("name", child.get(groupPosition).get(childPosition).getName());
 						editor.commit();
-						Intent intent = new Intent(ListChoosePitchActivity.this,PlaySetActivity.class);
+						Intent intent = new Intent(CompetitionListChoosePitchActivity.this,CompetitionHomeActivity.class);
 						intent.putExtra("sign", sign);
 						intent.putExtra("uuid", child.get(groupPosition).get(childPosition).getUuid());	
 						startActivity(intent);
@@ -118,7 +116,7 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent intent=new Intent(ListChoosePitchActivity.this,ChoosePitchActivity.class );
+				Intent intent=new Intent(CompetitionListChoosePitchActivity.this,CompetitionChoosePitchActivity.class );
 				startActivity(intent);
 				finish();
 			}
@@ -156,7 +154,7 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
 							}
 						}
 					}
-					   SearchCityAdapter adapters = new SearchCityAdapter(citys_name,citys_address,ListChoosePitchActivity.this);
+					   SearchCityAdapter adapters = new SearchCityAdapter(citys_name,citys_address,CompetitionListChoosePitchActivity.this);
 						
 						cityList.setAdapter(adapters);
 						adapters.notifyDataSetChanged();
@@ -176,7 +174,7 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
 				SharedPreferences.Editor editor = ss.edit();
 				editor.putString("name", citys_name.get(arg2));
 				editor.commit();
-				Intent intent = new Intent(ListChoosePitchActivity.this,PlaySetActivity.class);
+				Intent intent = new Intent(CompetitionListChoosePitchActivity.this,CompetitionHomeActivity.class);
 				intent.putExtra("sign", sign);
 				intent.putExtra("uuid",uuidList.get(arg2));	
 				startActivity(intent);

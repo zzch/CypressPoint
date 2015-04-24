@@ -4,6 +4,7 @@ package cn.com.zcty.ILovegolf.activity.view;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.R.id;
 import cn.com.zcty.ILovegolf.activity.R.layout;
+import cn.com.zcty.ILovegolf.activity.view.competition.CompetitionScoreActivity;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -15,7 +16,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 /**
- * 练习首页
+ * 首页
  * @author deii
  *
  */
@@ -30,19 +31,29 @@ public class ExerciseActivity extends Activity {
         //layout_e = (LinearLayout) findViewById(R.id.layout_e);
         //layout_e.getBackground().setAlpha(80);
     }
-    //示意图记分点击事件
+    //专业记分卡点击事件
      public void shiyitu(View v){
 	   Intent intent=new Intent(ExerciseActivity.this,SchematicScoreActivity.class);
 		startActivity(intent);
 		finish();
      }
-     //快捷记分点击事件
+     //简单记分卡点击事件
      public void kuaijie(View v){
     	Intent intent=new Intent(ExerciseActivity.this,QuickScoreActivity.class);
  		  startActivity(intent);
  		  finish();
      }
 
-   
-    
+     //竞技记分卡点击事件
+     public void jingji(View v){
+    	 Intent intent=new Intent(ExerciseActivity.this,CompetitionScoreActivity.class);
+		  startActivity(intent);
+		  finish();
+     }
+     @Override
+    public void onBackPressed() {
+    	// TODO Auto-generated method stub
+    	super.onBackPressed();
+    	finish();
+    }
 }

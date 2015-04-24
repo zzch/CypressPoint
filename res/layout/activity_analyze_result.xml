@@ -179,7 +179,7 @@
 	<ListView
 	    android:id="@+id/listView1"
 	    android:layout_width="match_parent"
-	    android:layout_height="360dp"
+	    android:layout_height="270dp"
 	    android:listSelector="@android:color/transparent"
 	    android:divider="@null"
 	     >
@@ -193,7 +193,7 @@
 	<ListView
 	    android:id="@+id/listView2"
 	    android:layout_width="match_parent"
-	    android:layout_height="155dp"
+	    android:layout_height="130dp"
 	    android:listSelector="@android:color/transparent"
 	    android:divider="@null"
 	     >
@@ -207,7 +207,7 @@
 	<ListView
 	    android:id="@+id/listView3"
 	    android:layout_width="match_parent"
-	    android:layout_height="310dp"
+	    android:layout_height="300dp"
 	    android:listSelector="@android:color/transparent"
 	    android:divider="@null"
 	     >

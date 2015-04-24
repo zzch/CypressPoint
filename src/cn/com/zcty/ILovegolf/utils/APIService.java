@@ -76,4 +76,10 @@ public class APIService {
 	 
 	 //个性统计
 	 public static final String GEXINGCOUNT = "http://123.57.210.52/api/v1/statistics/customize.json?";
+
+	 //创建竞技赛
+	 public static final String COMPETITION = "http://123.57.210.52/api/v1/matches/tournament.json?";
+
+	 //竞技赛列表
+	 public static final String COMPETITIONCHOOSEPITCH = "http://123.57.210.52/api/v1/venues/matches/tournament.json?";
 }

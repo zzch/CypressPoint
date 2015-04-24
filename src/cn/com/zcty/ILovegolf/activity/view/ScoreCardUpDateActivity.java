@@ -63,7 +63,7 @@ public class ScoreCardUpDateActivity extends Activity{
 	private TextView distance_scorecard;
 	private TextView hit_scorecard;
 	private ImageView scorecard_image_up;
-   private LinearLayout wheel_layout;
+	private LinearLayout wheel_layout;
 	private boolean flase_1 = false;
 	private boolean flase_2 = false;
 	private boolean flase_3 = false;
@@ -73,9 +73,10 @@ public class ScoreCardUpDateActivity extends Activity{
 	private String distanceResult;
 	private	int	puttsstart;
 	private int penaltiesstart;
+	private String code;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
-			
+
 			if(msg.what==1){
 				if(!coolResult.equals(hit_scorecard.getText().toString())){
 					flase_4 = true;
@@ -84,58 +85,49 @@ public class ScoreCardUpDateActivity extends Activity{
 					flase_5 = true;
 				}
 				Log.i("resultk", flase_1+""+flase_2+flase_3+flase_4+"");
-			   if(flase_1||flase_2||flase_3||flase_4||flase_5){
-				   final String result = (String) msg.obj;
+				if(flase_1||flase_2||flase_3||flase_4||flase_5){
+					final String result = (String) msg.obj;
 					Log.i("result", result);
-						AlertDialog.Builder dialog = new Builder(ScoreCardUpDateActivity.this)
-						.setTitle("提示")
-						.setMessage("是否保存")
-						.setPositiveButton("保存", new DialogInterface.OnClickListener() {//添加确定按钮   
+					AlertDialog.Builder dialog = new Builder(ScoreCardUpDateActivity.this)
+					.setTitle("提示")
+					.setMessage("是否保存")
+					.setPositiveButton("保存", new DialogInterface.OnClickListener() {//添加确定按钮   
 
 
-							@Override  
-							public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件   
-								if(result.equals("success")){
-									Intent intent = new Intent();
-									intent.putExtra("scard", setcard);
-									intent.putExtra("position", position);
-									setResult(0, intent);
-									finish();
-								}else{
-									//当没有网的时候弹出框提醒
-									AlertDialog.Builder dialogl = new Builder(ScoreCardUpDateActivity.this)
-									.setMessage("请检查网络")
-									.setNegativeButton("取消", new DialogInterface.OnClickListener() {//添加确定按钮   
-
-
-										public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件   
-
-											finish();
-
-										}});		
-									dialogl.show();
+						@Override  
+						public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件   
+							if(result.equals("success")){
+								Intent intent = new Intent();
+								intent.putExtra("scard", setcard);
+								intent.putExtra("position", position);
+								setResult(0, intent);
+								finish();
+							}else{
+								if(code.equals("500")||code.equals("404")){
+									Toast.makeText(ScoreCardUpDateActivity.this, "网络异常", Toast.LENGTH_LONG).show();
 								}
-								
-							}}  
+							}
 
-								).setNegativeButton("取消", new DialogInterface.OnClickListener() {//添加确定按钮   
+						}}  
 
-
-									@Override  
-									public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件   
-										Intent intent = new Intent();
-										setResult(30, intent);
-										finish();
+							).setNegativeButton("取消", new DialogInterface.OnClickListener() {//添加确定按钮   
 
 
-									}});				
-						dialog.show();
-			   }else{
-				   Intent intent = new Intent();
+								@Override  
+								public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件   
+									Intent intent = new Intent();
+									setResult(30, intent);
+									finish();
+
+
+								}});				
+					dialog.show();
+				}else{
+					Intent intent = new Intent();
 					setResult(30, intent);
 					finish();			   }
-				
-					
+
+
 			}
 			if(msg.what==2){
 				String result = (String) msg.obj;
@@ -144,23 +136,15 @@ public class ScoreCardUpDateActivity extends Activity{
 					intent.putExtra("scard", setcard);
 					intent.putExtra("position", position);
 					setResult(0, intent);
-					
+
 					finish();
-				}else{
-					//当没有网的时候弹出框提醒
-					AlertDialog.Builder dialog = new Builder(ScoreCardUpDateActivity.this)
-					.setMessage("请检查网络")
-					.setNegativeButton("取消", new DialogInterface.OnClickListener() {//添加确定按钮   
-
-
-						public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件   
-
-							finish();
-
-						}});		
-					dialog.show();
+				}
+				Log.i("zhouhewoshi","code");
+				if(code.equals("500")||code.equals("404")){
+					Toast.makeText(ScoreCardUpDateActivity.this, "网络异常", Toast.LENGTH_LONG).show();
 				}
 			}
+
 		};
 	};
 	@Override
@@ -171,15 +155,16 @@ public class ScoreCardUpDateActivity extends Activity{
 		initView();
 		setListener();
 		getData();
+
 	}
 
 	private void getData() {
-		
-		
-		
+
+
+
 		adapter = 	new ArrayNumberWheelAdapter(this);		
 		distanceWheelView.setViewAdapter(adapter);
-		
+
 		coolWheelView.setViewAdapter(new ArrayWheelAdapter<String>(this,cool));
 		distanceWheelView.setVisibleItems(5);
 		Intent intent = getIntent();
@@ -200,11 +185,14 @@ public class ScoreCardUpDateActivity extends Activity{
 				}
 			}
 			distanceWheelView.setCurrentItem(Integer.parseInt(sp.getString("te", "0"))/5);
+			SharedPreferences.Editor editor = sp.edit();
+			editor.putString("rodnum", "null");
+			editor.commit();
 		}else{
-		distanceWheelView.setCurrentItem(40);
-		dataTextView.setText(par);
-		putTextView.setText(putcount+"");
-		penaltiesTextView.setText(penaltiescount+"");
+			distanceWheelView.setCurrentItem(40);
+			dataTextView.setText(par);
+			putTextView.setText(putcount+"");
+			penaltiesTextView.setText(penaltiescount+"");
 		}
 		coolResult = hit_scorecard.getText().toString();
 		distanceResult = distance_scorecard.getText().toString();
@@ -215,12 +203,12 @@ public class ScoreCardUpDateActivity extends Activity{
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		
+
 		if(keyCode==KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0){
-			 Intent intent = new Intent();
-				setResult(30, intent);
-				new MyTask().start();
-        }
+			Intent intent = new Intent();
+			setResult(30, intent);
+			new MyTask().start();
+		}
 		return false;
 	}
 	private void setListener() {
@@ -228,7 +216,7 @@ public class ScoreCardUpDateActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				new MyTask().start();
-			
+
 			}
 		});
 		saveButton.setOnClickListener(new OnClickListener() {
@@ -236,26 +224,26 @@ public class ScoreCardUpDateActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				new MyTaskt().start();
-				
+
 			}
 		});
-		
+
 		distanceWheelView.addChangingListener(new OnWheelChangedListener() {
-			
+
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
-			
+
 				distance_scorecard.setText(adapter.getItemText(newValue));
 				driving_distance = (String) adapter.getItemText(newValue);
 				driving_distance = driving_distance.substring(0,driving_distance.length()-1);
-				
+
 			}
 		});
 		coolWheelView.addChangingListener(new OnWheelChangedListener() {
 
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
-	
+
 				hit_scorecard.setText(cool[newValue]);
 				switch (newValue) {
 				case 0:
@@ -287,80 +275,86 @@ public class ScoreCardUpDateActivity extends Activity{
 		scorecard_image_up = (ImageView) findViewById(R.id.scorecard_image_up);
 		wheel_layout = (LinearLayout)findViewById(R.id.wheel_layout);
 		scorecard_image_up = (ImageView) findViewById(R.id.scorecard_image_up);
-		
+
 	}
 
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.but_add_one:
-			
+
 			if(count<99){
 				count++;
 				dataTextView.setText(count+"");
-			    
+				flase_1 = true;
 			}else{
 				Toast.makeText(ScoreCardUpDateActivity.this, "您不能再点击了！", Toast.LENGTH_SHORT).show();	
 			}
+
+
 			
-			
-			flase_1 = true;
 			break;
 		case R.id.but_jian_one:
-			if(count>0){
+			if(count>1){
 				if(count<=99){
 					count--;
 					dataTextView.setText(count+"");
-					if(penaltiescount>0){
-						penaltiescount--;
-						penaltiesTextView.setText(penaltiescount+"");
-					}else if(putcount>0){
-						putcount--;
-						putTextView.setText(putcount+"");
+					if(count<(putcount+(penaltiescount*2)+1)){
+						if(penaltiescount>0){
+							penaltiescount--;
+							penaltiesTextView.setText(penaltiescount+"");
+							
+						}else if(putcount>0){
+							putcount--;
+							putTextView.setText(putcount+"");
+						}
 					}
+					
 					flase_1 = true;
-				    
+
 				}else{
 					Toast.makeText(ScoreCardUpDateActivity.this, "您不能再点击了！", Toast.LENGTH_SHORT).show();	
 				}
-				
+
 			}
-			
+
 			break;
 		case R.id.but_add_two:
-			
+
 			if(count<=99){
 				putcount++;
 				putTextView.setText(putcount+"");
-				if(count<(putcount-puttsstart)+(penaltiescount*2)+1){
-					count = (putcount-puttsstart)+(penaltiescount*2)+1;
-						dataTextView.setText(count+"");
+				if(count<(putcount)+(penaltiescount*2)+1){
+					count = (putcount)+(penaltiescount*2)+1;
+					dataTextView.setText(count+"");
 				}
 				flase_2 = true;
 			}else{
 				Toast.makeText(ScoreCardUpDateActivity.this, "您不能再点击了！", Toast.LENGTH_SHORT).show();	
 			}
-			
+
 			break;
 		case R.id.but_jian_two:
 			if(putcount>0){
 				putcount--;
 				putTextView.setText(putcount+"");
+				flase_2 = true;
 			}
-			flase_2 = true;
+			
 			break;
 		case R.id.but_add_three:
 			if(count<=99){
 				dataTextView.setText(count+"");
 				penaltiescount++;
 				penaltiesTextView.setText(penaltiescount+"");
-			if(count<(putcount+((penaltiescount-penaltiesstart)*2)+1)){
-				count = putcount+((penaltiescount-penaltiesstart)*2)+1;	
-			}
-			flase_3 = true;
+				if(count<(putcount+((penaltiescount)*2)+1)){
+					count = putcount+((penaltiescount)*2)+1;	
+					dataTextView.setText(count+"");
+				}
+				flase_3 = true;
 			}else{
 				Toast.makeText(ScoreCardUpDateActivity.this, "您不能再点击了！", Toast.LENGTH_SHORT).show();
 			}
-			
+
 			break;
 		case R.id.but_jian_three:
 			if(penaltiescount>0){
@@ -376,7 +370,7 @@ public class ScoreCardUpDateActivity extends Activity{
 			}else{
 				wheel_layout.setVisibility(View.GONE);	
 				scorecard_image_up.setImageResource(R.drawable.image_icon_up);
-				
+
 			}
 			break;
 		}
@@ -407,7 +401,7 @@ public class ScoreCardUpDateActivity extends Activity{
 			}else{
 				setcard.setPar("命中");
 			}
-			
+
 			String path = APIService.MODIFYINTEGRAL+"uuid="+uuid+"&score="+score+"&putts="+putts+
 					"&penalties="+penalties+
 					"&driving_distance="+driving_distance+
@@ -415,18 +409,25 @@ public class ScoreCardUpDateActivity extends Activity{
 					"&token="+token;
 			Log.i("pathd", path);
 			String jsonData = HttpUtils.HttpClientPut(path);
+			code = jsonData;
 			Log.i("jsondata", jsonData);
-			try {
-				JSONObject jsonaObject = new JSONObject(jsonData);
-				result = jsonaObject.getString("result");
-				Log.i("result", result+"1");
+			if(code.equals("500")||code.equals("404")){
 				Message msg = handler.obtainMessage();
 				msg.what = 1;
-				msg.obj = result;
+				msg.obj = code;
 				handler.sendMessage(msg);
-			} catch (JSONException e) {
-				e.printStackTrace();
-			}
+			}else{
+				try {
+					JSONObject jsonaObject = new JSONObject(jsonData);
+					result = jsonaObject.getString("result");
+					Log.i("result", result+"1");
+					Message msg = handler.obtainMessage();
+					msg.what = 1;
+					msg.obj = result;
+					handler.sendMessage(msg);
+				} catch (JSONException e) {
+					e.printStackTrace();
+				}}
 		}
 	}
 	class MyTaskt extends Thread{
@@ -436,7 +437,7 @@ public class ScoreCardUpDateActivity extends Activity{
 			getData();
 		}
 		public void getData(){
-			
+
 			SharedPreferences sp = getSharedPreferences("register", Context.MODE_PRIVATE);
 			String token = sp.getString("token", "token");
 			Intent intent = getIntent();
@@ -455,7 +456,7 @@ public class ScoreCardUpDateActivity extends Activity{
 			}else{
 				setcard.setPar("命中");
 			}
-			
+
 			String path = APIService.MODIFYINTEGRAL+"uuid="+uuid+"&score="+score+"&putts="+putts+
 					"&penalties="+penalties+
 					"&driving_distance="+driving_distance+
@@ -463,19 +464,26 @@ public class ScoreCardUpDateActivity extends Activity{
 					"&token="+token;
 			Log.i("pathd", path);
 			String jsonData = HttpUtils.HttpClientPut(path);
-			Log.i("jsondata", jsonData);
-			try {
-				JSONObject jsonaObject = new JSONObject(jsonData);
-				result = jsonaObject.getString("result");
-				Log.i("result", result+"1");
+			code = jsonData;
+			if(code.equals("500")||code.equals("404")){
 				Message msg = handler.obtainMessage();
 				msg.what = 2;
-				msg.obj = result;
+				msg.obj = code;
 				handler.sendMessage(msg);
-			} catch (JSONException e) {
-				e.printStackTrace();
-			}
-		}
+			}else{
+				Log.i("jsondata", jsonData);
+				try {
+					JSONObject jsonaObject = new JSONObject(jsonData);
+					result = jsonaObject.getString("result");
+					Log.i("result", result+"1");
+					Message msg = handler.obtainMessage();
+					msg.what = 2;
+					msg.obj = result;
+					handler.sendMessage(msg);
+				} catch (JSONException e) {
+					e.printStackTrace();
+				}
+			}}
 	}
 
 

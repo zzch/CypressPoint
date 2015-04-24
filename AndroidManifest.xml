@@ -71,12 +71,20 @@
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.ChipActivity" android:screenOrientation="portrait"></activity> 
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.GreenActivity" android:screenOrientation="portrait"></activity> 
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.ScoreHitActivity" android:screenOrientation="portrait"></activity>
+       	<activity android:name="cn.com.zcty.ILovegolf.activity.view.MajorListChoosePitchActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.competition.CompetitionChoosePitchActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.competition.CompetitionListChoosePitchActivity" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.KickActivity" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.GanCountActivity" android:screenOrientation="portrait"></activity>
-        <activity android:name="cn.com.zcty.ILovegolf.activity.view.QiuGanActivity" android:screenOrientation="portrait"></activity>
+         <activity android:name="cn.com.zcty.ILovegolf.activity.view.QiuGanActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.competition.CompetitionScoreActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.competition.CompetitionHomeActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.competition.CompetitionNewActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.competition.CompetitionScordActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.competition.SginText" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.MajorStatisticsActivityScord" android:screenOrientation="portrait"></activity> 
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.myself.SelectPicPopupWindow" android:theme="@style/MyDialogStyleBottom" android:screenOrientation="portrait"></activity>
-        <activity android:name="cn.com.zcty.ILovegolf.activity.view.count.PicPopupWindow" android:theme="@style/MyDialogStyleBottom" android:screenOrientation="portrait"></activity>
+       <activity android:name="cn.com.zcty.ILovegolf.activity.view.count.PicPopupWindow" android:theme="@style/MyDialogStyleBottom" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.StatisticsAvtivity"
             	 android:configChanges="orientation|screenSize"
             ></activity>

@@ -23,7 +23,7 @@ import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.activity.adapter.AnlyzelistViewAdapter;
+import cn.com.zcty.ILovegolf.activity.adapter.AnalyzeResultAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.StatisticAdapter;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
@@ -130,9 +130,9 @@ public class AnalyzeResultActivity extends Activity{
 		fullTextView.setText("完整场次"+finished_count+"场");
 		averageTextView.setText(score);
 		chadianTextView.setText(handicap);
-		listView1.setAdapter(new AnlyzelistViewAdapter(this,arrayList1,name1ArrayList));
-		listView2.setAdapter(new AnlyzelistViewAdapter(this,arrayList2,name2ArrayList));
-		listView3.setAdapter(new AnlyzelistViewAdapter(this,arrayList3,name3ArrayList));
+		listView1.setAdapter(new AnalyzeResultAdapter(this,arrayList1,name1ArrayList));
+		listView2.setAdapter(new AnalyzeResultAdapter(this,arrayList2,name2ArrayList));
+		listView3.setAdapter(new AnalyzeResultAdapter(this,arrayList3,name3ArrayList));
 		int count = Integer.parseInt(finished_count);
 		Log.i("ssdzd", finished_count);
 		if(count<1){
@@ -210,7 +210,7 @@ public class AnalyzeResultActivity extends Activity{
 				name1ArrayList.add("标准杆上果岭的平均推杆数");
 				putts = jsonObject.getString("putts");
 				arrayList1.add(putts);
-				name1ArrayList.add("没洞平均推杆数");
+				name1ArrayList.add("每洞平均推杆数");
 
 				score_par_3 = jsonObject.getString("score_par_3");
 				arrayList2.add(score_par_3);

@@ -8,7 +8,9 @@
     <string name="title">选择记分卡</string>
     <string name="major_card">专 业 记 分 卡</string>
     <string name="easy_card">简 单 记 分 卡</string>
+    <string name="athletics">竞技记分卡</string>
     <string name="new_build">新建</string>
+    <string name="qiuchang">球场</string>
     <string name="text_1">记录更加精准，</string>
     <string name="pith_name">北京燕西高尔夫球俱乐部</string>
     <string name="delete">删除</string>
@@ -94,8 +96,9 @@
     <!-- 个人 -->
     <string name="myself">个人信息</string>
     
- 
-    
-    
+ 	<!-- 竞技比赛 -->
+    <!-- 比赛房间 -->
+    <string name="xinjian">新建</string>
+    <string name="username">用户昵称</string>
 
 </resources>
