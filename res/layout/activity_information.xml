@@ -369,7 +369,7 @@
                     android:layout_marginLeft="15dp"
                     android:gravity="center_vertical"
                     android:background="@null"
-                    android:hint="我要用为笑带过一切去迎接明天"
+                    android:hint="请设置您的个性签名"
                     android:textColorHint="@color/gold_70"
                     android:textColor="@color/gold"
                     android:textSize="@dimen/txsize_small_xx" />

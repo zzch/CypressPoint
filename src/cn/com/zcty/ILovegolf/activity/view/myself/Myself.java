@@ -41,6 +41,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
@@ -58,6 +59,7 @@ public class Myself extends Activity {
 	private TextView signTextView;
 	private String  url;
 	private CircleImageView imageHead;
+	private ImageView image_bg;
 	private Bitmap bitmap ;
 	private TextView nameTextView;
 	private String year;
@@ -76,6 +78,7 @@ public class Myself extends Activity {
 	Handler handler1 = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
+				//image_bg.setImageAlpha(80);
 				imageHead.setImageBitmap(bitmap);
 				saveMyBitmap(bitmap);
 				blur(bitmap);
@@ -119,6 +122,7 @@ public class Myself extends Activity {
 		headLayout = (RelativeLayout) findViewById(R.id.myself_head_self);
 		signTextView = (TextView) findViewById(R.id.myself_sign);
 		imageHead = (CircleImageView) findViewById(R.id.myself_head);
+		image_bg = (ImageView) findViewById(R.id.myself_bg);
 		SharedPreferences sp = getSharedPreferences("register", MODE_PRIVATE);
 		String name = sp.getString("nickname", "nickname");
 		nameTextView.setText(name);
@@ -269,6 +273,7 @@ public class Myself extends Activity {
 		        }
 
 
+	@SuppressLint("NewApi")
 	@SuppressWarnings("unused")
 	private void blur(Bitmap bkg) {   
 	     long startMs = System.currentTimeMillis();   

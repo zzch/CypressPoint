@@ -452,7 +452,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 
 			Intent intent = new Intent(InformationChangesActivity.this,TabHostActivity.class);
 			intent.putExtra("1", "1");
-			//startActivity(intent);
+			startActivity(intent);
 			finish();
 			break;
 		}		
