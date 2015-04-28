@@ -381,8 +381,11 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 						Log.i("ceshipath", image+"1");
 						if (image != null) {
 							showProgressDialog("提示","正在上传");
-							image = rotaingImageView(0,image);							
-							//headMyImage.setImageBitmap(image);	
+
+							String phoneName = android.os.Build.BRAND; 
+							if(phoneName.equals("samsung")){								
+								image = rotaingImageView(90,image);							
+							}
 							new GenxinHead().start();
 							
 						}
