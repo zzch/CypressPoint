@@ -8,7 +8,7 @@
     <string name="title">选择记分卡</string>
     <string name="major_card">专 业 记 分 卡</string>
     <string name="easy_card">简 单 记 分 卡</string>
-    <string name="athletics">竞技记分卡</string>
+    <string name="athletics">竞 技 记 分 卡</string>
     <string name="new_build">新建</string>
     <string name="qiuchang">球场</string>
     <string name="text_1">记录更加精准，</string>
@@ -87,11 +87,7 @@
     <string name="anlyzeresult">分析结果</string>
     <string name="share">分享</string>
     <string name="pk">PK</string>
-     <!--
-   
-    <string name="myself">个人信息</string>
-    <string name="myself">个人信息</string>
-    -->
+
 
     <!-- 个人 -->
     <string name="myself">个人信息</string>

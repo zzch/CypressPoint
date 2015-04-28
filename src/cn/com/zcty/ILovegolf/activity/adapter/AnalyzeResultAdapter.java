@@ -47,9 +47,9 @@ public class AnalyzeResultAdapter extends BaseAdapter {
 		Holder holder = null;
 		if(convertView==null){
 			holder = new Holder();
-			convertView = inflater.inflate(R.layout.analyze_result_item, null);
-			holder.textView = (TextView) convertView.findViewById(R.id.lianxi_name);
-			holder.textViewName_1 = (TextView) convertView.findViewById(R.id.lianxi_name_1);
+			convertView = inflater.inflate(R.layout.analyze_item, null);
+			holder.textView = (TextView) convertView.findViewById(R.id.text_zhi);
+			holder.textViewName_1 = (TextView) convertView.findViewById(R.id.text_analyze);
 			convertView.setTag(holder);
 		}else{
 			holder = (Holder) convertView.getTag();

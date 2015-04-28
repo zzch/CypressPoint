@@ -64,7 +64,7 @@ public class MajorChoosePitchActivity extends Activity{
 				editors.putString("key", qiuchanglists.get(position).getUuid());
 				editors.commit();
 				startActivity(intent);
-				finish();
+				//finish();
 			}
 		});
 		
@@ -113,8 +113,8 @@ public class MajorChoosePitchActivity extends Activity{
 	
 	//返回按钮点击事件
 	public void choosepith_back(View v){
-		Intent intent=new Intent(MajorChoosePitchActivity.this,SchematicScoreActivity.class);
-		startActivity(intent);
+		//Intent intent=new Intent(MajorChoosePitchActivity.this,SchematicScoreActivity.class);
+		//startActivity(intent);
 		finish();
 	}
 
@@ -123,7 +123,7 @@ public class MajorChoosePitchActivity extends Activity{
 		Intent intent=new Intent(MajorChoosePitchActivity.this,MajorListChoosePitchActivity.class);
 		intent.putExtra("sign", "0");
 		startActivity(intent);
-		finish();
+		//finish();
 	}
 	
 	

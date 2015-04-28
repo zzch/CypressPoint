@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/title_height"
         android:background="@anim/title_pingpu" >
 
         <Button
@@ -20,7 +20,7 @@
             android:layout_marginTop="13dp"
             android:background="@null"
             android:onClick="onclick"
-            android:text="@string/qiuchang"
+            android:text="@string/new_build"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_small_xx" />
 
@@ -33,17 +33,17 @@
 
         <Button
             android:id="@+id/k_back"
-            android:layout_width="50dp"
+             android:layout_width="50dp"
             android:layout_height="25dp"
             android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
+            android:background="@null"
+            android:text="@string/back"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="13dp"
-            android:background="@null"
-            android:onClick="onclick"
-            android:text="返回"
             android:textColor="@color/gold"
-            android:textSize="@dimen/txsize_small_xx" />
+            android:textSize="@dimen/txsize_small_xx"
+            android:onClick="onclick"
+             />
 
         <TextView
             android:id="@+id/textView1"

@@ -72,7 +72,7 @@ public class CompetitionChoosePitchActivity extends Activity {
 				editors.putString("key", qiuchanglists.get(position).getUuid());
 				editors.commit();
 				startActivity(intent);
-				finish();
+				//finish();
 			}
 		});
 		
@@ -123,8 +123,8 @@ public class CompetitionChoosePitchActivity extends Activity {
 	
 	//返回按钮点击事件
 	public void choosepith_back(View v){
-		Intent intent=new Intent(CompetitionChoosePitchActivity.this,CompetitionScoreActivity.class);
-		startActivity(intent);
+		//Intent intent=new Intent(CompetitionChoosePitchActivity.this,CompetitionScoreActivity.class);
+		//startActivity(intent);
 		finish();
 	}
 
@@ -132,7 +132,7 @@ public class CompetitionChoosePitchActivity extends Activity {
 	public void qiehuan(View v){
 		Intent intent=new Intent(CompetitionChoosePitchActivity.this,CompetitionListChoosePitchActivity.class);
 		startActivity(intent);
-		finish();
+		//finish();
 	}
 	
 	

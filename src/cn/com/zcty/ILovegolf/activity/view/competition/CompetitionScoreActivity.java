@@ -112,15 +112,15 @@ public class CompetitionScoreActivity extends Activity implements IXListViewList
 		switch(v.getId()){
 		//返回按钮
 		case R.id.k_back:
-			intent=new Intent(CompetitionScoreActivity.this,TabHostActivity.class);
-			startActivity(intent);
+			//intent=new Intent(CompetitionScoreActivity.this,TabHostActivity.class);
+			//startActivity(intent);
 			finish();	
 			break;
 			//新建按钮
 		case R.id.k_build:
 			intent=new Intent(CompetitionScoreActivity.this,CompetitionChoosePitchActivity.class);
 			startActivity(intent);
-			finish();
+			//finish();
 			break;
 		}
 	}

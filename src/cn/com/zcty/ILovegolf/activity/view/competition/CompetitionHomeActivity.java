@@ -64,8 +64,8 @@ public class CompetitionHomeActivity extends Activity{
 		
 	}
 	public void choosepith_back(View v){
-		Intent intent = new Intent(this,CompetitionScoreActivity.class);
-		startActivity(intent);
+         //Intent intent = new Intent(this,CompetitionScoreActivity.class);
+		//startActivity(intent);
 		finish();
 	}
 	class CompetitionHomes extends Thread{

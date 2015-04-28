@@ -133,9 +133,9 @@ public class ScoreCardActivity extends Activity {
 		switch(v.getId()){
 		//记分卡返回按钮
 		case R.id.scorecard_back:
-			intent=new Intent(ScoreCardActivity.this,QuickScoreActivity.class);
-			startActivity(intent);
-			finish();
+			//intent=new Intent(ScoreCardActivity.this,QuickScoreActivity.class);
+			//startActivity(intent);
+		   finish();
 			break;
 			//点击统计按钮
 		case R.id.scorecard_score:

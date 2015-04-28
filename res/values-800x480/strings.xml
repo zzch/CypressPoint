@@ -21,6 +21,7 @@
   	<dimen name="view_large_xxx_v">200dp</dimen>
   	<dimen name="view_large_xx">170dp</dimen>
   	<dimen name="view_large_x">80dp</dimen>
+  	<dimen name="view_exe_x">40dp</dimen>
   	
   	<dimen name="view_mid_xxx">100dp</dimen>
   	<dimen name="view_mid_xx_x">80dp</dimen>
@@ -36,6 +37,7 @@
   	<dimen name="view_small_xx_j">0dp</dimen>
   	
   	
+  	
   	<dimen name="count_frame">-29dp</dimen>
   	<dimen name="count_frame_top">-75dp</dimen>
   	<dimen name="count_image_top">79dp</dimen>
@@ -45,7 +47,7 @@
   	<dimen name="count_orange_size">65dp</dimen>
   	<dimen name="count_text_left">172dp</dimen>
   	<dimen name="count_text_top">138dp</dimen>
-  	<dimen name="count_avg_left">170dp</dimen>
+  	<dimen name="count_avg_left">175dp</dimen>
   	<dimen name="count_avg_top">155dp</dimen>
   	<dimen name="count_ccc">0dp</dimen>
   	
@@ -85,7 +87,7 @@
     <dimen name="view_sss_ddd">100dp</dimen>
     
     <dimen name="view_sss_e">50dp</dimen>
-    <dimen name="view_sss_ee">300dp</dimen>
+    <dimen name="view_sss_ee">305dp</dimen>
     <dimen name="view_sss_eee">170dp</dimen>
     
     <dimen name="view_sss_f">165dp</dimen>
@@ -101,7 +103,11 @@
     <dimen name="view_wheel_xxx">10dp</dimen>
     
     <dimen name="view_quick_x">100dp</dimen>
+    <dimen name="view_quick_xx">20dp</dimen>
     
      <dimen name="tab_image_x">20dp</dimen>
      <dimen name="tab_height_x">57dp</dimen>
+     
+     <dimen name="radio_group_x">300dp</dimen>
+     <dimen name="radio_group_xx">30dp</dimen>
 </resources>

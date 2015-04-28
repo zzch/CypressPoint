@@ -121,8 +121,8 @@ public class ChoosePitchActivity extends Activity {
 	
 	//返回按钮点击事件
 	public void choosepith_back(View v){
-		Intent intent=new Intent(ChoosePitchActivity.this,QuickScoreActivity.class);
-		startActivity(intent);
+		//Intent intent=new Intent(ChoosePitchActivity.this,QuickScoreActivity.class);
+		//startActivity(intent);
 		finish();
 	}
 

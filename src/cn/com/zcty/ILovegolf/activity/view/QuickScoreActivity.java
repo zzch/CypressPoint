@@ -108,15 +108,15 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 		switch(v.getId()){
 		//返回按钮
 		case R.id.k_back:
-			intent=new Intent(QuickScoreActivity.this,TabHostActivity.class);
-			startActivity(intent);
-			finish();	
+			//intent=new Intent(QuickScoreActivity.this,TabHostActivity.class);
+			//startActivity(intent);
+			finish();
 			break;
 			//新建按钮
 		case R.id.k_build:
 			intent=new Intent(QuickScoreActivity.this,ChoosePitchActivity.class);
 			startActivity(intent);
-			finish();
+			
 			break;
 		}
 	}
@@ -131,7 +131,7 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 		intent.putExtra("uuid", quickArrayList.get(position-1).getUuid());		
 		startActivity(intent);
 		overridePendingTransition(R.anim.slide_in_from_right, R.anim.remain_original_location);
-		finish();
+		//finish();
 	}
 	@Override
 	public void removeItem(int position) {

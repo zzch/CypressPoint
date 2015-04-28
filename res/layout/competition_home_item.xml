@@ -5,20 +5,24 @@
     android:orientation="vertical" >
 <RelativeLayout 
     android:layout_width="match_parent"
-    android:layout_height="60dp"
+    android:layout_height="133dp"
     >
     <cn.com.zcty.ILovegolf.tools.CircleImageView
             android:id="@+id/myself_head"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="93dp"
+            android:layout_height="93dp"
+            android:layout_marginLeft="23dp"
+            android:layout_marginRight="31dp"
             android:layout_centerVertical="true"
             android:src="@drawable/hugh" />
     <TextView 
         android:id="@+id/home_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="3dp"
+        android:textSize="20dp"
+        android:layout_marginLeft="147dp"
+        android:layout_marginTop="17dp"
+        android:textColor="@color/gold"
         android:text="@string/username"
         />
     <TextView 
@@ -26,25 +30,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="3dp"
-        android:layout_marginRight="10dp"
-        android:text="4人"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="17dp"
+        android:textSize="20dp"
+        android:textColor="@color/gold"
+        android:text="4"
+        />
+    <TextView 
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="7dp"
+        android:layout_marginTop="17dp"
+        android:textSize="20dp"
+        android:textColor="@color/gold"
+        android:text="人"
         />
     <TextView 
         android:id="@+id/home_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/home_username"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginTop="19dp"
+        android:textSize="17dp"
+        android:textColor="@color/gold_70"
+        android:layout_marginLeft="147dp"
         android:text="这个位置用来显示创建比赛的名称"
         />
     <TextView 
         android:id="@+id/home_mold"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/home_name"
-        android:layout_marginLeft="50dp"
+        android:textSize="16dp"
+        android:layout_marginTop="19dp"
+        android:gravity="center"
+        android:background="@drawable/normal"
+        android:layout_marginLeft="147dp"
+        android:textColor="@color/gold_half"
         android:text="比杆赛"
         />
 </RelativeLayout>    

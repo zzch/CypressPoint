@@ -36,7 +36,7 @@
     <GridView
         android:id="@+id/gridView1"
         android:layout_width="@dimen/view_sss_ee"
-        android:layout_height="wrap_content"
+        android:layout_height="130dp"
         android:layout_marginLeft="10dp"
         android:background="@drawable/gridview_bg"
         android:layout_marginTop="5dp"
@@ -107,6 +107,7 @@
                     android:layout_marginLeft="@dimen/count_avg_left"
                     android:layout_marginTop="@dimen/count_avg_top"
                     android:text="@string/count_avg"
+                    android:textSize="12dp"
                     android:textColor="@color/gold_70" />
             </RelativeLayout>
         </FrameLayout>
@@ -146,7 +147,7 @@
                     android:layout_marginTop="3dp"
                     android:text="@string/xintianwen"
                     android:textColor="@color/gold_70"
-                    android:textSize="17dp" />
+                    android:textSize="15dp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -179,7 +180,7 @@
                     android:layout_marginTop="3dp"
                     android:text="@string/shuangbaijijia"
                     android:textColor="@color/gold_70"
-                    android:textSize="17dp" />
+                    android:textSize="15dp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -214,7 +215,7 @@
                     android:layout_marginTop="3dp"
                     android:text="@string/laoyin"
                     android:textColor="@color/gold_70"
-                    android:textSize="17dp" />
+                    android:textSize="15dp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -249,7 +250,7 @@
                     android:layout_marginTop="3dp"
                     android:text="@string/biaozhungan"
                     android:textColor="@color/gold_70"
-                    android:textSize="17dp" />
+                    android:textSize="15dp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -284,7 +285,7 @@
                     android:layout_marginTop="3dp"
                     android:text="@string/xiaoniao"
                     android:textColor="@color/gold_70"
-                    android:textSize="17dp" />
+                    android:textSize="15dp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -319,7 +320,7 @@
                     android:layout_marginTop="3dp"
                     android:text="@string/baiji"
                     android:textColor="@color/gold_70"
-                    android:textSize="17dp" />
+                    android:textSize="15dp" />
             </RelativeLayout>
         </RelativeLayout>
     </RelativeLayout>

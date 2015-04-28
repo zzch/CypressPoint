@@ -115,8 +115,8 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 		switch(v.getId()){
 		//返回按钮
 		case R.id.k_back:
-			intent=new Intent(SchematicScoreActivity.this,TabHostActivity.class);
-			startActivity(intent);
+			//intent=new Intent(SchematicScoreActivity.this,TabHostActivity.class);
+			//startActivity(intent);
 			finish();	
 			break;
 			//新建按钮
@@ -138,7 +138,7 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 		intent.putExtra("uuid", quickArrayList.get(position-1).getUuid());		
 		startActivity(intent);
 		overridePendingTransition(R.anim.slide_in_from_right, R.anim.remain_original_location);
-		finish();
+		//finish();
 	}
 	@Override
 	public void removeItem(int position) {

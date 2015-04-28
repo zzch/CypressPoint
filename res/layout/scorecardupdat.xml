@@ -11,38 +11,49 @@
        android:background="@anim/title_pingpu"
          >
          <TextView 
-             android:id="@+id/ball_hole"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_centerHorizontal="true"
-             android:layout_centerVertical="true"
-             android:gravity="center"
-             android:textColor="@color/gold"
-             android:textSize="@dimen/txsize_mid_x"
+            android:id="@+id/ball_hole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/chooisepith"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_mid_x"
              />
 
-           <Button
-               android:id="@+id/scorecard_cancel"
-               android:layout_width="50dp"
-               android:layout_height="25dp"
-               android:layout_alignParentLeft="true"
-               android:layout_centerVertical="true"
-               android:background="@drawable/back_button" 
-               android:layout_marginLeft="10dp"
+           
+              <ImageView
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="7dp"
+            android:src="@drawable/back_image" />
+       <Button
+            android:id="@+id/scorecard_cancel"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:background="@null"
+            android:text="@string/back"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="13dp"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_small_xx"
                />
 
            <Button
-               android:id="@+id/scorecard_save"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_alignParentRight="true"
-               android:layout_centerVertical="true"
-               android:background="@null"
-               android:onClick="onClick"
-               android:text="@string/button_save"
-               android:textColor="@color/gold"
-               android:layout_marginRight="10dp"
-               android:textSize="@dimen/txsize_small_xx" />
+            android:id="@+id/scorecard_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:onClick="onClick"
+            android:text="@string/button_save"
+            android:textColor="@color/gold"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="13dp"
+            android:textSize="@dimen/txsize_small_xx" 
+           />
 
      </RelativeLayout>
      

@@ -141,8 +141,8 @@ public class MajorScoreCardActivity extends Activity {
 		switch(v.getId()){
 		//记分卡返回按钮
 		case R.id.scorecard_back:
-			intent=new Intent(MajorScoreCardActivity.this,SchematicScoreActivity.class);
-			startActivity(intent);
+			//intent=new Intent(MajorScoreCardActivity.this,SchematicScoreActivity.class);
+			//startActivity(intent);
 			finish();
 			break;
 			//点击统计按钮

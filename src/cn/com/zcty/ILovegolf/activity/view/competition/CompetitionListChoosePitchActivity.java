@@ -116,8 +116,8 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent intent=new Intent(CompetitionListChoosePitchActivity.this,CompetitionChoosePitchActivity.class );
-				startActivity(intent);
+				//Intent intent=new Intent(CompetitionListChoosePitchActivity.this,CompetitionChoosePitchActivity.class );
+				//startActivity(intent);
 				finish();
 			}
 		});	

@@ -18,10 +18,11 @@
   	<dimen name="txsize_small_a">16dp</dimen>
   	 <!-- 各种需要适配的宽度值 -->
     <dimen name="view_large_xxx_x">440dp</dimen>
-  	<dimen name="view_large_xxx">200dp</dimen>
+  	<dimen name="view_large_xxx">210dp</dimen>
   	<dimen name="view_large_xxx_v">200dp</dimen>
   	<dimen name="view_large_xx">170dp</dimen>
   	<dimen name="view_large_x">120dp</dimen>
+  	<dimen name="view_exe_x">90dp</dimen>
   	
   	<dimen name="view_mid_xxx">100dp</dimen>
   	<dimen name="view_mid_xx_x">80dp</dimen>
@@ -37,6 +38,7 @@
   	<dimen name="view_small_xx_j">0dp</dimen>
   	
   	
+  	
   	<dimen name="count_frame">35dp</dimen>
   	<dimen name="count_frame_top">0dp</dimen>
   	<dimen name="count_image_top">26dp</dimen>
@@ -46,7 +48,7 @@
   	<dimen name="count_orange_size">70dp</dimen>
   	<dimen name="count_text_left">125dp</dimen>
   	<dimen name="count_text_top">96dp</dimen>
-  	<dimen name="count_avg_left">124dp</dimen>
+  	<dimen name="count_avg_left">125dp</dimen>
   	<dimen name="count_avg_top">118dp</dimen>
   	<dimen name="count_ccc">0dp</dimen>
   	
@@ -99,8 +101,12 @@
       <dimen name="view_wheel_xx">60dp</dimen>
       <dimen name="view_wheel_xxx">33dp</dimen>
       
-      <dimen name="view_quick_x">100dp</dimen>
+      <dimen name="view_quick_x">105dp</dimen>
+      <dimen name="view_quick_xx">25dp</dimen>
       
-       <dimen name="tab_image_x">25dp</dimen>
-        <dimen name="tab_height_x">67dp</dimen>
+      <dimen name="tab_image_x">25dp</dimen>
+      <dimen name="tab_height_x">67dp</dimen>
+      
+      <dimen name="radio_group_x">340dp</dimen>
+      <dimen name="radio_group_xx">35dp</dimen>
 </resources>

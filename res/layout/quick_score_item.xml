@@ -66,6 +66,9 @@
                 android:gravity="center_vertical"
                 android:text="@string/pith_name"
                 android:textColor="@color/gold"
+                android:maxEms="12" 
+                android:singleLine="true"
+                android:ellipsize="end"
                 android:textSize="@dimen/txsize_small_a" />
 
             <LinearLayout
@@ -100,7 +103,7 @@
                 <TextView
                     android:id="@+id/practice"
                     android:layout_width="@dimen/view_mid_xx_x"
-                    android:layout_height="@dimen/view_small_xx"
+                    android:layout_height="@dimen/view_quick_xx"
                     android:background="@drawable/normal"
                     android:gravity="center"
                     android:text="练习赛"
@@ -108,7 +111,7 @@
 
                 <LinearLayout
                     android:layout_width="@dimen/view_mid_xx_x"
-                    android:layout_height="@dimen/view_small_xx" 
+                    android:layout_height="@dimen/view_quick_xx" 
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:background="@drawable/normal"
                     android:gravity="center"

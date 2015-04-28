@@ -68,7 +68,10 @@ public class CompetitionHomeAdapter extends BaseAdapter{
 		//}
 		holder.userNameTextView.setText(competitionHomes.get(position).getNickname()); 
 		holder.matchNameTextView.setText(competitionHomes.get(position).getName()); 
-		holder.matchMoldTextView.setText(competitionHomes.get(position).getRule()); 
+	//	holder.matchMoldTextView.setText(competitionHomes.get(position).getRule()); 
+		if(competitionHomes.get(position).getRule().equals("stroke_play")){
+			holder.matchMoldTextView.setText("比杆赛");
+		}
 		holder.numberPeopleTextView.setText(competitionHomes.get(position).getPlayers_count()); 
 		return convertView;
 	}

@@ -92,8 +92,8 @@ public class CompetitionScordActivity extends Activity{
 			
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(CompetitionScordActivity.this,CompetitionScoreActivity.class);
-				startActivity(intent);
+				//Intent intent = new Intent(CompetitionScordActivity.this,CompetitionScoreActivity.class);
+				//startActivity(intent);
 				finish();
 			}
 		});

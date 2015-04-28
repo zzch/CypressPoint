@@ -174,7 +174,7 @@
           android:layout_width="match_parent"
           android:layout_height="1dp"
           android:background="@color/gold_half"
-          android:layout_marginTop="20dp"
+          android:layout_marginTop="25dp"
          />
 	<ListView
 	    android:id="@+id/listView1"
@@ -188,12 +188,12 @@
           android:layout_width="match_parent"
           android:layout_height="1dp"
           android:background="@color/gold_half"
-          android:layout_marginTop="20dp"
+          android:layout_marginTop="10dp"
          />
 	<ListView
 	    android:id="@+id/listView2"
 	    android:layout_width="match_parent"
-	    android:layout_height="130dp"
+	    android:layout_height="170dp"
 	    android:listSelector="@android:color/transparent"
 	    android:divider="@null"
 	     >
@@ -202,12 +202,12 @@
           android:layout_width="match_parent"
           android:layout_height="1dp"
           android:background="@color/gold_half"
-          android:layout_marginTop="20dp"
+          android:layout_marginTop="10dp"
          />
 	<ListView
 	    android:id="@+id/listView3"
 	    android:layout_width="match_parent"
-	    android:layout_height="300dp"
+	    android:layout_height="310dp"
 	    android:listSelector="@android:color/transparent"
 	    android:divider="@null"
 	     >

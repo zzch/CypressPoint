@@ -198,7 +198,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
-				sexTextView.setText(" "+sexs[newValue]);
+				sexTextView.setText(sexs[newValue]);
 			}
 		});
 		yearWheelView.addChangingListener(new OnWheelChangedListener() {
@@ -206,11 +206,11 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
 				year =  (String) yearadapter.getItemText(newValue).subSequence(0, yearadapter.getItemText(newValue).length()-1);
-				brithdayTextView.setText("  "+year+"-"+moth+"-"+day);
+				brithdayTextView.setText(year+"-"+moth+"-"+day);
 				years = Integer.parseInt(year);
 				SimpleDateFormat time = new SimpleDateFormat("yyyy");
 				years = Integer.parseInt(time.format(new Date()))-years;
-				nianlingTextView.setText("  "+years+"");
+				nianlingTextView.setText(years+"");
 			}
 		});
 		monthWheelView.addChangingListener(new OnWheelChangedListener() {
@@ -221,7 +221,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 				if(Integer.parseInt(moth)<10){
 					moth = "0"+moth;
 				}
-				brithdayTextView.setText("  "+year+"-"+moth+"-"+day);
+				brithdayTextView.setText(year+"-"+moth+"-"+day);
 			}
 		});
 		dayWheelView.addChangingListener(new OnWheelChangedListener() {
@@ -232,7 +232,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 				if(Integer.parseInt(day)<10){
 					day = "0"+day;
 				}
-				brithdayTextView.setText("  "+year+"-"+moth+"-"+day);
+				brithdayTextView.setText(year+"-"+moth+"-"+day);
 			}
 		});
 		quWheelView.addChangingListener(new OnWheelChangedListener() {
@@ -255,10 +255,11 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
 				mCurrentDistrictName = mDistrictDatasMap.get(mCurrentCityName)[newValue];
 				mCurrentZipCode = mZipcodeDatasMap.get(mCurrentDistrictName);
-				diquTextView.setText("  "+mCurrentProviceName+"-"+mCurrentCityName+"-"+mCurrentDistrictName);
+				diquTextView.setText(mCurrentProviceName+"-"+mCurrentCityName+"-"+mCurrentDistrictName);
 			}
 		});
 	}
+	
 	/**
 	 * 根据当前的市，更新区WheelView的信息
 	 */
@@ -314,15 +315,16 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		headMyImage.setImageBitmap(converToBitmap(100,100));
 		SharedPreferences sp = getSharedPreferences("register", MODE_PRIVATE);
 		String name = sp.getString("nickname", "nickname");
-		upnameEditText.setText(" "+name);
+		upnameEditText.setText(name);
 		Intent intent = getIntent();
-		brithdayTextView.setText("  "+intent.getStringExtra("birthday"));
+		brithdayTextView.setText(intent.getStringExtra("birthday"));
 		Log.i("brithdays", intent.getStringExtra("year"));
 	
 			int year =Integer.parseInt(intent.getStringExtra("year"));
 			SimpleDateFormat time = new SimpleDateFormat("yyyy");
 			year = Integer.parseInt(time.format(new Date()))-year;
-			nianlingTextView.setText("  "+year+"");
+			//年龄
+			nianlingTextView.setText(year+"");
 		
 		
 	}
@@ -443,7 +445,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 
 			Intent intent = new Intent(InformationChangesActivity.this,TabHostActivity.class);
 			intent.putExtra("1", "1");
-			startActivity(intent);
+			//startActivity(intent);
 			finish();
 			break;
 		}		
@@ -608,5 +610,12 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			progressDialog.dismiss();
 		}
 	}
-		
+	
+	
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		  super.onBackPressed();
+		  finish();
+	}
 }

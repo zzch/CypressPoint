@@ -136,8 +136,8 @@ public class CompetitionNewActivity extends Activity{
 			
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(CompetitionNewActivity.this,CompetitionHomeActivity.class);
-				startActivity(intent);
+				//Intent intent = new Intent(CompetitionNewActivity.this,CompetitionHomeActivity.class);
+				//startActivity(intent);
 				finish();
 			}
 		});

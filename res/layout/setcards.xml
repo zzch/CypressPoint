@@ -89,7 +89,7 @@
             android:layout_centerVertical="true"
             android:textSize="@dimen/txsize_small_xxx"
             android:textColor="@color/gold_half"
-            android:layout_marginLeft="@dimen/view_small_xx"
+            android:layout_marginLeft="25dp"
             android:text="distance" />
 
         <TextView
@@ -117,6 +117,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
             android:layout_marginLeft="@dimen/view_mid_x"
             android:text="4"
             android:textColor="@color/gold_70"
@@ -127,7 +129,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/par"
+           
             android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
             android:layout_marginLeft="15dp"
             android:textColor="@color/gold_half"
             android:text="p"
@@ -138,7 +142,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="80dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="59dp"
             android:textColor="@color/gold_70"
             android:text="335"
             android:textSize="@dimen/txsize_mid_xx"  />
@@ -148,8 +153,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/par"
+           
             android:layout_alignParentBottom="true"
-            android:layout_marginLeft="85dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="82dp"
             android:textColor="@color/gold_half"
             android:text="y"
             android:textSize="@dimen/txsize_small_x" />
