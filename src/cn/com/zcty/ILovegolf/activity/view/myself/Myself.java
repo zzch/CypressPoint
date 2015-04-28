@@ -100,7 +100,7 @@ public class Myself extends Activity {
 				intent.putExtra("birthday", birthday);
 				intent.putExtra("year", year);
 				startActivity(intent);
-				finish();
+				//finish();
 			}
 		});
 	}

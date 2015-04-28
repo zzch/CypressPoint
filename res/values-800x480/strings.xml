@@ -110,4 +110,6 @@
      
      <dimen name="radio_group_x">300dp</dimen>
      <dimen name="radio_group_xx">30dp</dimen>
+     
+     <dimen name="my_view_layout">150dp</dimen>
 </resources>

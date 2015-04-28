@@ -203,7 +203,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
-				sexTextView.setText(" "+sexs[newValue]);
+				sexTextView.setText(sexs[newValue]);
 			}
 		});
 		yearWheelView.addChangingListener(new OnWheelChangedListener() {
@@ -211,11 +211,11 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
 				year =  (String) yearadapter.getItemText(newValue).subSequence(0, yearadapter.getItemText(newValue).length()-1);
-				brithdayTextView.setText("  "+year+"-"+moth+"-"+day);
+				brithdayTextView.setText(year+"-"+moth+"-"+day);
 				years = Integer.parseInt(year);
 				SimpleDateFormat time = new SimpleDateFormat("yyyy");
 				years = Integer.parseInt(time.format(new Date()))-years;
-				nianlingTextView.setText("  "+years+"");
+				nianlingTextView.setText(years+"");
 			}
 		});
 		monthWheelView.addChangingListener(new OnWheelChangedListener() {
@@ -226,7 +226,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 				if(Integer.parseInt(moth)<10){
 					moth = "0"+moth;
 				}
-				brithdayTextView.setText("  "+year+"-"+moth+"-"+day);
+				brithdayTextView.setText(year+"-"+moth+"-"+day);
 			}
 		});
 		dayWheelView.addChangingListener(new OnWheelChangedListener() {
@@ -237,7 +237,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 				if(Integer.parseInt(day)<10){
 					day = "0"+day;
 				}
-				brithdayTextView.setText("  "+year+"-"+moth+"-"+day);
+				brithdayTextView.setText(year+"-"+moth+"-"+day);
 			}
 		});
 		quWheelView.addChangingListener(new OnWheelChangedListener() {
@@ -260,7 +260,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
 				mCurrentDistrictName = mDistrictDatasMap.get(mCurrentCityName)[newValue];
 				mCurrentZipCode = mZipcodeDatasMap.get(mCurrentDistrictName);
-				diquTextView.setText("  "+mCurrentProviceName+"-"+mCurrentCityName+"-"+mCurrentDistrictName);
+				diquTextView.setText(mCurrentProviceName+"-"+mCurrentCityName+"-"+mCurrentDistrictName);
 			}
 		});
 	}
@@ -319,15 +319,15 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		headMyImage.setImageBitmap(converToBitmap(100,100));
 		SharedPreferences sp = getSharedPreferences("register", MODE_PRIVATE);
 		String name = sp.getString("nickname", "nickname");
-		upnameEditText.setText(" "+name);
+		upnameEditText.setText(name);
 		Intent intent = getIntent();
-		brithdayTextView.setText("  "+intent.getStringExtra("birthday"));
+		brithdayTextView.setText(intent.getStringExtra("birthday"));
 		Log.i("brithdays", intent.getStringExtra("year"));
 	
 			int year =Integer.parseInt(intent.getStringExtra("year"));
 			SimpleDateFormat time = new SimpleDateFormat("yyyy");
 			year = Integer.parseInt(time.format(new Date()))-year;
-			nianlingTextView.setText("  "+year+"");
+			nianlingTextView.setText(year+"");
 		
 		
 	}
@@ -381,7 +381,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 						Log.i("ceshipath", image+"1");
 						if (image != null) {
 							showProgressDialog("提示","正在上传");
-							image = rotaingImageView(90,image);							
+							image = rotaingImageView(0,image);							
 							//headMyImage.setImageBitmap(image);	
 							new GenxinHead().start();
 							
@@ -396,7 +396,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 						image = extras.getParcelable("data");
 						if (image != null) {
 							showProgressDialog("提示","正在上传");
-							image = rotaingImageView(90,image);
+							image = rotaingImageView(0,image);
 							image = comp(image);
 							Log.i("ceshipath", image+"2");
 							//headMyImage.setImageBitmap(image);
@@ -453,7 +453,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			new GenxinName().start();
 			
 
-			Intent intent = new Intent(InformationChangesActivity.this,TabHostActivity.class);
+		    Intent intent = new Intent(InformationChangesActivity.this,TabHostActivity.class);
 			intent.putExtra("1", "1");
 			startActivity(intent);
 			finish();

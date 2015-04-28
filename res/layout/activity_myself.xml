@@ -23,7 +23,7 @@
     <RelativeLayout
         android:id="@+id/myself_head_self"
         android:layout_width="match_parent"
-        android:layout_height="200dp" >
+        android:layout_height="@dimen/my_view_layout" >
 
         <FrameLayout
             android:id="@+id/frameLayout1"
