@@ -3,19 +3,9 @@ package cn.com.zcty.ILovegolf.activity.view.myself;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.lang.ref.WeakReference;
 import java.text.SimpleDateFormat;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpStatus;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -48,9 +38,7 @@ import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.tools.CircleImageView;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
-import cn.com.zcty.ILovegolf.utils.TimeUtil;
 
-@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class Myself extends Activity {
 	private RelativeLayout headLayout;
 	private String gender;
@@ -80,8 +68,8 @@ public class Myself extends Activity {
 			if(msg.what==1){
 				//image_bg.setImageAlpha(80);
 				imageHead.setImageBitmap(bitmap);
+				blur(converToBitmap(100,100));
 				saveMyBitmap(bitmap);
-				blur(bitmap);
 			}
 		
 		};
@@ -98,7 +86,6 @@ public class Myself extends Activity {
 			if(fileIsExists()){
 				imageHead.setImageBitmap(converToBitmap(100,100));
 				blur(converToBitmap(100,100));
-				
 			}else{
 			new Touxiang().start();
 			}
@@ -113,7 +100,7 @@ public class Myself extends Activity {
 				intent.putExtra("birthday", birthday);
 				intent.putExtra("year", year);
 				startActivity(intent);
-				
+				finish();
 			}
 		});
 	}
@@ -273,8 +260,8 @@ public class Myself extends Activity {
 		        }
 
 
+	
 	@SuppressLint("NewApi")
-	@SuppressWarnings("unused")
 	private void blur(Bitmap bkg) {   
 	     long startMs = System.currentTimeMillis();   
 	     float radius = 20;   
@@ -316,3 +303,4 @@ public class Myself extends Activity {
 
 
 }
+

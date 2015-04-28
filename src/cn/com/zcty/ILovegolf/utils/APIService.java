@@ -88,4 +88,8 @@ public class APIService {
 
 	 //加入竞技赛
 	 public static final String COMPETITIONCREAT = "http://123.57.210.52/api/v1/matches/tournament/participate.json?";
+
+	 //历史竞技赛列表
+	 public static final String COMPETITIONSCORD = "http://123.57.210.52/api/v1/matches/tournament.json?";
+	 
 }

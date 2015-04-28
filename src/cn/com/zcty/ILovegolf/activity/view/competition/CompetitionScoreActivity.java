@@ -210,7 +210,7 @@ public class CompetitionScoreActivity extends Activity implements IXListViewList
 			String token=sp.getString("token", "token");
 			Log.i("tokens", token);
 
-			path = APIService.MATCHES_LIST+"page="+page+"&token="+token;
+			path = APIService.COMPETITIONSCORD+"page="+page+"&token="+token;
 			String JsonData=HttpUtils.HttpClientGet(path);
 			try {
 				JSONArray jsonarray=new JSONArray(JsonData);
