@@ -182,7 +182,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			
 			@Override
 			public void afterTextChanged(Editable s) {
-				sgin = sginEditText.getText().toString();
+				sgin = removeAllSpace(sginEditText.getText().toString());
 			}
 		});
 		
@@ -608,5 +608,10 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			progressDialog.dismiss();
 		}
 	}
+	public String removeAllSpace(String str)  
+	   {  
+	       String tmpstr=str.replace(" ","");  
+	       return tmpstr;  
+	   } 
 		
 }

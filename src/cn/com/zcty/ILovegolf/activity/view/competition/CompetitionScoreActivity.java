@@ -106,6 +106,13 @@ public class CompetitionScoreActivity extends Activity implements IXListViewList
 		
 
 	}
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		intent=new Intent(CompetitionScoreActivity.this,TabHostActivity.class);
+		startActivity(intent);
+		finish();
+	}
 	//点击事件
 	public void onclick(View v){
 

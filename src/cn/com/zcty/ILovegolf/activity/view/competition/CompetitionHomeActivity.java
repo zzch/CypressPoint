@@ -1,16 +1,12 @@
 package cn.com.zcty.ILovegolf.activity.view.competition;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.activity.adapter.CompetitionHomeAdapter;
-import cn.com.zcty.ILovegolf.model.CompetitionHome;
-import cn.com.zcty.ILovegolf.utils.APIService;
-import cn.com.zcty.ILovegolf.utils.HttpUtils;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -21,15 +17,39 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.activity.adapter.CompetitionHomeAdapter;
+import cn.com.zcty.ILovegolf.model.CompetitionAddmatch;
+import cn.com.zcty.ILovegolf.model.CompetitionHome;
+import cn.com.zcty.ILovegolf.model.TeeBoxs;
+import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 public class CompetitionHomeActivity extends Activity{
 	private ArrayList<CompetitionHome> compttitionArrayList = new ArrayList<CompetitionHome>();
+	private ArrayList<CompetitionAddmatch> addmatchs = new ArrayList<CompetitionAddmatch>();
+	private ArrayList<TeeBoxs> tArrayList = new ArrayList<TeeBoxs>();
 	private ListView listView;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
 				listView.setAdapter(new CompetitionHomeAdapter(CompetitionHomeActivity.this, compttitionArrayList));
+				listView.setOnItemClickListener(new OnItemClickListener() {
+
+					@Override
+					public void onItemClick(AdapterView<?> arg0, View arg1,
+							int position, long arg3) {
+						Intent intent = new Intent(CompetitionHomeActivity.this,CompetitionPassWord.class);
+						intent.putExtra("pass", compttitionArrayList.get(position).getPassword());
+						intent.putExtra("uuid", compttitionArrayList.get(position).getUuid());
+						intent.putExtra("add", addmatchs.get(position));
+						startActivity(intent);
+						
+					}
+				});
 			}
 		};
 	};
@@ -80,6 +100,7 @@ public class CompetitionHomeActivity extends Activity{
 			Intent i = getIntent();
 			String uuid = i.getStringExtra("uuid");
 			String path = APIService.COMPETITIONCHOOSEPITCH+"token="+token+"&uuid="+uuid;
+			Log.i("zhouzhouzhoupaht", path);
 			String jsonData = HttpUtils.HttpClientGet(path);
 			try {
 				JSONArray jsonArray = new JSONArray(jsonData);
@@ -96,6 +117,25 @@ public class CompetitionHomeActivity extends Activity{
 					competitionHome.setUuid(jsonObject.getString("uuid"));
 					competitionHome.setStarted_at(jsonObject.getString("started_at"));
 					compttitionArrayList.add(competitionHome);
+					CompetitionAddmatch add = new CompetitionAddmatch();
+					add.setName(jsonObject.getString("name"));
+					add.setRule("比杆赛");
+					add.setRemark(jsonObject.getString("remark"));
+					JSONArray jary = jsonObject.getJSONArray("courses");
+					for(int l=0;l<jary.length();l++){
+						JSONObject jsonObject2 = jary.getJSONObject(l);
+						TeeBoxs t = new TeeBoxs();
+						t.setName(jsonObject2.getString("name"));
+						ArrayList<String> color = new ArrayList<String>();
+						JSONArray cArray = jsonObject2.getJSONArray("tee_boxes");
+						for(int s=0;s<cArray.length();s++){
+							color.add(cArray.getString(s));
+						}
+						t.setBoxs(color);
+						tArrayList.add(t);
+					}
+					add.setTitai(tArrayList);
+					addmatchs.add(add);
 				}
 				Message msg = handler.obtainMessage();
 				msg.what=1;

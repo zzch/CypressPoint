@@ -77,6 +77,7 @@ public class CompetitionNewActivity extends Activity{
 	private final int REQUESTCODE=1;//返回的结果码   
 	private String tiTai[]={"红色T台","白色T台","蓝色T台","黑色T台","金色T台"};
 	private boolean f = false;
+	private String uuid;
 	
 	private String id_1;
 	private String id_2;
@@ -97,7 +98,7 @@ public class CompetitionNewActivity extends Activity{
 			}
 			if(msg.what==2){
 				Intent intent = new Intent(CompetitionNewActivity.this,CompetitionScordActivity.class);
-				intent.putExtra("data", jsonData);
+				intent.putExtra("data", uuid);
 				startActivity(intent);
 			}
 		}
@@ -136,8 +137,7 @@ public class CompetitionNewActivity extends Activity{
 			
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(CompetitionNewActivity.this,CompetitionHomeActivity.class);
-				startActivity(intent);
+				
 				finish();
 			}
 		});
@@ -189,7 +189,12 @@ public class CompetitionNewActivity extends Activity{
 		
 		
 	}
-	
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		finish();
+	}
 	private void setListeners() {
 		/*
 		 * 选择前面子场
@@ -512,6 +517,13 @@ public class CompetitionNewActivity extends Activity{
 			}
 			
 			jsonData = HttpUtils.HttpClientPost(path);
+			try {
+				JSONObject jsonObject = new JSONObject(jsonData);
+				uuid = jsonObject.getString("uuid");
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			Log.i("zhouzhoupath", path);
 			Log.i("zhouzhoupath", jsonData);
 			Message msg = handler.obtainMessage();

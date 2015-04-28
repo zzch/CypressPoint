@@ -336,7 +336,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/e_button_pressed"
-                    android:text="  我要用为笑带过一切去迎接明天"
+                    android:text="   我要用为笑带过一切去迎接明天"
                     android:textColor="@color/gold"
                     android:textSize="@dimen/txsize_small_xx" />
             </RelativeLayout>

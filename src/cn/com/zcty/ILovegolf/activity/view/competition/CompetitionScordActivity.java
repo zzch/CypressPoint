@@ -24,6 +24,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -76,6 +77,7 @@ public class CompetitionScordActivity extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_competition_scord);
 		initView();	
 		setListener();
@@ -170,16 +172,23 @@ public class CompetitionScordActivity extends Activity{
 		}
 		public void getData(){
 		
-			
+			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
+			String token=sp.getString("token", "token");
 			Intent intent=getIntent();
-			String	jsonArrayData = intent.getStringExtra("data");	
-			SharedPreferences ss = getSharedPreferences("edit",Activity.MODE_PRIVATE);
-			SharedPreferences.Editor editor = ss.edit();
+			String	uuid = intent.getStringExtra("data");
+			String path = APIService.COMPETITIONINFORMATION+"token="+token+"&uuid="+uuid;
+			Log.i("zhouhepppath", path);
+			String jsonArrayData = HttpUtils.HttpClientGet(path);
+			
+			/*SharedPreferences ss = getSharedPreferences("edit",Activity.MODE_PRIVATE);
+			SharedPreferences.Editor editor = ss.edit();*/
 				  try {
+					  	//JSONObject j = new JSONObject(jsonArrayDatas);
+					  	//String jsonArrayData = j.getString("scorecards");
 						JSONObject jsonObject = new JSONObject(jsonArrayData);
-						match_uuid = jsonObject.getString("uuid");
-						editor.putString("match_uuid", match_uuid);
-						editor.commit();
+						//match_uuid = jsonObject.getString("uuid");
+						/*editor.putString("match_uuid", match_uuid);
+						editor.commit();*/
 						JSONArray jsonArray = jsonObject.getJSONArray("scorecards");
 						for(int i=0;i<jsonArray.length();i++){
 							JSONObject jsonObjects = jsonArray.getJSONObject(i);
