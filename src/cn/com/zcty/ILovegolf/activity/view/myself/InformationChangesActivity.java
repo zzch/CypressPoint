@@ -30,8 +30,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
-import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -200,7 +198,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
-				sexTextView.setText(sexs[newValue]);
+				sexTextView.setText(" "+sexs[newValue]);
 			}
 		});
 		yearWheelView.addChangingListener(new OnWheelChangedListener() {
@@ -208,11 +206,11 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
 				year =  (String) yearadapter.getItemText(newValue).subSequence(0, yearadapter.getItemText(newValue).length()-1);
-				brithdayTextView.setText(year+"-"+moth+"-"+day);
+				brithdayTextView.setText("  "+year+"-"+moth+"-"+day);
 				years = Integer.parseInt(year);
 				SimpleDateFormat time = new SimpleDateFormat("yyyy");
 				years = Integer.parseInt(time.format(new Date()))-years;
-				nianlingTextView.setText(years+"");
+				nianlingTextView.setText("  "+years+"");
 			}
 		});
 		monthWheelView.addChangingListener(new OnWheelChangedListener() {
@@ -223,7 +221,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 				if(Integer.parseInt(moth)<10){
 					moth = "0"+moth;
 				}
-				brithdayTextView.setText(year+"-"+moth+"-"+day);
+				brithdayTextView.setText("  "+year+"-"+moth+"-"+day);
 			}
 		});
 		dayWheelView.addChangingListener(new OnWheelChangedListener() {
@@ -234,7 +232,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 				if(Integer.parseInt(day)<10){
 					day = "0"+day;
 				}
-				brithdayTextView.setText(year+"-"+moth+"-"+day);
+				brithdayTextView.setText("  "+year+"-"+moth+"-"+day);
 			}
 		});
 		quWheelView.addChangingListener(new OnWheelChangedListener() {
@@ -257,11 +255,10 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
 				mCurrentDistrictName = mDistrictDatasMap.get(mCurrentCityName)[newValue];
 				mCurrentZipCode = mZipcodeDatasMap.get(mCurrentDistrictName);
-				diquTextView.setText(mCurrentProviceName+"-"+mCurrentCityName+"-"+mCurrentDistrictName);
+				diquTextView.setText("  "+mCurrentProviceName+"-"+mCurrentCityName+"-"+mCurrentDistrictName);
 			}
 		});
 	}
-	
 	/**
 	 * 根据当前的市，更新区WheelView的信息
 	 */
@@ -317,16 +314,15 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		headMyImage.setImageBitmap(converToBitmap(100,100));
 		SharedPreferences sp = getSharedPreferences("register", MODE_PRIVATE);
 		String name = sp.getString("nickname", "nickname");
-		upnameEditText.setText(name);
+		upnameEditText.setText(" "+name);
 		Intent intent = getIntent();
-		brithdayTextView.setText(intent.getStringExtra("birthday"));
+		brithdayTextView.setText("  "+intent.getStringExtra("birthday"));
 		Log.i("brithdays", intent.getStringExtra("year"));
 	
 			int year =Integer.parseInt(intent.getStringExtra("year"));
 			SimpleDateFormat time = new SimpleDateFormat("yyyy");
 			year = Integer.parseInt(time.format(new Date()))-year;
-			//年龄
-			nianlingTextView.setText(year+"");
+			nianlingTextView.setText("  "+year+"");
 		
 		
 	}
@@ -373,13 +369,8 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 				if (mImageCaptureUri != null) {
 					
 					try {
-						
 						//这个方法是根据Uri获取Bitmap图片的静态方法
 						image = MediaStore.Images.Media.getBitmap(this.getContentResolver(), mImageCaptureUri);
-						/*
-						 * 把图片旋转90度
-						 */
-						image = rotaingImageView(90,image);
 						Log.i("ceshipath", image+"1");
 						if (image != null) {
 							headMyImage.setImageBitmap(image);	
@@ -452,7 +443,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 
 			Intent intent = new Intent(InformationChangesActivity.this,TabHostActivity.class);
 			intent.putExtra("1", "1");
-			//startActivity(intent);
+			startActivity(intent);
 			finish();
 			break;
 		}		
@@ -617,38 +608,10 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			progressDialog.dismiss();
 		}
 	}
-
-	
-	
-	@Override
-	public void onBackPressed() {
-		// TODO Auto-generated method stub
-		  super.onBackPressed();
-		  finish();
-	}
-
 	public String removeAllSpace(String str)  
 	   {  
 	       String tmpstr=str.replace(" ","");  
 	       return tmpstr;  
 	   } 
-	
-
-   /*
-    * 旋转图片 
-    * @param angle 
-    * @param bitmap 
-    * @return Bitmap 
-    */ 
-   public static Bitmap rotaingImageView(int angle , Bitmap bitmap) {  
-       //旋转图片 动作   
-       Matrix matrix = new Matrix();;  
-       matrix.postRotate(angle);  
-       System.out.println("angle2=" + angle);  
-       // 创建新的图片   
-       Bitmap resizedBitmap = Bitmap.createBitmap(bitmap, 0, 0,  
-               bitmap.getWidth(), bitmap.getHeight(), matrix, true);  
-       return resizedBitmap;  
-   }
 		
 }
