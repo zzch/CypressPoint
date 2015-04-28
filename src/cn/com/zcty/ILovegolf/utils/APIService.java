@@ -82,4 +82,10 @@ public class APIService {
 
 	 //竞技赛列表
 	 public static final String COMPETITIONCHOOSEPITCH = "http://123.57.210.52/api/v1/venues/matches/tournament.json?";
+	 
+	 //竞技赛事信息
+	 public static final String COMPETITIONINFORMATION = "http://123.57.210.52/api/v1/matches/tournament/show.json?";
+
+	 //加入竞技赛
+	 public static final String COMPETITIONCREAT = "http://123.57.210.52/api/v1/matches/tournament/participate.json?";
 }

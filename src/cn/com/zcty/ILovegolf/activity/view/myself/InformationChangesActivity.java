@@ -30,6 +30,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
+import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -182,7 +184,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			
 			@Override
 			public void afterTextChanged(Editable s) {
-				sgin = sginEditText.getText().toString();
+				sgin = removeAllSpace(sginEditText.getText().toString());
 			}
 		});
 		
@@ -371,8 +373,13 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 				if (mImageCaptureUri != null) {
 					
 					try {
+						
 						//这个方法是根据Uri获取Bitmap图片的静态方法
 						image = MediaStore.Images.Media.getBitmap(this.getContentResolver(), mImageCaptureUri);
+						/*
+						 * 把图片旋转90度
+						 */
+						image = rotaingImageView(90,image);
 						Log.i("ceshipath", image+"1");
 						if (image != null) {
 							headMyImage.setImageBitmap(image);	
@@ -610,6 +617,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			progressDialog.dismiss();
 		}
 	}
+
 	
 	
 	@Override
@@ -618,4 +626,29 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		  super.onBackPressed();
 		  finish();
 	}
+
+	public String removeAllSpace(String str)  
+	   {  
+	       String tmpstr=str.replace(" ","");  
+	       return tmpstr;  
+	   } 
+	
+
+   /*
+    * 旋转图片 
+    * @param angle 
+    * @param bitmap 
+    * @return Bitmap 
+    */ 
+   public static Bitmap rotaingImageView(int angle , Bitmap bitmap) {  
+       //旋转图片 动作   
+       Matrix matrix = new Matrix();;  
+       matrix.postRotate(angle);  
+       System.out.println("angle2=" + angle);  
+       // 创建新的图片   
+       Bitmap resizedBitmap = Bitmap.createBitmap(bitmap, 0, 0,  
+               bitmap.getWidth(), bitmap.getHeight(), matrix, true);  
+       return resizedBitmap;  
+   }
+		
 }

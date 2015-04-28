@@ -59,7 +59,7 @@ public class HttpUtils
 	 * @return
 	 */
 	public static String HttpClientPost(String url)
-	{
+	{		int code = 0;
 		try {
 			String str = "";
 			//创建HttpClient对象
@@ -69,7 +69,7 @@ public class HttpUtils
 			//client将response与httpPost连接
 			HttpResponse response=client.execute(httpPost);			
 			//找到服务返回的状态码 200表示成功
-			int code=response.getStatusLine().getStatusCode();
+			code=response.getStatusLine().getStatusCode();
 			Log.i("code---->", ""+code);
 			if(code==201)
 			{
@@ -79,15 +79,13 @@ public class HttpUtils
 				System.out.println("is---->"+str);
 				Log.i("is---->", ""+str);
 				return str;
-			}else{
-				return "0";
 			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 			
 		}
-		return null;
+		return code+"";
 	}
 	/**
 	 * 采用HttpClient的POST请求发送数据

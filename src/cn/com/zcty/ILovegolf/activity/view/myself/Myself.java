@@ -20,15 +20,23 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.renderscript.Allocation;
+import android.renderscript.Element;
+import android.renderscript.RenderScript;
+import android.renderscript.ScriptIntrinsicBlur;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -41,6 +49,7 @@ import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 import cn.com.zcty.ILovegolf.utils.TimeUtil;
 
+@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class Myself extends Activity {
 	private RelativeLayout headLayout;
 	private String gender;
@@ -69,6 +78,7 @@ public class Myself extends Activity {
 			if(msg.what==1){
 				imageHead.setImageBitmap(bitmap);
 				saveMyBitmap(bitmap);
+				blur(bitmap);
 			}
 		
 		};
@@ -84,6 +94,8 @@ public class Myself extends Activity {
 		
 			if(fileIsExists()){
 				imageHead.setImageBitmap(converToBitmap(100,100));
+				blur(converToBitmap(100,100));
+				
 			}else{
 			new Touxiang().start();
 			}
@@ -256,5 +268,46 @@ public class Myself extends Activity {
 
 		        }
 
-	
+
+	@SuppressWarnings("unused")
+	private void blur(Bitmap bkg) {   
+	     long startMs = System.currentTimeMillis();   
+	     float radius = 20;   
+	   
+	     bkg = small(bkg);  
+	     Bitmap bitmap = bkg.copy(bkg.getConfig(), true);  
+	   
+	     final RenderScript rs = RenderScript.create(Myself.this.getBaseContext());  
+	     final Allocation input = Allocation.createFromBitmap(rs, bkg, Allocation.MipmapControl.MIPMAP_NONE,  
+	             Allocation.USAGE_SCRIPT);  
+	     final Allocation output = Allocation.createTyped(rs, input.getType());  
+	     final ScriptIntrinsicBlur script = ScriptIntrinsicBlur.create(rs, Element.U8_4(rs)); 
+	     script.setRadius(radius);  
+	     script.setInput(input);  
+	     script.forEach(output);  
+	     output.copyTo(bitmap);  
+	   
+	     bitmap = big(bitmap);  
+	     headLayout.setBackground(new BitmapDrawable(getResources(), bitmap));   
+	     rs.destroy();   
+	     Log.d("zhangle","blur take away:" + (System.currentTimeMillis() - startMs )+ "ms");  
+	 }   
+
+		 
+		private static Bitmap big(Bitmap bitmap) {  
+		     Matrix matrix = new Matrix();   
+		       matrix.postScale(4f,4f); //长和宽放大缩小的比例  
+		      Bitmap resizeBmp = Bitmap.createBitmap(bitmap,0,0,bitmap.getWidth(),bitmap.getHeight(),matrix,true);  
+		      return resizeBmp;  
+		 }  
+		  
+		  private static Bitmap small(Bitmap bitmap) {  
+		       Matrix matrix = new Matrix();   
+		       matrix.postScale(0.25f,0.25f); //长和宽放大缩小的比例  
+		       Bitmap resizeBmp = Bitmap.createBitmap(bitmap,0,0,bitmap.getWidth(),bitmap.getHeight(),matrix,true);  
+		      return resizeBmp;  
+		 }  
+
+
+
 }
