@@ -1,6 +1,9 @@
 package cn.com.zcty.ILovegolf.activity.view.login_register;
 
 
+import java.util.LinkedList;
+import java.util.List;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
@@ -13,6 +16,8 @@ import org.json.JSONObject;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.view.QuickScoreActivity;
 import cn.com.zcty.ILovegolf.activity.view.TabHostActivity;
+import cn.com.zcty.ILovegolf.activity.view.myself.Myself;
+import cn.com.zcty.ILovegolf.activity.view.myself.SettionsActivity;
 import cn.com.zcty.ILovegolf.model.User;
 import cn.com.zcty.ILovegolf.tools.RegexMobile;
 import cn.com.zcty.ILovegolf.utils.APIService;
@@ -40,6 +45,8 @@ import android.widget.Toast;
  *
  */
 public class ShouYeActivity extends Activity {
+	private static ShouYeActivity instance; 
+	 private List<Activity> activityList = new LinkedList<Activity>();  
 
 	 private Intent intent;
 	 private Context context;
@@ -52,6 +59,13 @@ public class ShouYeActivity extends Activity {
      private String isBoolean;
      private String err;
      private String messg = "";
+   //单例实现返回MyApplication实例  
+     public static ShouYeActivity getInstance(){  
+         if(null == instance){  
+             instance = new ShouYeActivity();  
+         }  
+         return instance;  
+     } 
      Handler handler = new Handler(){
 
 		@Override
@@ -81,9 +95,7 @@ public class ShouYeActivity extends Activity {
 					}else{
 						new ShouYeTask_login().start();
 					//Toast.makeText(ShouYeActivity.this, "登录成功！", Toast.LENGTH_SHORT).show();		
-					    Intent intent = new Intent(ShouYeActivity.this,TabHostActivity.class);
-					    startActivity(intent);
-					    finish();
+					    
 					    }
 					}
 					
@@ -93,6 +105,15 @@ public class ShouYeActivity extends Activity {
 		}
     		
      };
+     Handler h = new Handler(){
+    	 public void handleMessage(Message msg) {
+    		 if(msg.what==1){
+    			 Intent intent = new Intent(ShouYeActivity.this,TabHostActivity.class);
+				 startActivity(intent);
+				 finish();
+    		 }
+    	 };
+     };
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -101,7 +122,24 @@ public class ShouYeActivity extends Activity {
 		setContentView(R.layout.activity_shouye);
 		initView();
 	}
-	
+	//Activity加入到List中  
+    public void addActivity(Activity activity){  
+        activityList.add(activity);  
+    } 
+  //遍历每个Activity退出  
+    public void exit(){  
+        for(Activity activity:activityList){  
+            activity.finish();  
+        }  
+        System.exit(0);  
+    }
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		Log.i("ddddd", "ddddd");
+		ShouYeActivity.getInstance().exit();
+		finish();
+	}
 	public void initView(){
 		et_username=(EditText) findViewById(R.id.et_username);
 		et_password=(EditText) findViewById(R.id.et_password);
@@ -147,6 +185,7 @@ public class ShouYeActivity extends Activity {
 			    editor.putString("nickname", nickname);
 			    editor.putString("token", token);
 			    editor.putString("isRegister", "true");
+			    editor.putString("isfangshi", "0");
 			    Log.i("----uuid", ""+sp.getString("uuid", ""));
 			    editor.commit();
 				if(data!=null){
@@ -301,8 +340,11 @@ public class ShouYeActivity extends Activity {
 							    editor.putString("type", type);
 								editor.putString("nickname", nickname);
 								editor.putString("token", token_r);
+								editor.putString("isfangshi", "1");
 								editor.commit();
-						 
+						 Message msgs = h.obtainMessage();
+						 msgs.what=1;
+						 h.sendMessage(msgs);
 						 
 					} catch (JSONException e) {
 						e.printStackTrace();

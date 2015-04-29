@@ -109,7 +109,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="20dp"
-            android:text="6"
+            android:text="0"
             android:textColor="@color/gold"
             android:textSize="18dp" />
 
@@ -121,7 +121,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="37dp"
             android:paddingTop="10dp"
-            android:text="2"
+            android:text="0"
             android:textColor="@color/gold"
             android:textSize="13dp" />
     </RelativeLayout>

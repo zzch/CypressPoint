@@ -96,5 +96,11 @@
     <!-- 比赛房间 -->
     <string name="xinjian">新建</string>
     <string name="username">用户昵称</string>
-
+	
+    
+    <!-- 帐号设置 -->
+    <string name="account">帐号与安全</string>
+    <string name="opinion">意见反馈</string>
+    <string name="me">关于我们</string>
+    <string name="exit">退出登录</string>
 </resources>

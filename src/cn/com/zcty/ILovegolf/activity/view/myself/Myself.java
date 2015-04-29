@@ -35,6 +35,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.tools.CircleImageView;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
@@ -52,6 +53,7 @@ public class Myself extends Activity {
 	private TextView nameTextView;
 	private String year;
 	private Bitmap bmp;
+	private RelativeLayout settingRelativeLayout;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -87,7 +89,9 @@ public class Myself extends Activity {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_myself);
+		ShouYeActivity.getInstance().addActivity(this);
 		initView();		
+		setListeners();
 		new Ziliao().start();
 	
 			if(fileIsExists()){
@@ -97,6 +101,17 @@ public class Myself extends Activity {
 			new Touxiang().start();
 			}
 	
+	}
+	private void setListeners() {
+		settingRelativeLayout.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(Myself.this,SettionsActivity.class);
+				startActivity(intent);
+				
+			}
+		});
 	}
 	private void getListeners() {
 		headLayout.setOnClickListener(new OnClickListener() {
@@ -117,6 +132,7 @@ public class Myself extends Activity {
 		signTextView = (TextView) findViewById(R.id.myself_sign);
 		imageHead = (CircleImageView) findViewById(R.id.myself_head);
 		image_bg = (ImageView) findViewById(R.id.myself_bg);
+		settingRelativeLayout = (RelativeLayout) findViewById(R.id.myself_setting);
 		SharedPreferences sp = getSharedPreferences("register", MODE_PRIVATE);
 		String name = sp.getString("nickname", "nickname");
 		nameTextView.setText(name);

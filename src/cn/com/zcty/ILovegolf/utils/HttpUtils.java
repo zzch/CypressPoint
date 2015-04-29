@@ -93,27 +93,32 @@ public class HttpUtils
 	 * @param map
 	 * @return
 	 */
-	public static String HttpClientPost(String url,Map<String,String> map){
-		 HttpPost post = new HttpPost(url);
+	public static String HttpClientPost(String url,Map<String,String[]> map){
+		 HttpPut post = new HttpPut(url);
 	     String str = "";
+	     int code = 0;
 	     List<NameValuePair> nvps = new ArrayList<NameValuePair>();
-	     Iterator<Map.Entry<String, String>> it = map.entrySet().iterator();
+	     Iterator<Map.Entry<String, String[]>> it = map.entrySet().iterator();
 	     while(it.hasNext()){
-	          Map.Entry<String,String> map1 = it.next();
-	          nvps.add(new BasicNameValuePair(map1.getKey(), map1.getValue()));
+	          Map.Entry<String,String[]> map1 = it.next();
+	          for(int i=0;i<map1.getValue().length;i++){	        	  
+	        	  nvps.add(new BasicNameValuePair(map1.getKey(),map1.getValue()[i]));
+	          }
 	     }
 	     try {
 	          post.setEntity(new UrlEncodedFormEntity(nvps,"utf-8"));
 	          HttpClient httpClient = new DefaultHttpClient();
 	          HttpResponse httpResponse = httpClient.execute(post);
+	          code = httpResponse.getStatusLine().getStatusCode();
 	          if(httpResponse.getStatusLine().getStatusCode()==HttpStatus.SC_OK){
 	               str = EntityUtils.toString(httpResponse.getEntity(), "utf-8");
+	               return str;
 	          }
 	     } catch (Exception e) {
 	          // TODO Auto-generated catch block
 	          e.printStackTrace();
 	     }
-	     return str;
+	     return ""+code+"";
 	}
 	/**
 	 * 采用HttpClient发送Get请求
@@ -185,6 +190,7 @@ public class HttpUtils
 	public static String HttpClientDelete(String path){
 		
 	   String str = "";
+	   int code = 0;
 		//创建一个http客户端  
 		HttpClient client=new DefaultHttpClient();  
 		//创建一个DELETE请求  
@@ -193,18 +199,20 @@ public class HttpUtils
 		HttpResponse response;
 		try {
 			response = client.execute(httpDelete);
-			int code=response.getStatusLine().getStatusCode();
+			 code=response.getStatusLine().getStatusCode();
 			Log.i("---->>", "delecode---"+code+"aaaaa");
 			if(code==200){
 				str = EntityUtils.toString(response.getEntity(),"utf-8");
-				Log.i("is---->>", ""+str);}
+				Log.i("is---->>", ""+str);
+			return str;	
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			str = "5";
 		} 
 		
 		
-		return str;
+		return code+"";
 	}
 	/**
 	 * 上传图片

@@ -1,6 +1,7 @@
 package cn.com.zcty.ILovegolf.activity.view;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,6 +35,7 @@ import cn.com.zcty.ILovegolf.activity.adapter.ArrayWheelAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.MajorArrayNumberWheelAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.MajorScoresAdapter;
 import cn.com.zcty.ILovegolf.model.MajorScore;
+import cn.com.zcty.ILovegolf.model.MajorScoreJiQiu;
 import cn.com.zcty.ILovegolf.tools.ListViewSwipeGesture;
 import cn.com.zcty.ILovegolf.tools.ListViewSwipeGesture.TouchCallbacks;
 import cn.com.zcty.ILovegolf.tools.OnWheelChangedListener;
@@ -93,6 +95,7 @@ public class MajorScoreActivity extends Activity {
 	private int biaoshi;
 	private int shanchuid;
 	private ArrayList<String> idArrayList = new ArrayList<String>();
+	private ArrayList<MajorScoreJiQiu> addArrayList = new ArrayList<MajorScoreJiQiu>();
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
 			if(msg.what==1){
@@ -124,11 +127,20 @@ public class MajorScoreActivity extends Activity {
 					count = 0;
 
 				}
-				SharedPreferences sp = MajorScoreActivity.this.getPreferences(MODE_PRIVATE);
-				score = sp.getString("score", "score");
-				penalties = sp.getString("penalties", "penalties");
-				scoreText.setText(score);
-				scorePentaisText.setText(penalties);
+				/*SharedPreferences sp = MajorScoreActivity.this.getPreferences(MODE_PRIVATE);
+				score = sp.getString("score", "0");
+				penalties = sp.getString("penalties", "0");*/
+				Intent intent = getIntent();
+				score = intent.getStringExtra("score");
+				penalties = intent.getStringExtra("penalties");
+				if(!(score.equals("null")&&penalties.equals("null"))){
+					scoreText.setText(score);
+					scorePentaisText.setText(penalties);
+				}else{
+					scoreText.setText("0");
+					scorePentaisText.setText("0");
+				}
+				
 				orderText.setText(count+1+"");
 				adapter =	new MajorScoresAdapter(MajorScoreActivity.this, majorArray);
 				dataList.setAdapter(adapter);
@@ -154,14 +166,15 @@ public class MajorScoreActivity extends Activity {
 		initView();
 		getData();
 		setListeners();
+		//new text().start();
 		new JiQiuJiLuTask().start();
 	}
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		
 		if(keyCode==KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0){
-			if(score!=null){
-
+			if(!(score.equals("0")&&penalties.equals("0"))){
+				Log.i("woshitiancai008", score);
 				Intent intent = new Intent();
 				intent.putExtra("score", score);
 				intent.putExtra("putts", putts);
@@ -172,7 +185,7 @@ public class MajorScoreActivity extends Activity {
 			}else{
 
 				Intent intent = new Intent();		
-				setResult(30,intent);
+				setResult(100,intent);
 				finish();
 			}
         }
@@ -193,16 +206,25 @@ public class MajorScoreActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-
+				new JiqiuBianjiTask().start();
+				Intent intent = new Intent();
+				Log.i("woshitiancai", score);
+				intent.putExtra("score", score);
+				intent.putExtra("putts", putts);
+				intent.putExtra("position", position);
+				intent.putExtra("penalties", penalties);
+				setResult(1,intent);
+				finish();
 			}
 		});
 		fanhui.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				if(score!=null){
-
+				if(!(score.equals("0")&&penalties.equals("0"))){
+					new JiqiuBianjiTask().start();
 					Intent intent = new Intent();
+					Log.i("woshitiancai", score);
 					intent.putExtra("score", score);
 					intent.putExtra("putts", putts);
 					intent.putExtra("position", position);
@@ -210,7 +232,7 @@ public class MajorScoreActivity extends Activity {
 					setResult(1,intent);
 					finish();
 				}else{
-
+					Log.i("woshitiancai", score);
 					Intent intent = new Intent();		
 					setResult(30,intent);
 					finish();
@@ -284,16 +306,39 @@ public class MajorScoreActivity extends Activity {
 				majorScore.setDistance(distance);
 				majorScore.setPentails(pentails);
 				majorScore.setCount(popal);
-				Log.i("guofen", po+"aaa");
+				String c;
+				if(cool.equals("球道")){
+					c = "fairway";
+				}else if(cool.equals("果岭")){
+					c = "green";
+				}
+				else if(cool.equals("球道外左侧")){
+					c = "left_rough";
+				}
+				else if(cool.equals("球道外右侧")){
+					c = "right_rough";
+				}
+				else if(cool.equals("沙坑")){
+					c = "bunker";
+				}else{
+					c = "unplayable";
+				}
+				
+				MajorScoreJiQiu m = new MajorScoreJiQiu();
+				m.setDistance_from_hole(distance);
+				m.setPoint_of_fall(c);
+				m.setPenalties(pentails);
+				m.setClub(popal);
+				addArrayList.add(m);
 				if(flase){	
 					majorArray.add(majorScore);					
 					adapter =	new MajorScoresAdapter(MajorScoreActivity.this, majorArray);
 					dataList.setAdapter(adapter);
 					adapter.notifyDataSetChanged();
-					new JiqiuTask().start();
+					//new JiqiuTask().start();
 				}else{
 					majorArray.set(biaoshi, majorScore);
-					new JiqiuBianjiTask().start();
+					//new JiqiuBianjiTask().start();
 					adapter =	new MajorScoresAdapter(MajorScoreActivity.this, majorArray);
 					dataList.setAdapter(adapter);
 					adapter.notifyDataSetChanged();
@@ -338,10 +383,17 @@ public class MajorScoreActivity extends Activity {
 			Log.i("zhouhehehe", position+"");
 			String uid;
 			shanchuid = position;
+			if(shanchuid>majorArray.size()-addArrayList.size()||majorArray.size()-addArrayList.size()==0){
+				majorArray.remove(position);
+				//Log.i("kankanshuju", position-(majorArray.size()-addArrayList.size())+"");
+				addArrayList.remove(position-(majorArray.size()-addArrayList.size())-1);
+			}else{
 			uid = idArrayList.get(shanchuid);
 			majorArray.remove(position);
+			//addArrayList.remove(position-(majorArray.size()-addArrayList.size())-1);
 			//	count--;
 			new DeleTask(uid).start();
+			}
 			orderText.setText(count+"");
 			//new JiqiuTask().start();
 			adapter.notifyDataSetChanged();
@@ -527,7 +579,7 @@ public class MajorScoreActivity extends Activity {
 				String scorecard =	jsObject.getString("scorecard");
 				JSONObject jsObjectscorecard = new JSONObject(scorecard);
 				score = jsObjectscorecard.getString("score");
-				Log.i("woshitiancai", score);
+				
 				putts = jsObjectscorecard.getString("putts");
 				penalties = jsObjectscorecard.getString("penalties");
 
@@ -626,30 +678,21 @@ public class MajorScoreActivity extends Activity {
 		public void getdata(){
 			SharedPreferences sp = getSharedPreferences("register", Context.MODE_PRIVATE);
 			String token = sp.getString("token", "token");
-
-			String c;
-			if(cool.equals("球道")){
-				c = "fairway";
-			}else if(cool.equals("果岭")){
-				c = "green";
+			HashMap<String,String[]> map = new HashMap<String, String[]>(); 
+			String[] bianji = new String[addArrayList.size()];
+			for(int i=0;i<bianji.length;i++){
+				bianji[i] = addArrayList.get(i).toString();
 			}
-			else if(cool.equals("球道外左侧")){
-				c = "left_rough";
-			}
-			else if(cool.equals("球道外右侧")){
-				c = "right_rough";
-			}
-			else if(cool.equals("沙坑")){
-				c = "bunker";
-			}else{
-				c = "unplayable";
-			}
-
-			String path = APIService.JILU+"token="+token+"&uuid="+id
-					+"&distance_from_hole="+distance+"&point_of_fall="+c+
-					"&penalties="+pentails+"&club="+popal;
+			map.put("strokes[]", bianji);
+			Intent intent = getIntent();
+			String uuid = intent.getStringExtra("uuid");
+			String path = APIService.SHIYAN+"token="+token+"&uuid="+uuid;
+			
+			
 			try {
-				String jsonArray = HttpUtils.HttpClientPut(path);
+				String jsonArray =	HttpUtils.HttpClientPost(path, map);
+				Log.i("ddajkjkl", jsonArray);
+				Log.i("ddajkjkl", path);
 				JSONObject jsObject = new JSONObject(jsonArray);	
 				score = jsObject.getString("score");	
 				putts = jsObject.getString("putts");
@@ -662,6 +705,31 @@ public class MajorScoreActivity extends Activity {
 			msg.what = 4;
 			handler.sendMessage(msg);
 
+		}
+	}
+	
+	class text extends Thread{
+		@Override
+		public void run() {
+			super.run();
+			getData();
+		}
+		public void getData(){
+			HashMap<String,String[]> map = new HashMap<String, String[]>(); 
+			MajorScoreJiQiu m = new MajorScoreJiQiu();
+			m.setClub("a");
+			m.setDistance_from_hole("v");
+			m.setPenalties("s");
+			m.setPoint_of_fall("f");
+			String[] s = {m.toString(),m.toString()};
+			map.put("strokes[]", s);
+			SharedPreferences sp = getSharedPreferences("register", Context.MODE_PRIVATE);
+			String token = sp.getString("token", "token");
+			Intent intent = getIntent();
+			String uuid = intent.getStringExtra("uuid");
+			String path = APIService.SHIYAN+"token="+token+"&uuid="+uuid;
+			String ss =	HttpUtils.HttpClientPost(path, map);
+			Log.i("ddajkjkl", ss);
 		}
 	}
 }

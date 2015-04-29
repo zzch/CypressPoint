@@ -92,4 +92,8 @@ public class APIService {
 	 //历史竞技赛列表
 	 public static final String COMPETITIONSCORD = "http://123.57.210.52/api/v1/matches/tournament.json?";
 	 
+	 //实验
+	 public static final String SHIYAN = "http://123.57.210.52/api/v1/scorecards/professional?";
+	 //用户注销
+	 public static final String SIGNOUT="http://123.57.210.52/api/v1/users/sign_out.json?";
 }

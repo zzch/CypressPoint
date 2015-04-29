@@ -110,7 +110,6 @@ public void onConfigurationChanged(Configuration newConfig) {
 			
 	else if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) { 
 
-		Log.i("zhouhe", "zhouheb");
 	}
 
 
