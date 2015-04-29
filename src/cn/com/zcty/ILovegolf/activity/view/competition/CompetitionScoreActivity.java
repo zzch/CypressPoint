@@ -211,6 +211,7 @@ public class CompetitionScoreActivity extends Activity implements IXListViewList
 			Log.i("tokens", token);
 
 			path = APIService.COMPETITIONSCORD+"page="+page+"&token="+token;
+			Log.i("zhouzhoupathas", path);
 			String JsonData=HttpUtils.HttpClientGet(path);
 			try {
 				JSONArray jsonarray=new JSONArray(JsonData);
@@ -233,7 +234,7 @@ public class CompetitionScoreActivity extends Activity implements IXListViewList
 					course.setAddress(obj.getString("address"));
 					arrayCouse.add(course);
 					quickContent.setStrokes(jsonObj.getString("score"));
-					quickContent.setRecorded_scorecards_count(jsonObj.getString("recorded_scorecards_count"));
+					quickContent.setRecorded_scorecards_count(jsonObj.getString("players_count"));
                      Log.i("cc", "cc----"+quickContent.getRecorded_scorecards_count());
 					quickContent.setStarted_at(jsonObj.getString("started_at"));
 					quickContent.setCourse(arrayCouse);

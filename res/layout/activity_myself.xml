@@ -96,7 +96,7 @@
         android:layout_height="match_parent" >
 
         <RelativeLayout
-            android:id="@+id/myself_setting"
+            android:id="@+id/myself_message"
             android:layout_width="345dp"
             android:layout_height="70dp"
             android:background="@drawable/button_focused"
@@ -134,7 +134,7 @@
         
         
         <RelativeLayout
-            android:id="@+id/myself_setting"
+            android:id="@+id/myself_jifen"
             android:layout_width="345dp"
             android:layout_height="70dp"
             android:background="@drawable/button_focused"

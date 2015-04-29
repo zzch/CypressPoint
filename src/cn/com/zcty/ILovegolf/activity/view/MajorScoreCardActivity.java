@@ -100,6 +100,8 @@ public class MajorScoreCardActivity extends Activity {
 					intent.putExtra("diatance", scorecarsArray.get(position/2).getDistance_from_hole_to_tee_box());
 					intent.putExtra("color", scorecarsArray.get(position/2).getTee_box_color());
 					intent.putExtra("position", position+"");
+					intent.putExtra("score", setcardsArray.get(position/2).getRodNum());
+					intent.putExtra("penalties", setcardsArray.get(position/2).getPenalties());
 					startActivityForResult(intent, REQUESTCODE);
 				}
 				

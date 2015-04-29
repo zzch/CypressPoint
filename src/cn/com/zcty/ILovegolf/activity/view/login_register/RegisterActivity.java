@@ -170,7 +170,6 @@ public class RegisterActivity extends Activity implements OnClickListener{
 				editor.commit();
 	    		}
 			} catch (JSONException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
