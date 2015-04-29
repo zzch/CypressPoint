@@ -143,7 +143,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="59dp"
+            android:layout_marginRight="@dimen/view_text_right"
             android:textColor="@color/gold_70"
             android:text="335"
             android:textSize="@dimen/txsize_mid_xx"  />

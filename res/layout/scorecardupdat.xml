@@ -313,7 +313,7 @@
           android:id="@+id/hit_scorecard"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text=""
+          android:text="命中"
           android:textSize="@dimen/txsize_small_x"
           android:textColor="@color/gold_half"
           />

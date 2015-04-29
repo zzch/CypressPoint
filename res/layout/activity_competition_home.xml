@@ -12,43 +12,45 @@
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="47dp"
+            android:gravity="center"
             android:layout_centerHorizontal="true"
             android:text="xxxx球场"
-            android:layout_marginTop="10dp"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_mid_x" />
 
-          <ImageView
-            android:layout_width="30dp"
-            android:layout_height="35dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginTop="7dp"
-            android:src="@drawable/back_image" />
+          <FrameLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
         <Button
             android:id="@+id/button1"
-            android:layout_width="50dp"
-            android:layout_height="25dp"
+            android:layout_width="80dp"
+            android:layout_height="47dp"
             android:layout_alignParentLeft="true"
-            android:background="@null"
+            android:layout_marginLeft="@dimen/title_button_left"
+            android:background="@drawable/button_bg_pingpu"
             android:text="@string/back"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="13dp"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_small_xx"
             android:onClick="choosepith_back" />
+        
+         <ImageView
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/back_image" />
+		</FrameLayout>
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="47dp" 
             android:layout_alignParentRight="true"
-            android:background="@null"
-            android:onClick="qiehuan"
-            android:text="@string/xinjian"
+            android:layout_marginRight="-10dp"
+            android:background="@drawable/button_bg_pingpu"
             android:textColor="@color/gold"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="13dp"          
-            android:textSize="@dimen/txsize_small_xx" />
+            android:textSize="@dimen/txsize_small_xx"
+            android:onClick="qiehuan"/>
 
     </RelativeLayout>
 

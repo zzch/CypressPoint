@@ -11,12 +11,10 @@
          android:layout_height="@dimen/title_height"
         android:background="@anim/title_pingpu" >
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="35dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginTop="7dp"
-            android:src="@drawable/back_image" />
+        <FrameLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
 
         <Button
             android:id="@+id/scorecard_back"
@@ -30,13 +28,20 @@
             android:text="返回"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_small_xx" />
+        
+         <ImageView
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/back_image" />
+		</FrameLayout>
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="47dp"
+            android:gravity="center"
             android:layout_centerHorizontal="true"
             android:text="切杆"
-            android:layout_marginTop="10dp"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_mid_x"/>
     </RelativeLayout>

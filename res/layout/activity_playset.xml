@@ -13,12 +13,11 @@
 
         <Button
             android:id="@+id/playset_start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="47dp" 
             android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="13dp"
-            android:background="@null"
+            android:layout_marginRight="-10dp"
+            android:background="@drawable/button_bg_pingpu"
             android:text="@string/start"
             android:textColor="@color/gold_half"
             android:textSize="@dimen/txsize_small_xx" />
@@ -26,31 +25,35 @@
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+           android:layout_height="47dp"
+            android:gravity="center"
             android:layout_centerHorizontal="true"
             android:text="@string/playset"
-            android:layout_marginTop="10dp"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_mid_x" />
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="35dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginTop="7dp"
-            android:src="@drawable/back_image" />
+        <FrameLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
 
         <Button
             android:id="@+id/playset_back"
-            android:layout_width="50dp"
-            android:layout_height="25dp"
+            android:layout_width="80dp"
+            android:layout_height="47dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="13dp"
-            android:background="@null"
-            android:text="返回"
+            android:layout_marginLeft="@dimen/title_button_left"
+            android:background="@drawable/button_bg_pingpu"
+            android:text="@string/back"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_small_xx" />
+        
+         <ImageView
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/back_image" />
+		</FrameLayout>
     </RelativeLayout>
 
     <ListView

@@ -13,21 +13,20 @@
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="47dp"
+            android:gravity="center"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
             android:text="@string/playset"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_mid_x" />
 
         <Button
             android:id="@+id/count_start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="47dp" 
             android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="13dp"
-            android:background="@null"
+            android:layout_marginRight="-10dp"
+            android:background="@drawable/button_bg_pingpu"
             android:text="@string/count_fenxi"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_small_xx" />

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     
-  	<dimen name="txsize_large_xxx">45dp</dimen>
-  	<dimen name="txsize_large_xx">40dp</dimen>
-  	<dimen name="txsize_large_x">36dp</dimen>
+  	<dimen name="txsize_large_xxx">44dp</dimen>
+  	<dimen name="txsize_large_xx">39dp</dimen>
+  	<dimen name="txsize_large_x">35dp</dimen>
   	
-  	<dimen name="txsize_mid_xxx">30dp</dimen>
-  	<dimen name="txsize_mid_xx">24dp</dimen>
-  	<dimen name="txsize_mid_x">23dp</dimen>
+  	<dimen name="txsize_mid_xxx">29dp</dimen>
+  	<dimen name="txsize_mid_xx">23dp</dimen>
+  	<dimen name="txsize_mid_x">20dp</dimen>
   	
-  	<dimen name="txsize_small_xxx">20dp</dimen>
-  	<dimen name="txsize_small_xx">18dp</dimen>
+  	<dimen name="txsize_small_xxx">19dp</dimen>
+  	<dimen name="txsize_small_xx">16dp</dimen>
   	<dimen name="txsize_small_x">15dp</dimen>
-  	<dimen name="txsize_small_s">13dp</dimen>
+  	<dimen name="txsize_small_s">12dp</dimen>
   	
   	<dimen name="txsize_small_a">15dp</dimen>
   	 <!-- 各种需要适配的宽度值 -->
@@ -36,6 +36,7 @@
   	<dimen name="view_small_x">10dp</dimen>
   	<dimen name="view_small_xx_j">0dp</dimen>
   	
+  	<dimen name="view_text_right">39dp</dimen>
   	
   	
   	<dimen name="count_frame">-29dp</dimen>
@@ -53,6 +54,7 @@
   	
   	
   	<dimen name="title_height">50dp</dimen>
+  	<dimen name="title_button_left">5dp</dimen>
   	<dimen name="easy_shaozi">9dp</dimen>
   	<dimen name="easy_shaozi_bottom">10dp</dimen>
   	
@@ -105,11 +107,35 @@
     <dimen name="view_quick_x">100dp</dimen>
     <dimen name="view_quick_xx">20dp</dimen>
     
-     <dimen name="tab_image_x">20dp</dimen>
-     <dimen name="tab_height_x">57dp</dimen>
+    <dimen name="tab_image_x">20dp</dimen>
+    <dimen name="tab_height_x">57dp</dimen>
      
      <dimen name="radio_group_x">300dp</dimen>
      <dimen name="radio_group_xx">30dp</dimen>
      
-     <dimen name="my_view_layout">150dp</dimen>
+     
+     <dimen name="my_view_frame_left">15dp</dimen>
+     <dimen name="my_view_layout">170dp</dimen>
+     <dimen name="my_view_image">78dp</dimen> 
+     <dimen name="my_view_image_left">106dp</dimen>
+     <dimen name="my_view_image_top">20.5dp</dimen> 
+     <dimen name="my_view_Circle_x">71dp</dimen> 
+     <dimen name="my_view_Circle_top">23dp</dimen> 
+     <dimen name="my_view_Circle_left">109dp</dimen> 
+     <dimen name="my_view_name_top">105dp</dimen>
+     <dimen name="my_view_qianming_top">135dp</dimen>
+     <dimen name="my_view_qianming_height">26dp</dimen>
+     <dimen name="my_view_qianming_width">160dp</dimen>
+     <dimen name="my_view_layout_height">60dp</dimen>
+     <dimen name="my_view_layout_top_x">30dp</dimen>
+     <dimen name="my_view_layout_top_xx">100dp</dimen>
+      <dimen name="my_view_layout_top_xxx">170dp</dimen>
+     <dimen name="my_view_text_bottom">20dp</dimen>
+     <dimen name="my_view_image_bottom">22dp</dimen>
+      
+     <dimen name="infor_view_layout">310dp</dimen>
+     <dimen name="infor_view_layout_x">305dp</dimen>
+      <dimen name="infor_view_width">255dp</dimen>
+     <dimen name="infor_view_x">20dp</dimen>
+     <dimen name="infor_view_xx">10dp</dimen>
 </resources>

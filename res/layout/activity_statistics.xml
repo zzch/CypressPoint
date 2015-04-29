@@ -13,44 +13,47 @@
         <TextView
             android:id="@+id/statistics"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="47dp"
+            android:gravity="center"
             android:layout_centerHorizontal="true"
             android:text="@string/text_statistics"
-            android:layout_marginTop="10dp"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_mid_x" />
 
         <Button
             android:id="@+id/share"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="47dp" 
             android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="13dp"
-            android:background="@null"
+            android:layout_marginRight="-10dp"
+            android:background="@drawable/button_bg_pingpu"
             android:text="@string/text_share"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_small_xx" />
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="35dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginTop="7dp"
-            android:src="@drawable/back_image" />
+       <FrameLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
 
         <Button
             android:id="@+id/back"
-            android:layout_width="50dp"
-            android:layout_height="25dp"
+            android:layout_width="80dp"
+            android:layout_height="47dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="13dp"
-            android:background="@null"
+            android:layout_marginLeft="@dimen/title_button_left"
+            android:background="@drawable/button_bg_pingpu"
             android:onClick="onClick"
             android:text="@string/back"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_small_xx" />
+        
+         <ImageView
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/back_image" />
+		</FrameLayout>
     </RelativeLayout>
 
     <ScrollView
@@ -152,7 +155,7 @@
                             android:gravity="center"
                             android:text="洞"
                             android:textColor="@color/gold"
-                            android:textSize="20dp" />
+                            android:textSize="@dimen/txsize_small_xxx" />
 
                         <View
                             android:layout_width="0.5dp"
@@ -183,7 +186,7 @@
                             android:gravity="center"
                             android:text="标准杆"
                             android:textColor="@color/gold"
-                            android:textSize="20dp" />
+                            android:textSize="@dimen/txsize_small_xxx" />
 
                         <View
                             android:layout_width="0.5dp"
@@ -213,7 +216,7 @@
                             android:gravity="center"
                             android:text="成绩"
                             android:textColor="@color/gold"
-                            android:textSize="20dp" />
+                            android:textSize="@dimen/txsize_small_xxx" />
 
                         <View
                             android:layout_width="0.5dp"
@@ -243,7 +246,7 @@
                             android:gravity="center"
                             android:text="距标准杆"
                             android:textColor="@color/gold"
-                            android:textSize="20dp" />
+                            android:textSize="@dimen/txsize_small_xxx" />
 
                         <View
                             android:layout_width="0.5dp"

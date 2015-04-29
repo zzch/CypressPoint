@@ -12,9 +12,9 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="47dp"
+            android:gravity="center"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
             android:text="个人信息"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_mid_x" />
@@ -29,28 +29,28 @@
             android:id="@+id/frameLayout1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp">
+            android:layout_marginLeft="@dimen/my_view_frame_left">
 
             <RelativeLayout
                 android:id="@+id/myself_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="106dp"
-                android:layout_marginTop="23.5dp" >
+                android:layout_marginLeft="@dimen/my_view_image_left"
+                android:layout_marginTop="@dimen/my_view_image_top" >
 
                 <ImageView
                     android:id="@+id/myself_bg"
-                    android:layout_width="98dp"
-                    android:layout_height="98dp"
+                    android:layout_width="@dimen/my_view_image"
+                    android:layout_height="@dimen/my_view_image"
                     android:src="@drawable/my_image_frame_bg" />
             </RelativeLayout>
 
             <cn.com.zcty.ILovegolf.tools.CircleImageView
                 android:id="@+id/myself_head"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:layout_marginLeft="110dp"
-                android:layout_marginTop="27dp"
+                android:layout_width="@dimen/my_view_Circle_x"
+                android:layout_height="@dimen/my_view_Circle_x"
+                android:layout_marginLeft="@dimen/my_view_Circle_left"
+                android:layout_marginTop="@dimen/my_view_Circle_top"
                 android:src="@drawable/hugh" />
         </FrameLayout>
 
@@ -59,23 +59,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="130dp"
+            android:layout_marginTop="@dimen/my_view_name_top"
             android:text="游客"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_small_xxx" />
 
         <TextView
             android:id="@+id/myself_sign"
-            android:layout_width="190dp"
-            android:layout_height="30dp"
+            android:layout_width="@dimen/my_view_qianming_width"
+            android:layout_height="@dimen/my_view_qianming_height"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="@dimen/my_view_qianming_top"
             android:text="签名"
             android:gravity="center"
             android:background="@drawable/my_qianming_bg"
             android:textColor="@color/gold_70"
             android:textSize="@dimen/txsize_small_a"
-             android:maxEms="11" 
+            android:maxEms="11" 
             android:singleLine="true"
             android:ellipsize="end"
              />
@@ -84,9 +84,9 @@
             android:id="@+id/imageView1"
             android:layout_width="@dimen/view_small_xx"
             android:layout_height="@dimen/view_small_xx"
-            android:layout_alignBottom="@+id/frameLayout1"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="22dp"
+            android:layout_below="@+id/frameLayout1"
+            android:layout_marginRight="@dimen/infor_view_xx"
             android:src="@drawable/icon_arrow" />
        
     </RelativeLayout>
@@ -97,16 +97,16 @@
 
         <RelativeLayout
             android:id="@+id/myself_setting"
-            android:layout_width="345dp"
-            android:layout_height="70dp"
+            android:layout_width="@dimen/infor_view_layout_x"
+            android:layout_height="@dimen/my_view_layout_height"
             android:background="@drawable/button_focused"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp">
+            android:layout_marginTop="@dimen/my_view_layout_top_x">
 
             <ImageView
                 android:id="@+id/myself_image"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="@dimen/my_view_layout_top_x"
+                android:layout_height="@dimen/my_view_layout_top_x"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="17dp"
                 android:layout_marginLeft="13dp"
@@ -116,8 +116,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="25dp"
-                android:layout_marginLeft="70dp"
+                android:layout_marginBottom="@dimen/my_view_text_bottom"
+                android:layout_marginLeft="@dimen/my_view_layout_height"
                 android:textColor="@color/gold"
                 android:textSize="20dp"
                 android:text="消息" />
@@ -127,24 +127,24 @@
                 android:layout_height="@dimen/view_small_xx"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="27dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginBottom="@dimen/my_view_image_bottom"
+                android:layout_marginRight="@dimen/infor_view_xx"
                 android:src="@drawable/icon_arrow" />
         </RelativeLayout>
         
         
         <RelativeLayout
             android:id="@+id/myself_setting"
-            android:layout_width="345dp"
-            android:layout_height="70dp"
+            android:layout_width="@dimen/infor_view_layout_x"
+            android:layout_height="@dimen/my_view_layout_height"
             android:background="@drawable/button_focused"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="120dp">
+            android:layout_marginTop="@dimen/my_view_layout_top_xx">
 
             <ImageView
                 android:id="@+id/myself_image"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="@dimen/my_view_layout_top_x"
+                android:layout_height="@dimen/my_view_layout_top_x"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="17dp"
                 android:layout_marginLeft="13dp"
@@ -154,8 +154,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="25dp"
-                android:layout_marginLeft="70dp"
+                android:layout_marginBottom="@dimen/my_view_text_bottom"
+                android:layout_marginLeft="@dimen/my_view_layout_height"
                 android:textColor="@color/gold"
                 android:textSize="20dp"
                 android:text="积分" />
@@ -165,23 +165,23 @@
                 android:layout_height="@dimen/view_small_xx"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="27dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginBottom="@dimen/my_view_image_bottom"
+                android:layout_marginRight="@dimen/infor_view_xx"
                 android:src="@drawable/icon_arrow" />
         </RelativeLayout>
         
         <RelativeLayout
             android:id="@+id/myself_setting"
-            android:layout_width="345dp"
-            android:layout_height="70dp"
+            android:layout_width="@dimen/infor_view_layout_x"
+            android:layout_height="@dimen/my_view_layout_height"
             android:background="@drawable/button_focused"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="200dp">
+            android:layout_marginTop="@dimen/my_view_layout_top_xxx">
 
             <ImageView
                 android:id="@+id/myself_image"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="@dimen/my_view_layout_top_x"
+                android:layout_height="@dimen/my_view_layout_top_x"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="17dp"
                 android:layout_marginLeft="13dp"
@@ -191,19 +191,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="25dp"
-                android:layout_marginLeft="70dp"
+                android:layout_marginBottom="@dimen/my_view_text_bottom"
+                android:layout_marginLeft="@dimen/my_view_layout_height"
                 android:textColor="@color/gold"
                 android:textSize="20dp"
                 android:text="设置" />
 
             <ImageView
-                android:layout_width="@dimen/view_small_xx"
+               android:layout_width="@dimen/view_small_xx"
                 android:layout_height="@dimen/view_small_xx"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="27dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginBottom="@dimen/my_view_image_bottom"
+                android:layout_marginRight="@dimen/infor_view_xx"
                 android:src="@drawable/icon_arrow" />
         </RelativeLayout>
     </RelativeLayout>
