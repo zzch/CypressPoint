@@ -51,6 +51,7 @@ public class Myself extends Activity {
 	private Bitmap bitmap ;
 	private TextView nameTextView;
 	private String year;
+	private Bitmap bmp;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -58,8 +59,14 @@ public class Myself extends Activity {
 				getListeners();
 			}
 			if(msg.what==2 ){
-				new Imageloder().start();
 				
+				if(url==null){
+					Log.i("shifouyunxing", "1");
+					bmp=BitmapFactory.decodeResource(Myself.this.getBaseContext().getResources(), R.drawable.hugh);
+					saveMyBitmap(bmp);
+				}else{
+					new Imageloder().start();
+				}
 			}
 		};
 	};
@@ -82,7 +89,7 @@ public class Myself extends Activity {
 		setContentView(R.layout.activity_myself);
 		initView();		
 		new Ziliao().start();
-		
+	
 			if(fileIsExists()){
 				imageHead.setImageBitmap(converToBitmap(100,100));
 				blur(converToBitmap(100,100));
@@ -191,7 +198,6 @@ public class Myself extends Activity {
 			String token=sp.getString("token", "token");
 			String path = APIService.TITLE+"token="+token;
 			String jsonData = HttpUtils.HttpClientGet(path);
-			Log.i("xihuan", jsonData);
 			try {
 				JSONObject jsonObject = new JSONObject(jsonData);
 				JSONObject jsObjectuser = new JSONObject(jsonObject.getString("user"));
@@ -203,6 +209,7 @@ public class Myself extends Activity {
 			}
 			Message msg = handler.obtainMessage();
 			msg.what = 2;
+			msg.obj = url;
 			handler.sendMessage(msg);
 		}
 	}
@@ -213,12 +220,12 @@ public class Myself extends Activity {
 			getData();
 		}
 		public void getData(){
-			if(url!=null){
+			
 				bitmap = HttpUtils.imageloder(url);
 				Message msg = handler1.obtainMessage();
 				msg.what = 1;
 				handler1.sendMessage(msg);
-			}
+			
 		
 	   }
 	}
@@ -254,7 +261,7 @@ public class Myself extends Activity {
 		                       return false;
 
 		               }
-
+		           // f.delete();
 		               return true;
 
 		        }

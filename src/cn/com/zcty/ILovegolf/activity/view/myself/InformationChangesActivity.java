@@ -111,7 +111,9 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
 				hideProgressDialog();
-				headMyImage.setImageBitmap(converToBitmap(100,100));
+				if(converToBitmap(100,100)==null){			
+				}else{
+				headMyImage.setImageBitmap(converToBitmap(100,100));}
 			}
 		};
 	};
@@ -316,7 +318,9 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		imageView2 = (ImageView) findViewById(R.id.imageView2);
 		imageView3 = (ImageView) findViewById(R.id.imageView3);
 		imageView5 = (ImageView) findViewById(R.id.imageView5);
-		headMyImage.setImageBitmap(converToBitmap(100,100));
+		if(converToBitmap(100,100)==null){			
+		}else{
+		headMyImage.setImageBitmap(converToBitmap(100,100));}
 		SharedPreferences sp = getSharedPreferences("register", MODE_PRIVATE);
 		String name = sp.getString("nickname", "nickname");
 		upnameEditText.setText(name);
