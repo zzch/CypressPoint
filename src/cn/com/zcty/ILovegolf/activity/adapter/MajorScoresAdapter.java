@@ -71,8 +71,10 @@ public class MajorScoresAdapter extends BaseAdapter{
 		}
 		else if(majorArrayList.get(position).getCool().equals("bunker")||majorArrayList.get(position).getCool().equals("沙坑")){
 			holder.coolText.setText("沙坑");
-		}else{
+		}else if(majorArrayList.get(position).getCool().equals("unplayable")||majorArrayList.get(position).getCool().equals("不可打")){
 			holder.coolText.setText("不可打");
+		}else{
+			holder.coolText.setText("");
 		}
 		
 		if(majorArrayList.get(position).getCount().equals("1w")){

@@ -47,6 +47,7 @@ import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 public class MajorScoreActivity extends Activity {
+	private String message = "";
 	private TextView titleNameText;
 	private TextView parText;
 	private TextView distanceText;
@@ -84,7 +85,7 @@ public class MajorScoreActivity extends Activity {
 	private MajorScoresAdapter adapter;
 	private int count = 1;
 	private String distance = "0";
-	private String cool = "果岭";
+	private String cool = "hole";
 	private String pentails = "0";
 	private String popal = "1w";
 	private String  score;
@@ -147,7 +148,29 @@ public class MajorScoreActivity extends Activity {
 				editor.putString("score", score);
 				editor.putString("penalties", penalties);
 				editor.commit();
-		
+				if(message.equals("没有进洞击球")){
+					AlertDialog.Builder builder = new Builder(MajorScoreActivity.this)
+					.setTitle("提示").setMessage("没有进洞击球").setNegativeButton("确定", new android.content.DialogInterface.OnClickListener() {
+						
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							
+						}
+					});
+					builder.show();
+				}
+				else if(message.equals("重复进洞击球")){
+					AlertDialog.Builder builder = new Builder(MajorScoreActivity.this)
+					.setTitle("提示").setMessage("重复进洞击球").setNegativeButton("确定", new android.content.DialogInterface.OnClickListener() {
+						
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							
+						}
+					});
+					builder.show();
+				}
+				else{
 				Intent intent = new Intent();
 				intent.putExtra("score", score);
 				intent.putExtra("putts", putts);
@@ -155,6 +178,7 @@ public class MajorScoreActivity extends Activity {
 				intent.putExtra("penalties", penalties);
 				setResult(1,intent);
 				finish();
+				}
 				}
 			}
 		};
@@ -174,21 +198,20 @@ public class MajorScoreActivity extends Activity {
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		
 		if(keyCode==KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0){
-			if(!(score.equals("0")&&penalties.equals("0"))){
-				Log.i("woshitiancai008", score);
-				Intent intent = new Intent();
-				intent.putExtra("score", score);
-				intent.putExtra("putts", putts);
-				intent.putExtra("position", position);
-				intent.putExtra("penalties", penalties);
-				setResult(1,intent);
-				finish();
-			}else{
-
-				Intent intent = new Intent();		
-				setResult(100,intent);
-				finish();
-			}
+			/*if(!(score.equals("0")&&penalties.equals("0"))){
+			new JiqiuBianjiTask().start();
+			Intent intent = new Intent();
+			intent.putExtra("score", score);
+			intent.putExtra("putts", putts);
+			intent.putExtra("position", position);
+			intent.putExtra("penalties", penalties);
+			setResult(1,intent);
+			finish();
+		}else{*/
+			Intent intent = new Intent();		
+			setResult(30,intent);
+			finish();
+		/*}*/
         }
 		return false;
 	}
@@ -210,6 +233,16 @@ public class MajorScoreActivity extends Activity {
 				public void onClick(View v) {
 					if(addArrayList.size()>0){
 					new JiqiuBianjiTask().start();
+					}else{
+						AlertDialog.Builder builder = new Builder(MajorScoreActivity.this)
+						.setTitle("提示").setMessage("请添加成绩").setNegativeButton("确定", new android.content.DialogInterface.OnClickListener() {
+							
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+								
+							}
+						});
+						builder.show();
 					}
 				}
 			});
@@ -219,22 +252,20 @@ public class MajorScoreActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				if(!(score.equals("0")&&penalties.equals("0"))){
+				/*if(!(score.equals("0")&&penalties.equals("0"))){
 					new JiqiuBianjiTask().start();
 					Intent intent = new Intent();
-					Log.i("woshitiancai", score);
 					intent.putExtra("score", score);
 					intent.putExtra("putts", putts);
 					intent.putExtra("position", position);
 					intent.putExtra("penalties", penalties);
 					setResult(1,intent);
 					finish();
-				}else{
-					Log.i("woshitiancai", score);
+				}else{*/
 					Intent intent = new Intent();		
 					setResult(30,intent);
 					finish();
-				}
+				/*}*/
 
 
 			}
@@ -250,7 +281,7 @@ public class MajorScoreActivity extends Activity {
 					distance = "0";
 					pentails = "0";
 					coolWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, coolArray_));
-					cool = "hole";
+					cool = "";
 				}else{
 					coolWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, coolArray));	
 					coolWheel.addChangingListener(new OnWheelChangedListener() {
@@ -313,7 +344,8 @@ public class MajorScoreActivity extends Activity {
 				majorScore.setCount(popal);
 				count++;
 				orderText.setText(count+"");
-				String c;
+				String c = "hole";
+				Log.i("greens", cool);
 				if(cool.equals("球道")){
 					c = "fairway";
 				}else if(cool.equals("果岭")){
@@ -327,8 +359,10 @@ public class MajorScoreActivity extends Activity {
 				}
 				else if(cool.equals("沙坑")){
 					c = "bunker";
-				}else{
+				}else if(cool.equals("不可打")){
 					c = "unplayable";
+				}else{
+					c = "hole";
 				}
 				
 				MajorScoreJiQiu m = new MajorScoreJiQiu();
@@ -420,6 +454,7 @@ public class MajorScoreActivity extends Activity {
 				dataList, swipeListener, MajorScoreActivity.this);
 		touchListener.SwipeType	=	ListViewSwipeGesture.Double;    //设置两个选项列表项的背景
 		dataList.setOnTouchListener(touchListener);
+		
 	}
 
 	private void initView() {
@@ -459,6 +494,8 @@ public class MajorScoreActivity extends Activity {
 			color = "蓝T";
 		}
 		teeColorText.setText(color);
+		distanceWheel.setCurrentItem(200);
+		//coolWheel.setCurrentItem(2);
 	}
 
 
@@ -551,10 +588,12 @@ public class MajorScoreActivity extends Activity {
 			}
 			else if(majorArray.get(majorArray.size()-1).getCool().equals("沙坑")){
 				c = "bunker";
-			}else{
+			}else if(majorArray.get(majorArray.size()-1).getCool().equals("不可打")){
 				c = "unplayable";
 			}
-
+			else{
+				c = "hole";
+			}
 			String path = APIService.JILU+"token="+token+"&scorecard_uuid="+uuid
 					+"&distance_from_hole="+majorArray.get(majorArray.size()-1).getDistance()+"&point_of_fall="+c+
 					"&penalties="+majorArray.get(majorArray.size()-1).getPentails()+"&club="+popal;
@@ -615,9 +654,14 @@ public class MajorScoreActivity extends Activity {
 					
 					MajorScoreJiQiu m = new MajorScoreJiQiu();
 					m.setClub(jsonObject.getString("club"));
-					m.setDistance_from_hole(jsonObject.getString("distance_from_hole"));
+					if(jsonObject.getString("distance_from_hole").equals("进球")){
+						m.setPoint_of_fall("hole");
+					}else{
+						m.setPoint_of_fall(jsonObject.getString("point_of_fall"));
+					}
+					m.setPoint_of_fall(jsonObject.getString("distance_from_hole"));
 					m.setPenalties(jsonObject.getString("penalties"));
-					m.setPoint_of_fall(jsonObject.getString("point_of_fall"));
+					
 					addArrayList.add(m);
 					majorArray.add(score);
 				}
@@ -650,6 +694,7 @@ public class MajorScoreActivity extends Activity {
 			for(int i=0;i<bianji.length;i++){
 				bianji[i] = addArrayList.get(i).toString();
 			}
+			Log.i("aseifjsdkj", bianji[0]);
 			map.put("strokes[]", bianji);
 			Intent intent = getIntent();
 			String uuid = intent.getStringExtra("uuid");
@@ -658,10 +703,14 @@ public class MajorScoreActivity extends Activity {
 			try {
 				JSONObject jsObject = new JSONObject(jsonArray);	
 				Log.i("jiqiujilu", jsObject.toString());
-				score = jsObject.getString("score");	
-				putts = jsObject.getString("putts");
-				penalties = jsObject.getString("penalties");
-
+				//message = jsObject.getString("message");
+				//if(!(message.equals("没有进洞击球")||message.equals("重复进洞击球"))){
+					score = jsObject.getString("score");	
+					putts = jsObject.getString("putts");
+					penalties = jsObject.getString("penalties");
+				//}
+				
+				
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
