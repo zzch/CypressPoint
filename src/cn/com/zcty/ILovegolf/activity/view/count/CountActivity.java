@@ -72,7 +72,7 @@ public class CountActivity extends Activity implements OnClickListener{
 				gridView.setAdapter(new CountAdapter(CountActivity.this, gridArrayList));
 				ArrayList<ChartProp> acps = mChartView.createCharts(percent.length);
 				int size = acps.size();
-				for(int i = 0; i < size; i++)
+				for(int i = 0; i < color.length; i++)
 				{
 					ChartProp chartProp = acps.get(i);
 					chartProp.setColor(color[i]);
@@ -85,13 +85,21 @@ public class CountActivity extends Activity implements OnClickListener{
 					image.setImageAlpha(100);
 
 				}
+				
 				averageTextView.setText(average);
-				double_eagleTextView.setText(double_eagle*100+"%");
-				eagleTextView.setText(eagle*100+"%");
-				birdieTextView.setText(birdie*100+"%");
-				parTextView.setText(par*100+"%");
-				bogeyTextView.setText(bogey*100+"%");
-				double_bogeyTextView.setText(double_bogey*100+"%");
+				int a = (int) (double_eagle*100);
+				int b = (int) (eagle*100);
+				int c = (int) (birdie*100);
+				int d = (int) (par*100);
+				int e = (int) (bogey*100);
+				int f = (int) (double_bogey*100);
+				
+				double_eagleTextView.setText(a+"%");
+				eagleTextView.setText(b+"%");
+				birdieTextView.setText(c+"%");
+				parTextView.setText(d+"%");
+				bogeyTextView.setText(e+"%");
+				double_bogeyTextView.setText(f+"%");
 			}
 		};
 	};
@@ -111,8 +119,9 @@ public class CountActivity extends Activity implements OnClickListener{
 		setListeners();
 		getData();
 		new Count().start();
-		//mChartView.setVisibility(View.VISIBLE);
 	}
+	
+	
 	private void getData() {		
 		mChartView.setAntiAlias(true);
 		mChartView.setCenter(new Point(299, 240));
