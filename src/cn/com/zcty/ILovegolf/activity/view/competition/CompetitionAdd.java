@@ -24,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.SelectSessionTAdapter;
+import cn.com.zcty.ILovegolf.activity.view.MajorScoreActivity;
 import cn.com.zcty.ILovegolf.model.CompetitionAddmatch;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
@@ -58,6 +59,8 @@ public class CompetitionAdd extends Activity{
 			if(msg.what==1){
 				if(msg.obj.equals("500")||msg.obj.equals("404")){
 					Toast.makeText(CompetitionAdd.this, "网络异常，无法加入",Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("403")){
+					Toast.makeText(CompetitionAdd.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
 				}
 				if(flase.equals("success")){
 					Intent intent = new Intent(CompetitionAdd.this,CompetitionScordActivity.class);

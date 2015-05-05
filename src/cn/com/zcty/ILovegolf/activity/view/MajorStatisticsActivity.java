@@ -43,6 +43,7 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 	private TextView name3TextView;
 	private TextView name4TextView;
 	private RelativeLayout r1;
+	private RelativeLayout rrs;
 	private RelativeLayout statistic_layout;
 	private ArrayList<String> distance = new ArrayList<String>();
 	private String JsonData;
@@ -55,6 +56,13 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 			if(msg.what==1){
 				getData();
 				setListViewHeightBasedOnChildren(informationListView);
+				if(statisticsModels.get(0).getPlace3().equals("")){
+					rrs.setVisibility(View.GONE);
+					Log.i("dsfasdfsad", statisticsModels.get(0).getPlace2()+"fff");
+				}else{
+					rrs.setVisibility(View.VISIBLE);
+					Log.i("dsfasdfsad", statisticsModels.get(0).getPlace2()+"666");
+				}
 			}
 		};
 	};
@@ -69,6 +77,7 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 	}
 
 	private void initView() {
+		rrs = (RelativeLayout) findViewById(R.id.rrs1);
 		backButton = (Button) findViewById(R.id.major_scorecard_back);
 		informationListView = (ListView) findViewById(R.id.major_count);
 		distance1TextView = (TextView) findViewById(R.id.static_distance_1);
@@ -93,9 +102,9 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 			
 			@Override
 			public void onClick(View v) {
-				Intent intent10 = new Intent(MajorStatisticsActivity.this,QiuGanActivity.class);
+				/*Intent intent10 = new Intent(MajorStatisticsActivity.this,QiuGanActivity.class);
 				intent10.putExtra("JsonData", JsonData);
-				startActivity(intent10);
+				startActivity(intent10);*/
 			}
 		});
 		informationListView.setOnItemClickListener(new OnItemClickListener() {
@@ -103,7 +112,7 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
-				switch (position) {
+/*				switch (position) {
 				case 0:
 					Intent intent = new Intent(MajorStatisticsActivity.this,MajorStatisticsActivityScord.class);
 					intent.putExtra("JsonData", JsonData);
@@ -152,7 +161,7 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 				case 9:
 					
 					break;
-				}
+				}*/
 			}
 		});
 	}
@@ -167,6 +176,8 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 		name4TextView.setText(name.get(3));
 		adapter = new MajorStatisticsListViewAdapter(this, statisticsModels);
 		informationListView.setAdapter(adapter);
+		
+		
 	}
 	@Override
 	public void onClick(View v) {

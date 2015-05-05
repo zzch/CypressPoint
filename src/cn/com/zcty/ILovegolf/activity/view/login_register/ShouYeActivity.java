@@ -24,6 +24,7 @@ import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -59,6 +60,7 @@ public class ShouYeActivity extends Activity {
      private String isBoolean;
      private String err;
      private String messg = "";
+     private ProgressDialog progressDialog;
    //单例实现返回MyApplication实例  
      public static ShouYeActivity getInstance(){  
          if(null == instance){  
@@ -151,6 +153,7 @@ public class ShouYeActivity extends Activity {
 	 * @param v
 	 */
 	public void but_register(View v){
+		showProgressDialog("提示", "加载中。。。");
 		
 		new AsyncTask<Void, Void, Void>() {
 
@@ -189,6 +192,7 @@ public class ShouYeActivity extends Activity {
 			    Log.i("----uuid", ""+sp.getString("uuid", ""));
 			    editor.commit();
 				if(data!=null){
+					hideProgressDialog();
 					intent=new Intent(ShouYeActivity.this,TabHostActivity.class);
 				    startActivity(intent);
 				    finish();	
@@ -392,5 +396,26 @@ public class ShouYeActivity extends Activity {
 			}
 			return str;
 		}
- 	
+	 /*
+		 * 提示加载
+		 */
+		public  void  showProgressDialog(String title,String message){
+			if(progressDialog==null){
+				progressDialog = ProgressDialog.show(this, title, message,true,true);
+
+			}else if(progressDialog.isShowing()){
+				progressDialog.setTitle(title);
+				progressDialog.setMessage(message);
+			}
+			progressDialog.show();
+
+		}
+		/*
+		 * 隐藏加载
+		 */
+		public  void hideProgressDialog(){
+			if(progressDialog !=null &&progressDialog.isShowing()){
+				progressDialog.dismiss();
+			}
+		}
 }

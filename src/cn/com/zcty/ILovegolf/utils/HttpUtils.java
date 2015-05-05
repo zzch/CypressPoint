@@ -133,24 +133,25 @@ public class HttpUtils
 		HttpClient client=new DefaultHttpClient();
 		//创建请求路径的HttpGet对象
 		HttpGet httpGet=new HttpGet(path);
-		Log.i("---path", "path==="+path);
+		int code = 0;
 		try {
 			//让HttpClient往服务器发送数据
 			HttpResponse response=client.execute(httpGet);
 			//找到服务返回的状态码 200表示成功
-			int code=response.getStatusLine().getStatusCode();
+		    code=response.getStatusLine().getStatusCode();
 			Log.i("code----->>>", ""+code);
 			if(code==HttpStatus.SC_OK)
 			{
 				//InputStream is=response.getEntity().getContent();
 				str = EntityUtils.toString(response.getEntity(), "utf-8");
 				Log.i("is---->>", ""+str);
+				return str;
 			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();		
 		}
-		return str;
+		return code+"";
 	}
 	public static String HttpClientPut(String path)
 	{	int code = 0;

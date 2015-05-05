@@ -6,21 +6,15 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.utils.APIService;
-import cn.com.zcty.ILovegolf.utils.HttpUtils;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -32,6 +26,8 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.utils.APIService;
 /**
  * 注册类
  * @author deii
@@ -47,6 +43,7 @@ public class RegisterActivity extends Activity implements OnClickListener{
 	private EditText et_confirm_password; //确认密码
 	private EditText et_yanzhengma_reg;//验证码
 	private String isBoolean;
+	private Button fanhuiButton;
 	private int code;
 	Handler handler = new Handler(){
 
@@ -71,13 +68,31 @@ public class RegisterActivity extends Activity implements OnClickListener{
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_register);
+		ShouYeActivity.getInstance().addActivity(this);
 		//找控件
 		et_mobile_reg = (EditText) findViewById(R.id.et_mobile_reg);
 		et_password_reg = (EditText) findViewById(R.id.et_password_reg);
 		et_confirm_password = (EditText) findViewById(R.id.et_confirm_password);
 		et_yanzhengma_reg = (EditText) findViewById(R.id.et_yanzhengma_reg);
 		yanzhengma = (Button) findViewById(R.id.but_getyanzhengma);
+		fanhuiButton = (Button) findViewById(R.id.fanhui);
+		fanhuiButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(RegisterActivity.this,ShouYeActivity.class);
+				startActivity(intent);
+			}
+		});
 	}
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		Intent intent = new Intent(RegisterActivity.this,ShouYeActivity.class);
+		startActivity(intent);
+	}
+	
 	/**
 	 * 获取验证码按钮
 	 * @param v

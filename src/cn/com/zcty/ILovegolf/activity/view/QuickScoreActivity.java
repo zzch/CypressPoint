@@ -26,12 +26,14 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.QuickScoreAdapter;
+import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.model.Course;
 import cn.com.zcty.ILovegolf.model.QuickContent;
 import cn.com.zcty.ILovegolf.tools.XListView;
 import cn.com.zcty.ILovegolf.tools.XListView.IXListViewListener;
 import cn.com.zcty.ILovegolf.tools.XListView.RemoveListener;
 import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 public class QuickScoreActivity extends Activity implements IXListViewListener ,RemoveListener,OnItemClickListener{
@@ -50,21 +52,37 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
-
-
 				getData();
-				//hideProgressDialog();
-				Log.i("shuzhijieguo", quickArrayList.size()+"");
+				if(msg.obj.equals("404")||msg.obj.equals("500")){//判断是服务端问题
+					Toast.makeText(QuickScoreActivity.this, "网络异常，错误提示"+msg.obj, Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("403")){
+					Toast.makeText(QuickScoreActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+					FileUtil.delFile();
+					Intent intent = new Intent(QuickScoreActivity.this,ShouYeActivity.class);
+					startActivity(intent);
+					finish();
+				}else{
+				/*
+				 * 如果没有数据，则出现提示添加数据的文字
+				 */
 				if(quickArrayList.size()!=0){
 					image_tishi.setVisibility(View.INVISIBLE);
 					mListView.setVisibility(View.VISIBLE);
 				}else{
 					image_tishi.setVisibility(View.VISIBLE);
 					mListView.setVisibility(View.GONE);
-				}
+				}}
 			}
+			/*
+			 *加载成功，加载框消失 
+			 */
 			hideProgressDialog();
 			if(msg.what==2){
+				if(msg.obj.equals("404")||msg.obj.equals("500")){//判断是服务端问题
+					Toast.makeText(QuickScoreActivity.this, "删除失败,当前网络异常，错误提示"+msg.obj, Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("403")){
+					Toast.makeText(QuickScoreActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+				}else{				
 				if(result.equals("success")){
 				Toast.makeText(QuickScoreActivity.this, "删除成功", Toast.LENGTH_LONG).show();
 				slideAdapter.notifyDataSetChanged();
@@ -72,7 +90,7 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 				Toast.makeText(QuickScoreActivity.this, "删除失败,当前网络不稳定", Toast.LENGTH_LONG).show();
 				image_tishi.setVisibility(View.INVISIBLE);
 				mListView.setVisibility(View.VISIBLE);
-			}
+			}}
 			}
 		};
 	};
@@ -231,6 +249,7 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 				
 				Message msg = handler.obtainMessage();
 				msg.what = 1;
+				msg.obj = JsonData;
 				handler.sendMessage(msg);
 
 			} catch (JSONException e) {
@@ -255,9 +274,8 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String token=sp.getString("token", "token");
 			String path = APIService.DELET+"uuid="+uuid+"&token="+token;
+			String jsonDele = HttpUtils.HttpClientDelete(path);
 			try {
-				String jsonDele = HttpUtils.HttpClientDelete(path);
-				Log.i("ssss", jsonDele+"zhou");
 				JSONObject json = new JSONObject(jsonDele);
 				result = json.getString("result");
 				
@@ -275,6 +293,7 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 			}
 			Message msg = handler.obtainMessage();
 			msg.what = 2;
+			msg.obj = jsonDele;
 			handler.sendMessage(msg);
 		}
 	}
