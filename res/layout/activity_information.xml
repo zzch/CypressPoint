@@ -306,7 +306,11 @@
                     android:layout_marginLeft="15dp"
                     android:text="北京市-海淀区"
                     android:textColor="@color/gold"
-                    android:textSize="@dimen/txsize_small_xx" />
+                    android:textSize="@dimen/txsize_small_xx"
+                    android:maxEms="15" 
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                     />
 
                 <ImageView
                     android:id="@+id/imageView5"

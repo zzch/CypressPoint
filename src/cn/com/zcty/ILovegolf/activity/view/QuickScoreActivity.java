@@ -104,6 +104,12 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 		mHandler= new Handler();
 		showProgressDialog("提示","正在努力加载数据！");
 	}
+	@Override
+	protected void onRestart() {
+		// TODO Auto-generated method stub
+		super.onRestart();
+		//new MyTask().start();
+	}
 	private void initView() {
 		mListView = (XListView) findViewById(R.id.xListView);
 		mListView.setXListViewListener(this);
@@ -126,15 +132,15 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 		switch(v.getId()){
 		//返回按钮
 		case R.id.k_back:
-			//intent=new Intent(QuickScoreActivity.this,TabHostActivity.class);
-			//startActivity(intent);
+			intent=new Intent(QuickScoreActivity.this,TabHostActivity.class);
+			startActivity(intent);
 			finish();
 			break;
 			//新建按钮
 		case R.id.k_build:
 			intent=new Intent(QuickScoreActivity.this,ChoosePitchActivity.class);
 			startActivity(intent);
-			
+			finish();
 			break;
 		}
 	}

@@ -82,7 +82,8 @@ public class CountActivity extends Activity implements OnClickListener{
 				if(eagle==0f&&double_eagle==0f&&birdie==0f&&par==0f&&bogey==0f&&double_bogey==0f){
 					image.setImageAlpha(80);
 				}else{
-					image.setImageAlpha(100);
+					
+					image.setVisibility(View.VISIBLE);
 
 				}
 				averageTextView.setText(average);

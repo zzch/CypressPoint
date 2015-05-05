@@ -51,6 +51,7 @@
             android:background="@drawable/button_bg_pingpu"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_small_xx" 
+            android:visibility="gone"
             android:text="@string/pk"/>
     </RelativeLayout>
 	

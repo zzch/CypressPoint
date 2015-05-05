@@ -137,7 +137,7 @@
                     android:gravity="center"
                     android:text="10%"
                     android:textColor="@color/gold"
-                    android:textSize="22dp" />
+                    android:textSize="@dimen/txsize_small_xxx" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -146,7 +146,7 @@
                     android:layout_marginTop="3dp"
                     android:text="@string/xintianwen"
                     android:textColor="@color/gold_70"
-                    android:textSize="15dp" />
+                    android:textSize="@dimen/txsize_small_x" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -170,7 +170,7 @@
                     android:text="10%"
                     android:gravity="center"
                     android:textColor="@color/gold"
-                    android:textSize="22dp" />
+                    android:textSize="@dimen/txsize_small_xxx" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -179,7 +179,7 @@
                     android:layout_marginTop="3dp"
                     android:text="@string/shuangbaijijia"
                     android:textColor="@color/gold_70"
-                    android:textSize="15dp" />
+                    android:textSize="@dimen/txsize_small_x" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -205,7 +205,7 @@
                     android:text="10%"
                     android:gravity="center"
                     android:textColor="@color/gold"
-                    android:textSize="22dp" />
+                    android:textSize="@dimen/txsize_small_xxx" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -214,7 +214,7 @@
                     android:layout_marginTop="3dp"
                     android:text="@string/laoyin"
                     android:textColor="@color/gold_70"
-                    android:textSize="15dp" />
+                    android:textSize="@dimen/txsize_small_x" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -240,7 +240,7 @@
                     android:gravity="center"
                     android:text="10%"
                     android:textColor="@color/gold"
-                    android:textSize="22dp" />
+                    android:textSize="@dimen/txsize_small_xxx" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -249,7 +249,7 @@
                     android:layout_marginTop="3dp"
                     android:text="@string/biaozhungan"
                     android:textColor="@color/gold_70"
-                    android:textSize="15dp" />
+                    android:textSize="@dimen/txsize_small_x" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -275,7 +275,7 @@
                     android:gravity="center"
                     android:text="10%"
                     android:textColor="@color/gold"
-                    android:textSize="22dp" />
+                    android:textSize="@dimen/txsize_small_xxx" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -284,7 +284,7 @@
                     android:layout_marginTop="3dp"
                     android:text="@string/xiaoniao"
                     android:textColor="@color/gold_70"
-                    android:textSize="15dp" />
+                    android:textSize="@dimen/txsize_small_x" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -310,7 +310,7 @@
                     android:gravity="center"
                     android:text="10%"
                     android:textColor="@color/gold"
-                    android:textSize="22dp" />
+                    android:textSize="@dimen/txsize_small_xxx" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -319,7 +319,7 @@
                     android:layout_marginTop="3dp"
                     android:text="@string/baiji"
                     android:textColor="@color/gold_70"
-                    android:textSize="15dp" />
+                    android:textSize="@dimen/txsize_small_x" />
             </RelativeLayout>
         </RelativeLayout>
     </RelativeLayout>

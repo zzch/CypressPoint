@@ -143,4 +143,10 @@
      <dimen name="register_view_width">300dp</dimen>
      <dimen name="register_view_yanzhen">170dp</dimen>
        <dimen name="register_view_huoquyanzhen">120dp</dimen>
+       
+       <dimen name="shouye_view_top">15dp</dimen>
+       <dimen name="shouye_name_top">20dp</dimen>
+       <dimen name="shouye_login_top">10dp</dimen>
+       
+       <dimen name="my_tuichu_top">280dp</dimen>
 </resources>
