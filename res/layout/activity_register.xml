@@ -11,14 +11,30 @@
         android:layout_width="match_parent"
          android:layout_height="@dimen/title_height"
          android:background="@anim/title_pingpu"  >
-		<Button 
-		    android:id="@+id/fanhui"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:background="@color/black"
-		    android:textColor="@color/gold"
-		    android:text="返回"
-		    />
+		
+		  
+		    <FrameLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            
+            >
+          <Button
+            android:id="@+id/fanhui"
+            android:layout_width="80dp"
+            android:layout_height="47dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/title_button_left"
+            android:background="@drawable/button_bg_pingpu"
+            android:text="@string/back"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/txsize_small_xx" 
+            android:onClick="choosepith_back" />
+         <ImageView
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/back_image" />
+		</FrameLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="47dp"
