@@ -273,9 +273,7 @@ public class ScoreCardActivity extends Activity {
 					}
 			}
 			
-			
-			
-			
+			 
 			Message msg = handler.obtainMessage();
 			msg.what=1;
 			handler.sendMessage(msg);

@@ -349,10 +349,7 @@ public class ShouYeActivity extends Activity {
 					} catch (JSONException e) {
 						e.printStackTrace();
 					}
-	    			
-	    		
-	    			
-	    		
+	
 		}
 		
 	}
@@ -362,9 +359,9 @@ public class ShouYeActivity extends Activity {
 	 */
 	public void forget_password(View v){
 		
-		Intent intent=new Intent(ShouYeActivity.this,ForGetPasswordActivity.class);
-		startActivity(intent);
-		finish();
+		//Intent intent=new Intent(ShouYeActivity.this,ForGetPasswordActivity.class);
+		//startActivity(intent);
+		//finish();
 		
 	}
 	

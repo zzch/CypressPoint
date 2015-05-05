@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import cn.com.zcty.ILovegolf.activity.R;
@@ -18,6 +19,7 @@ public class SettionsActivity extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_settings);
 		ShouYeActivity.getInstance().addActivity(this);
 		initView();
@@ -37,8 +39,8 @@ public class SettionsActivity extends Activity{
 			
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(SettionsActivity.this,Myself.class);
-				startActivity(intent);
+				//Intent intent = new Intent(SettionsActivity.this,Myself.class);
+				//startActivity(intent);
 				finish();
 			}
 		});
@@ -47,8 +49,8 @@ public class SettionsActivity extends Activity{
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
 		super.onBackPressed();
-		Intent intent = new Intent(SettionsActivity.this,Myself.class);
-		startActivity(intent);
+		//Intent intent = new Intent(SettionsActivity.this,Myself.class);
+		//startActivity(intent);
 		finish();
 	}
 	private void initView() {

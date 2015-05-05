@@ -51,6 +51,7 @@
   	<dimen name="count_avg_left">175dp</dimen>
   	<dimen name="count_avg_top">155dp</dimen>
   	<dimen name="count_ccc">0dp</dimen>
+  	<dimen name="count_time_height">50dp</dimen>
   	
   	
   	<dimen name="title_height">50dp</dimen>
@@ -138,4 +139,8 @@
       <dimen name="infor_view_width">255dp</dimen>
      <dimen name="infor_view_x">20dp</dimen>
      <dimen name="infor_view_xx">10dp</dimen>
+     
+     <dimen name="register_view_width">300dp</dimen>
+     <dimen name="register_view_yanzhen">170dp</dimen>
+       <dimen name="register_view_huoquyanzhen">120dp</dimen>
 </resources>

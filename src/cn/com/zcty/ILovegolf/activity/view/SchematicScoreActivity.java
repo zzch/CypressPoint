@@ -123,7 +123,7 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 		case R.id.k_build:
 			intent=new Intent(SchematicScoreActivity.this,MajorChoosePitchActivity.class);
 			startActivity(intent);
-			finish();
+			//finish();
 			break;
 		}
 	}

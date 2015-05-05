@@ -344,7 +344,7 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 											intent.putExtra("color_t", c_t);
 											Log.i("asdf", uuid+"zhouhe"+uuid);
 											startActivity(intent);
-											//finish();
+											finish();
 										}
 									});
 								}

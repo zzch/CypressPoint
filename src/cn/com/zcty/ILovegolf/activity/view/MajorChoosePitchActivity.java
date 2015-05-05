@@ -64,7 +64,7 @@ public class MajorChoosePitchActivity extends Activity{
 				editors.putString("key", qiuchanglists.get(position).getUuid());
 				editors.commit();
 				startActivity(intent);
-				//finish();
+				finish();
 			}
 		});
 		

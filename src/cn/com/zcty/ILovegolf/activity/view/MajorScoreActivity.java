@@ -463,15 +463,6 @@ public class MajorScoreActivity extends Activity {
 	}
 
 
-
-
-
-
-
-
-
-
-
 	//定义函数动态控制listView的高度
 	public void setListViewHeightBasedOnChildren(ListView listView) {
 

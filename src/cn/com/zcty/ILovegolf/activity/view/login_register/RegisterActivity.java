@@ -11,6 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.tools.RegexMobile;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 import android.app.Activity;
@@ -52,14 +53,34 @@ public class RegisterActivity extends Activity implements OnClickListener{
 
 		@Override
 		public void handleMessage(Message msg) {
-			if(msg.what==1){
+			switch(msg.what){
+			case 0:
+				 Toast.makeText(RegisterActivity.this, "用户名不能为空！", Toast.LENGTH_SHORT).show();
+				break;
+			case 1:
+				Toast.makeText(RegisterActivity.this, "用户名不合法！", Toast.LENGTH_SHORT).show();
+				break;
+			case 2:
+				 Toast.makeText(RegisterActivity.this, "密码不能为空！", Toast.LENGTH_SHORT).show();
+				break;
+			case 3:
+				 Toast.makeText(RegisterActivity.this, "确认密码不能为空！", Toast.LENGTH_SHORT).show();
+				break;
+			case 4:
+				 Toast.makeText(RegisterActivity.this, "验证码不能为空！", Toast.LENGTH_SHORT).show();
+				break;
+			case 5:
 				if(msg.arg1==0){
-				Toast.makeText(RegisterActivity.this, "网络异常！", Toast.LENGTH_SHORT).show();
-			}
-				if(msg.arg1==1){
-					//弹出一个Dialog
-					fristdialog();	
+					Toast.makeText(RegisterActivity.this, "网络异常！", Toast.LENGTH_SHORT).show();
 				}
+				if(msg.arg1==1){
+						//弹出一个Dialog
+						fristdialog();	
+					}
+				break;
+			case 6:
+				 Toast.makeText(RegisterActivity.this, "确认密码与密码不一致！", Toast.LENGTH_SHORT).show();
+				break;
 			}
 			
 		}
@@ -124,6 +145,44 @@ public class RegisterActivity extends Activity implements OnClickListener{
 	
 	//点击注册按钮
     public void on_but_zhuce(View v){
+    	
+    	 String mobilename= et_mobile_reg.getText().toString().trim();
+		 String mima = et_password_reg.getText().toString().trim();
+		 String querenmima = et_confirm_password.getText().toString().trim();
+		 String yanzheng  = et_yanzhengma_reg.getText().toString().trim();
+		 Message msg = handler.obtainMessage(); 
+		 if("".equals(mobilename))
+			{
+				 msg.what = 0;  
+              handler.sendMessage(msg); 
+              return;
+			}else if(!RegexMobile.VildateMobile(mobilename)){
+				 msg.what = 1;  
+              handler.sendMessage(msg);
+              return;
+			}else if("".equals(mima)){
+				 msg.what = 2;  
+              handler.sendMessage(msg); 
+              return;
+              
+			}else if("".equals(querenmima)){
+				 msg.what = 3;  
+	              handler.sendMessage(msg); 
+	              return;
+	              
+	              
+		  }else if(!mima.equals(querenmima)){
+				 msg.what = 6;  
+	              handler.sendMessage(msg); 
+	              return;
+	              
+			}
+	              else if("".equals(yanzheng)){
+					 msg.what = 4;  
+		              handler.sendMessage(msg); 
+		              return;     
+		}
+		 
 		new MyTask().start();
        }
     
@@ -174,7 +233,7 @@ public class RegisterActivity extends Activity implements OnClickListener{
 			}
 			
 			
-			msg.what = 1;			
+			msg.what = 5;			
     		handler.sendMessage(msg);
     	}
     }
@@ -228,9 +287,12 @@ public class RegisterActivity extends Activity implements OnClickListener{
 	  @Override
 	   public void onClick(View v) {
 		// TODO Auto-generated method stub
-		  Intent intent=new Intent(RegisterActivity.this,ShouYeActivity.class);
-			startActivity(intent);
-			finish();
+		
+			  Intent intent=new Intent(RegisterActivity.this,ShouYeActivity.class);
+				startActivity(intent);
+				finish();
+		
+		  
 	  }
 	  public String HttpClientGet(String url)
 		{

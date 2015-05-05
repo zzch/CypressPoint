@@ -36,9 +36,9 @@
             android:id="@+id/shiyitu_one"
             android:layout_width="@dimen/view_tongyong"
             android:layout_height="@dimen/view_sss_e"
-            android:background="@drawable/button"
             android:onClick="shiyitu"
             android:text="@string/major_card"
+            android:background="@drawable/button"
             android:textSize="@dimen/txsize_mid_x"
             android:textColor="@color/gold"
              />

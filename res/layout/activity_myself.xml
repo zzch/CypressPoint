@@ -96,15 +96,9 @@
         android:layout_height="match_parent" >
 
         <RelativeLayout
-<<<<<<< HEAD
             android:id="@+id/myself_setting"
             android:layout_width="@dimen/infor_view_layout_x"
             android:layout_height="@dimen/my_view_layout_height"
-=======
-            android:id="@+id/myself_message"
-            android:layout_width="345dp"
-            android:layout_height="70dp"
->>>>>>> 71a97318132858d8dbd53d7253ce3e14a0db72e7
             android:background="@drawable/button_focused"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/my_view_layout_top_x">
@@ -140,15 +134,9 @@
         
         
         <RelativeLayout
-<<<<<<< HEAD
             android:id="@+id/myself_setting"
             android:layout_width="@dimen/infor_view_layout_x"
             android:layout_height="@dimen/my_view_layout_height"
-=======
-            android:id="@+id/myself_jifen"
-            android:layout_width="345dp"
-            android:layout_height="70dp"
->>>>>>> 71a97318132858d8dbd53d7253ce3e14a0db72e7
             android:background="@drawable/button_focused"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/my_view_layout_top_xx">

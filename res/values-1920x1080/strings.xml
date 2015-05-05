@@ -49,9 +49,11 @@
   	<dimen name="count_orange_size">70dp</dimen>
   	<dimen name="count_text_left">76dp</dimen>
   	<dimen name="count_text_top">74dp</dimen>
-  	<dimen name="count_avg_left">72dp</dimen>
-  	<dimen name="count_avg_top">93dp</dimen>
+  	<dimen name="count_avg_left">78dp</dimen>
+  	<dimen name="count_avg_top">95dp</dimen>
   	<dimen name="count_ccc">17dp</dimen>
+  	<dimen name="count_time_height">60dp</dimen>
+  	
   	
   	<dimen name="title_height">60dp</dimen>
   	<dimen name="title_button_left">10dp</dimen>
@@ -69,7 +71,7 @@
   	<dimen name="view_image_a">180dp</dimen>
   	<dimen name="view_image_b">130dp</dimen>
   	
-  	<dimen name="view_sss_a">42dp</dimen>
+  	<dimen name="view_sss_a">54dp</dimen>
   	<dimen name="view_sss_aa">40dp</dimen>
   	<dimen name="view_sss_aaa">79dp</dimen>
   	
@@ -134,5 +136,9 @@
         <dimen name="infor_view_layout_x">345dp</dimen>
        <dimen name="infor_view_width">295dp</dimen>
        <dimen name="infor_view_x">30dp</dimen>
-       <dimen name="infor_view_xx">20dp</dimen>
+       <dimen name="infor_view_xx">10dp</dimen>
+       
+       <dimen name="register_view_width">340dp</dimen>
+       <dimen name="register_view_yanzhen">200dp</dimen>
+       <dimen name="register_view_huoquyanzhen">130dp</dimen>
 </resources>

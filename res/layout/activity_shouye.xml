@@ -68,9 +68,9 @@
              android:id="@+id/et_username"
              android:layout_width="300dp"
              android:layout_height="@dimen/view_mid_xx_title"
+             android:background="@drawable/e_button_pressed"
              android:hint=" 请输入手机号"
              android:textColor="@color/gold_half" 
-             android:background="@drawable/e_button_pressed"
              android:layout_marginTop="30dp"
              android:textColorHint="@color/gold_half"
              />
