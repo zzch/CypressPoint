@@ -6,20 +6,24 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.activity.adapter.ClubsAdapter;
-import cn.com.zcty.ILovegolf.model.Clubs;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.activity.adapter.ClubsAdapter;
+import cn.com.zcty.ILovegolf.model.Clubs;
 
 public class QiuGanActivity extends Activity{
 	private ArrayList<Clubs> clubsArrayList = new ArrayList<Clubs>(); 
+	private Button fanhuiButton;
 	private ListView listView;
 	RelativeLayout qiugan_layout;
 	Handler handler = new Handler(){
@@ -42,7 +46,21 @@ public class QiuGanActivity extends Activity{
 	private void initView() {
 		listView = (ListView) findViewById(R.id.listView1);
 		qiugan_layout = (RelativeLayout) findViewById(R.id.qiugan_layout);
+		fanhuiButton = (Button) findViewById(R.id.major_scorecard_back_er);
 		qiugan_layout.getBackground().setAlpha(80);
+		fanhuiButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				finish();
+			}
+		});
+	}
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		finish();
 	}
 	private void getData() {
 		listView.setAdapter(new ClubsAdapter(this,clubsArrayList));

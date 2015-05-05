@@ -44,7 +44,12 @@ public class MajorArrayNumberWheelAdapter extends AbstractWheelTextAdapter {
 		int a = 0; 
 		String items[] = new String[200];
 		for(int i=0;i<162;i++){
-			items[i] = a+"";
+			if(a==0){
+				items[i] = "进球";
+			}else{
+				items[i] = a+"";
+			}
+			
 			if(a<50){
 				a = a+1;
 			}else{

@@ -15,13 +15,14 @@ public class APIService {
 	  //按省份划分的球场列表
 	  public static final String SEARCH_COURSE="http://123.57.210.52/api/v1/venues/sectionalized_by_province?"; 
 	  //距离最近的球场列表
-	  public static final String NEAREST_COURSE="http://123.57.210.52/api/v1/venues/nearest?";
+	  public static final String NEAREST_COURSE="http://123.57.210.52/api/v1/venues/nearby?";
       //删除历史赛事信息
 	  public static final String DELETE_MATCHES="http://123.57.210.52/api/v1/matches/practice?";
 	  //创建比赛
 	  public static final String CREATE_PRACTICE_EVENTS="http://123.57.210.52/api/v1/matches/practice.json?";
-	  //修改积分卡
-	  public static final String MODIFYINTEGRAL = "http://123.57.210.52/api/v1/scorecards.json?";
+	  //修改简单积分卡
+	  public static final String MODIFYINTEGRAL = "http://123.57.210.52/api/v1/scorecards/simple.json?";
+	  
 	  //数据统计
 	  public static final String DATASTATISTICS = "http://123.57.210.52/api/v1/matches/practice/statistics/simple?";
 	  //练习赛事信息

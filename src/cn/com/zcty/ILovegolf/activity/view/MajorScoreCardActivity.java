@@ -114,18 +114,22 @@ public class MajorScoreCardActivity extends Activity {
 		if(requestCode==REQUESTCODE){
 		for(int i=0;i<=18;i++){
 			if (resultCode == i) {
-				String score = data.getStringExtra("score");
-				String putts = data.getStringExtra("putts");
-				String penalties = data.getStringExtra("penalties");
-				int position =Integer.parseInt(data.getStringExtra("position"));
-				setCard = new Setcard();
-				setCard.setRodNum(score);
-				setCard.setPutts(putts);
-				setCard.setPenalties(penalties);
-				setcardsArray.set(position/2, setCard);
-				adapter = new MajorScoreCardGridViewAdapter(scorecarsArray, setcardsArray, this);
-				grid_scorecard.setAdapter(adapter);
-				adapter.notifyDataSetChanged();
+				
+				if(data.getStringExtra("score")!=null){
+					String score = data.getStringExtra("score");
+					String putts = data.getStringExtra("putts");
+					String penalties = data.getStringExtra("penalties");
+					int position =Integer.parseInt(data.getStringExtra("position"));
+					setCard = new Setcard();
+					setCard.setRodNum(score);
+					setCard.setPutts(putts);
+					setCard.setPenalties(penalties);
+					setcardsArray.set(position/2, setCard);
+					adapter = new MajorScoreCardGridViewAdapter(scorecarsArray, setcardsArray, this);
+					grid_scorecard.setAdapter(adapter);
+					adapter.notifyDataSetChanged();
+				}else{	
+				}
 			}
 		}
 		}

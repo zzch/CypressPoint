@@ -34,6 +34,8 @@ import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.ArrayWheelAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.MajorArrayNumberWheelAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.MajorScoresAdapter;
+import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
+import cn.com.zcty.ILovegolf.activity.view.myself.SelecPicpupExit;
 import cn.com.zcty.ILovegolf.model.MajorScore;
 import cn.com.zcty.ILovegolf.model.MajorScoreJiQiu;
 import cn.com.zcty.ILovegolf.tools.ListViewSwipeGesture;
@@ -41,6 +43,7 @@ import cn.com.zcty.ILovegolf.tools.ListViewSwipeGesture.TouchCallbacks;
 import cn.com.zcty.ILovegolf.tools.OnWheelChangedListener;
 import cn.com.zcty.ILovegolf.tools.WheelView;
 import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 public class MajorScoreActivity extends Activity {
@@ -48,8 +51,6 @@ public class MajorScoreActivity extends Activity {
 	private TextView parText;
 	private TextView distanceText;
 	private TextView teeColorText;
-	private TextView scoreText;
-	private TextView scorePentaisText;
 	private Button fanhuiText;
 	public Button major_queding;
 	private ListView dataList;
@@ -66,6 +67,7 @@ public class MajorScoreActivity extends Activity {
 	private Button quedingButton;
 	private TextView orderText;
 	private String[] coolArray = {"果岭","球道外左侧","球道","球道外右侧","沙坑","不可打"};
+	private String[] coolArray_ = {""};
 	private String[] pentailsArray = {"1","2","3"};
 	private String[] pentailsArray_ = {""};
 	private String[] countArray = {"Driver","Putter","3 Wood","5 Wood","7 Wood",
@@ -104,22 +106,11 @@ public class MajorScoreActivity extends Activity {
 				editor.putString("score", score);
 				editor.putString("penalties", penalties);
 				editor.commit();
-				scoreText.setText(score);
-				scorePentaisText.setText(penalties);
 				count++;
-				orderText.setText(count+1+"");
-			}
-			if(msg.what==2){
-				SharedPreferences sp = MajorScoreActivity.this.getPreferences(MODE_PRIVATE);
-				SharedPreferences.Editor editor = sp.edit();
-				editor.putString("score", score);
-				editor.putString("penalties", penalties);
-				editor.commit();
-				Toast.makeText(MajorScoreActivity.this, "删除成功", Toast.LENGTH_LONG).show();
-				scoreText.setText(score);
-				scorePentaisText.setText(penalties);
+				count++;
 				orderText.setText(count+"");
 			}
+			
 			if(msg.what==3){
 				if(majorArray.size()>0){	
 					count = Integer.parseInt(majorArray.get(majorArray.size()-1).getOrder());
@@ -133,28 +124,38 @@ public class MajorScoreActivity extends Activity {
 				Intent intent = getIntent();
 				score = intent.getStringExtra("score");
 				penalties = intent.getStringExtra("penalties");
-				if(!(score.equals("null")&&penalties.equals("null"))){
-					scoreText.setText(score);
-					scorePentaisText.setText(penalties);
-				}else{
-					scoreText.setText("0");
-					scorePentaisText.setText("0");
-				}
 				
-				orderText.setText(count+1+"");
+				count++;
+				orderText.setText(count+"");
 				adapter =	new MajorScoresAdapter(MajorScoreActivity.this, majorArray);
 				dataList.setAdapter(adapter);
 				adapter.notifyDataSetChanged();
 				setListViewHeightBasedOnChildren(dataList);
 			}
 			if(msg.what==4){
+				if(msg.obj.equals("404")||msg.obj.equals("500")){
+					Toast.makeText(MajorScoreActivity.this, "网络异常，错误提示"+msg.obj, Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("403")){
+					Toast.makeText(MajorScoreActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+					FileUtil.delFile();
+					Intent intent = new Intent(MajorScoreActivity.this,ShouYeActivity.class);
+					startActivity(intent);
+					finish();
+				}else{
 				SharedPreferences sp = MajorScoreActivity.this.getPreferences(MODE_PRIVATE);
 				SharedPreferences.Editor editor = sp.edit();
 				editor.putString("score", score);
 				editor.putString("penalties", penalties);
 				editor.commit();
-				scoreText.setText(score);
-				scorePentaisText.setText(penalties);
+		
+				Intent intent = new Intent();
+				intent.putExtra("score", score);
+				intent.putExtra("putts", putts);
+				intent.putExtra("position", position);
+				intent.putExtra("penalties", penalties);
+				setResult(1,intent);
+				finish();
+				}
 			}
 		};
 	};
@@ -202,21 +203,18 @@ public class MajorScoreActivity extends Activity {
 				dataList.setVisibility(View.VISIBLE);
 			}
 		});
-		major_queding.setOnClickListener(new OnClickListener() {
+		
+			major_queding.setOnClickListener(new OnClickListener() {
 
-			@Override
-			public void onClick(View v) {
-				new JiqiuBianjiTask().start();
-				Intent intent = new Intent();
-				Log.i("woshitiancai", score);
-				intent.putExtra("score", score);
-				intent.putExtra("putts", putts);
-				intent.putExtra("position", position);
-				intent.putExtra("penalties", penalties);
-				setResult(1,intent);
-				finish();
-			}
-		});
+				@Override
+				public void onClick(View v) {
+					if(addArrayList.size()>0){
+					new JiqiuBianjiTask().start();
+					}
+				}
+			});
+		
+		
 		fanhui.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -242,34 +240,41 @@ public class MajorScoreActivity extends Activity {
 			}
 		});
 
-		coolWheel.addChangingListener(new OnWheelChangedListener() {
-
-			@Override
-			public void onChanged(WheelView wheel, int oldValue, int newValue) {
-				cool = coolArray[newValue];
-				
-				
-				if(coolArray[newValue].equals("不可打")){
-					pentails = "1";
-					penaitsWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, pentailsArray));
-					penaitsWheel.addChangingListener(new OnWheelChangedListener() {
-
-						@Override
-						public void onChanged(WheelView wheel, int oldValue, int newValue) {
-							pentails = pentailsArray[newValue];
-						}
-					});
-				}else{
-					penaitsWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, pentailsArray_));
-					pentails = "0";
-				}
-			}
-		});
+		
 		distanceWheel.addChangingListener(new OnWheelChangedListener() {
 
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
 				distance = (String) majorNumberAdapter.getItemText(newValue);
+				if(distance.equals("进球")){
+					distance = "0";
+					pentails = "0";
+					coolWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, coolArray_));
+					cool = "hole";
+				}else{
+					coolWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, coolArray));	
+					coolWheel.addChangingListener(new OnWheelChangedListener() {
+
+						@Override
+						public void onChanged(WheelView wheel, int oldValue, int newValue) {
+							cool = coolArray[newValue];		
+							if(coolArray[newValue].equals("不可打")){
+								pentails = "1";
+								penaitsWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, pentailsArray));
+								penaitsWheel.addChangingListener(new OnWheelChangedListener() {
+
+									@Override
+									public void onChanged(WheelView wheel, int oldValue, int newValue) {
+										pentails = pentailsArray[newValue];
+									}
+								});
+							}else{
+								penaitsWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, pentailsArray_));
+								pentails = "0";
+							}
+						}
+					});
+				}
 			}
 		});
 		countWheel.addChangingListener(new OnWheelChangedListener() {
@@ -299,13 +304,15 @@ public class MajorScoreActivity extends Activity {
 			public void onClick(View v) {
 				dataList.setVisibility(View.VISIBLE);
 				tianjia.setVisibility(View.VISIBLE);
-				MajorScore  majorScore = new MajorScore();
 				
+				MajorScore  majorScore = new MajorScore();
 				majorScore.setCool(cool);
 				majorScore.setOrder(count+"");							
 				majorScore.setDistance(distance);
 				majorScore.setPentails(pentails);
 				majorScore.setCount(popal);
+				count++;
+				orderText.setText(count+"");
 				String c;
 				if(cool.equals("球道")){
 					c = "fairway";
@@ -380,25 +387,17 @@ public class MajorScoreActivity extends Activity {
 
 		@Override
 		public void HalfSwipeListView(int position) {
-			Log.i("zhouhehehe", position+"");
-			String uid;
-			shanchuid = position;
-			if(shanchuid>majorArray.size()-addArrayList.size()||majorArray.size()-addArrayList.size()==0){
-				majorArray.remove(position);
-				//Log.i("kankanshuju", position-(majorArray.size()-addArrayList.size())+"");
-				addArrayList.remove(position-(majorArray.size()-addArrayList.size())-1);
-			}else{
-			uid = idArrayList.get(shanchuid);
+			Log.i("positionsss", position+"");
 			majorArray.remove(position);
-			//addArrayList.remove(position-(majorArray.size()-addArrayList.size())-1);
-			//	count--;
-			new DeleTask(uid).start();
-			}
+			addArrayList.remove(position);	
+			count--;
 			orderText.setText(count+"");
-			//new JiqiuTask().start();
 			adapter.notifyDataSetChanged();
 			setListViewHeightBasedOnChildren_t(dataList);
-
+			if(position!=0){
+				
+			}
+			
 		}
 
 		@Override
@@ -410,7 +409,8 @@ public class MajorScoreActivity extends Activity {
 	private void getData() {
 		majorNumberAdapter = new MajorArrayNumberWheelAdapter(this);
 		distanceWheel.setViewAdapter(majorNumberAdapter);
-		coolWheel.setViewAdapter(new ArrayWheelAdapter<String>(this, coolArray));		
+		coolWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, coolArray_));
+		penaitsWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, pentailsArray_));
 		countWheel.setViewAdapter(new ArrayWheelAdapter<String>(this, countArray));
 
 		Intent intent = getIntent();
@@ -427,8 +427,7 @@ public class MajorScoreActivity extends Activity {
 		parText = (TextView) findViewById(R.id.major_par);
 		distanceText = (TextView) findViewById(R.id.major_distance);
 		teeColorText = (TextView) findViewById(R.id.major_t);
-		scoreText = (TextView) findViewById(R.id.major_score);
-		scorePentaisText = (TextView) findViewById(R.id.major_score_penaits);
+	
 		dataList = (ListView) findViewById(R.id.major_count);
 		distanceWheel = (WheelView) findViewById(R.id.major_wheel_distance);
 		coolWheel = (WheelView) findViewById(R.id.major_wheel_cool);
@@ -583,40 +582,7 @@ public class MajorScoreActivity extends Activity {
 
 		}
 	}
-	class DeleTask extends Thread {
-		private String	duid;
-		public DeleTask(String duid) {
-			DeleTask.this.duid = duid;
-		}
-		@Override
-		public void run() {
-			super.run();
-			getdata();
-		}
-		public void getdata(){
-			SharedPreferences sp = getSharedPreferences("register", Context.MODE_PRIVATE);
-			String token = sp.getString("token", "token");
-
-			String path = APIService.JILU+"token="+token+"&uuid="+duid;
-			String jsonData = HttpUtils.HttpClientDelete(path);
-			JSONObject jsObject;
-			try {
-				jsObject = new JSONObject(jsonData);
-				score = jsObject.getString("score");	
-				putts = jsObject.getString("putts");
-				penalties = jsObject.getString("penalties");
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}	
-
-
-			jsonData = "chenggong";
-			Message msg = handler.obtainMessage();
-			msg.what=2;
-			handler.sendMessage(msg);
-		}
-	}
+	
 	class JiQiuJiLuTask extends Thread {
 		@Override
 		public void run() {
@@ -646,8 +612,13 @@ public class MajorScoreActivity extends Activity {
 					Log.i("zhouhel", jsonObject.getString("point_of_fall"));
 					score.setCount(jsonObject.getString("club"));
 					score.setPentails(jsonObject.getString("penalties"));
-
-
+					
+					MajorScoreJiQiu m = new MajorScoreJiQiu();
+					m.setClub(jsonObject.getString("club"));
+					m.setDistance_from_hole(jsonObject.getString("distance_from_hole"));
+					m.setPenalties(jsonObject.getString("penalties"));
+					m.setPoint_of_fall(jsonObject.getString("point_of_fall"));
+					addArrayList.add(m);
 					majorArray.add(score);
 				}
 			} catch (JSONException e) {
@@ -659,6 +630,11 @@ public class MajorScoreActivity extends Activity {
 			handler.sendMessage(msg);
 		}
 	}
+	/**
+	 * 击球编辑
+	 * @author Administrator
+	 *
+	 */
 	class JiqiuBianjiTask extends Thread {
 		@Override
 		public void run() {
@@ -677,14 +653,11 @@ public class MajorScoreActivity extends Activity {
 			map.put("strokes[]", bianji);
 			Intent intent = getIntent();
 			String uuid = intent.getStringExtra("uuid");
-			String path = APIService.SHIYAN+"token="+token+"&uuid="+uuid;
-			
-			
+			String path = APIService.SHIYAN+"token="+token+"&uuid="+uuid;	
+			String jsonArray =	HttpUtils.HttpClientPost(path, map);
 			try {
-				String jsonArray =	HttpUtils.HttpClientPost(path, map);
-				Log.i("ddajkjkl", jsonArray);
-				Log.i("ddajkjkl", path);
 				JSONObject jsObject = new JSONObject(jsonArray);	
+				Log.i("jiqiujilu", jsObject.toString());
 				score = jsObject.getString("score");	
 				putts = jsObject.getString("putts");
 				penalties = jsObject.getString("penalties");
@@ -694,33 +667,11 @@ public class MajorScoreActivity extends Activity {
 			}
 			Message msg = handler.obtainMessage();
 			msg.what = 4;
+			msg.obj = jsonArray;
 			handler.sendMessage(msg);
 
 		}
 	}
 	
-	class text extends Thread{
-		@Override
-		public void run() {
-			super.run();
-			getData();
-		}
-		public void getData(){
-			HashMap<String,String[]> map = new HashMap<String, String[]>(); 
-			MajorScoreJiQiu m = new MajorScoreJiQiu();
-			m.setClub("a");
-			m.setDistance_from_hole("v");
-			m.setPenalties("s");
-			m.setPoint_of_fall("f");
-			String[] s = {m.toString(),m.toString()};
-			map.put("strokes[]", s);
-			SharedPreferences sp = getSharedPreferences("register", Context.MODE_PRIVATE);
-			String token = sp.getString("token", "token");
-			Intent intent = getIntent();
-			String uuid = intent.getStringExtra("uuid");
-			String path = APIService.SHIYAN+"token="+token+"&uuid="+uuid;
-			String ss =	HttpUtils.HttpClientPost(path, map);
-			Log.i("ddajkjkl", ss);
-		}
-	}
+
 }

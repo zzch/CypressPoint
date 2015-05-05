@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
@@ -39,8 +41,10 @@ public class SettionsActivity extends Activity{
 			
 			@Override
 			public void onClick(View v) {
+
 				//Intent intent = new Intent(SettionsActivity.this,Myself.class);
 				//startActivity(intent);
+
 				finish();
 			}
 		});
@@ -49,8 +53,10 @@ public class SettionsActivity extends Activity{
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
 		super.onBackPressed();
+
 		//Intent intent = new Intent(SettionsActivity.this,Myself.class);
 		//startActivity(intent);
+
 		finish();
 	}
 	private void initView() {
