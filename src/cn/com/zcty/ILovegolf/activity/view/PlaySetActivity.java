@@ -382,8 +382,8 @@ public class PlaySetActivity extends Activity implements OnClickListener {
 		switch(v.getId()){
 		//点击返回按钮
 		case R.id.playset_back:
-			//intent=new Intent(PlaySetActivity.this,ChoosePitchActivity.class);
-			//startActivity(intent);
+			intent=new Intent(PlaySetActivity.this,ChoosePitchActivity.class);
+			startActivity(intent);
 			finish();
 			break;
 		
