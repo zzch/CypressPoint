@@ -703,12 +703,12 @@ public class MajorScoreActivity extends Activity {
 			try {
 				JSONObject jsObject = new JSONObject(jsonArray);	
 				Log.i("jiqiujilu", jsObject.toString());
-				//message = jsObject.getString("message");
-				//if(!(message.equals("没有进洞击球")||message.equals("重复进洞击球"))){
+				message = jsObject.getString("message");
+				if(!(message.equals("没有进洞击球")||message.equals("重复进洞击球"))){
 					score = jsObject.getString("score");	
 					putts = jsObject.getString("putts");
 					penalties = jsObject.getString("penalties");
-				//}
+				}
 				
 				
 			} catch (JSONException e) {
