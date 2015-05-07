@@ -56,20 +56,15 @@ public class ChoosePitchActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
-				// TODO Auto-generated method stub
-				ss = getSharedPreferences("name", MODE_PRIVATE);
-				SharedPreferences.Editor editor = ss.edit();
-				editor.putString("name", qiuchanglists.get(position).getName());
-				editor.commit();
-				Intent intent=new Intent(ChoosePitchActivity.this,PlaySetActivity.class);
-				intent.putExtra("sign", "1");
+				
+				/*
+				 *返回球场name 
+				 */
+				Intent intent = new Intent(ChoosePitchActivity.this,CreateMatchActivity.class);
+				intent.putExtra("name", qiuchanglists.get(position).getName());
+				intent.putExtra("false", "0");
 				intent.putExtra("uuid", qiuchanglists.get(position).getUuid());
-				Log.i("--->>uuid", "uuid"+qiuchanglists.get(position).getUuid());
-				SharedPreferences ss = getSharedPreferences("key", MODE_PRIVATE);
-				SharedPreferences.Editor editors = ss.edit();
-				editors.putString("key", qiuchanglists.get(position).getUuid());
-				editors.commit();
-				startActivity(intent);
+				setResult(0, intent);
 				finish();
 			}
 		});

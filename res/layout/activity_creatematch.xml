@@ -7,6 +7,7 @@
     >
    
     <RelativeLayout
+        
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_height"
         android:background="@anim/title_pingpu" >
@@ -61,13 +62,14 @@
     </RelativeLayout>
 
    <RelativeLayout
+       android:id="@+id/creatematch_select_diamond"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:layout_marginBottom="10dp"
        android:orientation="horizontal" >
 
        <ImageView
-           android:id="@+id/imageView1"
+           android:id="@+id/dingwei"
            android:layout_width="25dp"
            android:layout_height="25dp"
            android:layout_marginLeft="@dimen/view_small_x"
@@ -289,8 +291,13 @@
 	    <TextView
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
-	        android:text="计分方式" />
-            
+	        android:text="记分方式" />
+            <TextView
+            android:id="@+id/creatematch_fangshi"
+            android:layout_marginLeft="260dp"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="简单" />
 	    <ImageView
 	        android:id="@+id/imageView1"
 	        android:layout_width="@dimen/view_small_xx"
