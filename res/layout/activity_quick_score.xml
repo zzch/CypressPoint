@@ -58,6 +58,38 @@
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_mid_x" />
     </RelativeLayout>
+    
+    
+      <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+        >
+    
+     <Button
+            android:id="@+id/create_match"
+            android:layout_width="@dimen/view_tongyong"
+            android:layout_height="@dimen/view_sss_e"
+            android:onClick="onclick"
+            android:text="创建新比赛"
+            android:background="@drawable/button"
+            android:textSize="@dimen/txsize_mid_x"
+            android:textColor="@color/gold"
+             />
+      <Button
+            android:id="@+id/add_match"
+            android:layout_width="@dimen/view_tongyong"
+            android:layout_height="@dimen/view_sss_e"
+           android:onClick="onclick"
+            android:text="加入比赛"
+            android:gravity="center"
+            android:background="@drawable/button"
+            android:textSize="@dimen/txsize_mid_x"
+            android:textColor="@color/gold"
+             />
+      </LinearLayout>
+      
 
     <cn.com.zcty.ILovegolf.tools.XListView
         android:id="@+id/xListView"

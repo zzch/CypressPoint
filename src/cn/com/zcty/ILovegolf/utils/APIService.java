@@ -14,9 +14,11 @@ public class APIService {
 	  public static final String SCORECARD_SHOW="http://123.57.210.52/api/v1/matches/practice/show?";
 	  //按省份划分的球场列表
 	  public static final String SEARCH_COURSE="http://123.57.210.52/api/v1/venues/sectionalized_by_province?"; 
-	  //距离最近的球场列表
+	  //附近的球场列表
 	  public static final String NEAREST_COURSE="http://123.57.210.52/api/v1/venues/nearby?";
-      //删除历史赛事信息
+	  //最近的球场信息
+	  public static final String NEAREST_NEAREST="http://123.57.210.52/api/v1/venues/nearest?";
+	  //删除历史赛事信息
 	  public static final String DELETE_MATCHES="http://123.57.210.52/api/v1/matches/practice?";
 	  //创建比赛
 	  public static final String CREATE_PRACTICE_EVENTS="http://123.57.210.52/api/v1/matches/practice.json?";
@@ -63,26 +65,26 @@ public class APIService {
 	  //用户头像
 	  public static final String TITLE = "http://123.57.210.52/api/v1/users/portrait.json?";
 
-     //用户登录
-	 public static final String USERLOGIN= "http://123.57.210.52/api/v1/users/sign_in.json?";
+      //用户登录
+	  public static final String USERLOGIN= "http://123.57.210.52/api/v1/users/sign_in.json?";
 	  
-	 //专业积分统计
-	 public static final String MAJORCOUNT = "http://123.57.210.52/api/v1/matches/practice/statistics/professional.json?";
+	  //专业积分统计
+	  public static final String MAJORCOUNT = "http://123.57.210.52/api/v1/matches/practice/statistics/professional.json?";
 	 
-	 //统计
-	 public static final String COUNTS = "http://123.57.210.52/api/v1/statistics.json?";
+	  //统计
+	  public static final String COUNTS = "http://123.57.210.52/api/v1/statistics.json?";
 
-	 //已访问球场列表
-	 public static final String VISTTED = "http://123.57.210.52/api/v1/venues/visited.json?";
+	  //已访问球场列表
+	  public static final String VISTTED = "http://123.57.210.52/api/v1/venues/visited.json?";
 	 
-	 //个性统计
-	 public static final String GEXINGCOUNT = "http://123.57.210.52/api/v1/statistics/customize.json?";
+	  //个性统计
+	  public static final String GEXINGCOUNT = "http://123.57.210.52/api/v1/statistics/customize.json?";
 
-	 //创建竞技赛
-	 public static final String COMPETITION = "http://123.57.210.52/api/v1/matches/tournament.json?";
+	  //创建竞技赛
+	  public static final String COMPETITION = "http://123.57.210.52/api/v1/matches/tournament.json?";
 
-	 //竞技赛列表
-	 public static final String COMPETITIONCHOOSEPITCH = "http://123.57.210.52/api/v1/venues/matches/tournament.json?";
+	  //竞技赛列表
+	  public static final String COMPETITIONCHOOSEPITCH = "http://123.57.210.52/api/v1/venues/matches/tournament.json?";
 	 
 	 //竞技赛事信息
 	 public static final String COMPETITIONINFORMATION = "http://123.57.210.52/api/v1/matches/tournament/show.json?";

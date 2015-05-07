@@ -96,6 +96,10 @@
             	 android:configChanges="orientation|screenSize"
             ></activity>
         
+        
+        
+         <activity android:name="cn.com.zcty.ILovegolf.activity.view.CreateMatchActivity" android:screenOrientation="portrait"></activity>
+         <activity android:name="cn.com.zcty.ILovegolf.activity.view.AddMatchActivity" android:screenOrientation="portrait"></activity>
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"

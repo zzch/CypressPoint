@@ -206,11 +206,13 @@ public class CompetitionNewActivity extends Activity{
 			
 			@Override
 			public void onClick(View v) {
-				
+				Log.i("selectSession","----");
 				if(selectSessionListView.getVisibility()==View.GONE){
 					selectSessionListView.setVisibility(View.VISIBLE);
+					Log.i("selectSession","=====");
 				}else{
 					selectSessionListView.setVisibility(View.GONE);
+					Log.i("selectSession","++++++");
 				}
 				selectSession_2.setVisibility(View.GONE);
 				selectSession_t.setVisibility(View.GONE);
@@ -459,12 +461,14 @@ public class CompetitionNewActivity extends Activity{
 			String jsonData=HttpUtils.HttpClientGet(path);
 			try {
 				JSONObject jsonObj=new JSONObject(jsonData);
+				Log.i("json", "json----"+jsonObj);
 				JSONArray subArray=jsonObj.getJSONArray("courses");
 				Log.i("name", jsonData);
 				for(int j=0;j<subArray.length();j++){
 					JSONObject jsonobj=subArray.getJSONObject(j); 
 					nameArrayList.add(jsonobj.getString("name"));
 					diamond.add(jsonobj.getString("name")+"场("+jsonobj.getString("holes_count")+"洞)");
+					
 					if(Integer.parseInt(jsonobj.getString("holes_count"))==9){					
 						diamond_t.add(jsonobj.getString("name")+"场("+jsonobj.getString("holes_count")+"洞)");
 						name_2ArrayList.add(jsonobj.getString("name"));
@@ -474,6 +478,7 @@ public class CompetitionNewActivity extends Activity{
 					JSONArray jj = jsonobj.getJSONArray("tee_boxes");
 					for(int i=0;i<jj.length();i++){
 						color.add(jj.getString(i));
+						Log.i("color", ""+color);
 					}
 					uuids.add(jsonobj.getString("uuid"));
 				}

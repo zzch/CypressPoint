@@ -78,7 +78,7 @@
             android:id="@+id/jingji_one"
            android:layout_width="@dimen/view_tongyong"
             android:layout_height="@dimen/view_sss_e"
-            android:visibility="gone"
+           
             android:layout_marginTop="@dimen/view_mid_xx"
             android:background="@drawable/button"
             android:onClick="jingji"

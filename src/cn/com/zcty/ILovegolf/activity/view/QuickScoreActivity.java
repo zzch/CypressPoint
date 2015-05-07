@@ -12,6 +12,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -25,6 +26,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.activity.adapter.PitchAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.QuickScoreAdapter;
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.model.Course;
@@ -35,6 +37,7 @@ import cn.com.zcty.ILovegolf.tools.XListView.RemoveListener;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
+import cn.com.zcty.ILovegolf.utils.JsonUtil;
 
 public class QuickScoreActivity extends Activity implements IXListViewListener ,RemoveListener,OnItemClickListener{
 	private XListView mListView;
@@ -49,6 +52,7 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 	private ProgressDialog progressDialog;
 	private Handler mHandler;
 	private String result = "shipai";
+	
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -142,8 +146,24 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 			startActivity(intent);
 			finish();
 			break;
+			//创建新比赛
+		case R.id.create_match:
+			intent  = new Intent(QuickScoreActivity.this,CreateMatchActivity.class);
+			startActivity(intent);
+			finish();
+			break;
+			//加入比赛
+		case R.id.add_match:
+			intent  = new Intent(QuickScoreActivity.this,AddMatchActivity.class);
+			startActivity(intent);
+			finish();
+			break;
 		}
 	}
+    
+	
+  
+	
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
 		SharedPreferences ss = getSharedPreferences("name", MODE_PRIVATE);
