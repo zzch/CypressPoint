@@ -16,6 +16,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 
@@ -33,6 +34,11 @@ public class AddMatchActivity extends Activity {
 	public void initView(){
 	
 	}
-		
+	
+	public void onclick(View v){
+		Intent intent = new Intent(AddMatchActivity.this,QuickScoreActivity.class);
+		startActivity(intent);
+		finish();
+	}
 	
 }

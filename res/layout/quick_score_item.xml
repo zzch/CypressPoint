@@ -155,19 +155,20 @@
             android:layout_marginLeft="@dimen/view_small_xx_w"
             android:gravity="center"
             android:text="删除"
+            android:visibility="gone"
             android:textColor="#ff0000" 
             
             />
 
        <ImageView
             android:id="@+id/tv_coating"
-            android:layout_width="@dimen/view_mid_xxx"
+            android:layout_width="25dp"
             android:layout_height="@dimen/view_small_xx"
             android:layout_gravity="center"
             android:layout_marginLeft="30dp"
-            android:background="@drawable/pingpu_onclick"
+           android:visibility="gone"
             android:src="@drawable/icon_arrow" 
-            android:visibility="gone" /> 
+            /> 
             
   
     </FrameLayout>

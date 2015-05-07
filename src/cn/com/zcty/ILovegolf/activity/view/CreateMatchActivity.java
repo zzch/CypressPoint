@@ -32,6 +32,7 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -45,7 +46,7 @@ public class CreateMatchActivity extends Activity {
 	private List<QiuChangList> qiuchanglists;
 	private	String address;
 	public static String LOCATION_BCR = "location_bcr";
-	
+	private Button create_fanhui;
 	private TextView qiuchang_name;
 	private TextView qiudongTextView;
 	private TextView zichangTextView;
@@ -133,6 +134,7 @@ public class CreateMatchActivity extends Activity {
 		jifenfangshi = (RelativeLayout) findViewById(R.id.jifenfangshi);
 		leixing_layout = (RelativeLayout) findViewById(R.id.leixing_layout);
 		imageView = (ImageView) findViewById(R.id.imageView);
+		create_fanhui = (Button) findViewById(R.id.create_fanhui);
 	}
 	private void initialize()
 	{
@@ -140,6 +142,17 @@ public class CreateMatchActivity extends Activity {
 	}
 	
 	public void onclckLister(){
+		
+		create_fanhui.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(CreateMatchActivity.this,QuickScoreActivity.class);
+				startActivity(intent);
+				finish();
+			}
+		});
 		
          onclickimage.setOnClickListener(new OnClickListener() {
 			
@@ -175,6 +188,7 @@ public class CreateMatchActivity extends Activity {
  			@Override
  			public void onClick(View v) {
  				Log.i("selectSession","----");
+ 				selectSession_tListView.setVisibility(View.GONE);
  				if(selectSessionListView.getVisibility()==View.GONE){
  					selectSessionListView.setVisibility(View.VISIBLE);
  					Log.i("selectSession","====");
@@ -223,6 +237,7 @@ public class CreateMatchActivity extends Activity {
 		public void onClick(View v) {
 			if(selectSession_tListView.getVisibility()==View.GONE){
 				selectSession_tListView.setVisibility(View.VISIBLE);
+				
 			}else{
 				selectSession_tListView.setVisibility(View.GONE);
 			}
@@ -260,6 +275,7 @@ public class CreateMatchActivity extends Activity {
 		
 		@Override
 		public void onClick(View v) {
+			selectSession_t_2ListView.setVisibility(View.GONE);
 			if(selectSession_2ListView.getVisibility()==View.GONE){
 				selectSession_2ListView.setVisibility(View.VISIBLE);
 			}else{
@@ -373,20 +389,20 @@ public class CreateMatchActivity extends Activity {
 		selectSession_t_2ListView.setAdapter(new SelectSessionTAdapter(this,color));
 		if(diamond.size()>=1){
 			
-			int itemHeight = 18;
+			int itemHeight = 13;
 			itemHeight = itemHeight+5;
 			setListViewHeightBasedOnChildren(selectSessionListView,itemHeight);
 			
 		}
 		if(diamond_t.size()>=1){
 			
-			int itemHeight = 18;
+			int itemHeight = 13;
 			itemHeight = itemHeight+5;
 			setListViewHeightBasedOnChildren(selectSession_2ListView,itemHeight);
 			
 		}
 		if(color.size()>=1){
-			int itemHeight = 30;
+			int itemHeight = 20;
 			setListViewHeightBasedOnChildren(selectSession_tListView,itemHeight);
 			setListViewHeightBasedOnChildren(selectSession_t_2ListView,itemHeight);
 		}
@@ -452,6 +468,7 @@ public class CreateMatchActivity extends Activity {
 		super.onDestroy();
 		unregisterReceiver(broadcastReceiver);
 	}
+
           
 
 }

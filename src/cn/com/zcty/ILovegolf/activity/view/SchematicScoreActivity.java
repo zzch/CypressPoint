@@ -1,6 +1,5 @@
 package cn.com.zcty.ILovegolf.activity.view;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,29 +17,34 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.QuickScoreAdapter;
+import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.model.Course;
 import cn.com.zcty.ILovegolf.model.QuickContent;
-import cn.com.zcty.ILovegolf.tools.XListView;
-import cn.com.zcty.ILovegolf.tools.XListView.IXListViewListener;
-import cn.com.zcty.ILovegolf.tools.XListView.RemoveListener;
 import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
-/**
- * 专业积分卡
- * @author deii
- *
- */
-public class SchematicScoreActivity extends Activity implements IXListViewListener ,RemoveListener,OnItemClickListener{
-	private XListView mListView;
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
+import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
+
+
+public class SchematicScoreActivity extends Activity {
+	private int itemHeight = 20;
+	private ScrollView mScrollView;
+	private PullToRefreshScrollView mPullRefreshScrollView;
+	private ListView mListView;
 	private ImageView image_tishi;
 	private QuickScoreAdapter slideAdapter;
 	private ArrayList<QuickContent> quickArrayList = new ArrayList<QuickContent>();
@@ -51,26 +55,43 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 	private  int pag=1;
 	private ProgressDialog progressDialog;
 	private Handler mHandler;
-	private String result = "shibai";
-	private TextView titleName;
+	private String result = "shipai";
+	
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
-
-
+				mPullRefreshScrollView.onRefreshComplete();//刷新
 				getData();
-				//hideProgressDialog();
-				Log.i("shuzhijieguo", quickArrayList.size()+"");
+				if(msg.obj.equals("404")||msg.obj.equals("500")){//判断是服务端问题
+					Toast.makeText(SchematicScoreActivity.this, "网络异常，错误提示"+msg.obj, Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("403")){
+					Toast.makeText(SchematicScoreActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+					FileUtil.delFile();
+					Intent intent = new Intent(SchematicScoreActivity.this,ShouYeActivity.class);
+					startActivity(intent);
+					finish();
+				}else{
+				/*
+				 * 如果没有数据，则出现提示添加数据的文字
+				 */
 				if(quickArrayList.size()!=0){
 					image_tishi.setVisibility(View.INVISIBLE);
 					mListView.setVisibility(View.VISIBLE);
 				}else{
 					image_tishi.setVisibility(View.VISIBLE);
 					mListView.setVisibility(View.GONE);
-				}
+				}}
 			}
+			/*
+			 *加载成功，加载框消失 
+			 */
 			hideProgressDialog();
 			if(msg.what==2){
+				if(msg.obj.equals("404")||msg.obj.equals("500")){//判断是服务端问题
+					Toast.makeText(SchematicScoreActivity.this, "删除失败,当前网络异常，错误提示"+msg.obj, Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("403")){
+					Toast.makeText(SchematicScoreActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+				}else{				
 				if(result.equals("success")){
 				Toast.makeText(SchematicScoreActivity.this, "删除成功", Toast.LENGTH_LONG).show();
 				slideAdapter.notifyDataSetChanged();
@@ -78,7 +99,7 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 				Toast.makeText(SchematicScoreActivity.this, "删除失败,当前网络不稳定", Toast.LENGTH_LONG).show();
 				image_tishi.setVisibility(View.INVISIBLE);
 				mListView.setVisibility(View.VISIBLE);
-			}
+			}}
 			}
 		};
 	};
@@ -91,72 +112,94 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 		new MyTask().start();
 		mHandler= new Handler();
 		showProgressDialog("提示","正在努力加载数据！");
+		setListeners();
 	}
+	private void setListeners() {
+		/*
+		 * 下拉或者上拉的时候
+		 */
+		mPullRefreshScrollView.setOnRefreshListener(new OnRefreshListener<ScrollView>() {
+
+			@Override
+			public void onRefresh(PullToRefreshBase<ScrollView> refreshView) {
+				quickArrayList.clear();
+				new MyTask().start();
+				slideAdapter.notifyDataSetChanged();
+						
+				
+			}
+		});
+		
+	   	mScrollView = mPullRefreshScrollView.getRefreshableView();
+	}
+	
 	private void initView() {
-		mListView = (XListView) findViewById(R.id.xListView);
-		mListView.setXListViewListener(this);
+		mListView = (ListView) findViewById(R.id.listview);
 		image_tishi = (ImageView) findViewById(R.id.tishi);
-		titleName = (TextView) findViewById(R.id.textView1);
-		titleName.setText("专业记分卡");
+		mPullRefreshScrollView = (PullToRefreshScrollView) findViewById(R.id.pull_refresh_scrollview);
 	}
 	private void getData() {
 		slideAdapter = new QuickScoreAdapter(this, quickArrayList,nameArrayList);
 		mListView.setAdapter(slideAdapter);
-		mListView.setOnItemClickListener(this);
-		mListView.setPullLoadEnable(true);
-		mListView.setRemoveListener(this);
-		mListView.setPullLoadEnable(false);
-		
+		mListView.setOnItemClickListener(new OnItemClickListener() {
 
-	}
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
+					long arg3) {
+				SharedPreferences ss = getSharedPreferences("name", MODE_PRIVATE);
+				SharedPreferences.Editor editor = ss.edit();
+				editor.putString("name", quickArrayList.get(position-1).getCourse().get(position-1).getName());
+				editor.commit();
+				intent =new Intent(SchematicScoreActivity.this,ScoreCardActivity.class);
+				//intent传值
+				intent.putExtra("uuid", quickArrayList.get(position-1).getUuid());		
+				startActivity(intent);
+				overridePendingTransition(R.anim.slide_in_from_right, R.anim.remain_original_location);
+				//finish();
+			}
+		});
+		for(int i=0;i<quickArrayList.size();i++){
+			itemHeight = itemHeight + 5;
+		}
+		setListViewHeightBasedOnChildren(mListView);
+		}
 	//点击事件
 	public void onclick(View v){
 
 		switch(v.getId()){
 		//返回按钮
 		case R.id.k_back:
-			//intent=new Intent(SchematicScoreActivity.this,TabHostActivity.class);
-			//startActivity(intent);
-			finish();	
+			intent=new Intent(SchematicScoreActivity.this,TabHostActivity.class);
+			startActivity(intent);
+			finish();
 			break;
 			//新建按钮
 		case R.id.k_build:
-			intent=new Intent(SchematicScoreActivity.this,MajorChoosePitchActivity.class);
+			intent=new Intent(SchematicScoreActivity.this,ChoosePitchActivity.class);
 			startActivity(intent);
-			//finish();
+			finish();
+			break;
+			//创建新比赛
+		case R.id.create_match:
+			intent  = new Intent(SchematicScoreActivity.this,CreateMatchActivity.class);
+			startActivity(intent);
+			finish();
+			break;
+			//加入比赛
+		case R.id.add_match:
+			intent  = new Intent(SchematicScoreActivity.this,AddMatchActivity.class);
+			startActivity(intent);
+			finish();
 			break;
 		}
 	}
-	@Override
-	public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
-		SharedPreferences ss = getSharedPreferences("name", MODE_PRIVATE);
-		SharedPreferences.Editor editor = ss.edit();
-		editor.putString("name", quickArrayList.get(position-1).getCourse().get(position-1).getName());
-		editor.commit();
-		intent =new Intent(SchematicScoreActivity.this,MajorScoreCardActivity.class);
-		//intent传值
-		intent.putExtra("uuid", quickArrayList.get(position-1).getUuid());		
-		startActivity(intent);
-		overridePendingTransition(R.anim.slide_in_from_right, R.anim.remain_original_location);
-		//finish();
-	}
-	@Override
-	public void removeItem(int position) {
-		mListView.isSlide = false;
-		mListView.itemView.findViewById(R.id.tv_coating).setVisibility(View.VISIBLE);
-		quickArrayList.remove(position-1);
-		new MyTaskDele(uuidArrayList.get(position-1)).start();
-		slideAdapter.notifyDataSetChanged();
-		if(quickArrayList.size()!=0){
-			image_tishi.setVisibility(View.INVISIBLE);
-			mListView.setVisibility(View.VISIBLE);
-		}else{
-			image_tishi.setVisibility(View.VISIBLE);
-			mListView.setVisibility(View.GONE);
-		}
-		
-	}
-	@Override
+    
+	
+  
+	
+
+	
+	/*@Override
 	public void onRefresh() {
 		
 		mHandler.postDelayed(new Runnable() {
@@ -170,13 +213,9 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 			}
 		}, 2000);
 
-	}
-	private void onLoad() {
-		mListView.stopRefresh();
-		mListView.stopLoadMore();
-		mListView.setRefreshTime("刚刚");
-	}
-	@Override
+	}*/
+
+	/*@Override
 	public void onLoadMore() {
 		//mListView.itemView.findViewById(R.id.tv_coating).setVisibility(View.VISIBLE);
 
@@ -192,7 +231,7 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 		}, 2000);
 		
 
-	}
+	}*/
 	class MyTask extends Thread{
 		@Override
 		public void run() {
@@ -204,9 +243,10 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String page=Integer.toHexString(pag);
 			String token=sp.getString("token", "token");
-			path = APIService.MATCHES_LIST+"page="+page+"&token="+token+"&scoring_type=professional";
+			Log.i("tokens", token);
+
+			path = APIService.MATCHES_LIST+"page="+page+"&token="+token;
 			String JsonData=HttpUtils.HttpClientGet(path);
-			Log.i("asdf", JsonData);
 			try {
 				JSONArray jsonarray=new JSONArray(JsonData);
 				List<Course> arrayCouse = new ArrayList<Course>();
@@ -227,7 +267,6 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 					nameArrayList.add(obj.getString("name"));
 					course.setAddress(obj.getString("address"));
 					arrayCouse.add(course);
-
 					quickContent.setStrokes(jsonObj.getString("score"));
 					quickContent.setRecorded_scorecards_count(jsonObj.getString("recorded_scorecards_count"));
                      Log.i("cc", "cc----"+quickContent.getRecorded_scorecards_count());
@@ -238,6 +277,7 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 				
 				Message msg = handler.obtainMessage();
 				msg.what = 1;
+				msg.obj = JsonData;
 				handler.sendMessage(msg);
 
 			} catch (JSONException e) {
@@ -261,11 +301,9 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 		public void getData(){
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String token=sp.getString("token", "token");
-			Log.i("ssss", uuid+"zhou");
 			String path = APIService.DELET+"uuid="+uuid+"&token="+token;
+			String jsonDele = HttpUtils.HttpClientDelete(path);
 			try {
-				String jsonDele = HttpUtils.HttpClientDelete(path);
-				Log.i("ssss", jsonDele+"zhou");
 				JSONObject json = new JSONObject(jsonDele);
 				result = json.getString("result");
 				
@@ -283,6 +321,7 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 			}
 			Message msg = handler.obtainMessage();
 			msg.what = 2;
+			msg.obj = jsonDele;
 			handler.sendMessage(msg);
 		}
 	}
@@ -308,5 +347,39 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 			progressDialog.dismiss();
 		}
 	}
+	 //定义函数动态控制listView的高度
+    public void setListViewHeightBasedOnChildren(ListView listView) {
+
+
+       //获取listview的适配器
+       ListAdapter listAdapter = listView.getAdapter();
+       //item的高度
+       
+
+
+       if (listAdapter == null) {
+           return;
+       }
+
+
+       int totalHeight = 0;
+
+
+       for (int i = 0; i < listAdapter.getCount(); i++) {
+       totalHeight += Dp2Px(getApplicationContext(),itemHeight)+listView.getDividerHeight();
+       }
+
+
+       ViewGroup.LayoutParams params = listView.getLayoutParams();
+       params. height = totalHeight;
+
+
+       listView.setLayoutParams(params);
+   }
+      //dp转化为px
+    public int Dp2Px(Context context, float dp) {
+       final float scale = context.getResources().getDisplayMetrics().density;
+       return (int ) (dp * scale + 0.5f);
+   }
 
 }

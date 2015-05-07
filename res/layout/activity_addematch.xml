@@ -32,7 +32,7 @@
         
 
         <Button
-            android:id="@+id/k_back"
+            android:id="@+id/add_back"
             android:layout_width="80dp"
             android:layout_height="47dp"
             android:layout_alignParentLeft="true"
@@ -41,7 +41,7 @@
             android:text="@string/back"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_small_xx" 
-            android:onClick="onclick"
+           android:onClick="onclick"
              />
         
         <ImageView
