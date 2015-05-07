@@ -73,7 +73,7 @@ public class CreateMatchActivity extends Activity {
 	private RelativeLayout selectSession_t_2;
 	private RelativeLayout jifenfangshi;
 	private RelativeLayout leixing_layout;
-	private ImageView imageView1;
+	private ImageView imageView;
 	private String tiTai[]={"红色T台","白色T台","蓝色T台","黑色T台","金色T台"};
 	private String tee_boxes;//T台颜色
     private String uuid;
@@ -132,7 +132,7 @@ public class CreateMatchActivity extends Activity {
 		
 		jifenfangshi = (RelativeLayout) findViewById(R.id.jifenfangshi);
 		leixing_layout = (RelativeLayout) findViewById(R.id.leixing_layout);
-		imageView1 = (ImageView) findViewById(R.id.imageView1);
+		imageView = (ImageView) findViewById(R.id.imageView);
 	}
 	private void initialize()
 	{
@@ -158,10 +158,10 @@ public class CreateMatchActivity extends Activity {
 				// TODO Auto-generated method stub
 				if(leixing_layout.getVisibility()==View.VISIBLE){
 					leixing_layout.setVisibility(View.GONE);
-					imageView1.setImageResource(R.drawable.image_icon_up);
+					imageView.setImageResource(R.drawable.image_icon_up);
 				}else{
 					leixing_layout.setVisibility(View.VISIBLE);
-					imageView1.setImageResource(R.drawable.image_icon);
+					imageView.setImageResource(R.drawable.image_icon);
 				}
 			}
 		});
@@ -452,6 +452,6 @@ public class CreateMatchActivity extends Activity {
 		super.onDestroy();
 		unregisterReceiver(broadcastReceiver);
 	}
-
+          
 
 }
