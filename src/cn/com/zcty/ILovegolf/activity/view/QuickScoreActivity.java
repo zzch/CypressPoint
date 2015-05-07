@@ -12,35 +12,39 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ImageView;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.ScrollView;
+import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.activity.adapter.PitchAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.QuickScoreAdapter;
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.model.Course;
 import cn.com.zcty.ILovegolf.model.QuickContent;
-import cn.com.zcty.ILovegolf.tools.XListView;
-import cn.com.zcty.ILovegolf.tools.XListView.IXListViewListener;
-import cn.com.zcty.ILovegolf.tools.XListView.RemoveListener;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
-import cn.com.zcty.ILovegolf.utils.JsonUtil;
 
-public class QuickScoreActivity extends Activity implements IXListViewListener ,RemoveListener,OnItemClickListener{
-	private XListView mListView;
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
+import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
+
+
+public class QuickScoreActivity extends Activity {
+	private int itemHeight = 20;
+	private ScrollView mScrollView;
+	private PullToRefreshScrollView mPullRefreshScrollView;
+	private ListView mListView;
 	private ImageView image_tishi;
 	private QuickScoreAdapter slideAdapter;
 	private ArrayList<QuickContent> quickArrayList = new ArrayList<QuickContent>();
@@ -56,6 +60,7 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
+				mPullRefreshScrollView.onRefreshComplete();//刷新
 				getData();
 				if(msg.obj.equals("404")||msg.obj.equals("500")){//判断是服务端问题
 					Toast.makeText(QuickScoreActivity.this, "网络异常，错误提示"+msg.obj, Toast.LENGTH_LONG).show();
@@ -107,29 +112,57 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 		new MyTask().start();
 		mHandler= new Handler();
 		showProgressDialog("提示","正在努力加载数据！");
+		setListeners();
 	}
-	@Override
-	protected void onRestart() {
-		// TODO Auto-generated method stub
-		super.onRestart();
-		//new MyTask().start();
-	}
-	private void initView() {
-		mListView = (XListView) findViewById(R.id.xListView);
-		mListView.setXListViewListener(this);
-		image_tishi = (ImageView) findViewById(R.id.tishi);
+	private void setListeners() {
+		/*
+		 * 下拉或者上拉的时候
+		 */
+		mPullRefreshScrollView.setOnRefreshListener(new OnRefreshListener<ScrollView>() {
+
+			@Override
+			public void onRefresh(PullToRefreshBase<ScrollView> refreshView) {
+				quickArrayList.clear();
+				new MyTask().start();
+				slideAdapter.notifyDataSetChanged();
+						
+				
+			}
+		});
 		
+	   	mScrollView = mPullRefreshScrollView.getRefreshableView();
+	}
+	
+	private void initView() {
+		mListView = (ListView) findViewById(R.id.listview);
+		image_tishi = (ImageView) findViewById(R.id.tishi);
+		mPullRefreshScrollView = (PullToRefreshScrollView) findViewById(R.id.pull_refresh_scrollview);
 	}
 	private void getData() {
 		slideAdapter = new QuickScoreAdapter(this, quickArrayList,nameArrayList);
 		mListView.setAdapter(slideAdapter);
-		mListView.setOnItemClickListener(this);
-		mListView.setPullLoadEnable(true);
-		mListView.setRemoveListener(this);
-		mListView.setPullLoadEnable(false);
-		
+		mListView.setOnItemClickListener(new OnItemClickListener() {
 
-	}
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
+					long arg3) {
+				SharedPreferences ss = getSharedPreferences("name", MODE_PRIVATE);
+				SharedPreferences.Editor editor = ss.edit();
+				editor.putString("name", quickArrayList.get(position-1).getCourse().get(position-1).getName());
+				editor.commit();
+				intent =new Intent(QuickScoreActivity.this,ScoreCardActivity.class);
+				//intent传值
+				intent.putExtra("uuid", quickArrayList.get(position-1).getUuid());		
+				startActivity(intent);
+				overridePendingTransition(R.anim.slide_in_from_right, R.anim.remain_original_location);
+				//finish();
+			}
+		});
+		for(int i=0;i<quickArrayList.size();i++){
+			itemHeight = itemHeight + 5;
+		}
+		setListViewHeightBasedOnChildren(mListView);
+		}
 	//点击事件
 	public void onclick(View v){
 
@@ -164,36 +197,9 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 	
   
 	
-	@Override
-	public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
-		SharedPreferences ss = getSharedPreferences("name", MODE_PRIVATE);
-		SharedPreferences.Editor editor = ss.edit();
-		editor.putString("name", quickArrayList.get(position-1).getCourse().get(position-1).getName());
-		editor.commit();
-		intent =new Intent(QuickScoreActivity.this,ScoreCardActivity.class);
-		//intent传值
-		intent.putExtra("uuid", quickArrayList.get(position-1).getUuid());		
-		startActivity(intent);
-		overridePendingTransition(R.anim.slide_in_from_right, R.anim.remain_original_location);
-		//finish();
-	}
-	@Override
-	public void removeItem(int position) {
-		mListView.isSlide = false;
-		mListView.itemView.findViewById(R.id.tv_coating).setVisibility(View.VISIBLE);
-		quickArrayList.remove(position-1);
-		new MyTaskDele(uuidArrayList.get(position-1)).start();
-		slideAdapter.notifyDataSetChanged();
-		if(quickArrayList.size()!=0){
-			image_tishi.setVisibility(View.INVISIBLE);
-			mListView.setVisibility(View.VISIBLE);
-		}else{
-			image_tishi.setVisibility(View.VISIBLE);
-			mListView.setVisibility(View.GONE);
-		}
-		
-	}
-	@Override
+
+	
+	/*@Override
 	public void onRefresh() {
 		
 		mHandler.postDelayed(new Runnable() {
@@ -207,13 +213,9 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 			}
 		}, 2000);
 
-	}
-	private void onLoad() {
-		mListView.stopRefresh();
-		mListView.stopLoadMore();
-		mListView.setRefreshTime("刚刚");
-	}
-	@Override
+	}*/
+
+	/*@Override
 	public void onLoadMore() {
 		//mListView.itemView.findViewById(R.id.tv_coating).setVisibility(View.VISIBLE);
 
@@ -229,7 +231,7 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 		}, 2000);
 		
 
-	}
+	}*/
 	class MyTask extends Thread{
 		@Override
 		public void run() {
@@ -345,5 +347,39 @@ public class QuickScoreActivity extends Activity implements IXListViewListener ,
 			progressDialog.dismiss();
 		}
 	}
+	 //定义函数动态控制listView的高度
+    public void setListViewHeightBasedOnChildren(ListView listView) {
+
+
+       //获取listview的适配器
+       ListAdapter listAdapter = listView.getAdapter();
+       //item的高度
+       
+
+
+       if (listAdapter == null) {
+           return;
+       }
+
+
+       int totalHeight = 0;
+
+
+       for (int i = 0; i < listAdapter.getCount(); i++) {
+       totalHeight += Dp2Px(getApplicationContext(),itemHeight)+listView.getDividerHeight();
+       }
+
+
+       ViewGroup.LayoutParams params = listView.getLayoutParams();
+       params. height = totalHeight;
+
+
+       listView.setLayoutParams(params);
+   }
+      //dp转化为px
+    public int Dp2Px(Context context, float dp) {
+       final float scale = context.getResources().getDisplayMetrics().density;
+       return (int ) (dp * scale + 0.5f);
+   }
 
 }
