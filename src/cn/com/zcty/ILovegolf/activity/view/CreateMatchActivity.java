@@ -55,7 +55,10 @@ public class CreateMatchActivity extends Activity {
 	private TextView fangshiTextView;
 	private TextView easyTextView;
 	private TextView majorTextView;
-
+	private View v1;
+	private View v2;
+	private View v_2;
+	private View v_3;
 	private TextView qiuchang_name;
 	private TextView qiudongTextView;
 	private TextView zichangTextView;
@@ -135,8 +138,12 @@ public class CreateMatchActivity extends Activity {
 				if(leixing_layout.getVisibility()==View.VISIBLE){
 					leixing_layout.setVisibility(View.GONE);
 					majorRelativeLayout.setVisibility(View.GONE);
+					v1.setVisibility(View.GONE);
+					v2.setVisibility(View.GONE);
 					imageView1.setImageResource(R.drawable.image_icon_up);
 				}else{
+					v1.setVisibility(View.VISIBLE);
+					v2.setVisibility(View.VISIBLE);
 					leixing_layout.setVisibility(View.VISIBLE);
 					majorRelativeLayout.setVisibility(View.VISIBLE);
 					imageView1.setImageResource(R.drawable.image_icon);
@@ -148,6 +155,8 @@ public class CreateMatchActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
+				v1.setVisibility(View.GONE);
+				v2.setVisibility(View.GONE);
 				leixing_layout.setVisibility(View.GONE);
 				majorRelativeLayout.setVisibility(View.GONE);
 				fangshiTextView.setText(easyTextView.getText().toString());
@@ -158,6 +167,8 @@ public class CreateMatchActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
+				v1.setVisibility(View.GONE);
+				v2.setVisibility(View.GONE);
 				leixing_layout.setVisibility(View.GONE);
 				majorRelativeLayout.setVisibility(View.GONE);
 				fangshiTextView.setText(majorTextView.getText().toString());
@@ -167,8 +178,12 @@ public class CreateMatchActivity extends Activity {
 	}
 
 	public void initView(){
-		
-		
+		v_2 = findViewById(R.id.view_2);
+		v_2.setVisibility(View.GONE);
+		v_3 = findViewById(R.id.view_3);
+		v_3.setVisibility(View.GONE);
+		v1 = findViewById(R.id.v1);
+		v2 = findViewById(R.id.v2);
 		fangshiTextView = (TextView) findViewById(R.id.creatematch_fangshi);
 		easyTextView = (TextView) findViewById(R.id.easy);
 		majorTextView = (TextView) findViewById(R.id.major);
@@ -244,7 +259,8 @@ public class CreateMatchActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-
+				v_2.setVisibility(View.GONE);
+				v_3.setVisibility(View.GONE);
 				selectSession_tListView.setVisibility(View.GONE);
 				if(selectSessionListView.getVisibility()==View.GONE){
 					selectSessionListView.setVisibility(View.VISIBLE);
@@ -273,7 +289,8 @@ public class CreateMatchActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
-
+				v_2.setVisibility(View.VISIBLE);
+				v_3.setVisibility(View.VISIBLE);
 				qiudongTextView.setText("前"+diamodDong.get(position)+"洞");
 				zichangTextView.setText(nameArrayList.get(position));
 				id_1 = uuids.get(position);
@@ -294,6 +311,7 @@ public class CreateMatchActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
+				v_3.setVisibility(View.GONE);
 				if(selectSession_tListView.getVisibility()==View.GONE){
 					selectSession_tListView.setVisibility(View.VISIBLE);
 				}else{
@@ -306,6 +324,7 @@ public class CreateMatchActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
+				
 				titaiTextView.setText(tiTai[position]);
 				selectSession_tListView.setVisibility(View.GONE);
 				t_1 = color.get(position);
@@ -314,9 +333,11 @@ public class CreateMatchActivity extends Activity {
 				 * 如果是18个洞则不显示后面的选择子场
 				 */
 				if(f){
+					v_3.setVisibility(View.VISIBLE);
 					selectSession_2.setVisibility(View.VISIBLE);
 					selectSession_2ListView.setVisibility(View.VISIBLE);
 				}else{
+					v_3.setVisibility(View.GONE);
 					selectSession_2.setVisibility(View.GONE);
 					selectSession_2ListView.setVisibility(View.GONE);
 					id_2=null;
