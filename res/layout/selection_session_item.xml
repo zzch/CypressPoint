@@ -13,6 +13,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:textColor="@color/gold_80"
+             android:textSize="@dimen/txsize_small_a" 
             android:text="球洞"
             />
     </RelativeLayout>

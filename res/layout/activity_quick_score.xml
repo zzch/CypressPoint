@@ -65,31 +65,81 @@
 
         <Button
             android:id="@+id/create_match"
-            android:layout_width="@dimen/view_tongyong"
-            android:layout_height="@dimen/view_sss_e"
+             android:layout_width="@dimen/register_view_width"
+        android:layout_height="@dimen/view_mid_xx_title"
             android:background="@drawable/button"
             android:onClick="onclick"
             android:text="创建新比赛"
             android:textColor="@color/gold"
-            android:textSize="@dimen/txsize_mid_x" />
+            android:layout_marginTop="25dp"
+            android:textSize="@dimen/txsize_small_xxx" />
+        <RelativeLayout 
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:gravity="center"
+            android:orientation="horizontal" >
+            <View 
+                android:layout_width="120dp"
+                android:layout_height="1dp"
+                android:background="@color/gold_half"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="22dp"
+                android:layout_centerVertical="true"
+                />
+                <TextView 
+                    
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:text="或者"
+                    android:gravity="center"
+                     android:layout_centerVertical="true"
+                     android:layout_centerHorizontal="true"
+                    android:textColor="@color/gold_80"
+                    />
+             <View 
+                android:layout_width="120dp"
+                android:layout_height="1dp"
+                 android:layout_centerVertical="true"
+                 android:layout_alignParentRight="true"
+                 android:layout_marginRight="22dp"
+                android:background="@color/gold_half"
+                />
+            </RelativeLayout>
 
         <Button
             android:id="@+id/add_match"
-            android:layout_width="@dimen/view_tongyong"
-            android:layout_height="@dimen/view_sss_e"
+            android:layout_width="@dimen/register_view_width"
+            android:layout_height="@dimen/view_mid_xx_title"
             android:background="@drawable/button"
             android:gravity="center"
             android:onClick="onclick"
             android:text="加入比赛"
             android:textColor="@color/gold"
-            android:textSize="@dimen/txsize_mid_x" />
+            android:textSize="@dimen/txsize_small_xxx" />
     </LinearLayout>
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="40dp" 
+        android:background="#131313"
+        android:layout_marginTop="25dp"
+        >
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="历史比赛"
+            android:textColor="#a28b51"
+           android:layout_centerVertical="true"
+            android:textSize="@dimen/txsize_small_xxx"
+          android:layout_marginLeft="@dimen/title_button_left"
+            />
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical" >
-
+    
         <com.handmark.pulltorefresh.library.PullToRefreshScrollView
             xmlns:ptr="http://schemas.android.com/apk/res-auto"
             android:id="@+id/pull_refresh_scrollview"
@@ -111,6 +161,7 @@
                      />
             </RelativeLayout>
         </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+        
     </LinearLayout>
 
     <ImageView

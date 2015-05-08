@@ -12,6 +12,9 @@
      
       <!-- 金色透明度70 -->
      <color name="gold_70">#70F8d57a</color>
+      <!-- 金色透明度80 -->
+     <color name="gold_80">#c9ad65</color>
+     
      <!-- 灰色 -->
      <color name="gray">#797979</color>
      

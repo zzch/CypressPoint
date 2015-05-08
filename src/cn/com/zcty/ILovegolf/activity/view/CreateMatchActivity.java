@@ -71,6 +71,7 @@ public class CreateMatchActivity extends Activity {
 	private ListView selectSession_2ListView;
 	private ListView selectSession_t_2ListView;
 	private ImageView onclickimage;
+	
 	private String pitchname;
 	private ArrayList<String> nameArrayList = new ArrayList<String>();
 	private ArrayList<String> name_2ArrayList = new ArrayList<String>();
@@ -89,7 +90,14 @@ public class CreateMatchActivity extends Activity {
 	private RelativeLayout jifenfangshi;
 	private RelativeLayout leixing_layout;
 	private ImageView imageView1;
+	private ImageView imageView2;
+	private ImageView imageView3;
+	private ImageView imageView4;
+	private ImageView imageView5;
+	private ImageView titaicolor_1;
+	private ImageView titaicolor_2;
 	private String tiTai[]={"红色T台","白色T台","蓝色T台","黑色T台","金色T台"};
+	private int tiTaiColor[]={R.drawable.e_red,R.drawable.e_white,R.drawable.e_blue,R.drawable.e_black,R.drawable.e_gold};
 	private String tee_boxes;//T台颜色
 	private String uuid;
 	private boolean f = false;
@@ -140,13 +148,13 @@ public class CreateMatchActivity extends Activity {
 					majorRelativeLayout.setVisibility(View.GONE);
 					v1.setVisibility(View.GONE);
 					v2.setVisibility(View.GONE);
-					imageView1.setImageResource(R.drawable.image_icon_up);
+					imageView1.setImageResource(R.drawable.image_down);
 				}else{
 					v1.setVisibility(View.VISIBLE);
 					v2.setVisibility(View.VISIBLE);
 					leixing_layout.setVisibility(View.VISIBLE);
 					majorRelativeLayout.setVisibility(View.VISIBLE);
-					imageView1.setImageResource(R.drawable.image_icon);
+					imageView1.setImageResource(R.drawable.image_up);
 				}
 			}
 		});
@@ -160,7 +168,7 @@ public class CreateMatchActivity extends Activity {
 				leixing_layout.setVisibility(View.GONE);
 				majorRelativeLayout.setVisibility(View.GONE);
 				fangshiTextView.setText(easyTextView.getText().toString());
-				imageView1.setImageResource(R.drawable.image_icon_up);
+				imageView1.setImageResource(R.drawable.image_down);
 			}
 		});
 		majorRelativeLayout.setOnClickListener(new OnClickListener() {
@@ -172,7 +180,7 @@ public class CreateMatchActivity extends Activity {
 				leixing_layout.setVisibility(View.GONE);
 				majorRelativeLayout.setVisibility(View.GONE);
 				fangshiTextView.setText(majorTextView.getText().toString());
-				imageView1.setImageResource(R.drawable.image_icon_up);
+				imageView1.setImageResource(R.drawable.image_down);
 			}
 		});
 	}
@@ -198,9 +206,11 @@ public class CreateMatchActivity extends Activity {
 		qiudongTextView = (TextView) findViewById(R.id.competition_match_zichang);
 		zichangTextView = (TextView) findViewById(R.id.competition_match_chang);
 		titaiTextView = (TextView) findViewById(R.id.competition_t_name);
+	    titaicolor_1 = (ImageView) findViewById(R.id.titaicolor_1);
 		qiudongTextView_2 = (TextView) findViewById(R.id.competition_match_zichang_2);
 		zichangTextView_2 = (TextView) findViewById(R.id.competition_match_chang_2);
 		titaiTextView_2 = (TextView) findViewById(R.id.competition_t_name_2);
+		titaicolor_2 = (ImageView) findViewById(R.id.titaicolor_2);
 		diamondRelativeLayout = (RelativeLayout) findViewById(R.id.creatematch_select_diamond);
 		selectSession_tListView = (ListView) findViewById(R.id.competition_listview_t);
 		selectSession_2ListView = (ListView) findViewById(R.id.competition_listview_qiuchang_2);
@@ -211,9 +221,12 @@ public class CreateMatchActivity extends Activity {
 		leixing_layout = (RelativeLayout) findViewById(R.id.leixing_layout);
 
 		imageView1 = (ImageView) findViewById(R.id.imageView1);
+		imageView2 = (ImageView) findViewById(R.id.imageView2);
+		imageView3 = (ImageView) findViewById(R.id.imageView3);
+		imageView4 = (ImageView) findViewById(R.id.imageView4);
+		imageView5 = (ImageView) findViewById(R.id.imageView5);
 		create_fanhui = (Button) findViewById(R.id.create_fanhui);
 
-		imageView1.setImageResource(R.drawable.image_icon);
 	}
 	private void initialize()
 	{
@@ -264,10 +277,11 @@ public class CreateMatchActivity extends Activity {
 				selectSession_tListView.setVisibility(View.GONE);
 				if(selectSessionListView.getVisibility()==View.GONE){
 					selectSessionListView.setVisibility(View.VISIBLE);
-					
+					imageView2.setImageResource(R.drawable.image_up);
 					Log.i("selectSession","====");
 				}else{
 					selectSessionListView.setVisibility(View.GONE);
+					imageView2.setImageResource(R.drawable.image_down);
 					Log.i("selectSession","++++++");
 
 				}
@@ -276,9 +290,11 @@ public class CreateMatchActivity extends Activity {
 				selectSession_t_2.setVisibility(View.GONE);
 				zichangTextView.setText("");
 				titaiTextView.setText("");
+				titaicolor_1.setVisibility(View.GONE);
 				qiudongTextView_2.setText("选择球场");
 				zichangTextView_2.setText("");
 				titaiTextView_2.setText("");
+				titaicolor_2.setVisibility(View.GONE);
 			}
 		});
 
@@ -297,6 +313,7 @@ public class CreateMatchActivity extends Activity {
 				selectSession_t.setVisibility(View.VISIBLE);
 				selectSession_tListView.setVisibility(View.VISIBLE);
 				selectSessionListView.setVisibility(View.GONE);
+				imageView2.setImageResource(R.drawable.image_down);
 				if(diamodDong.get(position)==9){
 					f = true;
 				}else{
@@ -314,8 +331,10 @@ public class CreateMatchActivity extends Activity {
 				v_3.setVisibility(View.GONE);
 				if(selectSession_tListView.getVisibility()==View.GONE){
 					selectSession_tListView.setVisibility(View.VISIBLE);
+					imageView3.setImageResource(R.drawable.image_up);
 				}else{
 					selectSession_tListView.setVisibility(View.GONE);
+					imageView3.setImageResource(R.drawable.image_down);
 				}
 			}
 		});
@@ -326,6 +345,7 @@ public class CreateMatchActivity extends Activity {
 					long arg3) {
 				
 				titaiTextView.setText(tiTai[position]);
+				titaicolor_1.setImageResource(tiTaiColor[position]);
 				selectSession_tListView.setVisibility(View.GONE);
 				t_1 = color.get(position);
 				/*
@@ -340,6 +360,7 @@ public class CreateMatchActivity extends Activity {
 					v_3.setVisibility(View.GONE);
 					selectSession_2.setVisibility(View.GONE);
 					selectSession_2ListView.setVisibility(View.GONE);
+					imageView3.setImageResource(R.drawable.image_down);
 					id_2=null;
 					t_2=null;
 				}
@@ -357,8 +378,10 @@ public class CreateMatchActivity extends Activity {
 				selectSession_t_2ListView.setVisibility(View.GONE);
 				if(selectSession_2ListView.getVisibility()==View.GONE){
 					selectSession_2ListView.setVisibility(View.VISIBLE);
+					imageView4.setImageResource(R.drawable.image_up);
 				}else{
 					selectSession_2ListView.setVisibility(View.GONE);
+					imageView4.setImageResource(R.drawable.image_down);
 				}
 			}
 		});
@@ -373,6 +396,7 @@ public class CreateMatchActivity extends Activity {
 				selectSession_t_2.setVisibility(View.VISIBLE);
 				selectSession_t_2ListView.setVisibility(View.VISIBLE);
 				selectSession_2ListView.setVisibility(View.GONE);
+				imageView4.setImageResource(R.drawable.image_down);
 				id_2 = uuids.get(position);
 			}
 		});
@@ -385,8 +409,10 @@ public class CreateMatchActivity extends Activity {
 			public void onClick(View v) {
 				if(selectSession_t_2ListView.getVisibility()==View.GONE){
 					selectSession_t_2ListView.setVisibility(View.VISIBLE);
+					imageView5.setImageResource(R.drawable.image_up);
 				}else{
 					selectSession_t_2ListView.setVisibility(View.GONE);
+					imageView5.setImageResource(R.drawable.image_down);
 				}
 			}
 		});
@@ -396,7 +422,9 @@ public class CreateMatchActivity extends Activity {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
 				titaiTextView_2.setText(tiTai[position]);
+				titaicolor_2.setImageResource(tiTaiColor[position]);
 				selectSession_t_2ListView.setVisibility(View.GONE);
+				imageView5.setImageResource(R.drawable.image_down);
 				t_2 = color.get(position);
 			}
 		});
@@ -625,9 +653,11 @@ public class CreateMatchActivity extends Activity {
 			qiudongTextView.setText("选择子场");
 			zichangTextView.setText("");
 			titaiTextView.setText("");
+			titaicolor_1.setVisibility(View.VISIBLE);
 			qiudongTextView_2.setText("选择球场");
 			zichangTextView_2.setText("");
 			titaiTextView_2.setText("");
+			titaicolor_2.setVisibility(View.VISIBLE);
 			new OnResultMytask().start();
 		}else{
 			new Mytask().start();

@@ -68,7 +68,8 @@
         android:gravity="center"
         android:layout_marginTop="@dimen/shouye_name_top"
         android:textSize="@dimen/txsize_small_xx" 
-        android:text="您的朋友创建比赛后可以获得4位数字口令输入后即可加入到TA的比赛"
+        android:textColor="@color/gold_80"
+        android:text="@string/textdescription"
         />
     
     <LinearLayout
@@ -113,7 +114,7 @@
         
     </LinearLayout>
 
-    <View
+            <View
                 android:layout_width="@dimen/view_tongyong"
                 android:layout_height="0.5dp"
                 android:layout_marginTop="@dimen/shouye_name_top"
@@ -134,7 +135,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            
+            android:textColor="@color/gold_80"
             android:gravity="center"
             android:text="如何加入到朋友的比赛中？"
             android:textSize="@dimen/txsize_small_xx" />
@@ -144,10 +145,10 @@
      <TextView 
         android:layout_width="@dimen/view_tongyong"
         android:layout_height="wrap_content"
-        
+        android:textColor="@color/gold_80"
         android:layout_marginTop="@dimen/shouye_name_top"
         android:textSize="@dimen/txsize_small_xx" 
-        android:text="请您让TA点击”比赛“，之后点击”创建新比赛“，选择球场后点击排行榜，输入上面的4位数字口令后，点击加入，即可加入到您创建的比赛中，共同体验高尔夫的乐趣。"
+        android:text="@string/textdescription_1"
         />
 
 </LinearLayout>

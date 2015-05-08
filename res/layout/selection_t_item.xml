@@ -13,16 +13,19 @@
             android:layout_height="20dp"
             android:layout_marginLeft="20dp"
             android:layout_centerVertical="true"
-            android:src="@drawable/huang"
+           
             />
-        <TextView 
+
+        <TextView
             android:id="@+id/qiudong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="50dp"
             android:layout_centerVertical="true"
-            android:text="球洞"
-            />
+            android:textColor="@color/gold_80"
+             android:textSize="@dimen/txsize_small_a" 
+            android:text="球洞" />
+
     </RelativeLayout>
 
 </LinearLayout>
