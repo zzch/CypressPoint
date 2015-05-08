@@ -84,14 +84,15 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
 					@Override
 					public boolean onChildClick(ExpandableListView parent, View v,
 							int groupPosition, int childPosition, long id) {
-						ss = getSharedPreferences("name", MODE_PRIVATE);
-						SharedPreferences.Editor editor = ss.edit();
-						editor.putString("name", child.get(groupPosition).get(childPosition).getName());
-						editor.commit();
-						Intent intent = new Intent(ListChoosePitchActivity.this,PlaySetActivity.class);
-						intent.putExtra("sign", sign);
-						intent.putExtra("uuid", child.get(groupPosition).get(childPosition).getUuid());	
-						startActivity(intent);
+						/*
+						 * 返回球场name
+						 */
+						Intent intent = new Intent(ListChoosePitchActivity.this,CreateMatchActivity.class);
+						intent.putExtra("name", child.get(groupPosition).get(childPosition).getName());
+						intent.putExtra("false", "0");
+						intent.putExtra("uuid", child.get(groupPosition).get(childPosition).getUuid());
+						setResult(0, intent);
+						finish();
 						return false;
 					}
 				});
@@ -144,9 +145,10 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
 					citys_name = new ArrayList<String>();
 					citys_address = new ArrayList<String>();
 					String name = keyword.getText().toString();	
+					
 					for(int i=0;i<adapter.getGroupCount();i++){
 						for(int j=0;j<adapter.getChildrenCount(i);j++){
-							
+		
 							String name_city = adapter.getChildName(i, j);
 							String name_address = adapter.getChildAddress(i, j);
 							 if(name_city.indexOf(name)!=-1){
@@ -172,14 +174,16 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
-				ss = getSharedPreferences("name", MODE_PRIVATE);
-				SharedPreferences.Editor editor = ss.edit();
-				editor.putString("name", citys_name.get(arg2));
-				editor.commit();
-				Intent intent = new Intent(ListChoosePitchActivity.this,PlaySetActivity.class);
-				intent.putExtra("sign", sign);
-				intent.putExtra("uuid",uuidList.get(arg2));	
-				startActivity(intent);
+				
+				/*
+				 * 返回球场name
+				 */
+				Intent intent = new Intent(ListChoosePitchActivity.this,CreateMatchActivity.class);
+				intent.putExtra("name", citys_name.get(arg2));
+				intent.putExtra("false", "0");
+				intent.putExtra("uuid", uuidList.get(arg2));
+				setResult(0, intent);
+				finish();
 			}
 		});
 	}

@@ -99,4 +99,7 @@ public class APIService {
 	 public static final String SHIYAN = "http://123.57.210.52/api/v1/scorecards/professional?";
 	 //用户注销
 	 public static final String SIGNOUT="http://123.57.210.52/api/v1/users/sign_out.json?";
+
+	 //球会信息
+	 public static final String DIAMONDINFORMATION = "http://123.57.210.52/api/v1/venues/show.json?";
 }
