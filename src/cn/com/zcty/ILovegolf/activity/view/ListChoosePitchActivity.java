@@ -18,6 +18,7 @@ import android.os.Message;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -111,6 +112,19 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
 		new Citys().start();
 		
 	}
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		
+		if(keyCode==KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0){
+		
+			Intent intent = new Intent(ListChoosePitchActivity.this,CreateMatchActivity.class);		
+			setResult(30,intent);
+			finish();
+		
+        }
+		return false;
+	}
 	private void setListeners() {
 		
 		
@@ -119,8 +133,9 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent intent=new Intent(ListChoosePitchActivity.this,ChoosePitchActivity.class );
-				startActivity(intent);
+				Intent intent=new Intent(ListChoosePitchActivity.this,CreateMatchActivity.class);
+				intent.putExtra("name", "null");
+				setResult(0, intent);
 				finish();
 			}
 		});	

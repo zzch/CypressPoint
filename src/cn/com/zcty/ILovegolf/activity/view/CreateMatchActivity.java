@@ -12,11 +12,12 @@ import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.SelectSession1Adapter;
 import cn.com.zcty.ILovegolf.activity.adapter.SelectSessionTAdapter;
 import cn.com.zcty.ILovegolf.activity.view.competition.CompetitionNewActivity;
-import cn.com.zcty.ILovegolf.activity.view.competition.CompetitionScordActivity;
+import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.model.Courses;
 import cn.com.zcty.ILovegolf.model.QiuChangList;
 import cn.com.zcty.ILovegolf.tools.MyApplication;
 import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -40,8 +41,15 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Toast;
 
 public class CreateMatchActivity extends Activity {
+	private String scoring_type = "null";
+	private String course_uuids = "null";
+	private String course_uuids_2 = "null";
+	private String tee= "null";
+	private String tee_2 = "null";
+
 	private String addres[];
 	private String flase = "1";
 	private String onResultuuid;
@@ -51,7 +59,7 @@ public class CreateMatchActivity extends Activity {
 	private	String address;
 	public static String LOCATION_BCR = "location_bcr";
 	private Button create_fanhui;
-	
+	private String id;
 	private TextView fangshiTextView;
 	private TextView easyTextView;
 	private TextView majorTextView;
@@ -70,8 +78,9 @@ public class CreateMatchActivity extends Activity {
 	private ListView selectSession_tListView;
 	private ListView selectSession_2ListView;
 	private ListView selectSession_t_2ListView;
+
 	private ImageView onclickimage;
-	
+
 	private String pitchname;
 	private ArrayList<String> nameArrayList = new ArrayList<String>();
 	private ArrayList<String> name_2ArrayList = new ArrayList<String>();
@@ -90,12 +99,14 @@ public class CreateMatchActivity extends Activity {
 	private RelativeLayout jifenfangshi;
 	private RelativeLayout leixing_layout;
 	private ImageView imageView1;
+
 	private ImageView imageView2;
 	private ImageView imageView3;
 	private ImageView imageView4;
 	private ImageView imageView5;
 	private ImageView titaicolor_1;
 	private ImageView titaicolor_2;
+	private Button startButton;
 	private String tiTai[]={"红色T台","白色T台","蓝色T台","黑色T台","金色T台"};
 	private int tiTaiColor[]={R.drawable.e_red,R.drawable.e_white,R.drawable.e_blue,R.drawable.e_black,R.drawable.e_gold};
 	private String tee_boxes;//T台颜色
@@ -108,15 +119,37 @@ public class CreateMatchActivity extends Activity {
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
 			if(msg.what==1){
+				if(msg.obj.equals("404")||msg.obj.equals("505")){
+					Toast.makeText(CreateMatchActivity.this, "网络错误，请稍后再试", Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("403")){
+					Toast.makeText(CreateMatchActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+					FileUtil.delFile();
+					Intent intent = new Intent(CreateMatchActivity.this,ShouYeActivity.class);
+					startActivity(intent);
+					finish();
+				}else{
 				getData();
 				onclckLister();
 				qiuchang_name.setText(pitchname);
+				}
 			}
-			/*if(msg.what==2){
-				Intent intent = new Intent(CompetitionNewActivity.this,CompetitionScordActivity.class);
-				intent.putExtra("data", uuid);
-				startActivity(intent);
-			}*/
+			if(msg.what==2){
+				if(msg.obj.equals("404")||msg.obj.equals("505")){
+					Toast.makeText(CreateMatchActivity.this, "网络错误，请稍后再试", Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("403")){
+					Toast.makeText(CreateMatchActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+					FileUtil.delFile();
+					Intent intent = new Intent(CreateMatchActivity.this,ShouYeActivity.class);
+					startActivity(intent);
+					finish();
+				}else{
+				//正常情况下
+					Intent intent = new Intent(CreateMatchActivity.this,CreateScoreCard.class);
+					intent.putExtra("uuid", id);
+					startActivity(intent);
+				}
+			}
+
 		}
 
 
@@ -137,6 +170,8 @@ public class CreateMatchActivity extends Activity {
 	 *选择记分方式 
 	 */
 	private void setListeners() {
+
+
 
 		jifenfangshi.setOnClickListener(new OnClickListener() {
 
@@ -192,11 +227,11 @@ public class CreateMatchActivity extends Activity {
 		v_3.setVisibility(View.GONE);
 		v1 = findViewById(R.id.v1);
 		v2 = findViewById(R.id.v2);
+		startButton = (Button) findViewById(R.id.start);
 		fangshiTextView = (TextView) findViewById(R.id.creatematch_fangshi);
 		easyTextView = (TextView) findViewById(R.id.easy);
 		majorTextView = (TextView) findViewById(R.id.major);
 		qiuchang_name = (TextView) findViewById(R.id.qiuchang_name);
-		onclickimage = (ImageView) findViewById(R.id.onclickimage);
 		majorRelativeLayout = (RelativeLayout) findViewById(R.id.creatematch_major);
 		selectSession = (RelativeLayout) findViewById(R.id.competition_selection_relative);
 		selectSession_t = (RelativeLayout) findViewById(R.id.competition_selection_t);
@@ -235,9 +270,49 @@ public class CreateMatchActivity extends Activity {
 
 	public void onclckLister(){
 
-		
+		/*
+		 * 创建比赛
+		 */
+		startButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				if(fangshiTextView.getText().toString().equals("简单")){
+					scoring_type = "simple";
+				}else if(fangshiTextView.getText().toString().equals("专业")){
+					scoring_type = "professional";
+				}
+
+				if(f){
+					//如果是前9洞
+					if(scoring_type.equals("null")
+							||course_uuids.equals("null")
+							||tee.equals("null")
+							||course_uuids_2.equals("null")
+							||tee_2.equals("null")){
+
+						Toast.makeText(CreateMatchActivity.this
+								, "请把信息选择完整", Toast.LENGTH_LONG).show();
+
+					}else{
+						new CreteMatch().start();
+					}
+				}else{
+					//如果是前18洞
+					if(scoring_type.equals("null")
+							||course_uuids.equals("null")
+							||tee.equals("null")){
+						Toast.makeText(CreateMatchActivity.this
+								, "请把信息选择完整", Toast.LENGTH_LONG).show();
+					}else{
+						new CreteMatch().start();	
+					}
+				}
+			}
+		});
+
 		create_fanhui.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
@@ -246,11 +321,11 @@ public class CreateMatchActivity extends Activity {
 				finish();
 			}
 		});
-		
-       
+
+
 
 		/*
-		 * 
+		 * 手动选择球场
 		 */
 		diamondRelativeLayout.setOnClickListener(new OnClickListener() {
 
@@ -262,7 +337,7 @@ public class CreateMatchActivity extends Activity {
 			}
 		});
 
-		
+
 
 
 		/*
@@ -277,7 +352,9 @@ public class CreateMatchActivity extends Activity {
 				selectSession_tListView.setVisibility(View.GONE);
 				if(selectSessionListView.getVisibility()==View.GONE){
 					selectSessionListView.setVisibility(View.VISIBLE);
+
 					imageView2.setImageResource(R.drawable.image_up);
+
 					Log.i("selectSession","====");
 				}else{
 					selectSessionListView.setVisibility(View.GONE);
@@ -294,7 +371,13 @@ public class CreateMatchActivity extends Activity {
 				qiudongTextView_2.setText("选择球场");
 				zichangTextView_2.setText("");
 				titaiTextView_2.setText("");
+
 				titaicolor_2.setVisibility(View.GONE);
+
+				tee = "null";
+				course_uuids = "null";
+				tee_2 = "null";
+
 			}
 		});
 
@@ -305,6 +388,7 @@ public class CreateMatchActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
+				course_uuids = uuids.get(position);
 				v_2.setVisibility(View.VISIBLE);
 				v_3.setVisibility(View.VISIBLE);
 				qiudongTextView.setText("前"+diamodDong.get(position)+"洞");
@@ -327,7 +411,7 @@ public class CreateMatchActivity extends Activity {
 		selectSession_t.setOnClickListener(new OnClickListener() {
 
 			@Override
-			public void onClick(View v) {
+			public void onClick(View v) {				
 				v_3.setVisibility(View.GONE);
 				if(selectSession_tListView.getVisibility()==View.GONE){
 					selectSession_tListView.setVisibility(View.VISIBLE);
@@ -343,7 +427,7 @@ public class CreateMatchActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
-				
+				tee = color.get(position);
 				titaiTextView.setText(tiTai[position]);
 				titaicolor_1.setImageResource(tiTaiColor[position]);
 				selectSession_tListView.setVisibility(View.GONE);
@@ -391,6 +475,7 @@ public class CreateMatchActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
+				course_uuids_2 = uuids.get(position);
 				qiudongTextView_2.setText("后"+diamodDong_2.get(position)+"洞");
 				zichangTextView_2.setText(name_2ArrayList.get(position));
 				selectSession_t_2.setVisibility(View.VISIBLE);
@@ -421,6 +506,7 @@ public class CreateMatchActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
+				tee_2 = color.get(position);
 				titaiTextView_2.setText(tiTai[position]);
 				titaicolor_2.setImageResource(tiTaiColor[position]);
 				selectSession_t_2ListView.setVisibility(View.GONE);
@@ -437,13 +523,21 @@ public class CreateMatchActivity extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		if(requestCode==REQUSTCODE){
+
 			if(resultCode==0){
 				//返回球场name，并且显示
-				pitchname = data.getStringExtra("name");
-				qiuchang_name.setText(pitchname);
-				onResultuuid = data.getStringExtra("uuid");
-				flase = data.getStringExtra("false");
+				if(!data.getStringExtra("name").equals("null")){
+					pitchname = data.getStringExtra("name");
+					qiuchang_name.setText(pitchname);
+					onResultuuid = data.getStringExtra("uuid");
+					flase = data.getStringExtra("false");
+				}else{
+
+				}
+
+
 			}
+
 		}
 	}
 
@@ -497,6 +591,7 @@ public class CreateMatchActivity extends Activity {
 				}
 				Message  msg = handler.obtainMessage();
 				msg.what=1;
+				msg.obj = jsonData;
 				handler.sendMessage(msg);
 			} catch (JSONException e) {
 				e.printStackTrace();
@@ -522,7 +617,6 @@ public class CreateMatchActivity extends Activity {
 
 			//根据球场信息的uuid来获取该球场的具体信息的访问url
 			String path=APIService.DIAMONDINFORMATION+"uuid="+onResultuuid+"&token="+token;			
-			Log.i("zhouzhzou", path);
 			String jsonData=HttpUtils.HttpClientGet(path);
 			try {
 				JSONObject jsonObj=new JSONObject(jsonData);
@@ -551,6 +645,7 @@ public class CreateMatchActivity extends Activity {
 				}
 				Message  msg = handler.obtainMessage();
 				msg.what=1;
+				msg.obj = jsonData;
 				handler.sendMessage(msg);
 			} catch (JSONException e) {
 				e.printStackTrace();
@@ -558,7 +653,46 @@ public class CreateMatchActivity extends Activity {
 
 		}
 	}
-	
+	/**
+	 * 创建比赛
+	 * @author Administrator
+	 *
+	 */
+	class CreteMatch extends Thread{
+		@Override
+		public void run() {
+			super.run();
+			getData();
+		}
+		public void getData(){
+			//用户的token
+			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
+			String token=sp.getString("token", "token");
+			
+			String path;
+			if(course_uuids_2.equals("null")){
+				//当前面为18洞的时候	
+				path = APIService.CREADMATCHES+"token="+token+"&course_uuids="+course_uuids+"&tee_boxes="+tee+"&scoring_type="+scoring_type;
+			}else{
+				//当前面为9洞的时候
+				path = APIService.CREADMATCHES+"token="+token+"&course_uuids="+course_uuids+","+course_uuids_2+"&tee_boxes="+tee+","+tee_2+"&scoring_type="+scoring_type;
+			}
+			Log.i("createpath", path);
+			String jsonData = HttpUtils.HttpClientPost(path);
+			Log.i("createpath", jsonData);
+			try {
+				JSONObject jsonObject = new JSONObject(jsonData);
+				id = jsonObject.getString("uuid");
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			Message msg = handler.obtainMessage();
+			msg.what = 2;
+			msg.obj = jsonData;
+			handler.sendMessage(msg);
+		}
+	}
 	private void getData() {
 		selectSessionListView.setAdapter(new SelectSession1Adapter(this, diamond));
 		selectSession_tListView.setAdapter(new SelectSessionTAdapter(this,color));
@@ -641,7 +775,7 @@ public class CreateMatchActivity extends Activity {
 
 		registerReceiver(broadcastReceiver, intentToReceiveFilter);
 	}
-	
+
 	@Override
 	protected void onRestart() {
 		// TODO Auto-generated method stub

@@ -16,6 +16,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -116,11 +117,28 @@ public class ChoosePitchActivity extends Activity {
 	
 	//返回按钮点击事件
 	public void choosepith_back(View v){
-		Intent intent=new Intent(ChoosePitchActivity.this,QuickScoreActivity.class);
-		startActivity(intent);
+		Intent intent=new Intent(ChoosePitchActivity.this,CreateMatchActivity.class);
+		intent.putExtra("name", "null");
+		setResult(0, intent);
 		finish();
 	}
-
+	/*
+	 * (non-Javadoc)返回键
+	 * @see android.app.Activity#onKeyDown(int, android.view.KeyEvent)
+	 */
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		
+		if(keyCode==KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0){
+		
+			Intent intent = new Intent(ChoosePitchActivity.this,CreateMatchActivity.class);		
+			setResult(30,intent);
+			finish();
+		
+        }
+		return false;
+	}
 	//搜索按钮点击事件
 	public void qiehuan(View v){
 		Intent intent=new Intent(ChoosePitchActivity.this,ListChoosePitchActivity.class);

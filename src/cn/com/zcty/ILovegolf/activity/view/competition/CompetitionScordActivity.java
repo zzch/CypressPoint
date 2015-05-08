@@ -177,7 +177,6 @@ public class CompetitionScordActivity extends Activity{
 			Intent intent=getIntent();
 			String	uuid = intent.getStringExtra("data");
 			String path = APIService.COMPETITIONINFORMATION+"token="+token+"&uuid="+uuid;
-			Log.i("zhouhepppath", path);
 			String jsonArrayData = HttpUtils.HttpClientGet(path);
 			
 			/*SharedPreferences ss = getSharedPreferences("edit",Activity.MODE_PRIVATE);

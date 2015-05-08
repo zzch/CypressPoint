@@ -102,4 +102,10 @@ public class APIService {
 
 	 //球会信息
 	 public static final String DIAMONDINFORMATION = "http://123.57.210.52/api/v1/venues/show.json?";
+
+	 //创建比赛
+	 public static final String CREADMATCHES = "http://123.57.210.52/api/v1/matches.json?";
+
+	 //比赛信息
+	 public static final String MATCHINFORMATION = "http://123.57.210.52/api/v1/matches/show.json?";
 }
