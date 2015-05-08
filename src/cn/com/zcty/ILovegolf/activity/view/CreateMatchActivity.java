@@ -6,19 +6,7 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
-import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.activity.adapter.SelectSession1Adapter;
-import cn.com.zcty.ILovegolf.activity.adapter.SelectSessionTAdapter;
-import cn.com.zcty.ILovegolf.activity.view.competition.CompetitionNewActivity;
-import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
-import cn.com.zcty.ILovegolf.model.Courses;
-import cn.com.zcty.ILovegolf.model.QiuChangList;
-import cn.com.zcty.ILovegolf.tools.MyApplication;
-import cn.com.zcty.ILovegolf.utils.APIService;
-import cn.com.zcty.ILovegolf.utils.FileUtil;
-import cn.com.zcty.ILovegolf.utils.HttpUtils;
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -30,18 +18,27 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Toast;
+import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.activity.adapter.SelectSession1Adapter;
+import cn.com.zcty.ILovegolf.activity.adapter.SelectSessionTAdapter;
+import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
+import cn.com.zcty.ILovegolf.model.QiuChangList;
+import cn.com.zcty.ILovegolf.tools.MyApplication;
+import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.FileUtil;
+import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 public class CreateMatchActivity extends Activity {
 	private String scoring_type = "null";
@@ -362,6 +359,8 @@ public class CreateMatchActivity extends Activity {
 					Log.i("selectSession","++++++");
 
 				}
+				titaicolor_1.setVisibility(View.GONE);
+				titaicolor_2.setVisibility(View.GONE);
 				selectSession_2.setVisibility(View.GONE);
 				selectSession_t.setVisibility(View.GONE);
 				selectSession_t_2.setVisibility(View.GONE);
@@ -372,7 +371,6 @@ public class CreateMatchActivity extends Activity {
 				zichangTextView_2.setText("");
 				titaiTextView_2.setText("");
 
-				titaicolor_2.setVisibility(View.GONE);
 
 				tee = "null";
 				course_uuids = "null";
@@ -427,6 +425,7 @@ public class CreateMatchActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
+				titaicolor_1.setVisibility(View.VISIBLE);
 				tee = color.get(position);
 				titaiTextView.setText(tiTai[position]);
 				titaicolor_1.setImageResource(tiTaiColor[position]);
@@ -506,6 +505,7 @@ public class CreateMatchActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
+				titaicolor_2.setVisibility(View.VISIBLE);
 				tee_2 = color.get(position);
 				titaiTextView_2.setText(tiTai[position]);
 				titaicolor_2.setImageResource(tiTaiColor[position]);
@@ -787,11 +787,11 @@ public class CreateMatchActivity extends Activity {
 			qiudongTextView.setText("选择子场");
 			zichangTextView.setText("");
 			titaiTextView.setText("");
-			titaicolor_1.setVisibility(View.VISIBLE);
+			titaicolor_1.setVisibility(View.GONE);
 			qiudongTextView_2.setText("选择球场");
 			zichangTextView_2.setText("");
 			titaiTextView_2.setText("");
-			titaicolor_2.setVisibility(View.VISIBLE);
+			titaicolor_2.setVisibility(View.GONE);
 			new OnResultMytask().start();
 		}else{
 			new Mytask().start();
