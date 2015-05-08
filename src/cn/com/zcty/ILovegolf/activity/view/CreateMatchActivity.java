@@ -146,7 +146,9 @@ public class CreateMatchActivity extends Activity {
 				//正常情况下
 					Intent intent = new Intent(CreateMatchActivity.this,CreateScoreCard.class);
 					intent.putExtra("uuid", id);
+					Log.i("----", "");
 					startActivity(intent);
+					finish();
 				}
 			}
 
@@ -293,7 +295,6 @@ public class CreateMatchActivity extends Activity {
 
 						Toast.makeText(CreateMatchActivity.this
 								, "请把信息选择完整", Toast.LENGTH_LONG).show();
-
 					}else{
 						new CreteMatch().start();
 					}
