@@ -179,17 +179,20 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="排行包" />
+                        android:onClick="onclick"
+                        android:text="排名榜" />
 					<Button
                         android:id="@+id/competition_button_yaoqing"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:onClick="onclick"
                         android:layout_weight="1"
                         android:text="邀请好友" />
                     <Button
                         android:id="@+id/competition_button_tongji"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:onClick="onclick"
                         android:layout_weight="1"
                         android:text="技术分析" />
                 </LinearLayout>
@@ -197,7 +200,8 @@
                 <ListView
                     android:id="@+id/score_match"
                     android:layout_width="match_parent"
-                    android:layout_height="3000dp"
+                    android:layout_height="800dp"
+                    android:listSelector="@android:color/transparent"
   					>
                 </ListView>
             </LinearLayout>

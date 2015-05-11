@@ -227,6 +227,7 @@ public class HttpUtils
 	@SuppressWarnings("deprecation")
 	public static String uploadImage(String url, String filepath) {
 		String str = "";
+		int statusCode = 0;;
 	    File file = new File(filepath);
 
 	    if (!file.exists()) {
@@ -245,7 +246,7 @@ public class HttpUtils
 	    HttpResponse response;
 	    try {
 	        response = client.execute(put);
-	        int statusCode = response.getStatusLine().getStatusCode();
+	        statusCode = response.getStatusLine().getStatusCode();
 	        String result = EntityUtils.toString(response.getEntity(), "utf-8");
 	        Log.i("ceshishuju", result+"aa");
 	        if (statusCode == 201) {
@@ -261,7 +262,7 @@ public class HttpUtils
 	        e.printStackTrace();
 	    }
 
-	    return null;
+	    return statusCode+"";
 	} 
 	
 	public static Bitmap imageloder(String url){

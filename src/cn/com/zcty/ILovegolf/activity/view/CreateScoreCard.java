@@ -3,15 +3,19 @@ package cn.com.zcty.ILovegolf.activity.view;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.activity.adapter.CreateScoreCardAdapter;
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
+import cn.com.zcty.ILovegolf.model.ScoreCardsMatch;
 import cn.com.zcty.ILovegolf.model.Scorecards;
 import cn.com.zcty.ILovegolf.model.Setcard;
+import cn.com.zcty.ILovegolf.model.TeeBoxsMatch;
 import cn.com.zcty.ILovegolf.tools.CircleImageView;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.FileUtil;
@@ -30,6 +34,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 /**
@@ -52,7 +57,12 @@ public class CreateScoreCard extends Activity{
 	private TextView scoreTextView;//成绩
 	private TextView parTextView;
 	
+	private ListView scoreListView;//存放数据
 	private CircleImageView totleImage;
+	
+	private String id;
+	private ArrayList<ScoreCardsMatch> scoreCardsMatchs = new ArrayList<ScoreCardsMatch>();//存放成绩
+	private ArrayList<TeeBoxsMatch> teeBoxsMatchs = new ArrayList<TeeBoxsMatch>();//存放T台颜色
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
 			if(msg.what==1){
@@ -77,6 +87,8 @@ public class CreateScoreCard extends Activity{
 						converToBitmap(100,100);
 					}
 				}
+				CreateScoreCardAdapter adapter = new CreateScoreCardAdapter(CreateScoreCard.this, scoreCardsMatchs);
+				scoreListView.setAdapter(adapter);
 				}
 			}
 			if(msg.what==2){
@@ -100,6 +112,10 @@ public class CreateScoreCard extends Activity{
 		scheduleTextView = (TextView) findViewById(R.id.competition_jindu);
 		scoreTextView = (TextView) findViewById(R.id.competition_chengji);
 		parTextView = (TextView) findViewById(R.id.competition_par);
+		scoreListView = (ListView) findViewById(R.id.score_match);
+		
+		Intent intent=getIntent();
+		id = intent.getStringExtra("uuid");
 	}
 	
 	/*
@@ -112,7 +128,16 @@ public class CreateScoreCard extends Activity{
 			startActivity(intent);
 			finish();
 			break;
-
+		case R.id.competition_button_paiming:
+			Intent i = new Intent(CreateScoreCard.this,RankingActivity.class);
+			i.putExtra("uuid", id);
+			startActivity(i);
+			break;
+		case R.id.competition_button_yaoqing:
+			Intent j = new Intent(CreateScoreCard.this,SelfhoodActivity.class);
+			
+			startActivity(j);
+			break;
 		default:
 			break;
 		}
@@ -155,6 +180,40 @@ public class CreateScoreCard extends Activity{
 				schedule = userJsonObject.getString("recorded_scorecards_count");//进度
 				score = userJsonObject.getString("strokes");//成绩
 				par = userJsonObject.getString("total");//距标准杆
+				
+				/*
+				 * 获取成绩
+				 */
+				JSONArray scorecardsJsonObject = jsonObject.getJSONArray("scorecards");
+				for(int i=0;i<scorecardsJsonObject.length();i++){
+					JSONObject j = scorecardsJsonObject.getJSONObject(i);
+					ScoreCardsMatch scoreCardsMatch = new ScoreCardsMatch();
+					scoreCardsMatch.setUuid(j.getString("uuid"));
+					scoreCardsMatch.setNumber(j.getString("number"));
+					scoreCardsMatch.setPar(j.getString("par"));
+					
+					scoreCardsMatch.setScore(j.getString("score"));
+					scoreCardsMatch.setPutts(j.getString("putts"));
+					scoreCardsMatch.setPenalties(j.getString("penalties"));
+					scoreCardsMatch.setDriving_distance(j.getString("driving_distance"));
+					scoreCardsMatch.setDirection(j.getString("direction"));
+					
+					/*
+					 * 获得T台的数组
+					 */
+					JSONArray array = j.getJSONArray("tee_boxes");
+					for(int l=0;l<array.length();l++){
+						JSONObject jj = array.getJSONObject(l);
+						TeeBoxsMatch teeBoxsMatch = new TeeBoxsMatch();
+						teeBoxsMatch.setColor(jj.getString("color"));
+						teeBoxsMatch.setDistance_from_hole(jj.getString("distance_from_hole"));
+						teeBoxsMatch.setUsed(jj.getString("used"));
+						teeBoxsMatchs.add(teeBoxsMatch);
+					}
+					scoreCardsMatch.setTeeboxs(teeBoxsMatchs);
+					scoreCardsMatchs.add(scoreCardsMatch);
+				}
+				
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
