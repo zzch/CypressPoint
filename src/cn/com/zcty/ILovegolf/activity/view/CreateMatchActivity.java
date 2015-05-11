@@ -143,15 +143,11 @@ public class CreateMatchActivity extends Activity {
 				//正常情况下
 					Intent intent = new Intent(CreateMatchActivity.this,CreateScoreCard.class);
 					intent.putExtra("uuid", id);
-					Log.i("----", "");
 					startActivity(intent);
-					finish();
 				}
 			}
 
 		}
-
-
 	};
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -289,21 +285,26 @@ public class CreateMatchActivity extends Activity {
 							||tee.equals("null")
 							||course_uuids_2.equals("null")
 							||tee_2.equals("null")){
-
+						startButton.setBackgroundColor(0xff796941);
+						startButton.setTextColor(0xff191b1d);
 						Toast.makeText(CreateMatchActivity.this
 								, "请把信息选择完整", Toast.LENGTH_LONG).show();
 					}else{
 						new CreteMatch().start();
+						
 					}
 				}else{
 					//如果是前18洞
 					if(scoring_type.equals("null")
 							||course_uuids.equals("null")
 							||tee.equals("null")){
+						startButton.setBackgroundColor(0xff796941);
+						startButton.setTextColor(0xff191b1d);
 						Toast.makeText(CreateMatchActivity.this
 								, "请把信息选择完整", Toast.LENGTH_LONG).show();
 					}else{
 						new CreteMatch().start();	
+						
 					}
 				}
 			}
@@ -368,6 +369,8 @@ public class CreateMatchActivity extends Activity {
 				zichangTextView.setText("");
 				titaiTextView.setText("");
 				titaicolor_1.setVisibility(View.GONE);
+				startButton.setBackgroundColor(0xff796941);
+				startButton.setTextColor(0xff191b1d);
 				qiudongTextView_2.setText("选择球场");
 				zichangTextView_2.setText("");
 				titaiTextView_2.setText("");
@@ -415,6 +418,7 @@ public class CreateMatchActivity extends Activity {
 				if(selectSession_tListView.getVisibility()==View.GONE){
 					selectSession_tListView.setVisibility(View.VISIBLE);
 					imageView3.setImageResource(R.drawable.image_up);
+					
 				}else{
 					selectSession_tListView.setVisibility(View.GONE);
 					imageView3.setImageResource(R.drawable.image_down);
@@ -431,6 +435,8 @@ public class CreateMatchActivity extends Activity {
 				titaiTextView.setText(tiTai[position]);
 				titaicolor_1.setImageResource(tiTaiColor[position]);
 				selectSession_tListView.setVisibility(View.GONE);
+				startButton.setBackgroundColor(0xfff8d57a);
+				startButton.setTextColor(0xff222222);
 				t_1 = color.get(position);
 				/*
 				 * 判断是9个洞还是18个洞
@@ -482,6 +488,8 @@ public class CreateMatchActivity extends Activity {
 				selectSession_t_2ListView.setVisibility(View.VISIBLE);
 				selectSession_2ListView.setVisibility(View.GONE);
 				imageView4.setImageResource(R.drawable.image_down);
+				startButton.setBackgroundColor(0xfff8d57a);
+				startButton.setTextColor(0xff222222);
 				id_2 = uuids.get(position);
 			}
 		});
@@ -789,10 +797,14 @@ public class CreateMatchActivity extends Activity {
 			zichangTextView.setText("");
 			titaiTextView.setText("");
 			titaicolor_1.setVisibility(View.GONE);
+			startButton.setBackgroundColor(0xff796941);
+			startButton.setTextColor(0xff191b1d);
 			qiudongTextView_2.setText("选择球场");
 			zichangTextView_2.setText("");
 			titaiTextView_2.setText("");
 			titaicolor_2.setVisibility(View.GONE);
+			startButton.setBackgroundColor(0xff796941);
+			startButton.setTextColor(0xff191b1d);
 			new OnResultMytask().start();
 		}else{
 			new Mytask().start();

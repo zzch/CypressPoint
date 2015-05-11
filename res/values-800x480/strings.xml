@@ -149,4 +149,6 @@
        <dimen name="shouye_login_top">10dp</dimen>
        
        <dimen name="my_tuichu_top">280dp</dimen>
+       
+        <dimen name="create_pitch_left">200dp</dimen>
 </resources>

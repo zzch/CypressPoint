@@ -72,6 +72,7 @@
            android:id="@+id/dingwei"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
+           android:layout_centerVertical="true"
            android:src="@drawable/address_image" />
 
        <ImageView
@@ -79,17 +80,18 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:layout_alignParentRight="true"
+           android:layout_centerVertical="true"
            android:src="@drawable/choose_pitch" />
 
        <TextView
            android:id="@+id/qiuchang_name"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:layout_marginTop="5dp"
            android:layout_marginLeft="45dp"
            android:ellipsize="end"
            android:maxEms="13"
            android:singleLine="true"
+           android:layout_centerVertical="true"
            android:text="@string/pith_name"
            android:textColor="@color/gold"
            android:textSize="@dimen/txsize_small_xx" />
@@ -293,7 +295,7 @@
 	        android:layout_width="20dp"
 	        android:layout_height="20dp"
 	        android:layout_centerVertical="true"
-	         android:layout_marginLeft="220dp"
+	         android:layout_marginLeft="@dimen/create_pitch_left"
 	        />
 	    <ImageView
 	        android:id="@+id/imageView3"
@@ -420,7 +422,7 @@
 	        android:layout_width="20dp"
 	        android:layout_height="20dp"
 	        android:layout_centerVertical="true"
-	        android:layout_marginLeft="220dp"
+	        android:layout_marginLeft="@dimen/create_pitch_left"
 	       
 	        />
 	    
@@ -450,20 +452,21 @@
 	    </ListView>	    
 	</RelativeLayout>
 
-	
-	
 	<RelativeLayout
 	    android:id="@+id/jifenfangshi"
 	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	     android:layout_alignParentBottom="true"
-	   >
-	
-	<Button 
+	    android:layout_height="wrap_content" >
+
+	<Button
 	    android:id="@+id/start"
 	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	     android:layout_alignParentBottom="true"
-	    android:text="开始"  />
+	    android:layout_height="40dp"
+	    android:layout_alignParentBottom="true"
+	    android:gravity="center"
+	    android:background="#796941"
+	    android:textColor="#191b1d" 
+	    android:textSize="@dimen/txsize_small_xxx"
+	    android:text="开始"/>
+
    </RelativeLayout>
 </LinearLayout>
