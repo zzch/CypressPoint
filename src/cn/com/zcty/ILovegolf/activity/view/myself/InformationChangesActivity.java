@@ -373,7 +373,6 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			if (data != null) {
 				//取得返回的Uri,基本上选择照片的时候返回的是以Uri形式，但是在拍照中有得机子呢Uri是空的，所以要特别注意
 				Uri mImageCaptureUri = data.getData();
-				Log.i("ceshipath", mImageCaptureUri+"");
 				//返回的Uri不为空时，那么图片信息数据都会在Uri中获得。如果为空，那么我们就进行下面的方式获取
 				if (mImageCaptureUri != null) {
 					

@@ -108,4 +108,10 @@ public class APIService {
 
 	 //比赛信息
 	 public static final String MATCHINFORMATION = "http://123.57.210.52/api/v1/matches/show.json?";
+
+	 //排行榜
+	 public static final String RANKING = "http://123.57.210.52/api/v1/leaderboards.json?";
+
+	 //更新头像。昵称。性别
+	 public static final String GENGGXIN = "http://123.57.210.52/api/v1/users/update_portrait_and_nickname_and_gender.json?";
 }
