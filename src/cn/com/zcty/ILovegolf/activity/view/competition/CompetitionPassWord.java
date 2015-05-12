@@ -66,13 +66,6 @@ public class CompetitionPassWord extends Activity{
 		passwordEditText = (SecurityPasswordEditText) findViewById(R.id.password);
 		quedingButton = (Button) findViewById(R.id.btn_queding);
 		fanhuiButton = (Button) findViewById(R.id.btn_cancel);
-		/**
-		 * 自动弹出小键盘
-		 */
-		passwordEditText.setFocusable(true);
-		passwordEditText.setFocusableInTouchMode(true);
-		InputMethodManager inputManager =  
-	               (InputMethodManager)passwordEditText.getContext().getSystemService(Context.INPUT_METHOD_SERVICE); 
-		inputManager.showSoftInput(passwordEditText, 0);
+		
 	}
 }

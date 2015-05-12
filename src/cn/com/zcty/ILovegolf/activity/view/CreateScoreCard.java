@@ -22,6 +22,7 @@ import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -59,8 +60,9 @@ public class CreateScoreCard extends Activity{
 	
 	private ListView scoreListView;//存放数据
 	private CircleImageView totleImage;
-	
+	private ProgressDialog progressDialog;
 	private String id;
+	private String scoring_type;
 	private ArrayList<ScoreCardsMatch> scoreCardsMatchs = new ArrayList<ScoreCardsMatch>();//存放成绩
 	private ArrayList<TeeBoxsMatch> teeBoxsMatchs = new ArrayList<TeeBoxsMatch>();//存放T台颜色
 	Handler handler = new Handler(){
@@ -84,16 +86,17 @@ public class CreateScoreCard extends Activity{
 					if(!fileIsExists()){						
 						new Imageloder().start();
 					}else{
-						converToBitmap(100,100);
+						totleImage.setImageBitmap(converToBitmap(100,100));
 					}
 				}
 				CreateScoreCardAdapter adapter = new CreateScoreCardAdapter(CreateScoreCard.this, scoreCardsMatchs);
 				scoreListView.setAdapter(adapter);
+				hideProgressDialog();
 				}
 			}
 			if(msg.what==2){
 				totleImage.setImageBitmap(bitmap);
-				saveMyBitmap(bitmap);
+				saveMyBitmap(bitmap);//把bitmap保存到手机目录中
 			}
 		};
 	};
@@ -104,6 +107,7 @@ public class CreateScoreCard extends Activity{
 		setContentView(R.layout.activity_scord);
 		initView();
 		new MyTask().start();
+		showProgressDialog("提示", "正在加载内容，请稍等");
 	}
 	private void initView() {
 		totleImage = (CircleImageView) findViewById(R.id.myself_head);
@@ -116,6 +120,7 @@ public class CreateScoreCard extends Activity{
 		
 		Intent intent=getIntent();
 		id = intent.getStringExtra("uuid");
+		scoring_type = intent.getStringExtra("scoring_type");
 	}
 	
 	/*
@@ -134,9 +139,27 @@ public class CreateScoreCard extends Activity{
 			startActivity(i);
 			break;
 		case R.id.competition_button_yaoqing:
-			Intent j = new Intent(CreateScoreCard.this,SelfhoodActivity.class);
-			
+			Intent j = new Intent();
+			if(fileIsExists()){
+				j.setClass(CreateScoreCard.this,InviteActivity.class);
+			}else{
+				//j = new Intent(CreateScoreCard.this,SelfhoodActivity.class);
+				j.setClass(CreateScoreCard.this,SelfhoodActivity.class);
+			}
+			j.putExtra("uuid", id);
 			startActivity(j);
+			break;
+		case R.id.competition_button_tongji:
+			Intent f = new Intent();
+			if(scoring_type.equals("simple")){
+				f.setClass(CreateScoreCard.this,StatisticsAvtivity.class);
+			}else{
+				f.setClass(CreateScoreCard.this,MajorStatisticsActivity.class);
+			}
+			
+			
+			f.putExtra("uuid", id);
+			startActivity(f);
 			break;
 		default:
 			break;
@@ -227,6 +250,7 @@ public class CreateScoreCard extends Activity{
 			
 		
 	}
+	
 	/**
 	 * 获取头像
 	 * @author Administrator
@@ -313,4 +337,26 @@ public class CreateScoreCard extends Activity{
 
 		
 	}
+	/*
+     * 提示加载
+     */
+     public  void   showProgressDialog(String title,String message){
+            if(progressDialog ==null){
+                   progressDialog = ProgressDialog.show( this, title, message,true,true );
+
+           } else if (progressDialog .isShowing()){
+                   progressDialog.setTitle(title);
+                   progressDialog.setMessage(message);
+           }
+            progressDialog.show();
+
+    }
+     /*
+     * 隐藏加载
+     */
+     public  void hideProgressDialog(){
+            if(progressDialog !=null &&progressDialog.isShowing()){
+                   progressDialog.dismiss();
+           }
+    }
 }

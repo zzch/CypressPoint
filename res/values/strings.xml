@@ -108,4 +108,6 @@
     <!-- 加入比赛 -->
     <string name="textdescription">您的朋友创建比赛后可以获得4位数字口令输入后即可加入到TA的比赛</string>
      <string name="textdescription_1">请您让TA点击”比赛“，之后点击”创建新比赛“，选择球场后点击排行榜，输入上面的4位数字口令后，点击加入，即可加入到您创建的比赛中，共同体验高尔夫的乐趣。</string>
+
+	<string name="text">您输入的比赛口令密码为以下4位数字TA输入后即可加入到您的比赛</string>
 </resources>

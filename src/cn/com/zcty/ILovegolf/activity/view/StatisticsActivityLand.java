@@ -58,6 +58,7 @@ public class StatisticsActivityLand extends Activity{
 	private ListView qiudongListView;
 	private ListView qiudongTypeListView;
 	private ListView countListView;
+	private String match_uuid;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -76,6 +77,8 @@ public class StatisticsActivityLand extends Activity{
 		new MyTask().start();
 	}
 	private void initView() {
+		match_uuid = getIntent().getStringExtra("uuid");
+		
 		backButton = (Button) findViewById(R.id.back1);	
 		gridView = (GridView) findViewById(R.id.gridView1);
 		gridView.setSelector(new ColorDrawable(Color.TRANSPARENT));
@@ -238,9 +241,9 @@ public class StatisticsActivityLand extends Activity{
 
 		else if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) { 
 
-			Log.i("zhouhe", "zhouheb");
-
+			
 			Intent intent = new Intent(this,StatisticsAvtivity.class);
+			intent.putExtra("uuid", match_uuid);
 			startActivity(intent);
 			finish();
 		}
@@ -266,9 +269,9 @@ public class StatisticsActivityLand extends Activity{
 			getData();
 		}
 		public void getData(){
-			SharedPreferences ss = getSharedPreferences("edit", MODE_PRIVATE);
+			/*SharedPreferences ss = getSharedPreferences("edit", MODE_PRIVATE);
 
-			String match_uuid = ss.getString("match_uuid", "match_uuid");
+			String match_uuid = ss.getString("match_uuid", "match_uuid");*/
 			SharedPreferences sp = getSharedPreferences("register",  Context.MODE_PRIVATE);
 			String token = sp.getString("token", "token");
 			String path = APIService.DATASTATISTICS+"match_uuid="+match_uuid+"&token="+token;

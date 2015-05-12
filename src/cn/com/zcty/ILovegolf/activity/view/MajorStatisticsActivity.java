@@ -58,10 +58,8 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 				setListViewHeightBasedOnChildren(informationListView);
 				if(statisticsModels.get(0).getPlace3().equals("")){
 					rrs.setVisibility(View.GONE);
-					Log.i("dsfasdfsad", statisticsModels.get(0).getPlace2()+"fff");
 				}else{
 					rrs.setVisibility(View.VISIBLE);
-					Log.i("dsfasdfsad", statisticsModels.get(0).getPlace2()+"666");
 				}
 			}
 		};
@@ -195,8 +193,10 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 			getData();
 		}
 		public void getData(){
-			SharedPreferences ss = getSharedPreferences("edit",Activity.MODE_PRIVATE);
-			String uuid = ss.getString("match_uuid", "match_uuid");
+			/*SharedPreferences ss = getSharedPreferences("edit",Activity.MODE_PRIVATE);
+			String uuid = ss.getString("match_uuid", "match_uuid");*/
+			Intent intent = getIntent();
+			String uuid = intent.getStringExtra("uuid");
 			SharedPreferences sp = getSharedPreferences("register", Context.MODE_PRIVATE);
 			String token = sp.getString("token", "token");
 			String path = APIService.MAJORCOUNT+"token="+token+"&match_uuid="+uuid;			

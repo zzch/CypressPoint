@@ -53,6 +53,7 @@ public class SelfhoodActivity extends Activity{
 	private String sex = "";
 	private String nickname = "";
 	private String success;
+	private String id;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -68,6 +69,10 @@ public class SelfhoodActivity extends Activity{
 					}else{
 						if(success.equals("success")){
 							Toast.makeText(SelfhoodActivity.this, "保存成功", Toast.LENGTH_LONG).show();
+							Intent intent = new Intent(SelfhoodActivity.this,InviteActivity.class);
+							intent.putExtra("uuid", id);
+							startActivity(intent);
+							finish();
 						}else{
 							FileUtil.delFile();
 							Toast.makeText(SelfhoodActivity.this, "保存失败", Toast.LENGTH_LONG).show();
@@ -96,6 +101,7 @@ public class SelfhoodActivity extends Activity{
 		sexRadioGroup = (RadioGroup) findViewById(R.id.main_radio);
 		baocunButton = (Button) findViewById(R.id.selfhood_baocun);
 		linear = (LinearLayout) findViewById(R.id.linear);
+		id = getIntent().getStringExtra("uuid");
 	}
 	private void setListeners(){
 		/*
