@@ -8,7 +8,7 @@
          android:layout_height="50dp"
          android:orientation="horizontal"
          android:gravity="center"
-         android:background="@anim/pingpu"
+         android:background="@color/bg"
          >
 
     <TextView

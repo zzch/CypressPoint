@@ -7,33 +7,13 @@
         android:id="@+id/score_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+   
         >
-        <RelativeLayout 
-            android:id="@+id/score_par"
-            android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-            <TextView 
-                android:id="@+id/score"
-                android:layout_centerHorizontal="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1"
-                />
-            <TextView 
-                android:id="@+id/score_par_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/score"
-                android:text="Par3"
-                />
-        </RelativeLayout>
         <RelativeLayout 
             android:id="@+id/score_t"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-           	android:layout_marginLeft="40dp"
+           	android:layout_marginLeft="80dp"
            	android:layout_centerVertical="true"
             >
             <LinearLayout 
@@ -47,6 +27,8 @@
             android:layout_height="wrap_content"
 			android:gravity="center"
             android:layout_weight="1"
+            android:textSize="@dimen/txsize_small_xx"
+            android:textColor="#ffffff"
             android:text="97"
             />
             <TextView 
@@ -55,6 +37,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/txsize_small_xx"
             android:text="132"
             />
             <TextView 
@@ -63,6 +47,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_weight="1"
+            android:textSize="@dimen/txsize_small_xx"
+            android:textColor="#ffffff"
             android:text="184"
             />
             <TextView 
@@ -71,6 +57,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_weight="1"
+            android:textSize="@dimen/txsize_small_xx"
+            android:textColor="#ffffff"
             android:text="226"
             />
             <TextView 
@@ -79,9 +67,46 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_weight="1"
+            android:textSize="@dimen/txsize_small_xx"
+            android:textColor="#ffffff"
             android:text="290"
             />
+            <ImageView 
+             android:layout_width="25dp"
+            android:layout_height="18dp"
+            android:src="@drawable/icon_arrow"
+            android:gravity="center"
+            android:layout_weight="1"
+                />
           </LinearLayout>  
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/score_par"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="1"
+                android:textColor="@color/gold"
+                android:textSize="@dimen/txsize_large_x" />
+
+            <TextView
+                android:id="@+id/score_par_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/score"
+                android:layout_centerHorizontal="true"
+                android:text="Par 3"
+                android:textColor="@color/gold"
+                android:textSize="@dimen/txsize_small_xx" />
         </RelativeLayout>
         
     </RelativeLayout>
@@ -94,8 +119,8 @@
         <RelativeLayout 
             android:id="@+id/score_par_two"
             android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             >
             <TextView 
                 android:id="@+id/score_two"
@@ -103,26 +128,34 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
+                android:textSize="@dimen/txsize_large_x"
                 />
             <TextView 
                 android:id="@+id/score_par_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/score_two"
-                android:text="Par3"
+                android:text="Par 3"
+                 android:layout_centerHorizontal="true"
+                android:textSize="@dimen/txsize_small_xx"
                 />
         </RelativeLayout>
+        
+
+        
         <RelativeLayout 
             android:id="@+id/score_t_two"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
            	android:layout_marginLeft="80dp"
+         
             >
           <TextView 
               android:id="@+id/score_sgin"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="成绩"
+              android:layout_marginTop="20dp"
               />
           <TextView 
               android:id="@+id/score_s_1"
@@ -130,21 +163,24 @@
               android:layout_height="wrap_content"
               android:gravity="center"
 			  android:layout_marginLeft="40dp"
-			  android:layout_marginTop="20dp"
+			  android:layout_marginTop="40dp"
               android:text="7"
               />  
         </RelativeLayout>
         <RelativeLayout 
             android:id="@+id/score_cool_two"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
            	android:layout_marginLeft="180dp"
+           	android:gravity="center"
+           	 
             >
           <TextView 
               android:id="@+id/score_cool_name"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="开球"
+            
               />
           <ImageView 
               android:id="@+id/image"
@@ -152,7 +188,7 @@
               android:layout_height="20dp"
               android:layout_marginLeft="33dp"
               android:layout_marginTop="10dp"
-              android:src="@drawable/hugh"
+              android:src="@drawable/juzhong"
               />
           <TextView 
               android:id="@+id/score_cool"
@@ -164,5 +200,15 @@
               android:text="7"
               />  
         </RelativeLayout>
+        
+          <ImageView 
+             android:layout_width="25dp"
+            android:layout_height="18dp"
+            android:src="@drawable/icon_arrow"
+            android:gravity="center"
+           android:layout_alignParentRight="true"
+           android:layout_centerVertical="true"
+           android:layout_marginRight="20dp"
+                />
     </RelativeLayout>
 </LinearLayout>

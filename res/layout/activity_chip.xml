@@ -3,33 +3,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" 
-    android:background="@anim/pingpu"
+    android:background="@color/bg"
     >
 
     <RelativeLayout
         android:layout_width="match_parent"
          android:layout_height="@dimen/title_height"
-        android:background="@anim/title_pingpu" >
+        android:background="@drawable/title_bg" >
 
         <FrameLayout 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             >
 
         <Button
             android:id="@+id/scorecard_back"
-            android:layout_width="50dp"
-            android:layout_height="25dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="13dp"
-            android:background="@null"
             android:onClick="onclick"
-            android:text="返回"
+           android:layout_width="80dp"
+            android:layout_height="47dp"
+            android:layout_marginLeft="@dimen/title_button_left"
+            android:background="@null"
+            android:text="@string/back"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_small_xx" />
         
-         <ImageView
+        <ImageView
             android:layout_width="30dp"
             android:layout_height="35dp"
             android:layout_marginTop="6dp"
@@ -41,6 +40,7 @@
             android:layout_height="47dp"
             android:gravity="center"
             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:text="切杆"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_mid_x"/>

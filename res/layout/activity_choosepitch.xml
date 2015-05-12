@@ -3,13 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@anim/pingpu"
+    android:background="@color/bg"
      >
 
     <RelativeLayout
         android:layout_width="match_parent"
          android:layout_height="@dimen/title_height"
-        android:background="@anim/title_pingpu" >
+        android:background="@drawable/title_bg" >
 
         <TextView
             android:id="@+id/textView1"
@@ -17,6 +17,7 @@
              android:layout_height="47dp"
             android:gravity="center"
             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:text="@string/chooisepith"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_mid_x" />
@@ -24,15 +25,14 @@
              <FrameLayout 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            
+            android:layout_centerVertical="true"
             >
           <Button
             android:id="@+id/button1"
            android:layout_width="80dp"
             android:layout_height="47dp"
-            android:layout_alignParentLeft="true"
             android:layout_marginLeft="@dimen/title_button_left"
-            android:background="@drawable/button_bg_pingpu"
+            android:background="@null"
             android:text="@string/back"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_small_xx" 
@@ -48,8 +48,9 @@
            android:layout_width="80dp"
             android:layout_height="47dp" 
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="-10dp"
-            android:background="@drawable/button_bg_pingpu"
+            android:background="@null"
             android:textColor="@color/gold"
             android:text="@string/qiehuan"
             android:onClick="qiehuan"

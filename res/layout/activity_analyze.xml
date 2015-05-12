@@ -2,22 +2,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-   android:background="@anim/pingpu"
+   android:background="@color/bg"
     android:orientation="vertical" >
 
     <RelativeLayout
         android:layout_width="match_parent"
          android:layout_height="@dimen/title_height"
-        android:background="@anim/title_pingpu" >
+        android:background="@drawable/title_bg" >
 
         
 
         <TextView
             android:id="@+id/analyze_title"
              android:layout_width="wrap_content"
-           android:layout_height="47dp"
-            android:gravity="center"
-            android:layout_centerHorizontal="true"
+             android:layout_height="wrap_content"
+            
+             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:text="@string/playset"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_mid_x"/>
@@ -25,23 +26,23 @@
           <FrameLayout 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            
+            android:layout_centerVertical="true"
             >
          
         <Button
             android:id="@+id/analyze_back"
             android:layout_width="80dp"
             android:layout_height="47dp"
-            android:layout_alignParentLeft="true"
+            
             android:layout_marginLeft="@dimen/title_button_left"
-            android:background="@drawable/button_bg_pingpu"
+            android:background="@null"
             android:text="@string/back"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_small_xx"/>
         <ImageView
             android:layout_width="30dp"
             android:layout_height="35dp"
-            android:layout_marginTop="6dp"
+           android:layout_marginTop="6dp"
             android:src="@drawable/back_image" />
 		</FrameLayout>
         

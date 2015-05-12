@@ -3,24 +3,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" 
     android:orientation="vertical" 
-    android:background="@anim/pingpu"
+    android:background="@color/bg"
     >
 
     <LinearLayout
       
         android:layout_width="match_parent"
          android:layout_height="@dimen/title_height"
-        android:background="@anim/title_pingpu"
-        android:gravity="center_horizontal"
+        android:background="@drawable/title_bg"
+        android:gravity="center"
         android:orientation="horizontal" >
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="47dp"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/title"
             android:textColor="@color/gold"
-                    
             android:textSize="@dimen/txsize_mid_x" />
     </LinearLayout>
    
@@ -40,7 +39,7 @@
             android:text="@string/major_card"
             android:background="@drawable/button"
             android:textSize="@dimen/txsize_mid_x"
-            android:textColor="@color/gold"
+            android:textColor="@color/bg"
             android:layout_weight="1"
              />
 
@@ -68,7 +67,7 @@
              android:layout_weight="1"
             android:text="@string/easy_card"
             android:textSize="@dimen/txsize_mid_x"
-            android:textColor="@color/gold" />
+            android:textColor="@color/bg" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -86,7 +85,7 @@
             android:onClick="jingji"
             android:text="@string/athletics"
             android:textSize="@dimen/txsize_mid_x"
-            android:textColor="@color/gold" />
+            android:textColor="@color/bg" />
 
         <TextView
             android:layout_width="wrap_content"

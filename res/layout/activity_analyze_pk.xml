@@ -2,13 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@anim/pingpu"
+    android:background="@color/bg"
     android:orientation="vertical" >
 
   	<RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_height"
-        android:background="@anim/title_pingpu" >
+        android:background="@drawable/title_bg" >
         <FrameLayout 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -21,7 +21,7 @@
             android:layout_height="47dp"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="@dimen/title_button_left"
-            android:background="@drawable/button_bg_pingpu"
+            android:background="@null"
             android:text="@string/back"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_small_xx"  />
@@ -35,9 +35,10 @@
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
-            android:layout_height="47dp"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:text="@string/analyzepk"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_mid_x" />
@@ -48,7 +49,7 @@
             android:layout_height="47dp" 
             android:layout_alignParentRight="true"
             android:layout_marginRight="-10dp"
-            android:background="@drawable/button_bg_pingpu"
+            android:background="@null"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_small_xx" 
             android:visibility="gone"
@@ -66,7 +67,7 @@
             android:id="@+id/anlyze_pk_zhiye"
             android:layout_width="@dimen/view_tongyong"
             android:layout_height="@dimen/view_sss_e"
-            android:background="@drawable/button"
+            android:background="@drawable/button1"
             android:textColor="@color/gold"
             android:textSize="22dp"
             android:text="职业选手" />
@@ -77,7 +78,7 @@
             android:layout_height="@dimen/view_sss_e"
             android:layout_below="@+id/anlyze_pk_zhiye"
             android:layout_marginTop="15dp"
-            android:background="@drawable/button"
+            android:background="@drawable/button1"
             android:textColor="@color/gold"
             android:textSize="22dp"
             android:text="70杆选手" />
@@ -88,7 +89,7 @@
             android:layout_height="@dimen/view_sss_e"
             android:layout_below="@+id/anlyze_pk_70"
             android:layout_marginTop="15dp"
-            android:background="@drawable/button"
+            android:background="@drawable/button1"
             android:textColor="@color/gold"
             android:textSize="22dp"
             android:text="80杆选手" />
@@ -99,7 +100,7 @@
             android:layout_height="@dimen/view_sss_e"
             android:layout_below="@+id/anlyze_pk_80"
             android:layout_marginTop="15dp"
-            android:background="@drawable/button"
+            android:background="@drawable/button1"
             android:textColor="@color/gold"
             android:textSize="22dp"
             android:text="90杆选手" />
@@ -110,7 +111,7 @@
             android:layout_height="@dimen/view_sss_e"
             android:layout_below="@+id/anlyze_pk_90"
             android:layout_marginTop="15dp"
-            android:background="@drawable/button"
+            android:background="@drawable/button1"
             android:textColor="@color/gold"
             android:textSize="22dp"
             android:text="100杆选手" />

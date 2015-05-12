@@ -2,26 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@anim/pingpu"
+    android:background="@color/bg"
     android:orientation="vertical" >
 
     <RelativeLayout
         android:id="@+id/layout_scord_card"
         android:layout_width="match_parent"
          android:layout_height="@dimen/title_height"
-        android:background="@anim/title_pingpu" >
+        android:background="@drawable/title_bg" >
 
        <FrameLayout 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             >
         <Button
             android:id="@+id/scorecard_back"
             android:layout_width="80dp"
             android:layout_height="47dp"
-            android:layout_alignParentLeft="true"
             android:layout_marginLeft="@dimen/title_button_left"
-            android:background="@drawable/button_bg_pingpu"
+            android:background="@null"
             android:text="@string/back"
             android:textColor="@color/gold"
             android:onClick="onclick"
@@ -38,6 +38,7 @@
             android:layout_height="47dp"
             android:gravity="center"
             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:text="@string/score_card"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_mid_x" />
@@ -65,32 +66,38 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" 
+                    android:layout_height="90dp" 
+                   
                     >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"	
-                        android:layout_marginLeft="90dp"
+                        android:layout_marginLeft="@dimen/create_score_left"
                         android:text="用户昵称"
-                        android:textColor="#ffffff" />
+                        android:textSize="@dimen/txsize_small_xxx"
+                        android:layout_marginTop="@dimen/view_Layout_x"
+                        android:textColor="@color/gold_80" />
 
                     <TextView
                         android:id="@+id/competition_username"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="160dp"
+                        android:layout_marginTop="@dimen/view_Layout_x"
+                        android:layout_marginLeft="@dimen/create_score_left_xx"
                         android:text="xxxxxx"
-                        android:textColor="#ffffff" />
+                        android:textSize="@dimen/txsize_small_xxx"
+                        android:textColor="@color/gold_80" />
 
                     <TextView
                         android:id="@+id/name_paiming"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/competition_username"
-                        android:layout_marginLeft="90dp"
+                        android:layout_marginLeft="@dimen/create_score_left"
                         android:text="排名:"
-                        android:textColor="#ffffff" />
+                        android:textSize="@dimen/txsize_small_xx"
+                        android:textColor="@color/gold_80"  />
 
                     <TextView
                         android:id="@+id/competition_paiming"
@@ -100,7 +107,8 @@
                         android:layout_marginLeft="40dp"
                         android:layout_alignLeft="@+id/name_paiming"
                         android:text="78"
-                        android:textColor="#ffffff" />
+                        android:textSize="@dimen/txsize_small_xx"
+                        android:textColor="@color/gold_80"  />
 
                     <TextView
                         android:id="@+id/name_jindu"
@@ -108,8 +116,9 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/competition_username"
                         android:text="进度:"
-                        android:layout_marginLeft="180dp"
-                        android:textColor="#ffffff" />
+                        android:textSize="@dimen/txsize_small_xx"
+                        android:layout_marginLeft="@dimen/create_score_left_xx"
+                        android:textColor="@color/gold_80"  />
 
                     <TextView
                         android:id="@+id/competition_jindu"
@@ -119,7 +128,8 @@
                         android:layout_marginLeft="40dp"
                         android:layout_alignLeft="@+id/name_jindu"
                         android:text="31"
-                        android:textColor="#ffffff" />
+                        android:textSize="@dimen/txsize_small_xx"
+                        android:textColor="@color/gold_80"  />
 
                     <TextView
                         android:id="@+id/name_chengji"
@@ -127,8 +137,9 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/competition_paiming"
                         android:text="成绩:"
-                        android:layout_marginLeft="90dp"
-                        android:textColor="#ffffff" />
+                        android:textSize="@dimen/txsize_small_xx"
+                        android:layout_marginLeft="@dimen/create_score_left"
+                        android:textColor="@color/gold_80"  />
 
                     <TextView
                         android:id="@+id/competition_chengji"
@@ -138,7 +149,8 @@
                         android:layout_marginLeft="40dp"
                         android:layout_alignLeft="@+id/name_chengji"
                         android:text="+6"
-                        android:textColor="#ffffff" />
+                        android:textSize="@dimen/txsize_small_xx"
+                        android:textColor="@color/gold_80"  />
                     
                      <TextView
                         android:id="@+id/name_par"
@@ -146,32 +158,41 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/competition_paiming"
                         android:text="距离标准杆:"
-                        android:layout_marginLeft="180dp"
-                        android:textColor="#ffffff" />
+                        android:textSize="@dimen/txsize_small_xx"
+                        android:layout_marginLeft="@dimen/create_score_left_xx"
+                        android:textColor="@color/gold_80"  />
 
                     <TextView
                         android:id="@+id/competition_par"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/competition_paiming"
-                        android:layout_marginLeft="80dp"
+                        android:layout_marginLeft="@dimen/create_score_left_xxx"
                         android:layout_alignLeft="@+id/name_par"
                         android:text="+6"
-                        android:textColor="#ffffff" />
+                        android:textSize="@dimen/txsize_small_xx"
+                        android:textColor="@color/gold_80" />
 
                     <cn.com.zcty.ILovegolf.tools.CircleImageView
                         android:id="@+id/myself_head"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginLeft="@dimen/view_sss_ff"
+                        android:layout_marginTop="@dimen/view_sss_ff"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="10dp"
+                       
                         android:src="@drawable/hugh" />
                 </RelativeLayout>
+                 <View 
+                        android:layout_height="1dp"
+                        android:layout_width="match_parent"
+                        android:background="@color/gold_half"
+                        />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center"
                     android:orientation="horizontal" >
 
                     <Button
@@ -180,27 +201,58 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:onClick="onclick"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:textColor="@color/gold_80"
+                        android:textSize="@dimen/txsize_small_xx"
                         android:text="排名榜" />
+                    <View 
+                        android:layout_height="35dp"
+                        android:layout_width="1dp"
+                        android:background="@color/gold_half"
+                        android:layout_gravity="center_vertical"
+                        />
 					<Button
                         android:id="@+id/competition_button_yaoqing"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:onClick="onclick"
+                        android:background="@null"
+                        android:gravity="center"
                         android:layout_weight="1"
+                        android:textSize="@dimen/txsize_small_xx"
+                        android:textColor="@color/gold_80"
                         android:text="邀请好友" />
+					<View 
+                        android:layout_height="35dp"
+                        android:layout_width="1dp"
+                        android:background="@color/gold_half"
+                        android:layout_gravity="center_vertical"
+                        />
                     <Button
                         android:id="@+id/competition_button_tongji"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:onClick="onclick"
                         android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="@dimen/txsize_small_xx"
+                        android:background="@null"
+                        android:textColor="@color/gold_80"
                         android:text="技术分析" />
                 </LinearLayout>
+                <View 
+                        android:layout_height="1dp"
+                        android:layout_width="match_parent"
+                        android:background="@color/gold_half"
+                        />
 
                 <ListView
                     android:id="@+id/score_match"
                     android:layout_width="match_parent"
                     android:layout_height="800dp"
+                    android:divider="@color/gold_half"
+                    android:dividerHeight="1dp"
                     android:listSelector="@android:color/transparent"
   					>
                 </ListView>

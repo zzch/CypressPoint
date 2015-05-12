@@ -2,7 +2,7 @@
 <resources>
     
      <!-- 背景色 -->
-     <color name="black">#17191c</color>
+     <color name="bg">#222222</color>
      <!-- 白色 -->
      <color name="white">#ced1d4</color>
      <!-- 金色 -->

@@ -4,19 +4,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical" 
     android:gravity="center_horizontal"
-    android:background="@anim/pingpu"
+    android:background="@color/bg"
    >
     <RelativeLayout
         android:layout_width="match_parent"
        android:layout_height="@dimen/title_height"
-        android:background="@anim/title_pingpu" >
+        android:background="@drawable/title_bg" >
 
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="47dp"
             android:layout_centerHorizontal="true"
-       
+            android:layout_centerVertical="true"
             android:gravity="center"
             android:text="我爱高尔夫"
             android:textColor="@color/gold"
@@ -30,7 +30,7 @@
         android:layout_width="@dimen/register_view_width"
         android:layout_height="@dimen/view_mid_xx_title"
         android:text="@string/zhuce"
-        android:background="@drawable/button"
+        android:background="@drawable/button1"
         android:gravity="center"
         android:textSize="20dp"
         android:textColor="@color/gold" 
@@ -42,7 +42,7 @@
         android:layout_width="@dimen/register_view_width"
         android:layout_height="@dimen/view_mid_xx_title"
         android:text="@string/mobileregister"
-        android:background="@drawable/button"
+        android:background="@drawable/button1"
         android:gravity="center"
         android:textColor="@color/gold" 
         android:textSize="20dp"
@@ -103,7 +103,7 @@
         android:layout_width="@dimen/register_view_width"
         android:layout_height="@dimen/view_mid_xx_title"
         android:text="@string/login"
-        android:background="@drawable/button"
+        android:background="@drawable/button1"
         android:gravity="center"
         android:textColor="@color/gold" 
         android:onClick="login"

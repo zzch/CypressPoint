@@ -77,7 +77,7 @@
         android:layout_height="@dimen/view_sss_e"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:background="@drawable/button"
+        android:background="@drawable/button1"
         android:text="下一步"
         android:textColor="@color/gold"
         android:textSize="@dimen/txsize_mid_x" />

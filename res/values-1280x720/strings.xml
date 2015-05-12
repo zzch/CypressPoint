@@ -148,4 +148,12 @@
         <dimen name="my_tuichu_top">350dp</dimen>
         
         <dimen name="create_pitch_left">220dp</dimen>
+        
+        <dimen name="create_score_left">110dp</dimen>
+        <dimen name="create_score_left_x">180dp</dimen>
+        <dimen name="create_score_left_xx">200dp</dimen>
+        <dimen name="create_score_left_xxx">100dp</dimen>
+        
+        <dimen name="button_jia_x">100dp</dimen>
+        
 </resources>

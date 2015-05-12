@@ -2,13 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@anim/pingpu"
+    android:background="@color/bg"
     android:orientation="vertical" >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_height"
-        android:background="@anim/title_pingpu" >
+        android:background="@drawable/title_bg" >
 
         <Button
             android:id="@+id/k_build"
@@ -16,8 +16,9 @@
             android:layout_height="47dp"
             android:layout_alignBottom="@+id/imageView1"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="-10dp"
-            android:background="@drawable/button_bg_pingpu"
+            android:background="@null"
             android:onClick="onclick"
             android:text="@string/new_build"
             android:textColor="@color/gold"
@@ -25,15 +26,16 @@
 
         <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+             >
 
             <Button
                 android:id="@+id/k_back"
                 android:layout_width="80dp"
                 android:layout_height="47dp"
-                android:layout_alignParentLeft="true"
                 android:layout_marginLeft="@dimen/title_button_left"
-                android:background="@drawable/button_bg_pingpu"
+                android:background="@null"
                 android:onClick="onclick"
                 android:text="@string/back"
                 android:textColor="@color/gold"
@@ -51,6 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="47dp"
             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:gravity="center"
             android:text="简单记分卡"
             android:textColor="@color/gold"
@@ -62,17 +65,33 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical" >
+        
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          
+             >
 
         <Button
             android:id="@+id/create_match"
              android:layout_width="@dimen/register_view_width"
-        android:layout_height="@dimen/view_mid_xx_title"
+             android:layout_height="@dimen/view_mid_xx_title"
             android:background="@drawable/button"
             android:onClick="onclick"
-            android:text="创建新比赛"
-            android:textColor="@color/gold"
+            android:text="创建比赛"
+            android:textColor="@color/bg"
             android:layout_marginTop="25dp"
             android:textSize="@dimen/txsize_small_xxx" />
+
+         <ImageView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="43dp"
+             android:layout_marginLeft="@dimen/button_jia_x"
+             android:src="@drawable/button_jia" />
+
+        </FrameLayout>
+        
         <RelativeLayout 
             android:layout_width="match_parent"
             android:layout_height="53dp"
@@ -105,6 +124,11 @@
                 android:background="@color/gold_half"
                 />
             </RelativeLayout>
+            <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          
+             >
 
         <Button
             android:id="@+id/add_match"
@@ -114,8 +138,16 @@
             android:gravity="center"
             android:onClick="onclick"
             android:text="加入比赛"
-            android:textColor="@color/gold"
+            android:textColor="@color/bg"
             android:textSize="@dimen/txsize_small_xxx" />
+         <ImageView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="20dp"
+             android:layout_marginLeft="@dimen/button_jia_x"
+             android:src="@drawable/button_kou" />
+
+        </FrameLayout>
     </LinearLayout>
     
     <RelativeLayout 
@@ -140,7 +172,7 @@
         android:layout_height="fill_parent"
         android:orientation="vertical" >
     
-        <com.handmark.pulltorefresh.library.PullToRefreshScrollView
+         <com.handmark.pulltorefresh.library.PullToRefreshScrollView
             xmlns:ptr="http://schemas.android.com/apk/res-auto"
             android:id="@+id/pull_refresh_scrollview"
             android:layout_width="fill_parent"
