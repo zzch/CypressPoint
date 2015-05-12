@@ -71,7 +71,7 @@ public class HttpUtils
 			//找到服务返回的状态码 200表示成功
 			code=response.getStatusLine().getStatusCode();
 			Log.i("code---->", ""+code);
-			if(code==201)
+			if(code==201||code==200)
 			{
 				
 				//InputStream is=response.getEntity().getContent();

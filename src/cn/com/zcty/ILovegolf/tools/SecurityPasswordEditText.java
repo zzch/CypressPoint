@@ -52,6 +52,13 @@ public class SecurityPasswordEditText extends LinearLayout {
 
 	public void setInputnumber(String inputnumber) {
 		this.inputnumber = inputnumber;
+		if(inputnumber == null){
+			one_pwd.requestFocus();
+			one_pwd.setText(null);
+			two_pwd.setText(null);
+			three_pwd.setText(null);
+			four_pwd.setText(null);
+			}
 	}
 
 	public OnEditTextListener getOnEditTextListener() {
@@ -83,7 +90,10 @@ public class SecurityPasswordEditText extends LinearLayout {
 	private void init(Context context) {
 		LayoutInflater.from(getContext())
 		.inflate(R.layout.edittext_password, this);
-		one_pwd= (EditText)findViewById(R.id.pwd_one);
+		one_pwd= (EditText)findViewById(R.id.pwd_one);	
+		/*one_pwd.requestFocus();
+		InputMethodManager m = (InputMethodManager) one_pwd.getContext().getSystemService(Context.INPUT_METHOD_SERVICE); 
+		m.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);*/
 		two_pwd= (EditText)findViewById(R.id.pwd_two);
 		three_pwd= (EditText)findViewById(R.id.pwd_three);
 		four_pwd= (EditText)findViewById(R.id.pwd_four);
@@ -96,6 +106,7 @@ public class SecurityPasswordEditText extends LinearLayout {
 			public void onClick(View v) {
 				if(inputnumber == null){
 					one_pwd.requestFocus();
+					
 				}else{
 					switch (inputnumber.length()) {
 					case 3:
@@ -108,7 +119,7 @@ public class SecurityPasswordEditText extends LinearLayout {
 						three_pwd.requestFocus();
 						break;
 					case 4:
-						one_pwd.requestFocus();
+						four_pwd.requestFocus();
 						break;
 					
 
@@ -153,8 +164,8 @@ public class SecurityPasswordEditText extends LinearLayout {
 
 
 		InputMethodManager imm = (InputMethodManager)context.getSystemService(Context.INPUT_METHOD_SERVICE);  
-		imm.hideSoftInputFromWindow(one_pwd.getWindowToken(), 0);  
-
+		imm.hideSoftInputFromWindow(one_pwd.getWindowToken(), 0); 
+		
 
 	}
 	/**
@@ -176,34 +187,35 @@ public class SecurityPasswordEditText extends LinearLayout {
 
 			@Override
 			public void afterTextChanged(Editable s) {
+				
 				if (s.toString().length() == 1) {
 					if (one_pwd.isFocused()) { 
 						two_pwd.setFocusable(true);
 						two_pwd.requestFocus();
 						inputnumber = getEditNumber();
 						if (onEditTextListener != null) {
-							onEditTextListener.inputComplete(6, inputnumber);
+							onEditTextListener.inputComplete(4, inputnumber);
 						}
 					}else if (two_pwd.isFocused()) { 
 						three_pwd.setFocusable(true);  
 						three_pwd.requestFocus(); 
 						inputnumber = getEditNumber();
 						if (onEditTextListener != null) {
-							onEditTextListener.inputComplete(6, inputnumber);
+							onEditTextListener.inputComplete(4, inputnumber);
 						}
 					}else if(three_pwd.isFocused()){
 						four_pwd.setFocusable(true); 
 						four_pwd.requestFocus();
 						inputnumber = getEditNumber();
 						if (onEditTextListener != null) {
-							onEditTextListener.inputComplete(6, inputnumber);
+							onEditTextListener.inputComplete(4, inputnumber);
 						}
 					}else if(four_pwd.isFocused()){
 						/*five_pwd.setFocusable(true);
 						five_pwd.requestFocus();*/
 						inputnumber = getEditNumber();
 						if (onEditTextListener != null) {
-							onEditTextListener.inputComplete(6, inputnumber);
+							onEditTextListener.inputComplete(4, inputnumber);
 						}
 					}/*else if(five_pwd.isFocused()){
 						six_pwd.setFocusable(true);
@@ -228,22 +240,26 @@ public class SecurityPasswordEditText extends LinearLayout {
 	class onFocusListeners implements OnFocusChangeListener{
 				@Override
 				public void onFocusChange(View v, boolean hasFocus) {
-		
+					
 					switch (v.getId()) {
 					case R.id.pwd_one:
 							one_pwd.requestFocus();
+							
 						break;
 					case R.id.pwd_two:
 							two_pwd.clearFocus();
 							one_pwd.requestFocus();
+							
 						break;
 					case R.id.pwd_three:
 							three_pwd.clearFocus();
 							one_pwd.requestFocus();
+							
 						break;
 					case R.id.pwd_four:
 							four_pwd.clearFocus();
 							one_pwd.requestFocus();
+							
 						break;
 					/*case R.id.pwd_five:
 							five_pwd.clearFocus();
@@ -307,7 +323,7 @@ public class SecurityPasswordEditText extends LinearLayout {
 				}
 				count=0;
 				inputnumber = "";
-
+				
 				/*if(six_pwd.isFocused()){
 					six_pwd.clearFocus();
 					five_pwd.requestFocus();
@@ -339,6 +355,7 @@ public class SecurityPasswordEditText extends LinearLayout {
 		number+=four_pwd.getText().toString();
 		//number+=five_pwd.getText().toString();
 		//number+=six_pwd.getText().toString();
+		
 		return number;
 	}
 

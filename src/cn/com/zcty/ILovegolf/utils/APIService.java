@@ -26,7 +26,7 @@ public class APIService {
 	  public static final String MODIFYINTEGRAL = "http://123.57.210.52/api/v1/scorecards/simple.json?";
 	  
 	  //数据统计
-	  public static final String DATASTATISTICS = "http://123.57.210.52/api/v1/matches/practice/statistics/simple?";
+	  public static final String DATASTATISTICS = "http://123.57.210.52/api/v1/statistics/simple.json?";
 	  //练习赛事信息
 	  public static final String LIANXISAISHI = "http://123.57.210.52/api/v1/matches/practice/show.json?";
 	  
@@ -69,7 +69,7 @@ public class APIService {
 	  public static final String USERLOGIN= "http://123.57.210.52/api/v1/users/sign_in.json?";
 	  
 	  //专业积分统计
-	  public static final String MAJORCOUNT = "http://123.57.210.52/api/v1/matches/practice/statistics/professional.json?";
+	  public static final String MAJORCOUNT = "http://123.57.210.52/api/v1/statistics/professional.json?";
 	 
 	  //统计
 	  public static final String COUNTS = "http://123.57.210.52/api/v1/statistics.json?";
@@ -114,4 +114,10 @@ public class APIService {
 
 	 //更新头像。昵称。性别
 	 public static final String GENGGXIN = "http://123.57.210.52/api/v1/users/update_portrait_and_nickname_and_gender.json?";
+
+	 //获得比赛口令
+	 public static final String PASSWORD = "http://123.57.210.52/api/v1/matches/password.json?";
+
+	 //验证比赛口令
+	 public static final String CHECKINGPASSWORD = "http://123.57.210.52/api/v1/matches/verify.json?";
 }

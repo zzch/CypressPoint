@@ -59,6 +59,7 @@ public class StatisticsAvtivity extends FragmentActivity{
 	private ListView countListView;
 	private ListView qiudongListView;
 	private ListView qiudongTypeListView;
+	private String match_uuid;
 	private ArrayList<String> scoregrid = new ArrayList<String>();
 	private ArrayList<Fragment> arrayFragment = new ArrayList<Fragment>();
 	private ArrayList<String> parArrayList = new ArrayList<String>();
@@ -102,6 +103,7 @@ public void onConfigurationChanged(Configuration newConfig) {
 	if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) { 
 		Log.i("zhouhe", "zhouhea");		
 		Intent intent = new Intent(this,StatisticsActivityLand.class);
+		intent.putExtra("uuid", match_uuid);
 		startActivity(intent);
 		finish();
 		
@@ -199,6 +201,8 @@ public void onConfigurationChanged(Configuration newConfig) {
 	}
 
 	private void initView() {
+		match_uuid = getIntent().getStringExtra("uuid");
+		
 		backButton = (Button) findViewById(R.id.back);
 		tablePager = (ViewPager) findViewById(R.id.viewpager);
 		radioGroup = (RadioGroup) findViewById(R.id.main_radio);
@@ -241,8 +245,8 @@ public void onConfigurationChanged(Configuration newConfig) {
 			getData();
 		}
 		public void getData(){
-			SharedPreferences ss = getSharedPreferences("edit", MODE_PRIVATE);			
-			String match_uuid = ss.getString("match_uuid", "match_uuid");
+			/*SharedPreferences ss = getSharedPreferences("edit", MODE_PRIVATE);			
+			String match_uuid = ss.getString("match_uuid", "match_uuid");*/
 			SharedPreferences sp = getSharedPreferences("register",  Context.MODE_PRIVATE);
 			String token = sp.getString("token", "token");
 			String path = APIService.DATASTATISTICS+"match_uuid="+match_uuid+"&token="+token;

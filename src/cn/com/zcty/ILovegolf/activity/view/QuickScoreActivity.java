@@ -288,7 +288,7 @@ public class QuickScoreActivity extends Activity {
 		}
 	}
 
-	class MyTaskDele extends Thread{
+	/*class MyTaskDele extends Thread{
 		String uuid;
 		public MyTaskDele(String uuid) {
 			MyTaskDele.this.uuid = uuid;
@@ -324,7 +324,7 @@ public class QuickScoreActivity extends Activity {
 			msg.obj = jsonDele;
 			handler.sendMessage(msg);
 		}
-	}
+	}*/
 	/*
 	 * 提示加载
 	 */

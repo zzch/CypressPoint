@@ -3,10 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@anim/pingpu"
-    android:orientation="vertical"
-     android:gravity="center_horizontal"
-    >
-   
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_height"
@@ -14,141 +13,113 @@
 
         <Button
             android:id="@+id/k_build"
-             android:layout_width="80dp"
-            android:layout_height="47dp" 
+            android:layout_width="80dp"
+            android:layout_height="47dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="-10dp"
             android:background="@drawable/button_bg_pingpu"
             android:onClick="onclick"
             android:text="@string/new_build"
             android:textColor="@color/gold"
-            android:visibility="gone"
-            android:textSize="@dimen/txsize_small_xx" />
+            android:textSize="@dimen/txsize_small_xx"
+            android:visibility="gone" />
 
-         <FrameLayout 
+        <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-        
+            android:layout_height="wrap_content" >
 
-        <Button
-            android:id="@+id/add_back"
-            android:layout_width="80dp"
-            android:layout_height="47dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="@dimen/title_button_left"
-            android:background="@drawable/button_bg_pingpu"
-            android:text="@string/back"
-            android:textColor="@color/gold"
-            android:textSize="@dimen/txsize_small_xx" 
-           android:onClick="onclick"
-             />
-        
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="6dp"
-            android:src="@drawable/back_image" />
-		</FrameLayout>
+            <Button
+                android:id="@+id/add_back"
+                android:layout_width="80dp"
+                android:layout_height="47dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/title_button_left"
+                android:background="@drawable/button_bg_pingpu"
+                android:onClick="onclick"
+                android:text="@string/back"
+                android:textColor="@color/gold"
+                android:textSize="@dimen/txsize_small_xx" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="6dp"
+                android:src="@drawable/back_image" />
+        </FrameLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="47dp"
-            android:gravity="center"        
             android:layout_centerHorizontal="true"
+            android:gravity="center"
             android:text="加入比赛"
             android:textColor="@color/gold"
             android:textSize="@dimen/txsize_mid_x" />
     </RelativeLayout>
-    
-    
-    <TextView 
+
+    <TextView
         android:layout_width="@dimen/view_tongyong"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_marginTop="@dimen/shouye_name_top"
-        android:textSize="@dimen/txsize_small_xx" 
-        android:textColor="@color/gold_80"
+        android:gravity="center"
         android:text="@string/textdescription"
-        />
-    
+        android:textColor="@color/gold_80"
+        android:textSize="@dimen/txsize_small_xx" />
+
     <LinearLayout
         android:layout_width="@dimen/view_tongyong"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/shouye_name_top"
         android:gravity="center_horizontal"
-         android:layout_marginTop="@dimen/shouye_name_top"
         android:orientation="horizontal" >
 
-        <TextView 
-            android:id="@+id/kouling_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="2"
-            android:gravity="center"
-            />
-        <TextView 
-            android:id="@+id/kouling_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="2"
-            android:gravity="center"
-            />
-        <TextView 
-            android:id="@+id/kouling_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="2"
-            android:gravity="center"
-            />
-        <TextView 
-            android:id="@+id/kouling_4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="2"
-            android:gravity="center"
-            />
-        
+        <RelativeLayout
+            android:layout_width="220dp"
+            android:layout_height="wrap_content" >
+
+            <cn.com.zcty.ILovegolf.tools.SecurityPasswordEditText
+                android:id="@+id/password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="50dp" >
+            </cn.com.zcty.ILovegolf.tools.SecurityPasswordEditText>
+        </RelativeLayout>
     </LinearLayout>
 
-            <View
-                android:layout_width="@dimen/view_tongyong"
-                android:layout_height="0.5dp"
-                android:layout_marginTop="@dimen/shouye_name_top"
-                android:background="@color/gold_half" />
-    
-     <LinearLayout
+    <View
+        android:layout_width="@dimen/view_tongyong"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/shouye_name_top"
+        android:background="@color/gold_half" />
+
+    <LinearLayout
         android:layout_width="@dimen/view_tongyong"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_marginTop="@dimen/shouye_name_top"
+        android:gravity="center"
         android:orientation="horizontal" >
+
         <ImageView
             android:layout_width="25dp"
             android:layout_height="20dp"
-          
             android:src="@drawable/back_image" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/gold_80"
             android:gravity="center"
             android:text="如何加入到朋友的比赛中？"
+            android:textColor="@color/gold_80"
             android:textSize="@dimen/txsize_small_xx" />
+    </LinearLayout>
 
-         </LinearLayout>
-         
-     <TextView 
+    <TextView
         android:layout_width="@dimen/view_tongyong"
         android:layout_height="wrap_content"
-        android:textColor="@color/gold_80"
         android:layout_marginTop="@dimen/shouye_name_top"
-        android:textSize="@dimen/txsize_small_xx" 
         android:text="@string/textdescription_1"
-        />
+        android:textColor="@color/gold_80"
+        android:textSize="@dimen/txsize_small_xx" />
 
 </LinearLayout>
