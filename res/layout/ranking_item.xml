@@ -5,7 +5,7 @@
     android:orientation="vertical" >
     <RelativeLayout 
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="100dp"
         >
         <!-- 在这里加颜色 -->
         <RelativeLayout 
@@ -17,7 +17,7 @@
             <!-- 用户排名 -->
             <TextView 
                 android:id="@+id/ranking_count"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/view_mid_xx_title"
                 android:layout_height="wrap_content"
                 android:text="1"
                 />       
@@ -25,8 +25,8 @@
         <!-- 用户头像 -->
         <cn.com.zcty.ILovegolf.tools.CircleImageView 
             android:id="@+id/ranking_head_image"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="50dp"
             android:src="@drawable/hugh"
@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="130dp"
             android:text="用户name"
             />
         <RelativeLayout 

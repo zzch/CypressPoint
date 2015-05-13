@@ -46,16 +46,7 @@
         
     </RelativeLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        >
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+    
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -257,7 +248,6 @@
   					>
                 </ListView>
             </LinearLayout>
-        </RelativeLayout>
-    </ScrollView>
+      
 
 </LinearLayout>

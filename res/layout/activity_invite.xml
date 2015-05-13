@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg"
     android:orientation="vertical" >
 	<RelativeLayout
         android:layout_width="match_parent"
@@ -63,6 +64,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:gravity="center"
+            android:textColor="@color/gold_80"
             android:text="@string/text" />
     </RelativeLayout>
 
@@ -156,6 +158,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="口令密码有效期还剩27分钟，过期后可继续获取新口令密码。" />
+            android:textColor="@color/gold_80"
+            android:text="@string/text_a" />
     </RelativeLayout>
 </LinearLayout>
