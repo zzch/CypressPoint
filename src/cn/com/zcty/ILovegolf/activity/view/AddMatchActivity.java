@@ -17,6 +17,8 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.activity.view.competition.CompetitionAdd;
+import cn.com.zcty.ILovegolf.activity.view.competition.CompetitionScordActivity;
 import cn.com.zcty.ILovegolf.tools.SecurityPasswordEditText;
 import cn.com.zcty.ILovegolf.tools.SecurityPasswordEditText.OnEditTextListener;
 import cn.com.zcty.ILovegolf.utils.APIService;
@@ -34,6 +36,9 @@ public class AddMatchActivity extends Activity {
 				new AddMatchYiChang().start();
 				}else{
 					//验证成功
+					Intent intent = new Intent(AddMatchActivity.this,CompetitionScordActivity.class);
+					intent.putExtra("data", uuid);
+					startActivity(intent);
 				}
 			}
 			if(msg.what==2){

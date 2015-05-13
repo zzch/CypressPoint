@@ -176,9 +176,10 @@ public class CompetitionScordActivity extends Activity{
 			String token=sp.getString("token", "token");
 			Intent intent=getIntent();
 			String	uuid = intent.getStringExtra("data");
-			String path = APIService.COMPETITIONINFORMATION+"token="+token+"&uuid="+uuid;
+			String path = APIService.MATCHINFATION+"token="+token+"&uuid="+uuid;
 			String jsonArrayData = HttpUtils.HttpClientGet(path);
-			
+			Log.i("Competition", path);
+			Log.i("Competition", jsonArrayData);
 			/*SharedPreferences ss = getSharedPreferences("edit",Activity.MODE_PRIVATE);
 			SharedPreferences.Editor editor = ss.edit();*/
 				  try {
