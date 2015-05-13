@@ -34,6 +34,7 @@ import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.ScoreCardGridViewAdapter;
 import cn.com.zcty.ILovegolf.activity.view.ScoreCardUpDateActivity;
+import cn.com.zcty.ILovegolf.model.CompetitionAddmatch;
 import cn.com.zcty.ILovegolf.model.Scorecards;
 import cn.com.zcty.ILovegolf.model.Setcard;
 import cn.com.zcty.ILovegolf.tools.CircleImageView;
@@ -44,6 +45,7 @@ public class CompetitionScordActivity extends Activity{
 	private List<Scorecards> scorecarsArray = new ArrayList<Scorecards>();
 	private List<Setcard> setcardsArray = new ArrayList<Setcard>(19);
 	private List<Setcard> setcardsArray_2 = new ArrayList<Setcard>(19);
+	private CompetitionAddmatch add;
 	private TextView nameTextView;
 	private Button fanhuiButton;
 	private CircleImageView imageHead;
@@ -60,9 +62,7 @@ public class CompetitionScordActivity extends Activity{
 				setListeners();
 				adapter.notifyDataSetChanged();
 			}
-			if(msg.what==2){
-				new Imageloder().start();
-			}
+			
 		};
 	};
 	Handler handler1 = new Handler(){
@@ -81,12 +81,7 @@ public class CompetitionScordActivity extends Activity{
 		setContentView(R.layout.activity_competition_scord);
 		initView();	
 		setListener();
-		new MyTask().start();
-		if(fileIsExists()){
-			imageHead.setImageBitmap(converToBitmap(100,100));
-		}else{
-			new Touxiang().start();
-		}
+		
 	}
 	
 	private void setListener() {
@@ -104,8 +99,8 @@ public class CompetitionScordActivity extends Activity{
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
 		super.onBackPressed();
-		Intent intent = new Intent(CompetitionScordActivity.this,CompetitionScoreActivity.class);
-		startActivity(intent);
+		//Intent intent = new Intent(CompetitionScordActivity.this,CompetitionScoreActivity.class);
+		//startActivity(intent);
 		finish();
 	}
 	
@@ -115,9 +110,21 @@ public class CompetitionScordActivity extends Activity{
 		fanhuiButton = (Button) findViewById(R.id.scorecard_back);
 		imageHead = (CircleImageView) findViewById(R.id.myself_head);
 		nameTextView = (TextView) findViewById(R.id.competition_username);
+		add = (CompetitionAddmatch) getIntent().getSerializableExtra("add");
+		url = add.getPortrait();
 		SharedPreferences sp = getSharedPreferences("register", MODE_PRIVATE);
 		String name = sp.getString("nickname", "nickname");
 		nameTextView.setText(name);
+		new MyTask().start();
+				if(fileIsExists()){
+					imageHead.setImageBitmap(converToBitmap(100,100));
+				}else{
+					if(!url.equals("null")){
+						new Imageloder().start();
+						Log.i("sdf", "sadf");
+					}
+					
+				}
 	}
 	private void setListeners() {
 		adapter = new ScoreCardGridViewAdapter(scorecarsArray, setcardsArray, this);
@@ -176,7 +183,7 @@ public class CompetitionScordActivity extends Activity{
 			String token=sp.getString("token", "token");
 			Intent intent=getIntent();
 			String	uuid = intent.getStringExtra("data");
-			String path = APIService.MATCHINFATION+"token="+token+"&uuid="+uuid;
+			String path = APIService.COMPETITIONINFORMATION+"token="+token+"&uuid="+uuid;
 			String jsonArrayData = HttpUtils.HttpClientGet(path);
 			Log.i("Competition", path);
 			Log.i("Competition", jsonArrayData);
@@ -242,7 +249,7 @@ public class CompetitionScordActivity extends Activity{
 
 		
 	}
-	class Touxiang extends Thread{
+	/*class Touxiang extends Thread{
 		@Override
 		public void run() {
 			super.run();
@@ -267,7 +274,7 @@ public class CompetitionScordActivity extends Activity{
 			msg.what = 2;
 			handler.sendMessage(msg);
 		}
-	}
+	}*/
 	class Imageloder extends Thread{
 		@Override
 		public void run() {
@@ -275,12 +282,12 @@ public class CompetitionScordActivity extends Activity{
 			getData();
 		}
 		public void getData(){
-		if(url==null){		
+			
 		bitmap = HttpUtils.imageloder(url);
 		Message msg = handler1.obtainMessage();
 		msg.what = 1;
 		handler1.sendMessage(msg);	
-			}
+			
 	}
 	}
 	/**

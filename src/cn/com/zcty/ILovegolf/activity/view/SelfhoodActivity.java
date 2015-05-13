@@ -10,6 +10,7 @@ import org.json.JSONObject;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -54,6 +55,7 @@ public class SelfhoodActivity extends Activity{
 	private String nickname = "";
 	private String success;
 	private String id;
+	private ProgressDialog progressDialog;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -113,6 +115,7 @@ public class SelfhoodActivity extends Activity{
 			public void onClick(View v) {
 				startActivityForResult(new Intent(SelfhoodActivity.this,
 						SelectPicPopupWindow.class), 1);
+				showProgressDialog("提示", "正在获得头像");
 			}
 		});
 		/*
@@ -167,12 +170,20 @@ public class SelfhoodActivity extends Activity{
 			break;
 		}
 	}
+	@Override
+	protected void onRestart() {
+		// TODO Auto-generated method stub
+		super.onRestart();
+	hideProgressDialog();
+	}
+	
 	/**
 	 * 返回头像
 	 */
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
+		//showProgressDialog("提示", "正在获得头像");
 		switch (resultCode) {
 		case 1:
 			if (data != null) {
@@ -195,7 +206,7 @@ public class SelfhoodActivity extends Activity{
 								image = rotaingImageView(90,image);							
 							}
 							headImage.setImageBitmap(image);
-							
+							hideProgressDialog();
 						}
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -211,7 +222,7 @@ public class SelfhoodActivity extends Activity{
 							image = comp(image);
 							Log.i("ceshipath", image+"2");
 							headImage.setImageBitmap(image);
-
+							hideProgressDialog();
 						}
 					}
 				}
@@ -393,5 +404,26 @@ public class SelfhoodActivity extends Activity{
         } 
         return false ; 
     }
-	
+	/*
+	 * 提示加载
+	 */
+	public  void  showProgressDialog(String title,String message){
+		if(progressDialog==null){
+			progressDialog = ProgressDialog.show(this, title, message,true,true);
+
+		}else if(progressDialog.isShowing()){
+			progressDialog.setTitle(title);
+			progressDialog.setMessage(message);
+		}
+		progressDialog.show();
+
+	}
+	/*
+	 * 隐藏加载
+	 */
+	public  void hideProgressDialog(){
+		if(progressDialog !=null &&progressDialog.isShowing()){
+			progressDialog.dismiss();
+		}
+	}
 }

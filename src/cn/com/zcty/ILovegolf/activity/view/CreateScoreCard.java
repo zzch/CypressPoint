@@ -35,6 +35,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,10 +49,12 @@ public class CreateScoreCard extends Activity{
 	private String username;
 	private Bitmap bitmap;
 	
+	private String keren;
 	private String ranking;
 	private String schedule;
 	private String score;
 	private String par;
+	private Button yaoqingButton;
 	private TextView usernameTextView;
 	private TextView rankingTextView;//排名
 	private TextView scheduleTextView;//进度
@@ -117,10 +120,16 @@ public class CreateScoreCard extends Activity{
 		scoreTextView = (TextView) findViewById(R.id.competition_chengji);
 		parTextView = (TextView) findViewById(R.id.competition_par);
 		scoreListView = (ListView) findViewById(R.id.score_match);
-		
+		yaoqingButton = (Button) findViewById(R.id.competition_button_yaoqing);
 		Intent intent=getIntent();
 		id = intent.getStringExtra("uuid");
 		scoring_type = intent.getStringExtra("scoring_type");
+		keren = intent.getStringExtra("keren");
+		if(keren.equals("1")){
+			yaoqingButton.setVisibility(View.GONE);
+		}else{
+			yaoqingButton.setVisibility(View.VISIBLE);
+		}
 	}
 	
 	/*

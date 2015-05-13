@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 
 public class CompetitionAddmatch implements Serializable{
+	private String useName;
+	private String portrait;//头像
 	private String name;
 	private String rule;//比赛类型
 	private String remark;//备注
@@ -32,6 +34,18 @@ public class CompetitionAddmatch implements Serializable{
 	}
 	public void setTitai(ArrayList<TeeBoxs> titai) {
 		this.titai = titai;
+	}
+	public String getUseName() {
+		return useName;
+	}
+	public void setUseName(String useName) {
+		this.useName = useName;
+	}
+	public String getPortrait() {
+		return portrait;
+	}
+	public void setPortrait(String portrait) {
+		this.portrait = portrait;
 	}
 	
 }
