@@ -4,9 +4,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -18,57 +20,77 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.SelectSessionTAdapter;
+import cn.com.zcty.ILovegolf.activity.view.CreateScoreCard;
 import cn.com.zcty.ILovegolf.activity.view.MajorScoreActivity;
 import cn.com.zcty.ILovegolf.model.CompetitionAddmatch;
+import cn.com.zcty.ILovegolf.tools.CircleImageView;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 public class CompetitionAdd extends Activity{
+	private TextView fangzhuTextView;
+	private Bitmap bitmap;
+	private CircleImageView headCircleImageView;
 	private Button fanhuiButton;
-	private TextView nameTextView;
-	private TextView ruleTextView;
-	private TextView remarkTextView;
 	private TextView qiudongTextView;
 	private TextView zichangTextView;
 	private TextView titaiTextView;
 	private TextView qiudongTextView_2;
 	private TextView zichangTextView_2;
 	private TextView titaiTextView_2;
-
+	private ProgressDialog progressDialog;
+	private View v1;
+	private View v2;
+	private TextView fangshiTextView;
+	private TextView easyTextView;
+	private TextView majorTextView;
+	private ImageView imageView1;
+	private RelativeLayout majorRelativeLayout;
+	private RelativeLayout jifenfangshi;
+	private RelativeLayout leixing_layout;
 	private ListView titaiListView;
 	private ListView titai2ListView;
+	private RelativeLayout qiuchangLayout;
 	private RelativeLayout qiuchang2Layout;
 	private RelativeLayout selectSession_t;
 	private RelativeLayout selectSession_t_2;
 	private Button createButton;
 	private String tiTai[]={"红色T台","白色T台","蓝色T台","黑色T台","金色T台"};
 	private boolean f = false;
-	private String t_1;
-	private String t_2;
+	private String t_1 = "";
+	private String t_2 = "";
 	private CompetitionAddmatch add;
 	private String uuid;
 	private String flase = "no";//判断是否加入成功
+	private String scoring_type ;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
+				hideProgressDialog();
 				if(msg.obj.equals("500")||msg.obj.equals("404")){
 					Toast.makeText(CompetitionAdd.this, "网络异常，无法加入",Toast.LENGTH_LONG).show();
 				}else if(msg.obj.equals("403")){
 					Toast.makeText(CompetitionAdd.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
 				}
 				if(flase.equals("success")){
-					Intent intent = new Intent(CompetitionAdd.this,CompetitionScordActivity.class);
-					intent.putExtra("data", uuid);
+					Intent intent = new Intent(CompetitionAdd.this,CreateScoreCard.class);
+					intent.putExtra("uuid", uuid);
+					intent.putExtra("keren", "1");
+					intent.putExtra("scoring_type", scoring_type);
 					startActivity(intent);
 				}else{
 					Toast.makeText(CompetitionAdd.this, "此id已在房间，不能重复加入",Toast.LENGTH_LONG).show();
 				}
+			}
+			if(msg.what==2){
+				headCircleImageView.setImageBitmap(bitmap);
 			}
 		};
 	};
@@ -81,15 +103,13 @@ public class CompetitionAdd extends Activity{
 		initView();
 		setListeners();
 		getData();
+		new Imageloder().start();
 		
 	}
 	private void getData() {
 		Intent intent = getIntent();
 		add = (CompetitionAddmatch) intent.getSerializableExtra("add");
-		nameTextView.setText(add.getName());
-		ruleTextView.setText(add.getRule());
-		remarkTextView.setText(add.getRemark());
-
+		fangzhuTextView.setText(add.getUseName());
 		titaiListView.setAdapter(new SelectSessionTAdapter(this,add.getTitai().get(0).getBoxs()));
 		if(add.getTitai().size()>1){
 			qiudongTextView.setText("前9洞");
@@ -112,6 +132,54 @@ public class CompetitionAdd extends Activity{
 
 	}
 	private void setListeners() {
+		jifenfangshi.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				if(leixing_layout.getVisibility()==View.VISIBLE){
+					leixing_layout.setVisibility(View.GONE);
+					majorRelativeLayout.setVisibility(View.GONE);
+					v1.setVisibility(View.GONE);
+					v2.setVisibility(View.GONE);
+					imageView1.setImageResource(R.drawable.image_down);
+				}else{
+					v1.setVisibility(View.VISIBLE);
+					v2.setVisibility(View.VISIBLE);
+					leixing_layout.setVisibility(View.VISIBLE);
+					majorRelativeLayout.setVisibility(View.VISIBLE);
+					imageView1.setImageResource(R.drawable.image_up);
+				}
+			}
+		});
+
+		leixing_layout.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				v1.setVisibility(View.GONE);
+				v2.setVisibility(View.GONE);
+				leixing_layout.setVisibility(View.GONE);
+				majorRelativeLayout.setVisibility(View.GONE);
+				fangshiTextView.setText(easyTextView.getText().toString());
+				imageView1.setImageResource(R.drawable.image_down);
+			}
+		});
+		majorRelativeLayout.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				v1.setVisibility(View.GONE);
+				v2.setVisibility(View.GONE);
+				leixing_layout.setVisibility(View.GONE);
+				majorRelativeLayout.setVisibility(View.GONE);
+				fangshiTextView.setText(majorTextView.getText().toString());
+				imageView1.setImageResource(R.drawable.image_down);
+			}
+		});
+		
+		
+		
 		fanhuiButton.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -142,7 +210,7 @@ public class CompetitionAdd extends Activity{
 					titai2ListView.setVisibility(View.VISIBLE);
 				}else{
 					titai2ListView.setVisibility(View.GONE);
-					t_2 = null;
+					t_2 = "";
 				}
 			}
 		});
@@ -172,16 +240,42 @@ public class CompetitionAdd extends Activity{
 			
 			@Override
 			public void onClick(View v) {
-				new Add().start();
+				if(f){
+					if(t_1.equals("")||t_2.equals("")){
+						Toast.makeText(CompetitionAdd.this, "请选择完，在加入", Toast.LENGTH_LONG).show();
+					}else{
+						showProgressDialog("提示", "正在加入房间");
+						new Add().start();
+					}
+				}else{
+					if(t_1.equals("")){
+						Toast.makeText(CompetitionAdd.this, "请选择完，在加入", Toast.LENGTH_LONG).show();
+					}else{
+						showProgressDialog("提示", "正在加入房间");
+						new Add().start();
+					}
+				}
+				
 			}
 		});
 	}
 	private void initView() {
+		headCircleImageView = (CircleImageView) findViewById(R.id.head_image);
+		
+		v1 = findViewById(R.id.v1);
+		v2 = findViewById(R.id.v2);
+		fangshiTextView = (TextView) findViewById(R.id.username);
+		imageView1 = (ImageView) findViewById(R.id.imageView1);
+		fangshiTextView = (TextView) findViewById(R.id.creatematch_fangshi);
+		easyTextView = (TextView) findViewById(R.id.easy);
+		majorTextView = (TextView) findViewById(R.id.major);
+		jifenfangshi = (RelativeLayout) findViewById(R.id.jifenfangshi);
+		leixing_layout = (RelativeLayout) findViewById(R.id.leixing_layout);
+		majorRelativeLayout = (RelativeLayout) findViewById(R.id.creatematch_major);
+		
 		fanhuiButton = (Button) findViewById(R.id.button1);
-		nameTextView = (TextView) findViewById(R.id.competition_match_name);
-		ruleTextView = (TextView) findViewById(R.id.competition_match_mold);
-		remarkTextView = (TextView) findViewById(R.id.competition_match_sgin);
-
+		
+		qiuchangLayout = (RelativeLayout) findViewById(R.id.competition_selection_relative);
 		qiuchang2Layout = (RelativeLayout) findViewById(R.id.competition_selection_relative_2);
 		titaiListView = (ListView) findViewById(R.id.competition_listview_t);
 		titaiListView.setVisibility(View.VISIBLE);
@@ -196,12 +290,24 @@ public class CompetitionAdd extends Activity{
 		zichangTextView_2 = (TextView) findViewById(R.id.competition_match_chang_2);
 		titaiTextView_2 = (TextView) findViewById(R.id.competition_t_name_2);
 		createButton = (Button) findViewById(R.id.competition_chuangjian);
+		Intent intent = getIntent();
+		uuid = intent.getStringExtra("uuid");
+		if(fangshiTextView.getText().toString().equals("简单")){
+			scoring_type = "simple";
+		}else if(fangshiTextView.getText().toString().equals("专业")){
+			scoring_type = "professional";
+		}
 	}
 	@Override
 	public void onBackPressed() {
 		super.onBackPressed();
 		finish();
 	}
+	/**
+	 * 选择项目，参加比赛
+	 * @author Administrator
+	 *
+	 */
 	class Add extends Thread{
 		@Override
 		public void run() {
@@ -209,21 +315,23 @@ public class CompetitionAdd extends Activity{
 			getData();
 		}
 		public void getData(){
-			Intent intent = getIntent();
-			uuid = intent.getStringExtra("uuid");
-			String password = intent.getStringExtra("pwd");
+			
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String token=sp.getString("token", "token");
 			String path;
+			
+			
 			if(f){
-				 path = APIService.COMPETITIONCREAT+"token="+token+"&uuid="+uuid+"&password="+password+"&tee_boxes="+t_1+","+t_2;
+				 path = APIService.COMPETITIONCREAT+"token="+token+"&uuid="+uuid+"&scoring_type="+scoring_type+"&tee_boxes="+t_1+","+t_2;
 			}else{
-				 path = APIService.COMPETITIONCREAT+"token="+token+"&uuid="+uuid+"&password="+password+"&tee_boxes="+t_1;
+				 path = APIService.COMPETITIONCREAT+"token="+token+"&uuid="+uuid+"&scoring_type="+scoring_type+"&tee_boxes="+t_1;
 			}
 			String jsonData = HttpUtils.HttpClientPost(path);
+			Log.i("CompeAdd", jsonData);
 			try {
 				JSONObject jsonObject = new JSONObject(jsonData);
 				flase = jsonObject.getString("result");
+				
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -232,6 +340,48 @@ public class CompetitionAdd extends Activity{
 			msg.what = 1;
 			msg.obj = jsonData;
 			handler.sendMessage(msg);
+		}
+	}
+	/**
+	 * 获得创建人的头像
+	 * @author Administrator
+	 *
+	 */
+	class Imageloder extends Thread{
+		@Override
+		public void run() {
+			super.run();
+			getData();
+		}
+		public void getData(){
+			
+		bitmap = HttpUtils.imageloder(add.getPortrait());
+		Message msg = handler.obtainMessage();
+		msg.what = 2;
+		handler.sendMessage(msg);	
+			
+	}
+	}
+	/*
+	 * 提示加载
+	 */
+	public  void  showProgressDialog(String title,String message){
+		if(progressDialog==null){
+			progressDialog = ProgressDialog.show(this, title, message,true,true);
+
+		}else if(progressDialog.isShowing()){
+			progressDialog.setTitle(title);
+			progressDialog.setMessage(message);
+		}
+		progressDialog.show();
+
+	}
+	/*
+	 * 隐藏加载
+	 */
+	public  void hideProgressDialog(){
+		if(progressDialog !=null &&progressDialog.isShowing()){
+			progressDialog.dismiss();
 		}
 	}
 }

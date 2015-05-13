@@ -75,7 +75,7 @@ public class CreateMatchActivity extends Activity {
 	private ListView selectSession_tListView;
 	private ListView selectSession_2ListView;
 	private ListView selectSession_t_2ListView;
-
+	
 	private ImageView onclickimage;
 
 	private String pitchname;
@@ -113,10 +113,14 @@ public class CreateMatchActivity extends Activity {
 	private String id_2;
 	private String t_1;
 	private String t_2;
+	private SelectSession1Adapter diamondAdapter;
+	private SelectSessionTAdapter colorAdapter;
+	private SelectSession1Adapter diamond2Adapter;
+	private SelectSessionTAdapter color2Adapter;
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
 			if(msg.what==1){
-				if(msg.obj.equals("404")||msg.obj.equals("505")){
+				if(msg.obj.equals("404")||msg.obj.equals("500")){
 					Toast.makeText(CreateMatchActivity.this, "网络错误，请稍后再试", Toast.LENGTH_LONG).show();
 				}else if(msg.obj.equals("403")){
 					Toast.makeText(CreateMatchActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
@@ -125,13 +129,18 @@ public class CreateMatchActivity extends Activity {
 					startActivity(intent);
 					finish();
 				}else{
+				
 				getData();
 				onclckLister();
 				qiuchang_name.setText(pitchname);
+				/*diamondAdapter.notifyDataSetChanged();
+				colorAdapter.notifyDataSetChanged();
+				diamond2Adapter.notifyDataSetChanged();
+				color2Adapter.notifyDataSetChanged();*/
 				}
 			}
 			if(msg.what==2){
-				if(msg.obj.equals("404")||msg.obj.equals("505")){
+				if(msg.obj.equals("404")||msg.obj.equals("500")){
 					Toast.makeText(CreateMatchActivity.this, "网络错误，请稍后再试", Toast.LENGTH_LONG).show();
 				}else if(msg.obj.equals("403")){
 					Toast.makeText(CreateMatchActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
@@ -144,6 +153,7 @@ public class CreateMatchActivity extends Activity {
 					Intent intent = new Intent(CreateMatchActivity.this,CreateScoreCard.class);
 					intent.putExtra("uuid", id);
 					intent.putExtra("scoring_type", scoring_type);
+					intent.putExtra("keren", "0");
 					startActivity(intent);
 				}
 			}
@@ -228,7 +238,7 @@ public class CreateMatchActivity extends Activity {
 		easyTextView = (TextView) findViewById(R.id.easy);
 		majorTextView = (TextView) findViewById(R.id.major);
 		qiuchang_name = (TextView) findViewById(R.id.qiuchang_name);
-		majorRelativeLayout = (RelativeLayout) findViewById(R.id.creatematch_major);
+		
 		selectSession = (RelativeLayout) findViewById(R.id.competition_selection_relative);
 		selectSession_t = (RelativeLayout) findViewById(R.id.competition_selection_t);
 		selectSession_2 = (RelativeLayout) findViewById(R.id.competition_selection_relative_2);
@@ -250,6 +260,7 @@ public class CreateMatchActivity extends Activity {
 
 		jifenfangshi = (RelativeLayout) findViewById(R.id.jifenfangshi);
 		leixing_layout = (RelativeLayout) findViewById(R.id.leixing_layout);
+		majorRelativeLayout = (RelativeLayout) findViewById(R.id.creatematch_major);
 
 		imageView1 = (ImageView) findViewById(R.id.imageView1);
 		imageView2 = (ImageView) findViewById(R.id.imageView2);
@@ -364,9 +375,11 @@ public class CreateMatchActivity extends Activity {
 				}
 				titaicolor_1.setVisibility(View.GONE);
 				titaicolor_2.setVisibility(View.GONE);
-				selectSession_2.setVisibility(View.GONE);
 				selectSession_t.setVisibility(View.GONE);
+				selectSession_2.setVisibility(View.GONE);
 				selectSession_t_2.setVisibility(View.GONE);
+				selectSession_t_2ListView.setVisibility(View.GONE);
+				selectSession_2ListView.setVisibility(View.GONE);
 				zichangTextView.setText("");
 				titaiTextView.setText("");
 				titaicolor_1.setVisibility(View.GONE);
@@ -431,6 +444,7 @@ public class CreateMatchActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
+				imageView3.setImageResource(R.drawable.image_down);
 				titaicolor_1.setVisibility(View.VISIBLE);
 				tee = color.get(position);
 				titaiTextView.setText(tiTai[position]);
@@ -466,6 +480,7 @@ public class CreateMatchActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
+				selectSession_t_2.setVisibility(View.GONE);
 				selectSession_t_2ListView.setVisibility(View.GONE);
 				if(selectSession_2ListView.getVisibility()==View.GONE){
 					selectSession_2ListView.setVisibility(View.VISIBLE);
@@ -620,7 +635,13 @@ public class CreateMatchActivity extends Activity {
 			getData();
 		}
 		public void getData(){
-
+			uuids.clear();
+			nameArrayList.clear();
+			diamodDong.clear();
+			name_2ArrayList.clear();
+			diamodDong_2.clear();
+			diamond.clear();
+			color.clear();
 			//用户的token
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String token=sp.getString("token", "token");
@@ -636,8 +657,9 @@ public class CreateMatchActivity extends Activity {
 
 				for(int j=0;j<subArray.length();j++){
 					JSONObject jsonobj=subArray.getJSONObject(j); 
-					nameArrayList.add(jsonobj.getString("name"));
 					Log.i("name", jsonobj.getString("name")+"a");
+					nameArrayList.add(jsonobj.getString("name"));
+				
 					diamond.add(jsonobj.getString("name")+"场("+jsonobj.getString("holes_count")+"洞)");
 
 					if(Integer.parseInt(jsonobj.getString("holes_count"))==9){					
@@ -704,10 +726,15 @@ public class CreateMatchActivity extends Activity {
 		}
 	}
 	private void getData() {
-		selectSessionListView.setAdapter(new SelectSession1Adapter(this, diamond));
-		selectSession_tListView.setAdapter(new SelectSessionTAdapter(this,color));
-		selectSession_2ListView.setAdapter(new SelectSession1Adapter(this, diamond_t));
-		selectSession_t_2ListView.setAdapter(new SelectSessionTAdapter(this,color));
+		
+		diamondAdapter = new SelectSession1Adapter(this, diamond);
+		colorAdapter = new SelectSessionTAdapter(this,color);
+		diamond2Adapter = new SelectSession1Adapter(this, diamond_t);
+		color2Adapter = new SelectSessionTAdapter(this,color);
+		selectSessionListView.setAdapter(diamondAdapter);
+		selectSession_tListView.setAdapter(colorAdapter);
+		selectSession_2ListView.setAdapter(diamond2Adapter);
+		selectSession_t_2ListView.setAdapter(color2Adapter);
 		if(diamond.size()>=1){
 
 			int itemHeight = 45;
@@ -774,8 +801,13 @@ public class CreateMatchActivity extends Activity {
 				address = intent.getStringExtra("address");
 				addres = address.split(",");
 				Log.i("address", addres[0]);
-				//locInfo.setText(address);			
-				diamond.clear();
+				//locInfo.setText(address);	
+				selectSession_2.setVisibility(View.GONE);
+				selectSession_t_2.setVisibility(View.GONE);
+				selectSession_t_2ListView.setVisibility(View.GONE);
+				selectSession_2ListView.setVisibility(View.GONE);
+				
+				
 				if(!flase.equals("0")){					
 					new Mytask().start();
 				}
