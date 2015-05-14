@@ -104,39 +104,7 @@ public class JsonUtil {
 				playSets.add(playSet);
 			return playSets;
 		}
-public static List<QuickContent> getQuickScore_json(String path)throws Exception{
-		 
-		 List<QuickContent> quickContents=new ArrayList<QuickContent>();
-		 String JsonData=HttpUtils.HttpClientGet(path);
-		 
-		 Log.i("JsonData----->>", ""+JsonData);
-		 JSONArray jsonarray=new JSONArray(JsonData);
-		 //Log.i("jsonarray----->>", ""+jsonarray);
-		 List<Course> coursees=new ArrayList<Course>();
-		for(int i=0;i<jsonarray.length();i++){
-			 //实例化
-			 QuickContent quickContent=new QuickContent(); 
-			 JSONObject jsonObj=jsonarray.getJSONObject(i);
-			 quickContent.setUuid(jsonObj.getString("uuid"));
-			 quickContent.setType(jsonObj.getString("type"));
-			
-			 
-				Course course=new Course();
-				JSONObject obj=jsonObj.getJSONObject("venue");
-				course.setUuid(obj.getString("uuid"));
-				course.setName(obj.getString("name"));
-				course.setAddress(obj.getString("address"));
-				coursees.add(course);
 
-			 quickContent.setStrokes(jsonObj.getString("score"));
-			 quickContent.setRecorded_scorecards_count(jsonObj.getString("recorded_scorecards_count"));
-			 quickContent.setStarted_at(jsonObj.getString("started_at"));
-			 
-			 quickContent.setCourse(coursees);
-			 quickContents.add(quickContent); 
-		   }
-		 return quickContents;
-	 }
 public static List<Scorecards> getScorecards_json(String path)throws Exception{
 	List<TypeScorecard> typeScorecards = new ArrayList<TypeScorecard>();
 	String jsonDate=HttpUtils.HttpClientGet(path);

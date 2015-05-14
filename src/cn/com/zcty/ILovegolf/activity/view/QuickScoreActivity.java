@@ -22,6 +22,7 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.ScrollView;
@@ -41,7 +42,8 @@ import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
 
 
 public class QuickScoreActivity extends Activity {
-	private int itemHeight = 20;
+	private int itemHeight = 60;
+	
 	private ScrollView mScrollView;
 	private PullToRefreshScrollView mPullRefreshScrollView;
 	private ListView mListView;
@@ -56,12 +58,13 @@ public class QuickScoreActivity extends Activity {
 	private ProgressDialog progressDialog;
 	private Handler mHandler;
 	private String result = "shipai";
-	
+	int c = 0;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
-				mPullRefreshScrollView.onRefreshComplete();//刷新
+				
 				getData();
+				slideAdapter.notifyDataSetChanged();
 				if(msg.obj.equals("404")||msg.obj.equals("500")){//判断是服务端问题
 					Toast.makeText(QuickScoreActivity.this, "网络异常，错误提示"+msg.obj, Toast.LENGTH_LONG).show();
 				}else if(msg.obj.equals("403")){
@@ -122,9 +125,15 @@ public class QuickScoreActivity extends Activity {
 
 			@Override
 			public void onRefresh(PullToRefreshBase<ScrollView> refreshView) {
-				quickArrayList.clear();
+				
 				new MyTask().start();
+
 				slideAdapter.notifyDataSetChanged();
+
+				mPullRefreshScrollView.onRefreshComplete();//刷新
+				
+						
+
 			}
 		});
 		
@@ -135,32 +144,33 @@ public class QuickScoreActivity extends Activity {
 		mListView = (ListView) findViewById(R.id.listview);
 		image_tishi = (ImageView) findViewById(R.id.tishi);
 		mPullRefreshScrollView = (PullToRefreshScrollView) findViewById(R.id.pull_refresh_scrollview);
+		
 	}
 	private void getData() {
-		slideAdapter = new QuickScoreAdapter(this, quickArrayList,nameArrayList);
+		slideAdapter = new QuickScoreAdapter(this, quickArrayList);
 		mListView.setAdapter(slideAdapter);
 		mListView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
-				SharedPreferences ss = getSharedPreferences("name", MODE_PRIVATE);
-				SharedPreferences.Editor editor = ss.edit();
-				editor.putString("name", quickArrayList.get(position-1).getCourse().get(position-1).getName());
-				editor.commit();
-				intent =new Intent(QuickScoreActivity.this,ScoreCardActivity.class);
-				//intent传值
-				intent.putExtra("uuid", quickArrayList.get(position-1).getUuid());		
+				Intent intent = new Intent(QuickScoreActivity.this,CreateScoreCard.class);
+				intent.putExtra("uuid", quickArrayList.get(position).getUuid());
+				intent.putExtra("scoring_type", quickArrayList.get(position).getScoring_type());
 				startActivity(intent);
-				overridePendingTransition(R.anim.slide_in_from_right, R.anim.remain_original_location);
-				//finish();
+				
 			}
 		});
-		for(int i=0;i<quickArrayList.size();i++){
-			itemHeight = itemHeight + 5;
+		
+		if(c!=quickArrayList.size()){
+			for(int i=0;i<quickArrayList.size();i++){
+				itemHeight = itemHeight + 10;
+			}
+			c = quickArrayList.size();
+			setListViewHeightBasedOnChildren(mListView);
+			}
 		}
-		setListViewHeightBasedOnChildren(mListView);
-		}
+		
 	//点击事件
 	public void onclick(View v){
 
@@ -238,38 +248,34 @@ public class QuickScoreActivity extends Activity {
 			getData();
 		}
 		public void getData(){
+			quickArrayList.clear();
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String page=Integer.toHexString(pag);
 			String token=sp.getString("token", "token");
 			Log.i("tokens", token);
 
 			path = APIService.MATCHES_LIST+"page="+page+"&token="+token;
+			
 			String JsonData=HttpUtils.HttpClientGet(path);
 			try {
 				JSONArray jsonarray=new JSONArray(JsonData);
-				List<Course> arrayCouse = new ArrayList<Course>();
 				for(int i=0;i<jsonarray.length();i++){
-					//实例化
-
-					QuickContent quickContent=new QuickContent(); 
-					JSONObject jsonObj=jsonarray.getJSONObject(i);
-					quickContent.setUuid(jsonObj.getString("uuid"));
-					Log.i("uuidddd", jsonObj.getString("uuid"));
-					quickContent.setType(jsonObj.getString("type"));
-
-					Course course=new Course();
-					JSONObject obj=jsonObj.getJSONObject("venue");
-					course.setUuid(obj.getString("uuid"));
-					uuidArrayList.add(jsonObj.getString("uuid"));
-					course.setName(obj.getString("name"));
-					nameArrayList.add(obj.getString("name"));
-					course.setAddress(obj.getString("address"));
-					arrayCouse.add(course);
-					quickContent.setStrokes(jsonObj.getString("score"));
-					quickContent.setRecorded_scorecards_count(jsonObj.getString("recorded_scorecards_count"));
-                     Log.i("cc", "cc----"+quickContent.getRecorded_scorecards_count());
-					quickContent.setStarted_at(jsonObj.getString("started_at"));
-					quickContent.setCourse(arrayCouse);
+					JSONObject jsonObject = jsonarray.getJSONObject(i);
+					QuickContent quickContent = new QuickContent();
+					quickContent.setUuid(jsonObject.getString("uuid"));
+					Log.i("chengjid", jsonObject.getString("uuid"));
+					String venue = jsonObject.getString("venue");//获得venue 的map集合
+					JSONObject venueJsonObject = new JSONObject(venue);
+					quickContent.setName(venueJsonObject.getString("name"));
+					
+					String player = jsonObject.getString("player");//获得player 的map集合
+					JSONObject playerJsonObject = new JSONObject(player);
+					quickContent.setScoring_type(playerJsonObject.getString("scoring_type"));
+					quickContent.setScore(playerJsonObject.getString("strokes"));
+					quickContent.setRecorded_scorecards_count(playerJsonObject.getString("recorded_scorecards_count"));
+					
+					quickContent.setPlayers_count(jsonObject.getString("players_count"));
+					quickContent.setStarted_at(jsonObject.getString("started_at"));
 					quickArrayList.add(quickContent);
 				}
 				

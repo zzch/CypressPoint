@@ -29,6 +29,7 @@ import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.SelectSessionTAdapter;
 import cn.com.zcty.ILovegolf.activity.view.CreateScoreCard;
 import cn.com.zcty.ILovegolf.activity.view.MajorScoreActivity;
+import cn.com.zcty.ILovegolf.activity.view.QuickScoreActivity;
 import cn.com.zcty.ILovegolf.model.CompetitionAddmatch;
 import cn.com.zcty.ILovegolf.tools.CircleImageView;
 import cn.com.zcty.ILovegolf.utils.APIService;
@@ -82,9 +83,9 @@ public class CompetitionAdd extends Activity{
 				if(flase.equals("success")){
 					Intent intent = new Intent(CompetitionAdd.this,CreateScoreCard.class);
 					intent.putExtra("uuid", uuid);
-					intent.putExtra("keren", "1");
 					intent.putExtra("scoring_type", scoring_type);
 					startActivity(intent);
+					finish();
 				}else{
 					Toast.makeText(CompetitionAdd.this, "此id已在房间，不能重复加入",Toast.LENGTH_LONG).show();
 				}
@@ -109,6 +110,7 @@ public class CompetitionAdd extends Activity{
 	private void getData() {
 		Intent intent = getIntent();
 		add = (CompetitionAddmatch) intent.getSerializableExtra("add");
+		Log.i("zhouhetiancai", add.getUseName());
 		fangzhuTextView.setText(add.getUseName());
 		titaiListView.setAdapter(new SelectSessionTAdapter(this,add.getTitai().get(0).getBoxs()));
 		if(add.getTitai().size()>1){
@@ -184,6 +186,8 @@ public class CompetitionAdd extends Activity{
 
 			@Override
 			public void onClick(View v) {
+				Intent intent = new Intent(CompetitionAdd.this,QuickScoreActivity.class);
+				startActivity(intent);
 				finish();
 			}
 		});
@@ -259,6 +263,7 @@ public class CompetitionAdd extends Activity{
 			}
 		});
 	}
+	
 	private void initView() {
 		headCircleImageView = (CircleImageView) findViewById(R.id.head_image);
 		
@@ -272,7 +277,7 @@ public class CompetitionAdd extends Activity{
 		jifenfangshi = (RelativeLayout) findViewById(R.id.jifenfangshi);
 		leixing_layout = (RelativeLayout) findViewById(R.id.leixing_layout);
 		majorRelativeLayout = (RelativeLayout) findViewById(R.id.creatematch_major);
-		
+		fangzhuTextView = (TextView) findViewById(R.id.username);
 		fanhuiButton = (Button) findViewById(R.id.button1);
 		
 		qiuchangLayout = (RelativeLayout) findViewById(R.id.competition_selection_relative);
@@ -301,6 +306,8 @@ public class CompetitionAdd extends Activity{
 	@Override
 	public void onBackPressed() {
 		super.onBackPressed();
+		Intent intent = new Intent(CompetitionAdd.this,QuickScoreActivity.class);
+		startActivity(intent);
 		finish();
 	}
 	/**

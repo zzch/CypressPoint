@@ -4,7 +4,13 @@
     android:layout_height="match_parent"
     android:background="@color/bg"
     android:orientation="vertical" >
-
+<LinearLayout 
+    android:id="@+id/linears"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone"
+    android:orientation="vertical"
+    >
     <RelativeLayout
         android:id="@+id/layout_scord_card"
         android:layout_width="match_parent"
@@ -241,7 +247,7 @@
                 <ListView
                     android:id="@+id/score_match"
                     android:layout_width="match_parent"
-                    android:layout_height="800dp"
+                    android:layout_height="wrap_content"
                     android:divider="@color/gold_half"
                     android:dividerHeight="1dp"
                     android:listSelector="@android:color/transparent"
@@ -249,5 +255,5 @@
                 </ListView>
             </LinearLayout>
       
-
+</LinearLayout>
 </LinearLayout>

@@ -1,120 +1,72 @@
 package cn.com.zcty.ILovegolf.model;
 
-import java.util.List;
 
 
 public class QuickContent {
-	/**
-	 * �û�uuid
-	 */
 	private String uuid;
+	private String name;
 	/**
-	 * ��������
+	 * 类型
 	 */
-	private String type;
-    /**
-     * ����Ϣ
-     */
-	private List<Course> course;
+	private String scoring_type;
 	/**
-	 * ���и���
+	 * 成绩
 	 */
-	private String strokes;
+	private String score;
 	/**
-	 * �ܸ���
+	 * 进度
 	 */
 	private String recorded_scorecards_count;
 	/**
-	 * ����ʱ��
+	 * 房间人数
+	 */
+	private String players_count;
+	/**
+	 * 时间戳
 	 */
 	private String started_at;
-
-
-	
-    public QuickContent(){}
-
-
-	public QuickContent(String uuid, String type, List<Course> course,
-			String strokes, String recorded_scorecards_count, String started_at) {
-		super();
-		this.uuid = uuid;
-		this.type = type;
-		this.course = course;
-		this.strokes = strokes;
-		this.recorded_scorecards_count = recorded_scorecards_count;
-		this.started_at = started_at;
-	}
-
-
-	public QuickContent(String type, List<Course> course, String strokes,
-			String recorded_scorecards_count, String started_at) {
-		super();
-		this.type = type;
-		this.course = course;
-		this.strokes = strokes;
-		this.recorded_scorecards_count = recorded_scorecards_count;
-		this.started_at = started_at;
-	}
-
-
 	public String getUuid() {
 		return uuid;
 	}
-
-
 	public void setUuid(String uuid) {
 		this.uuid = uuid;
 	}
-
-
-	public String getType() {
-		return type;
+	public String getName() {
+		return name;
 	}
-
-
-	public void setType(String type) {
-		this.type = type;
+	public void setName(String name) {
+		this.name = name;
 	}
-
-
-	public List<Course> getCourse() {
-		return course;
+	public String getScoring_type() {
+		return scoring_type;
 	}
-
-
-	public void setCourse(List<Course> course) {
-		this.course = course;
+	public void setScoring_type(String scoring_type) {
+		this.scoring_type = scoring_type;
 	}
-
-
-	public String getStrokes() {
-		return strokes;
+	public String getScore() {
+		return score;
 	}
-
-
-	public void setStrokes(String strokes) {
-		this.strokes = strokes;
+	public void setScore(String score) {
+		this.score = score;
 	}
-
-
 	public String getRecorded_scorecards_count() {
 		return recorded_scorecards_count;
 	}
-
-
 	public void setRecorded_scorecards_count(String recorded_scorecards_count) {
 		this.recorded_scorecards_count = recorded_scorecards_count;
 	}
-
-
+	public String getPlayers_count() {
+		return players_count;
+	}
+	public void setPlayers_count(String players_count) {
+		this.players_count = players_count;
+	}
 	public String getStarted_at() {
 		return started_at;
 	}
-
-
 	public void setStarted_at(String started_at) {
 		this.started_at = started_at;
 	}
-
+	
 	
 }

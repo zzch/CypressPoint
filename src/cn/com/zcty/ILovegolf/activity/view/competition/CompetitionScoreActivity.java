@@ -133,7 +133,7 @@ public class CompetitionScoreActivity extends Activity implements IXListViewList
 	}
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
-		SharedPreferences ss = getSharedPreferences("name", MODE_PRIVATE);
+		/*SharedPreferences ss = getSharedPreferences("name", MODE_PRIVATE);
 		SharedPreferences.Editor editor = ss.edit();
 		editor.putString("name", quickArrayList.get(position-1).getCourse().get(position-1).getName());
 		editor.commit();
@@ -142,7 +142,7 @@ public class CompetitionScoreActivity extends Activity implements IXListViewList
 		intent.putExtra("uuid", quickArrayList.get(position-1).getUuid());		
 		startActivity(intent);
 		overridePendingTransition(R.anim.slide_in_from_right, R.anim.remain_original_location);
-		finish();
+		finish();*/
 	}
 	@Override
 	public void removeItem(int position) {
@@ -223,7 +223,7 @@ public class CompetitionScoreActivity extends Activity implements IXListViewList
 					JSONObject jsonObj=jsonarray.getJSONObject(i);
 					quickContent.setUuid(jsonObj.getString("uuid"));
 					Log.i("uuidddd", jsonObj.getString("uuid"));
-					quickContent.setType(jsonObj.getString("type"));
+					//quickContent.setType(jsonObj.getString("type"));
 
 					Course course=new Course();
 					JSONObject obj=jsonObj.getJSONObject("venue");
@@ -233,11 +233,11 @@ public class CompetitionScoreActivity extends Activity implements IXListViewList
 					nameArrayList.add(obj.getString("name"));
 					course.setAddress(obj.getString("address"));
 					arrayCouse.add(course);
-					quickContent.setStrokes(jsonObj.getString("score"));
+					//quickContent.setStrokes(jsonObj.getString("score"));
 					quickContent.setRecorded_scorecards_count(jsonObj.getString("players_count"));
                      Log.i("cc", "cc----"+quickContent.getRecorded_scorecards_count());
 					quickContent.setStarted_at(jsonObj.getString("started_at"));
-					quickContent.setCourse(arrayCouse);
+				//	quickContent.setCourse(arrayCouse);
 					quickArrayList.add(quickContent);
 				}
 				

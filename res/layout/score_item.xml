@@ -23,8 +23,8 @@
                 >
             <TextView 
             android:id="@+id/score_t_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="45dp"
 			android:gravity="center"
             android:layout_weight="1"
             android:textSize="@dimen/txsize_small_xx"
@@ -33,8 +33,8 @@
             />
             <TextView 
             android:id="@+id/score_t_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="45dp"
             android:gravity="center"
             android:layout_weight="1"
             android:textColor="#ffffff"
@@ -43,8 +43,8 @@
             />
             <TextView 
             android:id="@+id/score_t_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="45dp"
             android:gravity="center"
             android:layout_weight="1"
             android:textSize="@dimen/txsize_small_xx"
@@ -53,8 +53,8 @@
             />
             <TextView 
             android:id="@+id/score_t_4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="45dp"
             android:gravity="center"
             android:layout_weight="1"
             android:textSize="@dimen/txsize_small_xx"
@@ -63,8 +63,8 @@
             />
             <TextView 
             android:id="@+id/score_t_5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="45dp"
             android:gravity="center"
             android:layout_weight="1"
             android:textSize="@dimen/txsize_small_xx"

@@ -79,20 +79,20 @@ public  class CompetitionScoreAdapter extends BaseAdapter {
 		long d = (Integer.parseInt(quickContents.get(position).getStarted_at()));
 		String date =	TimeUtil.utc2Local(TimeUtil.secondTurnMs(d), TimeUtil.LOCAL_TIME_PATTERN);		 
 		holder.time.setText(date);
-		if(quickContents.get(position).getType().equals("practice")){
+		//if(quickContents.get(position).getType().equals("practice")){
 			
 			holder.type.setText("竞技赛");
-		}
+		//}
 		holder.gan_number.setText(quickContents.get(position).getRecorded_scorecards_count());
 		Log.i("chengji", "chengji---"+quickContents.get(position).getRecorded_scorecards_count());
-		if(quickContents.get(position).getStrokes().equals("null")){
+		//if(quickContents.get(position).getStrokes().equals("null")){
 			holder.image_1.setVisibility(View.GONE);
 			holder.Pole_number.setTextSize(25);
 			holder.Pole_number.setText("未开始"); 
-		}else{
+		//}else{
 			holder.Pole_number.setTextSize(36);
-			holder.Pole_number.setText(quickContents.get(position).getStrokes()); 
-		}
+			//holder.Pole_number.setText(quickContents.get(position).getStrokes()); 
+		//}
 		holder.coating.setVisibility(View.VISIBLE);
 		holder.functions.setClickable(false);
 		return convertView;
