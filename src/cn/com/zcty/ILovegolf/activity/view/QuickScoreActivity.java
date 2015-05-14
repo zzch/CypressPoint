@@ -125,8 +125,6 @@ public class QuickScoreActivity extends Activity {
 				quickArrayList.clear();
 				new MyTask().start();
 				slideAdapter.notifyDataSetChanged();
-						
-				
 			}
 		});
 		
