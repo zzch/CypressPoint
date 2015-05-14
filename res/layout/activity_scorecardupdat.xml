@@ -70,7 +70,6 @@
        android:layout_height="@dimen/view_mid_xx_xx"
        android:orientation="horizontal"
        android:gravity="center_vertical"
-       android:background="@drawable/pingpu_onclick"
        >
 
      
@@ -79,7 +78,6 @@
        android:layout_width="@dimen/view_large_x"
        android:layout_height="@dimen/view_mid_xx_xx"
        android:gravity="center"
-       android:background="@drawable/pingpu_onclick"
            >
          <TextView
            android:layout_width="wrap_content"
@@ -136,14 +134,12 @@
        android:layout_height="@dimen/view_mid_xx_xx"
        android:orientation="horizontal"
        android:gravity="center_vertical"
-       android:background="@drawable/pingpu_onclick"
        >
          
           <LinearLayout 
        android:layout_width="@dimen/view_large_x"
        android:layout_height="@dimen/view_mid_xx_xx"
        android:gravity="center"
-       android:background="@drawable/pingpu_onclick"
            >
        <TextView 
          android:layout_width="wrap_content"
@@ -201,13 +197,11 @@
        android:layout_height="@dimen/view_mid_xx_xx"
        android:orientation="horizontal"
        android:gravity="center_vertical"
-       android:background="@drawable/pingpu_onclick"
        >
           <LinearLayout 
        android:layout_width="@dimen/view_large_x"
        android:layout_height="@dimen/view_mid_xx_xx"
        android:gravity="center"
-       android:background="@drawable/pingpu_onclick"
            >
        <TextView 
          android:layout_width="wrap_content"

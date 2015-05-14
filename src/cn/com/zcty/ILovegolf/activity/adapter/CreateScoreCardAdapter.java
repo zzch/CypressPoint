@@ -6,6 +6,8 @@ import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.model.ScoreCardsMatch;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -81,13 +83,16 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 			/*
 			 * 根据有几个球来判断放球的位置
 			 */
-			switch (scoreCardsMatchs.get(position).getTeeboxs().size()) {
+			
+
+			switch (scoreCardsMatchs.get(position).getCount()) {
 			case 1:
 				holder.color_1.setText("");
 				holder.color_2.setText("");
 				holder.color_3.
 				setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(0).getDistance_from_hole());
+				color(position, 0, holder.color_3);				
 				holder.color_4.setText("");
 				holder.color_5.setText("");
 				break;
@@ -95,43 +100,58 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 				holder.color_1.setText("");
 				holder.color_2.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(0).getDistance_from_hole());
+				color(position, 0, holder.color_2);	
 				holder.color_3.setText("");
 				holder.color_4.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(1).getDistance_from_hole());
+				color(position, 1, holder.color_4);	
 				holder.color_5.setText("");
 				break;
 			case 3:
 				holder.color_1.setText("");
 				holder.color_2.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(0).getDistance_from_hole());
+				color(position, 0, holder.color_2);	
+				
 				holder.color_3.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(1).getDistance_from_hole());
+				color(position, 1, holder.color_3);	
 				holder.color_4.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(2).getDistance_from_hole());
+				color(position, 2, holder.color_4);	
 				holder.color_5.setText("");
 				break;
 			case 4:
 				holder.color_1.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(0).getDistance_from_hole());
+				color(position, 0, holder.color_1);	
 				holder.color_2.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(1).getDistance_from_hole());
+				color(position, 1, holder.color_2);	
 				holder.color_3.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(2).getDistance_from_hole());
+				color(position, 2, holder.color_3);	
 				holder.color_4.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(3).getDistance_from_hole());
+				color(position, 3, holder.color_4);	
 				holder.color_5.setText("");
 				break;
 			case 5:
 				holder.color_1.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(0).getDistance_from_hole());
+				color(position, 0, holder.color_1);	
 				holder.color_2.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(1).getDistance_from_hole());
+				color(position, 1, holder.color_2);	
 				holder.color_3.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(2).getDistance_from_hole());
+				color(position, 2, holder.color_3);	
 				holder.color_4.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(3).getDistance_from_hole());
+				color(position, 3, holder.color_4);	
 				holder.color_5.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(4).getDistance_from_hole());
+				color(position, 4, holder.color_5);	
 				break;
 
 			}			
@@ -151,6 +171,47 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 			
 		}
 		return convertView;
+	}
+	public void color(int position,int color,TextView textView){
+		Log.i("sdfasdf",scoreCardsMatchs.get(position).getTeeboxs().get(color).getColor()+"1");
+		if(scoreCardsMatchs.get(position).getTeeboxs().get(color).getColor().equals("red")){
+			if(scoreCardsMatchs.get(position).getTeeboxs().get(color).getUsed().equals("true")){
+				textView.setBackgroundResource(R.drawable.jfk_hong);
+			}else{
+				textView.setBackgroundResource(R.drawable.jfk_hong_zhihui);
+			}
+			
+		}else if(scoreCardsMatchs.get(position).getTeeboxs().get(color).getColor().equals("white")){
+			if(scoreCardsMatchs.get(position).getTeeboxs().get(color).getUsed().equals("true")){
+				textView.setBackgroundResource(R.drawable.jfk_bai);
+				textView.setTextColor(Color.BLACK);
+			}else{
+				textView.setBackgroundResource(R.drawable.jfk_bai_zhihui);
+				textView.setTextColor(Color.BLACK);
+			}
+			
+		}else if(scoreCardsMatchs.get(position).getTeeboxs().get(color).getColor().equals("blue")){
+			if(scoreCardsMatchs.get(position).getTeeboxs().get(color).getUsed().equals("true")){
+				textView.setBackgroundResource(R.drawable.jfk_lan);
+			}else{
+				textView.setBackgroundResource(R.drawable.jfk_lan_zhihui);
+			}
+			
+		}else if(scoreCardsMatchs.get(position).getTeeboxs().get(color).getColor().equals("black")){
+			if(scoreCardsMatchs.get(position).getTeeboxs().get(color).getUsed().equals("true")){
+				textView.setBackgroundResource(R.drawable.jfk_hei);
+			}else{
+				textView.setBackgroundResource(R.drawable.jfk_hei_zhihui);
+			}
+			
+		}else if(scoreCardsMatchs.get(position).getTeeboxs().get(color).getColor().equals("gold")){
+			if(scoreCardsMatchs.get(position).getTeeboxs().get(color).getUsed().equals("true")){
+				textView.setBackgroundResource(R.drawable.jfk_jin);
+			}else{
+				textView.setBackgroundResource(R.drawable.jfk_jin_zhihui);
+			}
+			
+		}
 	}
 	class Holder{
 		RelativeLayout score_1RelativeLayout;

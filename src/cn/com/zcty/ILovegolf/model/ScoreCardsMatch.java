@@ -3,6 +3,7 @@ package cn.com.zcty.ILovegolf.model;
 import java.util.ArrayList;
 
 public class ScoreCardsMatch {
+	private int count;//计数
 	private String uuid;
 	private String number;
 	private String par;
@@ -66,6 +67,13 @@ public class ScoreCardsMatch {
 	public void setTeeboxs(ArrayList<TeeBoxsMatch> teeboxs) {
 		this.teeboxs = teeboxs;
 	}
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
+	
 	
 	
 }

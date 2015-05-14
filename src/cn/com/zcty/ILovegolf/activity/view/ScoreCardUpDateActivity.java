@@ -139,7 +139,6 @@ public class ScoreCardUpDateActivity extends Activity{
 
 					finish();
 				}
-				Log.i("zhouhewoshi","code");
 				if(code.equals("500")||code.equals("404")){
 					Toast.makeText(ScoreCardUpDateActivity.this, "网络异常", Toast.LENGTH_LONG).show();
 				}
@@ -169,7 +168,11 @@ public class ScoreCardUpDateActivity extends Activity{
 		distanceWheelView.setVisibleItems(5);
 		Intent intent = getIntent();
 		ballHoleTextView.setText(intent.getStringExtra("number")+"号洞");
-		String par = intent.getStringExtra("par");
+		/*
+		 * 5.14修改
+		 */
+		//String par = intent.getStringExtra("par");
+		String par = "1";
 		position = intent.getStringExtra("position");
 		SharedPreferences sp = getSharedPreferences("setCard",MODE_PRIVATE);	
 		if( !sp.getString("rodnum", "pass").equals("null")){

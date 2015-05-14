@@ -7,6 +7,7 @@ import cn.com.zcty.ILovegolf.activity.R.drawable;
 import cn.com.zcty.ILovegolf.activity.R.id;
 import cn.com.zcty.ILovegolf.activity.R.layout;
 import cn.com.zcty.ILovegolf.activity.view.count.CountActivity;
+import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.activity.view.myself.Myself;
 import android.app.TabActivity;
 import android.content.Intent;
@@ -32,6 +33,7 @@ public class TabHostActivity extends TabActivity {
 
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.tabactivity_main);
+		ShouYeActivity.getInstance().addActivity(this);
 		TabHost myTabHost=getTabHost();
 		
 		

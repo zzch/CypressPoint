@@ -100,7 +100,7 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 		titleName.setText("专业记分卡");
 	}
 	private void getData() {
-		slideAdapter = new QuickScoreAdapter(this, quickArrayList,nameArrayList);
+		//slideAdapter = new QuickScoreAdapter(this, quickArrayList,nameArrayList);
 		mListView.setAdapter(slideAdapter);
 		mListView.setOnItemClickListener(this);
 		mListView.setPullLoadEnable(true);
@@ -129,7 +129,7 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 	}
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
-		SharedPreferences ss = getSharedPreferences("name", MODE_PRIVATE);
+		/*SharedPreferences ss = getSharedPreferences("name", MODE_PRIVATE);
 		SharedPreferences.Editor editor = ss.edit();
 		editor.putString("name", quickArrayList.get(position-1).getCourse().get(position-1).getName());
 		editor.commit();
@@ -139,7 +139,7 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 		startActivity(intent);
 		overridePendingTransition(R.anim.slide_in_from_right, R.anim.remain_original_location);
 		//finish();
-	}
+*/	}
 	@Override
 	public void removeItem(int position) {
 		mListView.isSlide = false;
@@ -213,7 +213,7 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
 				for(int i=0;i<jsonarray.length();i++){
 					//实例化
 
-					QuickContent quickContent=new QuickContent(); 
+					/*QuickContent quickContent=new QuickContent(); 
 					JSONObject jsonObj=jsonarray.getJSONObject(i);
 					quickContent.setUuid(jsonObj.getString("uuid"));
 					Log.i("uuidddd", jsonObj.getString("uuid"));
@@ -233,7 +233,7 @@ public class SchematicScoreActivity extends Activity implements IXListViewListen
                      Log.i("cc", "cc----"+quickContent.getRecorded_scorecards_count());
 					quickContent.setStarted_at(jsonObj.getString("started_at"));
 					quickContent.setCourse(arrayCouse);
-					quickArrayList.add(quickContent);
+					quickArrayList.add(quickContent);*/
 				}
 				
 				Message msg = handler.obtainMessage();

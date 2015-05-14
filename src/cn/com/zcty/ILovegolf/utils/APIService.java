@@ -8,7 +8,7 @@ public class APIService {
 	  public static final String COURSE_INFO="http://123.57.210.52/api/v1/venues/show?";
 	  
 	  //历史赛事列表
-	  public static final String MATCHES_LIST="http://123.57.210.52/api/v1/matches/practice?";
+	  public static final String MATCHES_LIST="http://123.57.210.52/api/v1/matches/history.json?";
 	  
 	  //历史赛事计分卡信息   
 	  public static final String SCORECARD_SHOW="http://123.57.210.52/api/v1/matches/practice/show?";
@@ -25,7 +25,7 @@ public class APIService {
 	  //修改简单积分卡
 	  public static final String MODIFYINTEGRAL = "http://123.57.210.52/api/v1/scorecards/simple.json?";
 	  
-	  //数据统计
+	  //简单积分统计
 	  public static final String DATASTATISTICS = "http://123.57.210.52/api/v1/statistics/simple.json?";
 	  //练习赛事信息
 	  public static final String LIANXISAISHI = "http://123.57.210.52/api/v1/matches/practice/show.json?";

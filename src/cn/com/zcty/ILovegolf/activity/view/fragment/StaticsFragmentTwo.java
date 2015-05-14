@@ -59,7 +59,7 @@ public class StaticsFragmentTwo extends Fragment{
 		this.parArrayList = parArrayList;
 		this.scoreArrayList = scoreArrayList;
 		this.statusArrayList = statusArrayList;
-		Log.i("aa", parArrayList.get(1));
+
 	}
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,

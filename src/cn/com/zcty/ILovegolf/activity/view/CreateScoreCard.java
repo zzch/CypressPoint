@@ -9,17 +9,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.activity.adapter.CreateScoreCardAdapter;
-import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
-import cn.com.zcty.ILovegolf.model.ScoreCardsMatch;
-import cn.com.zcty.ILovegolf.model.Scorecards;
-import cn.com.zcty.ILovegolf.model.Setcard;
-import cn.com.zcty.ILovegolf.model.TeeBoxsMatch;
-import cn.com.zcty.ILovegolf.tools.CircleImageView;
-import cn.com.zcty.ILovegolf.utils.APIService;
-import cn.com.zcty.ILovegolf.utils.FileUtil;
-import cn.com.zcty.ILovegolf.utils.HttpUtils;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -34,11 +23,22 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.activity.adapter.CreateScoreCardAdapter;
+import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
+import cn.com.zcty.ILovegolf.model.ScoreCardsMatch;
+import cn.com.zcty.ILovegolf.model.TeeBoxsMatch;
+import cn.com.zcty.ILovegolf.tools.CircleImageView;
+import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.FileUtil;
+import cn.com.zcty.ILovegolf.utils.HttpUtils;
 /**
  * 记分卡
  * @author Administrator
@@ -60,18 +60,19 @@ public class CreateScoreCard extends Activity{
 	private TextView scheduleTextView;//进度
 	private TextView scoreTextView;//成绩
 	private TextView parTextView;
-	
+	private LinearLayout linearLayout;
 	private ListView scoreListView;//存放数据
 	private CircleImageView totleImage;
 	private ProgressDialog progressDialog;
 	private String id;
 	private String scoring_type;
+	private String owned;
 	private ArrayList<ScoreCardsMatch> scoreCardsMatchs = new ArrayList<ScoreCardsMatch>();//存放成绩
 	private ArrayList<TeeBoxsMatch> teeBoxsMatchs = new ArrayList<TeeBoxsMatch>();//存放T台颜色
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
 			if(msg.what==1){
-				if(msg.obj.equals("404")||msg.obj.equals("505")){
+				if(msg.obj.equals("404")||msg.obj.equals("500")){
 					Toast.makeText(CreateScoreCard.this, "网络错误，请稍后再试", Toast.LENGTH_LONG).show();
 				}else if(msg.obj.equals("403")){
 					Toast.makeText(CreateScoreCard.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
@@ -95,6 +96,12 @@ public class CreateScoreCard extends Activity{
 				CreateScoreCardAdapter adapter = new CreateScoreCardAdapter(CreateScoreCard.this, scoreCardsMatchs);
 				scoreListView.setAdapter(adapter);
 				hideProgressDialog();
+				linearLayout.setVisibility(View.VISIBLE);
+				if(owned.equals("true")){
+					yaoqingButton.setVisibility(View.VISIBLE);
+				}else{
+					yaoqingButton.setVisibility(View.GONE);
+				}
 				}
 			}
 			if(msg.what==2){
@@ -109,10 +116,28 @@ public class CreateScoreCard extends Activity{
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_scord);
 		initView();
+		setListeners();
 		new MyTask().start();
 		showProgressDialog("提示", "正在加载内容，请稍等");
 	}
+	private void setListeners() {
+		scoreListView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
+					long arg3) {
+				if(scoring_type.equals("simple")){
+					Intent intent = new Intent(CreateScoreCard.this,ScoreCardUpDateActivity.class);
+					startActivity(intent);
+				}else{
+					Intent intent = new Intent(CreateScoreCard.this,MajorScoreActivity.class);
+					startActivity(intent);
+				}
+			}
+		});
+	}
 	private void initView() {
+		linearLayout = (LinearLayout) findViewById(R.id.linears);
 		totleImage = (CircleImageView) findViewById(R.id.myself_head);
 		usernameTextView = (TextView) findViewById(R.id.competition_username);
 		rankingTextView = (TextView) findViewById(R.id.competition_paiming);
@@ -124,14 +149,15 @@ public class CreateScoreCard extends Activity{
 		Intent intent=getIntent();
 		id = intent.getStringExtra("uuid");
 		scoring_type = intent.getStringExtra("scoring_type");
-		keren = intent.getStringExtra("keren");
-		if(keren.equals("1")){
-			yaoqingButton.setVisibility(View.GONE);
-		}else{
-			yaoqingButton.setVisibility(View.VISIBLE);
-		}
+		
 	}
-	
+	@Override
+	protected void onRestart() {
+		// TODO Auto-generated method stub
+		super.onRestart();
+		new MyTask().start();
+		showProgressDialog("提示", "正在加载内容，请稍等");
+	}
 	/*
 	 * 点击跳转
 	 */
@@ -186,15 +212,18 @@ public class CreateScoreCard extends Activity{
 			getData();
 		}
 		public void getData(){
-		
+			scoreCardsMatchs.clear();
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String token=sp.getString("token", "token");
 			Intent intent=getIntent();
 			String	uuid = intent.getStringExtra("uuid");
 			String path = APIService.MATCHINFORMATION+"token="+token+"&uuid="+uuid;
 			String jsonArrayData = HttpUtils.HttpClientGet(path);
+			Log.i("scoress", jsonArrayData);
+			Log.i("scoress", path);
 			try {
 				JSONObject jsonObject = new JSONObject(jsonArrayData);
+				
 				
 				/*
 				 * 获得头像和用户地址
@@ -204,6 +233,10 @@ public class CreateScoreCard extends Activity{
 				String user = userJsonObject.getString("user");
 				JSONObject usersJsonObject = new JSONObject(user);
 				portrait = usersJsonObject.getString("portrait");//头像地址
+				if(!portrait.equals("null")){
+					JSONObject urlJsonObject = new JSONObject(portrait);
+					portrait = urlJsonObject.getString("url");
+				}
 				username = usersJsonObject.getString("nickname");//用户昵称
 				/*
 				 * 获取player
@@ -212,6 +245,7 @@ public class CreateScoreCard extends Activity{
 				schedule = userJsonObject.getString("recorded_scorecards_count");//进度
 				score = userJsonObject.getString("strokes");//成绩
 				par = userJsonObject.getString("total");//距标准杆
+				owned = userJsonObject.getString("owned");//判断是否房主
 				
 				/*
 				 * 获取成绩
@@ -234,14 +268,18 @@ public class CreateScoreCard extends Activity{
 					 * 获得T台的数组
 					 */
 					JSONArray array = j.getJSONArray("tee_boxes");
+					int count = 0;
 					for(int l=0;l<array.length();l++){
 						JSONObject jj = array.getJSONObject(l);
 						TeeBoxsMatch teeBoxsMatch = new TeeBoxsMatch();
+						count++;
 						teeBoxsMatch.setColor(jj.getString("color"));
 						teeBoxsMatch.setDistance_from_hole(jj.getString("distance_from_hole"));
 						teeBoxsMatch.setUsed(jj.getString("used"));
 						teeBoxsMatchs.add(teeBoxsMatch);
 					}
+					Log.i("sdfasdf", count+"");
+					scoreCardsMatch.setCount(count);
 					scoreCardsMatch.setTeeboxs(teeBoxsMatchs);
 					scoreCardsMatchs.add(scoreCardsMatch);
 				}

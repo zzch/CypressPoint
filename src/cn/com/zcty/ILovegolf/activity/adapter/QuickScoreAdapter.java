@@ -24,11 +24,9 @@ public  class QuickScoreAdapter extends BaseAdapter {
 	private  List<QuickContent> quickContents;
 	private Context context;
 	private LayoutInflater mInflater;
-	private ArrayList<String> nameArrayList;
-	public QuickScoreAdapter(Context context,List<QuickContent> quickContents,ArrayList<String> nameArrayList){
+	public QuickScoreAdapter(Context context,List<QuickContent> quickContents){
 		this.context=context;
 		this.quickContents= quickContents;;
-		this.nameArrayList = nameArrayList;
 		mInflater = LayoutInflater.from(context);
 	}
 	@Override
@@ -74,27 +72,24 @@ public  class QuickScoreAdapter extends BaseAdapter {
 			// 有直接获得ViewHolder
 			holder = (ViewHolder) convertView.getTag();
 		}
-		holder.kpitname.setText(nameArrayList.get(position));
-		SimpleDateFormat  simpleDate = new SimpleDateFormat("yyyy年MM月dd");
+		holder.kpitname.setText(quickContents.get(position).getName());
+		//SimpleDateFormat  simpleDate = new SimpleDateFormat("yyyy年MM月dd");
 		long d = (Integer.parseInt(quickContents.get(position).getStarted_at()));
 		String date =	TimeUtil.utc2Local(TimeUtil.secondTurnMs(d), TimeUtil.LOCAL_TIME_PATTERN);		 
-		holder.time.setText(date);
-		if(quickContents.get(position).getType().equals("practice")){
+		holder.time.setText(date);		
 			
-			holder.type.setText("练习赛");
-		}
+		holder.type.setText(quickContents.get(position).getPlayers_count()+"人");		
 		holder.gan_number.setText(quickContents.get(position).getRecorded_scorecards_count());
 		Log.i("chengji", "chengji---"+quickContents.get(position).getRecorded_scorecards_count());
-		if(quickContents.get(position).getStrokes().equals("null")){
+		if(quickContents.get(position).getScore().equals("null")){
 			holder.image_1.setVisibility(View.GONE);
 			holder.Pole_number.setTextSize(25);
 			holder.Pole_number.setText("未开始"); 
 		}else{
 			holder.Pole_number.setTextSize(36);
-			holder.Pole_number.setText(quickContents.get(position).getStrokes()); 
+			holder.Pole_number.setText(quickContents.get(position).getScore()); 
 		}
-		holder.coating.setVisibility(View.VISIBLE);
-		holder.functions.setClickable(false);
+		
 		return convertView;
 	}
 

@@ -10,6 +10,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -41,11 +42,12 @@ public class AddMatchActivity extends Activity {
 	private String passWord;
 	private String message = null;
 	private String uuid = null;
+	private ProgressDialog progressDialog;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
 				if(msg.what==1){
-					if(msg.obj.equals("404")||msg.obj.equals("505")){
+					if(msg.obj.equals("404")||msg.obj.equals("500")){
 						Toast.makeText(AddMatchActivity.this, "网络错误，请稍后再试", Toast.LENGTH_LONG).show();
 					}else if(msg.obj.equals("403")){
 						Toast.makeText(AddMatchActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
@@ -65,7 +67,7 @@ public class AddMatchActivity extends Activity {
 					}
 			}
 			if(msg.what==2){
-				if(msg.obj.equals("404")||msg.obj.equals("505")){
+				if(msg.obj.equals("404")||msg.obj.equals("500")){
 					Toast.makeText(AddMatchActivity.this, "网络错误，请稍后再试", Toast.LENGTH_LONG).show();
 				}else if(msg.obj.equals("403")){
 					Toast.makeText(AddMatchActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
@@ -80,7 +82,7 @@ public class AddMatchActivity extends Activity {
 				}
 			}
 			if(msg.what==3){
-				if(msg.obj.equals("404")||msg.obj.equals("505")){
+				if(msg.obj.equals("404")||msg.obj.equals("500")){
 					Toast.makeText(AddMatchActivity.this, "网络错误，请稍后再试", Toast.LENGTH_LONG).show();
 				}else if(msg.obj.equals("403")){
 					Toast.makeText(AddMatchActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
@@ -99,6 +101,7 @@ public class AddMatchActivity extends Activity {
 				intent.putExtra("uuid", uuid);
 				intent.putExtra("add", add);
 				startActivity(intent);
+				finish();
 				}
 			}
 		};
@@ -120,6 +123,7 @@ public class AddMatchActivity extends Activity {
 			public void inputComplete(int state, String password) {
 				if(password.length()==4){
 					passWord = password;
+					showProgressDialog("提示", "正在验证密码");
 					new AddMatch().start();
 				}
 			}
@@ -134,6 +138,22 @@ public class AddMatchActivity extends Activity {
 	 * 点击事件
 	 */
 	public void onclick(View v){
+		switch (v.getId()) {
+		case R.id.add_back:
+			Intent intent = new Intent(AddMatchActivity.this,QuickScoreActivity.class);
+			startActivity(intent);
+			finish();
+			break;
+
+		default:
+			break;
+		}
+		
+	}
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
 		Intent intent = new Intent(AddMatchActivity.this,QuickScoreActivity.class);
 		startActivity(intent);
 		finish();
@@ -228,6 +248,7 @@ public class AddMatchActivity extends Activity {
 				JSONObject jsonObject = new JSONObject(jsonData);
 				String venuejs = jsonObject.getString("venue");
 				JSONObject userJsonObject = new JSONObject(venuejs);
+				Log.i("zhouhetiancai", userJsonObject.getString("name")+"ddd");
 				add.setName(userJsonObject.getString("name"));
 				JSONArray jsonArray = userJsonObject.getJSONArray("courses");
 				for(int j=0;j<jsonArray.length();j++){
@@ -257,6 +278,28 @@ public class AddMatchActivity extends Activity {
 				msg.obj = jsonData;
 				handler.sendMessage(msg);
 			
+		}
+	}
+	/*
+	 * 提示加载
+	 */
+	public  void  showProgressDialog(String title,String message){
+		if(progressDialog==null){
+			progressDialog = ProgressDialog.show(this, title, message,true,true);
+
+		}else if(progressDialog.isShowing()){
+			progressDialog.setTitle(title);
+			progressDialog.setMessage(message);
+		}
+		progressDialog.show();
+
+	}
+	/*
+	 * 隐藏加载
+	 */
+	public  void hideProgressDialog(){
+		if(progressDialog !=null &&progressDialog.isShowing()){
+			progressDialog.dismiss();
 		}
 	}
 	public boolean fileIsExists(){
