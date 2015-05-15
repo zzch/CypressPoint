@@ -24,9 +24,9 @@
             <TextView 
             android:id="@+id/score_t_1"
             android:layout_width="40dp"
-            android:layout_height="45dp"
+            android:layout_height="40dp"
 			android:gravity="center"
-            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
             android:textSize="@dimen/txsize_small_xx"
             android:textColor="#ffffff"
             android:text="97"
@@ -34,19 +34,19 @@
             <TextView 
             android:id="@+id/score_t_2"
             android:layout_width="40dp"
-            android:layout_height="45dp"
+            android:layout_height="40dp"
             android:gravity="center"
-            android:layout_weight="1"
+           android:layout_marginLeft="10dp"
             android:textColor="#ffffff"
             android:textSize="@dimen/txsize_small_xx"
             android:text="132"
             />
             <TextView 
             android:id="@+id/score_t_3"
-            android:layout_width="40dp"
-            android:layout_height="45dp"
+           android:layout_width="40dp"
+            android:layout_height="40dp"
             android:gravity="center"
-            android:layout_weight="1"
+           android:layout_marginLeft="10dp"
             android:textSize="@dimen/txsize_small_xx"
             android:textColor="#ffffff"
             android:text="184"
@@ -54,19 +54,19 @@
             <TextView 
             android:id="@+id/score_t_4"
             android:layout_width="40dp"
-            android:layout_height="45dp"
+            android:layout_height="40dp"
             android:gravity="center"
-            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
             android:textSize="@dimen/txsize_small_xx"
             android:textColor="#ffffff"
             android:text="226"
             />
             <TextView 
             android:id="@+id/score_t_5"
-            android:layout_width="40dp"
-            android:layout_height="45dp"
+             android:layout_width="40dp"
+            android:layout_height="40dp"
             android:gravity="center"
-            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
             android:textSize="@dimen/txsize_small_xx"
             android:textColor="#ffffff"
             android:text="290"
@@ -76,7 +76,8 @@
             android:layout_height="18dp"
             android:src="@drawable/icon_arrow"
             android:gravity="center"
-            android:layout_weight="1"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="5dp"
                 />
           </LinearLayout>  
         </RelativeLayout>

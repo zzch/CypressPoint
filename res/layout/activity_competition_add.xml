@@ -196,69 +196,88 @@
 	<RelativeLayout 
 	    android:id="@+id/competition_selection_relative"
 	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:layout_marginTop="20dp"
+	    android:layout_height="50dp"
 	    >
 	    <TextView 
 	       	android:id="@+id/competition_match_zichang"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_centerVertical="true"
-	        android:textColor="#ffffff"
+	        android:textColor="@color/gold"
+	         android:layout_centerVertical="true"
+	        android:textSize="@dimen/txsize_small_xx"
+	        android:layout_marginLeft="@dimen/view_Layout_x"
 	        android:text="选择子场"
 	        />
 	    <TextView 
 	        android:id="@+id/competition_match_chang"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_marginLeft="250dp"
+	        android:layout_marginRight="30dp"
+            android:layout_alignParentRight="true"
 	        android:layout_centerVertical="true"
-	        android:textColor="#ffffff"
+	        android:textColor="@color/gold"
+	        android:textSize="@dimen/txsize_small_xx"
 	        android:text=""
 	        />
-	    <ImageView 
-	        android:layout_width="20dp"
-	        android:layout_height="20dp"
-	        android:layout_centerVertical="true"
-	        android:layout_alignParentRight="true"
-	        android:layout_marginRight="5dp"
-	        android:src="@drawable/yuan"
-	        />
+	    
 	</RelativeLayout>
+	
+	<View 	   
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:background="@color/gold_half"
+       />
 	
 	<RelativeLayout 
 	    android:id="@+id/competition_selection_t"
 	    android:layout_width="match_parent"
-	    android:visibility="gone"
-	    android:layout_height="wrap_content"
-	    android:layout_marginTop="20dp"
+	   
+	    android:layout_height="50dp"
 	    >
 	    <TextView 
 	       	android:id="@+id/competition_match_t"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_centerVertical="true"
-	        android:textColor="#ffffff"
+	        android:textColor="@color/gold"
+	        android:textSize="@dimen/txsize_small_xx"
+	        android:layout_marginLeft="@dimen/view_Layout_x"
 	        android:text="开球T台"
 	        />
 	    <TextView 
 	        android:id="@+id/competition_t_name"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_marginLeft="250dp"
+	        android:layout_marginRight="40dp"
+            android:layout_alignParentRight="true"
 	        android:layout_centerVertical="true"
-	        android:textColor="#ffffff"
+	        android:textColor="@color/gold"
+	        android:textSize="@dimen/txsize_small_xx"
 	        android:text=""
 	        />
 	    <ImageView 
+	        android:id="@+id/titaicolor_1"
 	        android:layout_width="20dp"
 	        android:layout_height="20dp"
 	        android:layout_centerVertical="true"
-	        android:layout_alignParentRight="true"
-	        android:layout_marginRight="5dp"
-	        android:src="@drawable/yuan"
+	         android:layout_marginLeft="@dimen/create_pitch_left"
 	        />
+	    <ImageView
+	        android:id="@+id/imageView3"
+	        android:layout_width="@dimen/view_small_xx"
+	        android:layout_height="@dimen/view_small_xx"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginRight="@dimen/view_Layout_x"
+	        android:layout_centerVertical="true"
+	        android:src="@drawable/image_up" />
 	</RelativeLayout>
+	
+	<View 
+	    android:id="@+id/view_2"
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:background="@color/gold_half"
+       />
 	<RelativeLayout 
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
@@ -267,7 +286,10 @@
 	        android:id="@+id/competition_listview_t"
 	        android:visibility="gone"
 	        android:layout_width="match_parent"
-	        android:layout_height="110dp"
+	        android:layout_height="250dp"
+	         android:divider="@color/gold_half"
+	        android:listSelector="@android:color/transparent"
+	        android:dividerHeight="1dp"
 	        >
 	    </ListView>	    
 	</RelativeLayout>
@@ -275,70 +297,93 @@
 	<RelativeLayout 
 	    android:id="@+id/competition_selection_relative_2"
 	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:visibility="gone"
-	    android:layout_marginTop="20dp"
+	    android:layout_height="50dp"
+	   android:visibility="gone"
+	   
 	    >
 	    <TextView 
 	       	android:id="@+id/competition_match_zichang_2"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_centerVertical="true"
-	        android:textColor="#ffffff"
+	        android:textColor="@color/gold"
+	        android:textSize="@dimen/txsize_small_xx"
+	        android:layout_marginLeft="@dimen/view_Layout_x"
 	        android:text="选择子场"
 	        />
 	    <TextView 
 	        android:id="@+id/competition_match_chang_2"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_marginLeft="250dp"
+	        android:layout_marginRight="30dp"
+            android:layout_alignParentRight="true"
 	        android:layout_centerVertical="true"
-	        android:textColor="#ffffff"
+	        android:textColor="@color/gold"
+	        android:textSize="@dimen/txsize_small_xx"
 	        android:text=""
 	        />
-	    <ImageView 
-	        android:layout_width="20dp"
-	        android:layout_height="20dp"
-	        android:layout_centerVertical="true"
-	        android:layout_alignParentRight="true"
-	        android:layout_marginRight="5dp"
-	        android:src="@drawable/yuan"
-	        />
+	   
 	</RelativeLayout>
 	
+	<View 
+	    android:id="@+id/view_3"
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:background="@color/gold_half"
+       />
 	<RelativeLayout 
 	    android:id="@+id/competition_selection_t_2"
 	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:visibility="gone"
-	    android:layout_marginTop="20dp"
+	    android:layout_height="50dp"
+	   android:visibility="gone"
+
 	    >
 	    <TextView 
 	       	android:id="@+id/competition_match_t_2"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_centerVertical="true"
-	        android:textColor="#ffffff"
+	        android:textColor="@color/gold"
+	        android:textSize="@dimen/txsize_small_xx"
+	         android:layout_marginLeft="@dimen/view_Layout_x"
 	        android:text="开球T台"
 	        />
 	    <TextView 
 	        android:id="@+id/competition_t_name_2"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_marginLeft="250dp"
+	         android:layout_marginRight="40dp"
+            android:layout_alignParentRight="true"
 	        android:layout_centerVertical="true"
-	        android:textColor="#ffffff"
+	        android:textColor="@color/gold"
+	        android:textSize="@dimen/txsize_small_xx"
 	        android:text=""
 	        />
-	    <ImageView 
+	     <ImageView 
+	        android:id="@+id/titaicolor_2"
 	        android:layout_width="20dp"
 	        android:layout_height="20dp"
 	        android:layout_centerVertical="true"
-	        android:layout_alignParentRight="true"
-	        android:layout_marginRight="5dp"
-	        android:src="@drawable/yuan"
+	        android:layout_marginLeft="@dimen/create_pitch_left"
+	       
 	        />
+	    
+	     <ImageView
+	        android:id="@+id/imageView5"
+	        android:layout_width="@dimen/view_small_xx"
+	        android:layout_height="@dimen/view_small_xx"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginRight="@dimen/view_Layout_x"
+	        android:layout_centerVertical="true"
+	        android:src="@drawable/image_up" />
 	</RelativeLayout>
+	
+	<View 
+	    android:id="@+id/view_4"
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:background="@color/gold_half"
+       />
 	<RelativeLayout 
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
@@ -347,7 +392,10 @@
 	        android:id="@+id/competition_listview_t_2"
 	        android:visibility="gone"
 	        android:layout_width="match_parent"
-	        android:layout_height="110dp"
+	        android:layout_height="250dp"
+	        android:divider="@color/gold_half"
+	        android:listSelector="@android:color/transparent"
+	        android:dividerHeight="1dp"
 	        >
 	    </ListView>	    
 	</RelativeLayout>
@@ -359,9 +407,12 @@
 	<Button 
 	    android:id="@+id/competition_chuangjian"
 	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
+	    android:layout_height="50dp"
 	    android:layout_alignParentBottom="true"
-	    android:background="@color/bg"
+	    android:gravity="center"
+	    android:background="#796941"
+	    android:textColor="#191b1d" 
+	    android:textSize="@dimen/txsize_small_xxx"
 	    android:text="加入比赛"
 	    />
    </RelativeLayout>

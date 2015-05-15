@@ -396,7 +396,7 @@
 	    android:id="@+id/competition_selection_t_2"
 	    android:layout_width="match_parent"
 	    android:layout_height="50dp"
-	      android:visibility="gone"
+	     
 	    >
 	    <TextView 
 	       	android:id="@+id/competition_match_t_2"
@@ -438,6 +438,12 @@
 	        android:src="@drawable/image_up" />
 	</RelativeLayout>
 	
+	<View 
+	    android:id="@+id/view_4"
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:background="@color/gold_half"
+       />
 	<RelativeLayout 
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
@@ -455,14 +461,13 @@
 	</RelativeLayout>
 
 	<RelativeLayout
-	    android:id="@+id/jifenfangshi"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content" >
 
 	<Button
 	    android:id="@+id/start"
 	    android:layout_width="match_parent"
-	    android:layout_height="40dp"
+	    android:layout_height="50dp"
 	    android:layout_alignParentBottom="true"
 	    android:gravity="center"
 	    android:background="#796941"
