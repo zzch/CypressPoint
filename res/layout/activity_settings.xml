@@ -34,7 +34,7 @@
                 android:layout_marginLeft="@dimen/title_button_left"
                 android:background="@null"
                 android:text="@string/back"
-                android:textColor="@color/gold"
+                android:textColor="@color/bg"
                 android:textSize="@dimen/txsize_small_xx" />
 
             <ImageView
@@ -55,45 +55,45 @@
             android:id="@+id/setting_account"
             android:layout_width="@dimen/register_view_width"
             android:layout_height="@dimen/view_mid_xx_title"
-            android:background="@drawable/button1"
+            android:background="@drawable/button"
             android:gravity="center"
              android:layout_marginTop="@dimen/view_mid_xx_title"
             android:text="@string/account"
             android:textSize="@dimen/txsize_mid_x"
-            android:textColor="@color/gold"
+            android:textColor="@color/bg"
              />
 	    <Button
             android:id="@+id/setting_opinion"
              android:layout_width="@dimen/register_view_width"
              android:layout_height="@dimen/view_mid_xx_title"
-            android:background="@drawable/button1"
+            android:background="@drawable/button"
             android:layout_marginTop="120dp"
             android:text="@string/opinion"
             android:gravity="center"
             android:textSize="@dimen/txsize_mid_x"
-            android:textColor="@color/gold"
+            android:textColor="@color/bg"
              />
 	    <Button
             android:id="@+id/setting_me"
             android:layout_width="@dimen/register_view_width"
             android:layout_height="@dimen/view_mid_xx_title"
             android:layout_marginTop="200dp"
-            android:background="@drawable/button1"
+            android:background="@drawable/button"
             android:text="@string/me"
             android:gravity="center"
             android:textSize="@dimen/txsize_mid_x"
-            android:textColor="@color/gold"
+            android:textColor="@color/bg"
              />
 	    <Button
             android:id="@+id/setting_exit"
             android:layout_width="@dimen/register_view_width"
             android:layout_height="@dimen/view_mid_xx_title"
             android:layout_alignParentBottom="true"
-            android:background="@drawable/button1"
+            android:background="@drawable/button"
             android:text="@string/exit"
             android:gravity="center"
             android:textSize="@dimen/txsize_mid_x"
-            android:textColor="@color/gold"
+            android:textColor="@color/bg"
              />
 	</RelativeLayout>
 </LinearLayout>

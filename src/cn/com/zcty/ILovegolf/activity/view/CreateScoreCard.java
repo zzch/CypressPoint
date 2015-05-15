@@ -18,6 +18,7 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
@@ -71,6 +72,8 @@ public class CreateScoreCard extends Activity{
 	private String scoring_type;
 	private String owned;
 	private String picname;
+	private TextView time;
+	private TextView textView2;
 	private ArrayList<ScoreCardsMatch> scoreCardsMatchs = new ArrayList<ScoreCardsMatch>();//存放成绩
 	private ArrayList<TeeBoxsMatch> teeBoxsMatchs = new ArrayList<TeeBoxsMatch>();//存放T台颜色
 	Handler handler = new Handler(){
@@ -121,6 +124,7 @@ public class CreateScoreCard extends Activity{
 		setContentView(R.layout.activity_scord);
 		initView();
 		setListeners();
+		daojishi();
 		new MyTask().start();
 		showProgressDialog("提示", "正在加载内容，请稍等");
 	}
@@ -157,12 +161,43 @@ public class CreateScoreCard extends Activity{
 		parTextView = (TextView) findViewById(R.id.competition_par);
 		scoreListView = (ListView) findViewById(R.id.score_match);
 		yaoqingButton = (Button) findViewById(R.id.competition_button_yaoqing);
+		time = (TextView) findViewById(R.id.time);
+		textView2 = (TextView) findViewById(R.id.textView2);
 		Intent intent=getIntent();
 		id = intent.getStringExtra("uuid");
 		scoring_type = intent.getStringExtra("scoring_type");
 		picname = intent.getStringExtra("name");
 		
+		
 	}
+	
+	
+	 /**
+   	 * 点击获取验证码时，倒计时
+   	 */
+   	public void daojishi(){
+   		//判断获取验证码是否被点击
+   		
+   			//倒计时  点击后
+   			new CountDownTimer(60*1000, 1000){
+
+   				//计时结束
+   				@Override
+   				public void onFinish() {
+   					// TODO Auto-generated method stub
+   					time.setVisibility(View.GONE);
+   					textView2.setText("请重新获取密码！");
+   				}
+                   //正在计时
+   				@Override
+   				public void onTick(long millisUntilFinished) {
+   					// TODO Auto-generated method stub
+   					time.setText(""+millisUntilFinished/1000+"");
+   				}
+   				
+   			}.start();
+		   
+		}
 	@Override
 	protected void onRestart() {
 		// TODO Auto-generated method stub

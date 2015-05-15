@@ -174,14 +174,33 @@
         android:layout_height="wrap_content" >
 
         <TextView
+            android:id="@+id/textView2"
             android:layout_width="262dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:text="@string/text_a"
-            android:textSize="@dimen/txsize_small_x"
-            android:textColor="@color/gold_80" />
+            android:textColor="@color/gold_80"
+            android:textSize="@dimen/txsize_small_x" />
+
+        <FrameLayout
+            android:layout_width="30dp"
+            android:layout_height="30dp" >
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView2"
+            android:layout_alignBottom="@+id/textView2"
+            android:layout_alignRight="@+id/textView2"
+            android:layout_marginRight="106dp"
+            android:text="30"
+            android:textColor="@color/gold_80"
+            android:textSize="@dimen/txsize_small_x" />
+
     </RelativeLayout>
 
     <View
