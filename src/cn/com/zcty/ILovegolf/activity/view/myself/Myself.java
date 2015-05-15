@@ -65,7 +65,7 @@ public class Myself extends Activity {
 				if(url==null){
 					Log.i("shifouyunxing", "1");
 					bmp=BitmapFactory.decodeResource(Myself.this.getBaseContext().getResources(), R.drawable.hugh);
-					saveMyBitmap(bmp);
+					//saveMyBitmap(bmp);
 				}else{
 					new Imageloder().start();
 				}

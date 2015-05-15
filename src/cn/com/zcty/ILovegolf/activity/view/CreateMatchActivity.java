@@ -155,6 +155,7 @@ public class CreateMatchActivity extends Activity {
 					intent.putExtra("scoring_type", scoring_type);	
 					intent.putExtra("name", pitchname);
 					startActivity(intent);
+					finish();
 				}
 			}
 
@@ -274,7 +275,14 @@ public class CreateMatchActivity extends Activity {
 	{
 		registerBroadCastReceiver();
 	}
-
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		Intent intent = new Intent(CreateMatchActivity.this,QuickScoreActivity.class);
+		startActivity(intent);
+		finish();
+	}
 	public void onclckLister(){
 
 		/*

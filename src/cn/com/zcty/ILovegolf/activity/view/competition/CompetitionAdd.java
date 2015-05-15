@@ -110,7 +110,7 @@ public class CompetitionAdd extends Activity{
 	private void getData() {
 		Intent intent = getIntent();
 		add = (CompetitionAddmatch) intent.getSerializableExtra("add");
-		Log.i("zhouhetiancai", add.getUseName());
+		Log.i("zhouhetiancai", add.getPortrait());
 		fangzhuTextView.setText(add.getUseName());
 		titaiListView.setAdapter(new SelectSessionTAdapter(this,add.getTitai().get(0).getBoxs()));
 		if(add.getTitai().size()>1){

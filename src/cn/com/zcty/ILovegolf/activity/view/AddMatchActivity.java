@@ -283,13 +283,11 @@ public class AddMatchActivity extends Activity {
 			String token=sp.getString("token", "token");
 			
 			String path = APIService.MATCHINFATION+"token="+token+"&uuid="+uuid;
-			Log.i("zhouzhouzhoupaht", path);
 			String jsonData = HttpUtils.HttpClientGet(path);
 			try {
 				JSONObject jsonObject = new JSONObject(jsonData);
 				String venuejs = jsonObject.getString("venue");
 				JSONObject userJsonObject = new JSONObject(venuejs);
-				Log.i("zhouhetiancai", userJsonObject.getString("name")+"ddd");
 				add.setName(userJsonObject.getString("name"));
 				JSONArray jsonArray = userJsonObject.getJSONArray("courses");
 				for(int j=0;j<jsonArray.length();j++){
@@ -308,6 +306,7 @@ public class AddMatchActivity extends Activity {
 				JSONObject ownerJsonObject = new JSONObject(ownerjs);
 				add.setUseName(ownerJsonObject.getString("nickname"));
 				String portrait = ownerJsonObject.getString("portrait");
+				Log.i("shijienihao",portrait);
 				JSONObject portraitJsonObject = new JSONObject(portrait);
 				add.setPortrait(portraitJsonObject.getString("url"));
 			} catch (JSONException e) {

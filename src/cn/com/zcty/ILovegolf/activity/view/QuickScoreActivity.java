@@ -42,8 +42,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
 
 
 public class QuickScoreActivity extends Activity {
-	private int itemHeight = 90;
-
+	private int itemHeight = 100;
 	private ScrollView mScrollView;
 	private PullToRefreshScrollView mPullRefreshScrollView;
 	private ListView mListView;
@@ -162,7 +161,7 @@ public class QuickScoreActivity extends Activity {
 
 		if(c!=quickArrayList.size()){
 			for(int i=0;i<quickArrayList.size();i++){
-				itemHeight = itemHeight + 5;
+				itemHeight = itemHeight + 2;
 			}
 			c = quickArrayList.size();
 			setListViewHeightBasedOnChildren(mListView);
