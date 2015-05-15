@@ -2,9 +2,6 @@ package cn.com.zcty.ILovegolf.activity.adapter;
 
 import java.util.ArrayList;
 
-import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.model.ScoreCardsMatch;
-
 import android.content.Context;
 import android.graphics.Color;
 import android.util.Log;
@@ -15,6 +12,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.model.ScoreCardsMatch;
 
 public class CreateScoreCardAdapter extends BaseAdapter{
 	private ArrayList<ScoreCardsMatch> scoreCardsMatchs;
@@ -166,6 +165,25 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 			.setText("Par"+scoreCardsMatchs.get(position).getPar());
 			holder.chengjiTextView.setText(
 					scoreCardsMatchs.get(position).getScore());
+			int par = Integer.parseInt(scoreCardsMatchs.get(position).getPar());
+			int score = Integer.parseInt(scoreCardsMatchs.get(position).getScore());
+			if(score-par>=2){
+				holder.chengjiTextView.setBackgroundResource(R.drawable.jfk_dayu2);
+			}else if(score-par==1){
+				holder.chengjiTextView.setBackgroundResource(R.drawable.jfk_dayu1);
+			}else if(score-par==0){
+				holder.chengjiTextView.setBackground(null);
+			}else{
+				holder.chengjiTextView.setBackgroundResource(R.drawable.jfk_xiaoyu);
+			}
+			if(scoreCardsMatchs.get(position).getDirection().equals("pure")){
+				holder.distanceimageView.setImageResource(R.drawable.jfk_zhong_icon);
+			}else if(scoreCardsMatchs.get(position).getDirection().equals("hook")){
+				holder.distanceimageView.setImageResource(R.drawable.jfk_zuo_icon);
+			}else{
+				holder.distanceimageView.setImageResource(R.drawable.jfk_you_icon);
+			}
+			
 			holder.distanceTextView.setText(
 					scoreCardsMatchs.get(position).getDriving_distance());
 			

@@ -90,6 +90,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_below="@+id/golf_name"
+                    android:visibility="gone"
                     android:text="2014年6月14日"
                     android:textColor="@color/gold_70"
                     android:textSize="@dimen/txsize_small_x" />

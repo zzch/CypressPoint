@@ -9,6 +9,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
+
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -17,9 +19,13 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.Editable;
+import android.text.InputType;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.widget.EditText;
 import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.view.competition.CompetitionAdd;
@@ -33,9 +39,9 @@ import cn.com.zcty.ILovegolf.tools.SecurityPasswordEditText.OnEditTextListener;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
+import cn.com.zcty.ILovegolf.utils.KeyboardUtil;
 
 public class AddMatchActivity extends Activity {
-	private	SecurityPasswordEditText passwordEditText;
 	private CompetitionAddmatch add = new CompetitionAddmatch();//存放进入后房间的信息
 	private ArrayList<TeeBoxs> titai = new ArrayList<TeeBoxs>();
 	private ArrayList<String> color = new ArrayList<String>();//存放T颜色
@@ -43,8 +49,11 @@ public class AddMatchActivity extends Activity {
 	private String message = null;
 	private String uuid = null;
 	private ProgressDialog progressDialog;
+	private KeyboardUtil kbUtil; 
+	private EditText etPwdOne, etPwdTwo, etPwdThree, etPwdFour, etPwdText;  
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
+			hideProgressDialog();
 			if(msg.what==1){
 				if(msg.what==1){
 					if(msg.obj.equals("404")||msg.obj.equals("500")){
@@ -78,7 +87,11 @@ public class AddMatchActivity extends Activity {
 				}else{
 				
 				Toast.makeText(AddMatchActivity.this, message, Toast.LENGTH_LONG).show();
-				passwordEditText.setInputnumber(null);//如果错误就清空当前输入的密码
+				//passwordEditText.setInputnumber(null);//如果错误就清空当前输入的密码
+				etPwdOne.setText(null);
+				etPwdTwo.setText(null);
+				etPwdThree.setText(null);
+				etPwdFour.setText(null);
 				}
 			}
 			if(msg.what==3){
@@ -114,25 +127,53 @@ public class AddMatchActivity extends Activity {
 		setContentView(R.layout.activity_addematch);
 		initView();
 		setListeners();
+		getData();
 	}
 
 	private void setListeners() {
-		passwordEditText.setOnEditTextListener(new OnEditTextListener() {
-
-			@Override
-			public void inputComplete(int state, String password) {
-				if(password.length()==4){
-					passWord = password;
-					showProgressDialog("提示", "正在验证密码");
-					new AddMatch().start();
-				}
-			}
-		});
+		
+		 etPwdText.addTextChangedListener(new TextWatcher() {  
+	            @Override  
+	            public void onTextChanged(CharSequence arg0, int arg1, int arg2,  
+	                    int arg3) {  
+	            }  
+	  
+	            @Override  
+	            public void beforeTextChanged(CharSequence arg0, int arg1,  
+	                    int arg2, int arg3) {  
+	            }  
+	  
+	            @Override  
+	            public void afterTextChanged(Editable arg0) {  
+	                if (etPwdFour.getText() != null  
+	                        && etPwdFour.getText().toString().length() >= 1) {  
+	                	passWord = etPwdText.getText().toString();
+	                	showProgressDialog("提示", "正在验证密码");
+						new AddMatch().start();
+	                }  
+	            }  
+	        });  
 	}
-
+	public void getData(){
+		 kbUtil = new KeyboardUtil(AddMatchActivity.this);  
+	        ArrayList<EditText> list = new ArrayList<EditText>();  
+	        list.add(etPwdOne);  
+	        list.add(etPwdTwo);  
+	        list.add(etPwdThree);  
+	        list.add(etPwdFour);  
+	        list.add(etPwdText);  
+	        kbUtil.setListEditText(list);  
+	        etPwdOne.setInputType(InputType.TYPE_NULL);  
+	        etPwdTwo.setInputType(InputType.TYPE_NULL);  
+	        etPwdThree.setInputType(InputType.TYPE_NULL);  
+	        etPwdFour.setInputType(InputType.TYPE_NULL);  
+	}
 	public void initView(){
-		passwordEditText =  (SecurityPasswordEditText) findViewById(R.id.password);
-
+		etPwdOne = (EditText) findViewById(R.id.etPwdOne_setLockPwd);  
+        etPwdTwo = (EditText) findViewById(R.id.etPwdTwo_setLockPwd);  
+        etPwdThree = (EditText) findViewById(R.id.etPwdThree_setLockPwd);  
+        etPwdFour = (EditText) findViewById(R.id.etPwdFour_setLockPwd);  
+        etPwdText = (EditText) findViewById(R.id.etPwdText_setLockPwd);  
 	}
 	/*
 	 * 点击事件

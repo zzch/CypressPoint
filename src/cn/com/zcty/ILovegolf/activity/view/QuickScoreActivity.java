@@ -42,8 +42,8 @@ import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
 
 
 public class QuickScoreActivity extends Activity {
-	private int itemHeight = 60;
-	
+	private int itemHeight = 90;
+
 	private ScrollView mScrollView;
 	private PullToRefreshScrollView mPullRefreshScrollView;
 	private ListView mListView;
@@ -62,7 +62,7 @@ public class QuickScoreActivity extends Activity {
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
-				
+
 				getData();
 				slideAdapter.notifyDataSetChanged();
 				if(msg.obj.equals("404")||msg.obj.equals("500")){//判断是服务端问题
@@ -74,16 +74,16 @@ public class QuickScoreActivity extends Activity {
 					startActivity(intent);
 					finish();
 				}else{
-				/*
-				 * 如果没有数据，则出现提示添加数据的文字
-				 */
-				if(quickArrayList.size()!=0){
-					image_tishi.setVisibility(View.INVISIBLE);
-					mListView.setVisibility(View.VISIBLE);
-				}else{
-					image_tishi.setVisibility(View.VISIBLE);
-					mListView.setVisibility(View.GONE);
-				}}
+					/*
+					 * 如果没有数据，则出现提示添加数据的文字
+					 */
+					if(quickArrayList.size()!=0){
+						image_tishi.setVisibility(View.INVISIBLE);
+						mListView.setVisibility(View.VISIBLE);
+					}else{
+						image_tishi.setVisibility(View.VISIBLE);
+						mListView.setVisibility(View.GONE);
+					}}
 			}
 			/*
 			 *加载成功，加载框消失 
@@ -95,14 +95,14 @@ public class QuickScoreActivity extends Activity {
 				}else if(msg.obj.equals("403")){
 					Toast.makeText(QuickScoreActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
 				}else{				
-				if(result.equals("success")){
-				Toast.makeText(QuickScoreActivity.this, "删除成功", Toast.LENGTH_LONG).show();
-				slideAdapter.notifyDataSetChanged();
-			}else{
-				Toast.makeText(QuickScoreActivity.this, "删除失败,当前网络不稳定", Toast.LENGTH_LONG).show();
-				image_tishi.setVisibility(View.INVISIBLE);
-				mListView.setVisibility(View.VISIBLE);
-			}}
+					if(result.equals("success")){
+						Toast.makeText(QuickScoreActivity.this, "删除成功", Toast.LENGTH_LONG).show();
+						slideAdapter.notifyDataSetChanged();
+					}else{
+						Toast.makeText(QuickScoreActivity.this, "删除失败,当前网络不稳定", Toast.LENGTH_LONG).show();
+						image_tishi.setVisibility(View.INVISIBLE);
+						mListView.setVisibility(View.VISIBLE);
+					}}
 			}
 		};
 	};
@@ -125,23 +125,23 @@ public class QuickScoreActivity extends Activity {
 
 			@Override
 			public void onRefresh(PullToRefreshBase<ScrollView> refreshView) {
-				
+
 				new MyTask().start();
 				mPullRefreshScrollView.onRefreshComplete();//刷新
-				
-						
-				
+
+
+
 			}
 		});
-		
-	   	mScrollView = mPullRefreshScrollView.getRefreshableView();
+
+		mScrollView = mPullRefreshScrollView.getRefreshableView();
 	}
-	
+
 	private void initView() {
 		mListView = (ListView) findViewById(R.id.listview);
 		image_tishi = (ImageView) findViewById(R.id.tishi);
 		mPullRefreshScrollView = (PullToRefreshScrollView) findViewById(R.id.pull_refresh_scrollview);
-		
+
 	}
 	private void getData() {
 		slideAdapter = new QuickScoreAdapter(this, quickArrayList);
@@ -154,20 +154,21 @@ public class QuickScoreActivity extends Activity {
 				Intent intent = new Intent(QuickScoreActivity.this,CreateScoreCard.class);
 				intent.putExtra("uuid", quickArrayList.get(position).getUuid());
 				intent.putExtra("scoring_type", quickArrayList.get(position).getScoring_type());
+				intent.putExtra("name", quickArrayList.get(position).getName());
 				startActivity(intent);
-				
+
 			}
 		});
-		
+
 		if(c!=quickArrayList.size()){
 			for(int i=0;i<quickArrayList.size();i++){
-				itemHeight = itemHeight + 10;
+				itemHeight = itemHeight + 5;
 			}
 			c = quickArrayList.size();
 			setListViewHeightBasedOnChildren(mListView);
-			}
 		}
-		
+	}
+
 	//点击事件
 	public void onclick(View v){
 
@@ -198,19 +199,23 @@ public class QuickScoreActivity extends Activity {
 			break;
 		}
 	}
-    
-	
-  
-	
 
-	
+
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		finish();
+	}
+
+
+
 	/*@Override
 	public void onRefresh() {
-		
+
 		mHandler.postDelayed(new Runnable() {
 			@Override
 			public void run() {
-				
+
 				quickArrayList.clear();
 				new MyTask().start();
 				slideAdapter.notifyDataSetChanged();
@@ -227,14 +232,14 @@ public class QuickScoreActivity extends Activity {
 		mHandler.postDelayed(new Runnable() {
 			@Override
 			public void run() {
-				
+
 				quickArrayList.clear();
 				slideAdapter.notifyDataSetChanged();
 				onLoad();
-				
+
 			}
 		}, 2000);
-		
+
 
 	}*/
 	class MyTask extends Thread{
@@ -252,7 +257,7 @@ public class QuickScoreActivity extends Activity {
 			Log.i("tokens", token);
 
 			path = APIService.MATCHES_LIST+"page="+page+"&token="+token;
-			
+
 			String JsonData=HttpUtils.HttpClientGet(path);
 			try {
 				JSONArray jsonarray=new JSONArray(JsonData);
@@ -264,18 +269,18 @@ public class QuickScoreActivity extends Activity {
 					String venue = jsonObject.getString("venue");//获得venue 的map集合
 					JSONObject venueJsonObject = new JSONObject(venue);
 					quickContent.setName(venueJsonObject.getString("name"));
-					
+
 					String player = jsonObject.getString("player");//获得player 的map集合
 					JSONObject playerJsonObject = new JSONObject(player);
 					quickContent.setScoring_type(playerJsonObject.getString("scoring_type"));
 					quickContent.setScore(playerJsonObject.getString("strokes"));
 					quickContent.setRecorded_scorecards_count(playerJsonObject.getString("recorded_scorecards_count"));
-					
+
 					quickContent.setPlayers_count(jsonObject.getString("players_count"));
 					quickContent.setStarted_at(jsonObject.getString("started_at"));
 					quickArrayList.add(quickContent);
 				}
-				
+
 				Message msg = handler.obtainMessage();
 				msg.what = 1;
 				msg.obj = JsonData;
@@ -307,7 +312,7 @@ public class QuickScoreActivity extends Activity {
 			try {
 				JSONObject json = new JSONObject(jsonDele);
 				result = json.getString("result");
-				
+
 				//slideAdapter.notifyDataSetChanged();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -348,39 +353,39 @@ public class QuickScoreActivity extends Activity {
 			progressDialog.dismiss();
 		}
 	}
-	 //定义函数动态控制listView的高度
-    public void setListViewHeightBasedOnChildren(ListView listView) {
+	//定义函数动态控制listView的高度
+	public void setListViewHeightBasedOnChildren(ListView listView) {
 
 
-       //获取listview的适配器
-       ListAdapter listAdapter = listView.getAdapter();
-       //item的高度
-       
+		//获取listview的适配器
+		ListAdapter listAdapter = listView.getAdapter();
+		//item的高度
 
 
-       if (listAdapter == null) {
-           return;
-       }
+
+		if (listAdapter == null) {
+			return;
+		}
 
 
-       int totalHeight = 0;
+		int totalHeight = 0;
 
 
-       for (int i = 0; i < listAdapter.getCount(); i++) {
-       totalHeight += Dp2Px(getApplicationContext(),itemHeight)+listView.getDividerHeight();
-       }
+		for (int i = 0; i < listAdapter.getCount(); i++) {
+			totalHeight += Dp2Px(getApplicationContext(),itemHeight)+listView.getDividerHeight();
+		}
 
 
-       ViewGroup.LayoutParams params = listView.getLayoutParams();
-       params. height = totalHeight;
+		ViewGroup.LayoutParams params = listView.getLayoutParams();
+		params. height = totalHeight;
 
 
-       listView.setLayoutParams(params);
-   }
-      //dp转化为px
-    public int Dp2Px(Context context, float dp) {
-       final float scale = context.getResources().getDisplayMetrics().density;
-       return (int ) (dp * scale + 0.5f);
-   }
+		listView.setLayoutParams(params);
+	}
+	//dp转化为px
+	public int Dp2Px(Context context, float dp) {
+		final float scale = context.getResources().getDisplayMetrics().density;
+		return (int ) (dp * scale + 0.5f);
+	}
 
 }

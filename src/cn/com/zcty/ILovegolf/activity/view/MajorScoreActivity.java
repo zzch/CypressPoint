@@ -34,6 +34,7 @@ import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.ArrayWheelAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.MajorArrayNumberWheelAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.MajorScoresAdapter;
+import cn.com.zcty.ILovegolf.activity.view.ScoreCardUpDateActivity.MyTask;
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.activity.view.myself.SelecPicpupExit;
 import cn.com.zcty.ILovegolf.model.MajorScore;
@@ -171,12 +172,12 @@ public class MajorScoreActivity extends Activity {
 					builder.show();
 				}
 				else{
-				Intent intent = new Intent();
+				/*Intent intent = new Intent();
 				intent.putExtra("score", score);
 				intent.putExtra("putts", putts);
 				intent.putExtra("position", position);
 				intent.putExtra("penalties", penalties);
-				setResult(1,intent);
+				setResult(1,intent);*/
 				finish();
 				}
 				}
@@ -198,20 +199,7 @@ public class MajorScoreActivity extends Activity {
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		
 		if(keyCode==KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0){
-			/*if(!(score.equals("0")&&penalties.equals("0"))){
-			new JiqiuBianjiTask().start();
-			Intent intent = new Intent();
-			intent.putExtra("score", score);
-			intent.putExtra("putts", putts);
-			intent.putExtra("position", position);
-			intent.putExtra("penalties", penalties);
-			setResult(1,intent);
-			finish();
-		}else{*/
-			Intent intent = new Intent();		
-			setResult(30,intent);
-			finish();
-		/*}*/
+			builder("提示", "是否保存", "取消", "确定");
         }
 		return false;
 	}
@@ -252,20 +240,9 @@ public class MajorScoreActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				/*if(!(score.equals("0")&&penalties.equals("0"))){
-					new JiqiuBianjiTask().start();
-					Intent intent = new Intent();
-					intent.putExtra("score", score);
-					intent.putExtra("putts", putts);
-					intent.putExtra("position", position);
-					intent.putExtra("penalties", penalties);
-					setResult(1,intent);
-					finish();
-				}else{*/
-					Intent intent = new Intent();		
-					setResult(30,intent);
-					finish();
-				/*}*/
+					builder("提示", "是否保存", "取消", "确定");
+					
+			
 
 
 			}
@@ -723,5 +700,37 @@ public class MajorScoreActivity extends Activity {
 		}
 	}
 	
-
+	/*
+	 * 弹出框
+	 */
+	public void builder(String title,String message,String negativie,String positive){
+		AlertDialog.Builder builder = new Builder(MajorScoreActivity.this)
+		.setTitle(title).setMessage(message).setNegativeButton(negativie, new android.content.DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				finish();
+			}
+		}).setPositiveButton(positive, new android.content.DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				if(addArrayList.size()>0){
+					new JiqiuBianjiTask().start();
+					}else{
+						AlertDialog.Builder builders = new Builder(MajorScoreActivity.this)
+						.setTitle("提示").setMessage("请添加成绩").setNegativeButton("确定", new android.content.DialogInterface.OnClickListener() {
+							
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+								
+							}
+						});
+						builders.show();
+					}
+				
+			}
+		});
+		builder.show();
+	}
 }
