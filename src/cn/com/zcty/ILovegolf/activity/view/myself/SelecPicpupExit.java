@@ -49,6 +49,7 @@ public class SelecPicpupExit extends Activity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.alert_dialog_exit);
+		ShouYeActivity.getInstance().addActivity(this);
 		initView();
 		setListeners();
 	}
