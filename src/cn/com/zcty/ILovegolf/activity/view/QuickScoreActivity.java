@@ -126,9 +126,10 @@ public class QuickScoreActivity extends Activity {
 			public void onRefresh(PullToRefreshBase<ScrollView> refreshView) {
 
 				new MyTask().start();
+
+				slideAdapter.notifyDataSetChanged();
+
 				mPullRefreshScrollView.onRefreshComplete();//刷新
-
-
 
 			}
 		});

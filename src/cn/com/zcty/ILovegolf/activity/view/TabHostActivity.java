@@ -2,6 +2,8 @@ package cn.com.zcty.ILovegolf.activity.view;
 
 import java.io.File;
 
+
+
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.R.drawable;
 import cn.com.zcty.ILovegolf.activity.R.id;
@@ -13,11 +15,13 @@ import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
+import android.widget.Toast;
 import android.widget.TabHost.TabSpec;
 import android.widget.TabWidget;
 import android.widget.TextView;
@@ -75,6 +79,5 @@ public class TabHostActivity extends TabActivity {
 		return view;
 	}
 
-
-
+	
 }

@@ -49,10 +49,17 @@ public class CompetitionAdd extends Activity{
 	private ProgressDialog progressDialog;
 	private View v1;
 	private View v2;
+	private View v_2;
+	private View v_4;
+	private View v_3;
 	private TextView fangshiTextView;
 	private TextView easyTextView;
 	private TextView majorTextView;
 	private ImageView imageView1;
+	private ImageView imageView3;
+	private ImageView imageView5;
+	private ImageView titaicolor_1;
+	private ImageView titaicolor_2;
 	private RelativeLayout majorRelativeLayout;
 	private RelativeLayout jifenfangshi;
 	private RelativeLayout leixing_layout;
@@ -197,8 +204,10 @@ public class CompetitionAdd extends Activity{
 			public void onClick(View v) {
 				if(titaiListView.getVisibility()==View.GONE){
 					titaiListView.setVisibility(View.VISIBLE);
+					imageView3.setImageResource(R.drawable.image_up);
 				}else{
 					titaiListView.setVisibility(View.GONE);
+					imageView3.setImageResource(R.drawable.image_down);
 				}
 			}
 		});
@@ -207,6 +216,9 @@ public class CompetitionAdd extends Activity{
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
+				v_3.setVisibility(View.VISIBLE);
+				v_4.setVisibility(View.VISIBLE);
+				imageView3.setImageResource(R.drawable.image_down);
 				titaiTextView.setText(tiTai[position]);
 				titaiListView.setVisibility(View.GONE);
 				t_1 = add.getTitai().get(0).getBoxs().get(position);
@@ -224,8 +236,10 @@ public class CompetitionAdd extends Activity{
 			public void onClick(View v) {
 				if(titai2ListView.getVisibility()==View.GONE){
 					titai2ListView.setVisibility(View.VISIBLE);
+					imageView5.setImageResource(R.drawable.image_up);
 				}else{
 					titai2ListView.setVisibility(View.GONE);
+					imageView5.setImageResource(R.drawable.image_down);
 				}
 			}
 		});
@@ -234,6 +248,7 @@ public class CompetitionAdd extends Activity{
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
+				imageView5.setImageResource(R.drawable.image_down);
 				titaiTextView_2.setText(tiTai[position]);
 				titai2ListView.setVisibility(View.GONE);
 				t_2 = add.getTitai().get(1).getBoxs().get(position);
@@ -269,8 +284,18 @@ public class CompetitionAdd extends Activity{
 		
 		v1 = findViewById(R.id.v1);
 		v2 = findViewById(R.id.v2);
+		v_2 = findViewById(R.id.view_2);
+		v_3 = findViewById(R.id.view_3);
+		v_4 = findViewById(R.id.view_4);
+
+		v_3.setVisibility(View.GONE);
+		v_4.setVisibility(View.GONE);
 		fangshiTextView = (TextView) findViewById(R.id.username);
+		
 		imageView1 = (ImageView) findViewById(R.id.imageView1);
+		imageView3 = (ImageView) findViewById(R.id.imageView3);
+		imageView5 = (ImageView) findViewById(R.id.imageView5);
+		
 		fangshiTextView = (TextView) findViewById(R.id.creatematch_fangshi);
 		easyTextView = (TextView) findViewById(R.id.easy);
 		majorTextView = (TextView) findViewById(R.id.major);

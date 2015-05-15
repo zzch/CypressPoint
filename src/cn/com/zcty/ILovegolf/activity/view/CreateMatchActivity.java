@@ -64,6 +64,7 @@ public class CreateMatchActivity extends Activity {
 	private View v2;
 	private View v_2;
 	private View v_3;
+	private View v_4;
 	private TextView qiuchang_name;
 	private TextView qiudongTextView;
 	private TextView zichangTextView;
@@ -229,9 +230,13 @@ public class CreateMatchActivity extends Activity {
 
 	public void initView(){
 		v_2 = findViewById(R.id.view_2);
-		v_2.setVisibility(View.GONE);
 		v_3 = findViewById(R.id.view_3);
+		v_4 = findViewById(R.id.view_4);
+		
+		v_2.setVisibility(View.GONE);
 		v_3.setVisibility(View.GONE);
+		v_4.setVisibility(View.GONE);
+		
 		v1 = findViewById(R.id.v1);
 		v2 = findViewById(R.id.v2);
 		startButton = (Button) findViewById(R.id.start);
@@ -368,6 +373,7 @@ public class CreateMatchActivity extends Activity {
 			public void onClick(View v) {
 				v_2.setVisibility(View.GONE);
 				v_3.setVisibility(View.GONE);
+				v_4.setVisibility(View.GONE);
 				selectSession_tListView.setVisibility(View.GONE);
 				if(selectSessionListView.getVisibility()==View.GONE){
 					selectSessionListView.setVisibility(View.VISIBLE);
@@ -471,6 +477,7 @@ public class CreateMatchActivity extends Activity {
 					selectSession_2ListView.setVisibility(View.VISIBLE);
 				}else{
 					v_3.setVisibility(View.GONE);
+					
 					selectSession_2.setVisibility(View.GONE);
 					selectSession_2ListView.setVisibility(View.GONE);
 					imageView3.setImageResource(R.drawable.image_down);
@@ -488,6 +495,7 @@ public class CreateMatchActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
+				
 				selectSession_t_2.setVisibility(View.GONE);
 				selectSession_t_2ListView.setVisibility(View.GONE);
 				if(selectSession_2ListView.getVisibility()==View.GONE){
@@ -505,6 +513,7 @@ public class CreateMatchActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
+				v_4.setVisibility(View.VISIBLE);
 				course_uuids_2 = uuids.get(position);
 				qiudongTextView_2.setText("后"+diamodDong_2.get(position)+"洞");
 				zichangTextView_2.setText(name_2ArrayList.get(position));
@@ -525,6 +534,7 @@ public class CreateMatchActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				if(selectSession_t_2ListView.getVisibility()==View.GONE){
+					
 					selectSession_t_2ListView.setVisibility(View.VISIBLE);
 					imageView5.setImageResource(R.drawable.image_up);
 				}else{
