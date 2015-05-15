@@ -36,14 +36,17 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.activity.view.competition.CompetitionAdd;
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.activity.view.myself.SelectPicPopupWindow;
+import cn.com.zcty.ILovegolf.model.CompetitionAddmatch;
 import cn.com.zcty.ILovegolf.tools.CircleImageView;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 public class SelfhoodActivity extends Activity{
+	private CompetitionAddmatch add = new CompetitionAddmatch();//存放进入后房间的信息
 	private Button photoButton;
 	private Bitmap image = null;
 	private CircleImageView headImage;
@@ -56,6 +59,7 @@ public class SelfhoodActivity extends Activity{
 	private String success;
 	private String id;
 	private ProgressDialog progressDialog;
+	private String cunzai;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -71,10 +75,24 @@ public class SelfhoodActivity extends Activity{
 					}else{
 						if(success.equals("success")){
 							Toast.makeText(SelfhoodActivity.this, "保存成功", Toast.LENGTH_LONG).show();
-							Intent intent = new Intent(SelfhoodActivity.this,InviteActivity.class);
-							intent.putExtra("uuid", id);
-							startActivity(intent);
-							finish();
+							
+							if(cunzai.equals("1")){
+								Log.i("sdfsdfsdf", "yanzheng");
+								Intent intent = new Intent(SelfhoodActivity.this, CompetitionAdd.class);
+								//intent.setClass();
+								intent.putExtra("add", add);
+								intent.putExtra("uuid", id);
+								startActivity(intent);
+								finish();
+							}else{
+								Intent intent = new Intent(SelfhoodActivity.this,InviteActivity.class);
+								//intent.setClass(SelfhoodActivity.this,InviteActivity.class);
+								intent.putExtra("add", add);
+								intent.putExtra("uuid", id);
+								startActivity(intent);
+								finish();
+							}
+							
 						}else{
 							FileUtil.delFile();
 							Toast.makeText(SelfhoodActivity.this, "保存失败", Toast.LENGTH_LONG).show();
@@ -104,8 +122,8 @@ public class SelfhoodActivity extends Activity{
 		baocunButton = (Button) findViewById(R.id.selfhood_baocun);
 		linear = (LinearLayout) findViewById(R.id.linear);
 		id = getIntent().getStringExtra("uuid");
-	
-		
+		cunzai  = getIntent().getStringExtra("cunzai");
+		add = (CompetitionAddmatch) getIntent().getSerializableExtra("add");
 	}
 	private void setListeners(){
 		/*

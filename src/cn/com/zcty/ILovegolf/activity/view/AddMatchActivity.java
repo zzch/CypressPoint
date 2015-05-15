@@ -111,6 +111,7 @@ public class AddMatchActivity extends Activity {
 					}else{
 						intent.setClass(AddMatchActivity.this,SelfhoodActivity.class);
 					}
+				intent.putExtra("cunzai", "1");
 				intent.putExtra("uuid", uuid);
 				intent.putExtra("add", add);
 				startActivity(intent);

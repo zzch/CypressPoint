@@ -36,6 +36,7 @@ import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 public class CompetitionAdd extends Activity{
+	
 	private TextView fangzhuTextView;
 	private Bitmap bitmap;
 	private CircleImageView headCircleImageView;
