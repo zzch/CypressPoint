@@ -26,6 +26,10 @@ public class Ranking {
 	 * 成绩
 	 */
 	private String total;
+	/**
+	 * 判断是否为自己
+	 */
+	private String self;
 	public String getPosition() {
 		return position;
 	}
@@ -61,6 +65,12 @@ public class Ranking {
 	}
 	public void setUuid(String uuid) {
 		this.uuid = uuid;
+	}
+	public String getSelf() {
+		return self;
+	}
+	public void setSelf(String self) {
+		this.self = self;
 	}
 	
 }

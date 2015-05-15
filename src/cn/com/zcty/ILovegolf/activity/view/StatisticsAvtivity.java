@@ -214,8 +214,8 @@ public void onConfigurationChanged(Configuration newConfig) {
 		gridView.setSelector(new ColorDrawable(Color.TRANSPARENT));
 		dateText = (TextView) findViewById(R.id.golf_date);
 		golfnameTextView = (TextView) findViewById(R.id.golf_name);
-		SharedPreferences ss = getSharedPreferences("name", MODE_PRIVATE);
-		golfnameTextView.setText(ss.getString("name", "name"));
+		String name = getIntent().getStringExtra("name");
+		golfnameTextView.setText(name);
 		
 		countListView = (ListView) findViewById(R.id.count);
 		qiudongListView = (ListView) findViewById(R.id.qiudong);

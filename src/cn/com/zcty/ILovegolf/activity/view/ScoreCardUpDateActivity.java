@@ -30,10 +30,12 @@ import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.ArrayNumberWheelAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.ArrayWheelAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.NumericWheelAdapter;
+import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.model.Setcard;
 import cn.com.zcty.ILovegolf.tools.OnWheelChangedListener;
 import cn.com.zcty.ILovegolf.tools.WheelView;
 import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 /**
@@ -78,69 +80,18 @@ public class ScoreCardUpDateActivity extends Activity{
 		public void handleMessage(android.os.Message msg) {
 
 			if(msg.what==1){
-				if(!coolResult.equals(hit_scorecard.getText().toString())){
-					flase_4 = true;
-				}
-				if(!distanceResult.equals(distance_scorecard.getText().toString())){
-					flase_5 = true;
-				}
-				Log.i("resultk", flase_1+""+flase_2+flase_3+flase_4+"");
-				if(flase_1||flase_2||flase_3||flase_4||flase_5){
-					final String result = (String) msg.obj;
-					Log.i("result", result);
-					AlertDialog.Builder dialog = new Builder(ScoreCardUpDateActivity.this)
-					.setTitle("提示")
-					.setMessage("是否保存")
-					.setPositiveButton("保存", new DialogInterface.OnClickListener() {//添加确定按钮   
-
-
-						@Override  
-						public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件   
-							if(result.equals("success")){
-								Intent intent = new Intent();
-								intent.putExtra("scard", setcard);
-								intent.putExtra("position", position);
-								setResult(0, intent);
-								finish();
-							}else{
-								if(code.equals("500")||code.equals("404")){
-									Toast.makeText(ScoreCardUpDateActivity.this, "网络异常", Toast.LENGTH_LONG).show();
-								}
-							}
-
-						}}  
-
-							).setNegativeButton("取消", new DialogInterface.OnClickListener() {//添加确定按钮   
-
-
-								@Override  
-								public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件   
-									Intent intent = new Intent();
-									setResult(30, intent);
-									finish();
-
-
-								}});				
-					dialog.show();
-				}else{
-					Intent intent = new Intent();
-					setResult(30, intent);
-					finish();			   }
-
-
-			}
-			if(msg.what==2){
-				String result = (String) msg.obj;
-				if(result.equals("success")){
-					Intent intent = new Intent();
-					intent.putExtra("scard", setcard);
-					intent.putExtra("position", position);
-					setResult(0, intent);
-
+				if(msg.obj.equals("404")||msg.obj.equals("500")){
+					Toast.makeText(ScoreCardUpDateActivity.this, "网络错误，请稍后再试", Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("403")){
+					Toast.makeText(ScoreCardUpDateActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+					FileUtil.delFile();
+					Intent intent = new Intent(ScoreCardUpDateActivity.this,ShouYeActivity.class);
+					startActivity(intent);
 					finish();
-				}
-				if(code.equals("500")||code.equals("404")){
-					Toast.makeText(ScoreCardUpDateActivity.this, "网络异常", Toast.LENGTH_LONG).show();
+				}else{
+					if(result.equals("success")){
+						finish();
+					}
 				}
 			}
 
@@ -208,9 +159,7 @@ public class ScoreCardUpDateActivity extends Activity{
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 
 		if(keyCode==KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0){
-			Intent intent = new Intent();
-			setResult(30, intent);
-			new MyTask().start();
+			builder("提示", "是否保存", "取消", "确定");
 		}
 		return false;
 	}
@@ -218,15 +167,15 @@ public class ScoreCardUpDateActivity extends Activity{
 		cacelButton.setOnClickListener(new OnClickListener() {	
 			@Override
 			public void onClick(View v) {
-				new MyTask().start();
-
+				builder("提示", "是否保存", "取消", "确定");
+			
 			}
 		});
 		saveButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				new MyTaskt().start();
+				new MyTask().start();
 
 			}
 		});
@@ -378,6 +327,32 @@ public class ScoreCardUpDateActivity extends Activity{
 			break;
 		}
 	}
+	/*
+	 * 弹出框
+	 */
+	public void builder(String title,String message,String negativie,String positive){
+		AlertDialog.Builder builder = new Builder(ScoreCardUpDateActivity.this)
+		.setTitle(title).setMessage(message).setNegativeButton(negativie, new android.content.DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				finish();
+			}
+		}).setPositiveButton(positive, new android.content.DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				new MyTask().start();
+			}
+		});
+		builder.show();
+	}
+	
+	/**
+	 * 上传保存数据
+	 * @author Administrator
+	 *
+	 */	
 	class MyTask extends Thread{
 		@Override
 		public void run() {
@@ -412,82 +387,20 @@ public class ScoreCardUpDateActivity extends Activity{
 					"&token="+token;
 			Log.i("pathd", path);
 			String jsonData = HttpUtils.HttpClientPut(path);
-			code = jsonData;
-			Log.i("jsondata", jsonData);
-			if(code.equals("500")||code.equals("404")){
-				Message msg = handler.obtainMessage();
-				msg.what = 1;
-				msg.obj = code;
-				handler.sendMessage(msg);
-			}else{
-				try {
-					JSONObject jsonaObject = new JSONObject(jsonData);
-					result = jsonaObject.getString("result");
-					Log.i("result", result+"1");
-					Message msg = handler.obtainMessage();
-					msg.what = 1;
-					msg.obj = result;
-					handler.sendMessage(msg);
-				} catch (JSONException e) {
-					e.printStackTrace();
-				}}
-		}
-	}
-	class MyTaskt extends Thread{
-		@Override
-		public void run() {
-			super.run();
-			getData();
-		}
-		public void getData(){
-
-			SharedPreferences sp = getSharedPreferences("register", Context.MODE_PRIVATE);
-			String token = sp.getString("token", "token");
-			Intent intent = getIntent();
-			String uuid = intent.getStringExtra("uuid");
-			String score = dataTextView.getText().toString();
-			String putts = putTextView.getText().toString();
-			String penalties = penaltiesTextView.getText().toString();	
-			setcard.setRodNum(score);
-			setcard.setPutts(putts);
-			setcard.setPenalties(penalties);
-			setcard.setTe(driving_distance);
-			if(direction.equals("hook")){
-				setcard.setPar("左侧");
-			}else if(direction.equals("slice")){
-				setcard.setPar("右侧");
-			}else{
-				setcard.setPar("命中");
+			try {
+				JSONObject jsonObject = new JSONObject(jsonData);
+				result = jsonObject.getString("result");
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-
-			String path = APIService.MODIFYINTEGRAL+"uuid="+uuid+"&score="+score+"&putts="+putts+
-					"&penalties="+penalties+
-					"&driving_distance="+driving_distance+
-					"&direction="+direction+
-					"&token="+token;
-			Log.i("pathd", path);
-			String jsonData = HttpUtils.HttpClientPut(path);
-			code = jsonData;
-			if(code.equals("500")||code.equals("404")){
-				Message msg = handler.obtainMessage();
-				msg.what = 2;
-				msg.obj = code;
-				handler.sendMessage(msg);
-			}else{
-				Log.i("jsondata", jsonData);
-				try {
-					JSONObject jsonaObject = new JSONObject(jsonData);
-					result = jsonaObject.getString("result");
-					Log.i("result", result+"1");
-					Message msg = handler.obtainMessage();
-					msg.what = 2;
-					msg.obj = result;
-					handler.sendMessage(msg);
-				} catch (JSONException e) {
-					e.printStackTrace();
-				}
-			}}
+			Message msg = handler.obtainMessage();
+			msg.what = 1;
+			msg.obj = jsonData;
+			handler.sendMessage(msg);
+		}
 	}
+	
 
 
 }

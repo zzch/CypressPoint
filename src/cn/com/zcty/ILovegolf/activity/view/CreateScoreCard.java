@@ -49,6 +49,9 @@ public class CreateScoreCard extends Activity{
 	private String username;
 	private Bitmap bitmap;
 	
+	private String used;
+	private ArrayList<String> color = new ArrayList<String>();
+	private ArrayList<String> distance = new ArrayList<String>();
 	private String keren;
 	private String ranking;
 	private String schedule;
@@ -67,6 +70,7 @@ public class CreateScoreCard extends Activity{
 	private String id;
 	private String scoring_type;
 	private String owned;
+	private String picname;
 	private ArrayList<ScoreCardsMatch> scoreCardsMatchs = new ArrayList<ScoreCardsMatch>();//存放成绩
 	private ArrayList<TeeBoxsMatch> teeBoxsMatchs = new ArrayList<TeeBoxsMatch>();//存放T台颜色
 	Handler handler = new Handler(){
@@ -128,9 +132,16 @@ public class CreateScoreCard extends Activity{
 					long arg3) {
 				if(scoring_type.equals("simple")){
 					Intent intent = new Intent(CreateScoreCard.this,ScoreCardUpDateActivity.class);
+					intent.putExtra("uuid", scoreCardsMatchs.get(position).getUuid());
+					intent.putExtra("number", (position+1)+"");
 					startActivity(intent);
 				}else{
 					Intent intent = new Intent(CreateScoreCard.this,MajorScoreActivity.class);
+					intent.putExtra("uuid", scoreCardsMatchs.get(position).getUuid());
+					intent.putExtra("number", (position+1)+"");
+					intent.putExtra("par", scoreCardsMatchs.get(position).getPar());
+					intent.putExtra("color", color.get(position));
+					intent.putExtra("diatance", distance.get(position));
 					startActivity(intent);
 				}
 			}
@@ -149,6 +160,7 @@ public class CreateScoreCard extends Activity{
 		Intent intent=getIntent();
 		id = intent.getStringExtra("uuid");
 		scoring_type = intent.getStringExtra("scoring_type");
+		picname = intent.getStringExtra("name");
 		
 	}
 	@Override
@@ -157,6 +169,14 @@ public class CreateScoreCard extends Activity{
 		super.onRestart();
 		new MyTask().start();
 		showProgressDialog("提示", "正在加载内容，请稍等");
+	}
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		Intent intent = new Intent(CreateScoreCard.this,QuickScoreActivity.class);
+		startActivity(intent);
+		finish();
 	}
 	/*
 	 * 点击跳转
@@ -192,7 +212,7 @@ public class CreateScoreCard extends Activity{
 				f.setClass(CreateScoreCard.this,MajorStatisticsActivity.class);
 			}
 			
-			
+			f.putExtra("name", picname);
 			f.putExtra("uuid", id);
 			startActivity(f);
 			break;
@@ -276,9 +296,12 @@ public class CreateScoreCard extends Activity{
 						teeBoxsMatch.setColor(jj.getString("color"));
 						teeBoxsMatch.setDistance_from_hole(jj.getString("distance_from_hole"));
 						teeBoxsMatch.setUsed(jj.getString("used"));
+						if(jj.getString("used").equals("true")){
+							color.add(jj.getString("color"));
+							distance.add(jj.getString("distance_from_hole"));
+						}
 						teeBoxsMatchs.add(teeBoxsMatch);
 					}
-					Log.i("sdfasdf", count+"");
 					scoreCardsMatch.setCount(count);
 					scoreCardsMatch.setTeeboxs(teeBoxsMatchs);
 					scoreCardsMatchs.add(scoreCardsMatch);

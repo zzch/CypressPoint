@@ -153,7 +153,8 @@ public class CreateMatchActivity extends Activity {
 				//正常情况下
 					Intent intent = new Intent(CreateMatchActivity.this,CreateScoreCard.class);
 					intent.putExtra("uuid", id);
-					intent.putExtra("scoring_type", scoring_type);					
+					intent.putExtra("scoring_type", scoring_type);	
+					intent.putExtra("name", pitchname);
 					startActivity(intent);
 				}
 			}

@@ -286,10 +286,12 @@
 	        android:id="@+id/competition_listview_t"
 	        android:visibility="gone"
 	        android:layout_width="match_parent"
+
 	        android:layout_height="250dp"
 	         android:divider="@color/gold_half"
 	        android:listSelector="@android:color/transparent"
 	        android:dividerHeight="1dp"
+
 	        >
 	    </ListView>	    
 	</RelativeLayout>

@@ -104,6 +104,8 @@ public class SelfhoodActivity extends Activity{
 		baocunButton = (Button) findViewById(R.id.selfhood_baocun);
 		linear = (LinearLayout) findViewById(R.id.linear);
 		id = getIntent().getStringExtra("uuid");
+	
+		
 	}
 	private void setListeners(){
 		/*
@@ -115,7 +117,7 @@ public class SelfhoodActivity extends Activity{
 			public void onClick(View v) {
 				startActivityForResult(new Intent(SelfhoodActivity.this,
 						SelectPicPopupWindow.class), 1);
-				showProgressDialog("提示", "正在获得头像");
+				//showProgressDialog("提示", "正在获得头像");
 			}
 		});
 		/*
@@ -206,7 +208,7 @@ public class SelfhoodActivity extends Activity{
 								image = rotaingImageView(90,image);							
 							}
 							headImage.setImageBitmap(image);
-							hideProgressDialog();
+							//hideProgressDialog();
 						}
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -222,7 +224,7 @@ public class SelfhoodActivity extends Activity{
 							image = comp(image);
 							Log.i("ceshipath", image+"2");
 							headImage.setImageBitmap(image);
-							hideProgressDialog();
+							//hideProgressDialog();
 						}
 					}
 				}

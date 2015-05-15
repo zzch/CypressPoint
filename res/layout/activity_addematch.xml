@@ -72,60 +72,86 @@
         android:textColor="@color/gold_80"
         android:textSize="@dimen/txsize_small_xx" />
 
-    <LinearLayout
-        android:layout_width="@dimen/view_tongyong"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/shouye_name_top"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal" >
+ 
 
-        <RelativeLayout
-            android:layout_width="220dp"
-            android:layout_height="wrap_content" >
-
-            <cn.com.zcty.ILovegolf.tools.SecurityPasswordEditText
-                android:id="@+id/password"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="50dp" >
-            </cn.com.zcty.ILovegolf.tools.SecurityPasswordEditText>
-        </RelativeLayout>
+            <LinearLayout  
+        android:layout_width="wrap_content"  
+        android:layout_height="wrap_content"  
+        android:layout_gravity="center_horizontal"  
+        android:layout_marginTop="55dp"  
+        android:orientation="horizontal" >  
+  
+        <EditText  
+            android:id="@+id/etPwdOne_setLockPwd"  
+            android:layout_width="wrap_content"  
+            android:layout_height="wrap_content"  
+            android:background="#ffffff"  
+            android:cursorVisible="false"  
+            android:ems="1"  
+            android:gravity="center"  
+            android:lines="1"  
+            android:textSize="31sp" >  
+        </EditText>  
+  
+        <EditText  
+            android:id="@+id/etPwdTwo_setLockPwd"  
+            android:layout_width="wrap_content"  
+            android:layout_height="wrap_content"  
+            android:layout_marginLeft="16dp"  
+            android:background="#ffffff"  
+            android:cursorVisible="false"  
+            android:ems="1"  
+            android:gravity="center"  
+            android:textSize="31sp" />  
+  
+        <EditText  
+            android:id="@+id/etPwdThree_setLockPwd"  
+            android:layout_width="wrap_content"  
+            android:layout_height="wrap_content"  
+            android:layout_marginLeft="16dp"  
+            android:background="#ffffff"  
+            android:cursorVisible="false"  
+            android:ems="1"  
+            android:gravity="center"  
+            android:textSize="31sp" />  
+  
+        <EditText  
+            android:id="@+id/etPwdFour_setLockPwd"  
+            android:layout_width="wrap_content"  
+            android:layout_height="wrap_content"  
+            android:layout_marginLeft="16dp"  
+            android:background="#ffffff"  
+            android:cursorVisible="false"  
+            android:ems="1"  
+            android:gravity="center"  
+            android:textSize="31sp" />  
+  
+        <EditText  
+            android:id="@+id/etPwdText_setLockPwd"  
+            android:layout_width="wrap_content"  
+            android:layout_height="wrap_content"  
+            android:visibility="gone" />  
+  
     </LinearLayout>
 
-    <View
-        android:layout_width="@dimen/view_tongyong"
-        android:layout_height="0.5dp"
-        android:layout_marginTop="@dimen/shouye_name_top"
-        android:background="@color/gold_half" />
+   
 
     <LinearLayout
-        android:layout_width="@dimen/view_tongyong"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/shouye_name_top"
-        android:gravity="center"
-        android:orientation="horizontal" >
-
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="20dp"
-            android:src="@drawable/back_image" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="如何加入到朋友的比赛中？"
-            android:textColor="@color/gold_80"
-            android:textSize="@dimen/txsize_small_xx" />
+        android:layout_width="match_parent"  
+        android:layout_height="match_parent"  
+        android:gravity="center"  
+        android:orientation="vertical" >
+        <android.inputmethodservice.KeyboardView  
+            android:id="@+id/keyboard_view"  
+            android:layout_width="fill_parent"  
+            android:layout_height="wrap_content"  
+            android:layout_gravity="center"  
+            android:background="#000000"  
+            android:focusable="true"  
+            android:focusableInTouchMode="true"  
+            android:keyPreviewLayout="@layout/key_preview_layout"
+            android:keyBackground="@drawable/jianpan"  
+            android:keyTextColor="#222222" /> 
     </LinearLayout>
-
-    <TextView
-        android:layout_width="@dimen/view_tongyong"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/shouye_name_top"
-        android:text="@string/textdescription_1"
-        android:textColor="@color/gold_80"
-        android:textSize="@dimen/txsize_small_xx" />
 
 </LinearLayout>

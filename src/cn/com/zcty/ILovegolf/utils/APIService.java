@@ -123,4 +123,6 @@ public class APIService {
 
 	 //验证比赛口令
 	 public static final String CHECKINGPASSWORD = "http://123.57.210.52/api/v1/matches/verify.json?";
+	 //参赛者信息
+	 public static final String RANKINGINFORMATION = "http://123.57.210.52/api/v1/players/show.json?";
 }

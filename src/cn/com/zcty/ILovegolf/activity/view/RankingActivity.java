@@ -80,9 +80,12 @@ public class RankingActivity extends Activity{
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
+				if(rankings.get(position).getSelf().equals("true")){
+					finish();
+				}else{
 				Intent intent = new Intent(RankingActivity.this,RankingStatics.class);
 				intent.putExtra("uuid", rankings.get(position).getUuid());
-				startActivity(intent);
+				startActivity(intent);}
 			}
 		});
 	}
@@ -134,7 +137,7 @@ public class RankingActivity extends Activity{
 					Ranking ranking = new Ranking();
 					ranking.setUuid(jsonObject.getString("uuid"));
 					ranking.setPosition(jsonObject.getString("position"));
-					
+					ranking.setSelf(jsonObject.getString("self"));
 					String user = jsonObject.getString("user");//获得user map集合
 					JSONObject userJsonObject = new JSONObject(user);
 					Log.i("ranking", userJsonObject.getString("nickname"));
@@ -146,6 +149,7 @@ public class RankingActivity extends Activity{
 					
 					ranking.setRecorded_scorecards_count(jsonObject.getString("recorded_scorecards_count"));
 					ranking.setTotal(jsonObject.getString("total"));
+					
 					rankings.add(ranking);
 				}
 			} catch (JSONException e) {
@@ -158,4 +162,5 @@ public class RankingActivity extends Activity{
 			handler.sendMessage(msg);
 		}
 	}
+	
 }
