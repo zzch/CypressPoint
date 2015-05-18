@@ -71,16 +71,18 @@
                     >
                     <cn.com.zcty.ILovegolf.tools.CircleImageView 
                         android:id="@+id/head_image"
-                        android:layout_height="50dp"
-                        android:layout_width="50dp"
+                        android:layout_height="70dp"
+                        android:layout_width="70dp"
                         android:src="@drawable/hugh"
+                        android:layout_marginLeft="@dimen/view_sss_ff"
+                        android:layout_marginTop="@dimen/view_sss_ff"
                         />
                     <TextView 
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:layout_marginLeft="100dp"
                         android:layout_centerVertical="true"
-                        android:textColor="#ffffff"
+                        android:textColor="@color/gold"
                         android:text="创始人："
                         
                         />
@@ -90,7 +92,7 @@
                         android:layout_width="wrap_content"
                         android:layout_marginLeft="160dp"
                         android:layout_centerVertical="true"
-                        android:textColor="#ffffff"
+                        android:textColor="@color/gold"
                         android:text="创始人："
                         
                         />
