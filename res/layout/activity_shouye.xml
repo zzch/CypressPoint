@@ -4,12 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical" 
     android:gravity="center_horizontal"
-    android:background="@color/bg"
    >
     <RelativeLayout
         android:layout_width="match_parent"
        android:layout_height="@dimen/title_height"
-        android:background="@drawable/title_bg" >
+        android:background="@color/daohang" >
 
         <TextView
             android:id="@+id/textView1"
@@ -19,7 +18,7 @@
             android:layout_centerVertical="true"
             android:gravity="center"
             android:text="我爱高尔夫"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
 
         
@@ -58,7 +57,7 @@
          <TextView 
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-            android:textColor="@color/gold"
+            android:textColor="@color/hei2"
              android:textSize="@dimen/txsize_mid_x"
              android:text="登录"
              android:layout_marginTop="@dimen/shouye_view_top"

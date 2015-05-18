@@ -8,7 +8,7 @@
   	<RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_height"
-        android:background="@drawable/title_bg" >
+        android:background="@color/daohang" >
         <FrameLayout 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -23,7 +23,7 @@
             android:layout_marginLeft="@dimen/title_button_left"
             android:background="@null"
             android:text="@string/back"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_small_xx"  />
 		<ImageView
             android:layout_width="30dp"
@@ -40,7 +40,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="@string/analyzepk"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
 
         <Button
@@ -50,7 +50,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="-10dp"
             android:background="@null"
-            android:textColor="@color/gold"
+            android:textColor="@color/hei2"
             android:textSize="@dimen/txsize_small_xx" 
             android:visibility="gone"
             android:text="@string/pk"/>
@@ -67,8 +67,8 @@
             android:id="@+id/anlyze_pk_zhiye"
             android:layout_width="@dimen/view_tongyong"
             android:layout_height="@dimen/view_sss_e"
-            android:background="@drawable/button1"
-            android:textColor="@color/gold"
+            android:background="@drawable/button"
+            android:textColor="@color/hei2"
             android:textSize="22dp"
             android:text="职业选手" />
 
@@ -78,8 +78,8 @@
             android:layout_height="@dimen/view_sss_e"
             android:layout_below="@+id/anlyze_pk_zhiye"
             android:layout_marginTop="15dp"
-            android:background="@drawable/button1"
-            android:textColor="@color/gold"
+            android:background="@drawable/button"
+            android:textColor="@color/hei2"
             android:textSize="22dp"
             android:text="70杆选手" />
 
@@ -89,8 +89,8 @@
             android:layout_height="@dimen/view_sss_e"
             android:layout_below="@+id/anlyze_pk_70"
             android:layout_marginTop="15dp"
-            android:background="@drawable/button1"
-            android:textColor="@color/gold"
+            android:background="@drawable/button"
+            android:textColor="@color/hei2"
             android:textSize="22dp"
             android:text="80杆选手" />
 
@@ -100,8 +100,8 @@
             android:layout_height="@dimen/view_sss_e"
             android:layout_below="@+id/anlyze_pk_80"
             android:layout_marginTop="15dp"
-            android:background="@drawable/button1"
-            android:textColor="@color/gold"
+            android:background="@drawable/button"
+            android:textColor="@color/hei2"
             android:textSize="22dp"
             android:text="90杆选手" />
 
@@ -111,8 +111,8 @@
             android:layout_height="@dimen/view_sss_e"
             android:layout_below="@+id/anlyze_pk_90"
             android:layout_marginTop="15dp"
-            android:background="@drawable/button1"
-            android:textColor="@color/gold"
+            android:background="@drawable/button"
+            android:textColor="@color/hei2"
             android:textSize="22dp"
             android:text="100杆选手" />
 

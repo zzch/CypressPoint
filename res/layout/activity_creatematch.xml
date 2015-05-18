@@ -10,7 +10,7 @@
         
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_height"
-        android:background="@drawable/title_bg" >
+        android:background="@color/daohang" >
 
         <Button
             android:id="@+id/k_build"
@@ -22,7 +22,7 @@
             android:background="@null"
             android:onClick="onclick"
             android:text="@string/new_build"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:visibility="gone"
             android:textSize="@dimen/txsize_small_xx" />
 
@@ -40,7 +40,7 @@
             android:layout_marginLeft="@dimen/title_button_left"
             android:background="@null"
             android:text="@string/back"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_small_xx" 
             
              />
@@ -59,7 +59,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="比赛"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
     </RelativeLayout>
 
@@ -95,7 +95,7 @@
            android:singleLine="true"
            android:layout_centerVertical="true"
            android:text="@string/pith_name"
-           android:textColor="@color/gold"
+           android:textColor="@color/hei2"
            android:textSize="@dimen/txsize_small_xx" />
 
    </RelativeLayout>
@@ -118,7 +118,7 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text="记分方式"
-	        android:textColor="@color/gold"
+	        android:textColor="@color/hei2"
 	        android:layout_marginTop="5dp"
 	        android:layout_marginLeft="@dimen/view_Layout_x"
 	        android:textSize="@dimen/txsize_small_xx"
@@ -129,7 +129,7 @@
             android:layout_alignParentRight="true"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:textColor="@color/gold"
+	        android:textColor="@color/hei2"
 	        android:layout_marginTop="5dp"
 	        android:textSize="@dimen/txsize_small_xx"
 	        android:text="简单" />
@@ -216,7 +216,7 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_centerVertical="true"
-	        android:textColor="@color/gold"
+	        android:textColor="@color/hei2"
 	        android:textSize="@dimen/txsize_small_xx"
 	         android:layout_marginLeft="@dimen/view_Layout_x"
 	        android:text="选择子场"
@@ -228,7 +228,7 @@
 	        android:layout_marginRight="40dp"
             android:layout_alignParentRight="true"
 	        android:layout_centerVertical="true"
-	        android:textColor="@color/gold"
+	        android:textColor="@color/hei2"
 	        android:textSize="@dimen/txsize_small_xx"
 	        android:text=""
 	        />
@@ -276,7 +276,7 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_centerVertical="true"
-	        android:textColor="@color/gold"
+	        android:textColor="@color/hei2"
 	        android:textSize="@dimen/txsize_small_xx"
 	         android:layout_marginLeft="@dimen/view_Layout_x"
 	        android:text="开球T台"
@@ -288,7 +288,7 @@
 	        android:layout_marginRight="40dp"
             android:layout_alignParentRight="true"
 	        android:layout_centerVertical="true"
-	        android:textColor="@color/gold"
+	        android:textColor="@color/hei2"
 	        android:textSize="@dimen/txsize_small_xx"
 	        android:text=""
 	        />
@@ -343,7 +343,7 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_centerVertical="true"
-	        android:textColor="@color/gold"
+	        android:textColor="@color/hei2"
 	        android:textSize="@dimen/txsize_small_xx"
 	         android:layout_marginLeft="@dimen/view_Layout_x"
 	        android:text="选择子场"
@@ -355,7 +355,7 @@
 	        android:layout_marginRight="40dp"
             android:layout_alignParentRight="true"
 	        android:layout_centerVertical="true"
-	        android:textColor="@color/gold"
+	        android:textColor="@color/hei2"
 	        android:textSize="@dimen/txsize_small_xx"
 	        android:text=""
 	        />
@@ -403,7 +403,7 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_centerVertical="true"
-	        android:textColor="@color/gold"
+	        android:textColor="@color/hei2"
 	        android:textSize="@dimen/txsize_small_xx"
 	         android:layout_marginLeft="@dimen/view_Layout_x"
 	        android:text="开球T台"
@@ -415,7 +415,7 @@
 	        android:layout_marginRight="40dp"
             android:layout_alignParentRight="true"
 	        android:layout_centerVertical="true"
-	        android:textColor="@color/gold"
+	        android:textColor="@color/hei2"
 	        android:textSize="@dimen/txsize_small_xx"
 	        android:text=""
 	        />

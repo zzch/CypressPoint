@@ -2,14 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/bg"
     android:gravity="center"
+    android:background="@color/bg"
     android:orientation="vertical" >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_height"
-        android:background="@drawable/title_bg" >
+        android:background="@color/daohang" >
 
         <TextView
             android:id="@+id/textView1"
@@ -19,7 +19,7 @@
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:text="@string/searchpith"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
 
          <FrameLayout 
@@ -36,7 +36,7 @@
             android:layout_marginLeft="@dimen/title_button_left"
             android:background="@null"
             android:text="@string/back"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_small_xx"/>
          <ImageView
             android:layout_width="30dp"

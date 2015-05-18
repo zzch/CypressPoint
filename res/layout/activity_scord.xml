@@ -15,7 +15,7 @@
         android:id="@+id/layout_scord_card"
         android:layout_width="match_parent"
          android:layout_height="@dimen/title_height"
-        android:background="@drawable/title_bg" >
+        android:background="@color/daohang" >
 
        <FrameLayout 
             android:layout_width="wrap_content"
@@ -29,7 +29,7 @@
             android:layout_marginLeft="@dimen/title_button_left"
             android:background="@null"
             android:text="@string/back"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:onClick="onclick"
             android:textSize="@dimen/txsize_small_xx" />
          <ImageView
@@ -46,7 +46,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="@string/score_card"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
 
         

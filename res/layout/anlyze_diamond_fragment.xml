@@ -40,7 +40,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="您还未添加比赛，请先去添加比赛"
-        android:textColor="@color/gold"
+        android:textColor="@color/hei2"
         android:textSize="20dp" />
 
     <View

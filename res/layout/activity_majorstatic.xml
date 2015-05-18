@@ -9,7 +9,7 @@
         android:id="@+id/statistic_layout"
         android:layout_width="match_parent"
          android:layout_height="@dimen/title_height"
-        android:background="@drawable/title_bg" >
+        android:background="@color/daohang" >
 
         <FrameLayout 
             android:layout_width="wrap_content"
@@ -24,7 +24,7 @@
             android:background="@null"
             android:text="@string/back"
             android:onClick="onclick"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_small_xx" />
         <ImageView
             android:layout_width="30dp"
@@ -40,7 +40,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="技术统计"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
     </RelativeLayout>
 
@@ -78,7 +78,7 @@
                     android:layout_centerHorizontal="true"
                     android:gravity="center_horizontal"
                     android:text="球杆"
-                    android:textColor="@color/gold"
+                    android:textColor="@color/hei2"
                     android:textSize="20dp" />
 
                 <RelativeLayout
@@ -95,7 +95,7 @@
                      
                         android:layout_toRightOf="@+id/static_image_1"
                         android:text="320"
-                        android:textColor="@color/gold"
+                        android:textColor="@color/hei2"
                         android:textSize="30dp" />
                     <ImageView
                         android:id="@+id/static_image_1"
@@ -125,7 +125,7 @@
                         android:layout_alignBottom="@+id/static_name_1"
                         android:layout_alignLeft="@+id/static_distance_2"
                         android:text="3w"
-                        android:textColor="@color/gold"
+                        android:textColor="@color/hei2"
                         android:textSize="20dp" />
 
                     <TextView
@@ -135,7 +135,7 @@
                         android:layout_alignLeft="@+id/static_distance_1"
                         android:layout_below="@+id/static_distance_1"
                         android:text="1w"
-                        android:textColor="@color/gold"
+                        android:textColor="@color/hei2"
                         android:textSize="20dp" />
 
                     <TextView
@@ -145,7 +145,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_toRightOf="@+id/static_image_2"
                         android:text="260"
-                        android:textColor="@color/gold"
+                        android:textColor="@color/hei2"
                         android:textSize="30dp" />
 
                     <ImageView
@@ -166,7 +166,7 @@
                         android:layout_above="@+id/static_name_2"
                         android:layout_toRightOf="@+id/static_image_3"
                         android:text="160"
-                        android:textColor="@color/gold"
+                        android:textColor="@color/hei2"
                         android:textSize="30dp" />
 
                     <TextView
@@ -177,7 +177,7 @@
                         android:layout_alignBottom="@+id/static_name_2"
                         android:layout_alignLeft="@+id/static_distance_3"
                         android:text="5w"
-                        android:textColor="@color/gold"
+                        android:textColor="@color/hei2"
                         android:textSize="20dp" />
 
                     <ImageView
@@ -198,7 +198,7 @@
                         android:layout_above="@+id/static_name_3"
                         android:layout_toRightOf="@+id/static_image_4"
                         android:text="145"
-                        android:textColor="@color/gold"
+                        android:textColor="@color/hei2"
                         android:textSize="30dp" />
 
                     <TextView
@@ -208,7 +208,7 @@
                         android:layout_alignLeft="@+id/static_distance_4"
                         android:layout_below="@+id/static_distance_4"
                         android:text="7w"
-                        android:textColor="@color/gold"
+                        android:textColor="@color/hei2"
                         android:textSize="20dp" />
 
                   

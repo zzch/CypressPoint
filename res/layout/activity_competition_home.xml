@@ -7,7 +7,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_height"
-        android:background="@drawable/title_bg" >
+        android:background="@color/daohang" >
 
         <TextView
             android:id="@+id/textView1"
@@ -17,7 +17,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="xxxx球场"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
 
           <FrameLayout 
@@ -32,7 +32,7 @@
             android:layout_marginLeft="@dimen/title_button_left"
             android:background="@null"
             android:text="@string/back"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_small_xx"
             android:onClick="choosepith_back" />
         
@@ -49,7 +49,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="-10dp"
             android:background="@null"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_small_xx"
             android:onClick="qiehuan"/>
 

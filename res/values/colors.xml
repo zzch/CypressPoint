@@ -2,15 +2,24 @@
 <resources>
     
      <!-- 背景黑色 -->
-     <color name="bg">#222222</color>
-     <!-- 白色 -->
-     <color name="white">#ced1d4</color>
+     <color name="bg">#ededed</color>
      
-     <!-- 黑色 -->
+     <!-- 白色 -->
+     <color name="white">#ffffff</color>
+      <!-- 一级文字黑色 -->
+     <color name="hei2">#222222</color>
+     
+     <!-- 二级文字黑色 -->
      <color name="hei5">#555555</color>
      
-     <!-- 金色 -->
-     <color name="gold">#F8d57a</color>
+      <!-- 三级文字黑色 -->
+     <color name="hei6">#666666</color>
+     
+     
+     <!-- 导航栏 -->
+     <color name="daohang">#3c394e</color>
+     
+
      <!-- 金色透明度50 -->
      <color name="gold_half">#50F8d57a</color>
      

@@ -10,7 +10,7 @@
       
         android:layout_width="match_parent"
          android:layout_height="@dimen/title_height"
-        android:background="@drawable/title_bg"
+        android:background="@color/daohang"
         android:gravity="center"
         android:orientation="horizontal" >
 
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/title"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
     </LinearLayout>
    

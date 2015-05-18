@@ -43,7 +43,7 @@
                
                 android:layout_marginTop="10dp"
                 android:text="总成绩"
-                android:textColor="@color/gold"
+                android:textColor="@color/hei2"
                 android:textSize="20dp" />
 
         </RelativeLayout>
@@ -61,7 +61,7 @@
                 android:layout_alignParentLeft="true"
                android:layout_marginLeft="@dimen/view_sss_d"
                 android:text="总杆"
-                android:textColor="@color/gold"
+                android:textColor="@color/hei2"
                 android:textSize="18dp" />
 
             <TextView
@@ -71,7 +71,7 @@
                 android:layout_marginRight="@dimen/view_sss_dd"
                 android:layout_alignParentRight="true"
                 android:text="134"
-                android:textColor="@color/gold"
+                android:textColor="@color/hei2"
                 android:textSize="20dp" />
         </RelativeLayout>
 
@@ -88,7 +88,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="@dimen/view_sss_d"
                 android:text="推杆"
-                android:textColor="@color/gold"
+                android:textColor="@color/hei2"
                 android:textSize="18dp" />
 
             <TextView
@@ -98,7 +98,7 @@
                 android:layout_marginRight="@dimen/view_sss_dd"
                 android:layout_alignParentRight="true"
                 android:text="135"
-                android:textColor="@color/gold"
+                android:textColor="@color/hei2"
                 android:textSize="20dp" />
         </RelativeLayout>
 
@@ -115,7 +115,7 @@
                 android:layout_marginLeft="@dimen/view_sss_d"
                 android:layout_alignParentLeft="true"
                 android:text="净杆"
-                android:textColor="@color/gold"
+                android:textColor="@color/hei2"
                 android:textSize="18dp" />
 
             <TextView
@@ -125,7 +125,7 @@
                 android:layout_marginRight="@dimen/view_sss_dd"
                  android:layout_alignParentRight="true"
                 android:text="134"
-                android:textColor="@color/gold"
+                android:textColor="@color/hei2"
                 android:textSize="20dp" />
         </RelativeLayout>
     </LinearLayout>

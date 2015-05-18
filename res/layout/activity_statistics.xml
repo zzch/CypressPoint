@@ -8,7 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
        android:layout_height="@dimen/title_height"
-        android:background="@drawable/title_bg" >
+        android:background="@color/daohang" >
 
         <TextView
             android:id="@+id/statistics"
@@ -18,7 +18,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="@string/text_statistics"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
 
         <Button
@@ -30,7 +30,7 @@
             android:layout_marginRight="-10dp"
             android:background="@null"
             android:text="@string/text_share"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_small_xx" />
 
        <FrameLayout 
@@ -47,7 +47,7 @@
             android:background="@null"
             android:onClick="onClick"
             android:text="@string/back"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_small_xx" />
         
          <ImageView
@@ -81,7 +81,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="北京北湖高尔夫"
-                    android:textColor="@color/gold"
+                    android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_small_xx" />
 
                 <TextView
@@ -123,7 +123,7 @@
                         android:button="@null"
                         android:gravity="center"
                         android:text="后九"
-                        android:textColor="@color/gold"
+                        android:textColor="@color/hei2"
                         android:textSize="@dimen/txsize_small_x" />
                 </RadioGroup>
             </RelativeLayout>
@@ -157,7 +157,7 @@
                             android:layout_margin="0.5dip"
                             android:gravity="center"
                             android:text="洞"
-                            android:textColor="@color/gold"
+                            android:textColor="@color/hei2"
                             android:textSize="@dimen/txsize_small_xxx" />
 
                         <View
@@ -188,7 +188,7 @@
                             android:layout_margin="0.5dip"
                             android:gravity="center"
                             android:text="标准杆"
-                            android:textColor="@color/gold"
+                            android:textColor="@color/hei2"
                             android:textSize="@dimen/txsize_small_xxx" />
 
                         <View
@@ -218,7 +218,7 @@
                             android:layout_margin="0.5dip"
                             android:gravity="center"
                             android:text="成绩"
-                            android:textColor="@color/gold"
+                            android:textColor="@color/hei2"
                             android:textSize="@dimen/txsize_small_xxx" />
 
                         <View
@@ -248,7 +248,7 @@
                             android:layout_margin="0.5dip"
                             android:gravity="center"
                             android:text="距标准杆"
-                            android:textColor="@color/gold"
+                            android:textColor="@color/hei2"
                             android:textSize="@dimen/txsize_small_xxx" />
 
                         <View

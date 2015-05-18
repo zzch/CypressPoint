@@ -8,7 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
          android:layout_height="@dimen/title_height"
-        android:background="@drawable/title_bg" >
+        android:background="@color/daohang" >
 		<Button
                 android:id="@+id/k_back"
                 android:layout_width="80dp"
@@ -17,7 +17,7 @@
                 android:background="@null"
                 android:onClick="onClick"
                 android:text="@string/back"
-                android:textColor="@color/gold"
+                android:textColor="@color/white"
                 android:textSize="@dimen/txsize_small_xx" />
         <TextView
             android:id="@+id/textView1"
@@ -27,7 +27,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="@string/playset"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
 
         <Button
@@ -39,7 +39,7 @@
             android:layout_marginRight="-10dp"
             android:background="@null"
             android:text="@string/count_fenxi"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_small_xx" />
     </RelativeLayout>
 
@@ -109,7 +109,7 @@
                     android:gravity="center"
                     android:layout_marginLeft="@dimen/count_text_left"
                     android:layout_marginTop="@dimen/count_text_top"
-                    android:textColor="@color/gold" />
+                    android:textColor="@color/hei2" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -147,7 +147,7 @@
                     android:layout_marginLeft="30dp"
                     android:gravity="center"
                     android:text="10%"
-                    android:textColor="@color/gold"
+                    android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_small_xxx" />
 
                 <TextView
@@ -180,7 +180,7 @@
                     android:layout_marginLeft="30dp"
                     android:text="10%"
                     android:gravity="center"
-                    android:textColor="@color/gold"
+                    android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_small_xxx" />
 
                 <TextView
@@ -215,7 +215,7 @@
                     android:layout_marginLeft="30dp"
                     android:text="10%"
                     android:gravity="center"
-                    android:textColor="@color/gold"
+                    android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_small_xxx" />
 
                 <TextView
@@ -250,7 +250,7 @@
                     android:layout_marginLeft="30dp"
                     android:gravity="center"
                     android:text="10%"
-                    android:textColor="@color/gold"
+                    android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_small_xxx" />
 
                 <TextView
@@ -285,7 +285,7 @@
                     android:layout_marginLeft="30dp"
                     android:gravity="center"
                     android:text="10%"
-                    android:textColor="@color/gold"
+                    android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_small_xxx" />
 
                 <TextView
@@ -320,7 +320,7 @@
                     android:layout_marginLeft="30dp"
                     android:gravity="center"
                     android:text="10%"
-                    android:textColor="@color/gold"
+                    android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_small_xxx" />
 
                 <TextView

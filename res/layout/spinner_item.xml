@@ -11,7 +11,7 @@
         android:layout_height="60dp"
      
         android:textSize="@dimen/txsize_small_xxx"
-        android:textColor="@color/gold"
+        android:textColor="@color/hei2"
         android:background="@color/bg"
         android:gravity="center"
         android:text="TextView" />

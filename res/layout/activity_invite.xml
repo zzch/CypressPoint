@@ -8,7 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_height"
-        android:background="@color/bg" >
+        android:background="@color/daohang" >
 
         <FrameLayout
             android:layout_width="wrap_content"
@@ -23,7 +23,7 @@
                 android:background="@null"
                 android:onClick="onclick"
                 android:text="@string/back"
-                android:textColor="@color/gold"
+                android:textColor="@color/white"
                 android:textSize="@dimen/txsize_small_xx" />
 
             <ImageView
@@ -40,7 +40,7 @@
             android:layout_centerHorizontal="true"
             android:gravity="center"
             android:text="邀请好友"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
 
         <Button
@@ -51,7 +51,7 @@
             android:layout_marginRight="-10dp"
             android:background="@null"
             android:text="@string/pk"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_small_xx"
             android:visibility="gone" />
     </RelativeLayout>
@@ -106,7 +106,7 @@
                     android:background="@drawable/text_yqhy"
                     android:gravity="center"
                     android:text="5"
-                    android:textColor="@color/gold"
+                    android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_mid_xxx" />
             </RelativeLayout>
 
@@ -125,7 +125,7 @@
                     android:background="@drawable/text_yqhy"
                     android:gravity="center"
                     android:text="3"
-                    android:textColor="@color/gold"
+                    android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_mid_xxx" />
             </RelativeLayout>
 
@@ -144,7 +144,7 @@
                     android:background="@drawable/text_yqhy"
                     android:gravity="center"
                     android:text="5"
-                    android:textColor="@color/gold"
+                    android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_mid_xxx" />
             </RelativeLayout>
 
@@ -163,7 +163,7 @@
                     android:background="@drawable/text_yqhy"
                     android:gravity="center"
                     android:text="2"
-                    android:textColor="@color/gold"
+                    android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_mid_xxx" />
             </RelativeLayout>
         </LinearLayout>
@@ -215,7 +215,7 @@
             android:layout_marginLeft="10dp"
             android:gravity="center"
             android:text="朋友如何加入到您的比赛中？"
-            android:textColor="@color/gold"
+            android:textColor="@color/hei2"
             android:textSize="@dimen/txsize_small_xx" />
     </LinearLayout>
 
@@ -248,7 +248,7 @@
             android:layout_marginLeft="10dp"
             android:gravity="center"
             android:text="一起比赛能做什么？"
-            android:textColor="@color/gold"
+            android:textColor="@color/hei2"
             android:textSize="@dimen/txsize_small_xx" />
     </LinearLayout>
 

@@ -10,7 +10,7 @@
         android:id="@+id/qiugan_layout"
         android:layout_width="match_parent"
          android:layout_height="@dimen/title_height"
-        android:background="@drawable/title_bg" >
+        android:background="@color/daohang" >
 
       <FrameLayout 
             android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
             android:background="@null"
             android:text="@string/back"
             android:onClick="onclick"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_small_xx" />
         <ImageView
             android:layout_width="30dp"
@@ -42,7 +42,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="球杆"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
     </RelativeLayout>
 

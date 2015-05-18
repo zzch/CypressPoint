@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:text="自己"
         android:layout_marginTop="5dp"
-        android:textColor="@color/gold"
+        android:textColor="@color/hei2"
         android:textSize="@dimen/txsize_mid_xx"
         />
    <TextView 

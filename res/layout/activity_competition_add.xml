@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg"
     android:id="@+id/linear"
+    android:background="@color/bg"
     android:orientation="vertical" >
    <RelativeLayout 
        android:layout_width="match_parent"
@@ -17,7 +17,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_height"
-        android:background="@drawable/title_bg" >
+        android:background="@color/daohang" >
 
         <TextView
             android:id="@+id/textView1"
@@ -27,7 +27,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="加入比赛"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
 
            <FrameLayout 
@@ -41,7 +41,7 @@
             android:layout_marginLeft="@dimen/title_button_left"
             android:background="@null"
             android:text="@string/back"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_small_xx" 
             />
         
@@ -82,7 +82,7 @@
                         android:layout_width="wrap_content"
                         android:layout_marginLeft="100dp"
                         android:layout_centerVertical="true"
-                        android:textColor="@color/gold"
+                        android:textColor="@color/hei2"
                         android:text="创始人："
                         
                         />
@@ -92,7 +92,7 @@
                         android:layout_width="wrap_content"
                         android:layout_marginLeft="160dp"
                         android:layout_centerVertical="true"
-                        android:textColor="@color/gold"
+                        android:textColor="@color/hei2"
                         android:text="创始人："
                         
                         />
@@ -109,7 +109,7 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text="记分方式"
-	        android:textColor="@color/gold"
+	        android:textColor="@color/hei2"
 	        android:layout_marginTop="5dp"
 	        android:layout_marginLeft="@dimen/view_Layout_x"
 	        android:textSize="@dimen/txsize_small_xx"
@@ -120,7 +120,7 @@
             android:layout_alignParentRight="true"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:textColor="@color/gold"
+	        android:textColor="@color/hei2"
 	        android:layout_marginTop="5dp"
 	        android:textSize="@dimen/txsize_small_xx"
 	        android:text="简单" />
@@ -204,7 +204,7 @@
 	       	android:id="@+id/competition_match_zichang"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:textColor="@color/gold"
+	        android:textColor="@color/hei2"
 	         android:layout_centerVertical="true"
 	        android:textSize="@dimen/txsize_small_xx"
 	        android:layout_marginLeft="@dimen/view_Layout_x"
@@ -217,7 +217,7 @@
 	        android:layout_marginRight="30dp"
             android:layout_alignParentRight="true"
 	        android:layout_centerVertical="true"
-	        android:textColor="@color/gold"
+	        android:textColor="@color/hei2"
 	        android:textSize="@dimen/txsize_small_xx"
 	        android:text=""
 	        />
@@ -241,7 +241,7 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_centerVertical="true"
-	        android:textColor="@color/gold"
+	        android:textColor="@color/hei2"
 	        android:textSize="@dimen/txsize_small_xx"
 	        android:layout_marginLeft="@dimen/view_Layout_x"
 	        android:text="开球T台"
@@ -253,7 +253,7 @@
 	        android:layout_marginRight="40dp"
             android:layout_alignParentRight="true"
 	        android:layout_centerVertical="true"
-	        android:textColor="@color/gold"
+	        android:textColor="@color/hei2"
 	        android:textSize="@dimen/txsize_small_xx"
 	        android:text=""
 	        />
@@ -310,7 +310,7 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_centerVertical="true"
-	        android:textColor="@color/gold"
+	        android:textColor="@color/hei2"
 	        android:textSize="@dimen/txsize_small_xx"
 	        android:layout_marginLeft="@dimen/view_Layout_x"
 	        android:text="选择子场"
@@ -322,7 +322,7 @@
 	        android:layout_marginRight="30dp"
             android:layout_alignParentRight="true"
 	        android:layout_centerVertical="true"
-	        android:textColor="@color/gold"
+	        android:textColor="@color/hei2"
 	        android:textSize="@dimen/txsize_small_xx"
 	        android:text=""
 	        />
@@ -347,7 +347,7 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_centerVertical="true"
-	        android:textColor="@color/gold"
+	        android:textColor="@color/hei2"
 	        android:textSize="@dimen/txsize_small_xx"
 	         android:layout_marginLeft="@dimen/view_Layout_x"
 	        android:text="开球T台"
@@ -359,7 +359,7 @@
 	         android:layout_marginRight="40dp"
             android:layout_alignParentRight="true"
 	        android:layout_centerVertical="true"
-	        android:textColor="@color/gold"
+	        android:textColor="@color/hei2"
 	        android:textSize="@dimen/txsize_small_xx"
 	        android:text=""
 	        />

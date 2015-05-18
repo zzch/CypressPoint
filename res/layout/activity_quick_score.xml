@@ -2,13 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    
+    android:background="@color/bg"
     android:orientation="vertical" >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_height"
-        android:background="@drawable/title_bg" >
+        android:background="@color/daohang" >
 
         
 
@@ -26,7 +26,7 @@
                 android:background="@null"
                 android:onClick="onclick"
                 android:text="@string/back"
-                android:textColor="@color/gold"
+                android:textColor="@color/white"
                 android:textSize="@dimen/txsize_small_xx" />
 
             <ImageView
@@ -44,7 +44,7 @@
             android:layout_centerVertical="true"
             android:gravity="center"
             android:text="简单记分卡"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
     </RelativeLayout>
 

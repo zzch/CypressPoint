@@ -8,7 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_height"
-        android:background="@drawable/title_bg" >
+        android:background="@color/daohang" >
 		<Button
                 android:id="@+id/k_back"
                 android:layout_width="80dp"
@@ -17,7 +17,7 @@
                 android:background="@null"
                 android:onClick="onclick"
                 android:text="@string/back"
-                android:textColor="@color/gold"
+                android:textColor="@color/white"
                 android:textSize="@dimen/txsize_small_xx" />
         <TextView
             android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="个人信息"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
     </RelativeLayout>
     
@@ -71,7 +71,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/my_view_name_top"
             android:text="游客"
-            android:textColor="@color/gold"
+            android:textColor="@color/hei2"
             android:textSize="@dimen/txsize_small_xxx" />
 
         <TextView
@@ -129,7 +129,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="@dimen/my_view_text_bottom"
                 android:layout_marginLeft="@dimen/my_view_layout_height"
-                android:textColor="@color/gold"
+                android:textColor="@color/hei2"
                 android:textSize="20dp"
                 android:text="消息" />
 
@@ -168,7 +168,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="@dimen/my_view_text_bottom"
                 android:layout_marginLeft="@dimen/my_view_layout_height"
-                android:textColor="@color/gold"
+                android:textColor="@color/hei2"
                 android:textSize="20dp"
                 android:text="积分" />
 
@@ -205,7 +205,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="@dimen/my_view_text_bottom"
                 android:layout_marginLeft="@dimen/my_view_layout_height"
-                android:textColor="@color/gold"
+                android:textColor="@color/hei2"
                 android:textSize="20dp"
                 android:text="设置" />
 

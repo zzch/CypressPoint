@@ -18,7 +18,7 @@
        android:gravity="center"
         android:textSize="22dp"
         android:layout_weight="1"
-        android:textColor="@color/gold"    
+        android:textColor="@color/hei2"    
         android:text="1" />
 
     <TextView
@@ -28,7 +28,7 @@
         android:gravity="center"
         android:layout_weight="1"
         android:textSize="22dp"
-        android:textColor="@color/gold" 
+        android:textColor="@color/hei2" 
         android:text="1" />
 
     <TextView
@@ -38,7 +38,7 @@
         android:gravity="center"
         android:layout_weight="1"
         android:textSize="18dp"
-        android:textColor="@color/gold" 
+        android:textColor="@color/hei2" 
         android:text="1" />
 
     <TextView
@@ -48,7 +48,7 @@
         android:gravity="center"
         android:layout_weight="1"
         android:textSize="22dp"
-        android:textColor="@color/gold" 
+        android:textColor="@color/hei2" 
         android:text="1" />
 
     <TextView
@@ -58,7 +58,7 @@
         android:gravity="center"
         android:layout_weight="1"
         android:textSize="15dp"
-        android:textColor="@color/gold" 
+        android:textColor="@color/hei2" 
         android:text="1" />
     
     </LinearLayout>

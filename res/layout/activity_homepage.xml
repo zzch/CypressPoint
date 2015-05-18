@@ -22,7 +22,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="140dp"
             android:text="我 爱 高 尔 夫"
-            android:textColor="#d4d4d4" />
+            android:textColor="@color/white" />
     </RelativeLayout>
 
     <LinearLayout

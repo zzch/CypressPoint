@@ -24,7 +24,7 @@
             android:layout_marginLeft="@dimen/view_small_x"
             android:layout_marginTop="@dimen/view_small_x"
             android:text="@string/pith_name"
-            android:textColor="@color/gold"
+            android:textColor="@color/hei2"
             android:textSize="@dimen/txsize_small_xx"
             android:maxEms="13" 
             android:singleLine="true"
@@ -75,7 +75,7 @@
             android:layout_alignParentRight="true"
            
             android:text="12"
-            android:textColor="@color/gold"
+            android:textColor="@color/hei2"
             android:textSize="@dimen/txsize_small_xx" />
          <TextView
             android:layout_width="wrap_content"
@@ -83,7 +83,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:text="场"
-            android:textColor="@color/gold"
+            android:textColor="@color/hei2"
             android:layout_marginRight="20dp"
             android:textSize="@dimen/txsize_small_xx" />
          

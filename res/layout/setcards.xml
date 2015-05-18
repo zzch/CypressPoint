@@ -34,7 +34,7 @@
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/e_card_yuan"
                 android:gravity="center"
-                android:textColor="@color/gold"
+                android:textColor="@color/hei2"
                 android:textSize="@dimen/txsize_large_xx" />
         </RelativeLayout>
 

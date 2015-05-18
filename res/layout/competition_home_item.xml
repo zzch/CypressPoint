@@ -22,7 +22,7 @@
         android:textSize="20dp"
         android:layout_marginLeft="147dp"
         android:layout_marginTop="17dp"
-        android:textColor="@color/gold"
+        android:textColor="@color/hei2"
         android:text="@string/username"
         />
     <TextView 
@@ -33,7 +33,7 @@
         android:layout_marginRight="25dp"
         android:layout_marginTop="17dp"
         android:textSize="20dp"
-        android:textColor="@color/gold"
+        android:textColor="@color/hei2"
         android:text="4"
         />
     <TextView 
@@ -44,7 +44,7 @@
         android:layout_marginRight="7dp"
         android:layout_marginTop="17dp"
         android:textSize="20dp"
-        android:textColor="@color/gold"
+        android:textColor="@color/hei2"
         android:text="人"
         />
     <TextView 

@@ -76,7 +76,7 @@
             android:layout_alignParentRight="true"
             android:gravity="center"
             android:text="12"
-            android:textColor="@color/gold"
+            android:textColor="@color/hei2"
             android:textSize="@dimen/txsize_mid_x" />
          <TextView
             android:id="@+id/distance"
@@ -86,7 +86,7 @@
             android:layout_alignParentTop="true"
             android:gravity="center"
             android:text="km"
-            android:textColor="@color/gold"
+            android:textColor="@color/hei2"
             android:layout_marginRight="5dp"
             android:textSize="@dimen/txsize_mid_x" />
 

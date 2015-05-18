@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg"
     android:orientation="vertical"
+    android:background="@color/bg"
     android:gravity="center_horizontal"
     >
    
@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_height"
         android:gravity="center_vertical"
-        android:background="@drawable/title_bg" >
+        android:background="@color/daohang" >
 
         <Button
             android:id="@+id/k_build"
@@ -23,7 +23,7 @@
             android:onClick="onclick"
             android:background="@null"
             android:text="@string/new_build"
-            android:textColor="@color/gold"
+            android:textColor="@color/hei2"
             android:textSize="@dimen/txsize_small_xx"
             android:visibility="gone" />
 
@@ -40,7 +40,7 @@
             android:layout_marginLeft="@dimen/title_button_left"
             android:background="@null"
             android:text="@string/back"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_small_xx" 
            android:onClick="onclick"
              />
@@ -59,7 +59,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="加入比赛"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
     </RelativeLayout>
 

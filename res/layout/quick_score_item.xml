@@ -33,7 +33,7 @@
                 android:layout_centerVertical="true"
                 android:gravity="center"
                 android:text="333"
-                android:textColor="@color/gold"
+                android:textColor="@color/hei2"
                 android:textSize="@dimen/txsize_large_x" />
 
             <ImageView
@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:text="@string/pith_name"
-                android:textColor="@color/gold"
+                android:textColor="@color/hei2"
                 android:maxEms="12" 
                 android:singleLine="true"
                 android:ellipsize="end"

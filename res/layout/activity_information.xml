@@ -11,7 +11,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_height"
-        android:background="@drawable/title_bg" >
+        android:background="@color/daohang" >
 
         <FrameLayout 
             android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
             android:layout_marginLeft="@dimen/title_button_left"
             android:background="@null"
             android:text="@string/back"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_small_xx"  />
          <ImageView
             android:layout_width="30dp"
@@ -42,7 +42,7 @@
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:text="@string/myself"
-            android:textColor="@color/gold"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
     </RelativeLayout>
 
@@ -61,7 +61,7 @@
                 android:layout_height="70dp"
                 android:layout_marginLeft="3dp"
                 android:layout_marginTop="30dp"
-                android:background="@drawable/button_focused"
+                android:background="@drawable/button_moreng"
                 android:gravity="center_vertical" >
 
                 <cn.com.zcty.ILovegolf.tools.CircleImageView
@@ -90,7 +90,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@+id/information_head"
                     android:text="更换头像"
-                    android:textColor="@color/gold"
+                    android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_mid_x" />
             </RelativeLayout>
 
@@ -108,7 +108,7 @@
                   android:layout_width="@dimen/infor_view_layout_x"
                   android:layout_height="50dp"
                   android:gravity="center_vertical"
-                  android:background="@drawable/e_button_pressed"
+                  android:background="@drawable/button_moreng"
                   android:layout_marginLeft="10dp"
                   android:layout_marginTop="5dp"
                   android:orientation="horizontal" >
@@ -121,7 +121,7 @@
                     android:gravity="center_vertical"
                     android:background="@null"
                     android:text=" "
-                    android:textColor="@color/gold" />
+                    android:textColor="@color/hei2" />
                 </LinearLayout>
           
 
@@ -140,7 +140,7 @@
                   android:layout_width="@dimen/infor_view_layout"
                   android:layout_height="55dp"
                   android:gravity="center_vertical"
-                  android:background="@drawable/button_focused"
+                  android:background="@drawable/button_moreng"
                   android:layout_marginLeft="5dp"
                   android:layout_marginTop="5dp"
                   android:orientation="horizontal" >
@@ -152,7 +152,7 @@
                     android:gravity="center_vertical"
                     android:layout_marginLeft="15dp"
                     android:text="男"
-                    android:textColor="@color/gold"
+                    android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_small_xx" />
 
                 <ImageView
@@ -194,7 +194,7 @@
                   android:layout_width="@dimen/infor_view_layout"
                   android:layout_height="55dp"
                   android:gravity="center_vertical"
-                  android:background="@drawable/button_focused"
+                  android:background="@drawable/button_moreng"
                   android:layout_marginLeft="5dp"
                   android:layout_marginTop="5dp"
                   android:orientation="horizontal" >
@@ -205,7 +205,7 @@
                     android:gravity="center_vertical"
                     android:layout_marginLeft="15dp"
                     android:text=" 1989-12-1"
-                    android:textColor="@color/gold"
+                    android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_small_xx" />
              
                 <ImageView
@@ -263,7 +263,7 @@
                   android:layout_width="@dimen/infor_view_layout"
                   android:layout_height="55dp"
                   android:gravity="center_vertical"
-                  android:background="@drawable/button_focused"
+                  android:background="@drawable/button_moreng"
                   android:layout_marginLeft="5dp"
                   android:layout_marginTop="5dp"
                   android:orientation="horizontal" >
@@ -274,7 +274,7 @@
                     android:layout_marginLeft="15dp"
                     android:gravity="center_vertical"
                     android:text="24"
-                    android:textColor="@color/gold"
+                    android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_small_xx" />
 
                
@@ -295,7 +295,7 @@
                   android:layout_width="@dimen/infor_view_layout"
                   android:layout_height="55dp"
                   android:gravity="center_vertical"
-                  android:background="@drawable/button_focused"
+                  android:background="@drawable/button_moreng"
                   android:layout_marginLeft="5dp"
                   android:layout_marginTop="5dp"
                   android:orientation="horizontal" >
@@ -306,7 +306,7 @@
                     android:gravity="center_vertical"
                     android:layout_marginLeft="15dp"
                     android:text="北京市-海淀区"
-                    android:textColor="@color/gold"
+                    android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_small_xx"
                     android:maxEms="15" 
                     android:singleLine="true"
@@ -378,8 +378,8 @@
                     android:gravity="center_vertical"
                     android:background="@null"
                     android:hint="请设置您的个性签名"
-                    android:textColorHint="@color/gold_70"
-                    android:textColor="@color/gold"
+                    android:textColorHint="@null"
+                    android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_small_xx" />
              </LinearLayout>
 
