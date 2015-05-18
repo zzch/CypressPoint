@@ -10,19 +10,7 @@
         android:layout_height="@dimen/title_height"
         android:background="@drawable/title_bg" >
 
-        <Button
-            android:id="@+id/k_build"
-            android:layout_width="80dp"
-            android:layout_height="47dp"
-            android:layout_alignBottom="@+id/imageView1"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="-10dp"
-            android:background="@null"
-            android:onClick="onclick"
-            android:text="@string/new_build"
-            android:textColor="@color/gold"
-            android:textSize="@dimen/txsize_small_xx" />
+        
 
         <FrameLayout
             android:layout_width="wrap_content"

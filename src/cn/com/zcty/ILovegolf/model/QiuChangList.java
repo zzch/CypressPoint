@@ -1,24 +1,25 @@
 package cn.com.zcty.ILovegolf.model;
 /**
- * Çò³¡ÁÐ±í
+ * ï¿½ï¿½ï¿½Ð±ï¿½
  * @author deii
  *
  */
 public class QiuChangList {
 	/**
-	 * Çò³¡uuid
+	 * ï¿½ï¿½uuid
 	 */
 	private String uuid;
+	private String holes_count;
 	/**
-	 * Çò³¡Ãû³Æ
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	private String name;
 	/**
-	 * Çò³¡µØÖ·
+	 * ï¿½ò³¡µï¿½Ö·
 	 */
 	private String address;
 	/**
-	 * ¸ÃÇò³¡µ½ÎÒËùÔÚÎ»ÖÃµÄ¾àÀë
+	 * ï¿½ï¿½ï¿½ò³¡µï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ÃµÄ¾ï¿½ï¿½ï¿½
 	 */
 	private String distance;
 	
@@ -75,6 +76,14 @@ public class QiuChangList {
 	public boolean contains(String data) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	public String getHoles_count() {
+		return holes_count;
+	}
+
+	public void setHoles_count(String holes_count) {
+		this.holes_count = holes_count;
 	}
 	
 	

@@ -33,8 +33,11 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.activity.view.HomePageActivity;
+import cn.com.zcty.ILovegolf.activity.view.QuickScoreActivity;
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.tools.CircleImageView;
 import cn.com.zcty.ILovegolf.utils.APIService;
@@ -54,6 +57,7 @@ public class Myself extends Activity {
 	private String year;
 	private Bitmap bmp;
 	private RelativeLayout settingRelativeLayout;
+	Intent intent;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -63,7 +67,6 @@ public class Myself extends Activity {
 			if(msg.what==2 ){
 				
 				if(url==null){
-					Log.i("shifouyunxing", "1");
 					bmp=BitmapFactory.decodeResource(Myself.this.getBaseContext().getResources(), R.drawable.hugh);
 					//saveMyBitmap(bmp);
 				}else{
@@ -112,6 +115,27 @@ public class Myself extends Activity {
 				
 			}
 		});
+	}
+	public void onclick(View v){
+		
+		switch (v.getId()) {
+		case R.id.k_back:
+			intent=new Intent(Myself.this,HomePageActivity.class);
+			startActivity(intent);
+			finish();
+			break;
+
+		default:
+			break;
+		}
+	}
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		intent=new Intent(Myself.this,HomePageActivity.class);
+		startActivity(intent);
+		finish();
 	}
 	private void getListeners() {
 		headLayout.setOnClickListener(new OnClickListener() {

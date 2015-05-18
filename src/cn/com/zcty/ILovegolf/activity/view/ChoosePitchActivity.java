@@ -39,7 +39,7 @@ public class ChoosePitchActivity extends Activity {
 	private BroadcastReceiver broadcastReceiver;
 	public static String LOCATION_BCR = "location_bcr";
 	private	String address;
-	String addres[];
+	private	String addres[];
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -71,7 +71,23 @@ public class ChoosePitchActivity extends Activity {
 		});
 		
 	}
-	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if(requestCode==0){
+			if(resultCode==0){
+				/*
+				 *返回球场name 
+				 */
+				Intent intent = new Intent(ChoosePitchActivity.this,CreateMatchActivity.class);
+				intent.putExtra("name", data.getStringExtra("name"));
+				intent.putExtra("false", "0");
+				intent.putExtra("uuid", data.getStringExtra("uuid"));
+				setResult(0, intent);
+				finish();
+			}
+		}
+	}
 	private void initialize()
 	{
 		registerBroadCastReceiver();
@@ -143,8 +159,8 @@ public class ChoosePitchActivity extends Activity {
 	public void qiehuan(View v){
 		Intent intent=new Intent(ChoosePitchActivity.this,ListChoosePitchActivity.class);
 		intent.putExtra("sign", "1");
-		startActivity(intent);
-		finish();
+		startActivityForResult(intent, 0);
+		//finish();
 	}
 	
 	

@@ -55,7 +55,7 @@ public class PitchAdapter extends BaseAdapter {
            pitchname.setText(qiuchanglists.get(poisition).getName());
           // pitchname.setTextColor(Color.argb(155, 55, 155, 255)); 
             Log.i("-----pitchname-->>", ""+qiuchanglists.get(poisition).getName());
-           address.setText(qiuchanglists.get(poisition).getAddress());
+           address.setText(qiuchanglists.get(poisition).getHoles_count());
          //  address.setTextColor(0x00000000);
            distance.setText(qiuchanglists.get(poisition).getDistance());
 		return view;

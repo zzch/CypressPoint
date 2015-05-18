@@ -2,6 +2,7 @@ package cn.com.zcty.ILovegolf.activity.view.login_register;
 
 
 import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.activity.view.HomePageActivity;
 import cn.com.zcty.ILovegolf.activity.view.TabHostActivity;
 import android.app.Activity;
 import android.content.Context;
@@ -37,7 +38,7 @@ public class SplashActivity extends Activity {
 		SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 		String isRegister=sp.getString("isRegister", "false");
 		if(isRegister.equals("true")){
-			Intent intent=new Intent(this,TabHostActivity.class);
+			Intent intent=new Intent(this,HomePageActivity.class);
 			startActivity(intent);
 			finish();	
 			

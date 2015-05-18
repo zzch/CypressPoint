@@ -9,7 +9,16 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_height"
         android:background="@drawable/title_bg" >
-
+		<Button
+                android:id="@+id/k_back"
+                android:layout_width="80dp"
+                android:layout_height="47dp"
+                android:layout_marginLeft="@dimen/title_button_left"
+                android:background="@null"
+                android:onClick="onclick"
+                android:text="@string/back"
+                android:textColor="@color/gold"
+                android:textSize="@dimen/txsize_small_xx" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="47dp"

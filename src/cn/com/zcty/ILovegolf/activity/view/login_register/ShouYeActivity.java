@@ -15,16 +15,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.activity.view.QuickScoreActivity;
-import cn.com.zcty.ILovegolf.activity.view.TabHostActivity;
-import cn.com.zcty.ILovegolf.activity.view.myself.Myself;
-import cn.com.zcty.ILovegolf.activity.view.myself.SettionsActivity;
-import cn.com.zcty.ILovegolf.model.User;
+import cn.com.zcty.ILovegolf.activity.view.HomePageActivity;
 import cn.com.zcty.ILovegolf.tools.RegexMobile;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -111,7 +106,7 @@ public class ShouYeActivity extends Activity {
      Handler h = new Handler(){
     	 public void handleMessage(Message msg) {
     		 if(msg.what==1){
-    			 Intent intent = new Intent(ShouYeActivity.this,TabHostActivity.class);
+    			 Intent intent = new Intent(ShouYeActivity.this,HomePageActivity.class);
 				 startActivity(intent);
 				 finish();
     		 }
@@ -195,7 +190,7 @@ public class ShouYeActivity extends Activity {
 			    editor.commit();
 				if(data!=null){
 					hideProgressDialog();
-					intent=new Intent(ShouYeActivity.this,TabHostActivity.class);
+					intent=new Intent(ShouYeActivity.this,HomePageActivity.class);
 				    startActivity(intent);
 				    finish();	
 				}else{

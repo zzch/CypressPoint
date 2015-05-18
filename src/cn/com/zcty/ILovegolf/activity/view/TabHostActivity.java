@@ -37,7 +37,7 @@ public class TabHostActivity extends TabActivity {
 
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.tabactivity_main);
-		ShouYeActivity.getInstance().addActivity(this);
+		
 		TabHost myTabHost=getTabHost();
 		
 		

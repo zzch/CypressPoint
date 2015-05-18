@@ -58,7 +58,6 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
 	private SharedPreferences ss;
 	private ArrayList<String> citys_name;
 	private List<String> citys_address;
-	private String sign;
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
 			if(msg.arg1==1){
@@ -88,12 +87,14 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
 						/*
 						 * 返回球场name
 						 */
-						Intent intent = new Intent(ListChoosePitchActivity.this,CreateMatchActivity.class);
+						Intent intent = new Intent();
 						intent.putExtra("name", child.get(groupPosition).get(childPosition).getName());
 						intent.putExtra("false", "0");
 						intent.putExtra("uuid", child.get(groupPosition).get(childPosition).getUuid());
 						setResult(0, intent);
 						finish();
+						
+						
 						return false;
 					}
 				});
@@ -118,8 +119,9 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
 		
 		if(keyCode==KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0){
 		
-			Intent intent = new Intent(ListChoosePitchActivity.this,CreateMatchActivity.class);		
-			setResult(30,intent);
+			Intent intent=new Intent(ListChoosePitchActivity.this,CreateMatchActivity.class);
+			intent.putExtra("name", "null");
+			setResult(0, intent);
 			finish();
 		
         }
@@ -193,7 +195,7 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
 				/*
 				 * 返回球场name
 				 */
-				Intent intent = new Intent(ListChoosePitchActivity.this,CreateMatchActivity.class);
+				Intent intent = new Intent();
 				intent.putExtra("name", citys_name.get(arg2));
 				intent.putExtra("false", "0");
 				intent.putExtra("uuid", uuidList.get(arg2));
@@ -208,7 +210,6 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
 		search_back= (Button) findViewById(R.id.search_back);
 		cityList = (ListView) findViewById(R.id.listView1);
 		Intent intent = getIntent();
-		sign = intent.getStringExtra("sign");
 	}
 	class Citys extends Thread{
 		public Citys() {

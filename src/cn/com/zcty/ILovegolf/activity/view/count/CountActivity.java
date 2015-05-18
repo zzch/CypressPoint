@@ -15,6 +15,9 @@ import org.json.JSONObject;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.R.layout;
 import cn.com.zcty.ILovegolf.activity.adapter.CountAdapter;
+import cn.com.zcty.ILovegolf.activity.view.HomePageActivity;
+import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
+import cn.com.zcty.ILovegolf.activity.view.myself.Myself;
 import cn.com.zcty.ILovegolf.model.ChartProp;
 import cn.com.zcty.ILovegolf.tools.ChartView;
 import cn.com.zcty.ILovegolf.utils.APIService;
@@ -110,6 +113,7 @@ public class CountActivity extends Activity implements OnClickListener{
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_count);
+		ShouYeActivity.getInstance().addActivity(this);
 		Display display = getWindowManager().getDefaultDisplay();
 		DisplayMetrics displayMetrics = new DisplayMetrics();
 		display.getMetrics(displayMetrics);
@@ -156,15 +160,29 @@ public class CountActivity extends Activity implements OnClickListener{
 	}
 	@Override
 	public void onClick(View v) {
+		Intent intent;
 		switch (v.getId()) {
 		case R.id.count_start:
-			Intent intent = new Intent(CountActivity.this,AnalyzeActivity.class);
+			intent = new Intent(CountActivity.this,AnalyzeActivity.class);
 			startActivity(intent);
+			finish();
 			break;
 
-		default:
+		case R.id.k_back:
+			intent=new Intent(CountActivity.this,HomePageActivity.class);
+			startActivity(intent);
+			finish();
 			break;
 		}
+	}
+
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		Intent intent;
+		intent=new Intent(CountActivity.this,HomePageActivity.class);
+		startActivity(intent);
+		finish();
 	}
 	class Count extends Thread{
 	@Override

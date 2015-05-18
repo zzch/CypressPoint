@@ -44,7 +44,9 @@ public class JsonUtil {
 				Log.i("------address--->>>", ""+jsonObject.getString("address"));
 				qiuchanglist.setDistance(jsonObject.getString("distance"));
 				Log.i("------dstance--->>>", ""+jsonObject.getString("distance"));
+				qiuchanglist.setHoles_count(jsonObject.getString("holes_count"));
 				qiuchanglists.add(qiuchanglist);
+				
 			}
 		return qiuchanglists;
 	 }

@@ -110,6 +110,7 @@ public class QuickScoreActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_quick_score);
+		ShouYeActivity.getInstance().addActivity(this);
 		initView();	
 		new MyTask().start();
 		mHandler= new Handler();
@@ -175,16 +176,12 @@ public class QuickScoreActivity extends Activity {
 		switch(v.getId()){
 		//返回按钮
 		case R.id.k_back:
-			intent=new Intent(QuickScoreActivity.this,TabHostActivity.class);
+			intent=new Intent(QuickScoreActivity.this,HomePageActivity.class);
 			startActivity(intent);
 			finish();
 			break;
-			//新建按钮
-		case R.id.k_build:
-			intent=new Intent(QuickScoreActivity.this,ChoosePitchActivity.class);
-			startActivity(intent);
-			finish();
-			break;
+			
+		
 			//创建新比赛
 		case R.id.create_match:
 			intent  = new Intent(QuickScoreActivity.this,CreateMatchActivity.class);
@@ -204,6 +201,8 @@ public class QuickScoreActivity extends Activity {
 	@Override
 	public void onBackPressed() {
 		super.onBackPressed();
+		intent=new Intent(QuickScoreActivity.this,HomePageActivity.class);
+		startActivity(intent);
 		finish();
 	}
 

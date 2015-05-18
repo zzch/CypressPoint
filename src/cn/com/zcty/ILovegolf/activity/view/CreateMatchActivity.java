@@ -274,7 +274,12 @@ public class CreateMatchActivity extends Activity {
 		imageView4 = (ImageView) findViewById(R.id.imageView4);
 		imageView5 = (ImageView) findViewById(R.id.imageView5);
 		create_fanhui = (Button) findViewById(R.id.create_fanhui);
-
+		
+		imageView1.setImageResource(R.drawable.image_down);
+		leixing_layout.setVisibility(View.GONE);
+		majorRelativeLayout.setVisibility(View.GONE);
+		v1.setVisibility(View.GONE);
+		v2.setVisibility(View.GONE);
 	}
 	private void initialize()
 	{
@@ -566,8 +571,9 @@ public class CreateMatchActivity extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		if(requestCode==REQUSTCODE){
+			//Log.i("sdlfjsdl", data.getStringExtra("name"));
 
-			if(resultCode==0){
+			if(resultCode==0||resultCode==1){
 				//返回球场name，并且显示
 				if(!data.getStringExtra("name").equals("null")){
 					pitchname = data.getStringExtra("name");
