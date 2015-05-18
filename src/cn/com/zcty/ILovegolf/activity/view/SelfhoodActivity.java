@@ -94,7 +94,7 @@ public class SelfhoodActivity extends Activity{
 							}
 							
 						}else{
-							FileUtil.delFile();
+							delFile();
 							Toast.makeText(SelfhoodActivity.this, "保存失败", Toast.LENGTH_LONG).show();
 						}
 					}
@@ -226,7 +226,7 @@ public class SelfhoodActivity extends Activity{
 								image = rotaingImageView(90,image);							
 							}
 							headImage.setImageBitmap(image);
-							//hideProgressDialog();
+							hideProgressDialog();
 						}
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -242,7 +242,7 @@ public class SelfhoodActivity extends Activity{
 							image = comp(image);
 							Log.i("ceshipath", image+"2");
 							headImage.setImageBitmap(image);
-							//hideProgressDialog();
+							hideProgressDialog();
 						}
 					}
 				}
@@ -294,7 +294,7 @@ public class SelfhoodActivity extends Activity{
 	 * @return
 	 */
 	private Bitmap comp(Bitmap image) {
-
+		showProgressDialog("提示", "正在获得头像");
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();        
 		image.compress(Bitmap.CompressFormat.JPEG, 100, baos);
 		if( baos.toByteArray().length / 1024>1024) {//判断如果图片大于1M,进行压缩避免在生成图片（BitmapFactory.decodeStream）时溢出    
@@ -446,4 +446,25 @@ public class SelfhoodActivity extends Activity{
 			progressDialog.dismiss();
 		}
 	}
+			//删除文件
+			public  static void delFile(){
+				File file = new File("/mnt/sdcard/testfile");
+				deleteFile(file);
+			}
+			public static void deleteFile(File file) {
+				
+				if (file.exists()) { // 判断文件是否存在
+				if (file.isFile()) { // 判断是否是文件
+				file.delete(); // delete()方法 你应该知道 是删除的意思;
+				} else if (file.isDirectory()) { // 否则如果它是一个目录
+				File files[] = file.listFiles(); // 声明目录下所有的文件 files[];
+				for (int i = 0; i < files.length; i++) { // 遍历目录下所有的文件
+				deleteFile(files[i]); // 把每个文件 用这个方法进行迭代
+				}
+				}
+				file.delete();
+				} else {
+				Log.i("tishis","文件不存在！"+"\n");
+				}
+				}
 }

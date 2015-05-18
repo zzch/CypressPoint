@@ -18,7 +18,9 @@ import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.view.HomePageActivity;
 import cn.com.zcty.ILovegolf.tools.RegexMobile;
 import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
+import cn.com.zcty.ILovegolf.utils.ViewUtil;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -118,7 +120,7 @@ public class ShouYeActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_shouye);
-		delFile();
+		FileUtil.delFile();
 		initView();
 	}
 	//Activity加入到List中  
@@ -150,7 +152,7 @@ public class ShouYeActivity extends Activity {
 	 * @param v
 	 */
 	public void but_register(View v){
-		showProgressDialog("提示", "加载中。。。");
+		showProgressDialog("提示", "加载中。。。",ShouYeActivity.this);
 		
 		new AsyncTask<Void, Void, Void>() {
 
@@ -390,47 +392,28 @@ public class ShouYeActivity extends Activity {
 			}
 			return str;
 		}
+	 
 	 /*
-		 * 提示加载
-		 */
-		public  void  showProgressDialog(String title,String message){
-			if(progressDialog==null){
-				progressDialog = ProgressDialog.show(this, title, message,true,true);
+	     * 提示加载
+	     */
+	     public   void  showProgressDialog(String title,String message,Activity context){
+	            if(progressDialog ==null){
+	                   progressDialog = ProgressDialog.show( context, title, message,true,true );
 
-			}else if(progressDialog.isShowing()){
-				progressDialog.setTitle(title);
-				progressDialog.setMessage(message);
-			}
-			progressDialog.show();
+	           } else if (progressDialog .isShowing()){
+	                   progressDialog.setTitle(title);
+	                   progressDialog.setMessage(message);
+	           }
+	            progressDialog.show();
 
-		}
-		/*
-		 * 隐藏加载
-		 */
-		public  void hideProgressDialog(){
-			if(progressDialog !=null &&progressDialog.isShowing()){
-				progressDialog.dismiss();
-			}
-		}
-		//删除文件
-		public  static void delFile(){
-			File file = new File("/mnt/sdcard/testfile");
-			deleteFile(file);
-		}
-		public static void deleteFile(File file) {
-			
-			if (file.exists()) { // 判断文件是否存在
-			if (file.isFile()) { // 判断是否是文件
-			file.delete(); // delete()方法 你应该知道 是删除的意思;
-			} else if (file.isDirectory()) { // 否则如果它是一个目录
-			File files[] = file.listFiles(); // 声明目录下所有的文件 files[];
-			for (int i = 0; i < files.length; i++) { // 遍历目录下所有的文件
-			deleteFile(files[i]); // 把每个文件 用这个方法进行迭代
-			}
-			}
-			file.delete();
-			} else {
-			Log.i("tishis","文件不存在！"+"\n");
-			}
-			}
+	    }
+	     /*
+	     * 隐藏加载
+	     */
+	     public  void hideProgressDialog(){
+	            if(progressDialog !=null &&progressDialog.isShowing()){
+	                   progressDialog.dismiss();
+	           }
+	    }
+		
 }

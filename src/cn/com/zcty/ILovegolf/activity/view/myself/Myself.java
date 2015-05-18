@@ -15,6 +15,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -41,6 +42,7 @@ import cn.com.zcty.ILovegolf.activity.view.QuickScoreActivity;
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.tools.CircleImageView;
 import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 public class Myself extends Activity {
@@ -61,6 +63,10 @@ public class Myself extends Activity {
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
+				SharedPreferences sp = getSharedPreferences("register", MODE_PRIVATE);	
+				Editor editor = sp.edit();	
+				editor.putString("description", description);
+				editor.commit();
 				signTextView.setText(description);
 				getListeners();
 			}
@@ -80,8 +86,8 @@ public class Myself extends Activity {
 			if(msg.what==1){
 				//image_bg.setImageAlpha(80);
 				imageHead.setImageBitmap(bitmap);
-				blur(converToBitmap(100,100));
-				saveMyBitmap(bitmap);
+				FileUtil.blur(FileUtil.converToBitmap(100,100),Myself.this,headLayout);
+				FileUtil.saveMyBitmap(bitmap);
 			}
 		
 		};
@@ -97,9 +103,9 @@ public class Myself extends Activity {
 		setListeners();
 		new Ziliao().start();
 	
-			if(fileIsExists()){
-				imageHead.setImageBitmap(converToBitmap(100,100));
-				blur(converToBitmap(100,100));
+			if(FileUtil.fileIsExists()){
+				imageHead.setImageBitmap(FileUtil.converToBitmap(100,100));
+				FileUtil.blur(FileUtil.converToBitmap(100,100),Myself.this,headLayout);
 			}else{
 			new Touxiang().start();
 			}
@@ -161,30 +167,7 @@ public class Myself extends Activity {
 		String name = sp.getString("nickname", "nickname");
 		nameTextView.setText(name);
 	}
-	public Bitmap converToBitmap( int w, int h){
-		 BitmapFactory.Options opts = new BitmapFactory.Options();
-		 // 设置为ture只获取图片大小
-		opts.inJustDecodeBounds = true;
-		opts.inPreferredConfig = Bitmap.Config.ARGB_8888;
-		BitmapFactory.decodeFile("/mnt/sdcard/testfile/golf.jpg", opts);
-		int width = opts.outWidth;
-		int height = opts.outHeight;
-		float scaleWidth = 0.f, scaleHeight = 0.f;
-		if (width > w || height > h) {
-			// 缩放
-			 scaleWidth = ((float) width) / w;
-			 scaleHeight = ((float) height) / h;
-		}
-		 opts.inJustDecodeBounds = false;
-		 float scale = Math.max(scaleWidth, scaleHeight);
-		 opts.inSampleSize = (int)scale;
-		 WeakReference<Bitmap> weak = new WeakReference<Bitmap>
-		 (BitmapFactory.decodeFile("/mnt/sdcard/testfile/golf.jpg", opts));
-
-		return  Bitmap.createScaledBitmap(weak.get(), w, h, true);
-
-		
-	}
+	
 	class Ziliao extends Thread{
 		@Override
 		public void run() {
@@ -269,83 +252,11 @@ public class Myself extends Activity {
 		
 	   }
 	}
-	/**
-	 * 把bitmap存入手机文件目录
-	 * @param bitName
-	 */
-	@SuppressLint("SdCardPath")
-	public void saveMyBitmap(Bitmap bitName)  {
-        File f = new File("/mnt/sdcard/testfile"); 
-        if(f.exists()){
-        	f.delete();
-        }else{
-        	f.mkdir();
-        }
-        FileOutputStream fOut = null;
-        try {
-                fOut = new FileOutputStream("/mnt/sdcard/testfile/golf.jpg");
-                bitName.compress(Bitmap.CompressFormat.JPEG, 50, fOut);
-            	fOut.flush();
-            	fOut.close();
-        } catch (Exception e) {
-                e.printStackTrace();
-        }
-       
-} 
-	public boolean fileIsExists(){
-
-	              File f=new File("/mnt/sdcard/testfile");
-
-		            if(!f.exists()){
-
-		                       return false;
-
-		               }
-		           // f.delete();
-		               return true;
-
-		        }
+	
+	
 
 
 	
-	@SuppressLint("NewApi")
-	private void blur(Bitmap bkg) {   
-	     long startMs = System.currentTimeMillis();   
-	     float radius = 20;   
-	   
-	     bkg = small(bkg);  
-	     Bitmap bitmap = bkg.copy(bkg.getConfig(), true);  
-	   
-	     final RenderScript rs = RenderScript.create(Myself.this.getBaseContext());  
-	     final Allocation input = Allocation.createFromBitmap(rs, bkg, Allocation.MipmapControl.MIPMAP_NONE,  
-	             Allocation.USAGE_SCRIPT);  
-	     final Allocation output = Allocation.createTyped(rs, input.getType());  
-	     final ScriptIntrinsicBlur script = ScriptIntrinsicBlur.create(rs, Element.U8_4(rs)); 
-	     script.setRadius(radius);  
-	     script.setInput(input);  
-	     script.forEach(output);  
-	     output.copyTo(bitmap);  
-	   
-	     bitmap = big(bitmap);  
-	     headLayout.setBackground(new BitmapDrawable(getResources(), bitmap));   
-	     rs.destroy();   
-	     Log.d("zhangle","blur take away:" + (System.currentTimeMillis() - startMs )+ "ms");  
-	 }   
-
-		 
-		private static Bitmap big(Bitmap bitmap) {  
-		     Matrix matrix = new Matrix();   
-		       matrix.postScale(4f,4f); //长和宽放大缩小的比例  
-		      Bitmap resizeBmp = Bitmap.createBitmap(bitmap,0,0,bitmap.getWidth(),bitmap.getHeight(),matrix,true);  
-		      return resizeBmp;  
-		 }  
-		  
-		  private static Bitmap small(Bitmap bitmap) {  
-		       Matrix matrix = new Matrix();   
-		       matrix.postScale(0.25f,0.25f); //长和宽放大缩小的比例  
-		       Bitmap resizeBmp = Bitmap.createBitmap(bitmap,0,0,bitmap.getWidth(),bitmap.getHeight(),matrix,true);  
-		      return resizeBmp;  
-		 }  
 
 
 

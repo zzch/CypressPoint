@@ -10,6 +10,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -35,13 +37,16 @@ import cn.com.zcty.ILovegolf.activity.view.fragment.StaticsFragmentOne;
 import cn.com.zcty.ILovegolf.activity.view.fragment.StaticsFragmentTwo;
 import cn.com.zcty.ILovegolf.tools.CircleImageView;
 import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
+import cn.com.zcty.ILovegolf.utils.ViewUtil;
 
 public class RankingStatics extends FragmentActivity{
 	private ArrayList<Fragment> arrayFragment = new ArrayList<Fragment>();
 	private ArrayList<String> scoreArrayList = new ArrayList<String>();
 	private ArrayList<String> statusArrayList = new ArrayList<String>();
 	private ArrayList<String> parArrayList = new ArrayList<String>();
+	private ProgressDialog progressDialog;
 	private Bitmap bitmap;
 	private String portrait;
 	private String username;
@@ -64,17 +69,19 @@ public class RankingStatics extends FragmentActivity{
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
 				getData();
+				hideProgressDialog();
+				Log.i("askldfjlks",FileUtil.fileIsExists()+"");
 				if(!portrait.equals("null")){
-					if(!fileIsExists()){						
+					if(!FileUtil.fileIsExists()){						
 						new Imageloder().start();
 					}else{
-						totleImage.setImageBitmap(converToBitmap(100,100));
+						totleImage.setImageBitmap(FileUtil.converToBitmap(100,100));
 					}
 				}
 			}
 			if(msg.what==2){
 				totleImage.setImageBitmap(bitmap);
-				saveMyBitmap(bitmap);//把bitmap保存到手机目录中
+				FileUtil.saveMyBitmap(bitmap);//把bitmap保存到手机目录中
 			}
 		};
 	};
@@ -86,7 +93,7 @@ public class RankingStatics extends FragmentActivity{
 		setContentView(R.layout.activity_rankingstatics);
 		initView();
 		setListeners();
-		
+		showProgressDialog("提示", "正在加载", this);
 		new MyTask().start();
 	}
 	/*
@@ -227,72 +234,9 @@ public class RankingStatics extends FragmentActivity{
 		}
 
 	}
-	/**
-	 * 把bitmap存入手机文件目录
-	 * @param bitName
-	 */
-	@SuppressLint("SdCardPath")
-	public void saveMyBitmap(Bitmap bitName)  {
-        File f = new File("/mnt/sdcard/testfile"); 
-        if(f.exists()){
-        	f.delete();
-        }else{
-        	f.mkdir();
-        }
-        FileOutputStream fOut = null;
-        try {
-                fOut = new FileOutputStream("/mnt/sdcard/testfile/golf.jpg");
-                bitName.compress(Bitmap.CompressFormat.JPEG, 50, fOut);
-            	fOut.flush();
-            	fOut.close();
-        } catch (Exception e) {
-                e.printStackTrace();
-        }
-       
-} 
-	/**
-	 * 判断文件是否存在
-	 */
-	public boolean fileIsExists(){
-
-        File f=new File("/mnt/sdcard/testfile");
-
-          if(!f.exists()){
-
-                     return false;
-
-             }
-
-             return true;
-
-      }
-	/**
-	 * 从文件中读取图片
-	 */
-	public Bitmap converToBitmap( int w, int h){
-		 BitmapFactory.Options opts = new BitmapFactory.Options();
-		 // 设置为ture只获取图片大小
-		opts.inJustDecodeBounds = true;
-		opts.inPreferredConfig = Bitmap.Config.ARGB_8888;
-		BitmapFactory.decodeFile("/mnt/sdcard/testfile/golf.jpg", opts);
-		int width = opts.outWidth;
-		int height = opts.outHeight;
-		float scaleWidth = 0.f, scaleHeight = 0.f;
-		if (width > w || height > h) {
-			// 缩放
-			 scaleWidth = ((float) width) / w;
-			 scaleHeight = ((float) height) / h;
-		}
-		 opts.inJustDecodeBounds = false;
-		 float scale = Math.max(scaleWidth, scaleHeight);
-		 opts.inSampleSize = (int)scale;
-		 WeakReference<Bitmap> weak = new WeakReference<Bitmap>
-		 (BitmapFactory.decodeFile("/mnt/sdcard/testfile/golf.jpg", opts));
-
-		return  Bitmap.createScaledBitmap(weak.get(), w, h, true);
-
-		
-	}
+	
+	
+	
 	/**
 	 * 拿到统计数据
 	 * @author Administrator
@@ -387,4 +331,26 @@ public class RankingStatics extends FragmentActivity{
 			
 	}
 	}
+	/*
+     * 提示加载
+     */
+     public   void  showProgressDialog(String title,String message,Activity context){
+            if(progressDialog ==null){
+                   progressDialog = ProgressDialog.show( context, title, message,true,true );
+
+           } else if (progressDialog .isShowing()){
+                   progressDialog.setTitle(title);
+                   progressDialog.setMessage(message);
+           }
+            progressDialog.show();
+
+    }
+     /*
+     * 隐藏加载
+     */
+     public  void hideProgressDialog(){
+            if(progressDialog !=null &&progressDialog.isShowing()){
+                   progressDialog.dismiss();
+           }
+    }
 }

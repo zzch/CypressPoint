@@ -60,32 +60,32 @@ public class HttpUtils
 	 */
 	public static String HttpClientPost(String url)
 	{		int code = 0;
-		try {
-			String str = "";
-			//创建HttpClient对象
-			HttpClient client=new DefaultHttpClient();
-			//创建请求路径的HttpGet对象
-			HttpPost httpPost=new HttpPost(url);   
-			//client将response与httpPost连接
-			HttpResponse response=client.execute(httpPost);			
-			//找到服务返回的状态码 200表示成功
-			code=response.getStatusLine().getStatusCode();
-			Log.i("code---->", ""+code);
-			if(code==201||code==200)
-			{
-				
-				//InputStream is=response.getEntity().getContent();
-				str = EntityUtils.toString(response.getEntity(), "utf-8");
-				System.out.println("is---->"+str);
-				Log.i("is---->", ""+str);
-				return str;
-			}
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-			
+	try {
+		String str = "";
+		//创建HttpClient对象
+		HttpClient client=new DefaultHttpClient();
+		//创建请求路径的HttpGet对象
+		HttpPost httpPost=new HttpPost(url);   
+		//client将response与httpPost连接
+		HttpResponse response=client.execute(httpPost);			
+		//找到服务返回的状态码 200表示成功
+		code=response.getStatusLine().getStatusCode();
+		Log.i("code---->", ""+code);
+		if(code==201||code==200)
+		{
+
+			//InputStream is=response.getEntity().getContent();
+			str = EntityUtils.toString(response.getEntity(), "utf-8");
+			System.out.println("is---->"+str);
+			Log.i("is---->", ""+str);
+			return str;
 		}
-		return code+"";
+
+	} catch (Exception e) {
+		e.printStackTrace();
+
+	}
+	return code+"";
 	}
 	/**
 	 * 采用HttpClient的POST请求发送数据
@@ -94,31 +94,31 @@ public class HttpUtils
 	 * @return
 	 */
 	public static String HttpClientPost(String url,Map<String,String[]> map){
-		 HttpPut post = new HttpPut(url);
-	     String str = "";
-	     int code = 0;
-	     List<NameValuePair> nvps = new ArrayList<NameValuePair>();
-	     Iterator<Map.Entry<String, String[]>> it = map.entrySet().iterator();
-	     while(it.hasNext()){
-	          Map.Entry<String,String[]> map1 = it.next();
-	          for(int i=0;i<map1.getValue().length;i++){	        	  
-	        	  nvps.add(new BasicNameValuePair(map1.getKey(),map1.getValue()[i]));
-	          }
-	     }
-	     try {
-	          post.setEntity(new UrlEncodedFormEntity(nvps,"utf-8"));
-	          HttpClient httpClient = new DefaultHttpClient();
-	          HttpResponse httpResponse = httpClient.execute(post);
-	          code = httpResponse.getStatusLine().getStatusCode();
-	          if(httpResponse.getStatusLine().getStatusCode()==HttpStatus.SC_OK){
-	               str = EntityUtils.toString(httpResponse.getEntity(), "utf-8");
-	               return str;
-	          }
-	     } catch (Exception e) {
-	          // TODO Auto-generated catch block
-	          e.printStackTrace();
-	     }
-	     return ""+code+"";
+		HttpPut post = new HttpPut(url);
+		String str = "";
+		int code = 0;
+		List<NameValuePair> nvps = new ArrayList<NameValuePair>();
+		Iterator<Map.Entry<String, String[]>> it = map.entrySet().iterator();
+		while(it.hasNext()){
+			Map.Entry<String,String[]> map1 = it.next();
+			for(int i=0;i<map1.getValue().length;i++){	        	  
+				nvps.add(new BasicNameValuePair(map1.getKey(),map1.getValue()[i]));
+			}
+		}
+		try {
+			post.setEntity(new UrlEncodedFormEntity(nvps,"utf-8"));
+			HttpClient httpClient = new DefaultHttpClient();
+			HttpResponse httpResponse = httpClient.execute(post);
+			code = httpResponse.getStatusLine().getStatusCode();
+			if(httpResponse.getStatusLine().getStatusCode()==HttpStatus.SC_OK){
+				str = EntityUtils.toString(httpResponse.getEntity(), "utf-8");
+				return str;
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return ""+code+"";
 	}
 	/**
 	 * 采用HttpClient发送Get请求
@@ -138,7 +138,7 @@ public class HttpUtils
 			//让HttpClient往服务器发送数据
 			HttpResponse response=client.execute(httpGet);
 			//找到服务返回的状态码 200表示成功
-		    code=response.getStatusLine().getStatusCode();
+			code=response.getStatusLine().getStatusCode();
 			Log.i("code----->>>", ""+code);
 			if(code==HttpStatus.SC_OK)
 			{
@@ -147,41 +147,46 @@ public class HttpUtils
 				Log.i("is---->>", ""+str);
 				return str;
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();		
 		}
 		return code+"";
 	}
+	/**
+	 * httpPut请求
+	 * @param path
+	 * @return
+	 */
 	public static String HttpClientPut(String path)
 	{	int code = 0;
-		String str = "";
-		//创建HttpClient对象
-		HttpClient client=new DefaultHttpClient();
-		//创建请求路径的HttpGet对象
-		HttpPut httpPut=new HttpPut(path);
-		Log.i("---path", "path==="+path);
-		try {
-			//让HttpClient往服务器发送数据
-			HttpResponse response=client.execute(httpPut);
-			//找到服务返回的状态码 200表示成功
-			 code=response.getStatusLine().getStatusCode();
-			Log.i("code----->>>", ""+code);
-			if(code==HttpStatus.SC_OK)
-			{
-				//InputStream is=response.getEntity().getContent();
-				str = EntityUtils.toString(response.getEntity(), "utf-8");
-				Log.i("is---->>", ""+str);
-				return str;
-			}
-			
-		} catch (Exception e) {
-			e.printStackTrace();		
+	String str = "";
+	//创建HttpClient对象
+	HttpClient client=new DefaultHttpClient();
+	//创建请求路径的HttpGet对象
+	HttpPut httpPut=new HttpPut(path);
+	Log.i("---path", "path==="+path);
+	try {
+		//让HttpClient往服务器发送数据
+		HttpResponse response=client.execute(httpPut);
+		//找到服务返回的状态码 200表示成功
+		code=response.getStatusLine().getStatusCode();
+		Log.i("code----->>>", ""+code);
+		if(code==HttpStatus.SC_OK)
+		{
+			//InputStream is=response.getEntity().getContent();
+			str = EntityUtils.toString(response.getEntity(), "utf-8");
+			Log.i("is---->>", ""+str);
+			return str;
 		}
-		return ""+code+"";
+
+	} catch (Exception e) {
+		e.printStackTrace();		
 	}
-	
-	
+	return ""+code+"";
+	}
+
+
 	/**
 	 * 采用HttpClient的DELETE请求发送数据
 	 * @param path
@@ -189,9 +194,9 @@ public class HttpUtils
 	 * @throws Exception
 	 */
 	public static String HttpClientDelete(String path){
-		
-	   String str = "";
-	   int code = 0;
+
+		String str = "";
+		int code = 0;
 		//创建一个http客户端  
 		HttpClient client=new DefaultHttpClient();  
 		//创建一个DELETE请求  
@@ -200,19 +205,19 @@ public class HttpUtils
 		HttpResponse response;
 		try {
 			response = client.execute(httpDelete);
-			 code=response.getStatusLine().getStatusCode();
+			code=response.getStatusLine().getStatusCode();
 			Log.i("---->>", "delecode---"+code+"aaaaa");
 			if(code==200){
 				str = EntityUtils.toString(response.getEntity(),"utf-8");
 				Log.i("is---->>", ""+str);
-			return str;	
+				return str;	
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			str = "5";
 		} 
-		
-		
+
+
 		return code+"";
 	}
 	/**
@@ -228,58 +233,62 @@ public class HttpUtils
 	public static String uploadImage(String url, String filepath) {
 		String str = "";
 		int statusCode = 0;;
-	    File file = new File(filepath);
+		File file = new File(filepath);
 
-	    if (!file.exists()) {
-	        Log.i("leslie", "file not exists");
-	        return null;
-	    }
+		if (!file.exists()) {
+			Log.i("leslie", "file not exists");
+			return null;
+		}
 
-	    HttpClient client = new DefaultHttpClient();
-	    HttpPut put = new HttpPut(url);
+		HttpClient client = new DefaultHttpClient();
+		HttpPut put = new HttpPut(url);
 
-	    MultipartEntity entity = new MultipartEntity();
-	    ContentBody fileBody = new FileBody(file);
-	    // image 是服务端读取文件的 key
-	    entity.addPart("portrait", fileBody);
-	    put.setEntity(entity);
-	    HttpResponse response;
-	    try {
-	        response = client.execute(put);
-	        statusCode = response.getStatusLine().getStatusCode();
-	        String result = EntityUtils.toString(response.getEntity(), "utf-8");
-	        Log.i("ceshishuju", result+"aa");
-	        if (statusCode == 201) {
-	            // upload success
-	            // do something
-	        	//str = EntityUtils.toString(response.getEntity(),"utf-8")
-	        }
+		MultipartEntity entity = new MultipartEntity();
+		ContentBody fileBody = new FileBody(file);
+		// image 是服务端读取文件的 key
+		entity.addPart("portrait", fileBody);
+		put.setEntity(entity);
+		HttpResponse response;
+		try {
+			response = client.execute(put);
+			statusCode = response.getStatusLine().getStatusCode();
+			String result = EntityUtils.toString(response.getEntity(), "utf-8");
+			Log.i("ceshishuju", result+"aa");
+			if (statusCode == 201) {
+				// upload success
+				// do something
+				//str = EntityUtils.toString(response.getEntity(),"utf-8")
+			}
 
-	        return result;
-	    } catch (ClientProtocolException e) {
-	        e.printStackTrace();
-	    } catch (IOException e) {
-	        e.printStackTrace();
-	    }
+			return result;
+		} catch (ClientProtocolException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
-	    return statusCode+"";
+		return statusCode+"";
 	} 
-	
+
+	/**
+	 * 获取头像
+	 * @param url
+	 * @return
+	 */
 	public static Bitmap imageloder(String url){
 		HttpGet httpRequest = new HttpGet(url); 
 		HttpClient httpclient = new DefaultHttpClient();
 		try {
 			HttpResponse httpResponse = httpclient.execute(httpRequest);
-			Log.i("cunzaifou", httpResponse.getStatusLine().getStatusCode()+"");
 			if(httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK){  
 				//取得相关信息 取得HttpEntiy   
-			HttpEntity httpEntity = httpResponse.getEntity();  
-			//获得一个输入流   
-			InputStream is = httpEntity.getContent();  
-			Bitmap bitmap = BitmapFactory.decodeStream(is);  
-			is.close();  
-			
-			return bitmap;
+				HttpEntity httpEntity = httpResponse.getEntity();  
+				//获得一个输入流   
+				InputStream is = httpEntity.getContent();  
+				Bitmap bitmap = BitmapFactory.decodeStream(is);  
+				is.close();  
+
+				return bitmap;
 			}
 		} catch (ClientProtocolException e) {
 			e.printStackTrace();
@@ -289,5 +298,5 @@ public class HttpUtils
 		}
 		return null; 
 	}
-		 }
+}
 
