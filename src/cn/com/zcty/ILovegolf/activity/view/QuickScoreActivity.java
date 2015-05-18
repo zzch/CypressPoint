@@ -61,9 +61,9 @@ public class QuickScoreActivity extends Activity {
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
-
 				getData();
-				slideAdapter.notifyDataSetChanged();
+				//slideAdapter.notifyDataSetChanged();
+				mPullRefreshScrollView.onRefreshComplete();//刷新
 				if(msg.obj.equals("404")||msg.obj.equals("500")){//判断是服务端问题
 					Toast.makeText(QuickScoreActivity.this, "网络异常，错误提示"+msg.obj, Toast.LENGTH_LONG).show();
 				}else if(msg.obj.equals("403")){
@@ -127,9 +127,8 @@ public class QuickScoreActivity extends Activity {
 
 				new MyTask().start();
 
-				slideAdapter.notifyDataSetChanged();
 
-				mPullRefreshScrollView.onRefreshComplete();//刷新
+				
 
 			}
 		});
@@ -146,6 +145,7 @@ public class QuickScoreActivity extends Activity {
 	private void getData() {
 		slideAdapter = new QuickScoreAdapter(this, quickArrayList);
 		mListView.setAdapter(slideAdapter);
+		
 		mListView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
