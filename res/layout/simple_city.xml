@@ -3,6 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"   
     android:orientation="vertical"
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 43602c9a25f603df37fb1850569197fe85d0e337
      >
     <LinearLayout
         

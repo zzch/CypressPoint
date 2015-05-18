@@ -72,6 +72,7 @@ public class CompetitionAdd extends Activity{
 	private RelativeLayout selectSession_t_2;
 	private Button createButton;
 	private String tiTai[]={"红色T台","白色T台","蓝色T台","黑色T台","金色T台"};
+	private int tiTaiColor[]={R.drawable.e_red,R.drawable.e_white,R.drawable.e_blue,R.drawable.e_black,R.drawable.e_gold};
 	private boolean f = false;
 	private String t_1 = "";
 	private String t_2 = "";
@@ -206,8 +207,10 @@ public class CompetitionAdd extends Activity{
 				if(titaiListView.getVisibility()==View.GONE){
 					titaiListView.setVisibility(View.VISIBLE);
 					imageView3.setImageResource(R.drawable.image_up);
+					
 				}else{
 					titaiListView.setVisibility(View.GONE);
+				
 					imageView3.setImageResource(R.drawable.image_down);
 				}
 			}
@@ -218,15 +221,19 @@ public class CompetitionAdd extends Activity{
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
 				v_3.setVisibility(View.VISIBLE);
-				v_4.setVisibility(View.VISIBLE);
+				v_4.setVisibility(View.GONE);
 				imageView3.setImageResource(R.drawable.image_down);
+				titaicolor_1.setVisibility(View.VISIBLE);
 				titaiTextView.setText(tiTai[position]);
+				titaicolor_1.setImageResource(tiTaiColor[position]);
 				titaiListView.setVisibility(View.GONE);
 				t_1 = add.getTitai().get(0).getBoxs().get(position);
 				if(f){
 					titai2ListView.setVisibility(View.VISIBLE);
+					v_4.setVisibility(View.GONE);
 				}else{
 					titai2ListView.setVisibility(View.GONE);
+					v_4.setVisibility(View.GONE);
 					t_2 = "";
 				}
 			}
@@ -249,8 +256,11 @@ public class CompetitionAdd extends Activity{
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
+				
+				titaicolor_2.setVisibility(View.VISIBLE);
 				imageView5.setImageResource(R.drawable.image_down);
 				titaiTextView_2.setText(tiTai[position]);
+				titaicolor_2.setImageResource(tiTaiColor[position]);
 				titai2ListView.setVisibility(View.GONE);
 				t_2 = add.getTitai().get(1).getBoxs().get(position);
 			}
@@ -312,6 +322,9 @@ public class CompetitionAdd extends Activity{
 		titaiListView.setVisibility(View.VISIBLE);
 		titai2ListView = (ListView) findViewById(R.id.competition_listview_t_2);
 
+		titaicolor_1 = (ImageView) findViewById(R.id.titaicolor_1);
+	    titaicolor_2 = (ImageView) findViewById(R.id.titaicolor_2);
+		
 		selectSession_t = (RelativeLayout) findViewById(R.id.competition_selection_t);
 		selectSession_t_2 = (RelativeLayout) findViewById(R.id.competition_selection_t_2);
 		qiudongTextView = (TextView) findViewById(R.id.competition_match_zichang);

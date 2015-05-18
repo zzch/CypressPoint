@@ -4,6 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical" 
     android:gravity="center_vertical"
+<<<<<<< HEAD
+=======
+   android:background="@color/bg"
+>>>>>>> 43602c9a25f603df37fb1850569197fe85d0e337
     >
 
    <TextView

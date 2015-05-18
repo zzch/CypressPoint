@@ -2,6 +2,7 @@ package cn.com.zcty.ILovegolf.activity.adapter;
 
 import java.util.ArrayList;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.util.Log;
@@ -44,6 +45,8 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 		return position;
 	}
 
+
+	@SuppressLint("NewApi")
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		Holder holder = null;
@@ -185,7 +188,7 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 			}
 			
 			holder.distanceTextView.setText(
-					scoreCardsMatchs.get(position).getDriving_distance());
+					scoreCardsMatchs.get(position).getDriving_distance()+"码");
 			
 		}
 		return convertView;

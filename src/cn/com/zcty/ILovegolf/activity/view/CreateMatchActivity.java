@@ -254,10 +254,10 @@ public class CreateMatchActivity extends Activity {
 		zichangTextView = (TextView) findViewById(R.id.competition_match_chang);
 		titaiTextView = (TextView) findViewById(R.id.competition_t_name);
 	    titaicolor_1 = (ImageView) findViewById(R.id.titaicolor_1);
+	    titaicolor_2 = (ImageView) findViewById(R.id.titaicolor_2);
 		qiudongTextView_2 = (TextView) findViewById(R.id.competition_match_zichang_2);
 		zichangTextView_2 = (TextView) findViewById(R.id.competition_match_chang_2);
 		titaiTextView_2 = (TextView) findViewById(R.id.competition_t_name_2);
-		titaicolor_2 = (ImageView) findViewById(R.id.titaicolor_2);
 		diamondRelativeLayout = (RelativeLayout) findViewById(R.id.creatematch_select_diamond);
 		selectSession_tListView = (ListView) findViewById(R.id.competition_listview_t);
 		selectSession_2ListView = (ListView) findViewById(R.id.competition_listview_qiuchang_2);
