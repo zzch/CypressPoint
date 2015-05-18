@@ -4,10 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical" 
     android:gravity="center_vertical"
-<<<<<<< HEAD
-=======
-   android:background="@color/bg"
->>>>>>> 43602c9a25f603df37fb1850569197fe85d0e337
+
     >
 
    <TextView
@@ -17,7 +14,7 @@
             android:layout_marginLeft="@dimen/view_small_x"
             android:layout_marginTop="10dp"
             android:text="@string/pith_name"
-            android:textColor="@color/gold_70"
+            android:textColor="@color/hei5"
             android:textSize="17dp"
             android:maxEms="13" 
             android:singleLine="true"
@@ -43,7 +40,7 @@
                 android:layout_marginLeft="@dimen/view_small_x"
                 android:layout_marginTop="8dp"
                 android:text="北京市*******路*****号"
-                android:textColor="@color/gold_half"
+                android:textColor="@color/hei5"
                 android:textSize="15dp"
                 android:maxEms="13" 
                 android:singleLine="true"
