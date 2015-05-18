@@ -29,6 +29,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.BitmapFactory;
@@ -41,9 +42,11 @@ import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -62,11 +65,14 @@ import cn.com.zcty.ILovegolf.tools.CircleImageView;
 import cn.com.zcty.ILovegolf.tools.OnWheelChangedListener;
 import cn.com.zcty.ILovegolf.tools.WheelView;
 import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 import cn.com.zcty.ILovegolf.utils.TimeUtil;
+import cn.com.zcty.ILovegolf.utils.ViewUtil;
 
 @SuppressLint("SdCardPath")
 public class InformationChangesActivity extends BaseActivity implements OnClickListener{
+	private LinearLayout linear;
 	private RelativeLayout headImage;
 	private CircleImageView headMyImage;
 	private TextView sexTextView;
@@ -104,16 +110,36 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 	private String upname;
 	private String imageurl;
 	private ProgressDialog progressDialog;
-    private ImageView imageView2;
-    private ImageView imageView3;
-    private ImageView imageView5;
+	private ImageView imageView2;
+	private ImageView imageView3;
+	private ImageView imageView5;
+	private String nameSuccess;
+	private String sexSuccess;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
 				hideProgressDialog();
-				if(converToBitmap(100,100)==null){			
+				if(FileUtil.converToBitmap(100,100)==null){
+
 				}else{
-				headMyImage.setImageBitmap(converToBitmap(100,100));}
+					headMyImage.setImageBitmap(FileUtil.converToBitmap(100,100));}
+			}
+			if(msg.what==2){
+
+			}
+			if(msg.what==3){
+				
+			}
+			if(msg.what==4){
+
+			}
+			if(msg.what==5){
+				if(nameSuccess.equals("success")){
+					SharedPreferences sp = getSharedPreferences("register", MODE_PRIVATE);	
+					Editor editor = sp.edit();	
+					editor.putString("nickname", upname);
+					editor.commit();
+				}
 			}
 		};
 	};
@@ -136,7 +162,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		daydapter = new ArrayDayNumberWheelAdapter(this);
 		dayWheelView.setViewAdapter(daydapter);
 
-		
+
 		initProvinceDatas();
 		quWheelView.setViewAdapter(new ArrayWheelAdapter<String>(InformationChangesActivity.this, mProvinceDatas));
 		// 设置可见条目数量
@@ -151,48 +177,48 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		diquTextView.setOnClickListener(this);
 		sexTextView.setOnClickListener(this);
 		brithdayTextView.setOnClickListener(this);
-		
+
 		upnameEditText.addTextChangedListener(new TextWatcher() {
-			
+
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before, int count) {
 				// TODO Auto-generated method stub
-				
+
 			}
-			
+
 			@Override
 			public void beforeTextChanged(CharSequence s, int start, int count,
 					int after) {
 				// TODO Auto-generated method stub
-				
+
 			}
-			
+
 			@Override
 			public void afterTextChanged(Editable s) {
 				upname = upnameEditText.getText().toString();
 			}
 		});
 		sginEditText.addTextChangedListener(new TextWatcher() {
-			
+
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before, int count) {
 				// TODO Auto-generated method stub
-				
+
 			}
-			
+
 			@Override
 			public void beforeTextChanged(CharSequence s, int start, int count,
 					int after) {
 				// TODO Auto-generated method stub
-				
+
 			}
-			
+
 			@Override
 			public void afterTextChanged(Editable s) {
 				sgin = removeAllSpace(sginEditText.getText().toString());
 			}
 		});
-		
+
 		headImage.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -297,6 +323,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 	}
 
 	private void initView() {
+		linear = (LinearLayout) findViewById(R.id.linear);
 		headImage = (RelativeLayout) findViewById(R.id.information_head_image);
 		headMyImage = (CircleImageView) findViewById(R.id.information_head);
 		sexTextView = (TextView) findViewById(R.id.information_sex);
@@ -318,53 +345,26 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		imageView2 = (ImageView) findViewById(R.id.imageView2);
 		imageView3 = (ImageView) findViewById(R.id.imageView3);
 		imageView5 = (ImageView) findViewById(R.id.imageView5);
-		if(converToBitmap(100,100)==null){			
+		if(FileUtil.converToBitmap(100,100)==null){			
 		}else{
-		headMyImage.setImageBitmap(converToBitmap(100,100));}
+			headMyImage.setImageBitmap(FileUtil.converToBitmap(100,100));}
 		SharedPreferences sp = getSharedPreferences("register", MODE_PRIVATE);
 		String name = sp.getString("nickname", "nickname");
 		upnameEditText.setText(name);
+		String sgin = sp.getString("description", "description");
+		sginEditText.setText(sgin);
 		Intent intent = getIntent();
 		brithdayTextView.setText(intent.getStringExtra("birthday"));
 		Log.i("brithdays", intent.getStringExtra("year"));
+
+		int year =Integer.parseInt(intent.getStringExtra("year"));
+		SimpleDateFormat time = new SimpleDateFormat("yyyy");
+		year = Integer.parseInt(time.format(new Date()))-year;
+		nianlingTextView.setText(year+"");
+
+
+	}
 	
-			int year =Integer.parseInt(intent.getStringExtra("year"));
-			SimpleDateFormat time = new SimpleDateFormat("yyyy");
-			year = Integer.parseInt(time.format(new Date()))-year;
-			nianlingTextView.setText(year+"");
-		
-		
-	}
-	/**
-	 * 压缩读取图片
-	 * @param w 压缩的大小
-	 * @param h 压缩的大小
-	 * @return
-	 */
-	public Bitmap converToBitmap( int w, int h){
-		 BitmapFactory.Options opts = new BitmapFactory.Options();
-		 // 设置为ture只获取图片大小
-		opts.inJustDecodeBounds = true;
-		opts.inPreferredConfig = Bitmap.Config.ARGB_8888;
-		BitmapFactory.decodeFile("/mnt/sdcard/testfile/golf.jpg", opts);
-		int width = opts.outWidth;
-		int height = opts.outHeight;
-		float scaleWidth = 0.f, scaleHeight = 0.f;
-		if (width > w || height > h) {
-			// 缩放
-			 scaleWidth = ((float) width) / w;
-			 scaleHeight = ((float) height) / h;
-		}
-		 opts.inJustDecodeBounds = false;
-		 float scale = Math.max(scaleWidth, scaleHeight);
-		 opts.inSampleSize = (int)scale;
-		 WeakReference<Bitmap> weak = new WeakReference<Bitmap>
-		 (BitmapFactory.decodeFile("/mnt/sdcard/testfile/golf.jpg", opts));
-
-		return  Bitmap.createScaledBitmap(weak.get(),w, h, true);
-
-		
-	}
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -375,22 +375,22 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 				Uri mImageCaptureUri = data.getData();
 				//返回的Uri不为空时，那么图片信息数据都会在Uri中获得。如果为空，那么我们就进行下面的方式获取
 				if (mImageCaptureUri != null) {
-					
+
 					try {
-						
+
 						//这个方法是根据Uri获取Bitmap图片的静态方法
 						image = MediaStore.Images.Media.getBitmap(this.getContentResolver(), mImageCaptureUri);	
-						image = comp(image);
+						//image = comp(image);
 						Log.i("ceshipath", image+"1");
 						if (image != null) {
-							showProgressDialog("提示","正在上传");
+							showProgressDialog("提示","正在上传",this);
 
 							String phoneName = android.os.Build.BRAND; 
 							if(phoneName.equals("samsung")){								
-								image = rotaingImageView(90,image);							
+								image = FileUtil.rotaingImageView(90,image);							
 							}
 							new GenxinHead().start();
-							
+
 						}
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -401,13 +401,13 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 						//这里是有些拍照后的图片是直接存放到Bundle中的所以我们可以从这里面获取Bitmap图片
 						image = extras.getParcelable("data");
 						if (image != null) {
-							showProgressDialog("提示","正在上传");
-							image = rotaingImageView(0,image);
-							image = comp(image);
+							showProgressDialog("提示","正在上传",this);
+							image = FileUtil.rotaingImageView(0,image);
+							//image = comp(image);
 							Log.i("ceshipath", image+"2");
 							//headMyImage.setImageBitmap(image);
 							new GenxinHead().start();
-							
+
 
 						}
 					}
@@ -419,7 +419,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			break;
 
 		}
-		
+
 	}
 	@Override
 	public void onClick(View v) {
@@ -451,20 +451,32 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			}else{
 				areaLinearLayout.setVisibility(View.GONE);	
 				imageView5.setImageResource(R.drawable.image_icon);
-				
+
 			}
 			break;
 		case R.id.information_back:
 			new GenxinSgin().start();
 			new GenxinName().start();
-			
 
-		    Intent intent = new Intent(InformationChangesActivity.this,TabHostActivity.class);
+
+			Intent intent = new Intent(InformationChangesActivity.this,Myself.class);
 			intent.putExtra("1", "1");
 			startActivity(intent);
 			finish();
 			break;
 		}		
+	}
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		new GenxinSgin().start();
+		new GenxinName().start();
+
+
+		Intent intent = new Intent(InformationChangesActivity.this,Myself.class);
+		intent.putExtra("1", "1");
+		startActivity(intent);
+		finish();
 	}
 	/*private void showSelectedResult() {
 		Toast.makeText(MainActivity.this, "当前选中:"+mCurrentProviceName+","+mCurrentCityName+","
@@ -483,7 +495,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			getData();
 		}
 		public void getData(){
-			saveMyBitmap("golf");
+			FileUtil.saveMyBitmap(image);
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String token=sp.getString("token", "token");
 			String path = APIService.HEAD+"token="+token;		
@@ -499,7 +511,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 			Message msg = handler.obtainMessage();
 			msg.what = 1;
 			handler.sendMessage(msg);
@@ -522,6 +534,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			String jsonData = HttpUtils.HttpClientPut(path);
 			Message msg = handler.obtainMessage();
 			msg.what = 2;
+			msg.obj = jsonData;
 			handler.sendMessage(msg);
 		}
 	}
@@ -532,12 +545,15 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			getData();
 		}
 		public void getData(){
-		
+			sgin = removeAllSpace(sginEditText.getText().toString());
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String token=sp.getString("token", "token");
 			String path = APIService.SIGNATURE+"token="+token+"&description="+sgin;
 			String jsonData = HttpUtils.HttpClientPut(path);
-			
+			Message msg = handler.obtainMessage();
+			msg.what = 3;
+			msg.obj = jsonData;
+			handler.sendMessage(msg);
 		}
 	}
 	class GenxinSex extends Thread{
@@ -560,10 +576,20 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			String token=sp.getString("token", "token");
 			String path = APIService.SEX+"token="+token+"&gender="+s;
 			String jsonData = HttpUtils.HttpClientPut(path);
-			
+			try {
+				JSONObject jsonObject = new JSONObject(jsonData);
+				sexSuccess = jsonObject.getString("result");
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			Message msg = handler.obtainMessage();
+			msg.what = 4;
+			msg.obj = jsonData;
+			handler.sendMessage(msg);
 		}
 	}
-	
+
 	class GenxinName extends Thread{
 		@Override
 		public void run() {
@@ -571,131 +597,94 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			getData();
 		}
 		public void getData(){
-		
+			upname = upnameEditText.getText().toString();
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String token=sp.getString("token", "token");
 			String path = APIService.UPNAME+"token="+token+"&nickname="+upname;
 			String jsonData = HttpUtils.HttpClientPut(path);
-			
+			try {
+				JSONObject jsonObject = new JSONObject(jsonData);
+				nameSuccess = jsonObject.getString("result");
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			Message msg = handler.obtainMessage();
+			msg.what = 5;
+			msg.obj = jsonData;
+			handler.sendMessage(msg);
 		}
 	}
-	/**
-	 * 把bitmap存入手机文件目录
-	 * @param bitName
-	 */
-	@SuppressLint("SdCardPath")
-	public void saveMyBitmap(String bitName)  {
-        File f = new File("/mnt/sdcard/testfile"); 
-        if(f.exists()){
-        	f.delete();
-        }else{
-        	f.mkdir();
-        }
-        FileOutputStream fOut = null;
-        try {
-                fOut = new FileOutputStream("/mnt/sdcard/testfile/golf.jpg");
-            	image.compress(Bitmap.CompressFormat.JPEG, 50, fOut);
-            	fOut.flush();
-            	fOut.close();
-        } catch (Exception e) {
-                e.printStackTrace();
-        }
-       
-        
-        
-} 
-	/*
-	 * 提示加载
-	 */
-	public  void  showProgressDialog(String title,String message){
-		if(progressDialog==null){
-			progressDialog = ProgressDialog.show(this, title, message,true,false);
-
-		}else if(progressDialog.isShowing()){
-			progressDialog.setTitle(title);
-			progressDialog.setMessage(message);
-		}
-		progressDialog.show();
-
-	}
-	/*
-	 * 隐藏加载
-	 */
-	public  void hideProgressDialog(){
-		if(progressDialog !=null &&progressDialog.isShowing()){
-			progressDialog.dismiss();
-		}
-	}
+	
+	
 	public String removeAllSpace(String str)  
-	   {  
-	       String tmpstr=str.replace(" ","");  
-	       return tmpstr;  
-	   } 
-	 /*
-	    * 旋转图片 
-	    * @param angle 
-	    * @param bitmap 
-	    * @return Bitmap 
-	    */ 
-	   public static Bitmap rotaingImageView(int angle , Bitmap bitmap) {  
-	       //旋转图片 动作   
-	       Matrix matrix = new Matrix();;  
-	       matrix.postRotate(angle);  
-	       System.out.println("angle2=" + angle);  
-	       // 创建新的图片   
-	       Bitmap resizedBitmap = Bitmap.createBitmap(bitmap, 0, 0,  
-	               bitmap.getWidth(), bitmap.getHeight(), matrix, true);  
-	       return resizedBitmap;  
-	   }
+	{  
+		String tmpstr=str.replace(" ","");  
+		return tmpstr;  
+	} 
+	
 
-	   private Bitmap comp(Bitmap image) {
+	
+	@Override 
+    public boolean dispatchTouchEvent(MotionEvent ev) { 
+       if (ev.getAction() == MotionEvent.ACTION_DOWN) { 
+           View v = getCurrentFocus(); 
+           if (isShouldHideInput(v, ev)) { 
+   
+               InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE ); 
+               if (imm != null ) { 
+                   imm.hideSoftInputFromWindow(v.getWindowToken(), 0); 
+                   linear.requestFocus();
+               } 
+           } 
+           return super .dispatchTouchEvent(ev); 
+       } 
+       // 必不可少，否则所有的组件都不会有TouchEvent了  
+       if (getWindow().superDispatchTouchEvent(ev)) { 
+          return true ; 
+       } 
+       return onTouchEvent(ev); 
+   } 
 
-	        ByteArrayOutputStream baos = new ByteArrayOutputStream();        
-	        image.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-	        if( baos.toByteArray().length / 1024>1024) {//判断如果图片大于1M,进行压缩避免在生成图片（BitmapFactory.decodeStream）时溢出    
-	            baos.reset();//重置baos即清空baos
-	            image.compress(Bitmap.CompressFormat.JPEG, 50, baos);//这里压缩50%，把压缩后的数据存放到baos中
-	        }
-	        ByteArrayInputStream isBm = new ByteArrayInputStream(baos.toByteArray());
-	        BitmapFactory.Options newOpts = new BitmapFactory.Options();
-	        //开始读入图片，此时把options.inJustDecodeBounds 设回true了
-	        newOpts.inJustDecodeBounds = true;
-	        Bitmap bitmap = BitmapFactory.decodeStream(isBm, null, newOpts);
-	        newOpts.inJustDecodeBounds = false;
-	        int w = newOpts.outWidth;
-	        int h = newOpts.outHeight;
-	        //现在主流手机比较多是800*480分辨率，所以高和宽我们设置为
-	        float hh = 800f;//这里设置高度为800f
-	        float ww = 480f;//这里设置宽度为480f
-	        //缩放比。由于是固定比例缩放，只用高或者宽其中一个数据进行计算即可
-	        int be = 1;//be=1表示不缩放
-	        if (w > h && w > ww) {//如果宽度大的话根据宽度固定大小缩放
-	            be = (int) (newOpts.outWidth / ww);
-	        } else if (w < h && h > hh) {//如果高度高的话根据宽度固定大小缩放
-	            be = (int) (newOpts.outHeight / hh);
-	        }
-	        if (be <= 0)
-	            be = 1;
-	        newOpts.inPurgeable = true;
-	        newOpts.inSampleSize = be;//设置缩放比例
-	        newOpts.inPreferredConfig = Config.RGB_565;//降低图片从ARGB888到RGB565
-	        //重新读入图片，注意此时已经把options.inJustDecodeBounds 设回false了
-	        isBm = new ByteArrayInputStream(baos.toByteArray());
-	        bitmap = BitmapFactory.decodeStream(isBm, null, newOpts);
-	        return compressImage(bitmap);//压缩好比例大小后再进行质量压缩
-	    }	
-	   private Bitmap compressImage(Bitmap image) {
-	        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-	        image.compress(Bitmap.CompressFormat.JPEG, 50, baos);//质量压缩方法，这里100表示不压缩，把压缩后的数据存放到baos中
-	        int options = 100;
-	        while ( baos.toByteArray().length / 1024>100) {    //循环判断如果压缩后图片是否大于100kb,大于继续压缩        
-	            baos.reset();//重置baos即清空baos
-	            options -= 10;//每次都减少10
-	            image.compress(Bitmap.CompressFormat.JPEG, options, baos);//这里压缩options%，把压缩后的数据存放到baos中
+	public  boolean isShouldHideInput(View v, MotionEvent event) { 
+        if (v != null && (v instanceof EditText)) { 
+            int[] leftTop = { 0, 0 }; 
+            //获取输入框当前的location位置  
+            v.getLocationInWindow(leftTop); 
+            int left = leftTop[0]; 
+            int top = leftTop[1]; 
+            int bottom = top + v.getHeight(); 
+            int right = left + v.getWidth(); 
+            if (event.getX() > left && event.getX() < right 
+                    && event.getY() > top && event.getY() < bottom) { 
+                // 点击的是输入框区域，保留点击EditText的事件  
+                return false ; 
+            } else { 
+                return true ; 
+            } 
+        } 
+        return false ; 
+    }
+	/*
+     * 提示加载
+     */
+     public   void  showProgressDialog(String title,String message,Activity context){
+            if(progressDialog ==null){
+                   progressDialog = ProgressDialog.show( context, title, message,true,true );
 
-	        }
-	        ByteArrayInputStream isBm = new ByteArrayInputStream(baos.toByteArray());//把压缩后的数据baos存放到ByteArrayInputStream中
-	        Bitmap bitmap = BitmapFactory.decodeStream(isBm, null, null);//把ByteArrayInputStream数据生成图片
-	        return bitmap;
-	    }
+           } else if (progressDialog .isShowing()){
+                   progressDialog.setTitle(title);
+                   progressDialog.setMessage(message);
+           }
+            progressDialog.show();
+
+    }
+     /*
+     * 隐藏加载
+     */
+     public  void hideProgressDialog(){
+            if(progressDialog !=null &&progressDialog.isShowing()){
+                   progressDialog.dismiss();
+           }
+    }
 }

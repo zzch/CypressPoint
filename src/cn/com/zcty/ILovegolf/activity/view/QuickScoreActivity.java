@@ -35,6 +35,7 @@ import cn.com.zcty.ILovegolf.model.QuickContent;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
+import cn.com.zcty.ILovegolf.utils.ViewUtil;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
@@ -114,7 +115,7 @@ public class QuickScoreActivity extends Activity {
 		initView();	
 		new MyTask().start();
 		mHandler= new Handler();
-		showProgressDialog("提示","正在努力加载数据！");
+		showProgressDialog("提示","正在努力加载数据！",this);
 		setListeners();
 	}
 	private void setListeners() {
@@ -293,65 +294,8 @@ public class QuickScoreActivity extends Activity {
 		}
 	}
 
-	/*class MyTaskDele extends Thread{
-		String uuid;
-		public MyTaskDele(String uuid) {
-			MyTaskDele.this.uuid = uuid;
-		}
-		@Override
-		public void run() {
-			super.run();
-			getData();
-		}
-		public void getData(){
-			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
-			String token=sp.getString("token", "token");
-			String path = APIService.DELET+"uuid="+uuid+"&token="+token;
-			String jsonDele = HttpUtils.HttpClientDelete(path);
-			try {
-				JSONObject json = new JSONObject(jsonDele);
-				result = json.getString("result");
-
-				//slideAdapter.notifyDataSetChanged();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			if(quickArrayList.size()!=0){
-				image_tishi.setVisibility(View.INVISIBLE);
-				mListView.setVisibility(View.VISIBLE);
-			}else{
-				image_tishi.setVisibility(View.VISIBLE);
-				mListView.setVisibility(View.GONE);
-			}
-			Message msg = handler.obtainMessage();
-			msg.what = 2;
-			msg.obj = jsonDele;
-			handler.sendMessage(msg);
-		}
-	}*/
-	/*
-	 * 提示加载
-	 */
-	public  void  showProgressDialog(String title,String message){
-		if(progressDialog==null){
-			progressDialog = ProgressDialog.show(this, title, message,true,true);
-
-		}else if(progressDialog.isShowing()){
-			progressDialog.setTitle(title);
-			progressDialog.setMessage(message);
-		}
-		progressDialog.show();
-
-	}
-	/*
-	 * 隐藏加载
-	 */
-	public  void hideProgressDialog(){
-		if(progressDialog !=null &&progressDialog.isShowing()){
-			progressDialog.dismiss();
-		}
-	}
+	
+	
 	//定义函数动态控制listView的高度
 	public void setListViewHeightBasedOnChildren(ListView listView) {
 
@@ -386,5 +330,27 @@ public class QuickScoreActivity extends Activity {
 		final float scale = context.getResources().getDisplayMetrics().density;
 		return (int ) (dp * scale + 0.5f);
 	}
+	/*
+     * 提示加载
+     */
+     public   void  showProgressDialog(String title,String message,Activity context){
+            if(progressDialog ==null){
+                   progressDialog = ProgressDialog.show( context, title, message,true,true );
 
+           } else if (progressDialog .isShowing()){
+                   progressDialog.setTitle(title);
+                   progressDialog.setMessage(message);
+           }
+            progressDialog.show();
+
+    }
+     /*
+     * 隐藏加载
+     */
+     public  void hideProgressDialog(){
+            if(progressDialog !=null &&progressDialog.isShowing()){
+                   progressDialog.dismiss();
+           }
+    }
+     
 }

@@ -15,6 +15,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -40,6 +41,7 @@ import cn.com.zcty.ILovegolf.tools.CircleImageView;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
+import cn.com.zcty.ILovegolf.utils.ViewUtil;
 /**
  * 记分卡
  * @author Administrator
@@ -86,16 +88,20 @@ public class CreateScoreCard extends Activity{
 					startActivity(intent);
 					finish();
 				}else{
+				SharedPreferences sp = getSharedPreferences("register", MODE_PRIVATE);	
+				Editor editor = sp.edit();	
+				editor.putString("nickname", username);
+				editor.commit();
 				usernameTextView.setText(username);	
 				rankingTextView.setText(ranking);
 				scheduleTextView.setText(schedule);
 				scoreTextView.setText(score);
 				parTextView.setText(par);
 				if(!portrait.equals("null")){
-					if(!fileIsExists()){						
+					if(!FileUtil.fileIsExists()){						
 						new Imageloder().start();
 					}else{
-						totleImage.setImageBitmap(converToBitmap(100,100));
+						totleImage.setImageBitmap(FileUtil.converToBitmap(100,100));
 					}
 				}
 				CreateScoreCardAdapter adapter = new CreateScoreCardAdapter(CreateScoreCard.this, scoreCardsMatchs);
@@ -111,7 +117,7 @@ public class CreateScoreCard extends Activity{
 			}
 			if(msg.what==2){
 				totleImage.setImageBitmap(bitmap);
-				saveMyBitmap(bitmap);//把bitmap保存到手机目录中
+				FileUtil.saveMyBitmap(bitmap);//把bitmap保存到手机目录中
 			}
 		};
 	};
@@ -122,8 +128,8 @@ public class CreateScoreCard extends Activity{
 		setContentView(R.layout.activity_scord);
 		initView();
 		setListeners();
+		showProgressDialog("提示", "正在加载内容，请稍等",this);
 		new MyTask().start();
-		showProgressDialog("提示", "正在加载内容，请稍等");
 	}
 	private void setListeners() {
 		scoreListView.setOnItemClickListener(new OnItemClickListener() {
@@ -172,7 +178,7 @@ public class CreateScoreCard extends Activity{
 		// TODO Auto-generated method stub
 		super.onRestart();
 		new MyTask().start();
-		showProgressDialog("提示", "正在加载内容，请稍等");
+		showProgressDialog("提示", "正在加载内容，请稍等",this);
 	}
 	@Override
 	public void onBackPressed() {
@@ -199,7 +205,7 @@ public class CreateScoreCard extends Activity{
 			break;
 		case R.id.competition_button_yaoqing:
 			Intent j = new Intent();
-			if(fileIsExists()){
+			if(FileUtil.fileIsExists()){
 				j.setClass(CreateScoreCard.this,InviteActivity.class);
 			}else{
 				//j = new Intent(CreateScoreCard.this,SelfhoodActivity.class);
@@ -346,78 +352,13 @@ public class CreateScoreCard extends Activity{
 			
 	}
 	}
-	/**
-	 * 把bitmap存入手机文件目录
-	 * @param bitName
-	 */
-	@SuppressLint("SdCardPath")
-	public void saveMyBitmap(Bitmap bitName)  {
-        File f = new File("/mnt/sdcard/testfile"); 
-        if(f.exists()){
-        	f.delete();
-        }else{
-        	f.mkdir();
-        }
-        FileOutputStream fOut = null;
-        try {
-                fOut = new FileOutputStream("/mnt/sdcard/testfile/golf.jpg");
-                bitName.compress(Bitmap.CompressFormat.JPEG, 50, fOut);
-            	fOut.flush();
-            	fOut.close();
-        } catch (Exception e) {
-                e.printStackTrace();
-        }
-       
-} 
-	/**
-	 * 判断文件是否存在
-	 */
-	public boolean fileIsExists(){
-
-        File f=new File("/mnt/sdcard/testfile");
-
-          if(!f.exists()){
-
-                     return false;
-
-             }
-
-             return true;
-
-      }
-	/**
-	 * 从文件中读取图片
-	 */
-	public Bitmap converToBitmap( int w, int h){
-		 BitmapFactory.Options opts = new BitmapFactory.Options();
-		 // 设置为ture只获取图片大小
-		opts.inJustDecodeBounds = true;
-		opts.inPreferredConfig = Bitmap.Config.ARGB_8888;
-		BitmapFactory.decodeFile("/mnt/sdcard/testfile/golf.jpg", opts);
-		int width = opts.outWidth;
-		int height = opts.outHeight;
-		float scaleWidth = 0.f, scaleHeight = 0.f;
-		if (width > w || height > h) {
-			// 缩放
-			 scaleWidth = ((float) width) / w;
-			 scaleHeight = ((float) height) / h;
-		}
-		 opts.inJustDecodeBounds = false;
-		 float scale = Math.max(scaleWidth, scaleHeight);
-		 opts.inSampleSize = (int)scale;
-		 WeakReference<Bitmap> weak = new WeakReference<Bitmap>
-		 (BitmapFactory.decodeFile("/mnt/sdcard/testfile/golf.jpg", opts));
-
-		return  Bitmap.createScaledBitmap(weak.get(), w, h, true);
-
-		
-	}
+	
 	/*
      * 提示加载
      */
-     public  void   showProgressDialog(String title,String message){
+     public   void  showProgressDialog(String title,String message,Activity context){
             if(progressDialog ==null){
-                   progressDialog = ProgressDialog.show( this, title, message,true,true );
+                   progressDialog = ProgressDialog.show( context, title, message,true,true );
 
            } else if (progressDialog .isShowing()){
                    progressDialog.setTitle(title);
@@ -434,4 +375,7 @@ public class CreateScoreCard extends Activity{
                    progressDialog.dismiss();
            }
     }
+	
+	
+    
 }

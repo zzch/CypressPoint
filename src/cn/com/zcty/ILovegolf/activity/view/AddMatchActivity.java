@@ -40,6 +40,7 @@ import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 import cn.com.zcty.ILovegolf.utils.KeyboardUtil;
+import cn.com.zcty.ILovegolf.utils.ViewUtil;
 
 public class AddMatchActivity extends Activity {
 	private CompetitionAddmatch add = new CompetitionAddmatch();//存放进入后房间的信息
@@ -106,7 +107,7 @@ public class AddMatchActivity extends Activity {
 				}else{
 					
 					Intent intent = new Intent();
-					if(fileIsExists()){
+					if(FileUtil.fileIsExists()){
 						intent.setClass(AddMatchActivity.this,CompetitionAdd.class);
 					}else{
 						intent.setClass(AddMatchActivity.this,SelfhoodActivity.class);
@@ -149,7 +150,7 @@ public class AddMatchActivity extends Activity {
 	                if (etPwdFour.getText() != null  
 	                        && etPwdFour.getText().toString().length() >= 1) {  
 	                	passWord = etPwdText.getText().toString();
-	                	showProgressDialog("提示", "正在验证密码");
+	                	showProgressDialog("提示", "正在验证密码",AddMatchActivity.this);
 						new AddMatch().start();
 	                }  
 	            }  
@@ -321,39 +322,27 @@ public class AddMatchActivity extends Activity {
 			
 		}
 	}
+	
 	/*
-	 * 提示加载
-	 */
-	public  void  showProgressDialog(String title,String message){
-		if(progressDialog==null){
-			progressDialog = ProgressDialog.show(this, title, message,true,true);
+     * 提示加载
+     */
+     public   void  showProgressDialog(String title,String message,Activity context){
+            if(progressDialog ==null){
+                   progressDialog = ProgressDialog.show( context, title, message,true,true );
 
-		}else if(progressDialog.isShowing()){
-			progressDialog.setTitle(title);
-			progressDialog.setMessage(message);
-		}
-		progressDialog.show();
+           } else if (progressDialog .isShowing()){
+                   progressDialog.setTitle(title);
+                   progressDialog.setMessage(message);
+           }
+            progressDialog.show();
 
-	}
-	/*
-	 * 隐藏加载
-	 */
-	public  void hideProgressDialog(){
-		if(progressDialog !=null &&progressDialog.isShowing()){
-			progressDialog.dismiss();
-		}
-	}
-	public boolean fileIsExists(){
-
-        File f=new File("/mnt/sdcard/testfile");
-
-          if(!f.exists()){
-
-                     return false;
-
-             }
-
-             return true;
-
-      }
+    }
+     /*
+     * 隐藏加载
+     */
+     public  void hideProgressDialog(){
+            if(progressDialog !=null &&progressDialog.isShowing()){
+                   progressDialog.dismiss();
+           }
+    }
 }
