@@ -59,9 +59,9 @@
 
             <RelativeLayout
                 android:id="@+id/information_head_image"
-                android:layout_width="@dimen/infor_view_layout"
+                android:layout_width="@dimen/infor_view_layout_x"
                 android:layout_height="70dp"
-                android:layout_marginLeft="3dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/button_moreng"
                 android:gravity="center_vertical" >
