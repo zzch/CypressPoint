@@ -38,10 +38,11 @@
             android:textColor="@color/white"
             android:textSize="@dimen/txsize_small_xx" />
          <ImageView
-            android:layout_width="30dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="6dp"
-            android:src="@drawable/back_image" />
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_image"  />
 		</FrameLayout>
 
            
@@ -84,13 +85,13 @@
            android:layout_height="wrap_content"
            android:gravity="center_vertical"
            android:text="总杆数"
-           android:textColor="@color/gold_70"
+           android:textColor="@color/hei5"
            android:textSize="@dimen/txsize_small_xx" />
        </LinearLayout>
           <View
              android:layout_width="1dp"
              android:layout_height="match_parent"
-             android:background="@color/gold_half" />
+             android:background="@color/fengexian" />
        <Button 
          android:id="@+id/but_jian_one"
          android:layout_width="@dimen/view_small_xxx"
@@ -125,7 +126,7 @@
    <View 
        android:layout_width="match_parent"
        android:layout_height="1dp"
-       android:background="@color/gold_half"
+       android:background="@color/fengexian"
        />
    
 
@@ -147,7 +148,7 @@
          android:text="推杆数"
         
          android:textSize="@dimen/txsize_small_xx"
-         android:textColor="@color/gold_70"
+         android:textColor="@color/hei5"
          android:gravity="center_vertical"
            />
        
@@ -155,7 +156,7 @@
           <View
              android:layout_width="1dip"
              android:layout_height="match_parent"
-             android:background="@color/gold_half" />
+             android:background="@color/fengexian" />
        <Button 
            android:id="@+id/but_jian_two"
            android:layout_width="@dimen/view_small_xxx"
@@ -190,7 +191,7 @@
      <View 
        android:layout_width="match_parent"
        android:layout_height="1dp"
-       android:background="@color/gold_half"
+       android:background="@color/fengexian"
        />
       <LinearLayout 
        android:layout_width="match_parent"
@@ -208,7 +209,7 @@
          android:layout_height="wrap_content"
          android:text="罚杆数"
          android:textSize="@dimen/txsize_small_xx"
-         android:textColor="@color/gold_70"
+         android:textColor="@color/hei5"
          android:gravity="center_vertical"
            />
        
@@ -216,7 +217,7 @@
           <View
              android:layout_width="1dp"
              android:layout_height="match_parent"
-             android:background="@color/gold_half" />
+             android:background="@color/fengexian" />
        <Button 
            android:id="@+id/but_jian_three"
            android:layout_width="@dimen/view_small_xxx"
@@ -251,7 +252,7 @@
      <View 
        android:layout_width="match_parent"
        android:layout_height="1dp"
-       android:background="@color/gold_half"
+       android:background="@color/fengexian"
        />
  
      <LinearLayout 
@@ -276,7 +277,7 @@
           android:layout_height="wrap_content"
           android:text="开球距离"
           android:textSize="@dimen/txsize_small_xx"
-          android:textColor="@color/gold_70"
+          android:textColor="@color/hei5"
          
           />
           <TextView 
@@ -285,7 +286,7 @@
           android:layout_height="wrap_content"
           android:text=""
           android:textSize="@dimen/txsize_small_x"
-          android:textColor="@color/gold_half"
+          android:textColor="@color/fengexian"
          
           />
            
@@ -304,7 +305,7 @@
           android:layout_height="wrap_content"
           android:text="开球命中"
           android:textSize="@dimen/txsize_small_xx"
-          android:textColor="@color/gold_70"
+          android:textColor="@color/hei5"
           
           />
        
@@ -314,7 +315,7 @@
           android:layout_height="wrap_content"
           android:text="命中"
           android:textSize="@dimen/txsize_small_x"
-          android:textColor="@color/gold_half"
+          android:textColor="@color/fengexian"
           />
          </LinearLayout>
       
@@ -332,7 +333,7 @@
       <View 
        android:layout_width="match_parent"
        android:layout_height="1dp"
-       android:background="@color/gold_half"
+       android:background="@color/fengexian"
        />
        <LinearLayout
        android:id="@+id/wheel_layout"

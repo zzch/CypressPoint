@@ -51,10 +51,11 @@
             android:textSize="@dimen/txsize_small_xx" />
         
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="6dp"
-            android:src="@drawable/back_image" />
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_image"  />
 		</FrameLayout>
     </RelativeLayout>
 
@@ -100,7 +101,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/gold_half" />
+                android:background="@color/fengexian" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -132,7 +133,7 @@
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/t"
@@ -142,13 +143,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="1"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:layout_width="25dp"
@@ -157,13 +158,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="2"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:layout_width="25dp"
@@ -172,13 +173,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="3"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:layout_width="25dp"
@@ -187,13 +188,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="4"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:layout_width="25dp"
@@ -202,13 +203,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="5"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:layout_width="25dp"
@@ -217,13 +218,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="6"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:layout_width="25dp"
@@ -232,13 +233,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="7"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:layout_width="25dp"
@@ -247,13 +248,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="8"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:layout_width="25dp"
@@ -262,13 +263,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="9"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:layout_width="25dp"
@@ -277,14 +278,14 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="前"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:id="@+id/v"
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:layout_width="25dp"
@@ -293,13 +294,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="10"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:layout_width="25dp"
@@ -308,13 +309,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="11"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:layout_width="25dp"
@@ -323,13 +324,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="12"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:layout_width="25dp"
@@ -338,13 +339,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="13"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:layout_width="25dp"
@@ -353,13 +354,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="14"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:layout_width="25dp"
@@ -368,13 +369,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="15"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:layout_width="25dp"
@@ -383,13 +384,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="16"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:layout_width="25dp"
@@ -398,13 +399,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="17"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:layout_width="25dp"
@@ -413,13 +414,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="18"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:layout_width="25dp"
@@ -428,13 +429,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="后"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:layout_width="25dp"
@@ -443,14 +444,14 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="总"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
                     </TableRow>
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0.5dp"
-                        android:background="@color/gold_half" />
+                        android:background="@color/fengexian" />
 
                     <TableRow
                         android:id="@+id/tableRow2"
@@ -474,7 +475,7 @@
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/t1"
@@ -484,13 +485,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="1"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/t2"
@@ -500,13 +501,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="2"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/t3"
@@ -516,13 +517,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="3"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/t4"
@@ -532,13 +533,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="4"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/t5"
@@ -548,13 +549,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="5"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/t6"
@@ -564,13 +565,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="6"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/t7"
@@ -580,13 +581,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="7"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/t8"
@@ -596,13 +597,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="8"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/t9"
@@ -612,13 +613,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="9"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/t10"
@@ -628,14 +629,14 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="前"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:id="@+id/v"
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/th1"
@@ -645,13 +646,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="1"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/th2"
@@ -661,13 +662,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="2"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/th3"
@@ -677,13 +678,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="3"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/th4"
@@ -693,13 +694,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="4"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/th5"
@@ -709,13 +710,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="5"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/th6"
@@ -725,13 +726,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="6"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/th7"
@@ -741,13 +742,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="7"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/th8"
@@ -757,13 +758,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="8"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/th9"
@@ -773,13 +774,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="9"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/th10"
@@ -789,13 +790,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="前"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/th11"
@@ -805,14 +806,14 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="总计"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
                     </TableRow>
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0.5dp"
-                        android:background="@color/gold_half" />
+                        android:background="@color/fengexian" />
 
                     <TableRow
                         android:id="@+id/tableRow3"
@@ -836,7 +837,7 @@
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/tt1"
@@ -846,13 +847,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="1"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/tt2"
@@ -862,13 +863,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="2"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/tt3"
@@ -878,13 +879,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="3"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/tt4"
@@ -894,13 +895,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="4"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/tt5"
@@ -910,13 +911,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="5"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/tt6"
@@ -926,13 +927,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="6"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/tt7"
@@ -942,13 +943,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="7"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/tt8"
@@ -958,13 +959,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="8"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/tt9"
@@ -974,13 +975,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="9"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/tt10"
@@ -990,14 +991,14 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="前"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:id="@+id/v"
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/tth1"
@@ -1007,13 +1008,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="1"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/tth2"
@@ -1023,13 +1024,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="2"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/tth3"
@@ -1039,13 +1040,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="3"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/tth4"
@@ -1055,13 +1056,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="4"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/tth5"
@@ -1071,13 +1072,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="5"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/tth6"
@@ -1087,13 +1088,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="6"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/tth7"
@@ -1103,13 +1104,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="7"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/tth8"
@@ -1119,13 +1120,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="8"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/tth9"
@@ -1135,13 +1136,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="9"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/tth10"
@@ -1151,13 +1152,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="前"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/tth11"
@@ -1167,14 +1168,14 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="总计"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
                     </TableRow>
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0.5dp"
-                        android:background="@color/gold_half" />
+                        android:background="@color/fengexian" />
 
                     <TableRow
                         android:id="@+id/tableRow4"
@@ -1198,7 +1199,7 @@
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/ttt1"
@@ -1208,13 +1209,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="1"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/ttt2"
@@ -1224,13 +1225,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="2"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/ttt3"
@@ -1240,13 +1241,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="3"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/ttt4"
@@ -1256,13 +1257,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="4"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/ttt5"
@@ -1272,13 +1273,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="5"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/ttt6"
@@ -1288,13 +1289,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="6"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/ttt7"
@@ -1304,13 +1305,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="7"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/ttt8"
@@ -1320,13 +1321,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="8"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/ttt9"
@@ -1336,13 +1337,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="9"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/ttt10"
@@ -1352,14 +1353,14 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="前"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:id="@+id/v"
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/ttth1"
@@ -1369,13 +1370,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="1"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/ttth2"
@@ -1385,13 +1386,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="2"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/ttth3"
@@ -1401,13 +1402,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="3"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/ttth4"
@@ -1417,13 +1418,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="4"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/ttth5"
@@ -1433,13 +1434,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="5"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/ttth6"
@@ -1449,13 +1450,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="6"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/ttth7"
@@ -1465,13 +1466,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="7"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/ttth8"
@@ -1481,13 +1482,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="8"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/ttth9"
@@ -1497,13 +1498,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="9"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/ttth10"
@@ -1513,13 +1514,13 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="前"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
 
                         <TextView
                             android:id="@+id/ttth11"
@@ -1529,7 +1530,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="总计"
-                            android:textColor="@color/gold_70"
+                            android:textColor="@color/hei5"
                             android:textSize="@dimen/txsize_small_s" />
                     </TableRow>
                 </TableLayout>
@@ -1538,7 +1539,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/gold_half" />
+                android:background="@color/fengexian" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -1558,7 +1559,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="@string/xintianwen"
-                    android:textColor="@color/gold_70"
+                    android:textColor="@color/hei5"
                     android:textSize="20dp" />
 
                 <ImageView
@@ -1574,7 +1575,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="@string/laoyin"
-                    android:textColor="@color/gold_70"
+                    android:textColor="@color/hei5"
                     android:textSize="20dp" />
 
                 <ImageView
@@ -1590,7 +1591,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="@string/xiao"
-                    android:textColor="@color/gold_70"
+                    android:textColor="@color/hei5"
                     android:textSize="20dp" />
 
                 <ImageView
@@ -1606,7 +1607,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="@string/biaozhun"
-                    android:textColor="@color/gold_70"
+                    android:textColor="@color/hei5"
                     android:textSize="20dp" />
 
                 <ImageView
@@ -1622,7 +1623,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="@string/baiji"
-                    android:textColor="@color/gold_70"
+                    android:textColor="@color/hei5"
                     android:textSize="20dp" />
 
                 <ImageView
@@ -1638,14 +1639,14 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="@string/shuangbaijijia"
-                    android:textColor="@color/gold_70"
+                    android:textColor="@color/hei5"
                     android:textSize="20dp" />
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/gold_half" />
+                android:background="@color/fengexian" />
 
             <GridView
                 android:id="@+id/gridView1"

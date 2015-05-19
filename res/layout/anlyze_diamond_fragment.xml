@@ -11,7 +11,7 @@
         android:layout_marginTop="10dp"
         android:gravity="center_horizontal"
         android:text="@string/count_text"
-        android:textColor="@color/gold_70" />
+        android:textColor="@color/hei5" />
 
     <TextView
         android:id="@+id/anlyze_tishi_1"
@@ -21,7 +21,7 @@
         android:layout_marginTop="30dp"
         android:gravity="center_horizontal"
         android:text="您的历史球场"
-        android:textColor="@color/gold_70" />
+        android:textColor="@color/hei5" />
 
     <ListView
         android:id="@+id/listView1"
@@ -48,7 +48,7 @@
         android:layout_height="0.2dp"
         android:layout_alignParentLeft="true"
         android:layout_alignTop="@+id/listView1"
-        android:background="@color/gold_half" />
+        android:background="@color/fengexian" />
 
    
 

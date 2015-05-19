@@ -9,7 +9,7 @@
         android:layout_height="wrap_content" 
         android:gravity="center_horizontal"
         android:layout_marginTop="10dp"
-        android:textColor="@color/gold_70"
+        android:textColor="@color/hei5"
         android:text="@string/count_text"
         />
 

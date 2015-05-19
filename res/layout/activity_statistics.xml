@@ -51,10 +51,11 @@
             android:textSize="@dimen/txsize_small_xx" />
         
          <ImageView
-            android:layout_width="30dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="6dp"
-            android:src="@drawable/back_image" />
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_image"  />
 		</FrameLayout>
     </RelativeLayout>
 
@@ -92,7 +93,7 @@
                     android:layout_below="@+id/golf_name"
                     android:visibility="gone"
                     android:text="2014年6月14日"
-                    android:textColor="@color/gold_70"
+                    android:textColor="@color/hei5"
                     android:textSize="@dimen/txsize_small_x" />
 
                 <RadioGroup
@@ -131,7 +132,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/gold_half" />
+                android:background="@color/fengexian" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -163,14 +164,14 @@
                         <View
                             android:layout_width="0.5dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
                     </TableRow>
 
                     <ImageView
                         android:layout_width="10dp"
                         android:layout_height="0.5dp"
                         android:layout_marginTop="0.5dp"
-                        android:src="@color/gold_half" />
+                        android:src="@color/fengexian" />
 
                     <TableRow
                         android:id="@+id/tableRow2"
@@ -194,13 +195,13 @@
                         <View
                             android:layout_width="0.5dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
                     </TableRow>
 
                     <ImageView
                         android:layout_width="10dp"
                         android:layout_height="0.5dp"
-                        android:src="@color/gold_half" />
+                        android:src="@color/fengexian" />
 
                     <TableRow
                         android:id="@+id/tableRow3"
@@ -224,13 +225,13 @@
                         <View
                             android:layout_width="0.5dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
                     </TableRow>
 
                     <ImageView
                         android:layout_width="10dp"
                         android:layout_height="0.5dp"
-                        android:src="@color/gold_half" />
+                        android:src="@color/fengexian" />
 
                     <TableRow
                         android:id="@+id/tableRow4"
@@ -254,7 +255,7 @@
                         <View
                             android:layout_width="0.5dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gold_half" />
+                            android:background="@color/fengexian" />
                     </TableRow>
                 </TableLayout>
 
@@ -268,7 +269,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/gold_half" />
+                android:background="@color/fengexian" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -288,7 +289,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
                     android:text="@string/xintianwen"
-                    android:textColor="@color/gold_70"
+                    android:textColor="@color/hei5"
                     android:textSize="@dimen/txsize_small_s" />
 
                 <ImageView
@@ -304,7 +305,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
                     android:text="@string/laoyin"
-                    android:textColor="@color/gold_70"
+                    android:textColor="@color/hei5"
                     android:textSize="@dimen/txsize_small_s" />
 
                 <ImageView
@@ -320,7 +321,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
                     android:text="@string/xiao"
-                    android:textColor="@color/gold_70"
+                    android:textColor="@color/hei5"
                     android:textSize="@dimen/txsize_small_s" />
 
                 <ImageView
@@ -336,7 +337,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
                     android:text="@string/biaozhun"
-                    android:textColor="@color/gold_70"
+                    android:textColor="@color/hei5"
                     android:textSize="@dimen/txsize_small_s" />
 
                 <ImageView
@@ -352,7 +353,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
                     android:text="@string/baiji"
-                    android:textColor="@color/gold_70"
+                    android:textColor="@color/hei5"
                     android:textSize="@dimen/txsize_small_s" />
 
                 <ImageView
@@ -368,14 +369,14 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
                     android:text="@string/shuangbaijijia"
-                    android:textColor="@color/gold_70"
+                    android:textColor="@color/hei5"
                     android:textSize="@dimen/txsize_small_s" />
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/gold_half" />
+                android:background="@color/fengexian" />
 
             <GridView
                 android:id="@+id/gridView1"

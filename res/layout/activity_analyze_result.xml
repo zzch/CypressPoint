@@ -29,9 +29,10 @@
             android:textColor="@color/white"
             android:textSize="@dimen/txsize_small_xx" />
 		<ImageView
-            android:layout_width="30dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="6dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="10dp"
             android:src="@drawable/back_image" />
 		</FrameLayout>
         <TextView
@@ -103,7 +104,7 @@
        <View
           android:layout_width="match_parent"
           android:layout_height="1dp"
-          android:background="@color/gold_half"
+          android:background="@color/fengexian"
           android:layout_marginTop="10dp"
          />
 	<RelativeLayout
@@ -136,7 +137,7 @@
 	      <View
           android:layout_width="match_parent"
           android:layout_height="1dp"
-          android:background="@color/gold_half"
+          android:background="@color/fengexian"
 
          />
 		
@@ -173,14 +174,14 @@
 	<View
           android:layout_width="match_parent"
           android:layout_height="1dp"
-          android:background="@color/gold_half"
+          android:background="@color/fengexian"
           
          />
 	
 	<View
           android:layout_width="match_parent"
           android:layout_height="1dp"
-          android:background="@color/gold_half"
+          android:background="@color/fengexian"
           android:layout_marginTop="25dp"
          />
 	<ListView
@@ -194,7 +195,7 @@
 	   <View
           android:layout_width="match_parent"
           android:layout_height="1dp"
-          android:background="@color/gold_half"
+          android:background="@color/fengexian"
           android:layout_marginTop="10dp"
          />
 	<ListView
@@ -208,7 +209,7 @@
 	<View
           android:layout_width="match_parent"
           android:layout_height="1dp"
-          android:background="@color/gold_half"
+          android:background="@color/fengexian"
           android:layout_marginTop="10dp"
          />
 	<ListView

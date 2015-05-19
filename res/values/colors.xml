@@ -14,19 +14,19 @@
      
       <!-- 三级文字黑色 -->
      <color name="hei6">#666666</color>
-     
-     
+    
      <!-- 导航栏 -->
      <color name="daohang">#3c394e</color>
      
-
-     <!-- 金色透明度50 -->
-     <color name="gold_half">#50F8d57a</color>
+     <!-- 橙色 -->
+     <color name="chengse">#ff961d</color>
      
-      <!-- 金色透明度70 -->
-     <color name="gold_70">#70F8d57a</color>
-      <!-- 金色透明度80 -->
-     <color name="gold_80">#c9ad65</color>
+     <!-- 分割线 -->
+     <color name="fengexian">#aaaaaa</color>
+     
+
+     
+     
      
      <!-- 灰色 -->
      <color name="gray">#797979</color>

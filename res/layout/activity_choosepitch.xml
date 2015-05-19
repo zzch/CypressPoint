@@ -38,9 +38,10 @@
             android:textSize="@dimen/txsize_small_xx" 
             android:onClick="choosepith_back" />
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="6dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="10dp"
             android:src="@drawable/back_image" />
 		</FrameLayout>
 
@@ -51,7 +52,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="-10dp"
             android:background="@null"
-            android:textColor="@color/hei2"
+            android:textColor="@color/white"
             android:text="@string/qiehuan"
             android:onClick="qiehuan"
             android:textSize="@dimen/txsize_small_xx" />
@@ -69,7 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fadingEdge="none"
-            android:divider="@color/gold_half"
+            android:divider="@color/fengexian"
             android:dividerHeight="0.5dp"
          />
        </LinearLayout>
@@ -85,7 +86,7 @@
             android:id="@+id/searchlistview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:divider="@color/gold_half"
+            android:divider="@color/fengexian"
             android:dividerHeight="0.5dp"
          />
        </LinearLayout>

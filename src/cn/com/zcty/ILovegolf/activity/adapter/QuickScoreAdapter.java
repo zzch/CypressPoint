@@ -64,7 +64,7 @@ public  class QuickScoreAdapter extends BaseAdapter {
 			holder.Pole_number = (TextView) convertView.findViewById(R.id.Pole_number);  
 			holder.coating = (ImageView) convertView.findViewById(R.id.tv_coating);
 			holder.functions = (TextView) convertView.findViewById(R.id.tv_functions);
-			holder.image_1 = (ImageView) convertView.findViewById(R.id.image_1);
+			//holder.image_1 = (ImageView) convertView.findViewById(R.id.image_1);
 			convertView.setTag(holder);
 
 		}else{
@@ -82,8 +82,8 @@ public  class QuickScoreAdapter extends BaseAdapter {
 		holder.gan_number.setText(quickContents.get(position).getRecorded_scorecards_count());
 		Log.i("chengji", "chengji---"+quickContents.get(position).getRecorded_scorecards_count());
 		if(quickContents.get(position).getScore().equals("null")){
-			holder.image_1.setVisibility(View.GONE);
-			holder.Pole_number.setTextSize(25);
+			//holder.image_1.setVisibility(View.GONE);
+			holder.Pole_number.setTextSize(22);
 			holder.Pole_number.setText("未开始"); 
 		}else{
 			holder.Pole_number.setTextSize(36);
@@ -102,7 +102,7 @@ public  class QuickScoreAdapter extends BaseAdapter {
 		public ViewGroup deleteHolder;
 		public ImageView coating;
 		public TextView functions;
-		public ImageView image_1;
+		//public ImageView image_1;
 		//LinearLayout xlist_item_relayout;
 
 	}

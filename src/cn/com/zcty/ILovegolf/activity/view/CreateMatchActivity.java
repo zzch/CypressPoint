@@ -315,8 +315,8 @@ public class CreateMatchActivity extends Activity {
 							||tee.equals("null")
 							||course_uuids_2.equals("null")
 							||tee_2.equals("null")){
-						startButton.setBackgroundColor(0xff796941);
-						startButton.setTextColor(0xff191b1d);
+						startButton.setBackgroundColor(0xff64af66);
+						startButton.setTextColor(0xffededed);
 						Toast.makeText(CreateMatchActivity.this
 								, "请把信息选择完整", Toast.LENGTH_LONG).show();
 					}else{
@@ -328,8 +328,8 @@ public class CreateMatchActivity extends Activity {
 					if(scoring_type.equals("null")
 							||course_uuids.equals("null")
 							||tee.equals("null")){
-						startButton.setBackgroundColor(0xff796941);
-						startButton.setTextColor(0xff191b1d);
+						startButton.setBackgroundColor(0xff64af66);
+						startButton.setTextColor(0xffededed);
 						Toast.makeText(CreateMatchActivity.this
 								, "请把信息选择完整", Toast.LENGTH_LONG).show();
 					}else{
@@ -402,8 +402,8 @@ public class CreateMatchActivity extends Activity {
 				zichangTextView.setText("");
 				titaiTextView.setText("");
 				titaicolor_1.setVisibility(View.GONE);
-				startButton.setBackgroundColor(0xff796941);
-				startButton.setTextColor(0xff191b1d);
+				startButton.setBackgroundColor(0xff64af66);
+				startButton.setTextColor(0xffededed);
 				qiudongTextView_2.setText("选择球场");
 				zichangTextView_2.setText("");
 				titaiTextView_2.setText("");
@@ -469,8 +469,8 @@ public class CreateMatchActivity extends Activity {
 				titaiTextView.setText(tiTai[position]);
 				titaicolor_1.setImageResource(tiTaiColor[position]);
 				selectSession_tListView.setVisibility(View.GONE);
-				startButton.setBackgroundColor(0xfff8d57a);
-				startButton.setTextColor(0xff222222);
+				startButton.setBackgroundColor(0xff09850c);
+				startButton.setTextColor(0xffffffff);
 				t_1 = color.get(position);
 				/*
 				 * 判断是9个洞还是18个洞
@@ -526,8 +526,8 @@ public class CreateMatchActivity extends Activity {
 				selectSession_t_2ListView.setVisibility(View.VISIBLE);
 				selectSession_2ListView.setVisibility(View.GONE);
 				imageView4.setImageResource(R.drawable.image_down);
-				startButton.setBackgroundColor(0xfff8d57a);
-				startButton.setTextColor(0xff222222);
+				startButton.setBackgroundColor(0xff09850c);
+				startButton.setTextColor(0xffffffff);
 				id_2 = uuids.get(position);
 			}
 		});

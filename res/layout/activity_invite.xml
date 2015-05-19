@@ -27,10 +27,11 @@
                 android:textSize="@dimen/txsize_small_xx" />
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="6dp"
-                android:src="@drawable/back_image" />
+                android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_image" />
         </FrameLayout>
 
         <TextView
@@ -68,7 +69,7 @@
             android:gravity="center"
             android:textSize="@dimen/txsize_small_a"
             android:text="您输入的比赛口令密码为以下4位数字"
-            android:textColor="@color/gold_80" />
+            android:textColor="@color/hei5" />
         <TextView
             android:layout_width="262dp"
             android:layout_height="wrap_content"
@@ -77,7 +78,7 @@
             android:gravity="center"
             android:textSize="@dimen/txsize_small_x"
             android:text="Ta输入后即可加入到您的比赛"
-            android:textColor="@color/gold_80" />
+            android:textColor="@color/hei5" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -181,7 +182,7 @@
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:text="@string/text_a"
-            android:textColor="@color/gold_80"
+            android:textColor="@color/hei5"
             android:textSize="@dimen/txsize_small_x" />
 
        
@@ -193,7 +194,7 @@
         android:layout_height="1dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="5dp"
-        android:background="@color/gold_half" />
+        android:background="@color/fengexian" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -226,7 +227,7 @@
         android:layout_marginTop="@dimen/easy_shaozi_bottom"
         android:textSize="@dimen/txsize_small_a"
         android:text="        请您让Ta点击“比赛”，之后点击“加入比赛”，输入上面的4位数字口令后，点击加入，即可加入到您创建的比赛中，共同体验高尔夫的乐趣！"
-        android:textColor="@color/gold_80" />
+        android:textColor="@color/hei5" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -258,7 +259,7 @@
         android:layout_marginLeft="35dp"
         android:layout_marginTop="@dimen/easy_shaozi_bottom"
         android:text="        您的朋友加入到比赛后，可以根据成绩进行排名，另外，我们还提供了专业的统计分析工具，可以多维度详细了解您和朋友之间的实力差距，助您提高球技！"
-        android:textColor="@color/gold_80"
+        android:textColor="@color/hei5"
         android:textSize="@dimen/txsize_small_a" />
 
 </LinearLayout>

@@ -11,7 +11,7 @@
         android:layout_marginTop="10dp"
         android:gravity="center_horizontal"
         android:text="@string/count_text"
-        android:textColor="@color/gold_70" />
+        android:textColor="@color/hei5" />
 
     <RelativeLayout
         android:id="@+id/anlyze_time_start_relative"

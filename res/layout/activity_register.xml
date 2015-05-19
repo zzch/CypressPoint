@@ -30,10 +30,11 @@
             android:textSize="@dimen/txsize_small_xx" 
             android:onClick="choosepith_back" />
          <ImageView
-            android:layout_width="30dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="6dp"
-            android:src="@drawable/back_image" />
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_image"  />
 		</FrameLayout>
         <TextView
             android:layout_width="wrap_content"
@@ -61,8 +62,8 @@
            android:layout_width="@dimen/register_view_width"
            android:layout_height="@dimen/view_mid_xx_title"
            android:hint=" 请输入手机号"
-           android:textColor="@color/gold_70"
-           android:textColorHint="@color/gold_half"
+           android:textColor="@color/hei5"
+           android:textColorHint="@color/fengexian"
            android:background="@drawable/e_button_pressed"
           
              />
@@ -84,8 +85,8 @@
           android:layout_height="@dimen/view_mid_xx_title"
             android:password="true"
            android:hint=" 至少6位密码"
-            android:textColor="@color/gold_70"
-            android:textColorHint="@color/gold_half"
+            android:textColor="@color/hei5"
+            android:textColorHint="@color/fengexian"
            android:background="@drawable/e_button_pressed"
              />
            
@@ -108,8 +109,8 @@
            android:layout_height="@dimen/view_mid_xx_title"
            android:password="true"
            android:hint=" 请确认您的密码"
-           android:textColor="@color/gold_70"
-           android:textColorHint="@color/gold_half"
+           android:textColor="@color/hei5"
+           android:textColorHint="@color/fengexian"
            android:background="@drawable/e_button_pressed"
              />
            
@@ -131,9 +132,9 @@
            android:layout_height="@dimen/view_mid_xx_title"
            android:background="@drawable/e_button_pressed"
            android:hint=" 验证码"
-           android:textColor="@color/gold_70"
+           android:textColor="@color/hei5"
            android:layout_marginLeft="10dp"
-           android:textColorHint="@color/gold_half"
+           android:textColorHint="@color/fengexian"
              />
            <Button 
            android:id="@+id/but_getyanzhengma"

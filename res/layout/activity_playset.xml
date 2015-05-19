@@ -20,7 +20,7 @@
             android:layout_marginRight="-10dp"
             android:background="@null"
             android:text="@string/start"
-            android:textColor="@color/gold_half"
+            android:textColor="@color/fengexian"
             android:textSize="@dimen/txsize_small_xx" />
 
         <TextView
@@ -52,10 +52,11 @@
             android:textSize="@dimen/txsize_small_xx" />
         
          <ImageView
-            android:layout_width="30dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="6dp"
-            android:src="@drawable/back_image" />
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_image"  />
 		</FrameLayout>
     </RelativeLayout>
 

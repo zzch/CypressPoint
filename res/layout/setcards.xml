@@ -62,7 +62,7 @@
                 android:layout_marginTop="@dimen/view_small_xx_j"
                 android:layout_marginRight="@dimen/view_sss_aa"
                 android:text="ss"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:textSize="@dimen/txsize_small_xx" />
         </RelativeLayout>
     </RelativeLayout>
@@ -88,7 +88,7 @@
             android:layout_alignLeft="@+id/distance_image"
             android:layout_centerVertical="true"
             android:textSize="@dimen/txsize_small_xxx"
-            android:textColor="@color/gold_half"
+            android:textColor="@color/fengexian"
             android:layout_marginLeft="25dp"
             android:text="distance" />
 
@@ -99,7 +99,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/view_mingzhong"
-            android:textColor="@color/gold_half"
+            android:textColor="@color/fengexian"
             android:textSize="@dimen/txsize_small_xx"
             android:text="cool" />
 
@@ -121,7 +121,7 @@
             android:layout_marginBottom="20dp"
             android:layout_marginLeft="@dimen/view_mid_x"
             android:text="4"
-            android:textColor="@color/gold_70"
+            android:textColor="@color/hei5"
             android:textSize="@dimen/txsize_mid_xx" />
 
         <TextView
@@ -133,7 +133,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="20dp"
             android:layout_marginLeft="15dp"
-            android:textColor="@color/gold_half"
+            android:textColor="@color/fengexian"
             android:text="p"
             android:textSize="@dimen/txsize_small_x" />
 
@@ -144,7 +144,7 @@
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_marginRight="@dimen/view_text_right"
-            android:textColor="@color/gold_70"
+            android:textColor="@color/hei5"
             android:text="335"
             android:textSize="@dimen/txsize_mid_xx"  />
 
@@ -157,14 +157,14 @@
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="20dp"
             android:layout_marginLeft="82dp"
-            android:textColor="@color/gold_half"
+            android:textColor="@color/fengexian"
             android:text="y"
             android:textSize="@dimen/txsize_small_x" />
     </RelativeLayout>
     <View
         android:layout_width="380dp"
         android:layout_height="1dp"
-        android:background="@color/gold_half" />
+        android:background="@color/fengexian" />
 
 
 </LinearLayout>

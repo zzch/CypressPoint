@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="成绩"
-        android:textColor="@color/gold_half"
+        android:textColor="@color/fengexian"
         android:textSize="19dp"
         />
 </LinearLayout>

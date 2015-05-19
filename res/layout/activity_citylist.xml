@@ -39,9 +39,10 @@
             android:textColor="@color/white"
             android:textSize="@dimen/txsize_small_xx"/>
          <ImageView
-            android:layout_width="30dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="6dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="10dp"
             android:src="@drawable/back_image" />
 		</FrameLayout>
     </RelativeLayout>
@@ -55,8 +56,8 @@
         android:drawableLeft="@drawable/search_bar_icon"
         android:hint="搜索球场的名称"
         android:singleLine="true"
-        android:textColor="@color/gold_half"
-        android:textColorHint="@color/gold_half"
+        android:textColor="@color/fengexian"
+        android:textColorHint="@color/fengexian"
         android:textSize="@dimen/txsize_small_x" />
 
     <FrameLayout

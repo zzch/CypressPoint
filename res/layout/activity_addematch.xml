@@ -44,12 +44,14 @@
             android:textSize="@dimen/txsize_small_xx" 
            android:onClick="onclick"
              />
-        
+
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="6dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="10dp"
             android:src="@drawable/back_image" />
+
 		</FrameLayout>
 
         <TextView
@@ -69,7 +71,7 @@
         android:layout_marginTop="@dimen/shouye_name_top"
         android:gravity="center"
         android:text="@string/textdescription"
-        android:textColor="@color/gold_80"
+        android:textColor="@color/hei5"
         android:textSize="@dimen/txsize_small_xx" />
 
  

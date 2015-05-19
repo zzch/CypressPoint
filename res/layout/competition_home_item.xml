@@ -54,7 +54,7 @@
         android:layout_below="@+id/home_username"
         android:layout_marginTop="19dp"
         android:textSize="17dp"
-        android:textColor="@color/gold_70"
+        android:textColor="@color/hei5"
         android:layout_marginLeft="147dp"
         android:text="这个位置用来显示创建比赛的名称"
         />
@@ -68,7 +68,7 @@
         android:gravity="center"
         android:background="@drawable/normal"
         android:layout_marginLeft="147dp"
-        android:textColor="@color/gold_half"
+        android:textColor="@color/fengexian"
         android:text="比杆赛"
         />
 </RelativeLayout>    

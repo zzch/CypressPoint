@@ -115,7 +115,7 @@
             android:layout_height="80dp"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="80dp"
-            android:background="@color/gold_half" />
+            android:background="@color/fengexian" />
         
     </RelativeLayout>
  <RelativeLayout 
@@ -155,7 +155,7 @@
             android:layout_height="80dp"
              android:layout_alignParentLeft="true"
             android:layout_marginLeft="80dp"
-            android:background="@color/gold_half"
+            android:background="@color/fengexian"
             />
         
         <RelativeLayout 
@@ -171,7 +171,7 @@
               android:layout_height="wrap_content"
               android:text="成绩"
               android:layout_marginTop="10dp"
-              android:textColor="@color/gold_70"
+              android:textColor="@color/hei5"
               />
           <TextView 
               android:id="@+id/score_s_1"
@@ -199,7 +199,7 @@
               android:layout_height="wrap_content"
               android:text="开球"
               android:layout_marginTop="10dp"
-              android:textColor="@color/gold_70"
+              android:textColor="@color/hei5"
               />
           <ImageView 
               android:id="@+id/image"

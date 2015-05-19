@@ -23,7 +23,7 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/count_value"            
             android:textSize="19dp"
-            android:textColor="@color/gold_70"
+            android:textColor="@color/hei5"
             android:layout_marginBottom="5dp"
             android:text="差点"
             />

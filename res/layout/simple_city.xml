@@ -18,7 +18,7 @@
             android:layout_marginLeft="@dimen/view_small_x"
             android:layout_marginTop="@dimen/view_small_xx_w"
             android:text="@string/pith_name"
-            android:textColor="@color/gold_70"
+            android:textColor="@color/hei5"
             android:textSize="17dp"
             android:maxEms="13" 
             android:singleLine="true"
@@ -44,7 +44,7 @@
                 android:layout_marginLeft="@dimen/view_small_x"
                 android:layout_marginTop="8dp"
                 android:text="北京市*******路*****号"
-                android:textColor="@color/gold_half"
+                android:textColor="@color/fengexian"
                 android:textSize="15dp"
                 android:maxEms="13" 
                 android:singleLine="true"
@@ -55,7 +55,7 @@
      <View 
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/gold_half"
+        android:background="@color/fengexian"
         android:layout_marginTop="10dp"
        />
 

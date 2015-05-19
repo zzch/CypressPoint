@@ -13,7 +13,7 @@
          <View
                android:layout_width="match_parent"
                android:layout_height="0.5dp"
-               android:background="@color/gold_half" />
+               android:background="@color/fengexian" />
 
         <TableRow
             android:id="@+id/tableRow1"
@@ -27,7 +27,7 @@
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
  
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="10" />
@@ -35,14 +35,14 @@
           <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="11" />
@@ -50,14 +50,14 @@
             <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="12" />
@@ -65,14 +65,14 @@
            <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="13" />
@@ -80,14 +80,14 @@
           <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="14" />
@@ -95,14 +95,14 @@
             <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="15" />
@@ -110,14 +110,14 @@
           <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="16" />
@@ -125,14 +125,14 @@
              <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="17" />
@@ -140,14 +140,14 @@
           <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                android:textSize="@dimen/txsize_small_s"
                 android:text="18" />
@@ -155,14 +155,14 @@
           <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="后" />
@@ -170,14 +170,14 @@
          <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="总" />
@@ -191,7 +191,7 @@
         <View 
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:background="@color/gold_half"
+            android:background="@color/fengexian"
             />
 
         <TableRow
@@ -205,7 +205,7 @@
                 android:layout_height="@dimen/view_sss_bbb"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                android:textSize="@dimen/txsize_small_s"
                 android:text="1" />
@@ -213,7 +213,7 @@
         <View
                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:id="@+id/t2"
@@ -221,7 +221,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="2" />
@@ -229,7 +229,7 @@
          <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:id="@+id/t3"
@@ -237,14 +237,14 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="3" />
         <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:id="@+id/t4"
@@ -252,7 +252,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                android:textSize="@dimen/txsize_small_s"
                 android:text="4" />
@@ -260,14 +260,14 @@
          <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
             <TextView
                 android:id="@+id/t5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-               android:textColor="@color/gold_70"
+               android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="5" />
@@ -275,7 +275,7 @@
         <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:id="@+id/t6"
@@ -283,14 +283,14 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="6" />
           <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:id="@+id/t7"
@@ -298,14 +298,14 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-               android:textColor="@color/gold_70"
+               android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="7" />
          <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:id="@+id/t8"
@@ -313,7 +313,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="8" />
@@ -321,7 +321,7 @@
          <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:id="@+id/t9"
@@ -329,7 +329,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="9" />
@@ -337,7 +337,7 @@
            <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:id="@+id/t10"
@@ -345,7 +345,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="前" />
@@ -353,14 +353,14 @@
            <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
             <TextView
                 android:id="@+id/t11"
                 android:layout_width="15dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="总计" />
@@ -373,7 +373,7 @@
         <View 
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:background="@color/gold_half"
+            android:background="@color/fengexian"
             />
 
         <TableRow
@@ -387,7 +387,7 @@
                 android:layout_height="@dimen/view_sss_bbb"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="1" />
@@ -395,7 +395,7 @@
           <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:id="@+id/tt2"
@@ -403,7 +403,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="2" />
@@ -411,7 +411,7 @@
             <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:id="@+id/tt3"
@@ -419,7 +419,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-               android:textColor="@color/gold_70"
+               android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="3" />
@@ -427,7 +427,7 @@
          <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:id="@+id/tt4"
@@ -435,7 +435,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="4" />
@@ -443,7 +443,7 @@
           <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:id="@+id/tt5"
@@ -451,7 +451,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="5" />
@@ -459,14 +459,14 @@
            <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
             <TextView
                 android:id="@+id/tt6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="6" />
@@ -474,7 +474,7 @@
           <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:id="@+id/tt7"
@@ -482,7 +482,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-               android:textColor="@color/gold_70"
+               android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="7" />
@@ -490,14 +490,14 @@
            <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
             <TextView
                 android:id="@+id/tt8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-               android:textColor="@color/gold_70"
+               android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="8" />
@@ -505,7 +505,7 @@
         <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:id="@+id/tt9"
@@ -513,7 +513,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                android:textSize="@dimen/txsize_small_s"
                 android:text="9" />
@@ -521,14 +521,14 @@
          <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
             <TextView
                 android:id="@+id/tt10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-               android:textColor="@color/gold_70"
+               android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="前" />
@@ -536,14 +536,14 @@
        <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
             <TextView
                 android:id="@+id/tt11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="总计" />
@@ -557,7 +557,7 @@
         <View 
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:background="@color/gold_half"
+            android:background="@color/fengexian"
             />
 
         <TableRow
@@ -571,7 +571,7 @@
                 android:layout_height="@dimen/view_sss_bbb"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="1" />
@@ -579,14 +579,14 @@
        <View
                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
             <TextView
                 android:id="@+id/ttt2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="2" />
@@ -594,14 +594,14 @@
          <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
             <TextView
                 android:id="@+id/ttt3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="3" />
@@ -609,7 +609,7 @@
         <View
                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:id="@+id/ttt4"
@@ -617,7 +617,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="4" />
@@ -625,28 +625,28 @@
        <View
                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
             <TextView
                 android:id="@+id/ttt5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="5" />
           <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
             <TextView
                 android:id="@+id/ttt6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                android:textSize="@dimen/txsize_small_s"
                 android:text="6" />
@@ -654,7 +654,7 @@
         <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:id="@+id/ttt7"
@@ -662,7 +662,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="7" />
@@ -670,7 +670,7 @@
          <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:id="@+id/ttt8"
@@ -678,7 +678,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="8" />
@@ -686,14 +686,14 @@
          <View
                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
             <TextView
                 android:id="@+id/ttt9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="9" />
@@ -701,7 +701,7 @@
           <View
                    android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:id="@+id/ttt10"
@@ -709,7 +709,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="前" />
@@ -717,7 +717,7 @@
        <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/gold_half" />
+                    android:background="@color/fengexian" />
 
             <TextView
                 android:id="@+id/ttt11"
@@ -725,7 +725,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
-                android:textColor="@color/gold_70"
+                android:textColor="@color/hei5"
                 android:gravity="center"
                 android:textSize="@dimen/txsize_small_s"
                 android:text="总计" />

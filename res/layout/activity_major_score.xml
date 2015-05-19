@@ -28,10 +28,11 @@
             android:textSize="@dimen/txsize_small_xx" />
         
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="6dp"
-            android:src="@drawable/back_image" />
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_image"/>
 		</FrameLayout>
 
         <TextView
@@ -103,7 +104,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/gold_half" />
+        android:background="@color/fengexian" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -118,7 +119,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="杆"
-            android:textColor="@color/gold_70"
+            android:textColor="@color/hei5"
             android:textSize="16dp" />
 
         <TextView
@@ -127,7 +128,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="距离球洞/码"
-            android:textColor="@color/gold_70"
+            android:textColor="@color/hei5"
             android:textSize="16dp" />
 
         <TextView
@@ -136,7 +137,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="球的状态"
-            android:textColor="@color/gold_70"
+            android:textColor="@color/hei5"
             android:textSize="16dp" />
 
         <TextView
@@ -145,7 +146,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="罚杆"
-            android:textColor="@color/gold_70"
+            android:textColor="@color/hei5"
             android:textSize="16dp" />
 
         <TextView
@@ -154,14 +155,14 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="球杆"
-            android:textColor="@color/gold_70"
+            android:textColor="@color/hei5"
             android:textSize="16dp" />
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/gold_half" />
+        android:background="@color/fengexian" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -230,7 +231,7 @@
                     android:layout_marginLeft="25dp"
                     android:background="@null"
                     android:text="取消"
-                    android:textColor="@color/gold_70"
+                    android:textColor="@color/hei5"
                     android:textSize="22dp" />
 
                 <Button
@@ -242,7 +243,7 @@
                     android:layout_marginRight="25dp"
                     android:background="@null"
                     android:text="完成"
-                    android:textColor="@color/gold_70"
+                    android:textColor="@color/hei5"
                     android:textSize="22dp" />
             </RelativeLayout>
 
@@ -266,7 +267,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="距离球洞/码"
-                        android:textColor="@color/gold_70"
+                        android:textColor="@color/hei5"
                         android:textSize="16dp" />
 
                     <TextView
@@ -275,7 +276,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_weight="1"
                         android:text="球的状态"
-                        android:textColor="@color/gold_70"
+                        android:textColor="@color/hei5"
                         android:textSize="16dp" />
 
                     <TextView
@@ -284,7 +285,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1"
                         android:text="罚杆"
-                        android:textColor="@color/gold_70"
+                        android:textColor="@color/hei5"
                         android:textSize="16dp" />
 
                     <TextView
@@ -292,7 +293,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="球杆"
-                        android:textColor="@color/gold_70"
+                        android:textColor="@color/hei5"
                         android:textSize="16dp" />
                 </LinearLayout>
 
