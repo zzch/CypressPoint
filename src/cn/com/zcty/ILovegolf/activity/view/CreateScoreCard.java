@@ -101,6 +101,7 @@ public class CreateScoreCard extends Activity{
 					if(!FileUtil.fileIsExists()){						
 						new Imageloder().start();
 					}else{
+						Log.i("yunxingme?", "????");
 						totleImage.setImageBitmap(FileUtil.converToBitmap(100,100));
 					}
 				}
@@ -128,6 +129,7 @@ public class CreateScoreCard extends Activity{
 		setContentView(R.layout.activity_scord);
 		initView();
 		setListeners();
+		linearLayout.setVisibility(View.INVISIBLE);
 		showProgressDialog("提示", "正在加载内容，请稍等",this);
 		new MyTask().start();
 	}

@@ -6,15 +6,12 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.lang.ref.WeakReference;
 
-import cn.com.zcty.ILovegolf.activity.view.myself.Myself;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
-import android.graphics.Bitmap.Config;
 import android.graphics.drawable.BitmapDrawable;
 import android.renderscript.Allocation;
 import android.renderscript.Element;
@@ -56,6 +53,7 @@ public class FileUtil {
 	 * 从文件中读取图片
 	 */
 	public static Bitmap converToBitmap( int w, int h){
+		Bitmap bitmap;
 		BitmapFactory.Options opts = new BitmapFactory.Options();
 		// 设置为ture只获取图片大小
 		opts.inJustDecodeBounds = true;
@@ -74,7 +72,7 @@ public class FileUtil {
 		opts.inSampleSize = (int)scale;
 		WeakReference<Bitmap> weak = new WeakReference<Bitmap>
 		(BitmapFactory.decodeFile("/mnt/sdcard/testfile/golf.jpg", opts));
-
+		
 		return  Bitmap.createScaledBitmap(weak.get(), w, h, true);
 
 
@@ -157,7 +155,7 @@ public class FileUtil {
 	  
 	  private static Bitmap small(Bitmap bitmap) {  
 	       Matrix matrix = new Matrix();   
-	       matrix.postScale(0.25f,0.25f); //长和宽放大缩小的比例  
+	       matrix.postScale(4f,4f); //长和宽放大缩小的比例  
 	       Bitmap resizeBmp = Bitmap.createBitmap(bitmap,0,0,bitmap.getWidth(),bitmap.getHeight(),matrix,true);  
 	      return resizeBmp;  
 	 }  
@@ -169,10 +167,10 @@ public class FileUtil {
 	   * @param image
 	   * @return
 	   */
-	  private static Bitmap comp(Bitmap image) {
+	  public static Bitmap comp(Bitmap image) {
 
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();        
-			image.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+			image.compress(Bitmap.CompressFormat.JPEG, 50, baos);
 			if( baos.toByteArray().length / 1024>1024) {//判断如果图片大于1M,进行压缩避免在生成图片（BitmapFactory.decodeStream）时溢出    
 				baos.reset();//重置baos即清空baos
 				image.compress(Bitmap.CompressFormat.JPEG, 50, baos);//这里压缩50%，把压缩后的数据存放到baos中
