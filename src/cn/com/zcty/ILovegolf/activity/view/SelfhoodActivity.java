@@ -64,7 +64,7 @@ public class SelfhoodActivity extends Activity{
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
 				if(msg.what==1){
-					if(msg.obj.equals("404")||msg.obj.equals("505")){
+					if(msg.obj.equals("404")||msg.obj.equals("500")){
 						Toast.makeText(SelfhoodActivity.this, "网络错误，请稍后再试", Toast.LENGTH_LONG).show();
 					}else if(msg.obj.equals("403")){
 						Toast.makeText(SelfhoodActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
@@ -73,6 +73,10 @@ public class SelfhoodActivity extends Activity{
 						startActivity(intent);
 						finish();
 					}else{
+						if(success==null){
+							FileUtil.delFile();
+							Toast.makeText(SelfhoodActivity.this, "保存失败", Toast.LENGTH_LONG).show();
+						}else{
 						if(success.equals("success")){
 							Toast.makeText(SelfhoodActivity.this, "保存成功", Toast.LENGTH_LONG).show();
 							
@@ -94,9 +98,9 @@ public class SelfhoodActivity extends Activity{
 							}
 							
 						}else{
-							delFile();
+							FileUtil.delFile();
 							Toast.makeText(SelfhoodActivity.this, "保存失败", Toast.LENGTH_LONG).show();
-						}
+						}}
 					}
 				}
 			}
@@ -216,14 +220,14 @@ public class SelfhoodActivity extends Activity{
 
 						//这个方法是根据Uri获取Bitmap图片的静态方法
 						image = MediaStore.Images.Media.getBitmap(this.getContentResolver(), mImageCaptureUri);	
-						image = comp(image);
+						image = FileUtil.comp(image);
 						Log.i("ceshipath", image+"1");
 						if (image != null) {
 							//showProgressDialog("提示","正在上传");
 
 							String phoneName = android.os.Build.BRAND; 
 							if(phoneName.equals("samsung")){								
-								image = rotaingImageView(90,image);							
+								image = FileUtil.rotaingImageView(90,image);							
 							}
 							headImage.setImageBitmap(image);
 							hideProgressDialog();
@@ -238,8 +242,8 @@ public class SelfhoodActivity extends Activity{
 						image = extras.getParcelable("data");
 						if (image != null) {
 							//showProgressDialog("提示","正在上传");
-							image = rotaingImageView(0,image);
-							image = comp(image);
+							image = FileUtil.rotaingImageView(0,image);
+							image = FileUtil.comp(image);
 							Log.i("ceshipath", image+"2");
 							headImage.setImageBitmap(image);
 							hideProgressDialog();
@@ -266,7 +270,7 @@ public class SelfhoodActivity extends Activity{
 			getData();
 		}
 		public void getData(){
-			saveMyBitmap("golf");
+			FileUtil.saveMyBitmap(image);
 			
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String token=sp.getString("token", "token");
@@ -288,102 +292,9 @@ public class SelfhoodActivity extends Activity{
 		}
 	}
 	
-	/**
-	 * 压缩图片
-	 * @param image
-	 * @return
-	 */
-	private Bitmap comp(Bitmap image) {
-		showProgressDialog("提示", "正在获得头像");
-		ByteArrayOutputStream baos = new ByteArrayOutputStream();        
-		image.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-		if( baos.toByteArray().length / 1024>1024) {//判断如果图片大于1M,进行压缩避免在生成图片（BitmapFactory.decodeStream）时溢出    
-			baos.reset();//重置baos即清空baos
-			image.compress(Bitmap.CompressFormat.JPEG, 50, baos);//这里压缩50%，把压缩后的数据存放到baos中
-		}
-		ByteArrayInputStream isBm = new ByteArrayInputStream(baos.toByteArray());
-		BitmapFactory.Options newOpts = new BitmapFactory.Options();
-		//开始读入图片，此时把options.inJustDecodeBounds 设回true了
-		newOpts.inJustDecodeBounds = true;
-		Bitmap bitmap = BitmapFactory.decodeStream(isBm, null, newOpts);
-		newOpts.inJustDecodeBounds = false;
-		int w = newOpts.outWidth;
-		int h = newOpts.outHeight;
-		//现在主流手机比较多是800*480分辨率，所以高和宽我们设置为
-		float hh = 800f;//这里设置高度为800f
-		float ww = 480f;//这里设置宽度为480f
-		//缩放比。由于是固定比例缩放，只用高或者宽其中一个数据进行计算即可
-		int be = 1;//be=1表示不缩放
-		if (w > h && w > ww) {//如果宽度大的话根据宽度固定大小缩放
-			be = (int) (newOpts.outWidth / ww);
-		} else if (w < h && h > hh) {//如果高度高的话根据宽度固定大小缩放
-			be = (int) (newOpts.outHeight / hh);
-		}
-		if (be <= 0)
-			be = 1;
-		newOpts.inPurgeable = true;
-		newOpts.inSampleSize = be;//设置缩放比例
-		newOpts.inPreferredConfig = Config.RGB_565;//降低图片从ARGB888到RGB565
-		//重新读入图片，注意此时已经把options.inJustDecodeBounds 设回false了
-		isBm = new ByteArrayInputStream(baos.toByteArray());
-		bitmap = BitmapFactory.decodeStream(isBm, null, newOpts);
-		return compressImage(bitmap);//压缩好比例大小后再进行质量压缩
-	}	
-	private Bitmap compressImage(Bitmap image) {
-		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		image.compress(Bitmap.CompressFormat.JPEG, 50, baos);//质量压缩方法，这里100表示不压缩，把压缩后的数据存放到baos中
-		int options = 100;
-		while ( baos.toByteArray().length / 1024>100) {    //循环判断如果压缩后图片是否大于100kb,大于继续压缩        
-			baos.reset();//重置baos即清空baos
-			options -= 10;//每次都减少10
-			image.compress(Bitmap.CompressFormat.JPEG, options, baos);//这里压缩options%，把压缩后的数据存放到baos中
-
-		}
-		ByteArrayInputStream isBm = new ByteArrayInputStream(baos.toByteArray());//把压缩后的数据baos存放到ByteArrayInputStream中
-		Bitmap bitmap = BitmapFactory.decodeStream(isBm, null, null);//把ByteArrayInputStream数据生成图片
-		return bitmap;
-	}
-	/*
-	 * 旋转图片 
-	 * @param angle 
-	 * @param bitmap 
-	 * @return Bitmap 
-	 */ 
-	public static Bitmap rotaingImageView(int angle , Bitmap bitmap) {  
-		//旋转图片 动作   
-		Matrix matrix = new Matrix();;  
-		matrix.postRotate(angle);  
-		System.out.println("angle2=" + angle);  
-		// 创建新的图片   
-		Bitmap resizedBitmap = Bitmap.createBitmap(bitmap, 0, 0,  
-				bitmap.getWidth(), bitmap.getHeight(), matrix, true);  
-		return resizedBitmap;  
-	}
-	/**
-	 * 把bitmap存入手机文件目录
-	 * @param bitName
-	 */
-	@SuppressLint("SdCardPath")
-	public void saveMyBitmap(String bitName)  {
-		File f = new File("/mnt/sdcard/testfile"); 
-		if(f.exists()){
-			f.delete();
-		}else{
-			f.mkdir();
-		}
-		FileOutputStream fOut = null;
-		try {
-			fOut = new FileOutputStream("/mnt/sdcard/testfile/golf.jpg");
-			image.compress(Bitmap.CompressFormat.JPEG, 50, fOut);
-			fOut.flush();
-			fOut.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-
-
-	} 
+	
+	
+	
 	@Override 
     public boolean dispatchTouchEvent(MotionEvent ev) { 
        if (ev.getAction() == MotionEvent.ACTION_DOWN) { 
@@ -446,25 +357,5 @@ public class SelfhoodActivity extends Activity{
 			progressDialog.dismiss();
 		}
 	}
-			//删除文件
-			public  static void delFile(){
-				File file = new File("/mnt/sdcard/testfile");
-				deleteFile(file);
-			}
-			public static void deleteFile(File file) {
-				
-				if (file.exists()) { // 判断文件是否存在
-				if (file.isFile()) { // 判断是否是文件
-				file.delete(); // delete()方法 你应该知道 是删除的意思;
-				} else if (file.isDirectory()) { // 否则如果它是一个目录
-				File files[] = file.listFiles(); // 声明目录下所有的文件 files[];
-				for (int i = 0; i < files.length; i++) { // 遍历目录下所有的文件
-				deleteFile(files[i]); // 把每个文件 用这个方法进行迭代
-				}
-				}
-				file.delete();
-				} else {
-				Log.i("tishis","文件不存在！"+"\n");
-				}
-				}
+			
 }

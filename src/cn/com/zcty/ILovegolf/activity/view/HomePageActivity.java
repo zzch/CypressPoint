@@ -26,14 +26,17 @@ public class HomePageActivity extends Activity{
 		case R.id.homepage_match:
 			Intent intent=new Intent(HomePageActivity.this,QuickScoreActivity.class);
 	 		 startActivity(intent);
+	 		 finish();
 			break;
 		case R.id.homepage_statistics:
 			Intent statisticsIntent=new Intent(HomePageActivity.this,CountActivity.class);
 	 		startActivity(statisticsIntent);
+	 		finish();
 			break;
 		case R.id.homepage_personal_center:
 			Intent mySelfIntent=new Intent(HomePageActivity.this,Myself.class);
 	 		startActivity(mySelfIntent);
+	 		finish();
 			break;
 		}
 	}

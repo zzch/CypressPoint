@@ -60,7 +60,9 @@ import cn.com.zcty.ILovegolf.activity.adapter.ArrayMonthNumberWheelAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.ArrayWheelAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.ArrayYearNumberWheelAdapter;
 import cn.com.zcty.ILovegolf.activity.view.BaseActivity;
+import cn.com.zcty.ILovegolf.activity.view.SelfhoodActivity;
 import cn.com.zcty.ILovegolf.activity.view.TabHostActivity;
+import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.tools.CircleImageView;
 import cn.com.zcty.ILovegolf.tools.OnWheelChangedListener;
 import cn.com.zcty.ILovegolf.tools.WheelView;
@@ -119,11 +121,27 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
 				hideProgressDialog();
-				if(FileUtil.converToBitmap(100,100)==null){
-
+				if(msg.obj.equals("404")||msg.obj.equals("500")){
+					Toast.makeText(InformationChangesActivity.this, "网络错误，请稍后再试", Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("403")){
+					Toast.makeText(InformationChangesActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+					FileUtil.delFile();
+					Intent intent = new Intent(InformationChangesActivity.this,ShouYeActivity.class);
+					startActivity(intent);
+					finish();
 				}else{
-					headMyImage.setImageBitmap(FileUtil.converToBitmap(100,100));}
+					if(imageurl==null){
+						FileUtil.delFile();
+						Toast.makeText(InformationChangesActivity.this, "上传失败", Toast.LENGTH_LONG).show();
+					}else{
+				if(!FileUtil.fileIsExists()){
+					
+				}else{
+					headMyImage.setImageBitmap(FileUtil.converToBitmap(100,100));
+					
+				}}
 			}
+				}
 			if(msg.what==2){
 
 			}
@@ -134,12 +152,21 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 
 			}
 			if(msg.what==5){
+				if(msg.obj.equals("404")||msg.obj.equals("500")){
+					Toast.makeText(InformationChangesActivity.this, "网络错误，请稍后再试", Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("403")){
+					Toast.makeText(InformationChangesActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+					FileUtil.delFile();
+					Intent intent = new Intent(InformationChangesActivity.this,ShouYeActivity.class);
+					startActivity(intent);
+					finish();
+				}else{
 				if(nameSuccess.equals("success")){
 					SharedPreferences sp = getSharedPreferences("register", MODE_PRIVATE);	
 					Editor editor = sp.edit();	
 					editor.putString("nickname", upname);
 					editor.commit();
-				}
+				}}
 			}
 		};
 	};
@@ -345,9 +372,10 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		imageView2 = (ImageView) findViewById(R.id.imageView2);
 		imageView3 = (ImageView) findViewById(R.id.imageView3);
 		imageView5 = (ImageView) findViewById(R.id.imageView5);
-		if(FileUtil.converToBitmap(100,100)==null){			
+		if(!FileUtil.fileIsExists()){	
+			
 		}else{
-			headMyImage.setImageBitmap(FileUtil.converToBitmap(100,100));}
+		headMyImage.setImageBitmap(FileUtil.converToBitmap(100,100));}
 		SharedPreferences sp = getSharedPreferences("register", MODE_PRIVATE);
 		String name = sp.getString("nickname", "nickname");
 		upnameEditText.setText(name);
@@ -380,7 +408,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 
 						//这个方法是根据Uri获取Bitmap图片的静态方法
 						image = MediaStore.Images.Media.getBitmap(this.getContentResolver(), mImageCaptureUri);	
-						//image = comp(image);
+						image = FileUtil.comp(image);
 						Log.i("ceshipath", image+"1");
 						if (image != null) {
 							showProgressDialog("提示","正在上传",this);
@@ -403,7 +431,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 						if (image != null) {
 							showProgressDialog("提示","正在上传",this);
 							image = FileUtil.rotaingImageView(0,image);
-							//image = comp(image);
+							image = FileUtil.comp(image);
 							Log.i("ceshipath", image+"2");
 							//headMyImage.setImageBitmap(image);
 							new GenxinHead().start();
@@ -500,7 +528,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			String token=sp.getString("token", "token");
 			String path = APIService.HEAD+"token="+token;		
 			String jsonData = HttpUtils.uploadImage(path, "/mnt/sdcard/testfile/golf.jpg");
-			Log.i("imageurl", jsonData);
+			//Log.i("imageurl", jsonData);
 			JSONObject jsonObject;
 			try {
 				jsonObject = new JSONObject(jsonData);
@@ -514,6 +542,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 
 			Message msg = handler.obtainMessage();
 			msg.what = 1;
+			msg.obj = jsonData;
 			handler.sendMessage(msg);
 		}
 	}
