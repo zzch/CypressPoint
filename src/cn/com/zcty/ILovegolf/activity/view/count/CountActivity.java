@@ -16,11 +16,13 @@ import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.R.layout;
 import cn.com.zcty.ILovegolf.activity.adapter.CountAdapter;
 import cn.com.zcty.ILovegolf.activity.view.HomePageActivity;
+import cn.com.zcty.ILovegolf.activity.view.QuickScoreActivity;
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.activity.view.myself.Myself;
 import cn.com.zcty.ILovegolf.model.ChartProp;
 import cn.com.zcty.ILovegolf.tools.ChartView;
 import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -42,6 +44,7 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CountActivity extends Activity implements OnClickListener{
 	private Button analyButton;
@@ -72,6 +75,15 @@ public class CountActivity extends Activity implements OnClickListener{
 		@SuppressLint("NewApi")
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
+				if(msg.obj.equals("404")||msg.obj.equals("500")){//判断是服务端问题
+					Toast.makeText(CountActivity.this, "网络异常，错误提示"+msg.obj, Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("403")){
+					Toast.makeText(CountActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+					FileUtil.delFile();
+					Intent intent = new Intent(CountActivity.this,ShouYeActivity.class);
+					startActivity(intent);
+					finish();
+				}else{
 				gridView.setAdapter(new CountAdapter(CountActivity.this, gridArrayList));
 				ArrayList<ChartProp> acps = mChartView.createCharts(percent.length);
 				int size = acps.size();
@@ -104,7 +116,7 @@ public class CountActivity extends Activity implements OnClickListener{
 				parTextView.setText(d+"%");
 				bogeyTextView.setText(e+"%");
 				double_bogeyTextView.setText(f+"%");
-			}
+			}}
 		};
 	};
 	@Override
@@ -232,6 +244,7 @@ public class CountActivity extends Activity implements OnClickListener{
 			
 			Message msg = handler.obtainMessage();
 			msg.what=1;
+			msg.obj = JsonData;
 			handler.sendMessage(msg);
 		} catch (JSONException e) {
 			e.printStackTrace();

@@ -95,6 +95,7 @@ public class HttpUtils
 	 */
 	public static String HttpClientPost(String url,Map<String,String[]> map){
 		HttpPut post = new HttpPut(url);
+		
 		String str = "";
 		int code = 0;
 		List<NameValuePair> nvps = new ArrayList<NameValuePair>();

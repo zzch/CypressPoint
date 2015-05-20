@@ -8,6 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -19,16 +20,22 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.AnalyzeResultAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.StatisticAdapter;
+import cn.com.zcty.ILovegolf.activity.view.QuickScoreActivity;
+import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 public class AnalyzeResultActivity extends Activity{
+	private LinearLayout linear;
 	private ScrollView s1;
 	private TextView t1;
 	private Button backButton;
@@ -70,10 +77,22 @@ public class AnalyzeResultActivity extends Activity{
 	private ArrayList<String> name2ArrayList = new ArrayList<String>();
 	private ArrayList<String> arrayList3 = new ArrayList<String>(); 
 	private ArrayList<String> name3ArrayList = new ArrayList<String>();
+	private ProgressDialog progressDialog;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
+				hideProgressDialog();
+				if(msg.obj.equals("404")||msg.obj.equals("500")){//判断是服务端问题
+					Toast.makeText(AnalyzeResultActivity.this, "网络异常，错误提示"+msg.obj, Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("403")){
+					Toast.makeText(AnalyzeResultActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+					FileUtil.delFile();
+					Intent intent = new Intent(AnalyzeResultActivity.this,ShouYeActivity.class);
+					startActivity(intent);
+					finish();
+				}else{
 				getData();
+				}
 			}
 		};
 	};
@@ -84,6 +103,8 @@ public class AnalyzeResultActivity extends Activity{
 		setContentView(R.layout.activity_analyze_result);
 		initView();
 		setListeners();
+		showProgressDialog("提示", "正在加载", this);
+		linear.setVisibility(View.INVISIBLE);
 		new Result().start();
 	}
 
@@ -92,11 +113,20 @@ public class AnalyzeResultActivity extends Activity{
 
 			@Override
 			public void onClick(View v) {
+				Intent intent  = new Intent(AnalyzeResultActivity.this,AnalyzeActivity.class);
+				startActivity(intent);
 				finish();
 			}
 		});
 	}
-
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		Intent intent  = new Intent(AnalyzeResultActivity.this,AnalyzeActivity.class);
+		startActivity(intent);
+		finish();
+	}
 	private void initView() {
 		listView1 = (ListView) findViewById(R.id.listView1);
 		listView2 = (ListView) findViewById(R.id.listView2);
@@ -106,7 +136,8 @@ public class AnalyzeResultActivity extends Activity{
 		fullTextView = (TextView) findViewById(R.id.analyze_result_full);
 		averageTextView = (TextView) findViewById(R.id.analyze_result_avager);
 		chadianTextView = (TextView) findViewById(R.id.analyze_result_chadian);
-
+		
+		linear = (LinearLayout) findViewById(R.id.linear);
 		backButton = (Button) findViewById(R.id.analyze_result_back);
 		pkButton = (Button) findViewById(R.id.pk);
 		
@@ -115,6 +146,7 @@ public class AnalyzeResultActivity extends Activity{
 	}
 
 	public void getData(){
+		linear.setVisibility(View.VISIBLE);
 		if(fs.equals("1")){
 			if(matches_count.equals("all")){
 				latelyTextView.setText("最近所有场次");	
@@ -243,6 +275,7 @@ public class AnalyzeResultActivity extends Activity{
 
 				Message msg = handler.obtainMessage();
 				msg.what=1;
+				msg.obj = jsonData;
 				handler.sendMessage(msg);
 
 			} catch (Exception e) {
@@ -252,4 +285,27 @@ public class AnalyzeResultActivity extends Activity{
 
 		}
 	}
+	/*
+     * 提示加载
+     */
+     public   void  showProgressDialog(String title,String message,Activity context){
+            if(progressDialog ==null){
+                   progressDialog = ProgressDialog.show( context, title, message,true,true );
+
+           } else if (progressDialog .isShowing()){
+                   progressDialog.setTitle(title);
+                   progressDialog.setMessage(message);
+           }
+            progressDialog.show();
+
+    }
+     /*
+     * 隐藏加载
+     */
+     public  void hideProgressDialog(){
+            if(progressDialog !=null &&progressDialog.isShowing()){
+                   progressDialog.dismiss();
+           }
+    }
+     
 }
