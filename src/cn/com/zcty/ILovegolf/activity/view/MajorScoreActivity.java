@@ -9,6 +9,7 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -67,6 +68,7 @@ public class MajorScoreActivity extends Activity {
 	private LinearLayout resultLinearLayout;
 	private Button addButton;
 	private Button quedingButton;
+	private ProgressDialog progressDialog;
 	private TextView orderText;
 	private String[] coolArray = {"果岭","球道外左侧","球道","球道外右侧","沙坑","不可打"};
 	private String[] coolArray_ = {""};
@@ -144,6 +146,7 @@ public class MajorScoreActivity extends Activity {
 					startActivity(intent);
 					finish();
 				}else{
+				hideProgressDialog();
 				SharedPreferences sp = MajorScoreActivity.this.getPreferences(MODE_PRIVATE);
 				SharedPreferences.Editor editor = sp.edit();
 				editor.putString("score", score);
@@ -178,6 +181,7 @@ public class MajorScoreActivity extends Activity {
 				intent.putExtra("position", position);
 				intent.putExtra("penalties", penalties);
 				setResult(1,intent);*/
+				//Toast.makeText(MajorScoreActivity.this, "保存成功", Toast.LENGTH_LONG).show();
 				finish();
 				}
 				}
@@ -220,6 +224,7 @@ public class MajorScoreActivity extends Activity {
 				@Override
 				public void onClick(View v) {
 					if(addArrayList.size()>0){
+					showProgressDialog("提示", "正在保存", MajorScoreActivity.this);
 					new JiqiuBianjiTask().start();
 					}else{
 						AlertDialog.Builder builder = new Builder(MajorScoreActivity.this)
@@ -733,4 +738,27 @@ public class MajorScoreActivity extends Activity {
 		});
 		builder.show();
 	}
+	
+	/*
+     * 提示加载
+     */
+     public   void  showProgressDialog(String title,String message,Activity context){
+            if(progressDialog ==null){
+                   progressDialog = ProgressDialog.show( context, title, message,true,true );
+
+           } else if (progressDialog .isShowing()){
+                   progressDialog.setTitle(title);
+                   progressDialog.setMessage(message);
+           }
+            progressDialog.show();
+
+    }
+     /*
+     * 隐藏加载
+     */
+     public  void hideProgressDialog(){
+            if(progressDialog !=null &&progressDialog.isShowing()){
+                   progressDialog.dismiss();
+           }
+    }
 }
