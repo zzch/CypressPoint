@@ -76,11 +76,12 @@
 
                     <TextView
                         android:id="@+id/competition_username"
-                        android:layout_width="wrap_content"
+                        android:layout_width="@dimen/create_score_left"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/view_Layout_x"
-                        android:layout_marginLeft="@dimen/create_score_left"
+                        android:layout_marginLeft="120dp"
                         android:text="xxxxxx"
+                        android:gravity="center"
                         android:textSize="@dimen/txsize_small_xxx"
                         android:textColor="@color/white" />
 
@@ -99,7 +100,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/competition_username"
-                        android:layout_marginLeft="40dp"
+                        android:layout_marginLeft="45dp"
                         android:layout_alignLeft="@+id/name_paiming"
                         android:text="78"
                         android:textSize="@dimen/txsize_small_xx"
@@ -120,7 +121,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/competition_username"
-                        android:layout_marginLeft="40dp"
+                        android:layout_marginLeft="45dp"
                         android:layout_alignLeft="@+id/name_jindu"
                         android:text="31"
                         android:textSize="@dimen/txsize_small_xx"
@@ -141,7 +142,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/competition_paiming"
-                        android:layout_marginLeft="40dp"
+                        android:layout_marginLeft="45dp"
                         android:layout_alignLeft="@+id/name_chengji"
                         android:text="+6"
                         android:textSize="@dimen/txsize_small_xx"
