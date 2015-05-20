@@ -2,6 +2,7 @@ package cn.com.zcty.ILovegolf.activity.view.count;
 
 import java.util.ArrayList;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.support.v4.app.Fragment;
@@ -21,6 +22,7 @@ import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.view.fragment.AnlyzeContestFragment;
 import cn.com.zcty.ILovegolf.activity.view.fragment.AnlyzeDiamondFragment;
 import cn.com.zcty.ILovegolf.activity.view.fragment.AnlyzeTimeFragment;
+import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 
 public class AnalyzeActivity extends FragmentActivity{
 	private ViewPager viewPager;
@@ -36,6 +38,7 @@ public class AnalyzeActivity extends FragmentActivity{
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_analyze);
+		ShouYeActivity.getInstance().addActivity(this);
 		initView();
 		getData();
 		setListeners();
@@ -45,6 +48,8 @@ public class AnalyzeActivity extends FragmentActivity{
 			
 			@Override
 			public void onClick(View v) {
+				Intent intent  = new Intent(AnalyzeActivity.this,CountActivity.class);
+				startActivity(intent);
 				finish();
 			}
 		});
@@ -115,6 +120,14 @@ public class AnalyzeActivity extends FragmentActivity{
 		qiuchangRadioButton = (RadioButton) findViewById(R.id.analyze_qiuchang);
 		fanhuiButton = (Button) findViewById(R.id.analyze_back);
 		bisaiRadioButton.setChecked(true);
+	}
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		Intent intent  = new Intent(AnalyzeActivity.this,CountActivity.class);
+		startActivity(intent);
+		finish();
 	}
 	class MyFragmentPagerAdapter  extends FragmentPagerAdapter{
 

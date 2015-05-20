@@ -380,9 +380,15 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		String name = sp.getString("nickname", "nickname");
 		upnameEditText.setText(name);
 		String sgin = sp.getString("description", "description");
-		sginEditText.setText(sgin);
+		if(!sgin.equals("null")){
+			
+			sginEditText.setText(sgin);
+		}
 		Intent intent = getIntent();
-		brithdayTextView.setText(intent.getStringExtra("birthday"));
+		if(!intent.getStringExtra("birthday").equals("null")){
+			
+			brithdayTextView.setText(intent.getStringExtra("birthday"));
+		}
 		Log.i("brithdays", intent.getStringExtra("year"));
 
 		int year =Integer.parseInt(intent.getStringExtra("year"));

@@ -25,7 +25,7 @@ public class HomePageActivity extends Activity{
 		switch (v.getId()) {
 		case R.id.homepage_match:
 			Intent intent=new Intent(HomePageActivity.this,QuickScoreActivity.class);
-	 		 startActivity(intent);
+			startActivity(intent);
 	 		 finish();
 			break;
 		case R.id.homepage_statistics:

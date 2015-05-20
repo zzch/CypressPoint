@@ -29,6 +29,7 @@ import android.widget.ScrollView;
 import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.QuickScoreAdapter;
+import cn.com.zcty.ILovegolf.activity.applice.MyAppliceData;
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.model.Course;
 import cn.com.zcty.ILovegolf.model.QuickContent;
@@ -111,12 +112,17 @@ public class QuickScoreActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_quick_score);
+		
 		ShouYeActivity.getInstance().addActivity(this);
 		initView();	
 		new MyTask().start();
 		mHandler= new Handler();
 		showProgressDialog("提示","正在努力加载数据！",this);
 		setListeners();
+		if(MyAppliceData.getInstance().quickArrayList!=null){
+			Log.i("lksjdfkl", MyAppliceData.getInstance().quickArrayList.toString());
+		}	
+		MyAppliceData.getInstance().quickContent(quickArrayList);
 	}
 	private void setListeners() {
 		/*
