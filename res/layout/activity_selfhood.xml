@@ -77,24 +77,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/shouye_view_top"
-                    android:text="第一步   上传头像"
+                    android:layout_marginTop="@dimen/view_mingzhong"
+                    android:text="第一步  上传头像"
                     android:textSize="@dimen/txsize_small_xx" />
 
                 <cn.com.zcty.ILovegolf.tools.CircleImageView
                     android:id="@+id/selfhood_head_image"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="50dp"
                     android:src="@drawable/hugh" />
 
                 <Button
                     android:id="@+id/selfhood_head_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="135dp"
-                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="145dp"
+                    android:layout_marginTop="70dp"
                     android:text="点击此处上传头像"
                     android:textSize="13dp" />
             </RelativeLayout>
@@ -118,7 +118,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/shouye_view_top"
+                    android:layout_marginTop="@dimen/view_mingzhong"
                     android:text="第二步  设置昵称"
                     android:textSize="@dimen/txsize_small_xx" />
 
@@ -164,7 +164,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/shouye_view_top"
+                    android:layout_marginTop="@dimen/view_mingzhong"
                     android:text="第三步  设置性别"
                     android:textSize="@dimen/txsize_small_xx" />
 

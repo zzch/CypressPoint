@@ -32,6 +32,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
@@ -47,6 +48,7 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 public class Myself extends Activity {
 	private RelativeLayout headLayout;
+	private Button exitButton;
 	private String gender;
 	private String description;
 	private String birthday;
@@ -58,7 +60,7 @@ public class Myself extends Activity {
 	private TextView nameTextView;
 	private String year;
 	private Bitmap bmp;
-	private RelativeLayout settingRelativeLayout;
+	//private RelativeLayout settingRelativeLayout;
 	Intent intent;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
@@ -112,7 +114,18 @@ public class Myself extends Activity {
 	
 	}
 	private void setListeners() {
-		settingRelativeLayout.setOnClickListener(new OnClickListener() {
+		
+          exitButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(Myself.this,SelecPicpupExit.class);
+				startActivity(intent);
+				
+			}
+		});
+		
+		/*settingRelativeLayout.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
@@ -120,7 +133,7 @@ public class Myself extends Activity {
 				startActivity(intent);
 				
 			}
-		});
+		});*/
 	}
 	public void onclick(View v){
 		
@@ -144,6 +157,8 @@ public class Myself extends Activity {
 		finish();
 	}
 	private void getListeners() {
+		
+
 		headLayout.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -162,7 +177,8 @@ public class Myself extends Activity {
 		signTextView = (TextView) findViewById(R.id.myself_sign);
 		imageHead = (CircleImageView) findViewById(R.id.myself_head);
 		image_bg = (ImageView) findViewById(R.id.myself_bg);
-		settingRelativeLayout = (RelativeLayout) findViewById(R.id.myself_setting);
+		exitButton = (Button) findViewById(R.id.setting_exit);
+		//settingRelativeLayout = (RelativeLayout) findViewById(R.id.myself_setting);
 		SharedPreferences sp = getSharedPreferences("register", MODE_PRIVATE);
 		String name = sp.getString("nickname", "nickname");
 		nameTextView.setText(name);

@@ -135,7 +135,7 @@
             android:layout_width="25dp"
             android:layout_height="@dimen/view_small_xx"
             android:layout_gravity="center"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="20dp"
            
             android:src="@drawable/icon_arrow" 
             /> 

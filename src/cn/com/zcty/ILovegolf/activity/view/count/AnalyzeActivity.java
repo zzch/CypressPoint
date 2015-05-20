@@ -94,12 +94,15 @@ public class AnalyzeActivity extends FragmentActivity{
 				switch (group.getCheckedRadioButtonId()) {
 				case R.id.analyze_bisai:
 					viewPager.setCurrentItem(0);
+					analyzeRadioGroup.setBackgroundResource(R.drawable.radio_1);
 					break;
 				case R.id.analyze_time:
 					viewPager.setCurrentItem(1);
+					analyzeRadioGroup.setBackgroundResource(R.drawable.radio_3);
 					break;
 				case R.id.analyze_qiuchang:
 					viewPager.setCurrentItem(2);
+					analyzeRadioGroup.setBackgroundResource(R.drawable.radio_2);
 					break;
 				}
 			}

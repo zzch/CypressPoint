@@ -87,12 +87,13 @@
             android:id="@+id/etPwdOne_setLockPwd"  
             android:layout_width="wrap_content"  
             android:layout_height="wrap_content"  
-            android:background="#ffffff"  
+            android:background="@drawable/mima_bg"  
             android:cursorVisible="false"  
             android:ems="1"  
             android:gravity="center"  
-            android:lines="1"  
-            android:textSize="31sp" >  
+            android:lines="1" 
+            android:textColor="@color/chengse" 
+            android:textSize="@dimen/txsize_mid_xxx" >  
         </EditText>  
   
         <EditText  
@@ -100,33 +101,36 @@
             android:layout_width="wrap_content"  
             android:layout_height="wrap_content"  
             android:layout_marginLeft="16dp"  
-            android:background="#ffffff"  
+           android:background="@drawable/mima_bg"   
             android:cursorVisible="false"  
             android:ems="1"  
             android:gravity="center"  
-            android:textSize="31sp" />  
+            android:textColor="@color/chengse" 
+            android:textSize="@dimen/txsize_mid_xxx" />  
   
         <EditText  
             android:id="@+id/etPwdThree_setLockPwd"  
             android:layout_width="wrap_content"  
             android:layout_height="wrap_content"  
             android:layout_marginLeft="16dp"  
-            android:background="#ffffff"  
+            android:background="@drawable/mima_bg"  
             android:cursorVisible="false"  
             android:ems="1"  
             android:gravity="center"  
-            android:textSize="31sp" />  
+            android:textColor="@color/chengse" 
+            android:textSize="@dimen/txsize_mid_xxx" />  
   
         <EditText  
             android:id="@+id/etPwdFour_setLockPwd"  
             android:layout_width="wrap_content"  
             android:layout_height="wrap_content"  
             android:layout_marginLeft="16dp"  
-            android:background="#ffffff"  
+            android:background="@drawable/mima_bg"   
             android:cursorVisible="false"  
             android:ems="1"  
             android:gravity="center"  
-            android:textSize="31sp" />  
+            android:textColor="@color/chengse" 
+            android:textSize="@dimen/txsize_mid_xxx" />  
   
         <EditText  
             android:id="@+id/etPwdText_setLockPwd"  
@@ -138,7 +142,7 @@
 
    
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"  
         android:layout_height="match_parent"  
         android:gravity="center"  
@@ -147,13 +151,13 @@
             android:id="@+id/keyboard_view"  
             android:layout_width="fill_parent"  
             android:layout_height="wrap_content"  
-            android:layout_gravity="center"  
-            android:background="#000000"  
+            android:background="@color/bg"  
             android:focusable="true"  
+            android:layout_alignParentBottom="true"
             android:focusableInTouchMode="true"  
             android:keyPreviewLayout="@layout/key_preview_layout"
             android:keyBackground="@drawable/jianpan"  
             android:keyTextColor="#222222" /> 
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>

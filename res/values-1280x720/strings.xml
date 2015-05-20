@@ -125,7 +125,7 @@
       <dimen name="my_view_qianming_height">30dp</dimen>
       <dimen name="my_view_qianming_width">190dp</dimen>
       <dimen name="my_view_layout_height">70dp</dimen>
-      <dimen name="my_view_layout_top_x">40dp</dimen>
+      <dimen name="my_view_layout_top_x">30dp</dimen>
       <dimen name="my_view_layout_top_xx">120dp</dimen>
       <dimen name="my_view_layout_top_xxx">200dp</dimen>
       <dimen name="my_view_text_bottom">25dp</dimen>

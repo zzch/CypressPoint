@@ -149,22 +149,24 @@ public void onConfigurationChanged(Configuration newConfig) {
 
 				switch (group.getCheckedRadioButtonId()) {
 				case R.id.mainTabs_radio_qian:
-					radioButton_qian.setBackgroundResource(R.drawable.group_1);
-					radioButton_qian.setText("前九");
-					radioButton_qian.setTextColor(0xff17191c);
-					radioButton_hou.setBackgroundResource(R.drawable.group_2);
-					radioButton_hou.setText("后九");
-					radioButton_hou.setTextColor(0xffF8d57a);
+					radioGroup.setBackgroundResource(R.drawable.qianjiu);
+					//radioButton_qian.setBackgroundResource(R.drawable.group_1);
+					//radioButton_qian.setText("前九");
+					//radioButton_qian.setTextColor(0xff17191c);
+					//radioButton_hou.setBackgroundResource(R.drawable.group_2);
+					//radioButton_hou.setText("后九");
+					//radioButton_hou.setTextColor(0xffF8d57a);
 					tablePager.setCurrentItem(0);
 					break;
 
 				case R.id.mainTabs_radio_hou:
-					radioButton_hou.setBackgroundResource(R.drawable.group_3);
-					radioButton_hou.setText("后九");
-					radioButton_hou.setTextColor(0xff17191c);
-					radioButton_qian.setBackgroundResource(R.drawable.group_4);
-					radioButton_qian.setText("前九");
-					radioButton_qian.setTextColor(0xffF8d57a);
+					radioGroup.setBackgroundResource(R.drawable.houjiu);
+					//radioButton_hou.setBackgroundResource(R.drawable.group_3);
+					//radioButton_hou.setText("后九");
+					//radioButton_hou.setTextColor(0xff17191c);
+					//radioButton_qian.setBackgroundResource(R.drawable.group_4);
+					//radioButton_qian.setText("前九");
+					//radioButton_qian.setTextColor(0xffF8d57a);
 					tablePager.setCurrentItem(1);
 					break;
 				}
@@ -209,7 +211,7 @@ public void onConfigurationChanged(Configuration newConfig) {
 		radioButton_qian = (RadioButton) findViewById(R.id.mainTabs_radio_qian);
 		radioButton_hou = (RadioButton) findViewById(R.id.mainTabs_radio_hou);
 		radioButton_qian.setChecked(true);
-		radioButton_qian.setBackgroundResource(R.drawable.group_1);
+		//radioButton_qian.setBackgroundResource(R.drawable.group_1);
 		gridView = (GridView) findViewById(R.id.gridView1);
 		gridView.setSelector(new ColorDrawable(Color.TRANSPARENT));
 		dateText = (TextView) findViewById(R.id.golf_date);

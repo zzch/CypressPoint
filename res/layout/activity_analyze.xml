@@ -55,6 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_gravity="center_horizontal"
+        android:background="@drawable/radio_1"
         android:orientation="horizontal" >
 
         <RadioButton
@@ -62,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/radio_group_xx"
             android:layout_weight="1"
-            android:background="@drawable/radio_group_selector"
+           
             android:button="@null"
             android:text="按比赛"
             android:gravity="center"
@@ -74,7 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/radio_group_xx"
             android:layout_weight="1"
-            android:background="@drawable/radio_group2_selector"
+            
             android:button="@null"
             android:gravity="center"
             android:text="按时间"
@@ -86,7 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/radio_group_xx"
             android:layout_weight="1"
-            android:background="@drawable/radio_group3_selector"
+           
             android:button="@null"
             android:gravity="center"
             android:text="按球场"

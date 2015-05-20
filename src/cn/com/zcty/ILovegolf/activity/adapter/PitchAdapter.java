@@ -57,7 +57,7 @@ public class PitchAdapter extends BaseAdapter {
             Log.i("-----pitchname-->>", ""+qiuchanglists.get(poisition).getName());
            address.setText(qiuchanglists.get(poisition).getHoles_count()+"洞");
          //  address.setTextColor(0x00000000);
-           distance.setText(qiuchanglists.get(poisition).getDistance());
+           distance.setText(qiuchanglists.get(poisition).getDistance()+"km");
 		return view;
         }
 	

@@ -106,25 +106,20 @@
                     android:textColor="@color/hei5"
                     android:textSize="@dimen/txsize_small_xxx" />
 
-                 <LinearLayout
-                  android:layout_width="@dimen/infor_view_layout_x"
-                  android:layout_height="50dp"
-                  android:gravity="center_vertical"
-                  android:background="@drawable/button_moreng"
-                  android:layout_marginLeft="10dp"
-                  android:layout_marginTop="5dp"
-                  android:orientation="horizontal" >
+                 
                   
                 <EditText
                     android:id="@+id/information_name"
-                    android:layout_width="match_parent"
+                    android:layout_width="@dimen/infor_view_layout_x"
                     android:layout_height="50dp"
+                    android:background="@drawable/wenbenkuang"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
                     android:gravity="center_vertical"
-                    android:background="@null"
+                   
                     android:text=" "
                     android:textColor="@color/hei2" />
-                </LinearLayout>
+               
           
 
            
@@ -369,7 +364,7 @@
                   android:layout_width="@dimen/infor_view_layout_x"
                   android:layout_height="80dp"
                   android:gravity="center_vertical"
-                  android:background="@drawable/e_button_pressed"
+                  android:background="@drawable/shurukuang"
                   android:layout_marginLeft="10dp"
                   android:layout_marginTop="5dp"
                   android:orientation="horizontal" >

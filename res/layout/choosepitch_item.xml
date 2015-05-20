@@ -26,7 +26,7 @@
             android:layout_marginTop="@dimen/view_small_x"
             android:text="@string/pith_name"
             android:textColor="@color/hei5"
-            android:textSize="@dimen/txsize_small_xx"
+            android:textSize="@dimen/txsize_small_xxx"
             android:maxEms="13" 
             android:singleLine="true"
             android:ellipsize="end"
@@ -37,23 +37,23 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_marginLeft="@dimen/view_small_x"
+            android:layout_marginBottom="@dimen/view_Layout_x"
             android:orientation="horizontal" >
 
             <ImageView
                 android:layout_width="@dimen/view_small_xx_w"
                 android:layout_height="@dimen/view_small_xx_w"
                 android:layout_marginLeft="5dp"
-                
                 android:src="@drawable/qiudong" />
 
             <TextView
                 android:id="@+id/address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_Layout_x"
                 
-               
                 android:text="18"
-                android:textColor="@color/fengexian"
+                android:textColor="@color/hei5"
                 android:textSize="@dimen/txsize_small_xx" 
                 android:maxEms="13" 
                 android:singleLine="true"
@@ -74,11 +74,11 @@
             android:id="@+id/distance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+           android:layout_marginLeft="@dimen/view_Layout_x"
             android:gravity="center"
             android:text="12"
-            android:textColor="@color/hei2"
-            android:textSize="@dimen/txsize_mid_x" />
+            android:textColor="@color/hei5"
+            android:textSize="@dimen/txsize_small_xx" />
          <TextView
 
             android:layout_width="wrap_content"
@@ -87,7 +87,8 @@
             android:text="km"
             android:textColor="@color/hei2"
             android:layout_marginRight="5dp"
-            android:textSize="@dimen/txsize_mid_x" />
+            android:visibility="gone"
+            android:textSize="@dimen/txsize_small_xx" />
 
    
             

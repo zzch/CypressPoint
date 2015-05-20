@@ -97,7 +97,7 @@
             android:text="签名"
             android:gravity="center"
             android:background="@drawable/my_qianming_bg"
-            android:textColor="@color/hei5"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_small_a"
             android:maxEms="11" 
             android:singleLine="true"
@@ -114,10 +114,71 @@
             android:src="@drawable/icon_arrow" />
        
     </RelativeLayout>
-
+    
+    
+    
+    <RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+   
+    
+    >
+	    <Button
+            android:id="@+id/setting_account"
+            android:layout_width="@dimen/register_view_width"
+            android:layout_height="@dimen/view_mid_xx_title"
+            android:background="@drawable/button"
+             android:layout_marginTop="@dimen/my_view_layout_top_x"
+            android:gravity="center"
+            android:text="@string/account"
+            android:textSize="@dimen/txsize_mid_x"
+            android:textColor="@color/bg"
+             />
+	    <Button
+            android:id="@+id/setting_opinion"
+             android:layout_width="@dimen/register_view_width"
+             android:layout_height="@dimen/view_mid_xx_title"
+            android:background="@drawable/button"
+            android:layout_marginTop="100dp"
+            android:text="@string/opinion"
+            android:gravity="center"
+            android:textSize="@dimen/txsize_mid_x"
+            android:textColor="@color/bg"
+             />
+	    <Button
+            android:id="@+id/setting_me"
+            android:layout_width="@dimen/register_view_width"
+            android:layout_height="@dimen/view_mid_xx_title"
+            android:layout_marginTop="170dp"
+            android:background="@drawable/button"
+            android:text="@string/me"
+            android:gravity="center"
+            android:textSize="@dimen/txsize_mid_x"
+            android:textColor="@color/bg"
+             />
+	    <Button
+            android:id="@+id/setting_exit"
+            android:layout_width="@dimen/register_view_width"
+            android:layout_height="@dimen/view_mid_xx_title"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/button"
+            android:text="@string/exit"
+            android:gravity="center"
+            android:textSize="@dimen/txsize_mid_x"
+            android:textColor="@color/bg"
+             />
+	</RelativeLayout>
+    
+    
+    
+   <!-- 消息设置已隐藏  --> 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent" 
+        android:visibility="gone"
+        >
 
         <RelativeLayout
 
@@ -132,16 +193,14 @@
                 android:id="@+id/myself_image"
                 android:layout_width="@dimen/my_view_layout_top_x"
                 android:layout_height="@dimen/my_view_layout_top_x"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="17dp"
+               android:layout_centerVertical="true"
                 android:layout_marginLeft="13dp"
                 android:src="@drawable/my_xiaoxi" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="@dimen/my_view_text_bottom"
+                android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/my_view_layout_height"
                 android:textColor="@color/hei2"
                 android:textSize="20dp"
@@ -151,8 +210,7 @@
                 android:layout_width="@dimen/view_small_xx"
                 android:layout_height="@dimen/view_small_xx"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="@dimen/my_view_image_bottom"
+                android:layout_centerVertical="true"
                 android:layout_marginRight="@dimen/infor_view_xx"
                 android:src="@drawable/icon_arrow" />
         </RelativeLayout>
@@ -171,16 +229,14 @@
                 android:id="@+id/myself_image"
                 android:layout_width="@dimen/my_view_layout_top_x"
                 android:layout_height="@dimen/my_view_layout_top_x"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="17dp"
+                android:layout_centerVertical="true"
                 android:layout_marginLeft="13dp"
                 android:src="@drawable/my_jifen" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="@dimen/my_view_text_bottom"
+                android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/my_view_layout_height"
                 android:textColor="@color/hei2"
                 android:textSize="20dp"
@@ -190,8 +246,7 @@
                 android:layout_width="@dimen/view_small_xx"
                 android:layout_height="@dimen/view_small_xx"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="@dimen/my_view_image_bottom"
+                android:layout_centerVertical="true"
                 android:layout_marginRight="@dimen/infor_view_xx"
                 android:src="@drawable/icon_arrow" />
         </RelativeLayout>
@@ -208,16 +263,14 @@
                 android:id="@+id/myself_image"
                 android:layout_width="@dimen/my_view_layout_top_x"
                 android:layout_height="@dimen/my_view_layout_top_x"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="17dp"
+                android:layout_centerVertical="true"
                 android:layout_marginLeft="13dp"
                 android:src="@drawable/my_shezhi" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="@dimen/my_view_text_bottom"
+               android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/my_view_layout_height"
                 android:textColor="@color/hei2"
                 android:textSize="20dp"
@@ -227,11 +280,11 @@
                android:layout_width="@dimen/view_small_xx"
                 android:layout_height="@dimen/view_small_xx"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="@dimen/my_view_image_bottom"
+                android:layout_centerVertical="true"
                 android:layout_marginRight="@dimen/infor_view_xx"
                 android:src="@drawable/icon_arrow" />
         </RelativeLayout>
     </RelativeLayout>
+  
 
 </LinearLayout>

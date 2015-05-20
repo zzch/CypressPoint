@@ -854,14 +854,14 @@ public class CreateMatchActivity extends Activity {
 			zichangTextView.setText("");
 			titaiTextView.setText("");
 			titaicolor_1.setVisibility(View.GONE);
-			startButton.setBackgroundColor(0xff796941);
-			startButton.setTextColor(0xff191b1d);
+			startButton.setBackgroundColor(0xff64af66);
+			startButton.setTextColor(0xffededed);
 			qiudongTextView_2.setText("选择球场");
 			zichangTextView_2.setText("");
 			titaiTextView_2.setText("");
 			titaicolor_2.setVisibility(View.GONE);
-			startButton.setBackgroundColor(0xff796941);
-			startButton.setTextColor(0xff191b1d);
+			startButton.setBackgroundColor(0xff64af66);
+			startButton.setTextColor(0xffededed);
 			new OnResultMytask().start();
 		}else{
 			new Mytask().start();
