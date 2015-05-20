@@ -20,12 +20,13 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.RankingAdapter;
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.model.Ranking;
+import cn.com.zcty.ILovegolf.tools.MyListView;
+import cn.com.zcty.ILovegolf.tools.MyListView.OnRefreshListener;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
@@ -33,14 +34,18 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
 public class RankingActivity extends Activity{
 
 	private Button paiming_back;
-	private ListView rankListView;
+	private MyListView rankListView;
 	private ArrayList<Ranking> rankings = new ArrayList<Ranking>();//adapter的数据
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
+				
 				if(msg.obj.equals("404")||msg.obj.equals("500")){
+					rankListView.onRefreshComplete();
 					Toast.makeText(RankingActivity.this, "网络错误，请稍后再试", Toast.LENGTH_LONG).show();
+					
 				}else if(msg.obj.equals("403")){
+					rankListView.onRefreshComplete();
 					Toast.makeText(RankingActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
 					FileUtil.delFile();
 					Intent intent = new Intent(RankingActivity.this,ShouYeActivity.class);
@@ -49,6 +54,7 @@ public class RankingActivity extends Activity{
 				}else{
 					getData();
 				}
+				
 			}
 		};
 	};
@@ -88,6 +94,15 @@ public class RankingActivity extends Activity{
 				startActivity(intent);}
 			}
 		});
+		
+		rankListView.setonRefreshListener(new OnRefreshListener() {
+			
+			@Override
+			public void onRefresh() {
+				
+				new Rankings().start();
+			}
+		});
 	}
 	@Override
 	public void onBackPressed() {
@@ -100,7 +115,7 @@ public class RankingActivity extends Activity{
 	 */
 	public void initView(){
 		paiming_back = (Button) findViewById(R.id.paiming_back);
-		rankListView = (ListView) findViewById(R.id.ranking);
+		rankListView = (MyListView) findViewById(R.id.ranking);
 
 	}
 	/*
@@ -108,7 +123,7 @@ public class RankingActivity extends Activity{
 	 */
 	public void getData(){
 		rankListView.setAdapter(new RankingAdapter(this, rankings));
-		
+		rankListView.onRefreshComplete();
 	}
 	/**
 	 * 获取排名的数据
@@ -122,6 +137,7 @@ public class RankingActivity extends Activity{
 			getData();
 		}
 		public void getData(){
+			rankings.clear();
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String token=sp.getString("token", "token");
 			Intent intent=getIntent();

@@ -72,7 +72,11 @@ public class RankingAdapter extends BaseAdapter{
 		 			holder.nameCircleImageView,
 		 			BitmapFactory.decodeResource(inflater.getContext().getResources(), R.drawable.hugh), true);
 		 	holder.nameTextView.setText(rankings.get(position).getNickname());
-		 	holder.totalTextView.setText(rankings.get(position).getTotal());
+		 	if(rankings.get(position).getTotal().equals("null")){
+		 		holder.totalTextView.setText("-");
+		 	}else{
+		 		holder.totalTextView.setText(rankings.get(position).getTotal());
+		 	}
 		 	holder.scheduleTextView.setText(rankings.get(position).getRecorded_scorecards_count()+"/18");
 		 	return convertView;
 	}

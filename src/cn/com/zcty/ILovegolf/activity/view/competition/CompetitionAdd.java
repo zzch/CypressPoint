@@ -341,6 +341,12 @@ public class CompetitionAdd extends Activity{
 		}else if(fangshiTextView.getText().toString().equals("专业")){
 			scoring_type = "professional";
 		}
+		
+		leixing_layout.setVisibility(View.GONE);
+		majorRelativeLayout.setVisibility(View.GONE);
+		v1.setVisibility(View.GONE);
+		v2.setVisibility(View.GONE);
+		imageView1.setImageResource(R.drawable.image_down);
 	}
 	@Override
 	public void onBackPressed() {

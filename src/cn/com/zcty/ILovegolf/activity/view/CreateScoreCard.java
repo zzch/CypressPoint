@@ -75,7 +75,7 @@ public class CreateScoreCard extends Activity{
 	private String owned;
 	private String picname;
 	private ArrayList<ScoreCardsMatch> scoreCardsMatchs = new ArrayList<ScoreCardsMatch>();//存放成绩
-	private ArrayList<TeeBoxsMatch> teeBoxsMatchs = new ArrayList<TeeBoxsMatch>();//存放T台颜色
+	 
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
 			if(msg.what==1){
@@ -93,15 +93,32 @@ public class CreateScoreCard extends Activity{
 				editor.putString("nickname", username);
 				editor.commit();
 				usernameTextView.setText(username);	
-				rankingTextView.setText(ranking);
-				scheduleTextView.setText(schedule);
-				scoreTextView.setText(score);
-				parTextView.setText(par);
+				if(ranking.equals("null")){
+					rankingTextView.setText("-");
+				}else{
+					rankingTextView.setText(ranking);
+				}
+				if(schedule.equals("null")){
+					scheduleTextView.setText("-");
+				}else{
+					scheduleTextView.setText(schedule+"/18");
+				}
+				if(score.equals("null")){
+					scoreTextView.setText("-");
+				}else{
+					scoreTextView.setText(score);
+				}
+				if(par.equals("null")){
+					parTextView.setText("-");
+				}else{
+					parTextView.setText(par);
+				}
+				
+				
 				if(!portrait.equals("null")){
 					if(!FileUtil.fileIsExists()){						
 						new Imageloder().start();
 					}else{
-						Log.i("yunxingme?", "????");
 						totleImage.setImageBitmap(FileUtil.converToBitmap(100,100));
 					}
 				}
@@ -142,6 +159,7 @@ public class CreateScoreCard extends Activity{
 				if(scoring_type.equals("simple")){
 					Intent intent = new Intent(CreateScoreCard.this,ScoreCardUpDateActivity.class);
 					intent.putExtra("uuid", scoreCardsMatchs.get(position).getUuid());
+					intent.putExtra("par", scoreCardsMatchs.get(position).getPar());
 					intent.putExtra("number", (position+1)+"");
 					startActivity(intent);
 				}else{
@@ -302,9 +320,11 @@ public class CreateScoreCard extends Activity{
 					 */
 					JSONArray array = j.getJSONArray("tee_boxes");
 					int count = 0;
+					ArrayList<TeeBoxsMatch> teeBoxsMatchs = new ArrayList<TeeBoxsMatch>();//存放T台颜色
 					for(int l=0;l<array.length();l++){
 						JSONObject jj = array.getJSONObject(l);
 						TeeBoxsMatch teeBoxsMatch = new TeeBoxsMatch();
+						
 						count++;
 						teeBoxsMatch.setColor(jj.getString("color"));
 						teeBoxsMatch.setDistance_from_hole(jj.getString("distance_from_hole"));
@@ -314,9 +334,11 @@ public class CreateScoreCard extends Activity{
 							distance.add(jj.getString("distance_from_hole"));
 						}
 						teeBoxsMatchs.add(teeBoxsMatch);
+						
 					}
 					scoreCardsMatch.setCount(count);
 					scoreCardsMatch.setTeeboxs(teeBoxsMatchs);
+
 					scoreCardsMatchs.add(scoreCardsMatch);
 				}
 				
