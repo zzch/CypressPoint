@@ -13,7 +13,7 @@
         >
     <LinearLayout
         android:id="@+id/layout"
-        android:layout_width="230dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="vertical" >
@@ -35,62 +35,66 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/view_small_x"
             android:orientation="horizontal" >
 
             <ImageView
                 android:layout_width="@dimen/view_small_xx_w"
                 android:layout_height="@dimen/view_small_xx_w"
-                android:layout_marginLeft="@dimen/view_small_x"
-                android:layout_marginTop="@dimen/view_small_x"
-                android:src="@drawable/address_image" />
+                android:layout_marginLeft="5dp"
+                
+                android:src="@drawable/qiudong" />
 
             <TextView
                 android:id="@+id/address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/view_small_x"
-                android:layout_marginTop="8dp"
-                android:text="北京市*******路*****号"
+                
+               
+                android:text="18"
                 android:textColor="@color/fengexian"
                 android:textSize="@dimen/txsize_small_xx" 
                 android:maxEms="13" 
                 android:singleLine="true"
                 android:ellipsize="end"
                 />
-        </LinearLayout>
-    </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:gravity="center"
-        android:orientation="horizontal" >
+            
+            
+        
+        <ImageView
+                android:layout_width="@dimen/view_small_xx_w"
+                android:layout_height="@dimen/view_small_xx_w"
+                android:layout_marginLeft="60dp"
+                
+                android:src="@drawable/weizhi" />
+                 
+                 
         <TextView
             android:id="@+id/distance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="40dp"
-            android:layout_alignParentRight="true"
+
             android:gravity="center"
             android:text="12"
             android:textColor="@color/hei2"
             android:textSize="@dimen/txsize_mid_x" />
          <TextView
-            android:id="@+id/distance"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
             android:gravity="center"
             android:text="km"
             android:textColor="@color/hei2"
             android:layout_marginRight="5dp"
             android:textSize="@dimen/txsize_mid_x" />
 
-    </RelativeLayout>
+   
+            
+        </LinearLayout>
+    </LinearLayout>
+
+   
 
    </LinearLayout>
    <View 

@@ -49,8 +49,8 @@ public class WheelView extends View {
 	private int[] SHADOWS_COLORS = new int[] { 0xFF111111,
 			0x00AAAAAA, 0x00AAAAAA };
 	//*/
-	private int[] SHADOWS_COLORS = new int[] { 0xff17191c,
-			0x7017191c, 0x5017191c };
+	private int[] SHADOWS_COLORS = new int[] { 0xffededed,
+			0x70ededed, 0x50ededed };
 
 	/** Top and bottom items offset (to hide that) */
 	private static final int ITEM_OFFSET_PERCENT = 0;

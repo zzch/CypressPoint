@@ -31,7 +31,9 @@ import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 import android.widget.RadioGroup.OnCheckedChangeListener;
@@ -54,10 +56,13 @@ public class SelfhoodActivity extends Activity{
 	private RadioGroup sexRadioGroup;
 	private LinearLayout linear;
 	private Button baocunButton;
+	private ImageView sex_image;
 	private String sex = "";
 	private String nickname = "";
 	private String success;
 	private String id;
+	private RadioButton radio_nan;
+	private RadioButton radio_nv;
 	private ProgressDialog progressDialog;
 	private String cunzai;
 	Handler handler = new Handler(){
@@ -125,6 +130,8 @@ public class SelfhoodActivity extends Activity{
 		sexRadioGroup = (RadioGroup) findViewById(R.id.main_radio);
 		baocunButton = (Button) findViewById(R.id.selfhood_baocun);
 		linear = (LinearLayout) findViewById(R.id.linear);
+		radio_nan = (RadioButton) findViewById(R.id.mainTabs_radio_nan);
+		radio_nv = (RadioButton) findViewById(R.id.mainTabs_radio_nv);
 		id = getIntent().getStringExtra("uuid");
 		cunzai  = getIntent().getStringExtra("cunzai");
 		add = (CompetitionAddmatch) getIntent().getSerializableExtra("add");
@@ -151,11 +158,15 @@ public class SelfhoodActivity extends Activity{
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
 				switch (checkedId) {
 				case R.id.mainTabs_radio_nan:
+					radio_nan.setBackgroundResource(R.drawable.nan_1);
 					sex = "1";
+					radio_nv.setBackgroundResource(R.drawable.nv);
 					break;
 
 				case R.id.mainTabs_radio_nv:
+					radio_nv.setBackgroundResource(R.drawable.nv_1);
 					sex = "2";
+					radio_nan.setBackgroundResource(R.drawable.nan);
 					break;
 				}
 			}

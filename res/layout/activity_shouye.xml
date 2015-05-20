@@ -67,11 +67,11 @@
              android:id="@+id/et_username"
              android:layout_width="@dimen/register_view_width"
              android:layout_height="@dimen/view_mid_xx_title"
-             android:background="@drawable/e_button_pressed"
+             android:background="@drawable/wenbenkuang"
              android:hint=" 请输入手机号"
-             android:textColor="@color/fengexian" 
+             android:textColor="@color/hei5" 
              android:layout_marginTop="@dimen/shouye_name_top"
-             android:textColorHint="@color/fengexian"
+             android:textColorHint="@color/hei6"
              />
           <EditText 
              android:id="@+id/et_password"
@@ -79,10 +79,10 @@
              android:layout_height="@dimen/view_mid_xx_title"
              android:hint=" 请输入密码"
              android:password="true"
-             android:textColor="@color/fengexian"
-             android:background="@drawable/e_button_pressed"
+             android:textColor="@color/hei5"
+             android:background="@drawable/wenbenkuang"
              android:layout_marginTop="@dimen/view_small_x"
-             android:textColorHint="@color/fengexian"
+             android:textColorHint="@color/hei6"
              />
            <Button 
             android:layout_width="wrap_content"

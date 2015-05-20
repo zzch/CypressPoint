@@ -55,6 +55,7 @@
             android:background="@null"
             android:textColor="@color/white"
             android:text="@string/pk"
+            android:visibility="gone"
             android:textSize="@dimen/txsize_small_xx" />
     </RelativeLayout>
     <ScrollView 

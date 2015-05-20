@@ -123,6 +123,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/bg"
+        android:visibility="gone"
         >
         <RelativeLayout 
             android:id="@+id/score_par_two"
@@ -170,7 +171,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="成绩"
-              android:layout_marginTop="10dp"
+              android:layout_marginTop="5dp"
               android:textColor="@color/hei5"
               />
           <TextView 
@@ -178,8 +179,8 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:gravity="center"
-			  android:layout_marginLeft="40dp"
-			  android:layout_marginTop="30dp"
+			  android:layout_marginLeft="60dp"
+			  android:layout_marginTop="20dp"
               android:text="7"
               android:textColor="@color/hei2"
               android:textSize="@dimen/txsize_small_xxx"
@@ -189,7 +190,7 @@
             android:id="@+id/score_cool_two"
             android:layout_width="wrap_content"
             android:layout_height="80dp"
-           	android:layout_marginLeft="200dp"
+           	android:layout_marginLeft="230dp"
            	
            	 
             >
@@ -198,7 +199,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="开球"
-              android:layout_marginTop="10dp"
+              android:layout_marginTop="5dp"
               android:textColor="@color/hei5"
               />
           <ImageView 
@@ -206,7 +207,7 @@
               android:layout_width="20dp"
               android:layout_height="20dp"
               android:layout_marginLeft="45dp"
-              android:layout_marginTop="30dp"
+              android:layout_marginTop="25dp"
               android:src="@drawable/juzhong"
               />
           <TextView 

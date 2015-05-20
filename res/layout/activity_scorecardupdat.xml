@@ -107,7 +107,7 @@
            android:layout_height="@dimen/view_mid_x"
            android:textSize="@dimen/txsize_mid_x"
            android:text="6"
-           android:textColor="@color/hei2"
+           android:textColor="@color/chengse"
            android:gravity="center"
            android:layout_marginLeft="30dip"
            android:background="@drawable/e_textview_bg"
@@ -172,7 +172,7 @@
            android:layout_height="@dimen/view_mid_x"
            android:textSize="@dimen/txsize_mid_x"
            android:text="2"
-           android:textColor="@color/hei2"
+           android:textColor="@color/chengse"
            android:gravity="center"
            android:layout_marginLeft="30dip"
            android:background="@drawable/e_textview_bg"
@@ -233,7 +233,7 @@
            android:layout_height="@dimen/view_mid_x"
            android:textSize="@dimen/txsize_mid_x"
            android:text="2"
-           android:textColor="@color/hei2"
+           android:textColor="@color/chengse"
            android:gravity="center"
            android:layout_marginLeft="30dip"
            android:background="@drawable/e_textview_bg"
@@ -263,7 +263,6 @@
        android:gravity="center"
        android:onClick="onClick"
        
-       
        >
        <LinearLayout 
         android:layout_width="wrap_content"
@@ -286,7 +285,7 @@
           android:layout_height="wrap_content"
           android:text=""
           android:textSize="@dimen/txsize_small_x"
-          android:textColor="@color/fengexian"
+          android:textColor="@color/chengse"
          
           />
            
@@ -298,6 +297,7 @@
         android:orientation="vertical"
         android:gravity="center"
         android:layout_marginLeft="@dimen/view_mid_xxx"
+        
         >
       
        <TextView 
@@ -315,7 +315,7 @@
           android:layout_height="wrap_content"
           android:text="命中"
           android:textSize="@dimen/txsize_small_x"
-          android:textColor="@color/fengexian"
+          android:textColor="@color/chengse"
           />
          </LinearLayout>
       
@@ -340,7 +340,6 @@
        android:orientation="horizontal"
        android:layout_width="match_parent"
        android:layout_height="300dp"
-       android:background="#17191c"
        
 		>
 	

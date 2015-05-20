@@ -40,7 +40,7 @@
     <color name="blend_item_theme_color_black">#ff393d43</color>
     <color name="grays">#ffcccccc</color>
     <color name="textview">#ffffcc99</color>
-    <color name="province_line_border">#70F8d57a</color>
+    <color name="province_line_border">#aaaaaa</color>
     
     
 </resources>

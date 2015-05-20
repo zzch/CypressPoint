@@ -10,184 +10,212 @@
         android:layout_height="match_parent" >
 
         <LinearLayout
+            android:id="@+id/linear"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/linear"
             android:orientation="vertical" >
-        
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/title_height"
-        android:background="@color/daohang" >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/title_height"
+                android:background="@color/daohang" >
 
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" 
-            android:layout_centerVertical="true"
-            >
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true" >
 
-            <Button
-                android:id="@+id/analyze_result_back"
-                android:layout_width="80dp"
-                android:layout_height="47dp"
-                android:onClick="onClick"
-                android:layout_marginLeft="@dimen/title_button_left"
-                android:background="@null"
-                android:text="@string/back"
-                android:textColor="@color/white"
-                android:textSize="@dimen/txsize_small_xx" />
+                    <Button
+                        android:id="@+id/analyze_result_back"
+                        android:layout_width="80dp"
+                        android:layout_height="47dp"
+                        android:layout_marginLeft="@dimen/title_button_left"
+                        android:background="@null"
+                        android:onClick="onClick"
+                        android:text="@string/back"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/txsize_small_xx" />
 
-            <ImageView
-                android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginLeft="10dp"
-            android:src="@drawable/back_image"  />
-        </FrameLayout>
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="13dp"
+                        android:src="@drawable/back_image" />
+                </FrameLayout>
 
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="47dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:gravity="center"
-            android:text="个性化设置"
-            android:textColor="@color/white"
-            android:textSize="@dimen/txsize_mid_x" />
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="47dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:text="个性化设置"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/txsize_mid_x" />
 
-        <Button
-            android:id="@+id/pk"
-            android:layout_width="80dp"
-            android:layout_height="47dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="-10dp"
-            android:background="@null"
-            android:text="@string/pk"
-            android:textColor="@color/white"
-            android:textSize="@dimen/txsize_small_xx"
-            android:visibility="gone" />
-    </RelativeLayout>
+                <Button
+                    android:id="@+id/pk"
+                    android:layout_width="80dp"
+                    android:layout_height="47dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="-10dp"
+                    android:background="@null"
+                    android:text="@string/pk"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/txsize_small_xx"
+                    android:visibility="gone" />
+            </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="155dp" >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:text="第一步①上传头像"
-            android:textSize="15dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/shouye_view_top"
+                    android:text="第一步   上传头像"
+                    android:textSize="@dimen/txsize_small_xx" />
 
-        <cn.com.zcty.ILovegolf.tools.CircleImageView
-            android:id="@+id/selfhood_head_image"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/hugh" />
+                <cn.com.zcty.ILovegolf.tools.CircleImageView
+                    android:id="@+id/selfhood_head_image"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="40dp"
+                    android:src="@drawable/hugh" />
 
-        <Button
-            android:id="@+id/selfhood_head_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="135dp"
-            android:layout_marginTop="60dp"
-            android:text="点击此处上传头像"
-            android:textSize="13dp" />
-    </RelativeLayout>
+                <Button
+                    android:id="@+id/selfhood_head_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="135dp"
+                    android:layout_marginTop="60dp"
+                    android:text="点击此处上传头像"
+                    android:textSize="13dp" />
+            </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:focusable="true"
-        android:focusableInTouchMode="true" >
+            <View
+                android:layout_width="@dimen/view_sss_ee"
+                android:layout_height="1dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:background="@color/fengexian" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:text="第②步设置昵称"
-            android:textSize="15dp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center_horizontal" >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="40dp"
-            android:text="给自己起个好听的名字："
-            android:textSize="10dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/shouye_view_top"
+                    android:text="第二步  设置昵称"
+                    android:textSize="@dimen/txsize_small_xx" />
 
-        <EditText
-            android:id="@+id/selfhood_username"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="55dp"
-            android:hint="请输入昵称"
-            android:textSize="10dp" />
-    </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/title_button_left"
+                    android:layout_marginTop="@dimen/view_mid_xx_title"
+                    android:text="给自己起个好听的名字："
+                    android:textColor="@color/hei5"
+                    android:textSize="@dimen/txsize_small_x" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:focusable="true"
-        android:focusableInTouchMode="true" >
+                <EditText
+                    android:id="@+id/selfhood_username"
+                    android:layout_width="@dimen/register_view_width"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="80dp"
+                    android:background="@drawable/wenbenkuang"
+                    android:ems="10"
+                    android:hint="请输入昵称"
+                    android:textColor="@color/hei5"
+                    android:textColorHint="@color/hei6" >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:text="第③步设置性别"
-            android:textSize="15dp" />
+                    <requestFocus />
+                </EditText>
+            </RelativeLayout>
 
-        <RadioGroup
-            android:id="@+id/main_radio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"
-            android:orientation="horizontal" >
+            <View
+                android:layout_width="@dimen/view_sss_ee"
+                android:layout_height="1dp"
+                android:layout_gravity="center_horizontal"
+               
+                android:background="@color/fengexian" />
 
-            <RadioButton
-                android:id="@+id/mainTabs_radio_nan"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:background="@drawable/radio_group_selector"
-                android:button="@null"
-                android:gravity="center"
-                android:text="男"
-                android:textColor="@color/bg"
-                android:textSize="@dimen/txsize_small_x" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true" >
 
-            <RadioButton
-                android:id="@+id/mainTabs_radio_nv"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="@dimen/view_small_x"
-                android:background="@drawable/radio_group3_selector"
-                android:button="@null"
-                android:gravity="center"
-                android:text="女"
-                android:textColor="@color/bg"
-                android:textSize="@dimen/txsize_small_x" />
-        </RadioGroup>
-    </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/shouye_view_top"
+                    android:text="第三步  设置性别"
+                    android:textSize="@dimen/txsize_small_xx" />
 
-    
-</LinearLayout>
+                <RadioGroup
+                    android:id="@+id/main_radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="80dp"
+                    android:orientation="horizontal" >
+                    
+             
+                    <RadioButton
+                        android:id="@+id/mainTabs_radio_nan" 
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/nan"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="男"
+                        android:textColor="@color/bg"
+                        android:textSize="@dimen/txsize_small_x" />
+
+                     
+
+                   
+                    <RadioButton
+                        android:id="@+id/mainTabs_radio_nv"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="@dimen/view_small_x"
+                        android:background="@drawable/nv"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="女"
+                        android:textColor="@color/bg"
+                        android:textSize="@dimen/txsize_small_x" />
+                </RadioGroup>
+            </RelativeLayout>
+        </LinearLayout>
+
 	<Button
         android:id="@+id/selfhood_baocun"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+       android:layout_width="match_parent"
+	    android:layout_height="@dimen/view_mid_xx_title"
+	    android:layout_alignParentBottom="true"
+	    android:gravity="center"
+	    android:background="#64af66"
+	    android:textColor="@color/bg" 
+	    android:textSize="@dimen/txsize_small_xxx"
         android:text="保存" />
     </RelativeLayout>
 </LinearLayout>

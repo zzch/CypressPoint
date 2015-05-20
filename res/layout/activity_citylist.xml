@@ -52,11 +52,11 @@
         android:layout_width="@dimen/view_citylist_x"
         android:layout_height="@dimen/view_mid_x"
         android:layout_marginTop="10dp"
-        android:background="@drawable/search_bar_edit_pressed"
+        android:background="@drawable/wenbenkuang"
         android:drawableLeft="@drawable/search_bar_icon"
         android:hint="搜索球场的名称"
         android:singleLine="true"
-        android:textColor="@color/fengexian"
+        android:textColor="@color/hei5"
         android:textColorHint="@color/fengexian"
         android:textSize="@dimen/txsize_small_x" />
 

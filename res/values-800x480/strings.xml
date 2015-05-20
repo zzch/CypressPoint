@@ -154,7 +154,7 @@
         <dimen name="create_score_left">90dp</dimen>
         <dimen name="create_score_left_x">160dp</dimen>
         <dimen name="create_score_left_xx">180dp</dimen>
-        <dimen name="create_score_left_xxx">90dp</dimen>
+        <dimen name="create_score_left_xxx">70dp</dimen>
         
         <dimen name="button_jia_x">90dp</dimen>
 </resources>
