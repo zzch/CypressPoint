@@ -11,10 +11,7 @@
         
        >
          
-        <View
-               android:layout_width="match_parent"
-               android:layout_height="0.5dp"
-               android:background="@color/fengexian" />
+      
         <TableRow
             android:id="@+id/tableRow1"
             android:layout_width="wrap_content"
@@ -681,14 +678,8 @@
                      />
           
         </TableRow>
-            <View
-                 android:layout_width="match_parent"
-                 android:layout_height="0.5dp"
-                 android:background="@color/fengexian" />
+          
     </TableLayout>
 
-            <View
-                 android:layout_width="match_parent"
-                 android:layout_height="0.5dp"
-                 android:background="@color/fengexian" />
+          
 </LinearLayout>

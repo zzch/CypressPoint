@@ -138,7 +138,7 @@ public class SelfhoodActivity extends Activity{
 		/*
 		 *获得头像 
 		 */
-		photoButton.setOnClickListener(new OnClickListener() {
+		headImage.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {

@@ -85,8 +85,8 @@
                     android:id="@+id/selfhood_head_image"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginTop="50dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="60dp"
                     android:src="@drawable/hugh" />
 
                 <Button
@@ -95,6 +95,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="145dp"
                     android:layout_marginTop="70dp"
+                    android:visibility="gone"
                     android:text="点击此处上传头像"
                     android:textSize="13dp" />
             </RelativeLayout>
