@@ -197,7 +197,13 @@ public class QuickScoreActivity extends Activity {
 			break;
 			//加入比赛
 		case R.id.add_match:
-			intent  = new Intent(QuickScoreActivity.this,AddMatchActivity.class);
+			
+			if(FileUtil.fileIsExists()){
+				intent  = new Intent(QuickScoreActivity.this,AddMatchActivity.class);
+			}else{
+				intent  = new Intent(QuickScoreActivity.this,SelfhoodActivity.class);
+				intent.putExtra("cunzai", "1");
+			}
 			startActivity(intent);
 			finish();
 			break;

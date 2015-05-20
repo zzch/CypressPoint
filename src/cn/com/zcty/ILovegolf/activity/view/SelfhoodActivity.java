@@ -87,10 +87,8 @@ public class SelfhoodActivity extends Activity{
 							
 							if(cunzai.equals("1")){
 								Log.i("sdfsdfsdf", "yanzheng");
-								Intent intent = new Intent(SelfhoodActivity.this, CompetitionAdd.class);
-								//intent.setClass();
-								intent.putExtra("add", add);
-								intent.putExtra("uuid", id);
+								Intent intent = new Intent(SelfhoodActivity.this, AddMatchActivity.class);
+								
 								startActivity(intent);
 								finish();
 							}else{
@@ -193,12 +191,27 @@ public class SelfhoodActivity extends Activity{
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
 		super.onBackPressed();
-		finish();
+		if(cunzai.equals("1")){
+			Intent intent = new Intent(SelfhoodActivity.this,QuickScoreActivity.class);
+			startActivity(intent);
+			finish();
+		}else{
+			
+			finish();
+		}
 	}
 	public void onClick(View v){
 		switch (v.getId()) {
 		case R.id.analyze_result_back:
-			finish();
+			if(cunzai.equals("1")){
+				Intent intent = new Intent(SelfhoodActivity.this,QuickScoreActivity.class);
+				startActivity(intent);
+				finish();
+			}else{
+				
+				finish();
+			}
+			
 			break;
 
 		default:

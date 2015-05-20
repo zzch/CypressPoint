@@ -107,12 +107,12 @@ public class AddMatchActivity extends Activity {
 				}else{
 					
 					Intent intent = new Intent();
-					if(FileUtil.fileIsExists()){
+					//if(FileUtil.fileIsExists()){
 						intent.setClass(AddMatchActivity.this,CompetitionAdd.class);
-					}else{
-						intent.setClass(AddMatchActivity.this,SelfhoodActivity.class);
-					}
-				intent.putExtra("cunzai", "1");
+					//}else{
+						//intent.setClass(AddMatchActivity.this,SelfhoodActivity.class);
+					//}
+				
 				intent.putExtra("uuid", uuid);
 				intent.putExtra("add", add);
 				startActivity(intent);

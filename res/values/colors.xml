@@ -42,5 +42,8 @@
     <color name="textview">#ffffcc99</color>
     <color name="province_line_border">#aaaaaa</color>
     
+    <color name="white">#ffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="gold">#b89766</color>
     
 </resources>

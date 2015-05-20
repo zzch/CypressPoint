@@ -120,10 +120,9 @@ public class ScoreCardUpDateActivity extends Activity{
 		Intent intent = getIntent();
 		ballHoleTextView.setText(intent.getStringExtra("number")+"号洞");
 		/*
-		 * 5.14修改
+		 * 5.20修改
 		 */
-		//String par = intent.getStringExtra("par");
-		String par = "1";
+		String par = intent.getStringExtra("par");		
 		position = intent.getStringExtra("position");
 		SharedPreferences sp = getSharedPreferences("setCard",MODE_PRIVATE);	
 		if( !sp.getString("rodnum", "pass").equals("null")){

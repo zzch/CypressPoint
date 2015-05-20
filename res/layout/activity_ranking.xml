@@ -47,14 +47,14 @@
         
     </RelativeLayout>
 
-    <ListView
+    <cn.com.zcty.ILovegolf.tools.MyListView
         android:id="@+id/ranking"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
+        android:layout_height="match_parent" 
         android:divider="@color/fengexian"
         android:dividerHeight="1dp"
         android:listSelector="@android:color/transparent"
         >
-    </ListView>
+    </cn.com.zcty.ILovegolf.tools.MyListView>
 
 </LinearLayout>
