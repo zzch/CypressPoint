@@ -122,7 +122,7 @@ public class SelfhoodActivity extends Activity{
 	 * 初始化
 	 */
 	private void initView() {
-		photoButton = (Button) findViewById(R.id.selfhood_head_button);
+	  //photoButton = (Button) findViewById(R.id.selfhood_head_button);
 		headImage = (CircleImageView) findViewById(R.id.selfhood_head_image);
 		userNameEditText = (EditText) findViewById(R.id.selfhood_username);
 		sexRadioGroup = (RadioGroup) findViewById(R.id.main_radio);
