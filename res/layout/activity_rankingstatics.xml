@@ -226,8 +226,7 @@
                         
                         android:button="@null"
                         android:gravity="center"
-                        android:text="前九"
-                        android:textColor="@color/bg"
+                        
                         android:textSize="@dimen/txsize_small_x" />
 
                     <RadioButton
@@ -238,8 +237,7 @@
                         
                         android:button="@null"
                         android:gravity="center"
-                        android:text="后九"
-                        android:textColor="@color/hei2"
+                       
                         android:textSize="@dimen/txsize_small_x" />
                 </RadioGroup>
             </RelativeLayout>

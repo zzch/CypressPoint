@@ -64,7 +64,7 @@
            android:hint=" 请输入手机号"
            android:textColor="@color/hei5"
            android:textColorHint="@color/fengexian"
-           android:background="@drawable/e_button_pressed"
+           android:background="@drawable/wenbenkuang"
           
              />
   </LinearLayout>
@@ -87,7 +87,7 @@
            android:hint=" 至少6位密码"
             android:textColor="@color/hei5"
             android:textColorHint="@color/fengexian"
-           android:background="@drawable/e_button_pressed"
+           android:background="@drawable/wenbenkuang"
              />
            
   </LinearLayout>
@@ -111,7 +111,7 @@
            android:hint=" 请确认您的密码"
            android:textColor="@color/hei5"
            android:textColorHint="@color/fengexian"
-           android:background="@drawable/e_button_pressed"
+           android:background="@drawable/wenbenkuang"
              />
            
   </LinearLayout>
@@ -130,7 +130,7 @@
            android:id="@+id/et_yanzhengma_reg"
            android:layout_width="@dimen/register_view_yanzhen"
            android:layout_height="@dimen/view_mid_xx_title"
-           android:background="@drawable/e_button_pressed"
+           android:background="@drawable/wenbenkuang"
            android:hint=" 验证码"
            android:textColor="@color/hei5"
            android:layout_marginLeft="10dp"
@@ -145,7 +145,7 @@
            android:textSize="@dimen/txsize_small_x"
            android:textColor="@color/hei2"
            android:layout_marginLeft="10dp"
-           android:background="@drawable/button_focused"
+           android:background="@drawable/shurukuang"
            android:onClick="on_yanzhengma"
           />
   
