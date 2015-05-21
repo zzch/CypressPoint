@@ -56,23 +56,30 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical" >
+         
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                android:layout_marginTop="@dimen/shouye_login_top"
+                />
 
             <RelativeLayout
                 android:id="@+id/information_head_image"
-                android:layout_width="@dimen/infor_view_layout_x"
+                android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/button_moreng"
+                
+                
+                android:background="@color/white"
                 android:gravity="center_vertical" >
 
                 <cn.com.zcty.ILovegolf.tools.CircleImageView
                     android:id="@+id/information_head"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="5dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/infor_view_x"
+                    android:layout_marginLeft="@dimen/shouye_login_top"
                     android:src="@drawable/hugh" />
 
                 <ImageView
@@ -96,58 +103,70 @@
                     android:textSize="@dimen/txsize_mid_x" />
             </RelativeLayout>
 
-            
+             <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                />
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="名称"
-                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:text="  名称"
+                    android:gravity="center_vertical"
                     android:textColor="@color/hei5"
                     android:textSize="@dimen/txsize_small_xxx" />
 
-                 
+                  <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"/>
                   
                 <EditText
                     android:id="@+id/information_name"
-                    android:layout_width="@dimen/infor_view_layout_x"
-                    android:layout_height="50dp"
-                    android:background="@drawable/wenbenkuang"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:gravity="center_vertical"
-                   
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:background="@color/white"
+                    android:gravity="center"
                     android:text=" "
                     android:textColor="@color/hei2" />
                
           
 
-           
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="性别"
-                     android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:text="  性别"
+                    android:gravity="center_vertical"
                     android:textColor="@color/hei5"
                     android:textSize="@dimen/txsize_small_xxx" />
+                
+                 <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                />
   
               <LinearLayout
-                  android:layout_width="@dimen/infor_view_layout"
-                  android:layout_height="55dp"
+                  android:layout_width="match_parent"
+                  android:layout_height="@dimen/view_mid_xx_title"
                   android:gravity="center_vertical"
-                  android:background="@drawable/button_moreng"
-                  android:layout_marginLeft="5dp"
-                  android:layout_marginTop="5dp"
+                  android:background="@color/white"
+                  
+                  
                   android:orientation="horizontal" >
 
                 <TextView
                     android:id="@+id/information_sex"
                     android:layout_width="@dimen/infor_view_width"
-                    android:layout_height="55dp"
-                    android:gravity="center_vertical"
-                    android:layout_marginLeft="15dp"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:layout_marginLeft="@dimen/view_mid_xx_title"
+                    android:gravity="center"
                     android:text="男"
                     android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_small_xx" />
@@ -162,7 +181,14 @@
                     android:src="@drawable/image_icon" />
 
             </LinearLayout>
-
+               <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                />
+               
+               
+          
             <cn.com.zcty.ILovegolf.tools.WheelView
                 android:id="@+id/information_sex_wheel"
                 android:layout_width="match_parent"
@@ -171,36 +197,49 @@
                 android:layout_marginRight="10dp"
                 android:onClick="onClick"
                 android:visibility="gone" />
-
+            
+            
+            
+                  
           <LinearLayout
-                  android:layout_width="wrap_content"
+                  android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:orientation="vertical"
                   >
+                 <View 
+                android:id="@+id/view_1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="生日"
-                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:text="  生日"
+                    android:gravity="center_vertical"
                     android:textColor="@color/hei5"
                     android:textSize="@dimen/txsize_small_xxx" />
+                
+                 <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                />
            
                 <LinearLayout
-                  android:layout_width="@dimen/infor_view_layout"
-                  android:layout_height="55dp"
+                  android:layout_width="match_parent"
+                  android:layout_height="@dimen/view_mid_xx_title"
                   android:gravity="center_vertical"
-                  android:background="@drawable/button_moreng"
-                  android:layout_marginLeft="5dp"
-                  android:layout_marginTop="5dp"
+                  android:background="@color/white"
+                 
                   android:orientation="horizontal" >
                 <TextView
                     android:id="@+id/information_brithday"
                     android:layout_width="@dimen/infor_view_width"
-                    android:layout_height="55dp"
-                    android:gravity="center_vertical"
-                    android:layout_marginLeft="15dp"                    
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:layout_marginLeft="@dimen/view_mid_xx_title"                   
+                    android:gravity="center"
                     android:text=" 1989-12-1"
                     android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_small_xx" />
@@ -215,7 +254,11 @@
                     android:src="@drawable/image_icon" />
            
                  </LinearLayout>
-                 
+                  <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                />
               </LinearLayout>
             <LinearLayout
                 android:id="@+id/information_brithday_wheel"
@@ -246,30 +289,39 @@
             </LinearLayout>
 
            
-
+                <View 
+                    android:id="@+id/view_2"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                />
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="年龄"
-                     android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:text="  年龄"
+                     android:gravity="center_vertical"
                     android:textColor="@color/hei5"
                     android:textSize="@dimen/txsize_small_xxx" />
+                 <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                />
                 
              <LinearLayout
-                  android:layout_width="@dimen/infor_view_layout"
-                  android:layout_height="55dp"
+                  android:layout_width="match_parent"
+                  android:layout_height="@dimen/view_mid_xx_title"
                   android:gravity="center_vertical"
-                  android:background="@drawable/button_moreng"
-                  android:layout_marginLeft="5dp"
-                  android:layout_marginTop="5dp"
+                  android:background="@color/white"
+                  
+                 
                   android:orientation="horizontal" >
                 <TextView
                     android:id="@+id/information_year"
                     android:layout_width="match_parent"
-                    android:layout_height="55dp"
+                    android:layout_height="@dimen/view_mid_xx_title"
                     android:layout_marginLeft="15dp"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:text="24"
                     android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_small_xx" />
@@ -277,21 +329,20 @@
                
              </LinearLayout>
 
-            
+           
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="地区"
-                    android:layout_marginTop="10dp"
+                   android:layout_height="@dimen/view_mid_xx_title"
+                    android:text="  地区"
+                    android:gravity="center_vertical"
                     android:textColor="@color/hei5"
                     android:visibility="gone"
                     android:textSize="@dimen/txsize_small_xxx" />
 
                 <LinearLayout
                   android:layout_width="@dimen/infor_view_layout"
-                  android:layout_height="55dp"
+                  android:layout_height="@dimen/view_mid_xx_title"
                   android:gravity="center_vertical"
                   android:background="@drawable/button_moreng"
                   android:layout_marginLeft="5dp"
@@ -301,8 +352,8 @@
                 <TextView
                     android:id="@+id/information_area"
                    android:layout_width="@dimen/infor_view_width"
-                    android:layout_height="55dp"
-                    android:gravity="center_vertical"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:gravity="center"
                     android:layout_marginLeft="15dp"
                     android:text="北京市-海淀区"
                     android:textColor="@color/hei2"
@@ -349,37 +400,50 @@
                     android:layout_height="170dp"
                     android:layout_weight="1" />
             </LinearLayout>
+             <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                />
 
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="签名"
-                    android:layout_marginTop="10dp"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:text="  签名"
+                    android:gravity="center_vertical"
                     android:textColor="@color/hei5"
                     android:textSize="@dimen/txsize_small_xxx" />
                 
+                 <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                />
+                
                  <LinearLayout
-                  android:layout_width="@dimen/infor_view_layout_x"
+                  android:layout_width="match_parent"
                   android:layout_height="80dp"
                   android:gravity="center_vertical"
-                  android:background="@drawable/shurukuang"
-                  android:layout_marginLeft="10dp"
-                  android:layout_marginTop="5dp"
-                  android:orientation="horizontal" >
+                  android:background="@color/white"
+                  android:orientation="vertical" >
 
                 <EditText
                     android:id="@+id/information_qianming"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="10dp"
                     android:gravity="center_vertical"
                     android:background="@null"
                     android:hint="请设置您的个性签名"
                     android:textColorHint="@null"
                     android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_small_xx" />
+                <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                />
              </LinearLayout>
 
             <View

@@ -64,7 +64,7 @@
         android:layout_height="130dp"
         android:layout_marginLeft="10dp"
         android:background="@drawable/gridview_bg"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="@dimen/infor_view_x"
         android:gravity="center"
         android:numColumns="2" >
     </GridView>
@@ -72,7 +72,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" 
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="10dp"
         >
 
         <FrameLayout
@@ -124,7 +124,8 @@
                     android:gravity="center"
                     android:layout_marginLeft="@dimen/count_text_left"
                     android:layout_marginTop="@dimen/count_text_top"
-                    android:textColor="@color/hei2" />
+                    android:textSize="@dimen/txsize_small_xx"
+                    android:textColor="@color/chengse" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -133,7 +134,7 @@
                     android:layout_marginTop="@dimen/count_avg_top"
                     android:text="@string/count_avg"
                     android:textSize="12dp"
-                    android:textColor="@color/hei5" />
+                    android:textColor="@color/white" />
             </RelativeLayout>
         </FrameLayout>
 

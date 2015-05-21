@@ -87,11 +87,11 @@
             android:id="@+id/etPwdOne_setLockPwd"  
             android:layout_width="wrap_content"  
             android:layout_height="wrap_content"  
-            android:background="@drawable/mima_bg"  
             android:cursorVisible="false"  
             android:ems="1"  
             android:gravity="center"  
             android:lines="1" 
+            android:background="@drawable/mima_bg"  
             android:textColor="@color/chengse" 
             android:textSize="@dimen/txsize_mid_xxx" >  
         </EditText>  

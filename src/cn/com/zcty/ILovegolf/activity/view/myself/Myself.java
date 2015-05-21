@@ -88,7 +88,8 @@ public class Myself extends Activity {
 			if(msg.what==1){
 				//image_bg.setImageAlpha(80);
 				imageHead.setImageBitmap(bitmap);
-				FileUtil.blur(FileUtil.converToBitmap(100,100),Myself.this,headLayout);
+				//头像背景模糊
+			//	FileUtil.blur(FileUtil.converToBitmap(100,100),Myself.this,headLayout);
 				FileUtil.saveMyBitmap(bitmap);
 			}
 		
@@ -107,7 +108,8 @@ public class Myself extends Activity {
 	
 			if(FileUtil.fileIsExists()){
 				imageHead.setImageBitmap(FileUtil.converToBitmap(100,100));
-				FileUtil.blur(FileUtil.converToBitmap(100,100),Myself.this,headLayout);
+				//头像背景模糊
+				//FileUtil.blur(FileUtil.converToBitmap(100,100),Myself.this,headLayout);
 			}else{
 			new Touxiang().start();
 			}

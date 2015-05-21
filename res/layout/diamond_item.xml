@@ -40,15 +40,15 @@
                 android:layout_width="@dimen/view_small_xx_w"
                 android:layout_height="@dimen/view_small_xx_w"
                 android:layout_marginLeft="@dimen/view_small_x"
-                android:layout_marginTop="@dimen/view_small_x"
-                android:src="@drawable/address_image" />
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/address_normal" />
 
             <TextView
                android:id="@+id/diamond_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/view_small_x"
-                android:layout_marginTop="8dp"
+                android:layout_gravity="center_vertical"
                 android:text="北京市*******路*****号"
                 android:textColor="@color/fengexian"
                 android:textSize="@dimen/txsize_small_xx" 
@@ -75,7 +75,7 @@
             android:layout_alignParentRight="true"
            
             android:text="12"
-            android:textColor="@color/hei2"
+            android:textColor="@color/chengse"
             android:textSize="@dimen/txsize_small_xx" />
          <TextView
             android:layout_width="wrap_content"
@@ -83,7 +83,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:text="场"
-            android:textColor="@color/hei2"
+            android:textColor="@color/chengse"
             android:layout_marginRight="20dp"
             android:textSize="@dimen/txsize_small_xx" />
          

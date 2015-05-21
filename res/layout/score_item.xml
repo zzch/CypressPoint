@@ -111,7 +111,7 @@
         </RelativeLayout>
         
         <View
-            android:layout_width="1dp"
+            android:layout_width="0.5dp"
             android:layout_height="80dp"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="80dp"
@@ -122,8 +122,8 @@
         android:id="@+id/score_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/bg"
         android:visibility="gone"
+        
         >
         <RelativeLayout 
             android:id="@+id/score_par_two"
@@ -152,7 +152,7 @@
         </RelativeLayout>
         
            <View 
-            android:layout_width="1dp"
+            android:layout_width="0.5dp"
             android:layout_height="80dp"
              android:layout_alignParentLeft="true"
             android:layout_marginLeft="80dp"
@@ -176,14 +176,14 @@
               />
           <TextView 
               android:id="@+id/score_s_1"
-              android:layout_width="wrap_content"
+              android:layout_width="@dimen/view_mid_xx_title"
               android:layout_height="wrap_content"
               android:gravity="center"
-			  android:layout_marginLeft="60dp"
-			  android:layout_marginTop="20dp"
+			  android:layout_marginLeft="@dimen/view_mid_xx_title"
+			  android:layout_marginTop="25dp"
               android:text="7"
-              android:textColor="@color/hei2"
-              android:textSize="@dimen/txsize_small_xxx"
+              android:textColor="@color/chengse"
+              android:textSize="@dimen/txsize_mid_xx"
               />  
         </RelativeLayout>
         <RelativeLayout 
@@ -218,7 +218,7 @@
 			  android:layout_marginLeft="40dp"
 			  android:layout_marginTop="50dp"
               android:text="217"
-              android:textColor="@color/hei2"
+             
               />
           
          
