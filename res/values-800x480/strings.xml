@@ -47,7 +47,7 @@
   	<dimen name="count_orange_top">128dp</dimen>
   	<dimen name="count_orange_size">65dp</dimen>
   	<dimen name="count_text_left">172dp</dimen>
-  	<dimen name="count_text_top">138dp</dimen>
+  	<dimen name="count_text_top">140dp</dimen>
   	<dimen name="count_avg_left">175dp</dimen>
   	<dimen name="count_avg_top">155dp</dimen>
   	<dimen name="count_ccc">0dp</dimen>
@@ -93,7 +93,7 @@
     <dimen name="view_sss_ee">305dp</dimen>
     <dimen name="view_sss_eee">170dp</dimen>
     
-    <dimen name="view_sss_f">165dp</dimen>
+    <dimen name="view_sss_f">185dp</dimen>
     <dimen name="view_sss_ff">10dp</dimen>
     <dimen name="view_sss_fff">165dp</dimen>
     
@@ -117,9 +117,9 @@
      
      <dimen name="my_view_frame_left">15dp</dimen>
      <dimen name="my_view_layout">170dp</dimen>
-     <dimen name="my_view_image">78dp</dimen> 
-     <dimen name="my_view_image_left">106dp</dimen>
-     <dimen name="my_view_image_top">20.5dp</dimen> 
+     <dimen name="my_view_image">82dp</dimen> 
+     <dimen name="my_view_image_left">104dp</dimen>
+     <dimen name="my_view_image_top">18.5dp</dimen> 
      <dimen name="my_view_Circle_x">71dp</dimen> 
      <dimen name="my_view_Circle_top">23dp</dimen> 
      <dimen name="my_view_Circle_left">109dp</dimen> 
@@ -136,7 +136,7 @@
       
      <dimen name="infor_view_layout">310dp</dimen>
      <dimen name="infor_view_layout_x">305dp</dimen>
-      <dimen name="infor_view_width">255dp</dimen>
+      <dimen name="infor_view_width">225dp</dimen>
      <dimen name="infor_view_x">20dp</dimen>
      <dimen name="infor_view_xx">10dp</dimen>
      

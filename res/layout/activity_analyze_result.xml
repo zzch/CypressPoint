@@ -12,24 +12,25 @@
         android:layout_width="match_parent"
          android:layout_height="@dimen/title_height"
         android:background="@color/daohang" >
-        <FrameLayout 
+           
+        
+          <FrameLayout 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            
+            android:layout_centerVertical="true"
             >
-       
-        
-		<Button
-            android:id="@+id/analyze_result_back"
+         
+        <Button
+             android:id="@+id/analyze_result_back"
             android:layout_width="80dp"
             android:layout_height="47dp"
-            android:layout_alignParentLeft="true"
+            
             android:layout_marginLeft="@dimen/title_button_left"
             android:background="@null"
             android:text="@string/back"
             android:textColor="@color/white"
-            android:textSize="@dimen/txsize_small_xx" />
-		<ImageView
+            android:textSize="@dimen/txsize_small_xx"/>
+        <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginTop="13dp"

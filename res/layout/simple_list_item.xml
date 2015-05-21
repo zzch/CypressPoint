@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:text="自己"
         android:layout_marginTop="5dp"
-        android:textColor="@color/hei2"
+        android:textColor="@color/chengse"
         android:textSize="@dimen/txsize_mid_xx"
         />
    <TextView 
@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="成绩"
-        android:textColor="@color/fengexian"
+        android:textColor="@color/hei5"
         android:textSize="19dp"
         />
 </LinearLayout>

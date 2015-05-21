@@ -99,6 +99,9 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 	private WheelView quWheelView;
 	private WheelView shiWheelView;
 	private WheelView xianWheelView;
+	
+	private View v_1;
+	private View v_2;
 	private LinearLayout  areaLinearLayout;
 	private TextView diquTextView;
 	private StringBuffer citys;
@@ -350,6 +353,10 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 	}
 
 	private void initView() {
+		v_1 = findViewById(R.id.view_1);
+		v_2 = findViewById(R.id.view_2);
+		v_1.setVisibility(View.GONE);
+		v_2.setVisibility(View.GONE);
 		linear = (LinearLayout) findViewById(R.id.linear);
 		headImage = (RelativeLayout) findViewById(R.id.information_head_image);
 		headMyImage = (CircleImageView) findViewById(R.id.information_head);
@@ -462,8 +469,10 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			if(sexWheel.getVisibility()==View.GONE){				
 				sexWheel.setVisibility(View.VISIBLE);
 				imageView2.setImageResource(R.drawable.image_icon_up);
+				v_1.setVisibility(View.VISIBLE);
 			}else{
 				sexWheel.setVisibility(View.GONE);	
+				v_1.setVisibility(View.GONE);	
 				imageView2.setImageResource(R.drawable.image_icon);
 				new GenxinSex().start();
 			}
@@ -472,8 +481,10 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			if(brithdayLinearLayout.getVisibility()==View.GONE){				
 				brithdayLinearLayout.setVisibility(View.VISIBLE);
 				imageView3.setImageResource(R.drawable.image_icon_up);
+				v_2.setVisibility(View.VISIBLE);	
 			}else{
 				brithdayLinearLayout.setVisibility(View.GONE);	
+				v_2.setVisibility(View.GONE);	
 				imageView3.setImageResource(R.drawable.image_icon);
 				new GenxinBrithday().start();
 			}

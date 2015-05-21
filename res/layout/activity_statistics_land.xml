@@ -131,7 +131,7 @@
                             android:textSize="20dp" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -147,7 +147,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -162,7 +162,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -177,7 +177,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -192,7 +192,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -207,7 +207,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -222,7 +222,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -237,7 +237,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -252,7 +252,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -267,7 +267,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -283,7 +283,7 @@
 
                         <View
                             android:id="@+id/v"
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -298,7 +298,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -313,7 +313,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -328,7 +328,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -343,7 +343,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -358,7 +358,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -373,7 +373,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -388,7 +388,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -403,7 +403,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -418,7 +418,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -433,7 +433,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -473,7 +473,7 @@
                             android:textSize="20dp" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -489,7 +489,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -505,7 +505,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -521,7 +521,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -537,7 +537,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -553,7 +553,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -569,7 +569,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -585,7 +585,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -601,7 +601,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -617,7 +617,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -634,7 +634,7 @@
 
                         <View
                             android:id="@+id/v"
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -650,7 +650,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -666,7 +666,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -682,7 +682,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -698,7 +698,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -714,7 +714,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -730,7 +730,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -746,7 +746,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -762,7 +762,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -778,7 +778,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -794,7 +794,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -835,7 +835,7 @@
                             android:textSize="20dp" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -851,7 +851,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -867,7 +867,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -883,7 +883,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -899,7 +899,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -915,7 +915,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -931,7 +931,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -947,7 +947,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -963,7 +963,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -979,7 +979,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -996,7 +996,7 @@
 
                         <View
                             android:id="@+id/v"
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1012,7 +1012,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1028,7 +1028,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1044,7 +1044,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1060,7 +1060,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1076,7 +1076,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1092,7 +1092,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1108,7 +1108,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1124,7 +1124,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1140,7 +1140,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1156,7 +1156,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1197,7 +1197,7 @@
                             android:textSize="20dp" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1213,7 +1213,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1229,7 +1229,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1245,7 +1245,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1261,7 +1261,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1277,7 +1277,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1293,7 +1293,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1309,7 +1309,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1325,7 +1325,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1341,7 +1341,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1358,7 +1358,7 @@
 
                         <View
                             android:id="@+id/v"
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1374,7 +1374,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1390,7 +1390,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1406,7 +1406,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1422,7 +1422,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1438,7 +1438,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1454,7 +1454,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1470,7 +1470,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1486,7 +1486,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1502,7 +1502,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1518,7 +1518,7 @@
                             android:textSize="@dimen/txsize_small_s" />
 
                         <View
-                            android:layout_width="1dp"
+                            android:layout_width="0.5dp"
                             android:layout_height="match_parent"
                             android:background="@color/fengexian" />
 
@@ -1647,36 +1647,76 @@
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
                 android:background="@color/fengexian" />
+            
+             <View 
+              android:layout_width="match_parent"
+               android:layout_height="0.5dp"
+               android:layout_marginTop="20dp"
+               android:background="@color/fengexian"
+              />
 
             <GridView
                 android:id="@+id/gridView1"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:numColumns="4" >
+                android:layout_height="@dimen/view_sss_b"
+                android:gravity="center"
+                android:background="@drawable/count_gridview_bg"
+                
+                android:numColumns="2" >
             </GridView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/fengexian" />
+            
+          <View 
+              android:layout_width="match_parent"
+               android:layout_height="0.5dp"
+               android:layout_marginTop="20dp"
+               android:background="@color/fengexian"
+              />
 
             <ListView
                 android:id="@+id/count"
                 android:layout_width="match_parent"
-                android:layout_height="580dp"
+                android:layout_height="564dp"
                 android:listSelector="@android:color/transparent"
-                android:divider="@null" >
+                android:background="@color/white"
+                android:dividerHeight="0.5dp"
+                android:divider="@color/fengexian" >
             </ListView>
+            
+            <View 
+              android:layout_width="match_parent"
+               android:layout_height="0.5dp"
+               android:layout_marginTop="20dp"
+               android:background="@color/fengexian"
+              />
 
             <ListView
                 android:id="@+id/qiudong"
                 android:layout_width="match_parent"
-                android:layout_height="230dp"
+                android:layout_height="212dp"
                 android:listSelector="@android:color/transparent"
-                android:divider="@null" >
+                android:background="@color/white"
+                 android:dividerHeight="0.5dp"
+                android:divider="@color/fengexian"  >
             </ListView>
-
+            
+             <View 
+              android:layout_width="match_parent"
+               android:layout_height="0.5dp"
+               android:layout_marginTop="20dp"
+               android:background="@color/fengexian"
+              />
             <ListView
                 android:id="@+id/qiutype"
                 android:layout_width="match_parent"
                 android:layout_height="430dp"
                 android:listSelector="@android:color/transparent"
-                android:divider="@null" >
+                android:background="@color/white"
+                 android:dividerHeight="0.5dp"
+                android:divider="@color/fengexian"  >
             </ListView>
         </LinearLayout>
     </ScrollView>

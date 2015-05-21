@@ -63,12 +63,19 @@
             android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
     </RelativeLayout>
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#1e1c27"
+        />
 
    <RelativeLayout
        android:id="@+id/creatematch_select_diamond"
        android:layout_width="match_parent"
        android:layout_height="60dp"
        android:gravity="center"
+       android:background="@color/daohang"
        android:orientation="horizontal" >
 
        <ImageView
@@ -97,15 +104,15 @@
            android:maxEms="13"
            android:singleLine="true"
            android:layout_centerVertical="true"
-           android:text="@string/pith_name"
-           android:textColor="@color/hei2"
+           android:text=""
+           android:textColor="@color/white"
            android:textSize="@dimen/txsize_small_xx" />
 
    </RelativeLayout>
    
    <View 
        android:layout_width="match_parent"
-       android:layout_height="1dp"
+       android:layout_height="0.5dp"
        android:background="@color/fengexian"
        />
    
@@ -132,8 +139,8 @@
             android:layout_alignParentRight="true"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:textColor="@color/chengse"
 	        android:layout_marginTop="5dp"
+	        android:textColor="@color/chengse"
 	        android:textSize="@dimen/txsize_small_xx"
 	        android:text="简单" />
 
@@ -150,7 +157,7 @@
     
        <View 
        android:layout_width="match_parent"
-       android:layout_height="1dp"
+       android:layout_height="0.5dp"
        android:background="@color/fengexian"
      
        />
@@ -176,7 +183,7 @@
 	    <View 
 	   android:id="@+id/v1"
        android:layout_width="match_parent"
-       android:layout_height="1dp"
+       android:layout_height="0.5dp"
        android:layout_marginLeft="10dp"
        android:background="@color/fengexian"
        />
@@ -204,7 +211,7 @@
 	<View 	   
 	   android:id="@+id/v2"
        android:layout_width="match_parent"
-       android:layout_height="1dp"
+       android:layout_height="0.5dp"
        android:background="@color/fengexian"
        />
    
@@ -246,7 +253,7 @@
 	</RelativeLayout>
 	<View 	   
        android:layout_width="match_parent"
-       android:layout_height="1dp"
+       android:layout_height="0.5dp"
        android:background="@color/fengexian"
        />
 	
@@ -261,7 +268,7 @@
 	        android:layout_height="wrap_content"
 	        android:divider="@color/fengexian"
 	        android:listSelector="@android:color/transparent"
-	        android:dividerHeight="1dp"
+	        android:dividerHeight="0.5dp"
 	        >
 	    </ListView>	    
 	</RelativeLayout>
@@ -314,7 +321,7 @@
 	<View 
 	    android:id="@+id/view_2"
        android:layout_width="match_parent"
-       android:layout_height="1dp"
+       android:layout_height="0.5dp"
        android:background="@color/fengexian"
        />
 	<RelativeLayout 
@@ -328,7 +335,7 @@
 	        android:layout_height="wrap_content"
 	        android:divider="@color/fengexian"
 	        android:listSelector="@android:color/transparent"
-	        android:dividerHeight="1dp"
+	        android:dividerHeight="0.5dp"
 	        >
 	    </ListView>	    
 	</RelativeLayout>
@@ -374,7 +381,7 @@
 	<View 
 	    android:id="@+id/view_3"
        android:layout_width="match_parent"
-       android:layout_height="1dp"
+       android:layout_height="0.5dp"
        android:background="@color/fengexian"
        />
 	
@@ -389,7 +396,7 @@
 	        android:layout_height="wrap_content"
 	        android:divider="@color/fengexian"
 	        android:listSelector="@android:color/transparent"
-	        android:dividerHeight="1dp"
+	        android:dividerHeight="0.5dp"
 	        >
 	    </ListView>	    
 	</RelativeLayout>
@@ -444,7 +451,7 @@
 	<View 
 	    android:id="@+id/view_4"
        android:layout_width="match_parent"
-       android:layout_height="1dp"
+       android:layout_height="0.5dp"
        android:background="@color/fengexian"
        />
 	<RelativeLayout 
@@ -458,7 +465,7 @@
 	        android:layout_height="wrap_content"
 	        android:divider="@color/fengexian"
 	        android:listSelector="@android:color/transparent"
-	        android:dividerHeight="1dp"
+	        android:dividerHeight="0.5dp"
 	        >
 	    </ListView>	    
 	</RelativeLayout>

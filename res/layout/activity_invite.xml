@@ -62,7 +62,7 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:layout_width="262dp"
+            android:layout_width="265dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
@@ -104,10 +104,10 @@
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/text_yqhy"
                     android:gravity="center"
                     android:text="5"
-                    android:textColor="@color/hei2"
+                    android:background="@drawable/mima_bg"  
+                    android:textColor="@color/chengse" 
                     android:textSize="@dimen/txsize_mid_xxx" />
             </RelativeLayout>
 
@@ -123,10 +123,10 @@
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/text_yqhy"
                     android:gravity="center"
                     android:text="3"
-                    android:textColor="@color/hei2"
+                    android:background="@drawable/mima_bg"  
+                    android:textColor="@color/chengse" 
                     android:textSize="@dimen/txsize_mid_xxx" />
             </RelativeLayout>
 
@@ -142,10 +142,10 @@
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/text_yqhy"
                     android:gravity="center"
                     android:text="5"
-                    android:textColor="@color/hei2"
+                    android:background="@drawable/mima_bg"  
+                    android:textColor="@color/chengse" 
                     android:textSize="@dimen/txsize_mid_xxx" />
             </RelativeLayout>
 
@@ -161,10 +161,10 @@
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/text_yqhy"
                     android:gravity="center"
                     android:text="2"
-                    android:textColor="@color/hei2"
+                    android:background="@drawable/mima_bg"  
+                    android:textColor="@color/chengse" 
                     android:textSize="@dimen/txsize_mid_xxx" />
             </RelativeLayout>
         </LinearLayout>

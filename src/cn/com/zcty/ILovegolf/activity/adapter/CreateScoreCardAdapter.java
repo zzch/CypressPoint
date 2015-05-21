@@ -187,9 +187,9 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 				holder.distanceimageView.setImageResource(R.drawable.jfk_you_icon);
 			}
 			
+			holder.distanceTextView.setTextColor(0x80ff961d);
 			holder.distanceTextView.setText(
 					scoreCardsMatchs.get(position).getDriving_distance()+"码");
-			
 		}
 		return convertView;
 	}

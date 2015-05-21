@@ -68,7 +68,7 @@
                 >
                 <RelativeLayout 
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/create_score_left_xxx"
                     >
                     <cn.com.zcty.ILovegolf.tools.CircleImageView 
                         android:id="@+id/head_image"
@@ -76,28 +76,35 @@
                         android:layout_width="70dp"
                         android:src="@drawable/hugh"
                         android:layout_marginLeft="@dimen/view_sss_ff"
-                        android:layout_marginTop="@dimen/view_sss_ff"
+                        android:layout_centerVertical="true"
                         />
                     <TextView 
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:layout_marginLeft="100dp"
+                        android:layout_marginLeft="@dimen/create_score_left"
                         android:layout_centerVertical="true"
                         android:textColor="@color/hei2"
-                        android:text="创始人："
+                        android:text="创始人:"
+                        android:textSize="@dimen/txsize_small_xxx"
                         
                         />
                      <TextView 
                         android:id="@+id/username"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:layout_marginLeft="160dp"
+                        android:layout_marginLeft="@dimen/view_image_a"
                         android:layout_centerVertical="true"
                         android:textColor="@color/hei2"
-                        android:text="创始人："
-                        
+                        android:text="创始人"
+                        android:textSize="@dimen/txsize_mid_x"
                         />
                 </RelativeLayout>
+                <View 
+       android:layout_width="match_parent"
+       android:layout_height="0.5dp"
+       android:background="@color/fengexian"
+     
+       />
          
    <RelativeLayout
 	    android:id="@+id/jifenfangshi"
@@ -121,8 +128,8 @@
             android:layout_alignParentRight="true"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:textColor="@color/hei2"
 	        android:layout_marginTop="5dp"
+	        android:textColor="@color/chengse"
 	        android:textSize="@dimen/txsize_small_xx"
 	        android:text="简单" />
 
@@ -139,7 +146,7 @@
     
        <View 
        android:layout_width="match_parent"
-       android:layout_height="1dp"
+       android:layout_height="0.5dp"
        android:background="@color/fengexian"
      
        />
@@ -165,7 +172,7 @@
 	    <View 
 	   android:id="@+id/v1"
        android:layout_width="match_parent"
-       android:layout_height="1dp"
+       android:layout_height="0.5dp"
        android:layout_marginLeft="10dp"
        android:background="@color/fengexian"
        />
@@ -193,7 +200,7 @@
 	<View 	   
 	   android:id="@+id/v2"
        android:layout_width="match_parent"
-       android:layout_height="1dp"
+       android:layout_height="0.5dp"
        android:background="@color/fengexian"
        />         
 	<RelativeLayout 
@@ -218,7 +225,7 @@
 	        android:layout_marginRight="30dp"
             android:layout_alignParentRight="true"
 	        android:layout_centerVertical="true"
-	        android:textColor="@color/hei2"
+	        android:textColor="@color/chengse"
 	        android:textSize="@dimen/txsize_small_xx"
 	        android:text=""
 	        />
@@ -227,7 +234,7 @@
 	
 	<View 	   
        android:layout_width="match_parent"
-       android:layout_height="1dp"
+       android:layout_height="0.5dp"
        android:background="@color/fengexian"
        />
 	
@@ -254,7 +261,7 @@
 	        android:layout_marginRight="40dp"
             android:layout_alignParentRight="true"
 	        android:layout_centerVertical="true"
-	        android:textColor="@color/hei2"
+	        android:textColor="@color/chengse"
 	        android:textSize="@dimen/txsize_small_xx"
 	        android:text=""
 	        />
@@ -278,7 +285,7 @@
 	<View 
 	    android:id="@+id/view_2"
        android:layout_width="match_parent"
-       android:layout_height="1dp"
+       android:layout_height="0.5dp"
        android:background="@color/fengexian"
        />
 	<RelativeLayout 
@@ -293,7 +300,7 @@
 	        android:layout_height="250dp"
 	         android:divider="@color/fengexian"
 	        android:listSelector="@android:color/transparent"
-	        android:dividerHeight="1dp"
+	        android:dividerHeight="0.5dp"
 
 	        >
 	    </ListView>	    
@@ -333,7 +340,7 @@
 	<View 
 	    android:id="@+id/view_3"
        android:layout_width="match_parent"
-       android:layout_height="1dp"
+       android:layout_height="0.5dp"
        android:background="@color/fengexian"
        />
 	<RelativeLayout 
@@ -360,7 +367,7 @@
 	         android:layout_marginRight="40dp"
             android:layout_alignParentRight="true"
 	        android:layout_centerVertical="true"
-	        android:textColor="@color/hei2"
+	        android:textColor="@color/chengse"
 	        android:textSize="@dimen/txsize_small_xx"
 	        android:text=""
 	        />
@@ -386,7 +393,7 @@
 	<View 
 	    android:id="@+id/view_4"
        android:layout_width="match_parent"
-       android:layout_height="1dp"
+       android:layout_height="0.5dp"
        android:background="@color/fengexian"
        />
 	<RelativeLayout 
@@ -400,7 +407,7 @@
 	        android:layout_height="250dp"
 	        android:divider="@color/fengexian"
 	        android:listSelector="@android:color/transparent"
-	        android:dividerHeight="1dp"
+	        android:dividerHeight="0.5dp"
 	        >
 	    </ListView>	    
 	</RelativeLayout>
@@ -415,8 +422,8 @@
 	    android:layout_height="50dp"
 	    android:layout_alignParentBottom="true"
 	    android:gravity="center"
-	    android:background="#796941"
-	    android:textColor="#191b1d" 
+	    android:background="#64af66"
+	    android:textColor="@color/bg" 
 	    android:textSize="@dimen/txsize_small_xxx"
 	    android:text="加入比赛"
 	    />

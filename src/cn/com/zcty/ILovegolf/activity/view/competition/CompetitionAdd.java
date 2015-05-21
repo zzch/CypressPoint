@@ -128,7 +128,8 @@ public class CompetitionAdd extends Activity{
 			selectSession_t.setVisibility(View.VISIBLE);
 			selectSession_t_2.setVisibility(View.VISIBLE);
 			zichangTextView_2.setText(add.getTitai().get(1).getName());
-			qiuchang2Layout.setVisibility(View.VISIBLE);		
+			qiuchang2Layout.setVisibility(View.VISIBLE);	
+			
 			titai2ListView.setAdapter(new SelectSessionTAdapter(this,add.getTitai().get(1).getBoxs()));	
 			f = true;
 		}else{
@@ -138,6 +139,7 @@ public class CompetitionAdd extends Activity{
 			qiudongTextView.setText("前18洞");	
 			zichangTextView.setText(add.getTitai().get(0).getName());
 			qiuchang2Layout.setVisibility(View.GONE);
+			
 		}
 
 
@@ -228,13 +230,21 @@ public class CompetitionAdd extends Activity{
 				titaicolor_1.setImageResource(tiTaiColor[position]);
 				titaiListView.setVisibility(View.GONE);
 				t_1 = add.getTitai().get(0).getBoxs().get(position);
+				
+				
 				if(f){
 					titai2ListView.setVisibility(View.VISIBLE);
-					v_4.setVisibility(View.GONE);
+					v_3.setVisibility(View.VISIBLE);
+					v_4.setVisibility(View.VISIBLE);
+					createButton.setBackgroundColor(0xff64af66);
+					createButton.setTextColor(0xffededed);
 				}else{
 					titai2ListView.setVisibility(View.GONE);
+					v_3.setVisibility(View.GONE);
 					v_4.setVisibility(View.GONE);
 					t_2 = "";
+					createButton.setBackgroundColor(0xff09850c);
+					createButton.setTextColor(0xffffffff);
 				}
 			}
 		});
@@ -263,6 +273,8 @@ public class CompetitionAdd extends Activity{
 				titaicolor_2.setImageResource(tiTaiColor[position]);
 				titai2ListView.setVisibility(View.GONE);
 				t_2 = add.getTitai().get(1).getBoxs().get(position);
+				createButton.setBackgroundColor(0xff09850c);
+				createButton.setTextColor(0xffffffff);
 			}
 		});
 		
@@ -347,6 +359,8 @@ public class CompetitionAdd extends Activity{
 		v1.setVisibility(View.GONE);
 		v2.setVisibility(View.GONE);
 		imageView1.setImageResource(R.drawable.image_down);
+		createButton.setBackgroundColor(0xff64af66);
+		createButton.setTextColor(0xffededed);
 	}
 	@Override
 	public void onBackPressed() {

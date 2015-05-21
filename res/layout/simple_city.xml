@@ -35,7 +35,7 @@
                 android:layout_height="@dimen/view_small_xx_w"
                 android:layout_marginLeft="@dimen/view_small_x"
                 android:layout_marginTop="@dimen/view_small_x"
-                android:src="@drawable/address_image" />
+                android:src="@drawable/address_normal" />
 
             <TextView
                 android:id="@+id/address"

@@ -44,9 +44,11 @@
             android:textSize="@dimen/txsize_mid_x" />
     </RelativeLayout>
     
+    
     <RelativeLayout
         android:id="@+id/myself_head_self"
         android:layout_width="match_parent"
+        android:background="@color/daohang"
         android:layout_height="@dimen/my_view_layout" >
 
         <FrameLayout
@@ -85,7 +87,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/my_view_name_top"
             android:text="游客"
-            android:textColor="@color/hei2"
+            android:textColor="@color/white"
             android:textSize="@dimen/txsize_small_xxx" />
 
         <TextView
@@ -100,6 +102,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/txsize_small_a"
             android:maxEms="11" 
+            android:visibility="gone"
             android:singleLine="true"
             android:ellipsize="end"
              />
@@ -109,8 +112,8 @@
             android:layout_width="@dimen/view_small_xx"
             android:layout_height="@dimen/view_small_xx"
             android:layout_alignParentRight="true"
-            android:layout_below="@+id/frameLayout1"
-            android:layout_marginRight="@dimen/infor_view_xx"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="18dp"
             android:src="@drawable/icon_arrow" />
        
     </RelativeLayout>
@@ -127,7 +130,7 @@
         
         <View 
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="0.5dp"
             android:layout_marginTop="25dp"
             android:background="@color/fengexian"
             />
@@ -161,7 +164,7 @@
             
         </RelativeLayout><View 
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="0.5dp"
             android:background="@color/fengexian"
             />
             
@@ -169,7 +172,7 @@
             
             <View 
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="0.5dp"
             android:layout_marginTop="30dp"
             android:background="@color/fengexian"
             />
@@ -207,7 +210,7 @@
             
            <View 
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="0.5dp"
             android:background="@color/fengexian"
             />
             
@@ -244,7 +247,7 @@
         </RelativeLayout>
         <View 
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="0.5dp"
             android:background="@color/fengexian"
             />
         

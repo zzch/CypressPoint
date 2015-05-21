@@ -24,11 +24,7 @@
         android:layout_centerVertical="true"
         android:text="TextView1" />
     
-   <View 
-        android:layout_width="match_parent"
-        android:layout_height="1.5dp"
-        android:background="@color/fengexian"
-       />
+   
 
    <TextView
        android:id="@+id/count_cool_result"
@@ -36,7 +32,7 @@
        android:layout_height="wrap_content"
        android:layout_centerVertical="true"
        android:layout_alignParentRight="true"
-       android:layout_marginRight="50dp"
+       android:layout_marginRight="@dimen/shouye_login_top"
        android:text="34334"
        android:textColor="@color/hei2"
        android:textSize="17dp" />
@@ -50,6 +46,7 @@
        android:layout_alignParentRight="true"
        android:layout_marginRight="10dp"
        android:layout_centerVertical="true"
+        android:visibility="gone"
        />
     
    </RelativeLayout>
