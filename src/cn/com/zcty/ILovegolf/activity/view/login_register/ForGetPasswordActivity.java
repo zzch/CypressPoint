@@ -18,8 +18,7 @@ import android.widget.LinearLayout;
 public class ForGetPasswordActivity extends Activity {
 
 	 private EditText et_mobile;
-	 private LinearLayout forget_layout_one;
-	 private LinearLayout forget_layout_two;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -32,8 +31,7 @@ public class ForGetPasswordActivity extends Activity {
 	public void initview(){
 		
 		et_mobile=(EditText) findViewById(R.id.et_mobile);
-		forget_layout_one=(LinearLayout) findViewById(R.id.forget_layout_one);
-		forget_layout_two=(LinearLayout) findViewById(R.id.forget_layout_two);
+		
 		
 		
 	}
@@ -52,14 +50,7 @@ public class ForGetPasswordActivity extends Activity {
 	 */
 	public void on_submit(View v){
 		
-		String mobile=et_mobile.getText().toString().trim();
-		if(mobile.equals(null)){
-			
-			forget_layout_two.setVisibility(View.GONE);
-		}else{
-			
-			forget_layout_two.setVisibility(View.VISIBLE);
-		}
+		
 	}
 
 }

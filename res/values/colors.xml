@@ -25,7 +25,8 @@
      <color name="fengexian">#aaaaaa</color>
      
 
-     
+     <!-- 历史比赛点击背景色 -->
+     <color name="lishibg">#c2c2c2</color>
      
      
      <!-- 灰色 -->

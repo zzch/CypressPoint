@@ -62,7 +62,7 @@ public class RankingAdapter extends BaseAdapter{
 			holder = (RankHolder) convertView.getTag();
 		}
 		 	if(rankings.get(position).getPosition().equals("null")){
-		 		holder.positionTextView.setText("-");
+		 		holder.positionTextView.setText("一");
 		 	}else{
 		 		holder.positionTextView.setText(rankings.get(position).getPosition());
 		 	}
@@ -73,7 +73,7 @@ public class RankingAdapter extends BaseAdapter{
 		 			BitmapFactory.decodeResource(inflater.getContext().getResources(), R.drawable.hugh), true);
 		 	holder.nameTextView.setText(rankings.get(position).getNickname());
 		 	if(rankings.get(position).getTotal().equals("null")){
-		 		holder.totalTextView.setText("-");
+		 		holder.totalTextView.setText("一");
 		 	}else{
 		 		holder.totalTextView.setText(rankings.get(position).getTotal());
 		 	}

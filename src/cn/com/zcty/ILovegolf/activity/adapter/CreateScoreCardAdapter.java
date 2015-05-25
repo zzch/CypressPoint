@@ -80,7 +80,7 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 			holder.score_2RelativeLayout.setVisibility(View.GONE);
 			holder.scoreTextView.setText(count[position]);
 			holder.scoreParTextView
-			.setText("Par"+scoreCardsMatchs.get(position).getPar());
+			.setText("Par "+scoreCardsMatchs.get(position).getPar());
 			
 			/*
 			 * 根据有几个球来判断放球的位置
@@ -165,7 +165,7 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 			holder.score_1RelativeLayout.setVisibility(View.GONE);			
 			holder.score2TextView.setText(count[position]);
 			holder.scorePar2TextView
-			.setText("Par"+scoreCardsMatchs.get(position).getPar());
+			.setText("Par "+scoreCardsMatchs.get(position).getPar());
 			holder.chengjiTextView.setText(
 					scoreCardsMatchs.get(position).getScore());
 			int par = Integer.parseInt(scoreCardsMatchs.get(position).getPar());

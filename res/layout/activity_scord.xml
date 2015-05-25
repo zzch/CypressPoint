@@ -79,9 +79,9 @@
                         android:layout_width="@dimen/create_score_left"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/view_Layout_x"
-                        android:layout_marginLeft="120dp"
+                        android:layout_marginLeft="@dimen/create_score_left"
                         android:text="xxxxxx"
-                        android:gravity="center"
+                      
                         android:textSize="@dimen/txsize_small_xxx"
                         android:textColor="@color/white" />
 
@@ -92,7 +92,7 @@
                         android:layout_below="@+id/competition_username"
                         android:layout_marginLeft="@dimen/create_score_left"
                         android:text="排名:"
-                        android:textSize="@dimen/txsize_small_xx"
+                        android:textSize="@dimen/txsize_small_s"
                         android:textColor="@color/bg"  />
 
                     <TextView
@@ -103,7 +103,7 @@
                         android:layout_marginLeft="45dp"
                         android:layout_alignLeft="@+id/name_paiming"
                         android:text="78"
-                        android:textSize="@dimen/txsize_small_xx"
+                        android:textSize="@dimen/txsize_small_s"
                         android:textColor="@color/bg"  />
 
                     <TextView
@@ -112,7 +112,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/competition_username"
                         android:text="进度:"
-                        android:textSize="@dimen/txsize_small_xx"
+                        android:textSize="@dimen/txsize_small_s"
                         android:layout_marginLeft="@dimen/create_score_left_xx"
                         android:textColor="@color/bg"  />
 
@@ -124,7 +124,7 @@
                         android:layout_marginLeft="45dp"
                         android:layout_alignLeft="@+id/name_jindu"
                         android:text="31"
-                        android:textSize="@dimen/txsize_small_xx"
+                        android:textSize="@dimen/txsize_small_s"
                         android:textColor="@color/bg"  />
 
                     <TextView
@@ -133,7 +133,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/competition_paiming"
                         android:text="成绩:"
-                        android:textSize="@dimen/txsize_small_xx"
+                        android:textSize="@dimen/txsize_small_s"
                         android:layout_marginLeft="@dimen/create_score_left"
                         android:textColor="@color/bg"  />
 
@@ -145,7 +145,7 @@
                         android:layout_marginLeft="45dp"
                         android:layout_alignLeft="@+id/name_chengji"
                         android:text="+6"
-                        android:textSize="@dimen/txsize_small_xx"
+                        android:textSize="@dimen/txsize_small_s"
                         android:textColor="@color/bg"  />
                     
                      <TextView
@@ -154,7 +154,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/competition_paiming"
                         android:text="距标准杆:"
-                        android:textSize="@dimen/txsize_small_xx"
+                        android:textSize="@dimen/txsize_small_s"
                         android:layout_marginLeft="@dimen/create_score_left_xx"
                         android:textColor="@color/bg"  />
 
@@ -166,7 +166,7 @@
                         android:layout_marginLeft="@dimen/create_score_left_xxx"
                         android:layout_alignLeft="@+id/name_par"
                         android:text="+6"
-                        android:textSize="@dimen/txsize_small_xx"
+                        android:textSize="@dimen/txsize_small_s"
                         android:textColor="@color/bg" />
 
                     <cn.com.zcty.ILovegolf.tools.CircleImageView
@@ -203,7 +203,7 @@
                         android:gravity="center"
                         android:textColor="@color/white"
                         android:textSize="@dimen/txsize_small_xx"
-                        android:text="排名榜" />
+                        android:text="排行榜" />
                     <View 
                         android:layout_height="35dp"
                         android:layout_width="0.5dp"

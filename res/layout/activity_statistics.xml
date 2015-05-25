@@ -31,6 +31,7 @@
             android:background="@null"
             android:text="@string/text_share"
             android:textColor="@color/white"
+            android:visibility="gone"
             android:textSize="@dimen/txsize_small_xx" />
 
        <FrameLayout 
@@ -163,7 +164,7 @@
                             android:text="洞"
                             android:textColor="@color/hei2"
                             
-                            android:textSize="@dimen/txsize_small_xxx" />
+                            android:textSize="@dimen/txsize_small_xx" />
 
                         <View
                             android:layout_width="0.5dp"
@@ -194,7 +195,7 @@
                             android:gravity="center"
                             android:text="标准杆"
                             android:textColor="@color/hei2"
-                            android:textSize="@dimen/txsize_small_xxx" />
+                            android:textSize="@dimen/txsize_small_xx" />
 
                         <View
                             android:layout_width="0.5dp"
@@ -224,7 +225,7 @@
                             android:gravity="center"
                             android:text="成绩"
                             android:textColor="@color/hei2"
-                            android:textSize="@dimen/txsize_small_xxx" />
+                            android:textSize="@dimen/txsize_small_xx" />
 
                         <View
                             android:layout_width="0.5dp"
@@ -254,7 +255,7 @@
                             android:gravity="center"
                             android:text="距标准杆"
                             android:textColor="@color/hei2"
-                            android:textSize="@dimen/txsize_small_xxx" />
+                            android:textSize="@dimen/txsize_small_xx" />
 
                         <View
                             android:layout_width="0.5dp"
@@ -388,7 +389,7 @@
               android:layout_width="match_parent"
                android:layout_height="0.5dp"
                android:layout_marginTop="20dp"
-               android:background="@color/fengexian"
+             
               />
 
             <GridView
@@ -402,7 +403,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/fengexian" />
+               />
             
           <View 
               android:layout_width="match_parent"
@@ -414,7 +415,7 @@
             <ListView
                 android:id="@+id/count"
                 android:layout_width="match_parent"
-                android:layout_height="564dp"
+                android:layout_height="404dp"
                 android:listSelector="@android:color/transparent"
                 android:background="@color/white"
                 android:dividerHeight="0.5dp"
@@ -431,7 +432,7 @@
             <ListView
                 android:id="@+id/qiudong"
                 android:layout_width="match_parent"
-                android:layout_height="212dp"
+                android:layout_height="152dp"
                 android:listSelector="@android:color/transparent"
                 android:background="@color/white"
                  android:dividerHeight="0.5dp"
@@ -447,7 +448,7 @@
             <ListView
                 android:id="@+id/qiutype"
                 android:layout_width="match_parent"
-                android:layout_height="430dp"
+                android:layout_height="310dp"
                 android:listSelector="@android:color/transparent"
                 android:background="@color/white"
                  android:dividerHeight="0.5dp"

@@ -40,7 +40,7 @@
             android:gravity="center"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="排名榜"
+            android:text="排行榜"
             android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
 

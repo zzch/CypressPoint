@@ -27,87 +27,105 @@
     <Button 
         android:id="@+id/but1"
         android:layout_width="@dimen/register_view_width"
-        android:layout_height="@dimen/view_mid_xx_title"
-        android:text="@string/zhuce"
+        android:layout_height="@dimen/button_height"
         android:background="@drawable/button"
         android:gravity="center"
-        android:textSize="20dp"
+        android:textSize="@dimen/txsize_small_xxx"
         android:textColor="@color/bg" 
         android:onClick="but_register"
         android:layout_marginTop="@dimen/view_mid_x"
+        android:text="@string/zhuce"
         />
       <Button 
         android:id="@+id/but2"
         android:layout_width="@dimen/register_view_width"
-        android:layout_height="@dimen/view_mid_xx_title"
+        android:layout_height="@dimen/button_height"
         android:text="@string/mobileregister"
         android:background="@drawable/button"
         android:gravity="center"
         android:textColor="@color/bg" 
-        android:textSize="20dp"
+        android:textSize="@dimen/txsize_small_xxx"
         android:onClick="but_login"
-        android:layout_marginTop="@dimen/view_small_xx_w"
+        android:layout_marginTop="@dimen/tab_image_x"
         />
-     <LinearLayout 
+
+     <LinearLayout
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
-         android:orientation="vertical"
-          android:gravity="center"
-         >
-         <TextView 
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-            android:textColor="@color/hei2"
-             android:textSize="@dimen/txsize_mid_x"
-             android:text="登录"
-             android:layout_marginTop="@dimen/shouye_view_top"
-             />
-         
-         <EditText 
+         android:gravity="center"
+         android:orientation="vertical" >
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="50dp"
+            android:layout_marginTop="@dimen/shouye_view_top"
+             android:gravity="center_vertical"
+             android:orientation="horizontal" >
+
+             <View
+                 android:layout_width="90dp"
+                 android:layout_height="1dp"
+                 android:layout_marginLeft="35dp"
+                 android:background="@color/hei6" />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginLeft="30dp"
+                 android:text="登录"
+                 android:textColor="@color/hei2"
+                 android:textSize="@dimen/txsize_mid_x" />
+
+             <View
+                 android:layout_width="90dp"
+                 android:layout_height="1dp"
+                 android:layout_marginLeft="30dp"
+                 android:background="@color/hei6" />
+         </LinearLayout>
+
+         <EditText
              android:id="@+id/et_username"
              android:layout_width="@dimen/register_view_width"
              android:layout_height="@dimen/view_mid_xx_title"
+             android:layout_marginTop="@dimen/shouye_name_top"
              android:background="@drawable/wenbenkuang"
              android:hint=" 请输入手机号"
-             android:textColor="@color/hei5" 
-             android:layout_marginTop="@dimen/shouye_name_top"
-             android:textColorHint="@color/hei6"
-             />
-          <EditText 
+             android:textColor="@color/hei5"
+             android:textColorHint="@color/hei6" />
+
+         <EditText
              android:id="@+id/et_password"
              android:layout_width="@dimen/register_view_width"
              android:layout_height="@dimen/view_mid_xx_title"
+             android:layout_marginTop="@dimen/view_small_xx"
+             android:background="@drawable/wenbenkuang"
              android:hint=" 请输入密码"
              android:password="true"
              android:textColor="@color/hei5"
-             android:background="@drawable/wenbenkuang"
-             android:layout_marginTop="@dimen/view_small_x"
-             android:textColorHint="@color/hei6"
-             />
-           <Button 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="忘记密码？"
-            android:background="@null"
-            android:textColor="@color/fengexian"
-            android:layout_marginLeft="90dp"
-            android:layout_marginTop="10dip"
-            android:onClick="forget_password"
-           
-            />
+             android:textColorHint="@color/hei6" />
+
+         <Button
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="@dimen/create_score_left"
+             android:layout_marginTop="10dp"
+             android:background="@null"
+             android:onClick="forget_password"
+             android:text="忘记密码？"
+             android:textColor="@color/fengexian" />
      </LinearLayout>
      
        <Button 
         android:id="@+id/but_login"
         android:layout_width="@dimen/register_view_width"
-        android:layout_height="@dimen/view_mid_xx_title"
+        android:layout_height="@dimen/button_height"
         android:text="@string/login"
         android:background="@drawable/button"
         android:gravity="center"
         android:textColor="@color/bg" 
         android:onClick="login"
         android:textSize="20dp"
-        android:layout_marginTop="@dimen/shouye_login_top"
+        android:layout_marginTop="@dimen/view_sss_ccc"
         />
        
         <LinearLayout 
@@ -116,7 +134,7 @@
           android:orientation="horizontal"
           android:layout_marginTop="@dimen/shouye_login_top"
           android:gravity="center_vertical"
-          
+          android:visibility="gone"
             >
             <ImageView 
              android:layout_width="wrap_content"

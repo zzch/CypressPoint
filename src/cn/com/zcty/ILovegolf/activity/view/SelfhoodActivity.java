@@ -92,6 +92,7 @@ public class SelfhoodActivity extends Activity{
 								startActivity(intent);
 								finish();
 							}else{
+								
 								Intent intent = new Intent(SelfhoodActivity.this,InviteActivity.class);
 								//intent.setClass(SelfhoodActivity.this,InviteActivity.class);
 								intent.putExtra("add", add);
@@ -127,6 +128,10 @@ public class SelfhoodActivity extends Activity{
 		userNameEditText = (EditText) findViewById(R.id.selfhood_username);
 		sexRadioGroup = (RadioGroup) findViewById(R.id.main_radio);
 		baocunButton = (Button) findViewById(R.id.selfhood_baocun);
+		
+		baocunButton.setBackgroundColor(0xff64af66);
+		baocunButton.setTextColor(0xffededed);
+		
 		linear = (LinearLayout) findViewById(R.id.linear);
 		radio_nan = (RadioButton) findViewById(R.id.mainTabs_radio_nan);
 		radio_nv = (RadioButton) findViewById(R.id.mainTabs_radio_nv);
@@ -159,12 +164,16 @@ public class SelfhoodActivity extends Activity{
 					radio_nan.setBackgroundResource(R.drawable.nan_1);
 					sex = "1";
 					radio_nv.setBackgroundResource(R.drawable.nv);
+					//baocunButton.setBackgroundColor(0xff09850c);
+					//baocunButton.setTextColor(0xffffffff);
 					break;
 
 				case R.id.mainTabs_radio_nv:
 					radio_nv.setBackgroundResource(R.drawable.nv_1);
 					sex = "2";
 					radio_nan.setBackgroundResource(R.drawable.nan);
+					//baocunButton.setBackgroundColor(0xff09850c);
+					//baocunButton.setTextColor(0xffffffff);
 					break;
 				}
 			}
@@ -182,6 +191,8 @@ public class SelfhoodActivity extends Activity{
 				}else if(nickname.equals("")){
 					Toast.makeText(SelfhoodActivity.this, "请先填写昵称", Toast.LENGTH_LONG).show();
 				}else{
+					
+				
 				new Selfhood().start();
 			}
 				}

@@ -31,6 +31,7 @@
             android:background="@null"
             android:text="@string/text_share"
             android:textColor="@color/white"
+            android:visibility="gone"
             android:textSize="@dimen/txsize_small_xx" />
 
        <FrameLayout 
@@ -73,6 +74,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:background="@color/white"
                 android:gravity="center_vertical" >
 
                 <TextView
@@ -105,7 +107,9 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                 >
 
                 <TableLayout
                     android:layout_width="match_parent"
@@ -128,7 +132,7 @@
                             android:gravity="center"
                             android:text="洞"
                             android:textColor="@color/hei2"
-                            android:textSize="20dp" />
+                            android:textSize="@dimen/txsize_small_xx" />
 
                         <View
                             android:layout_width="0.5dp"
@@ -470,7 +474,7 @@
                             android:gravity="center"
                             android:text="标准杆"
                             android:textColor="@color/hei2"
-                            android:textSize="20dp" />
+                            android:textSize="@dimen/txsize_small_xx" />
 
                         <View
                             android:layout_width="0.5dp"
@@ -832,7 +836,7 @@
                             android:gravity="center"
                             android:text="成绩"
                             android:textColor="@color/hei2"
-                            android:textSize="20dp" />
+                            android:textSize="@dimen/txsize_small_xx" />
 
                         <View
                             android:layout_width="0.5dp"
@@ -1194,7 +1198,7 @@
                             android:gravity="center"
                             android:text="距标准杆"
                             android:textColor="@color/hei2"
-                            android:textSize="20dp" />
+                            android:textSize="@dimen/txsize_small_xx" />
 
                         <View
                             android:layout_width="0.5dp"
@@ -1544,6 +1548,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
+                android:background="@color/white"
                 android:orientation="horizontal" >
 
                 <ImageView
@@ -1652,7 +1657,7 @@
               android:layout_width="match_parent"
                android:layout_height="0.5dp"
                android:layout_marginTop="20dp"
-               android:background="@color/fengexian"
+              
               />
 
             <GridView
@@ -1661,13 +1666,12 @@
                 android:layout_height="@dimen/view_sss_b"
                 android:gravity="center"
                 android:background="@drawable/count_gridview_bg"
-                
                 android:numColumns="2" >
             </GridView>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/fengexian" />
+               />
             
           <View 
               android:layout_width="match_parent"
@@ -1679,7 +1683,7 @@
             <ListView
                 android:id="@+id/count"
                 android:layout_width="match_parent"
-                android:layout_height="564dp"
+                android:layout_height="404dp"
                 android:listSelector="@android:color/transparent"
                 android:background="@color/white"
                 android:dividerHeight="0.5dp"
@@ -1696,7 +1700,7 @@
             <ListView
                 android:id="@+id/qiudong"
                 android:layout_width="match_parent"
-                android:layout_height="212dp"
+                android:layout_height="152dp"
                 android:listSelector="@android:color/transparent"
                 android:background="@color/white"
                  android:dividerHeight="0.5dp"
@@ -1712,7 +1716,7 @@
             <ListView
                 android:id="@+id/qiutype"
                 android:layout_width="match_parent"
-                android:layout_height="430dp"
+                android:layout_height="310dp"
                 android:listSelector="@android:color/transparent"
                 android:background="@color/white"
                  android:dividerHeight="0.5dp"

@@ -158,13 +158,14 @@
          <Button 
            android:id="@+id/but_zhuce"
            android:layout_width="@dimen/register_view_width"
-           android:layout_height="@dimen/view_sss_e"
+           android:layout_height="@dimen/button_height"
+           
            android:text="注 册"
            android:layout_marginTop="60dp"
            android:onClick="on_but_zhuce"
            android:gravity="center"
-           android:textSize="@dimen/txsize_small_xx"
-           android:textColor="@color/hei2"
+           android:textSize="@dimen/txsize_small_xxx"
+           android:textColor="@color/bg"
         
            android:background="@drawable/button"
           />

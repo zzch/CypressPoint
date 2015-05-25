@@ -94,22 +94,22 @@ public class CreateScoreCard extends Activity{
 				editor.commit();
 				usernameTextView.setText(username);	
 				if(ranking.equals("null")){
-					rankingTextView.setText("-");
+					rankingTextView.setText("一");
 				}else{
 					rankingTextView.setText(ranking);
 				}
 				if(schedule.equals("null")){
-					scheduleTextView.setText("-");
+					scheduleTextView.setText("一");
 				}else{
 					scheduleTextView.setText(schedule+"/18");
 				}
 				if(score.equals("null")){
-					scoreTextView.setText("-");
+					scoreTextView.setText("一");
 				}else{
 					scoreTextView.setText(score);
 				}
 				if(par.equals("null")){
-					parTextView.setText("-");
+					parTextView.setText("一");
 				}else{
 					parTextView.setText(par);
 				}

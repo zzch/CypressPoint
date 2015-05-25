@@ -439,12 +439,13 @@
                     android:textColorHint="@null"
                     android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_small_xx" />
-                <View 
+              
+             </LinearLayout>
+               <View 
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp" 
                 android:background="@color/fengexian"
                 />
-             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"

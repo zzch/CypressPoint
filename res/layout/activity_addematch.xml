@@ -29,14 +29,15 @@
 
         <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content" 
+            android:layout_centerVertical="true"
+            >
 
 
         <Button
             android:id="@+id/add_back"
             android:layout_width="80dp"
             android:layout_height="47dp"
-            android:layout_alignParentLeft="true"
             android:layout_marginLeft="@dimen/title_button_left"
             android:background="@null"
             android:text="@string/back"
@@ -55,8 +56,8 @@
 		</FrameLayout>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+              android:layout_width="wrap_content"
+            android:layout_height="47dp"
             android:gravity="center"        
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"

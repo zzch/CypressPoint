@@ -25,7 +25,7 @@
             android:layout_marginLeft="@dimen/view_small_x"
             android:layout_marginTop="@dimen/view_small_x"
             android:text="@string/pith_name"
-            android:textColor="@color/hei5"
+            android:textColor="@color/hei2"
             android:textSize="@dimen/txsize_small_xxx"
             android:maxEms="13" 
             android:singleLine="true"

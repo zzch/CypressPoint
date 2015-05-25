@@ -59,7 +59,7 @@
             android:gravity="center"        
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="比赛"
+            android:text="创建比赛"
             android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
     </RelativeLayout>
@@ -80,16 +80,16 @@
 
        <ImageView
            android:id="@+id/dingwei"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
+           android:layout_width="@dimen/create_image_view"
+           android:layout_height="@dimen/create_image_view"
            android:layout_centerVertical="true"
            android:layout_marginLeft="20dp"
            android:src="@drawable/address_image" />
 
        <ImageView
            android:id="@+id/onclickimage"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
+           android:layout_width="@dimen/create_image_view"
+           android:layout_height="@dimen/create_image_view"
            android:layout_alignParentRight="true"
            android:layout_marginRight="20dp"
            android:layout_centerVertical="true"
@@ -229,7 +229,7 @@
 	        android:textColor="@color/hei2"
 	        android:textSize="@dimen/txsize_small_xx"
 	         android:layout_marginLeft="@dimen/view_Layout_x"
-	        android:text="选择子场"
+	        android:text="选择球场"
 	        />
 	    <TextView 
 	        android:id="@+id/competition_match_chang"
@@ -289,7 +289,7 @@
 	        android:textColor="@color/hei2"
 	        android:textSize="@dimen/txsize_small_xx"
 	         android:layout_marginLeft="@dimen/view_Layout_x"
-	        android:text="开球T台"
+	        android:text="发球台"
 	        />
 	    <TextView 
 	        android:id="@+id/competition_t_name"
@@ -356,7 +356,7 @@
 	        android:textColor="@color/hei2"
 	        android:textSize="@dimen/txsize_small_xx"
 	         android:layout_marginLeft="@dimen/view_Layout_x"
-	        android:text="选择子场"
+	        android:text="选择球场"
 	        />
 	    <TextView 
 	        android:id="@+id/competition_match_chang_2"
@@ -416,7 +416,7 @@
 	        android:textColor="@color/hei2"
 	        android:textSize="@dimen/txsize_small_xx"
 	         android:layout_marginLeft="@dimen/view_Layout_x"
-	        android:text="开球T台"
+	        android:text="发球台"
 	        />
 	    <TextView 
 	        android:id="@+id/competition_t_name_2"

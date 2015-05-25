@@ -86,16 +86,17 @@
             android:id="@+id/score_par"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:gravity="center" >
+          
+            >
 
             <TextView
                 android:id="@+id/score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
                 android:text="1"
+                android:textStyle="bold"
                 android:textColor="@color/hei2"
                 android:textSize="@dimen/txsize_large_x" />
 
@@ -103,11 +104,12 @@
                 android:id="@+id/score_par_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/score"
+                android:layout_marginTop="45dp"
                 android:layout_centerHorizontal="true"
                 android:text="Par 3"
                 android:textColor="@color/hei2"
                 android:textSize="@dimen/txsize_small_xx" />
+
         </RelativeLayout>
         
         <View
@@ -122,7 +124,7 @@
         android:id="@+id/score_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
+       android:visibility="gone"
         
         >
         <RelativeLayout 
@@ -133,9 +135,11 @@
             <TextView 
                 android:id="@+id/score_two"
                 android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
+                android:textStyle="bold"
                 android:textColor="@color/hei2"
                 android:textSize="@dimen/txsize_large_x"
                 />
@@ -143,7 +147,7 @@
                 android:id="@+id/score_par_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/score_two"
+                android:layout_marginTop="45dp"
                 android:text="Par 3"
                 android:textColor="@color/hei2"
                  android:layout_centerHorizontal="true"
@@ -177,10 +181,10 @@
           <TextView 
               android:id="@+id/score_s_1"
               android:layout_width="@dimen/view_mid_xx_title"
-              android:layout_height="wrap_content"
+              android:layout_height="@dimen/view_mid_xx_title"
               android:gravity="center"
 			  android:layout_marginLeft="@dimen/view_mid_xx_title"
-			  android:layout_marginTop="25dp"
+			  android:layout_marginTop="15dp"
               android:text="7"
               android:textColor="@color/chengse"
               android:textSize="@dimen/txsize_mid_xx"
