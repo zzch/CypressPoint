@@ -114,9 +114,9 @@ public class ChoosePitchActivity extends Activity {
 				 *返回球场name 
 				 */
 				Intent intent = new Intent(ChoosePitchActivity.this,CreateMatchActivity.class);
-				intent.putExtra("name", qiuchanglists.get(position-1).getName());
+				intent.putExtra("name", qiuchanglists.get(position).getName());
 				intent.putExtra("false", "0");
-				intent.putExtra("uuid", qiuchanglists.get(position-1).getUuid());
+				intent.putExtra("uuid", qiuchanglists.get(position).getUuid());
 				setResult(0, intent);
 				finish();
 			}

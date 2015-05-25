@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.lang.ref.WeakReference;
 import java.text.SimpleDateFormat;
 
+import org.apache.commons.codec.binary.BinaryCodec;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -40,6 +41,7 @@ import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.view.HomePageActivity;
 import cn.com.zcty.ILovegolf.activity.view.QuickScoreActivity;
+import cn.com.zcty.ILovegolf.activity.view.SettingActivity;
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.tools.CircleImageView;
 import cn.com.zcty.ILovegolf.utils.APIService;
@@ -60,6 +62,8 @@ public class Myself extends Activity {
 	private TextView nameTextView;
 	private String year;
 	private Bitmap bmp;
+	private String type;
+	private RelativeLayout accountRelativeLayout;
 	//private RelativeLayout settingRelativeLayout;
 	Intent intent;
 	Handler handler = new Handler(){
@@ -159,7 +163,20 @@ public class Myself extends Activity {
 		finish();
 	}
 	private void getListeners() {
-		
+		accountRelativeLayout.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent();
+				if(type.equals("guest")){
+					intent.setClass(Myself.this, BingDingActivity.class);
+					startActivity(intent);
+				}else{
+					intent.setClass(Myself.this, SettingActivity.class);
+					startActivity(intent);
+				}
+			}
+		});
 
 		headLayout.setOnClickListener(new OnClickListener() {
 			
@@ -174,6 +191,7 @@ public class Myself extends Activity {
 		});
 	}
 	private void initView() {
+		accountRelativeLayout = (RelativeLayout) findViewById(R.id.setting_account);
 		nameTextView = (TextView) findViewById(R.id.myself_name);		
 		headLayout = (RelativeLayout) findViewById(R.id.myself_head_self);
 		signTextView = (TextView) findViewById(R.id.myself_sign);
@@ -183,6 +201,7 @@ public class Myself extends Activity {
 		//settingRelativeLayout = (RelativeLayout) findViewById(R.id.myself_setting);
 		SharedPreferences sp = getSharedPreferences("register", MODE_PRIVATE);
 		String name = sp.getString("nickname", "nickname");
+		type = sp.getString("type", "type");
 		nameTextView.setText(name);
 	}
 	
