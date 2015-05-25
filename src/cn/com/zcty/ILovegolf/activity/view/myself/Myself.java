@@ -41,7 +41,6 @@ import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.view.HomePageActivity;
 import cn.com.zcty.ILovegolf.activity.view.QuickScoreActivity;
-import cn.com.zcty.ILovegolf.activity.view.SettingActivity;
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.tools.CircleImageView;
 import cn.com.zcty.ILovegolf.utils.APIService;

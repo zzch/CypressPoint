@@ -88,7 +88,7 @@ public class MajorScoreActivity extends Activity {
 	private MajorScoresAdapter adapter;
 	private int count = 1;
 	private String distance = "0";
-	private String cool = "hole";
+	private String cool = "green";
 	private String pentails = "0";
 	private String popal = "1w";
 	private String  score;
@@ -154,24 +154,12 @@ public class MajorScoreActivity extends Activity {
 				editor.commit();
 				if(message.equals("没有进洞击球")){
 					AlertDialog.Builder builder = new Builder(MajorScoreActivity.this)
-					.setTitle("提示").setMessage("没有进洞击球").setNegativeButton("确定", new android.content.DialogInterface.OnClickListener() {
-						
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							
-						}
-					});
+					.setTitle("提示").setMessage("没有进洞击球").setNegativeButton("确定",null);
 					builder.show();
 				}
 				else if(message.equals("重复进洞击球")){
 					AlertDialog.Builder builder = new Builder(MajorScoreActivity.this)
-					.setTitle("提示").setMessage("重复进洞击球").setNegativeButton("确定", new android.content.DialogInterface.OnClickListener() {
-						
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							
-						}
-					});
+					.setTitle("提示").setMessage("重复进洞击球").setNegativeButton("确定", null);
 					builder.show();
 				}
 				else{
@@ -204,7 +192,8 @@ public class MajorScoreActivity extends Activity {
 		
 		if(keyCode==KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0){
 			builder("提示", "是否保存", "取消", "确定");
-        }
+			
+			}
 		return false;
 	}
 	  
@@ -247,17 +236,19 @@ public class MajorScoreActivity extends Activity {
 			public void onClick(View v) {
 					builder("提示", "是否保存", "取消", "确定");
 					
+					
 			
 
 
 			}
 		});
 
-		
+		distance = "200";
 		distanceWheel.addChangingListener(new OnWheelChangedListener() {
-
+			
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
+				Log.i("zhouhezz","ddddddddd");
 				distance = (String) majorNumberAdapter.getItemText(newValue);
 				if(distance.equals("进球")){
 					distance = "0";
@@ -425,10 +416,12 @@ public class MajorScoreActivity extends Activity {
 	private void getData() {
 		majorNumberAdapter = new MajorArrayNumberWheelAdapter(this);
 		distanceWheel.setViewAdapter(majorNumberAdapter);
-		coolWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, coolArray_));
+		coolWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, coolArray));
 		penaitsWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, pentailsArray_));
 		countWheel.setViewAdapter(new ArrayWheelAdapter<String>(this, countArray));
-
+		Log.i("zhouhessss",majorNumberAdapter.toString());
+		distanceWheel.setCurrentItem(80);
+		coolWheel.setCurrentItem(2);
 		Intent intent = getIntent();
 		position = intent.getStringExtra("position");
 
@@ -459,6 +452,7 @@ public class MajorScoreActivity extends Activity {
 		major_queding = (Button) findViewById(R.id.major_queding_1);
 		fanhuiText = (Button) findViewById(R.id.major_back);
 		tianjia = (RelativeLayout) findViewById(R.id.major_rea_add);
+		
 		Intent intent = getIntent();
 		titleNameText.setText(intent.getStringExtra("number")+"球洞");
 		parText.setText(intent.getStringExtra("par")+"标准杆");
@@ -476,8 +470,8 @@ public class MajorScoreActivity extends Activity {
 			color = "蓝T";
 		}
 		teeColorText.setText(color);
-		distanceWheel.setCurrentItem(200);
-		//coolWheel.setCurrentItem(2);
+		distanceWheel.setCurrentItem(50);
+		coolWheel.setCurrentItem(2);
 	}
 
 

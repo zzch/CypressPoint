@@ -89,7 +89,8 @@
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.competition.SginText" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.RankingActivity" android:screenOrientation="portrait"></activity>
        <activity android:name="cn.com.zcty.ILovegolf.activity.view.myself.BingDingActivity" android:screenOrientation="portrait"></activity>
-       <activity android:name="cn.com.zcty.ILovegolf.activity.view.SettingActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.myself.VerifyPhoneActivity" android:screenOrientation="portrait"></activity>
+       <activity android:name="cn.com.zcty.ILovegolf.activity.view.myself.SettingActivity" android:screenOrientation="portrait"></activity>
        <activity android:name="cn.com.zcty.ILovegolf.activity.view.InviteActivity" android:screenOrientation="portrait"></activity>
        <activity android:name="cn.com.zcty.ILovegolf.activity.view.HomePageActivity" android:screenOrientation="portrait"></activity>
        <activity android:name="cn.com.zcty.ILovegolf.activity.view.MajorStatisticsActivityScord" android:screenOrientation="portrait"></activity> 

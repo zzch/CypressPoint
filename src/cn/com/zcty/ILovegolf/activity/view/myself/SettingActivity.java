@@ -1,4 +1,4 @@
-package cn.com.zcty.ILovegolf.activity.view;
+package cn.com.zcty.ILovegolf.activity.view.myself;
 
 import cn.com.zcty.ILovegolf.activity.R;
 import android.app.Activity;

@@ -125,4 +125,9 @@ public class APIService {
 	 public static final String CHECKINGPASSWORD = "http://123.57.210.52/api/v1/matches/verify.json?";
 	 //参赛者信息
 	 public static final String RANKINGINFORMATION = "http://123.57.210.52/api/v1/players/show.json?";
+
+	 //获取用户升级验证码
+	 public static final String VERIFYPHONE = "http://123.57.210.52/api/v1/verification_code/upgrade.json?";
+	 //用户升级
+	 public static final String UPGRADE = "http://123.57.210.52/api/v1/users/upgrade.json?";
 }
