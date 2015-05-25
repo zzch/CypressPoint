@@ -123,7 +123,12 @@ public class MajorScoresAdapter extends BaseAdapter{
 			holder.countText.setText("LW");
 		}
 		holder.orderText.setText(position+1+"");
-		holder.distanceText.setText(majorArrayList.get(position).getDistance());
+		Log.i("dddffff",majorArrayList.get(position).getDistance());
+		if(majorArrayList.get(position).getDistance().equals("0")){
+			holder.distanceText.setText("进球");
+		}else{
+			holder.distanceText.setText(majorArrayList.get(position).getDistance());
+		}
 		holder.pentanilsText.setText(majorArrayList.get(position).getPentails());
 		
 
