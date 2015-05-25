@@ -159,7 +159,13 @@ public class CreateScoreCard extends Activity{
 				if(scoring_type.equals("simple")){
 					Intent intent = new Intent(CreateScoreCard.this,ScoreCardUpDateActivity.class);
 					intent.putExtra("uuid", scoreCardsMatchs.get(position).getUuid());
-					intent.putExtra("par", scoreCardsMatchs.get(position).getPar());
+					if(scoreCardsMatchs.get(position).getScore().equals("null")){
+						intent.putExtra("par", scoreCardsMatchs.get(position).getPar());
+					}else{
+						intent.putExtra("par", scoreCardsMatchs.get(position).getScore());
+					}
+					intent.putExtra("direction", scoreCardsMatchs.get(position).getDirection());
+					intent.putExtra("distance", scoreCardsMatchs.get(position).getDriving_distance());
 					intent.putExtra("number", (position+1)+"");
 					startActivity(intent);
 				}else{

@@ -33,6 +33,7 @@ import cn.com.zcty.ILovegolf.activity.applice.MyAppliceData;
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.model.Course;
 import cn.com.zcty.ILovegolf.model.QuickContent;
+import cn.com.zcty.ILovegolf.tools.ScrollViewWithListView;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
@@ -44,10 +45,10 @@ import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
 
 
 public class QuickScoreActivity extends Activity {
-	private int itemHeight = 100;
+	//private int itemHeight = 100;
 	private ScrollView mScrollView;
 	private PullToRefreshScrollView mPullRefreshScrollView;
-	private ListView mListView;
+	private ScrollViewWithListView mListView;
 	private ImageView image_tishi;
 	private QuickScoreAdapter slideAdapter;
 	private ArrayList<QuickContent> quickArrayList = new ArrayList<QuickContent>();
@@ -59,7 +60,7 @@ public class QuickScoreActivity extends Activity {
 	private ProgressDialog progressDialog;
 	private Handler mHandler;
 	private String result = "shipai";
-	int c = 0;
+	//int c = 0;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -145,7 +146,7 @@ public class QuickScoreActivity extends Activity {
 	}
 
 	private void initView() {
-		mListView = (ListView) findViewById(R.id.listview);
+		mListView = (ScrollViewWithListView) findViewById(R.id.listview);
 		image_tishi = (ImageView) findViewById(R.id.tishi);
 		mPullRefreshScrollView = (PullToRefreshScrollView) findViewById(R.id.pull_refresh_scrollview);
 
@@ -168,13 +169,13 @@ public class QuickScoreActivity extends Activity {
 			}
 		});
 
-		if(c!=quickArrayList.size()){
+		/*if(c!=quickArrayList.size()){
 			for(int i=0;i<quickArrayList.size();i++){
 				itemHeight = itemHeight + 2;
 			}
 			c = quickArrayList.size();
 			setListViewHeightBasedOnChildren(mListView);
-		}
+		}*/
 	}
 
 	//点击事件
@@ -308,7 +309,7 @@ public class QuickScoreActivity extends Activity {
 
 	
 	
-	//定义函数动态控制listView的高度
+/*	//定义函数动态控制listView的高度
 	public void setListViewHeightBasedOnChildren(ListView listView) {
 
 
@@ -341,7 +342,7 @@ public class QuickScoreActivity extends Activity {
 	public int Dp2Px(Context context, float dp) {
 		final float scale = context.getResources().getDisplayMetrics().density;
 		return (int ) (dp * scale + 0.5f);
-	}
+	}*/
 	/*
      * 提示加载
      */

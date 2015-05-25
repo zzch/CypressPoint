@@ -8,6 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -25,6 +26,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -36,6 +38,7 @@ import cn.com.zcty.ILovegolf.activity.adapter.SelectSessionTAdapter;
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.model.QiuChangList;
 import cn.com.zcty.ILovegolf.tools.MyApplication;
+import cn.com.zcty.ILovegolf.tools.ScrollViewWithListView;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
@@ -72,10 +75,10 @@ public class CreateMatchActivity extends Activity {
 	private TextView qiudongTextView_2;
 	private TextView zichangTextView_2;
 	private TextView titaiTextView_2;
-	private ListView selectSessionListView;
-	private ListView selectSession_tListView;
-	private ListView selectSession_2ListView;
-	private ListView selectSession_t_2ListView;
+	private ScrollViewWithListView selectSessionListView;
+	private ScrollViewWithListView selectSession_tListView;
+	private ScrollViewWithListView selectSession_2ListView;
+	private ScrollViewWithListView selectSession_t_2ListView;
 	
 	private ImageView onclickimage;
 
@@ -118,19 +121,24 @@ public class CreateMatchActivity extends Activity {
 	private SelectSessionTAdapter colorAdapter;
 	private SelectSession1Adapter diamond2Adapter;
 	private SelectSessionTAdapter color2Adapter;
+	private ProgressDialog progressDialog;
+	private LinearLayout linear;
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
+			hideProgressDialog();
 			if(msg.what==1){
 				if(msg.obj.equals("404")||msg.obj.equals("500")){
 					Toast.makeText(CreateMatchActivity.this, "网络错误，请稍后再试", Toast.LENGTH_LONG).show();
+				
 				}else if(msg.obj.equals("403")){
 					Toast.makeText(CreateMatchActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
 					FileUtil.delFile();
 					Intent intent = new Intent(CreateMatchActivity.this,ShouYeActivity.class);
 					startActivity(intent);
 					finish();
-				}else{
-				
+				}else{				
+				linear.setVisibility(View.VISIBLE);
+				Log.i("colorss", ""+color);
 				getData();
 				onclckLister();
 				qiuchang_name.setText(pitchname);
@@ -172,7 +180,8 @@ public class CreateMatchActivity extends Activity {
 		initialize();
 		initView();
 		setListeners();
-
+		linear.setVisibility(View.INVISIBLE);
+		showProgressDialog("提示", "正在加载", this);
 	}
 	/*
 	 *选择记分方式 
@@ -229,6 +238,7 @@ public class CreateMatchActivity extends Activity {
 	}
 
 	public void initView(){
+		linear = (LinearLayout) findViewById(R.id.linear);
 		v_2 = findViewById(R.id.view_2);
 		v_3 = findViewById(R.id.view_3);
 		v_4 = findViewById(R.id.view_4);
@@ -249,7 +259,7 @@ public class CreateMatchActivity extends Activity {
 		selectSession_t = (RelativeLayout) findViewById(R.id.competition_selection_t);
 		selectSession_2 = (RelativeLayout) findViewById(R.id.competition_selection_relative_2);
 		selectSession_t_2 = (RelativeLayout) findViewById(R.id.competition_selection_t_2);
-		selectSessionListView = (ListView) findViewById(R.id.competition_listview_qiuchang);
+		selectSessionListView = (ScrollViewWithListView) findViewById(R.id.competition_listview_qiuchang);
 		qiudongTextView = (TextView) findViewById(R.id.competition_match_zichang);
 		zichangTextView = (TextView) findViewById(R.id.competition_match_chang);
 		titaiTextView = (TextView) findViewById(R.id.competition_t_name);
@@ -259,9 +269,9 @@ public class CreateMatchActivity extends Activity {
 		zichangTextView_2 = (TextView) findViewById(R.id.competition_match_chang_2);
 		titaiTextView_2 = (TextView) findViewById(R.id.competition_t_name_2);
 		diamondRelativeLayout = (RelativeLayout) findViewById(R.id.creatematch_select_diamond);
-		selectSession_tListView = (ListView) findViewById(R.id.competition_listview_t);
-		selectSession_2ListView = (ListView) findViewById(R.id.competition_listview_qiuchang_2);
-		selectSession_t_2ListView = (ListView) findViewById(R.id.competition_listview_t_2);
+		selectSession_tListView = (ScrollViewWithListView) findViewById(R.id.competition_listview_t);
+		selectSession_2ListView = (ScrollViewWithListView) findViewById(R.id.competition_listview_qiuchang_2);
+		selectSession_t_2ListView = (ScrollViewWithListView) findViewById(R.id.competition_listview_t_2);
 		selectSessionListView.setVisibility(View.VISIBLE);
 
 		jifenfangshi = (RelativeLayout) findViewById(R.id.jifenfangshi);
@@ -369,6 +379,7 @@ public class CreateMatchActivity extends Activity {
 
 
 
+		
 		/*
 		 * 选择前面子场
 		 */
@@ -426,7 +437,12 @@ public class CreateMatchActivity extends Activity {
 				course_uuids = uuids.get(position);
 				v_2.setVisibility(View.VISIBLE);
 				v_3.setVisibility(View.VISIBLE);
+				Log.i("zhouzhou",diamodDong.get(position)+"");
+				if(diamodDong.get(position)==18){
+				qiudongTextView.setText("球场");	
+				}else{
 				qiudongTextView.setText("前"+diamodDong.get(position)+"洞");
+				}
 				zichangTextView.setText(nameArrayList.get(position));
 				id_1 = uuids.get(position);
 				selectSession_t.setVisibility(View.VISIBLE);
@@ -634,7 +650,7 @@ public class CreateMatchActivity extends Activity {
 					JSONArray jj = jsonobj.getJSONArray("tee_boxes");
 					for(int i=0;i<jj.length();i++){
 						color.add(jj.getString(i));
-						Log.i("color", ""+color);
+						//Log.i("color", ""+color);
 					}
 					uuids.add(jsonobj.getString("uuid"));
 				}
@@ -659,6 +675,7 @@ public class CreateMatchActivity extends Activity {
 			getData();
 		}
 		public void getData(){
+			diamond_t.clear();
 			uuids.clear();
 			nameArrayList.clear();
 			diamodDong.clear();
@@ -759,58 +776,10 @@ public class CreateMatchActivity extends Activity {
 		selectSession_tListView.setAdapter(colorAdapter);
 		selectSession_2ListView.setAdapter(diamond2Adapter);
 		selectSession_t_2ListView.setAdapter(color2Adapter);
-		if(diamond.size()>=1){
-
-			int itemHeight = 45;
-			itemHeight = itemHeight+5;
-			setListViewHeightBasedOnChildren(selectSessionListView,itemHeight);
-
-		}
-		if(diamond_t.size()>=1){
-
-			int itemHeight = 45;
-			itemHeight = itemHeight+5;
-			setListViewHeightBasedOnChildren(selectSession_2ListView,itemHeight);
-
-		}
-		if(color.size()>=1){
-			int itemHeight = 80;
-			setListViewHeightBasedOnChildren(selectSession_tListView,itemHeight);
-			setListViewHeightBasedOnChildren(selectSession_t_2ListView,itemHeight);
-		}
+		
 
 	};
 
-	//定义函数动态控制listView的高度
-	public void setListViewHeightBasedOnChildren(ListView listView,int itemHeight) {
-
-
-		//获取listview的适配器
-		ListAdapter listAdapter = listView.getAdapter();
-		if (listAdapter == null) {
-			return;
-		}
-
-
-		int totalHeight = 0;
-
-
-		for (int i = 0; i < listAdapter.getCount(); i++) {
-			totalHeight += Dp2Px(getApplicationContext(),itemHeight)+listView.getDividerHeight();
-		}
-
-
-		ViewGroup.LayoutParams params = listView.getLayoutParams();
-		params. height = totalHeight;
-
-
-		listView.setLayoutParams(params);
-	}
-	//dp转化为px
-	public int Dp2Px(Context context, float dp) {
-		final float scale = context.getResources().getDisplayMetrics().density;
-		return (int ) (dp * scale + 0.5f);
-	}
 
 	/**
 	 * 注册一个广播，监听定位结果
@@ -847,8 +816,19 @@ public class CreateMatchActivity extends Activity {
 		// TODO Auto-generated method stub
 		super.onRestart();
 		diamond.clear();
+		diamodDong_2.clear();
 		if(flase.equals("0")){
-			leixing_layout.setVisibility(View.VISIBLE);
+			
+			showProgressDialog("提示", "正在加载", this);
+			//leixing_layout.setVisibility(View.VISIBLE);
+			imageView1.setImageResource(R.drawable.image_down);
+			leixing_layout.setVisibility(View.GONE);
+			majorRelativeLayout.setVisibility(View.GONE);
+			v1.setVisibility(View.GONE);
+			v2.setVisibility(View.GONE);
+			v_2.setVisibility(View.GONE);
+			v_3.setVisibility(View.GONE);
+			v_4.setVisibility(View.GONE);
 			selectSessionListView.setVisibility(View.VISIBLE);
 			qiudongTextView.setText("选择子场");
 			zichangTextView.setText("");
@@ -859,6 +839,7 @@ public class CreateMatchActivity extends Activity {
 			qiudongTextView_2.setText("选择球场");
 			zichangTextView_2.setText("");
 			titaiTextView_2.setText("");
+			selectSession_t.setVisibility(View.GONE);
 			titaicolor_2.setVisibility(View.GONE);
 			startButton.setBackgroundColor(0xff64af66);
 			startButton.setTextColor(0xffededed);
@@ -873,6 +854,27 @@ public class CreateMatchActivity extends Activity {
 		super.onDestroy();
 		unregisterReceiver(broadcastReceiver);
 	}
+	/*
+     * 提示加载
+     */
+     public   void  showProgressDialog(String title,String message,Activity context){
+            if(progressDialog ==null){
+                   progressDialog = ProgressDialog.show( context, title, message,true,true );
 
+           } else if (progressDialog .isShowing()){
+                   progressDialog.setTitle(title);
+                   progressDialog.setMessage(message);
+           }
+            progressDialog.show();
+
+    }
+     /*
+     * 隐藏加载
+     */
+     public  void hideProgressDialog(){
+            if(progressDialog !=null &&progressDialog.isShowing()){
+                   progressDialog.dismiss();
+           }
+    }
 
 }

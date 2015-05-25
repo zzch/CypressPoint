@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import cn.com.zcty.ILovegolf.activity.R;
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -96,7 +97,7 @@ public class StaticsFragmentTwo extends Fragment{
 		tv11 = (TextView) view.findViewById(R.id.t11);
 		tv11.setText(parArrayList.get(20));
 		ttv1 = (TextView) view.findViewById(R.id.tt1);
-		
+		ttv1.setText(scoreArrayList.get(10));
 		ttv2 = (TextView) view.findViewById(R.id.tt2);
 		ttv2.setText(scoreArrayList.get(11));
 		ttv3 = (TextView) view.findViewById(R.id.tt3);
@@ -139,5 +140,105 @@ public class StaticsFragmentTwo extends Fragment{
 		tttv10.setText(statusArrayList.get(19));
 		tttv11 = (TextView) view.findViewById(R.id.ttt11);
 		tttv11.setText(statusArrayList.get(20));
+		if(panDuan(ttv1)){
+			getBack(tv1, ttv1);
+		}else{
+			
+		}
+		if(panDuan(ttv2)){
+			getBack(tv2, ttv2);
+		}else{
+			
+			}
+		if(panDuan(ttv3)){
+			getBack(tv3, ttv3);
+		}else{
+			
+			}
+		if(panDuan(ttv4)){
+			getBack(tv4, ttv4);
+		}else{
+			
+			}
+		if(panDuan(ttv5)){
+			getBack(tv5, ttv5);
+		}else{
+			
+			}
+		if(panDuan(ttv6)){
+			getBack(tv6, ttv6);
+		}else{
+			
+			}
+		if(panDuan(ttv7)){
+			getBack(tv7, ttv7);
+		}else{
+			
+			}
+		if(panDuan(ttv8)){
+			getBack(tv8, ttv8);
+		}else{
+			
+			}
+		if(panDuan(ttv9)){
+			getBack(tv9, ttv9);
+		}else{
+			
+			}
+		panDuan(ttv10);
+		panDuan(ttv11);
+		panDuan(tttv1);
+		panDuan(tttv2);
+		panDuan(tttv3);
+		panDuan(tttv4);
+		panDuan(tttv5);
+		panDuan(tttv6);
+		panDuan(tttv7);
+		panDuan(tttv8);
+		panDuan(tttv9);
+		panDuan(tttv10);
+		panDuan(tttv11);
+		
+	}
+	public boolean panDuan(TextView text){
+		if(text.getText().toString().equals("nul")){
+			text.setText("");
+			return false;
+		}else{
+			return true;
+		}
+
+
+	}
+	public void getBack(TextView t,TextView tt){
+		int key = Integer.parseInt(tt.getText().toString())-Integer.parseInt(t.getText().toString());
+		switch (key) {
+		case -3:
+			//信天翁球
+			tt.setBackgroundColor(Color.rgb(32, 66, 171));
+			break;
+		case -2:
+			//老鹰球
+			tt.setBackgroundColor(Color.rgb(92, 132, 208));
+			break;
+		case -1:
+			//小鸟
+			tt.setBackgroundColor(Color.rgb(173, 195, 243));
+			break;
+		case 0:
+			//标准杆
+			tt.setBackgroundColor(Color.rgb(212, 212, 212));
+			break;
+		case 1:
+			//柏忌
+			tt.setBackgroundColor(Color.rgb(213, 181, 58));
+			break;
+		case 2:
+			//双柏忌
+			tt.setBackgroundColor(Color.rgb(200, 141, 25));
+			break;
+		}
+
+
 	}
 }

@@ -166,6 +166,7 @@ public class ShouYeActivity extends Activity {
 				String uuid = null;
 				String nickname = null;
 				String token = null;
+				String type = null;
 				try {
 					//json解析
 					JSONObject jsonObject=new JSONObject(data);
@@ -176,6 +177,7 @@ public class ShouYeActivity extends Activity {
 						Log.i("nickname--->>", ""+nickname);
 						token=jsonObject.getString("token");
 						Log.i("token--->>", ""+token);
+						type = jsonObject.getString("type");
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -186,6 +188,7 @@ public class ShouYeActivity extends Activity {
 			    editor.putString("uuid", uuid);
 			    editor.putString("nickname", nickname);
 			    editor.putString("token", token);
+			    editor.putString("type", type);
 			    editor.putString("isRegister", "true");
 			    editor.putString("isfangshi", "0");
 			    Log.i("----uuid", ""+sp.getString("uuid", ""));

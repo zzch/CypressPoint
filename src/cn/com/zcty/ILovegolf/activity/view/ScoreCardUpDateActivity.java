@@ -78,6 +78,7 @@ public class ScoreCardUpDateActivity extends Activity{
 	private int penaltiesstart;
 	private ProgressDialog progressDialog;
 	private String code;
+	private String distance;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 
@@ -128,22 +129,33 @@ public class ScoreCardUpDateActivity extends Activity{
 		/*
 		 * 5.20修改
 		 */
-		String par = intent.getStringExtra("par");		
+		String par = intent.getStringExtra("par");
+		Log.i("sadfsdafsdafas", par+"zhouhe");
 		position = intent.getStringExtra("position");
+		direction = intent.getStringExtra("direction");
+		if(direction.equals("pure")){
+			direction = "命中";
+		}else if(direction.equals("hook")){
+			direction = "左侧";
+		}else{
+			direction = "右侧";
+		}
+		distance = intent.getStringExtra("distance");
 		SharedPreferences sp = getSharedPreferences("setCard",MODE_PRIVATE);	
-		if( !sp.getString("rodnum", "pass").equals("null")){
-			dataTextView.setText(sp.getString("rodnum", par));
+		if( !distance.equals("null")){
+			dataTextView.setText(par);
 			par = sp.getString("rodnum", par);
-			putTextView.setText(sp.getString("putts", putcount+""));
-			putcount = Integer.parseInt(sp.getString("putts", putcount+""));
-			penaltiesTextView.setText(sp.getString("penalties", penaltiescount+""));
-			penaltiescount = Integer.parseInt(sp.getString("penalties", penaltiescount+""));
+			//putTextView.setText(sp.getString("putts", putcount+""));
+			//putcount = Integer.parseInt(sp.getString("putts", putcount+""));
+			//penaltiesTextView.setText(sp.getString("penalties", penaltiescount+""));
+			//penaltiescount = Integer.parseInt(sp.getString("penalties", penaltiescount+""));
 			for(int i=0;i<cool.length;i++){
-				if(cool[i].equals(sp.getString("direction", "命中"))){
+				if(cool[i].equals(direction)){
 					coolWheelView.setCurrentItem(i);
 				}
 			}
-			distanceWheelView.setCurrentItem(Integer.parseInt(sp.getString("te", "0"))/5);
+			Log.i("sadfsdafsdafas", distance);
+			distanceWheelView.setCurrentItem(Integer.parseInt(distance)/5);
 			SharedPreferences.Editor editor = sp.edit();
 			editor.putString("rodnum", "null");
 			editor.commit();
@@ -155,7 +167,7 @@ public class ScoreCardUpDateActivity extends Activity{
 		}
 		coolResult = hit_scorecard.getText().toString();
 		distanceResult = distance_scorecard.getText().toString();
-		count = Integer.parseInt(par);
+		//count = par;
 		puttsstart = Integer.parseInt(putTextView.getText().toString());
 		penaltiesstart = Integer.parseInt(penaltiesTextView.getText().toString());
 	}
@@ -164,7 +176,11 @@ public class ScoreCardUpDateActivity extends Activity{
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 
 		if(keyCode==KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0){
-			builder("提示", "是否保存", "取消", "确定");
+			if(flase_1||flase_2||flase_3||flase_4||flase_5){
+				builder("提示", "是否保存", "取消", "确定");
+			}else{
+				finish();
+			}
 		}
 		return false;
 	}
@@ -172,7 +188,13 @@ public class ScoreCardUpDateActivity extends Activity{
 		cacelButton.setOnClickListener(new OnClickListener() {	
 			@Override
 			public void onClick(View v) {
-				builder("提示", "是否保存", "取消", "确定");
+				if(flase_1||flase_2||flase_3||flase_4||flase_5){
+					builder("提示", "是否保存", "取消", "确定");
+				}else{
+					finish();
+				}
+				
+				
 			
 			}
 		});
@@ -190,18 +212,22 @@ public class ScoreCardUpDateActivity extends Activity{
 
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
-
+				
 				distance_scorecard.setText(adapter.getItemText(newValue));
 				driving_distance = (String) adapter.getItemText(newValue);
 				driving_distance = driving_distance.substring(0,driving_distance.length()-1);
-
+				if(!driving_distance.equals(distance)){
+					flase_4 = true;
+				}
 			}
 		});
 		coolWheelView.addChangingListener(new OnWheelChangedListener() {
 
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
-
+				if(!cool[newValue].equals(direction)){
+					flase_5 = true;
+				}
 				hit_scorecard.setText(cool[newValue]);
 				switch (newValue) {
 				case 0:
@@ -237,6 +263,7 @@ public class ScoreCardUpDateActivity extends Activity{
 	}
 
 	public void onClick(View v) {
+		count = Integer.parseInt(dataTextView.getText().toString());
 		switch (v.getId()) {
 		case R.id.but_add_one:
 

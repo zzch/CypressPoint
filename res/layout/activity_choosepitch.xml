@@ -59,37 +59,28 @@
 
     </RelativeLayout>
 
-     <LinearLayout 
-          android:id="@+id/layout_listview_one"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:orientation="vertical"
-         >
-      <ListView 
-            android:id="@+id/listpich"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fadingEdge="none"
-            android:divider="@color/fengexian"
-            android:dividerHeight="0.5dp"
-         />
-       </LinearLayout>
-       
-     <LinearLayout 
-          android:id="@+id/layout_listview_two"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:orientation="vertical"
-          android:visibility="gone"
-         >
-      <ListView 
-            android:id="@+id/searchlistview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:divider="@color/fengexian"
-            android:dividerHeight="0.5dp"
-         />
-       </LinearLayout>
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView
+            xmlns:ptr="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/pull_refresh_scrollview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            ptr:ptrAnimationStyle="flip"
+            ptr:ptrMode="both" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <cn.com.zcty.ILovegolf.tools.ScrollViewWithListView
+                    android:id="@+id/listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@null"
+                    
+                    android:listSelector="@android:color/transparent"
+                     />
+            </RelativeLayout>
+        </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
 </LinearLayout>
 
 

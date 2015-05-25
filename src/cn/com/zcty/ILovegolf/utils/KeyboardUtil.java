@@ -79,7 +79,7 @@ public class KeyboardUtil {
                 System.out.println("thisPwdText=" + thisPwdText);  
                 int len = thisPwdText.length();  
                 if (len <= 4) {  
-                    listEd.get(len - 1).setText("*");  
+                    listEd.get(len - 1).setText(""+ (char) primaryCode);  
                     if (len == 4) {  
                         // 返回值，并清理本次记录，自动进入下次  
                         listEd.get(4).setText(thisPwdText);  
