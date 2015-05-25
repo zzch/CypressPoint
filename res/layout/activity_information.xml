@@ -121,16 +121,25 @@
                 android:layout_height="0.5dp" 
                 android:background="@color/fengexian"/>
                   
+                   <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="@dimen/view_mid_xx_title"
+                  android:gravity="center_vertical"
+                  android:background="@color/white"
+                  >
+                  
+                  
                 <EditText
                     android:id="@+id/information_name"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/view_mid_xx_title"
                     android:background="@color/white"
-                    android:gravity="center"
-                    android:text=" "
+                    android:layout_marginLeft="15dp"
+                    android:text="vhhjkvv "
                     android:textColor="@color/hei2" />
                
           
+                </LinearLayout>
 
             <View 
                 android:layout_width="match_parent"
@@ -165,8 +174,8 @@
                     android:id="@+id/information_sex"
                     android:layout_width="@dimen/infor_view_width"
                     android:layout_height="@dimen/view_mid_xx_title"
-                    android:layout_marginLeft="@dimen/view_mid_xx_title"
-                    android:gravity="center"
+                    android:layout_marginLeft="15dp"
+                   android:gravity="center_vertical"
                     android:text="男"
                     android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_small_xx" />
@@ -175,9 +184,7 @@
                     android:id="@+id/imageView2"
                     android:layout_width="@dimen/view_small_xx"
                     android:layout_height="@dimen/view_small_xx"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignTop="@+id/information_brithday"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="35dp"
                     android:src="@drawable/image_icon" />
 
             </LinearLayout>
@@ -238,8 +245,8 @@
                     android:id="@+id/information_brithday"
                     android:layout_width="@dimen/infor_view_width"
                     android:layout_height="@dimen/view_mid_xx_title"
-                    android:layout_marginLeft="@dimen/view_mid_xx_title"                   
-                    android:gravity="center"
+                    android:layout_marginLeft="10dp"                   
+                    android:gravity="center_vertical"
                     android:text=" 1989-12-1"
                     android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_small_xx" />
@@ -250,7 +257,7 @@
                     android:layout_height="@dimen/view_small_xx"
                     android:layout_alignParentRight="true"
                     android:layout_alignTop="@+id/information_brithday"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="40dp"
                     android:src="@drawable/image_icon" />
            
                  </LinearLayout>
@@ -321,7 +328,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/view_mid_xx_title"
                     android:layout_marginLeft="15dp"
-                    android:gravity="center"
+                    android:gravity="center_vertical"
                     android:text="24"
                     android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_small_xx" />

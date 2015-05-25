@@ -137,7 +137,7 @@ public class RegisterActivity extends Activity implements OnClickListener{
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String token=sp.getString("token", "token");
 			String phone = et_mobile_reg.getText().toString().trim();
-			String path=APIService.YANZHENGMA+"phone="+phone+"&type=sign_up";	
+			String path=APIService.YANZHENGMA+"phone="+phone;	
 			String JsonData = HttpClientGet(path);
 			Log.i("JsonData======", "----"+JsonData);
 	    	try {
