@@ -323,7 +323,7 @@ public class ShouYeActivity extends Activity {
 			}
 			String url=APIService.USERLOGIN+"phone="+u_name+"&password="+p_pwd+"&token="+token;
 			String data=HttpClientPost(url);
-			Log.i("jsonData======", "----"+data);
+			Log.i("jsonData======", "----"+url);
 			
 			
 	    		

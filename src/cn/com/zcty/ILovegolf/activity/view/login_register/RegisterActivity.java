@@ -47,6 +47,8 @@ public class RegisterActivity extends Activity implements OnClickListener{
 	private String isBoolean;
 	private Button fanhuiButton;
 	private int code;
+	 private String err;
+     private String messg = "";
 	Handler handler = new Handler(){
 
 		@Override
@@ -65,18 +67,35 @@ public class RegisterActivity extends Activity implements OnClickListener{
 				 Toast.makeText(RegisterActivity.this, "确认密码不能为空！", Toast.LENGTH_SHORT).show();
 				break;
 			case 4:
-				 Toast.makeText(RegisterActivity.this, "验证码不能为空！", Toast.LENGTH_SHORT).show();
-				break;
+				
+				Toast.makeText(RegisterActivity.this, "验证码不能为空！", Toast.LENGTH_SHORT).show();
+				
+				 break;
 			case 5:
+				if(msg.arg1==2){
+					Toast.makeText(RegisterActivity.this, "网络异常！", Toast.LENGTH_SHORT).show();
+				}
+				if(msg.arg1==3){
+					if(messg.equals("用户重复注册")){
+						Toast.makeText(RegisterActivity.this, "该用户已注册,请您重新注册！", Toast.LENGTH_SHORT).show();
+					  }
+					}
+			case 6:
 				if(msg.arg1==0){
 					Toast.makeText(RegisterActivity.this, "网络异常！", Toast.LENGTH_SHORT).show();
 				}
 				if(msg.arg1==1){
 						//弹出一个Dialog
-						fristdialog();	
+						//fristdialog();
+					
+						Toast.makeText(RegisterActivity.this, "注册成功！", Toast.LENGTH_SHORT).show();
+						 Intent intent=new Intent(RegisterActivity.this,ShouYeActivity.class);
+							startActivity(intent);
+							finish();
 					}
+					
 				break;
-			case 6:
+			case 7:
 				 Toast.makeText(RegisterActivity.this, "确认密码与密码不一致！", Toast.LENGTH_SHORT).show();
 				break;
 			}
@@ -137,23 +156,37 @@ public class RegisterActivity extends Activity implements OnClickListener{
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String token=sp.getString("token", "token");
 			String phone = et_mobile_reg.getText().toString().trim();
-			String path=APIService.YANZHENGMA+"phone="+phone;	
+			String path=APIService.YANZHENGMA+"phone="+phone;
+			Log.i("path======", "----"+path);
 			String JsonData = HttpClientGet(path);
 			Log.i("JsonData======", "----"+JsonData);
+			Message msg = handler.obtainMessage();
 	    	try {
 	    		if(code==404||code>=500){
 	    			//弹出框提醒 网络异常
-	    			Message msg = handler.obtainMessage();
-		    		msg.arg1 = 1;
-		    		handler.sendMessage(msg);
+	    			
+	    			isBoolean = "2";
+					msg.arg1 = 2;
 	    		}else{
+	    			msg.arg1 = 3;
+		    		isBoolean = "3";
+		    		
+		    		err = "";
+		    		messg = "";
+		    		JSONObject jsonObject=new JSONObject(JsonData);
+		    		Log.i("jsondata", "------------"+JsonData);
+					//JSONObject jsonObject=new JSONObject(data);						
+					 err = jsonObject.getString("error_code");
+					 messg = jsonObject.getString("message");
 	    			//json解析
-	    			JSONObject jsonObject=new JSONObject(JsonData);
 	    		}
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+	    	
+	    	msg.what = 5;			
+    		handler.sendMessage(msg);
 		}
 		
 		
@@ -188,7 +221,7 @@ public class RegisterActivity extends Activity implements OnClickListener{
 	              
 	              
 		  }else if(!mima.equals(querenmima)){
-				 msg.what = 6;  
+				 msg.what = 7;  
 	              handler.sendMessage(msg); 
 	              return;
 	              
@@ -229,6 +262,10 @@ public class RegisterActivity extends Activity implements OnClickListener{
 	    		}else{
 	    		msg.arg1 = 1;
 	    		isBoolean = "1";
+	    		
+	    		err = "";
+	    		messg = "";
+				JSONObject jsonObject=new JSONObject(data);	
 				JSONObject obj = new JSONObject(data);
 				String uuid=obj.getString("uuid");
 				String type=obj.getString("type");
@@ -249,7 +286,7 @@ public class RegisterActivity extends Activity implements OnClickListener{
 			}
 			
 			
-			msg.what = 5;			
+			msg.what = 6;			
     		handler.sendMessage(msg);
     	}
     }
