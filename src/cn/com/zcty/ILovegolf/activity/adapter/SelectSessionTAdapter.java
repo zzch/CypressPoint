@@ -22,6 +22,7 @@ public class SelectSessionTAdapter extends BaseAdapter{
 		this.context = context;
 		this.nameArrayList = nameArrayList;
 		inflater = LayoutInflater.from(context);
+		Log.i("lovegolf",nameArrayList.size()+""+nameArrayList);
 	}
 	@Override
 	public int getCount() {
@@ -51,6 +52,7 @@ public class SelectSessionTAdapter extends BaseAdapter{
 			holder = (Holder) convertView.getTag();
 		}
 		//holder.nameTextView.setText(nameArrayList.get(position));
+		Log.i("sadfsd",nameArrayList.size()+""+nameArrayList);
 		if(nameArrayList.get(position).equals("red")){
 			holder.image.setBackgroundResource(R.drawable.e_red);
 			holder.nameTextView.setText("红色T台");

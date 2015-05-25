@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/bg"
     android:orientation="vertical"
+    android:id="@+id/linear"
     >
    
     <RelativeLayout
@@ -261,7 +262,7 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    >
-	    <ListView 
+	    <cn.com.zcty.ILovegolf.tools.ScrollViewWithListView 
 	        android:id="@+id/competition_listview_qiuchang"
 	        android:visibility="gone"
 	        android:layout_width="match_parent"
@@ -270,7 +271,7 @@
 	        android:listSelector="@android:color/transparent"
 	        android:dividerHeight="0.5dp"
 	        >
-	    </ListView>	    
+	    </cn.com.zcty.ILovegolf.tools.ScrollViewWithListView>	    
 	</RelativeLayout>
 	
    
@@ -328,7 +329,7 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    >
-	    <ListView 
+	    <cn.com.zcty.ILovegolf.tools.ScrollViewWithListView 
 	        android:id="@+id/competition_listview_t"
 	        android:visibility="gone"
 	        android:layout_width="match_parent"
@@ -337,7 +338,7 @@
 	        android:listSelector="@android:color/transparent"
 	        android:dividerHeight="0.5dp"
 	        >
-	    </ListView>	    
+	    </cn.com.zcty.ILovegolf.tools.ScrollViewWithListView>	    
 	</RelativeLayout>
 	
 	
@@ -389,7 +390,7 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    >
-	    <ListView 
+	    <cn.com.zcty.ILovegolf.tools.ScrollViewWithListView 
 	        android:id="@+id/competition_listview_qiuchang_2"
 	        android:visibility="gone"
 	        android:layout_width="match_parent"
@@ -398,7 +399,7 @@
 	        android:listSelector="@android:color/transparent"
 	        android:dividerHeight="0.5dp"
 	        >
-	    </ListView>	    
+	    </cn.com.zcty.ILovegolf.tools.ScrollViewWithListView>	    
 	</RelativeLayout>
 	
 	
@@ -458,7 +459,7 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    >
-	    <ListView 
+	    <cn.com.zcty.ILovegolf.tools.ScrollViewWithListView 
 	        android:id="@+id/competition_listview_t_2"
 	        android:visibility="gone"
 	        android:layout_width="match_parent"
@@ -467,9 +468,9 @@
 	        android:listSelector="@android:color/transparent"
 	        android:dividerHeight="0.5dp"
 	        >
-	    </ListView>	    
+	    </cn.com.zcty.ILovegolf.tools.ScrollViewWithListView>	    
 	</RelativeLayout>
-
+	
 	<RelativeLayout
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content" >
@@ -486,4 +487,5 @@
 	    android:text="开始"/>
 
    </RelativeLayout>
+   
 </LinearLayout>

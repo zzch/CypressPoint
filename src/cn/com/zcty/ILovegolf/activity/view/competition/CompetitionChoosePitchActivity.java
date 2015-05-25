@@ -51,7 +51,7 @@ public class CompetitionChoosePitchActivity extends Activity {
 		initialize();
 		MyApplication.getInstance().requestLocationInfo();
 		//找控件
-		listpich=(ListView) findViewById(R.id.listpich);
+		listpich=(ListView) findViewById(R.id.listview);
 		
 		
 		//子条目点击事件
