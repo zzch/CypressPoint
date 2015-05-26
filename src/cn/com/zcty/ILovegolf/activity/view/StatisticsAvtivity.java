@@ -74,6 +74,7 @@ public class StatisticsAvtivity extends FragmentActivity{
 	private ArrayList<String> qiuDongResult = new ArrayList<String>();
 	private ArrayList<String> qiuType = new ArrayList<String>();
 	private ArrayList<String> qiuTypeResult = new ArrayList<String>();
+	private String name;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -105,6 +106,7 @@ public void onConfigurationChanged(Configuration newConfig) {
 	if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) { 
 		Log.i("zhouhe", "zhouhea");		
 		Intent intent = new Intent(this,StatisticsActivityLand.class);
+		intent.putExtra("name", name);
 		intent.putExtra("uuid", match_uuid);
 		startActivity(intent);
 		finish();
@@ -218,7 +220,7 @@ public void onConfigurationChanged(Configuration newConfig) {
 		gridView.setSelector(new ColorDrawable(Color.TRANSPARENT));
 		dateText = (TextView) findViewById(R.id.golf_date);
 		golfnameTextView = (TextView) findViewById(R.id.golf_name);
-		String name = getIntent().getStringExtra("name");
+		name = getIntent().getStringExtra("name");
 		golfnameTextView.setText(name);
 		
 		countListView = (ListView) findViewById(R.id.count);
