@@ -13,10 +13,13 @@ import org.json.JSONObject;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.CountCoolAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.StatisticAdapter;
+import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -34,9 +37,11 @@ import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
 public class StatisticsActivityLand extends Activity{
@@ -59,10 +64,25 @@ public class StatisticsActivityLand extends Activity{
 	private ListView qiudongTypeListView;
 	private ListView countListView;
 	private String match_uuid;
+	private String name;
+	private LinearLayout linear;
+	private ProgressDialog progressDialog;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
-				getData();
+				hideProgressDialog();
+				if(msg.obj.equals("404")||msg.obj.equals("500")){//判断是服务端问题
+					Toast.makeText(StatisticsActivityLand.this, "网络异常，错误提示"+msg.obj, Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("403")){
+					Toast.makeText(StatisticsActivityLand.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+					FileUtil.delFile();
+					Intent intent = new Intent(StatisticsActivityLand.this,ShouYeActivity.class);
+					startActivity(intent);
+					finish();
+				}else{
+					getData();
+					linear.setVisibility(View.VISIBLE);
+				}
 			}
 		};
 	};
@@ -74,17 +94,20 @@ public class StatisticsActivityLand extends Activity{
 		setContentView(R.layout.activity_statistics_land);
 		initView();
 		setListener();
+		linear.setVisibility(View.INVISIBLE);
+		showProgressDialog("提示", "正在加载", this);
 		new MyTask().start();
 	}
 	private void initView() {
 		match_uuid = getIntent().getStringExtra("uuid");
 		
+		linear = (LinearLayout) findViewById(R.id.linear);
 		backButton = (Button) findViewById(R.id.back1);	
 		gridView = (GridView) findViewById(R.id.gridView1);
 		gridView.setSelector(new ColorDrawable(Color.TRANSPARENT));
 		dateText = (TextView) findViewById(R.id.golf_date);
 		golfnameTextView = (TextView) findViewById(R.id.golf_name);
-		String name = getIntent().getStringExtra("name");
+		name = getIntent().getStringExtra("name");
 		golfnameTextView.setText(name);
 		countListView = (ListView) findViewById(R.id.count);
 		qiudongListView = (ListView) findViewById(R.id.qiudong);
@@ -358,6 +381,7 @@ public class StatisticsActivityLand extends Activity{
 			
 			Intent intent = new Intent(this,StatisticsAvtivity.class);
 			intent.putExtra("uuid", match_uuid);
+			intent.putExtra("name", name);
 			startActivity(intent);
 			finish();
 		}
@@ -468,6 +492,7 @@ public class StatisticsActivityLand extends Activity{
 				}
 				Message msg = handler.obtainMessage();
 				msg.what = 1;
+				msg.obj = jsonData;
 				handler.sendMessage(msg);
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
@@ -524,5 +549,27 @@ public class StatisticsActivityLand extends Activity{
 		}
 
 	}
+	/*
+     * 提示加载
+     */
+     public   void  showProgressDialog(String title,String message,Activity context){
+            if(progressDialog ==null){
+                   progressDialog = ProgressDialog.show( context, title, message,true,true );
+
+           } else if (progressDialog .isShowing()){
+                   progressDialog.setTitle(title);
+                   progressDialog.setMessage(message);
+           }
+            progressDialog.show();
+
+    }
+     /*
+     * 隐藏加载
+     */
+     public  void hideProgressDialog(){
+            if(progressDialog !=null &&progressDialog.isShowing()){
+                   progressDialog.dismiss();
+           }
+    }
 }
 

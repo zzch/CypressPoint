@@ -9,6 +9,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -32,6 +34,7 @@ import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -46,7 +49,9 @@ import cn.com.zcty.ILovegolf.activity.adapter.QiuDongTypeAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.StatisticAdapter;
 import cn.com.zcty.ILovegolf.activity.view.fragment.StaticsFragmentOne;
 import cn.com.zcty.ILovegolf.activity.view.fragment.StaticsFragmentTwo;
+import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 public class StatisticsAvtivity extends FragmentActivity{
@@ -75,10 +80,25 @@ public class StatisticsAvtivity extends FragmentActivity{
 	private ArrayList<String> qiuType = new ArrayList<String>();
 	private ArrayList<String> qiuTypeResult = new ArrayList<String>();
 	private String name;
+	private LinearLayout linear;
+	private ProgressDialog progressDialog;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
-				getData();
+				hideProgressDialog();
+				if(msg.obj.equals("404")||msg.obj.equals("500")){//判断是服务端问题
+					Toast.makeText(StatisticsAvtivity.this, "网络异常，错误提示"+msg.obj, Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("403")){
+					Toast.makeText(StatisticsAvtivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+					FileUtil.delFile();
+					Intent intent = new Intent(StatisticsAvtivity.this,ShouYeActivity.class);
+					startActivity(intent);
+					finish();
+				}else{
+					getData();
+					linear.setVisibility(View.VISIBLE);
+				}
+				
 			}
 		};
 	};
@@ -92,6 +112,8 @@ public class StatisticsAvtivity extends FragmentActivity{
 		Log.i("zhouhe", a+"");
 		initView();
 		setListener();	
+		linear.setVisibility(View.INVISIBLE);
+		showProgressDialog("提示", "正在加载", this);
 		new MyTask().start();
 	}
 	@Override
@@ -210,6 +232,7 @@ public void onConfigurationChanged(Configuration newConfig) {
 		match_uuid = getIntent().getStringExtra("uuid");
 		
 		backButton = (Button) findViewById(R.id.back);
+		linear = (LinearLayout) findViewById(R.id.linear);
 		tablePager = (ViewPager) findViewById(R.id.viewpager);
 		radioGroup = (RadioGroup) findViewById(R.id.main_radio);
 		radioButton_qian = (RadioButton) findViewById(R.id.mainTabs_radio_qian);
@@ -335,6 +358,7 @@ public void onConfigurationChanged(Configuration newConfig) {
 					}
 				Message msg = handler.obtainMessage();
 				msg.what = 1;
+				msg.obj = jsonData;
 				handler.sendMessage(msg);
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
@@ -343,4 +367,26 @@ public void onConfigurationChanged(Configuration newConfig) {
 
 		}
 	}
+	/*
+     * 提示加载
+     */
+     public   void  showProgressDialog(String title,String message,Activity context){
+            if(progressDialog ==null){
+                   progressDialog = ProgressDialog.show( context, title, message,true,true );
+
+           } else if (progressDialog .isShowing()){
+                   progressDialog.setTitle(title);
+                   progressDialog.setMessage(message);
+           }
+            progressDialog.show();
+
+    }
+     /*
+     * 隐藏加载
+     */
+     public  void hideProgressDialog(){
+            if(progressDialog !=null &&progressDialog.isShowing()){
+                   progressDialog.dismiss();
+           }
+    }
 }
