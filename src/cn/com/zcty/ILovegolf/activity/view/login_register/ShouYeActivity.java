@@ -167,6 +167,7 @@ public class ShouYeActivity extends Activity {
 				String nickname = null;
 				String token = null;
 				String type = null;
+				String phone = null;
 				try {
 					//json解析
 					JSONObject jsonObject=new JSONObject(data);
@@ -178,6 +179,7 @@ public class ShouYeActivity extends Activity {
 						token=jsonObject.getString("token");
 						Log.i("token--->>", ""+token);
 						type = jsonObject.getString("type");
+						phone = jsonObject.getString("phone");
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -189,6 +191,7 @@ public class ShouYeActivity extends Activity {
 			    editor.putString("nickname", nickname);
 			    editor.putString("token", token);
 			    editor.putString("type", type);
+			    editor.putString("phone", phone);
 			    editor.putString("isRegister", "true");
 			    editor.putString("isfangshi", "0");
 			    Log.i("----uuid", ""+sp.getString("uuid", ""));
@@ -274,7 +277,8 @@ public class ShouYeActivity extends Activity {
 	    	    		isBoolean = "1";
 	    	    		err = "";
 	    	    		messg = "";
-						JSONObject jsonObject=new JSONObject(data);						
+						JSONObject jsonObject=new JSONObject(data);	
+						Log.i("asdfdfasdf", data);
 						 err = jsonObject.getString("error_code");
 						 messg = jsonObject.getString("message");
 						 Log.i("mimaceshi", messg);
@@ -339,6 +343,7 @@ public class ShouYeActivity extends Activity {
 								String type=jsonObject.getString("type");
 								String nickname=jsonObject.getString("nickname");
 								String token_r=jsonObject.getString("token");	
+								String phone = jsonObject.getString("phone");
 								//保存数据
 								SharedPreferences sharedpres=getSharedPreferences("register",Context.MODE_PRIVATE);
 								SharedPreferences.Editor editor = sharedpres.edit();
@@ -347,6 +352,7 @@ public class ShouYeActivity extends Activity {
 								editor.putString("nickname", nickname);
 								editor.putString("token", token_r);
 								editor.putString("isfangshi", "1");
+							    editor.putString("phone", phone);
 								editor.commit();
 						 Message msgs = h.obtainMessage();
 						 msgs.what=1;

@@ -15,11 +15,12 @@
             android:layout_centerVertical="true" >
 
             <Button
-                android:id="@+id/analyze_result_back"
+                android:id="@+id/back"
                 android:layout_width="80dp"
                 android:layout_height="47dp"
                 android:layout_marginLeft="@dimen/title_button_left"
                 android:background="@null"
+                android:onClick="onClick"
                 android:text="@string/back"
                 android:textColor="@color/white"
                 android:textSize="@dimen/txsize_small_xx" />
@@ -66,7 +67,8 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:hint="请输入当前密码" />
+            android:hint="请输入当前密码"
+            android:password="true" />
 
         <EditText
             android:id="@+id/newpsw"
@@ -74,7 +76,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="80dp"
-            android:hint="请设置密码" />
+            android:hint="请设置密码"
+            android:password="true" />
 
         <EditText
             android:id="@+id/qdnewpsw"
@@ -82,7 +85,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="150dp"
-            android:hint="请再次输入" />
+            android:hint="请再次输入"
+            android:password="true" />
     </RelativeLayout>
 
     <RelativeLayout

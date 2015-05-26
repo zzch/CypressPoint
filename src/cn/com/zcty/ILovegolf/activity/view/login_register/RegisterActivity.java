@@ -270,7 +270,8 @@ public class RegisterActivity extends Activity implements OnClickListener{
 				String uuid=obj.getString("uuid");
 				String type=obj.getString("type");
 				String nickname=obj.getString("nickname");
-				String token_r=obj.getString("token");	
+				String token_r=obj.getString("token");
+				String phone = obj.getString("phone");
 				
 				//保存数据
 				SharedPreferences sharedpre=getSharedPreferences("register",Context.MODE_PRIVATE);
@@ -278,6 +279,7 @@ public class RegisterActivity extends Activity implements OnClickListener{
 			    editor.putString("uuid", uuid);
 			    editor.putString("type", type);
 				editor.putString("nickname", nickname);
+				editor.putString("phone", phone);
 				editor.putString("token", token_r);
 				editor.commit();
 	    		}

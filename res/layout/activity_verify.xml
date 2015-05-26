@@ -108,17 +108,19 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:password="true"
             android:hint="请输入密码"
-            android:password="true" />
+             />
 
         <EditText
             android:id="@+id/qdpsw"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:password="true"
             android:layout_marginTop="50dp"
             android:hint="请再次输入"
-            android:password="true" />
+             />
     </RelativeLayout>
 
     <RelativeLayout

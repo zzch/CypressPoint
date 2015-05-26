@@ -15,11 +15,12 @@
             android:layout_centerVertical="true" >
 
             <Button
-                android:id="@+id/analyze_result_back"
+                android:id="@+id/back"
                 android:layout_width="80dp"
                 android:layout_height="47dp"
                 android:layout_marginLeft="@dimen/title_button_left"
                 android:background="@null"
+                android:onClick="onClick"
                 android:text="@string/back"
                 android:textColor="@color/white"
                 android:textSize="@dimen/txsize_small_xx" />
@@ -57,6 +58,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/shouji"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_marginTop="20dp" >
@@ -79,6 +81,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/zhanghao"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_marginTop="30dp" >

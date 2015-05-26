@@ -166,6 +166,8 @@ public class Myself extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+				SharedPreferences sp = getSharedPreferences("register", MODE_PRIVATE);
+				type = sp.getString("type", "type");
 				Intent intent = new Intent();
 				if(type.equals("guest")){
 					intent.setClass(Myself.this, BingDingActivity.class);
@@ -200,7 +202,6 @@ public class Myself extends Activity {
 		//settingRelativeLayout = (RelativeLayout) findViewById(R.id.myself_setting);
 		SharedPreferences sp = getSharedPreferences("register", MODE_PRIVATE);
 		String name = sp.getString("nickname", "nickname");
-		type = sp.getString("type", "type");
 		nameTextView.setText(name);
 	}
 	
