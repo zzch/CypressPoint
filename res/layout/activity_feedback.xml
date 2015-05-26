@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/daohang" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="意见反馈"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_mid_x" />
+
+       <FrameLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            >
+
+        <Button
+            android:id="@+id/button1"
+           android:layout_width="80dp"
+            android:layout_height="47dp"
+            android:layout_marginLeft="@dimen/title_button_left"
+            android:background="@null"
+            android:onClick="choosepith_back"
+            android:text="@string/back"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xx" />
+        
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_image"  />
+		</FrameLayout>
+    </RelativeLayout>
+	<TextView 
+	    android:id="@+id/number"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:textColor="#ffffff"
+	    android:text="当前可以输入140字"
+	    />
+    <EditText
+        android:id="@+id/feedback"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/edit_text"
+        android:enabled="true"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:maxLines="20"
+        android:minLines="8"
+        android:scrollbars="vertical"
+        android:hint="请输入您的意见"
+         />
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <Button 
+        android:id="@+id/submit"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="提交"
+        />
+    
+</RelativeLayout>
+</LinearLayout>
