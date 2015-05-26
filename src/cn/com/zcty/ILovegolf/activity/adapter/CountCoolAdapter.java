@@ -54,7 +54,23 @@ public class CountCoolAdapter extends BaseAdapter{
 		if(holder.countCoolTextView.getText().toString().equals("")){
 			holder.countCoolResultTextView.setText("");
 		}else{
-			holder.countCoolResultTextView.setText(countCoolResult.get(position));
+			if(countCool.get(position).equals("最远开球距离")){
+				holder.countCoolResultTextView.setText(countCoolResult.get(position)+"码");
+			}else if(countCool.get(position).equals("平均开球距离")){
+				holder.countCoolResultTextView.setText(countCoolResult.get(position)+"码");
+			}else if(countCool.get(position).equals("开球命中率")){
+				holder.countCoolResultTextView.setText(countCoolResult.get(position)+"%");
+			}else if(countCool.get(position).equals("救球成功率")){
+				holder.countCoolResultTextView.setText(countCoolResult.get(position)+"%");
+			}else if(countCool.get(position).equals("反弹率")){
+				holder.countCoolResultTextView.setText(countCoolResult.get(position));
+			}else if(countCool.get(position).equals("优势转化率")){
+				holder.countCoolResultTextView.setText(countCoolResult.get(position)+"%");
+			}else if(countCool.get(position).equals("攻果岭率")){
+				holder.countCoolResultTextView.setText(countCoolResult.get(position)+"%");
+			}else if(countCool.get(position).equals("标准杆上果岭的 平均推杆")){
+				holder.countCoolResultTextView.setText(countCoolResult.get(position));
+		  }
 		}
 		
 		return convertView;

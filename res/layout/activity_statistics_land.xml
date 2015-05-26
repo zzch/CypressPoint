@@ -132,7 +132,7 @@
                             android:gravity="center"
                             android:text="洞"
                             android:textColor="@color/hei2"
-                            android:textSize="@dimen/txsize_small_xx" />
+                            android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="0.5dp"
@@ -474,7 +474,7 @@
                             android:gravity="center"
                             android:text="标准杆"
                             android:textColor="@color/hei2"
-                            android:textSize="@dimen/txsize_small_xx" />
+                            android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="0.5dp"
@@ -836,7 +836,7 @@
                             android:gravity="center"
                             android:text="成绩"
                             android:textColor="@color/hei2"
-                            android:textSize="@dimen/txsize_small_xx" />
+                            android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="0.5dp"
@@ -1198,7 +1198,7 @@
                             android:gravity="center"
                             android:text="距标准杆"
                             android:textColor="@color/hei2"
-                            android:textSize="@dimen/txsize_small_xx" />
+                            android:textSize="@dimen/txsize_small_s" />
 
                         <View
                             android:layout_width="0.5dp"
@@ -1547,7 +1547,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="32dp"
                 android:background="@color/white"
                 android:orientation="horizontal" >
 
@@ -1555,7 +1555,7 @@
                     android:layout_width="@dimen/view_small_xx_w"
                     android:layout_height="@dimen/view_small_xx_w"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/view_small_xx_w"
+                    android:layout_marginLeft="@dimen/view_image"
                     android:src="@drawable/xintianwen" />
 
                 <TextView
@@ -1565,7 +1565,7 @@
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="@string/xintianwen"
                     android:textColor="@color/hei5"
-                    android:textSize="20dp" />
+                    android:textSize="@dimen/txsize_small_s" />
 
                 <ImageView
                     android:layout_width="@dimen/view_small_xx_w"
@@ -1581,7 +1581,7 @@
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="@string/laoyin"
                     android:textColor="@color/hei5"
-                    android:textSize="20dp" />
+                    android:textSize="@dimen/txsize_small_s" />
 
                 <ImageView
                     android:layout_width="@dimen/view_small_xx_w"
@@ -1597,7 +1597,7 @@
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="@string/xiao"
                     android:textColor="@color/hei5"
-                    android:textSize="20dp" />
+                    android:textSize="@dimen/txsize_small_s" />
 
                 <ImageView
                     android:layout_width="@dimen/view_small_xx_w"
@@ -1613,7 +1613,7 @@
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="@string/biaozhun"
                     android:textColor="@color/hei5"
-                    android:textSize="20dp" />
+                    android:textSize="@dimen/txsize_small_s" />
 
                 <ImageView
                     android:layout_width="@dimen/view_small_xx_w"
@@ -1629,7 +1629,7 @@
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="@string/baiji"
                     android:textColor="@color/hei5"
-                    android:textSize="20dp" />
+                    android:textSize="@dimen/txsize_small_s" />
 
                 <ImageView
                     android:layout_width="@dimen/view_small_xx_w"
@@ -1645,7 +1645,7 @@
                     android:layout_marginLeft="@dimen/view_small_x"
                     android:text="@string/shuangbaijijia"
                     android:textColor="@color/hei5"
-                    android:textSize="20dp" />
+                    android:textSize="@dimen/txsize_small_s" />
             </LinearLayout>
 
             <View

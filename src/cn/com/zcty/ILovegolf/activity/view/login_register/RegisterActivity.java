@@ -77,7 +77,7 @@ public class RegisterActivity extends Activity implements OnClickListener{
 				}
 				if(msg.arg1==3){
 					if(messg.equals("用户重复注册")){
-						Toast.makeText(RegisterActivity.this, "该用户已注册,请您重新注册！", Toast.LENGTH_SHORT).show();
+						Toast.makeText(RegisterActivity.this, "该用户已注册,请您60秒后重新注册！", Toast.LENGTH_SHORT).show();
 					  }
 					}
 			case 6:
@@ -88,7 +88,7 @@ public class RegisterActivity extends Activity implements OnClickListener{
 						//弹出一个Dialog
 						//fristdialog();
 					
-						Toast.makeText(RegisterActivity.this, "注册成功！", Toast.LENGTH_SHORT).show();
+						Toast.makeText(RegisterActivity.this, "恭喜您，注册成功！", Toast.LENGTH_SHORT).show();
 						 Intent intent=new Intent(RegisterActivity.this,ShouYeActivity.class);
 							startActivity(intent);
 							finish();

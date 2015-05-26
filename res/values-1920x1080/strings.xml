@@ -62,7 +62,7 @@
   	<dimen name="view_tongyong">300dp</dimen>
   	<dimen name="view_mingzhong">20dp</dimen>
   	<dimen name="view_image">60dp</dimen>
-  	<dimen name="view_image_radio">35dp</dimen>
+  	<dimen name="view_image_radio">30dp</dimen>
   	
   	<dimen name="view_image_2">95dp</dimen>
   	<dimen name="view_image_3">180dp</dimen>
@@ -75,7 +75,7 @@
   	<dimen name="view_sss_aa">40dp</dimen>
   	<dimen name="view_sss_aaa">79dp</dimen>
   	
-  	<dimen name="view_sss_bbb">67dp</dimen>
+  	<dimen name="view_sss_bbb">50dp</dimen>
   	<dimen name="view_sss_bb">10dp</dimen>
   	<dimen name="view_sss_b">130dp</dimen>
   	
