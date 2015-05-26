@@ -12,6 +12,8 @@ import org.json.JSONObject;
 
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.CountCoolAdapter;
+import cn.com.zcty.ILovegolf.activity.adapter.QiuDongAdapter;
+import cn.com.zcty.ILovegolf.activity.adapter.QiuDongTypeAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.StatisticAdapter;
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.utils.APIService;
@@ -121,8 +123,8 @@ public class StatisticsActivityLand extends Activity{
 		String date = simpleDateFormat.format(new Date());
 		dateText.setText(date);
 		countListView.setAdapter(new CountCoolAdapter(this, countCool, countCoolResult));
-		qiudongListView.setAdapter(new CountCoolAdapter(this, qiuDong, qiuDongResult));
-		qiudongTypeListView.setAdapter(new CountCoolAdapter(this, qiuType, qiuTypeResult));
+		qiudongListView.setAdapter(new QiuDongAdapter(this, qiuDong, qiuDongResult));
+		qiudongTypeListView.setAdapter(new QiuDongTypeAdapter(this, qiuType, qiuTypeResult));
 		
 		TextView tv1 = (TextView)findViewById(R.id.t1);
 		tv1.setText(parArrayList.get(0));
