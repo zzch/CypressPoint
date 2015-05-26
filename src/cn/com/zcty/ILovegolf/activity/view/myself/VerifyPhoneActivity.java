@@ -41,6 +41,7 @@ public class VerifyPhoneActivity extends Activity{
 	private String phone;
 	private String result;
 	private String map;
+	private String type;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -59,7 +60,13 @@ public class VerifyPhoneActivity extends Activity{
 							map = (String) msg.obj;
 							new VerifyPhone_().start();
 						}else if(result.equals("success")){
-							Toast.makeText(VerifyPhoneActivity.this, "设置面成功", Toast.LENGTH_LONG).show();
+							//保存数据
+							SharedPreferences sharedpre=getSharedPreferences("register",Context.MODE_PRIVATE);
+							SharedPreferences.Editor editor = sharedpre.edit();
+						    editor.putString("type", "member");
+							editor.putString("phone", phone);
+							editor.commit();
+							Toast.makeText(VerifyPhoneActivity.this, "设置密码成功", Toast.LENGTH_LONG).show();
 							Intent intent = new Intent(VerifyPhoneActivity.this,SettingActivity.class);
 							startActivity(intent);
 							finish();
@@ -94,6 +101,10 @@ public class VerifyPhoneActivity extends Activity{
 					Toast.makeText(VerifyPhoneActivity.this, "请输入4位验证码", Toast.LENGTH_LONG).show();
 				}else if(!newpsd.equals(affirpsd)){
 					Toast.makeText(VerifyPhoneActivity.this, "两次输入的密码不一致", Toast.LENGTH_LONG).show();
+				}else if(newpsd.length()<1||affirpsd.length()<1){
+					Toast.makeText(VerifyPhoneActivity.this, "请把信息输入完整", Toast.LENGTH_LONG).show();									
+				}else if(newpsd.length()<6||newpsd.length()>15){
+					Toast.makeText(VerifyPhoneActivity.this, "新密码必须大于6位，小于15位", Toast.LENGTH_LONG).show();
 
 				}else{
 					//上传设置的信息 启动线程
@@ -106,7 +117,7 @@ public class VerifyPhoneActivity extends Activity{
 		phone = getIntent().getStringExtra("phone");
 		
 		phoneTextView = (TextView) findViewById(R.id.phone);
-		phoneTextView.setText("请输入+86"+phone);
+		phoneTextView.setText("请输入+86"+phone+"手机上的验证码");
 		linear = (LinearLayout) findViewById(R.id.linear);
 		verifyEditText = (EditText) findViewById(R.id.verify_phonesd);
 		/*

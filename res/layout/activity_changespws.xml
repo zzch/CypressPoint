@@ -15,11 +15,12 @@
             android:layout_centerVertical="true" >
 
             <Button
-                android:id="@+id/analyze_result_back"
+                android:id="@+id/back"
                 android:layout_width="80dp"
                 android:layout_height="47dp"
                 android:layout_marginLeft="@dimen/title_button_left"
                 android:background="@null"
+                android:onClick="onClick"
                 android:text="@string/back"
                 android:textColor="@color/white"
                 android:textSize="@dimen/txsize_small_xx" />
@@ -59,43 +60,57 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp" >
+        >
 
         <EditText
             android:id="@+id/psw"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
+             android:layout_width="@dimen/register_view_width"
+             android:layout_height="@dimen/view_mid_xx_title"
+             android:background="@drawable/wenbenkuang"
+             android:layout_marginTop="30dp"
+             android:textColor="@color/hei5"
             android:layout_centerHorizontal="true"
-            android:hint="请输入当前密码" />
+            android:hint="请输入当前密码"
+            android:password="true" />
 
         <EditText
             android:id="@+id/newpsw"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/register_view_width"
+             android:layout_height="@dimen/view_mid_xx_title"
+             android:background="@drawable/wenbenkuang"
+             android:textColor="@color/hei5" 
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="80dp"
-            android:hint="请设置密码" />
+            android:layout_marginTop="100dp"
+            android:hint="请设置密码"
+            android:password="true" />
 
         <EditText
             android:id="@+id/qdnewpsw"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/register_view_width"
+             android:layout_height="@dimen/view_mid_xx_title"
+             android:background="@drawable/wenbenkuang"
+             android:textColor="@color/hei5"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="150dp"
-            android:hint="请再次输入" />
+            android:layout_marginTop="170dp"
+            android:hint="请再次输入"
+            android:password="true" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp" >
+        android:layout_marginTop="45dp" >
 
         <Button
-            android:id="@+id/tijiao"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="提交" />
+        android:id="@+id/tijiao"
+        android:layout_width="@dimen/register_view_width"
+        android:layout_height="@dimen/button_height"
+        android:background="@drawable/button"
+        android:textColor="@color/bg" 
+        android:gravity="center"
+        android:textSize="@dimen/txsize_small_xxx"
+        android:layout_centerHorizontal="true"
+        android:text="提交" />
     </RelativeLayout>
 
 </LinearLayout>

@@ -79,6 +79,7 @@ public class ScoreCardUpDateActivity extends Activity{
 	private ProgressDialog progressDialog;
 	private String code;
 	private String distance;
+	private String d = "命中";
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 
@@ -110,8 +111,8 @@ public class ScoreCardUpDateActivity extends Activity{
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_scorecardupdat);
 		initView();
-		setListener();
 		getData();
+		setListener();
 
 	}
 
@@ -130,16 +131,27 @@ public class ScoreCardUpDateActivity extends Activity{
 		 * 5.20修改
 		 */
 		String par = intent.getStringExtra("par");
-		Log.i("sadfsdafsdafas", par+"zhouhe");
 		position = intent.getStringExtra("position");
-		direction = intent.getStringExtra("direction");
-		if(direction.equals("pure")){
-			direction = "命中";
-		}else if(direction.equals("hook")){
-			direction = "左侧";
-		}else{
-			direction = "右侧";
+		String  dc= intent.getStringExtra("direction");
+		Log.i("sadfsdafsdafas", dc+"zhouhe");
+
+		if(dc.equals("pure")){
+			coolWheelView.setCurrentItem(0);
+			d = "命中";
+			hit_scorecard.setText("命中");
+			direction = "pure";
+		}else if(dc.equals("hook")){
+			direction = "hook";
+			coolWheelView.setCurrentItem(2);
+			d = "左侧";
+			hit_scorecard.setText("左侧");
+		}else if(dc.equals("slice")){
+		direction = "slice";
+		coolWheelView.setCurrentItem(1);
+		d = "右侧";
+		hit_scorecard.setText("右侧");
 		}
+		d = hit_scorecard.getText().toString();
 		distance = intent.getStringExtra("distance");
 		SharedPreferences sp = getSharedPreferences("setCard",MODE_PRIVATE);	
 		if( !distance.equals("null")){
@@ -154,12 +166,12 @@ public class ScoreCardUpDateActivity extends Activity{
 					coolWheelView.setCurrentItem(i);
 				}
 			}
-			Log.i("sadfsdafsdafas", distance);
 			distanceWheelView.setCurrentItem(Integer.parseInt(distance)/5);
 			SharedPreferences.Editor editor = sp.edit();
 			editor.putString("rodnum", "null");
 			editor.commit();
 		}else{
+			distance = "200";
 			distanceWheelView.setCurrentItem(40);
 			dataTextView.setText(par);
 			putTextView.setText(putcount+"");
@@ -216,6 +228,8 @@ public class ScoreCardUpDateActivity extends Activity{
 				distance_scorecard.setText(adapter.getItemText(newValue));
 				driving_distance = (String) adapter.getItemText(newValue);
 				driving_distance = driving_distance.substring(0,driving_distance.length()-1);
+				Log.i("zhouheqiujin", ""+driving_distance+"aaaaaa"+distance);
+
 				if(!driving_distance.equals(distance)){
 					flase_4 = true;
 				}
@@ -225,6 +239,7 @@ public class ScoreCardUpDateActivity extends Activity{
 
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
+				Log.i("nihaome...", cool[newValue]+"aaaaaa"+d);
 				if(!cool[newValue].equals(direction)){
 					flase_5 = true;
 				}
@@ -413,7 +428,13 @@ public class ScoreCardUpDateActivity extends Activity{
 			}else{
 				setcard.setPar("命中");
 			}
-
+			/*if(direction.equals("命中")){
+				direction = "pure";
+			}else if(direction.equals("左侧")){
+				direction = "hook";
+			}else{
+				direction = "slice";
+			}*/
 			String path = APIService.MODIFYINTEGRAL+"uuid="+uuid+"&score="+score+"&putts="+putts+
 					"&penalties="+penalties+
 					"&driving_distance="+driving_distance+

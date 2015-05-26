@@ -160,6 +160,6 @@
         <dimen name="button_height">40dp</dimen>
         
         
-         
+          <dimen name="text_whith_x">260dp</dimen> 
         
 </resources>

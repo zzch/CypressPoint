@@ -117,6 +117,7 @@
      <string name="setting">设置</string>
      <string name="pws">帐号密码</string>
     <string name="content">其他用户无权查看您的手机号码绑定后可用其它手机登录</string>
+    <string name="changephone">更换手机号码，下次登录可使用新手机号码登录。当前手机号码为：15201061256</string>
     
     <!-- 加入比赛 -->
     <string name="textdescription">您的朋友创建比赛后可以获得4位数字口令输入后即可加入到TA的比赛</string>

@@ -29,9 +29,9 @@
         android:layout_width="@dimen/register_view_width"
         android:layout_height="@dimen/button_height"
         android:background="@drawable/button"
+        android:textColor="@color/bg" 
         android:gravity="center"
         android:textSize="@dimen/txsize_small_xxx"
-        android:textColor="@color/bg" 
         android:onClick="but_register"
         android:layout_marginTop="@dimen/view_mid_x"
         android:text="@string/zhuce"
@@ -87,10 +87,10 @@
              android:id="@+id/et_username"
              android:layout_width="@dimen/register_view_width"
              android:layout_height="@dimen/view_mid_xx_title"
-             android:layout_marginTop="@dimen/shouye_name_top"
              android:background="@drawable/wenbenkuang"
-             android:hint=" 请输入手机号"
+             android:layout_marginTop="@dimen/shouye_name_top"
              android:textColor="@color/hei5"
+             android:hint=" 请输入手机号"
              android:textColorHint="@color/hei6" />
 
          <EditText
