@@ -68,7 +68,7 @@ public class CountCoolAdapter extends BaseAdapter{
 				holder.countCoolResultTextView.setText(countCoolResult.get(position)+"%");
 			}else if(countCool.get(position).equals("攻果岭率")){
 				holder.countCoolResultTextView.setText(countCoolResult.get(position)+"%");
-			}else if(countCool.get(position).equals("标准杆上果岭的 平均推杆")){
+			}else if(countCool.get(position).equals("标准杆上果岭的平均推杆")){
 				holder.countCoolResultTextView.setText(countCoolResult.get(position));
 		  }
 		}
