@@ -67,7 +67,7 @@ public class ListViewSwipeGesture implements OnTouchListener {
 
     //Intermediate Usages
     String TextColor="#FF0000";      //#FF4444
-    String RangeOneColor="#17191c";   //"#FFD060"
+    String RangeOneColor="#ffffff";   //白色
     String RangeTwoColor="#00ff00";
     String singleColor="#FF4444";
 
