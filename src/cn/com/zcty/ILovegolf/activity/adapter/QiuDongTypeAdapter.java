@@ -67,6 +67,9 @@ public class QiuDongTypeAdapter extends BaseAdapter{
 			}else if(qiuType.get(position).equals("双柏忌球")){
 				holder.countCoolResultTextView.setText(qiuTypeResult.get(position)+"个");
 			}
+			if(qiuTypeResult.get(position).equals("null")){
+				holder.countCoolResultTextView.setText("一");
+			}
 		}
 		
 		return convertView;
