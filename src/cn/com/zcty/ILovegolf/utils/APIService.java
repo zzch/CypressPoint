@@ -132,4 +132,7 @@ public class APIService {
 	 public static final String UPGRADE = "http://123.57.210.52/api/v1/users/upgrade.json?";
 	 //更换密码
 	 public static final String UPPASSWORD = "http://123.57.210.52/api/v1/users/update_password.json?";
+
+	 //意见反馈
+	 public static final String FEEDBACK = "http://123.57.210.52/api/v1/feedbacks.json?";
 }

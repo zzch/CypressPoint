@@ -111,8 +111,8 @@ public class ScoreCardUpDateActivity extends Activity{
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_scorecardupdat);
 		initView();
-		getData();
 		setListener();
+		getData();
 
 	}
 
@@ -240,7 +240,7 @@ public class ScoreCardUpDateActivity extends Activity{
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
 				Log.i("nihaome...", cool[newValue]+"aaaaaa"+d);
-				if(!cool[newValue].equals(direction)){
+				if(!cool[newValue].equals(d)){
 					flase_5 = true;
 				}
 				hit_scorecard.setText(cool[newValue]);
@@ -274,7 +274,30 @@ public class ScoreCardUpDateActivity extends Activity{
 		scorecard_image_up = (ImageView) findViewById(R.id.scorecard_image_up);
 		wheel_layout = (LinearLayout)findViewById(R.id.wheel_layout);
 		scorecard_image_up = (ImageView) findViewById(R.id.scorecard_image_up);
+		/*
+		 *获取状态
+		 */
+		Intent intent = getIntent();		
+		String  dc= intent.getStringExtra("direction");
+		Log.i("sadfsdafsdafas", dc+"zhouhe");
 
+		if(dc.equals("pure")){
+			coolWheelView.setCurrentItem(0);
+			d = "命中";
+			hit_scorecard.setText("命中");
+			direction = "pure";
+		}else if(dc.equals("hook")){
+			direction = "hook";
+			coolWheelView.setCurrentItem(2);
+			d = "左侧";
+			hit_scorecard.setText("左侧");
+		}else if(dc.equals("slice")){
+		direction = "slice";
+		coolWheelView.setCurrentItem(1);
+		d = "右侧";
+		hit_scorecard.setText("右侧");
+		}
+		d = hit_scorecard.getText().toString();
 	}
 
 	public void onClick(View v) {

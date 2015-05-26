@@ -49,6 +49,7 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 public class Myself extends Activity {
 	private RelativeLayout headLayout;
+	private RelativeLayout opinionLayout;
 	private Button exitButton;
 	private String gender;
 	private String description;
@@ -176,6 +177,7 @@ public class Myself extends Activity {
 					intent.setClass(Myself.this, SettingActivity.class);
 					startActivity(intent);
 				}
+				finish();
 			}
 		});
 
@@ -190,8 +192,18 @@ public class Myself extends Activity {
 				//finish();
 			}
 		});
+		opinionLayout.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(Myself.this,FeedBackActivity.class);
+				startActivity(intent);
+				finish();
+			}
+		});
 	}
 	private void initView() {
+		opinionLayout = (RelativeLayout) findViewById(R.id.setting_opinion);
 		accountRelativeLayout = (RelativeLayout) findViewById(R.id.setting_account);
 		nameTextView = (TextView) findViewById(R.id.myself_name);		
 		headLayout = (RelativeLayout) findViewById(R.id.myself_head_self);
