@@ -106,7 +106,7 @@
     <dimen name="view_wheel_xxx">10dp</dimen>
     
     <dimen name="view_quick_x">100dp</dimen>
-    <dimen name="view_quick_xx">15dp</dimen>
+    <dimen name="view_quick_xx">20dp</dimen>
     
     <dimen name="tab_image_x">20dp</dimen>
     <dimen name="tab_height_x">57dp</dimen>
@@ -162,4 +162,6 @@
         <dimen name="button_height">40dp</dimen>
         
         <dimen name="text_whith_x">230dp</dimen>
+        
+        <dimen name="image_size">15dp</dimen> 
 </resources>

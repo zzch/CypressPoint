@@ -112,19 +112,14 @@
 
         </RelativeLayout>
         
-        <View
-            android:layout_width="0.5dp"
-            android:layout_height="80dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="80dp"
-            android:background="@color/fengexian" />
+        
         
     </RelativeLayout>
  <RelativeLayout 
         android:id="@+id/score_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-       android:visibility="gone"
+        android:visibility="gone"
         
         >
         <RelativeLayout 
@@ -155,13 +150,7 @@
                 />
         </RelativeLayout>
         
-           <View 
-            android:layout_width="0.5dp"
-            android:layout_height="80dp"
-             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="80dp"
-            android:background="@color/fengexian"
-            />
+           
         
         <RelativeLayout 
             android:id="@+id/score_t_two"
@@ -175,7 +164,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="成绩"
-              android:layout_marginTop="5dp"
+              android:layout_centerVertical="true"
               android:textColor="@color/hei5"
               />
           <TextView 
@@ -184,7 +173,7 @@
               android:layout_height="@dimen/view_mid_xx_title"
               android:gravity="center"
 			  android:layout_marginLeft="@dimen/view_mid_xx_title"
-			  android:layout_marginTop="15dp"
+			  android:layout_centerVertical="true"
               android:text="7"
               android:textColor="@color/chengse"
               android:textSize="@dimen/txsize_mid_xx"
@@ -203,7 +192,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="开球"
-              android:layout_marginTop="5dp"
+              android:layout_centerVertical="true"
               android:textColor="@color/hei5"
               />
           <ImageView 
@@ -211,7 +200,7 @@
               android:layout_width="20dp"
               android:layout_height="20dp"
               android:layout_marginLeft="45dp"
-              android:layout_marginTop="25dp"
+              android:layout_marginTop="17dp"
               android:src="@drawable/juzhong"
               />
           <TextView 
@@ -220,7 +209,7 @@
               android:layout_height="wrap_content"
               android:gravity="center"
 			  android:layout_marginLeft="40dp"
-			  android:layout_marginTop="50dp"
+			  android:layout_marginTop="43dp"
               android:text="217"
              
               />

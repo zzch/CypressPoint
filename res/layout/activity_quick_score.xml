@@ -73,8 +73,8 @@
             android:textSize="@dimen/txsize_small_xxx" />
 
          <ImageView
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
+             android:layout_width="@dimen/image_size"
+             android:layout_height="@dimen/image_size"
              android:layout_marginTop="27dp"
              android:layout_marginLeft="@dimen/button_jia_x"
              android:src="@drawable/button_jia" />
@@ -130,8 +130,8 @@
             android:textColor="@color/white"
             android:textSize="@dimen/txsize_small_xxx" />
          <ImageView
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
+             android:layout_width="@dimen/image_size"
+             android:layout_height="@dimen/image_size"
              android:layout_marginTop="11dp"
              android:layout_marginLeft="@dimen/button_jia_x"
              android:src="@drawable/button_kou" />
