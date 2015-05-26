@@ -3,6 +3,7 @@
     android:id="@+id/linear"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg"
     android:orientation="vertical" >
 
     <RelativeLayout
@@ -12,7 +13,9 @@
 
         <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content" 
+            android:layout_centerVertical="true"
+            >
 
             <Button
                 android:id="@+id/back"
@@ -69,7 +72,10 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:gravity="center"
-            android:text="请输入+8618363172323" />
+            android:text="请输入+8618363172323"
+            android:textColor="@color/hei2"
+            android:textSize="@dimen/txsize_small_s"
+             />
     </RelativeLayout>
 
     <RelativeLayout
@@ -79,10 +85,12 @@
 
         <EditText
             android:id="@+id/verify_phonesd"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+             android:layout_height="@dimen/view_mid_xx_title"
             android:layout_centerHorizontal="true"
-            android:hint="输入验证码" />
+            android:hint="输入验证码" 
+            android:background="@drawable/wenbenkuang"
+            />
     </RelativeLayout>
 
     <RelativeLayout
@@ -95,6 +103,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:gravity="center"
+             android:textColor="@color/hei2"
+            android:textSize="@dimen/txsize_small_s"
             android:text="还差最后一步请设置您的密码" />
     </RelativeLayout>
 
@@ -105,8 +115,9 @@
 
         <EditText
             android:id="@+id/psw"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
+           android:layout_width="@dimen/register_view_width"
+             android:layout_height="@dimen/view_mid_xx_title"
+             android:background="@drawable/wenbenkuang"
             android:layout_centerHorizontal="true"
             android:password="true"
             android:hint="请输入密码"
@@ -114,11 +125,12 @@
 
         <EditText
             android:id="@+id/qdpsw"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
+           android:layout_width="@dimen/register_view_width"
+             android:layout_height="@dimen/view_mid_xx_title"
+             android:background="@drawable/wenbenkuang"
             android:layout_centerHorizontal="true"
             android:password="true"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="70dp"
             android:hint="请再次输入"
              />
     </RelativeLayout>
@@ -129,11 +141,15 @@
         android:layout_marginTop="30dp" >
 
         <Button
-            android:id="@+id/tijiao"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="提交" />
+        android:id="@+id/tijiao"
+        android:layout_width="@dimen/register_view_width"
+        android:layout_height="@dimen/button_height"
+        android:background="@drawable/button"
+        android:textColor="@color/bg" 
+        android:gravity="center"
+        android:textSize="@dimen/txsize_small_xxx"
+        android:layout_centerHorizontal="true"
+        android:text="提交" />
     </RelativeLayout>
 
 </LinearLayout>

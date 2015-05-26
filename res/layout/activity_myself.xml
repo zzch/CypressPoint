@@ -162,7 +162,9 @@
                 android:layout_marginRight="@dimen/infor_view_xx"
                 android:src="@drawable/icon_arrow" />
             
-        </RelativeLayout><View 
+        </RelativeLayout>
+        
+        <View 
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:background="@color/fengexian"

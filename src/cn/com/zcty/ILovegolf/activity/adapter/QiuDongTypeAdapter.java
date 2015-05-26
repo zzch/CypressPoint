@@ -11,25 +11,25 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-public class QiuDongAdapter extends BaseAdapter{
-	private ArrayList<String> qiuDong;
-	private ArrayList<String> qiuDongResult;
+public class QiuDongTypeAdapter extends BaseAdapter{
+	private ArrayList<String> qiuType;
+	private ArrayList<String> qiuTypeResult;
 	private Context context;
 	private LayoutInflater inflater;
-	public	QiuDongAdapter(Context context,ArrayList<String> countCool,ArrayList<String> countCoolResult){
-		this.qiuDong = countCool;
-		this.qiuDongResult = countCoolResult;
+	public	QiuDongTypeAdapter(Context context,ArrayList<String> countCool,ArrayList<String> countCoolResult){
+		this.qiuType = countCool;
+		this.qiuTypeResult = countCoolResult;
 		inflater = LayoutInflater.from(context);
 	}
 	@Override
 	public int getCount() {
-		return qiuDong.size();
+		return qiuType.size();
 	}
 
 	@Override
 	public Object getItem(int position) {
 		// TODO Auto-generated method stub
-		return qiuDong.get(position);
+		return qiuType.get(position);
 	}
 
 	@Override
@@ -50,16 +50,22 @@ public class QiuDongAdapter extends BaseAdapter{
 		}else{
 			holder = (Holder) convertView.getTag();
 		}
-		holder.countCoolTextView.setText(qiuDong.get(position));
+		holder.countCoolTextView.setText(qiuType.get(position));
 		if(holder.countCoolTextView.getText().toString().equals("")){
 			holder.countCoolResultTextView.setText("");
 		}else{
-			if(qiuDong.get(position).equals("3杆洞")){
-				holder.countCoolResultTextView.setText(qiuDongResult.get(position)+"个");
-			}else if(qiuDong.get(position).equals("4杆洞")){
-				holder.countCoolResultTextView.setText(qiuDongResult.get(position)+"个");
-			}else if(qiuDong.get(position).equals("5杆洞")){
-				holder.countCoolResultTextView.setText(qiuDongResult.get(position)+"个");
+			if(qiuType.get(position).equals("信天翁球")){
+				holder.countCoolResultTextView.setText(qiuTypeResult.get(position)+"个");
+			}else if(qiuType.get(position).equals("老鹰球")){
+				holder.countCoolResultTextView.setText(qiuTypeResult.get(position)+"个");
+			}else if(qiuType.get(position).equals("小鸟球")){
+				holder.countCoolResultTextView.setText(qiuTypeResult.get(position)+"个");
+			}else if(qiuType.get(position).equals("标准杆")){
+				holder.countCoolResultTextView.setText(qiuTypeResult.get(position)+"个");
+			}else if(qiuType.get(position).equals("柏忌球")){
+				holder.countCoolResultTextView.setText(qiuTypeResult.get(position)+"个");
+			}else if(qiuType.get(position).equals("双柏忌球")){
+				holder.countCoolResultTextView.setText(qiuTypeResult.get(position)+"个");
 			}
 		}
 		

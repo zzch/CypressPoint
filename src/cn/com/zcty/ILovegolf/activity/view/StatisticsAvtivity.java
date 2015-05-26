@@ -42,6 +42,7 @@ import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.CountCoolAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.QiuDongAdapter;
+import cn.com.zcty.ILovegolf.activity.adapter.QiuDongTypeAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.StatisticAdapter;
 import cn.com.zcty.ILovegolf.activity.view.fragment.StaticsFragmentOne;
 import cn.com.zcty.ILovegolf.activity.view.fragment.StaticsFragmentTwo;
@@ -132,7 +133,7 @@ public void onConfigurationChanged(Configuration newConfig) {
 		dateText.setText(date);
 		countListView.setAdapter(new CountCoolAdapter(this, countCool, countCoolResult));
 		qiudongListView.setAdapter(new QiuDongAdapter(this, qiuDong, qiuDongResult));
-		qiudongTypeListView.setAdapter(new CountCoolAdapter(this, qiuType, qiuTypeResult));
+		qiudongTypeListView.setAdapter(new QiuDongTypeAdapter(this, qiuType, qiuTypeResult));
 	}
 
 	private void setListener() {

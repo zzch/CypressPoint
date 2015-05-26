@@ -117,7 +117,7 @@ public class VerifyPhoneActivity extends Activity{
 		phone = getIntent().getStringExtra("phone");
 		
 		phoneTextView = (TextView) findViewById(R.id.phone);
-		phoneTextView.setText("请输入+86"+phone);
+		phoneTextView.setText("请输入+86"+phone+"手机上的验证码");
 		linear = (LinearLayout) findViewById(R.id.linear);
 		verifyEditText = (EditText) findViewById(R.id.verify_phonesd);
 		/*
