@@ -28,12 +28,12 @@
             >
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/back"
            android:layout_width="80dp"
             android:layout_height="47dp"
             android:layout_marginLeft="@dimen/title_button_left"
             android:background="@null"
-            android:onClick="choosepith_back"
+            android:onClick="onClick"
             android:text="@string/back"
             android:textColor="@color/white"
             android:textSize="@dimen/txsize_small_xx" />

@@ -94,6 +94,7 @@
        <activity android:name="cn.com.zcty.ILovegolf.activity.view.InviteActivity" android:screenOrientation="portrait"></activity>
        <activity android:name="cn.com.zcty.ILovegolf.activity.view.myself.ChangesPwsActivity" android:screenOrientation="portrait"></activity>
        <activity android:name="cn.com.zcty.ILovegolf.activity.view.myself.ChangesPhone" android:screenOrientation="portrait"></activity>
+       <activity android:name="cn.com.zcty.ILovegolf.activity.view.myself.FeedBackActivity" android:screenOrientation="portrait"></activity>
        <activity android:name="cn.com.zcty.ILovegolf.activity.view.HomePageActivity" android:screenOrientation="portrait"></activity>
        <activity android:name="cn.com.zcty.ILovegolf.activity.view.MajorStatisticsActivityScord" android:screenOrientation="portrait"></activity> 
        <activity android:name="cn.com.zcty.ILovegolf.activity.view.myself.SettionsActivity" android:screenOrientation="portrait"></activity> 
