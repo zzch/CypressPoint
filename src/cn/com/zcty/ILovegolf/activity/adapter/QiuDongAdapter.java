@@ -61,6 +61,9 @@ public class QiuDongAdapter extends BaseAdapter{
 			}else if(qiuDong.get(position).equals("5杆洞")){
 				holder.countCoolResultTextView.setText(qiuDongResult.get(position)+"个");
 			}
+			if(qiuDongResult.get(position).equals("null")){
+				holder.countCoolResultTextView.setText("一");
+			}
 		}
 		
 		return convertView;

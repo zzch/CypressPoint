@@ -56,6 +56,9 @@ public class StatisticAdapter extends BaseAdapter {
 		}
 		holder.textView.setText(scoresArrayList.get(position));
 		holder.textViewName_1.setText(scoregrid.get(position));
+		if(scoresArrayList.get(position).equals("null")){
+			holder.textView.setText("一");
+		}
 		return convertView;
 	}
 	class Holder {

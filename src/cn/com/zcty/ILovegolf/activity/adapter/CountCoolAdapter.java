@@ -56,6 +56,7 @@ public class CountCoolAdapter extends BaseAdapter{
 		}else{
 			if(countCool.get(position).equals("最远开球距离")){
 				holder.countCoolResultTextView.setText(countCoolResult.get(position)+"码");
+				
 			}else if(countCool.get(position).equals("平均开球距离")){
 				holder.countCoolResultTextView.setText(countCoolResult.get(position)+"码");
 			}else if(countCool.get(position).equals("开球命中率")){
@@ -71,6 +72,9 @@ public class CountCoolAdapter extends BaseAdapter{
 			}else if(countCool.get(position).equals("标准杆上果岭的平均推杆")){
 				holder.countCoolResultTextView.setText(countCoolResult.get(position));
 		  }
+			if(countCoolResult.get(position).equals("null")){
+				holder.countCoolResultTextView.setText("一");
+			}
 		}
 		
 		return convertView;
