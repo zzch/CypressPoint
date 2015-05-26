@@ -176,8 +176,10 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 				holder.chengjiTextView.setBackgroundResource(R.drawable.jfk_dayu1);
 			}else if(score-par==0){
 				holder.chengjiTextView.setBackground(null);
-			}else{
+			}else if(score-par==-1){
 				holder.chengjiTextView.setBackgroundResource(R.drawable.jfk_xiaoyu);
+			}else if(score-par<-1){
+				holder.chengjiTextView.setBackgroundResource(R.drawable.xiaoyu2);
 			}
 			if(scoreCardsMatchs.get(position).getDirection().equals("pure")){
 				holder.distanceimageView.setImageResource(R.drawable.jfk_zhong_icon);

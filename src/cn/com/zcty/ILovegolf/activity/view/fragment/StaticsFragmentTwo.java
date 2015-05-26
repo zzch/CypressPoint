@@ -238,7 +238,14 @@ public class StaticsFragmentTwo extends Fragment{
 			tt.setBackgroundColor(Color.rgb(200, 141, 25));
 			break;
 		}
-
+		if(key>2){
+			//双柏忌
+			tt.setBackgroundColor(Color.rgb(200, 141, 25));
+		}
+		if(key<-3){
+			//信天翁球
+			tt.setBackgroundColor(Color.rgb(32, 66, 171));
+		}
 
 	}
 }
