@@ -346,6 +346,7 @@ public class ShouYeActivity extends Activity {
 							    editor.putString("type", type);
 								editor.putString("nickname", nickname);
 								editor.putString("token", token_r);
+								editor.putString("isRegister", "true");
 								editor.putString("isfangshi", "1");
 								editor.commit();
 						 Message msgs = h.obtainMessage();
