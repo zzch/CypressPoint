@@ -25,8 +25,14 @@ public class MajorScoresAdapter extends BaseAdapter{
 		inflater = LayoutInflater.from(context);
 		for(int i=0;i<majorArrayList.size();i++){
 			MajorScoreJiQiu m = new MajorScoreJiQiu();
+			if(majorArrayList.get(i).getCool().equals("unplayable")||majorArrayList.get(i).getCool().equals("不可打")){
+					m.setPoint_of_fall("unplayable");
+				}else{
+					m.setPoint_of_fall(majorArrayList.get(i).getCool());	
+				}
+			
 			m.setDistance_from_hole(majorArrayList.get(i).getDistance());
-			m.setPoint_of_fall(majorArrayList.get(i).getCool());
+			
 			m.setPenalties(majorArrayList.get(i).getPentails());
 			m.setClub(majorArrayList.get(i).getCount());
 			addArrayList.add(m);
@@ -131,9 +137,9 @@ public class MajorScoresAdapter extends BaseAdapter{
 		}else if(majorArrayList.get(position).getCount().equals("pw")){
 			holder.countText.setText("PW");
 		}else if(majorArrayList.get(position).getCount().equals("gw")){
-			holder.countText.setText(majorArrayList.get(position).getCount());
-		}else if(majorArrayList.get(position).getCount().equals("sw")){
 			holder.countText.setText("GW");
+		}else if(majorArrayList.get(position).getCount().equals("sw")){
+			holder.countText.setText("SW");
 		}else if(majorArrayList.get(position).getCount().equals("lw")){
 			holder.countText.setText("LW");
 		}

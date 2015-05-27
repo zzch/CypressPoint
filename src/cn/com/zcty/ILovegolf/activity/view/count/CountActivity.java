@@ -26,6 +26,7 @@ import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -43,6 +44,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -71,10 +73,13 @@ public class CountActivity extends Activity implements OnClickListener{
 	private float double_bogey=0f;
 	private String total_matches_count;
 	private String average="0";
+	private ProgressDialog progressDialog;
+	private LinearLayout linear;
 	Handler handler = new Handler(){
 		@SuppressLint("NewApi")
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
+				hideProgressDialog();
 				if(msg.obj.equals("404")||msg.obj.equals("500")){//判断是服务端问题
 					Toast.makeText(CountActivity.this, "网络异常，错误提示"+msg.obj, Toast.LENGTH_LONG).show();
 				}else if(msg.obj.equals("403")){
@@ -84,6 +89,7 @@ public class CountActivity extends Activity implements OnClickListener{
 					startActivity(intent);
 					finish();
 				}else{
+				linear.setVisibility(View.VISIBLE);					
 				gridView.setAdapter(new CountAdapter(CountActivity.this, gridArrayList));
 				ArrayList<ChartProp> acps = mChartView.createCharts(percent.length);
 				int size = acps.size();
@@ -135,6 +141,8 @@ public class CountActivity extends Activity implements OnClickListener{
 		initView();
 		setListeners();
 		getData();
+		linear.setVisibility(View.INVISIBLE);
+		showProgressDialog("提示", "正在加载", this);
 		new Count().start();
 	}
 	
@@ -158,6 +166,7 @@ public class CountActivity extends Activity implements OnClickListener{
 		analyButton.setOnClickListener(this);
 	}
 	private void initView() {
+		linear = (LinearLayout) findViewById(R.id.linear);
 		analyButton = (Button) findViewById(R.id.count_start);
 		mChartView = (ChartView)this.findViewById(R.id.chartView);
 		gridView = (GridView) findViewById(R.id.gridView1);
@@ -252,4 +261,26 @@ public class CountActivity extends Activity implements OnClickListener{
 		
 	}
 	}
+	/*
+     * 提示加载
+     */
+     public   void  showProgressDialog(String title,String message,Activity context){
+            if(progressDialog ==null){
+                   progressDialog = ProgressDialog.show( context, title, message,true,true );
+
+           } else if (progressDialog .isShowing()){
+                   progressDialog.setTitle(title);
+                   progressDialog.setMessage(message);
+           }
+            progressDialog.show();
+
+    }
+     /*
+     * 隐藏加载
+     */
+     public  void hideProgressDialog(){
+            if(progressDialog !=null &&progressDialog.isShowing()){
+                   progressDialog.dismiss();
+           }
+    }
 }
