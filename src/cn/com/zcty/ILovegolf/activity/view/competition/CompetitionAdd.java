@@ -80,6 +80,7 @@ public class CompetitionAdd extends Activity{
 	private String uuid;
 	private String flase = "no";//判断是否加入成功
 	private String scoring_type ;
+	private TextView playNameTextView;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -121,6 +122,7 @@ public class CompetitionAdd extends Activity{
 		add = (CompetitionAddmatch) intent.getSerializableExtra("add");
 		Log.i("zhouhetiancai", add.getPortrait());
 		fangzhuTextView.setText(add.getUseName());
+		playNameTextView.setText(add.getName());
 		titaiListView.setAdapter(new SelectSessionTAdapter(this,add.getTitai().get(0).getBoxs()));
 		if(add.getTitai().size()>1){
 			qiudongTextView.setText("前9洞");
@@ -305,6 +307,7 @@ public class CompetitionAdd extends Activity{
 	private void initView() {
 		headCircleImageView = (CircleImageView) findViewById(R.id.head_image);
 		
+		playNameTextView = (TextView) findViewById(R.id.address);
 		v1 = findViewById(R.id.v1);
 		v2 = findViewById(R.id.v2);
 		v_2 = findViewById(R.id.view_2);

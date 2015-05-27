@@ -286,6 +286,7 @@ public class AddMatchActivity extends Activity {
 			
 			String path = APIService.MATCHINFATION+"token="+token+"&uuid="+uuid;
 			String jsonData = HttpUtils.HttpClientGet(path);
+			Log.i("dayin", jsonData);
 			try {
 				JSONObject jsonObject = new JSONObject(jsonData);
 				String venuejs = jsonObject.getString("venue");
