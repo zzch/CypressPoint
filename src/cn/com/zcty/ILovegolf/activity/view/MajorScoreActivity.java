@@ -88,7 +88,7 @@ public class MajorScoreActivity extends Activity {
 	private MajorScoresAdapter adapter;
 	private int count = 1;
 	private String distance = "0";
-	private String cool = "green";
+	private String cool = "fairway";
 	private String pentails = "0";
 	private String popal = "1w";
 	private String  score;
@@ -101,19 +101,16 @@ public class MajorScoreActivity extends Activity {
 	private int biaoshi;
 	private int shanchuid;
 	private ArrayList<String> idArrayList = new ArrayList<String>();
-	private ArrayList<MajorScoreJiQiu> addArrayList = new ArrayList<MajorScoreJiQiu>();
+	//private ArrayList<MajorScoreJiQiu> addArrayList = new ArrayList<MajorScoreJiQiu>();
+	private boolean flase_1 = false;
+	private boolean flase_2 = false;
+	private boolean flase_3 = false;
+	private boolean flase_4 = false;
+	private boolean flase_5 = false;
+	private String result;
+	private String maps;
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
-			if(msg.what==1){
-				SharedPreferences sp = MajorScoreActivity.this.getPreferences(MODE_PRIVATE);
-				SharedPreferences.Editor editor = sp.edit();
-				editor.putString("score", score);
-				editor.putString("penalties", penalties);
-				editor.commit();
-				count++;
-				count++;
-				orderText.setText(count+"");
-			}
 			
 			if(msg.what==3){
 				if(majorArray.size()>0){	
@@ -152,6 +149,16 @@ public class MajorScoreActivity extends Activity {
 				editor.putString("score", score);
 				editor.putString("penalties", penalties);
 				editor.commit();
+				if(result==null){
+					maps = (String) msg.obj;
+					new JiqiuBianjiTask_().start();
+				}else if(result.equals("success")){
+					
+					finish();
+				}
+				}
+			}
+			if(msg.what==5){
 				if(message.equals("没有进洞击球")){
 					AlertDialog.Builder builder = new Builder(MajorScoreActivity.this)
 					.setTitle("提示").setMessage("没有进洞击球").setNegativeButton("确定",null);
@@ -162,17 +169,7 @@ public class MajorScoreActivity extends Activity {
 					.setTitle("提示").setMessage("重复进洞击球").setNegativeButton("确定", null);
 					builder.show();
 				}
-				else{
-				/*Intent intent = new Intent();
-				intent.putExtra("score", score);
-				intent.putExtra("putts", putts);
-				intent.putExtra("position", position);
-				intent.putExtra("penalties", penalties);
-				setResult(1,intent);*/
-				//Toast.makeText(MajorScoreActivity.this, "保存成功", Toast.LENGTH_LONG).show();
-				finish();
-				}
-				}
+				
 			}
 		};
 	};
@@ -212,7 +209,7 @@ public class MajorScoreActivity extends Activity {
 
 				@Override
 				public void onClick(View v) {
-					if(addArrayList.size()>0){
+					if(majorArray.size()>0){
 					showProgressDialog("提示", "正在保存", MajorScoreActivity.this);
 					new JiqiuBianjiTask().start();
 					}else{
@@ -234,7 +231,12 @@ public class MajorScoreActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-					builder("提示", "是否保存", "取消", "确定");
+					if(flase_1||flase_2||flase_3||flase_4||flase_5){
+						
+						builder("提示", "是否保存", "取消", "确定");
+					}else{
+						finish();
+					}
 					
 					
 			
@@ -248,43 +250,47 @@ public class MajorScoreActivity extends Activity {
 			
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
+				flase_1 = true;
 				Log.i("zhouhezz","ddddddddd");
 				distance = (String) majorNumberAdapter.getItemText(newValue);
 				if(distance.equals("进球")){
 					distance = "0";
 					pentails = "0";
 					coolWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, coolArray_));
-					cool = "";
+					cool = "hole";
 				}else{
 					coolWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, coolArray));	
-					coolWheel.addChangingListener(new OnWheelChangedListener() {
-
-						@Override
-						public void onChanged(WheelView wheel, int oldValue, int newValue) {
-							cool = coolArray[newValue];		
-							if(coolArray[newValue].equals("不可打")){
-								pentails = "1";
-								penaitsWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, pentailsArray));
-								penaitsWheel.addChangingListener(new OnWheelChangedListener() {
-
-									@Override
-									public void onChanged(WheelView wheel, int oldValue, int newValue) {
-										pentails = pentailsArray[newValue];
-									}
-								});
-							}else{
-								penaitsWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, pentailsArray_));
-								pentails = "0";
-							}
-						}
-					});
 				}
 			}
 		});
+		coolWheel.addChangingListener(new OnWheelChangedListener() {
+
+			@Override
+			public void onChanged(WheelView wheel, int oldValue, int newValue) {
+				cool = coolArray[newValue];		
+				if(coolArray[newValue].equals("不可打")){
+					pentails = "1";
+					penaitsWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, pentailsArray));
+					penaitsWheel.addChangingListener(new OnWheelChangedListener() {
+
+						@Override
+						public void onChanged(WheelView wheel, int oldValue, int newValue) {
+							flase_3 = true;
+							pentails = pentailsArray[newValue];
+						}
+					});
+				}else{
+					penaitsWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, pentailsArray_));
+					pentails = "0";
+				}
+			}
+		});
+		
 		countWheel.addChangingListener(new OnWheelChangedListener() {
 
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
+				flase_2 = true;
 				popal = countArrays[newValue];
 				po = countArray[newValue];
 			}
@@ -310,6 +316,9 @@ public class MajorScoreActivity extends Activity {
 				tianjia.setVisibility(View.VISIBLE);
 				
 				MajorScore  majorScore = new MajorScore();
+				/*if(distance.equals("0")){
+					cool = "hole";
+				}*/
 				majorScore.setCool(cool);
 				majorScore.setOrder(count+"");							
 				majorScore.setDistance(distance);
@@ -338,13 +347,14 @@ public class MajorScoreActivity extends Activity {
 					c = "hole";
 				}
 				
-				MajorScoreJiQiu m = new MajorScoreJiQiu();
+				/*MajorScoreJiQiu m = new MajorScoreJiQiu();
 				m.setDistance_from_hole(distance);
 				m.setPoint_of_fall(c);
 				m.setPenalties(pentails);
 				m.setClub(popal);
-				addArrayList.add(m);
+				addArrayList.add(m);*/
 				if(flase){	
+					flase_5 = true;
 					majorArray.add(majorScore);					
 					adapter =	new MajorScoresAdapter(MajorScoreActivity.this, majorArray);
 					dataList.setAdapter(adapter);
@@ -396,10 +406,12 @@ public class MajorScoreActivity extends Activity {
 		public void HalfSwipeListView(int position) {
 			Log.i("positionsss", position+"");
 			majorArray.remove(position);
-			addArrayList.remove(position);	
+			//addArrayList.remove(position);	
+			flase_4 = true;
 			count--;
 			orderText.setText(count+"");
-			adapter.notifyDataSetChanged();
+			adapter =	new MajorScoresAdapter(MajorScoreActivity.this, majorArray);
+			dataList.setAdapter(adapter);
 			setListViewHeightBasedOnChildren_t(dataList);
 			if(position!=0){
 				
@@ -538,65 +550,7 @@ public class MajorScoreActivity extends Activity {
 		final float scale = context.getResources().getDisplayMetrics().density; 
 		return (int) (dp * scale + 0.5f); 
 	}
-	class JiqiuTask extends Thread {
-		@Override
-		public void run() {
-			// TODO Auto-generated method stub
-			super.run();
-			getdata();
-		}
-		public void getdata(){
-			SharedPreferences sp = getSharedPreferences("register", Context.MODE_PRIVATE);
-			String token = sp.getString("token", "token");
-			Intent intent = getIntent();
-			String uuid = intent.getStringExtra("uuid");
-			String c;
-			if(majorArray.get(majorArray.size()-1).getCool().equals("球道")){
-				c = "fairway";
-			}else if(majorArray.get(majorArray.size()-1).getCool().equals("果岭")){
-				c = "green";
-			}
-			else if(majorArray.get(majorArray.size()-1).getCool().equals("球道外左侧")){
-				c = "left_rough";
-			}
-			else if(majorArray.get(majorArray.size()-1).getCool().equals("球道外右侧")){
-				c = "right_rough";
-			}
-			else if(majorArray.get(majorArray.size()-1).getCool().equals("沙坑")){
-				c = "bunker";
-			}else if(majorArray.get(majorArray.size()-1).getCool().equals("不可打")){
-				c = "unplayable";
-			}
-			else{
-				c = "hole";
-			}
-			String path = APIService.JILU+"token="+token+"&scorecard_uuid="+uuid
-					+"&distance_from_hole="+majorArray.get(majorArray.size()-1).getDistance()+"&point_of_fall="+c+
-					"&penalties="+majorArray.get(majorArray.size()-1).getPentails()+"&club="+popal;
-			try {
-				String jsonArray = HttpUtils.HttpClientPost(path);
-				Log.i("dashujuzhouhe", jsonArray);
-				JSONObject jsObject = new JSONObject(jsonArray);
-				String stroke =	jsObject.getString("stroke");
-				JSONObject jsObjectuid = new JSONObject(stroke);
-				String uid = jsObjectuid.getString("uuid");
-				Log.i("woshitiancai", uid);
-				String scorecard =	jsObject.getString("scorecard");
-				JSONObject jsObjectscorecard = new JSONObject(scorecard);
-				score = jsObjectscorecard.getString("score");
-				
-				putts = jsObjectscorecard.getString("putts");
-				penalties = jsObjectscorecard.getString("penalties");
-
-			} catch (JSONException e) {
-				e.printStackTrace();
-			}
-			Message msg = handler.obtainMessage();
-			msg.what = 1;
-			handler.sendMessage(msg);
-
-		}
-	}
+	
 	
 	class JiQiuJiLuTask extends Thread {
 		@Override
@@ -624,7 +578,6 @@ public class MajorScoreActivity extends Activity {
 					score.setOrder(jsonObject.getString("sequence"));
 					score.setDistance(jsonObject.getString("distance_from_hole"));
 					score.setCool(jsonObject.getString("point_of_fall"));
-					Log.i("zhouhel", jsonObject.getString("point_of_fall"));
 					score.setCount(jsonObject.getString("club"));
 					score.setPentails(jsonObject.getString("penalties"));
 					
@@ -635,10 +588,10 @@ public class MajorScoreActivity extends Activity {
 					}else{
 						m.setPoint_of_fall(jsonObject.getString("point_of_fall"));
 					}
-					m.setPoint_of_fall(jsonObject.getString("distance_from_hole"));
+					m.setDistance_from_hole(jsonObject.getString("distance_from_hole"));
 					m.setPenalties(jsonObject.getString("penalties"));
 					
-					addArrayList.add(m);
+					//addArrayList.add(m);
 					majorArray.add(score);
 				}
 			} catch (JSONException e) {
@@ -666,11 +619,11 @@ public class MajorScoreActivity extends Activity {
 			SharedPreferences sp = getSharedPreferences("register", Context.MODE_PRIVATE);
 			String token = sp.getString("token", "token");
 			HashMap<String,String[]> map = new HashMap<String, String[]>(); 
-			String[] bianji = new String[addArrayList.size()];
+			String[] bianji = new String[adapter.list().size()];
 			for(int i=0;i<bianji.length;i++){
-				bianji[i] = addArrayList.get(i).toString();
+				bianji[i] = adapter.list().get(i).toString();
+				Log.i("majorscore", bianji[i]);
 			}
-			Log.i("aseifjsdkj", bianji[0]);
 			map.put("strokes[]", bianji);
 			Intent intent = getIntent();
 			String uuid = intent.getStringExtra("uuid");
@@ -679,12 +632,7 @@ public class MajorScoreActivity extends Activity {
 			try {
 				JSONObject jsObject = new JSONObject(jsonArray);	
 				Log.i("jiqiujilu", jsObject.toString());
-				message = jsObject.getString("message");
-				if(!(message.equals("没有进洞击球")||message.equals("重复进洞击球"))){
-					score = jsObject.getString("score");	
-					putts = jsObject.getString("putts");
-					penalties = jsObject.getString("penalties");
-				}
+				result = jsObject.getString("result");			
 				
 				
 			} catch (JSONException e) {
@@ -692,8 +640,35 @@ public class MajorScoreActivity extends Activity {
 			}
 			Message msg = handler.obtainMessage();
 			msg.what = 4;
-			msg.obj = jsonArray;
-		
+			msg.obj = jsonArray;		
+			handler.sendMessage(msg);
+
+		}
+	}
+	
+	/**
+	 * 击球编辑
+	 * @author Administrator
+	 *
+	 */
+	class JiqiuBianjiTask_ extends Thread {
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			super.run();
+			getdata();
+		}
+		public void getdata(){
+			
+			try {
+				JSONObject jsObject = new JSONObject(maps);	
+				    message = jsObject.getString("message");			
+				
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+			Message msg = handler.obtainMessage();
+			msg.what = 5;
 			handler.sendMessage(msg);
 
 		}
@@ -714,7 +689,7 @@ public class MajorScoreActivity extends Activity {
 			
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				if(addArrayList.size()>0){
+				if(majorArray.size()>0){
 					new JiqiuBianjiTask().start();
 					}else{
 						AlertDialog.Builder builders = new Builder(MajorScoreActivity.this)
