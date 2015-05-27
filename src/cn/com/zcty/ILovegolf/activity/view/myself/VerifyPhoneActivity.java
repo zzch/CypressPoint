@@ -65,11 +65,14 @@ public class VerifyPhoneActivity extends Activity{
 							SharedPreferences.Editor editor = sharedpre.edit();
 						    editor.putString("type", "member");
 							editor.putString("phone", phone);
+							editor.putString("isfangshi", "1");
 							editor.commit();
 							Toast.makeText(VerifyPhoneActivity.this, "设置密码成功", Toast.LENGTH_LONG).show();
 							Intent intent = new Intent(VerifyPhoneActivity.this,SettingActivity.class);
 							startActivity(intent);
 							finish();
+							
+							
 						}
 					}
 					}

@@ -1,5 +1,4 @@
 package cn.com.zcty.ILovegolf.activity.view;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,19 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.handmark.pulltorefresh.library.PullToRefreshBase;
-import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
-import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
-
-import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.activity.adapter.PitchAdapter;
-import cn.com.zcty.ILovegolf.activity.view.QuickScoreActivity.MyTask;
-import cn.com.zcty.ILovegolf.model.QiuChangList;
-import cn.com.zcty.ILovegolf.tools.MyApplication;
-import cn.com.zcty.ILovegolf.tools.ScrollViewWithListView;
-import cn.com.zcty.ILovegolf.utils.APIService;
-import cn.com.zcty.ILovegolf.utils.HttpUtils;
-import cn.com.zcty.ILovegolf.utils.JsonUtil;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
@@ -27,7 +13,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -35,10 +20,22 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
+import android.widget.AbsListView;
+import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView;
-import android.widget.ScrollView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ListView;
+import android.widget.ScrollView;
+import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.activity.adapter.PitchAdapter;
+import cn.com.zcty.ILovegolf.model.QiuChangList;
+import cn.com.zcty.ILovegolf.tools.AutoListView;
+import cn.com.zcty.ILovegolf.tools.AutoListView.OnLoadListener;
+import cn.com.zcty.ILovegolf.tools.AutoListView.OnRefreshListener;
+import cn.com.zcty.ILovegolf.tools.MyApplication;
+import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.HttpUtils;
+
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
 
 
 /**
@@ -47,10 +44,9 @@ import android.widget.ListView;
  *
  */
 public class ChoosePitchActivity extends Activity {
-	private ScrollView mScrollView;
-	private PullToRefreshScrollView mPullRefreshScrollView;
+	private int page = 1;
 	private ProgressDialog progressDialog;
-	private ScrollViewWithListView listpich;//球场列表，并显示距离
+	private AutoListView listpich;//球场列表，并显示距离
 	private List<QiuChangList> qiuchanglists = new ArrayList<QiuChangList>();//从服务器端获取过来的球场列表信息
 	private SharedPreferences ss;
 	private Context context;
@@ -59,12 +55,20 @@ public class ChoosePitchActivity extends Activity {
 	public static String LOCATION_BCR = "location_bcr";
 	private	String address;
 	private	String addres[];
+	private PitchAdapter adapter;
+	int size = 15;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
 				hideProgressDialog();
 				getData();
-
+					/*if(page!=1){
+						listpich.setSelection(size);
+						adapter.notifyDataSetInvalidated();//通知adapter数据有变化
+					}*/
+					
+				
+				
 			}
 		};
 	};
@@ -85,23 +89,34 @@ public class ChoosePitchActivity extends Activity {
 
 	}
 	private void setListeners() {
-		/*
-		 * 下拉或者上拉的时候
-		 */
-		mPullRefreshScrollView.setOnRefreshListener(new OnRefreshListener<ScrollView>() {
-
+		
+		
+		listpich.setOnRefreshListener(new OnRefreshListener() {
+			
 			@Override
-			public void onRefresh(PullToRefreshBase<ScrollView> refreshView) {
-
+			public void onRefresh() {
+				page = 1;
+				qiuchanglists.clear();
 				MyApplication.getInstance().requestLocationInfo();
-
-
+			}
+		});
+		listpich.setOnLoadListener(new OnLoadListener() {
+			
+			@Override
+			public void onLoad() {
 				
+				//size = qiuchanglists.size()-(qiuchanglists.size()/(listpich.getLastVisiblePosition()-listpich.getFirstVisiblePosition()));
+						
+				page++;
+				new MyTask().start();
+				Log.i("dasfd", page+"aaa"+size);
+				
+
 
 			}
 		});
-
-		mScrollView = mPullRefreshScrollView.getRefreshableView();
+		
+		
 		
 		
 		//子条目点击事件
@@ -123,12 +138,21 @@ public class ChoosePitchActivity extends Activity {
 		});
 	}
 	private void initView() {
-		mPullRefreshScrollView = (PullToRefreshScrollView) findViewById(R.id.pull_refresh_scrollview);
-		listpich=(ScrollViewWithListView) findViewById(R.id.listview);
+		listpich=(AutoListView) findViewById(R.id.listview);
 	}
 	public void getData(){
-		listpich.setAdapter(new PitchAdapter(ChoosePitchActivity.this,qiuchanglists));
-		mPullRefreshScrollView.onRefreshComplete();//刷新
+		if(listpich.getAdapter()==null){
+			adapter = new PitchAdapter(ChoosePitchActivity.this,qiuchanglists);
+			listpich.setAdapter(adapter);
+		}else{
+			//adapter.;//update your adapter's data
+			adapter.notifyDataSetChanged();
+		}
+		
+		
+		
+		listpich.onRefreshComplete();
+		listpich.onLoadComplete();
 	}
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -229,12 +253,12 @@ public class ChoosePitchActivity extends Activity {
 			getData();
 		}
 		public void getData(){
-			qiuchanglists.clear();
+			
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String token=sp.getString("token", "token");
 
 
-			String path=APIService.NEAREST_COURSE+"longitude="+addres[1]+"&latitude="+addres[0]+"&token="+token;
+			String path=APIService.NEAREST_COURSE+"longitude="+addres[1]+"&latitude="+addres[0]+"&token="+token+"&page="+page;
 			Log.i("choosePath", path);
 			String jsonData = HttpUtils.HttpClientGet(path);
 			Log.i("jsonData--->", ""+jsonData);

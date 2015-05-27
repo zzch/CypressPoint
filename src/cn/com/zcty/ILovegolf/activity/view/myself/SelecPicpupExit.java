@@ -1,7 +1,5 @@
 package cn.com.zcty.ILovegolf.activity.view.myself;
 
-import java.io.File;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -10,12 +8,9 @@ import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.provider.SyncStateContract.Constants;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.ShareActionProvider;
 import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
@@ -76,6 +71,23 @@ public class SelecPicpupExit extends Activity{
 				
 				
 				new SginOut().start();
+			}
+		});
+		settingButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				SharedPreferences sp = getSharedPreferences("register", MODE_PRIVATE);
+				String type = sp.getString("type", "type");
+				Intent intent = new Intent();
+				if(type.equals("guest")){
+					intent.setClass(SelecPicpupExit.this, BingDingActivity.class);
+					startActivity(intent);
+				}else{
+					intent.setClass(SelecPicpupExit.this, SettingActivity.class);
+					startActivity(intent);
+				}
+				finish();
 			}
 		});
 	}

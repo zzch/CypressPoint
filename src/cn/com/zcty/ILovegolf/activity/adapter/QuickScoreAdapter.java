@@ -84,7 +84,7 @@ public  class QuickScoreAdapter extends BaseAdapter {
 		if(quickContents.get(position).getScore().equals("null")){
 			//holder.image_1.setVisibility(View.GONE);
 			holder.Pole_number.setTextSize(22);
-			holder.Pole_number.setText("未开始"); 
+			holder.Pole_number.setText("未完成"); 
 		}else{
 			holder.Pole_number.setTextSize(36);
 			holder.Pole_number.setText(quickContents.get(position).getScore()); 

@@ -59,28 +59,17 @@
 
     </RelativeLayout>
 
-    <com.handmark.pulltorefresh.library.PullToRefreshScrollView
-            xmlns:ptr="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/pull_refresh_scrollview"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            ptr:ptrAnimationStyle="flip"
-            ptr:ptrMode="both" >
+   
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
 
-                <cn.com.zcty.ILovegolf.tools.ScrollViewWithListView
+                <cn.com.zcty.ILovegolf.tools.AutoListView
                     android:id="@+id/listview"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:divider="@null"
-                    
-                    android:listSelector="@android:color/transparent"
+                   
                      />
-            </RelativeLayout>
-        </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+            
 </LinearLayout>
 
 

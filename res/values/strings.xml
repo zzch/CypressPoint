@@ -123,4 +123,14 @@
     <string name="textdescription">您的朋友创建比赛后可以获得4位数字口令输入后即可加入到TA的比赛</string>
     <string name="textdescription_1">    请您让Ta点击”比赛“，之后点击”创建新比赛“，选择球场后点击排行榜，输入上面的4位数字口令后，点击加入，即可加入到您创建的比赛中，共同体验高尔夫的乐趣！</string>
     <string name="text_a">口令密码有效期还剩30分钟，过期后可继续获取新口令密码。</string>	
+    
+      <!-- 自定义组件 -->
+    <string name="pull_to_refresh">下拉可以刷新</string>
+    <string name="release_to_refresh">松开可以刷新</string>
+    <string name="lastUpdateTime">最近更新：%s</string>
+    <string name="load_full">已加载全部</string>
+    <string name="no_data">暂无数据</string>
+    <string name="more">加载中</string>
+    <!-- 消除警告，可忽略 -->
+    <string name="d">图片描述</string>
 </resources>
