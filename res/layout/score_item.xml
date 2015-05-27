@@ -7,6 +7,7 @@
         android:id="@+id/score_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         >
         <RelativeLayout 
             android:id="@+id/score_t"
@@ -23,51 +24,51 @@
                 >
             <TextView 
             android:id="@+id/score_t_1"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
 			android:gravity="center"
             android:layout_marginLeft="10dp"
-            android:textSize="@dimen/txsize_small_xx"
+            android:textSize="@dimen/txsize_small_a"
             android:textColor="#ffffff"
             android:text="97"
             />
             <TextView 
             android:id="@+id/score_t_2"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:gravity="center"
-           android:layout_marginLeft="10dp"
+           android:layout_marginLeft="15dp"
             android:textColor="#ffffff"
-            android:textSize="@dimen/txsize_small_xx"
+            android:textSize="@dimen/txsize_small_a"
             android:text="132"
             />
             <TextView 
             android:id="@+id/score_t_3"
-           android:layout_width="40dp"
-            android:layout_height="40dp"
+           android:layout_width="35dp"
+            android:layout_height="35dp"
             android:gravity="center"
-           android:layout_marginLeft="10dp"
-            android:textSize="@dimen/txsize_small_xx"
+           android:layout_marginLeft="15dp"
+            android:textSize="@dimen/txsize_small_a"
             android:textColor="#ffffff"
             android:text="184"
             />
             <TextView 
             android:id="@+id/score_t_4"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:gravity="center"
-            android:layout_marginLeft="10dp"
-            android:textSize="@dimen/txsize_small_xx"
+            android:layout_marginLeft="15dp"
+            android:textSize="@dimen/txsize_small_a"
             android:textColor="#ffffff"
             android:text="226"
             />
             <TextView 
             android:id="@+id/score_t_5"
-             android:layout_width="40dp"
-            android:layout_height="40dp"
+             android:layout_width="35dp"
+            android:layout_height="35dp"
             android:gravity="center"
-            android:layout_marginLeft="10dp"
-            android:textSize="@dimen/txsize_small_xx"
+            android:layout_marginLeft="15dp"
+            android:textSize="@dimen/txsize_small_a"
             android:textColor="#ffffff"
             android:text="290"
             />
@@ -76,8 +77,8 @@
             android:layout_height="18dp"
             android:src="@drawable/icon_arrow"
             android:gravity="center"
-            android:layout_marginTop="13dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
                 />
           </LinearLayout>  
         </RelativeLayout>
@@ -119,6 +120,7 @@
         android:id="@+id/score_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         android:visibility="gone"
         
         >
@@ -175,6 +177,7 @@
 			  android:layout_marginLeft="@dimen/view_mid_xx_title"
 			  android:layout_centerVertical="true"
               android:text="7"
+              android:textStyle="bold"
               android:textColor="@color/chengse"
               android:textSize="@dimen/txsize_mid_xx"
               />  
@@ -211,7 +214,7 @@
 			  android:layout_marginLeft="40dp"
 			  android:layout_marginTop="43dp"
               android:text="217"
-             
+             android:textColor="@color/chengse"
               />
           
          

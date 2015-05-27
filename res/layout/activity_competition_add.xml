@@ -138,6 +138,7 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="50dp"
 	    android:gravity="center_vertical"
+	    android:background="@color/white"
  >
 
 	    <TextView
@@ -182,6 +183,7 @@
 	    android:id="@+id/leixing_layout"
 	    android:layout_width="match_parent"
 	    android:layout_height="45dp"
+	    android:background="@color/white"
 	  >
 
 	    <TextView
@@ -208,6 +210,7 @@
 	    android:id="@+id/creatematch_major"
 	    android:layout_width="match_parent"
 	    android:layout_height="45dp"
+	    android:background="@color/white"
 	  >
 	    
 	      <TextView
@@ -234,6 +237,7 @@
 	    android:id="@+id/competition_selection_relative"
 	    android:layout_width="match_parent"
 	    android:layout_height="50dp"
+	    android:background="@color/white"
 	    >
 	    <TextView 
 	       	android:id="@+id/competition_match_zichang"
@@ -268,7 +272,7 @@
 	<RelativeLayout 
 	    android:id="@+id/competition_selection_t"
 	    android:layout_width="match_parent"
-	   
+	   android:background="@color/white"
 	    android:layout_height="50dp"
 	    >
 	    <TextView 
@@ -338,6 +342,7 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="50dp"
 	   android:visibility="gone"
+	   android:background="@color/white"
 	   
 	    >
 	    <TextView 
@@ -375,6 +380,7 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="50dp"
 	   android:visibility="gone"
+	   android:background="@color/white"
 
 	    >
 	    <TextView 

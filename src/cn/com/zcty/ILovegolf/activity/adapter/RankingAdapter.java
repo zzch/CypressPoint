@@ -5,18 +5,23 @@ import java.util.ArrayList;
 import com.baidu.location.aq.c;
 
 import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.activity.view.RankingActivity;
+import cn.com.zcty.ILovegolf.activity.view.RankingStatics;
 import cn.com.zcty.ILovegolf.model.Ranking;
 import cn.com.zcty.ILovegolf.tools.CircleImageView;
 import cn.com.zcty.ILovegolf.utils.ImageService;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class RankingAdapter extends BaseAdapter{
@@ -59,25 +64,20 @@ public class RankingAdapter extends BaseAdapter{
 			holder.totalTextView = (TextView) convertView.findViewById(R.id.score);
 			holder.scheduleTextView = (TextView) convertView.findViewById(R.id.count);
 			holder.image_rank = (ImageView) convertView.findViewById(R.id.image_rank);
+			holder.color_myself = (RelativeLayout) convertView.findViewById(R.id.color_myself);
 			convertView.setTag(holder);
 		}else{
 			holder = (RankHolder) convertView.getTag();
+			
 		}
+		   
+		   
 		 	if(rankings.get(position).getPosition().equals("null")){
-		 		holder.positionTextView.setText("一");
-		 	}else if(rankings.get(position).getPosition().equals("1")){
 		 		
-		 		holder.positionTextView.setVisibility(View.GONE);
-		 		holder.image_rank.setBackgroundResource(R.drawable.one);
-		 	}else if(rankings.get(position).getPosition().equals("2")){
-		 		holder.positionTextView.setVisibility(View.GONE);
-		 		holder.image_rank.setBackgroundResource(R.drawable.two);
-		 	}else if(rankings.get(position).getPosition().equals("3")){
-		 		holder.positionTextView.setVisibility(View.GONE);
-		 		holder.image_rank.setBackgroundResource(R.drawable.three);
+		 		holder.positionTextView.setText("一");
 		 	}else{
 		 		
-		 		holder.image_rank.setVisibility(View.GONE);
+		 		//holder.image_rank.setVisibility(View.GONE);
 		 		holder.positionTextView.setText(rankings.get(position).getPosition());
 		 	}
 		 	ImageService imageService = new ImageService();
@@ -92,6 +92,12 @@ public class RankingAdapter extends BaseAdapter{
 		 		holder.totalTextView.setText(rankings.get(position).getTotal());
 		 	}
 		 	holder.scheduleTextView.setText(rankings.get(position).getRecorded_scorecards_count()+"/18");
+		 	if(rankings.get(position).getSelf().equals("true")){
+		 		holder.color_myself.setBackgroundColor(Color.rgb(55, 57, 59));
+			}else{
+				holder.color_myself.setBackgroundColor(Color.rgb(255, 255, 255));
+			}
+		 	
 		 	return convertView;
 	}
 	class RankHolder{
@@ -101,5 +107,7 @@ public class RankingAdapter extends BaseAdapter{
 		TextView scheduleTextView;
 		TextView totalTextView;
 		ImageView image_rank;
+		RelativeLayout color_myself;
+		
 	}
 }

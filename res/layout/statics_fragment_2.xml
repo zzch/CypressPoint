@@ -23,7 +23,7 @@
             <TextView
                 android:id="@+id/t"
                 android:layout_width="30dp"
-                android:layout_height="@dimen/view_sss_bbb"
+                android:layout_height="@dimen/view_small_xxx"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
  
@@ -202,7 +202,7 @@
             <TextView
                 android:id="@+id/t1"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/view_sss_bbb"
+                android:layout_height="@dimen/view_small_xxx"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
                 android:textColor="@color/hei5"
@@ -384,7 +384,7 @@
             <TextView
                 android:id="@+id/tt1"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/view_sss_bbb"
+                android:layout_height="@dimen/view_small_xxx"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
                 android:textColor="@color/hei5"
@@ -400,7 +400,7 @@
             <TextView
                 android:id="@+id/tt2"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/view_sss_bbb"
+                android:layout_height="@dimen/view_small_xxx"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
                 android:textColor="@color/hei5"
@@ -416,7 +416,7 @@
             <TextView
                 android:id="@+id/tt3"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/view_sss_bbb"
+                android:layout_height="@dimen/view_small_xxx"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
                android:textColor="@color/hei5"
@@ -432,7 +432,7 @@
             <TextView
                 android:id="@+id/tt4"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/view_sss_bbb"
+                android:layout_height="@dimen/view_small_xxx"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
                 android:textColor="@color/hei5"
@@ -448,7 +448,7 @@
             <TextView
                 android:id="@+id/tt5"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/view_sss_bbb"
+                android:layout_height="@dimen/view_small_xxx"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
                 android:textColor="@color/hei5"
@@ -463,7 +463,7 @@
             <TextView
                 android:id="@+id/tt6"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/view_sss_bbb"
+                android:layout_height="@dimen/view_small_xxx"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
                 android:textColor="@color/hei5"
@@ -479,7 +479,7 @@
             <TextView
                 android:id="@+id/tt7"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/view_sss_bbb"
+                android:layout_height="@dimen/view_small_xxx"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
                android:textColor="@color/hei5"
@@ -494,7 +494,7 @@
             <TextView
                 android:id="@+id/tt8"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/view_sss_bbb"
+                android:layout_height="@dimen/view_small_xxx"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
                android:textColor="@color/hei5"
@@ -510,7 +510,7 @@
             <TextView
                 android:id="@+id/tt9"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/view_sss_bbb"
+                android:layout_height="@dimen/view_small_xxx"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
                 android:textColor="@color/hei5"
@@ -568,7 +568,7 @@
             <TextView
                 android:id="@+id/ttt1"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/view_sss_bbb"
+                android:layout_height="@dimen/view_small_xxx"
                 android:layout_margin="0.5dip"
                 android:layout_weight="1"
                 android:textColor="@color/hei5"

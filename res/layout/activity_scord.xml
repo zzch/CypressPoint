@@ -76,12 +76,12 @@
 
                     <TextView
                         android:id="@+id/competition_username"
-                        android:layout_width="@dimen/create_score_left"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/view_Layout_x"
                         android:layout_marginLeft="@dimen/create_score_left"
                         android:text="xxxxxx"
-                      
+                        android:maxEms="14"
                         android:textSize="@dimen/txsize_small_xxx"
                         android:textColor="@color/white" />
 
@@ -92,6 +92,7 @@
                         android:layout_below="@+id/competition_username"
                         android:layout_marginLeft="@dimen/create_score_left"
                         android:text="排名:"
+                        android:layout_marginTop="5dp"
                         android:textSize="@dimen/txsize_small_s"
                         android:textColor="@color/bg"  />
 
@@ -103,6 +104,7 @@
                         android:layout_marginLeft="45dp"
                         android:layout_alignLeft="@+id/name_paiming"
                         android:text="78"
+                        android:layout_marginTop="5dp"
                         android:textSize="@dimen/txsize_small_s"
                         android:textColor="@color/bg"  />
 
@@ -112,6 +114,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/competition_username"
                         android:text="进度:"
+                        android:layout_marginTop="5dp"
                         android:textSize="@dimen/txsize_small_s"
                         android:layout_marginLeft="@dimen/create_score_left_xx"
                         android:textColor="@color/bg"  />
@@ -124,6 +127,7 @@
                         android:layout_marginLeft="45dp"
                         android:layout_alignLeft="@+id/name_jindu"
                         android:text="31"
+                        android:layout_marginTop="5dp"
                         android:textSize="@dimen/txsize_small_s"
                         android:textColor="@color/bg"  />
 
@@ -183,7 +187,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:layout_height="@dimen/view_mid_x"
                     android:gravity="center"
                     android:orientation="horizontal" 
                   
@@ -192,7 +196,7 @@
                     <Button
                         android:id="@+id/competition_button_paiming"
                         android:layout_width="wrap_content"
-                        android:layout_height="@dimen/view_mid_xx_title"
+                        android:layout_height="@dimen/view_mid_x"
                         android:layout_weight="1"
                         android:onClick="onclick"
                         
@@ -205,7 +209,7 @@
 					<Button
                         android:id="@+id/competition_button_yaoqing"
                         android:layout_width="wrap_content"
-                        android:layout_height="@dimen/view_mid_xx_title"
+                        android:layout_height="@dimen/view_mid_x"
                         android:onClick="onclick"
                         android:background="#eaad43"
                         android:gravity="center"
@@ -217,7 +221,7 @@
 					<Button
 					    android:id="@+id/competition_button_tongji"
 					    android:layout_width="wrap_content"
-					    android:layout_height="@dimen/view_mid_xx_title"
+					    android:layout_height="@dimen/view_mid_x"
 					    android:layout_weight="1"
 					    android:background="#49ace6"
 					    android:gravity="center"

@@ -226,6 +226,7 @@ public class CreateScoreCard extends Activity{
 			break;
 		case R.id.competition_button_paiming:
 			Intent i = new Intent(CreateScoreCard.this,RankingActivity.class);
+			i.putExtra("cunzai", "0");
 			i.putExtra("uuid", id);
 			startActivity(i);
 			break;

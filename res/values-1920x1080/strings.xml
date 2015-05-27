@@ -73,7 +73,7 @@
   	
   	<dimen name="view_sss_a">54dp</dimen>
   	<dimen name="view_sss_aa">40dp</dimen>
-  	<dimen name="view_sss_aaa">79dp</dimen>
+  	<dimen name="view_sss_aaa">70dp</dimen>
   	
   	<dimen name="view_sss_bbb">50dp</dimen>
   	<dimen name="view_sss_bb">10dp</dimen>
@@ -93,7 +93,7 @@
     <dimen name="view_sss_eee">200dp</dimen>
     
      <dimen name="view_sss_f">250dp</dimen>
-     <dimen name="view_sss_ff">15dp</dimen>
+     <dimen name="view_sss_ff">20dp</dimen>
      <dimen name="view_sss_fff">195dp</dimen>
      
       <dimen name="view_Layout_x">10dp</dimen>

@@ -123,6 +123,7 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="50dp"
 	    android:gravity="center_vertical"
+	    android:background="@color/white"
  >
 
 	    <TextView
@@ -167,6 +168,7 @@
 	    android:id="@+id/leixing_layout"
 	    android:layout_width="match_parent"
 	    android:layout_height="45dp"
+	    android:background="@color/white"
 	  >
 
 	    <TextView
@@ -193,6 +195,7 @@
 	    android:id="@+id/creatematch_major"
 	    android:layout_width="match_parent"
 	    android:layout_height="45dp"
+	    android:background="@color/white"
 	  >
 	    
 	      <TextView
@@ -221,6 +224,7 @@
 	    android:id="@+id/competition_selection_relative"
 	    android:layout_width="match_parent"
 	    android:layout_height="50dp"
+	    android:background="@color/white"
 	    >
 	    <TextView 
 	       	android:id="@+id/competition_match_zichang"
@@ -281,6 +285,7 @@
 	    android:layout_width="match_parent"
 	    android:visibility="gone"
 	    android:layout_height="50dp"
+	    android:background="@color/white"
 	    >
 	    <TextView 
 	       	android:id="@+id/competition_match_t"
@@ -347,6 +352,7 @@
 	    android:id="@+id/competition_selection_relative_2"
 	    android:layout_width="match_parent"
 	    android:layout_height="50dp"
+	    android:background="@color/white"
 	  android:visibility="gone"
 	    >
 	    <TextView 
@@ -407,7 +413,7 @@
 	    android:id="@+id/competition_selection_t_2"
 	    android:layout_width="match_parent"
 	    android:layout_height="50dp"
-	     
+	     android:background="@color/white"
 	    >
 	    <TextView 
 	       	android:id="@+id/competition_match_t_2"
@@ -428,7 +434,7 @@
 	        android:layout_centerVertical="true"
 	        android:textColor="@color/chengse"
 	        android:textSize="@dimen/txsize_small_xx"
-	        android:text="xcc"
+	        android:text=""
 	        />
 	    <ImageView 
 	        android:id="@+id/titaicolor_2"

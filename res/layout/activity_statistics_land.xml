@@ -128,7 +128,7 @@
 
                         <TextView
                             android:layout_width="@dimen/view_sss_aaa"
-                            android:layout_height="@dimen/view_sss_bbb"
+                            android:layout_height="@dimen/view_small_xxx"
                             android:layout_margin="0.5dip"
                             android:gravity="center"
                             android:text="洞"
@@ -470,7 +470,7 @@
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/view_sss_bbb"
+                            android:layout_height="@dimen/view_small_xxx"
                             android:layout_margin="0.5dip"
                             android:gravity="center"
                             android:text="标准杆"
@@ -832,7 +832,7 @@
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/view_sss_bbb"
+                            android:layout_height="@dimen/view_small_xxx"
                             android:layout_margin="0.5dip"
                             android:gravity="center"
                             android:text="成绩"
@@ -847,7 +847,7 @@
                         <TextView
                             android:id="@+id/tt1"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/view_sss_bbb"
+                            android:layout_height="@dimen/view_sss_aa"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -863,7 +863,7 @@
                         <TextView
                             android:id="@+id/tt2"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/view_sss_bbb"
+                            android:layout_height="@dimen/view_sss_aa"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -879,7 +879,7 @@
                         <TextView
                             android:id="@+id/tt3"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/view_sss_bbb"
+                            android:layout_height="@dimen/view_sss_aa"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -895,7 +895,7 @@
                         <TextView
                             android:id="@+id/tt4"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/view_sss_bbb"
+                            android:layout_height="@dimen/view_sss_aa"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -911,7 +911,7 @@
                         <TextView
                             android:id="@+id/tt5"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/view_sss_bbb"
+                            android:layout_height="@dimen/view_sss_aa"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -927,7 +927,7 @@
                         <TextView
                             android:id="@+id/tt6"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/view_sss_bbb"
+                            android:layout_height="@dimen/view_sss_aa"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -943,7 +943,7 @@
                         <TextView
                             android:id="@+id/tt7"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/view_sss_bbb"
+                            android:layout_height="@dimen/view_sss_aa"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -959,7 +959,7 @@
                         <TextView
                             android:id="@+id/tt8"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/view_sss_bbb"
+                            android:layout_height="@dimen/view_sss_aa"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -975,7 +975,7 @@
                         <TextView
                             android:id="@+id/tt9"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/view_sss_bbb"
+                            android:layout_height="@dimen/view_sss_aa"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -1008,7 +1008,7 @@
                         <TextView
                             android:id="@+id/tth1"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/view_sss_bbb"
+                            android:layout_height="@dimen/view_sss_aa"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -1024,7 +1024,7 @@
                         <TextView
                             android:id="@+id/tth2"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/view_sss_bbb"
+                            android:layout_height="@dimen/view_sss_aa"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -1040,7 +1040,7 @@
                         <TextView
                             android:id="@+id/tth3"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/view_sss_bbb"
+                            android:layout_height="@dimen/view_sss_aa"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -1056,7 +1056,7 @@
                         <TextView
                             android:id="@+id/tth4"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/view_sss_bbb"
+                            android:layout_height="@dimen/view_sss_aa"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -1072,7 +1072,7 @@
                         <TextView
                             android:id="@+id/tth5"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/view_sss_bbb"
+                            android:layout_height="@dimen/view_sss_aa"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -1088,7 +1088,7 @@
                         <TextView
                             android:id="@+id/tth6"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/view_sss_bbb"
+                            android:layout_height="@dimen/view_sss_aa"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -1104,7 +1104,7 @@
                         <TextView
                             android:id="@+id/tth7"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/view_sss_bbb"
+                            android:layout_height="@dimen/view_sss_aa"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -1120,7 +1120,7 @@
                         <TextView
                             android:id="@+id/tth8"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/view_sss_bbb"
+                            android:layout_height="@dimen/view_sss_aa"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -1136,7 +1136,7 @@
                         <TextView
                             android:id="@+id/tth9"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/view_sss_bbb"
+                            android:layout_height="@dimen/view_sss_aa"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -1152,7 +1152,7 @@
                         <TextView
                             android:id="@+id/tth10"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/view_sss_bbb"
+                            android:layout_height="@dimen/view_sss_aa"
                             android:layout_margin="0.5dip"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -1194,7 +1194,7 @@
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/view_sss_bbb"
+                            android:layout_height="@dimen/view_small_xxx"
                             android:layout_margin="0.5dip"
                             android:gravity="center"
                             android:text="距标准杆"
