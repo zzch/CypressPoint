@@ -88,7 +88,7 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 		name4TextView = (TextView) findViewById(R.id.static_name_4);
 		r1 = (RelativeLayout) findViewById(R.id.major_qiugan_re);
 		statistic_layout = (RelativeLayout) findViewById(R.id.statistic_layout);
-		statistic_layout.getBackground().setAlpha(80);
+		//statistic_layout.getBackground().setAlpha(80);
 		for(int i=0;i<4;i++){
 			distance.add("");
 			name.add("");
