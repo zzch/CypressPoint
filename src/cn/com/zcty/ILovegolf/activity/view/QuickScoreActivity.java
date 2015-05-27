@@ -169,13 +169,7 @@ public class QuickScoreActivity extends Activity {
 			}
 		});
 
-		/*if(c!=quickArrayList.size()){
-			for(int i=0;i<quickArrayList.size();i++){
-				itemHeight = itemHeight + 2;
-			}
-			c = quickArrayList.size();
-			setListViewHeightBasedOnChildren(mListView);
-		}*/
+	
 	}
 
 	//点击事件
@@ -222,39 +216,7 @@ public class QuickScoreActivity extends Activity {
 
 
 
-	/*@Override
-	public void onRefresh() {
-
-		mHandler.postDelayed(new Runnable() {
-			@Override
-			public void run() {
-
-				quickArrayList.clear();
-				new MyTask().start();
-				slideAdapter.notifyDataSetChanged();
-				onLoad();
-			}
-		}, 2000);
-
-	}*/
-
-	/*@Override
-	public void onLoadMore() {
-		//mListView.itemView.findViewById(R.id.tv_coating).setVisibility(View.VISIBLE);
-
-		mHandler.postDelayed(new Runnable() {
-			@Override
-			public void run() {
-
-				quickArrayList.clear();
-				slideAdapter.notifyDataSetChanged();
-				onLoad();
-
-			}
-		}, 2000);
-
-
-	}*/
+	
 	class MyTask extends Thread{
 		@Override
 		public void run() {
@@ -287,6 +249,7 @@ public class QuickScoreActivity extends Activity {
 					JSONObject playerJsonObject = new JSONObject(player);
 					quickContent.setScoring_type(playerJsonObject.getString("scoring_type"));
 					quickContent.setScore(playerJsonObject.getString("strokes"));
+					Log.i("quickscore",playerJsonObject.getString("strokes"));
 					quickContent.setRecorded_scorecards_count(playerJsonObject.getString("recorded_scorecards_count"));
 
 					quickContent.setPlayers_count(jsonObject.getString("players_count"));
@@ -309,40 +272,7 @@ public class QuickScoreActivity extends Activity {
 
 	
 	
-/*	//定义函数动态控制listView的高度
-	public void setListViewHeightBasedOnChildren(ListView listView) {
 
-
-		//获取listview的适配器
-		ListAdapter listAdapter = listView.getAdapter();
-		//item的高度
-
-
-
-		if (listAdapter == null) {
-			return;
-		}
-
-
-		int totalHeight = 0;
-
-
-		for (int i = 0; i < listAdapter.getCount(); i++) {
-			totalHeight += Dp2Px(getApplicationContext(),itemHeight)+listView.getDividerHeight();
-		}
-
-
-		ViewGroup.LayoutParams params = listView.getLayoutParams();
-		params. height = totalHeight;
-
-
-		listView.setLayoutParams(params);
-	}
-	//dp转化为px
-	public int Dp2Px(Context context, float dp) {
-		final float scale = context.getResources().getDisplayMetrics().density;
-		return (int ) (dp * scale + 0.5f);
-	}*/
 	/*
      * 提示加载
      */

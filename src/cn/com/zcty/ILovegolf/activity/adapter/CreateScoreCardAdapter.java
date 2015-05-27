@@ -197,11 +197,14 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 	}
 	public void color(int position,int color,TextView textView){
 		Log.i("sdfasdf",scoreCardsMatchs.get(position).getTeeboxs().get(color).getColor()+"1");
+		textView.setTextColor(Color.rgb(122, 122, 122));
 		if(scoreCardsMatchs.get(position).getTeeboxs().get(color).getColor().equals("red")){
 			if(scoreCardsMatchs.get(position).getTeeboxs().get(color).getUsed().equals("true")){
 				textView.setBackgroundResource(R.drawable.jfk_hong);
+				textView.setTextColor(Color.WHITE);
 			}else{
 				textView.setBackgroundResource(R.drawable.jfk_hong_zhihui);
+				
 			}
 			
 		}else if(scoreCardsMatchs.get(position).getTeeboxs().get(color).getColor().equals("white")){
@@ -216,6 +219,7 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 		}else if(scoreCardsMatchs.get(position).getTeeboxs().get(color).getColor().equals("blue")){
 			if(scoreCardsMatchs.get(position).getTeeboxs().get(color).getUsed().equals("true")){
 				textView.setBackgroundResource(R.drawable.jfk_lan);
+				textView.setTextColor(Color.WHITE);
 			}else{
 				textView.setBackgroundResource(R.drawable.jfk_lan_zhihui);
 			}
@@ -223,13 +227,15 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 		}else if(scoreCardsMatchs.get(position).getTeeboxs().get(color).getColor().equals("black")){
 			if(scoreCardsMatchs.get(position).getTeeboxs().get(color).getUsed().equals("true")){
 				textView.setBackgroundResource(R.drawable.jfk_hei);
+				textView.setTextColor(Color.WHITE);
 			}else{
 				textView.setBackgroundResource(R.drawable.jfk_hei_zhihui);
 			}
 			
 		}else if(scoreCardsMatchs.get(position).getTeeboxs().get(color).getColor().equals("gold")){
 			if(scoreCardsMatchs.get(position).getTeeboxs().get(color).getUsed().equals("true")){
-				textView.setBackgroundResource(R.drawable.jfk_jin);
+				textView.setBackgroundResource(R.drawable.jinsess);
+				textView.setTextColor(Color.WHITE);
 			}else{
 				textView.setBackgroundResource(R.drawable.jfk_jin_zhihui);
 			}
