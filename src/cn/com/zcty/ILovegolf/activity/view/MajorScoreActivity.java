@@ -257,6 +257,8 @@ public class MajorScoreActivity extends Activity {
 					distance = "0";
 					pentails = "0";
 					coolWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, coolArray_));
+					penaitsWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, pentailsArray_));
+					pentails = "0";
 					cool = "hole";
 				}else{
 					coolWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, coolArray));	
@@ -267,25 +269,26 @@ public class MajorScoreActivity extends Activity {
 
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
+				flase_3 = true;
 				cool = coolArray[newValue];		
 				if(coolArray[newValue].equals("不可打")){
 					pentails = "1";
 					penaitsWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, pentailsArray));
-					penaitsWheel.addChangingListener(new OnWheelChangedListener() {
-
-						@Override
-						public void onChanged(WheelView wheel, int oldValue, int newValue) {
-							flase_3 = true;
-							pentails = pentailsArray[newValue];
-						}
-					});
+					
 				}else{
 					penaitsWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, pentailsArray_));
 					pentails = "0";
 				}
 			}
 		});
-		
+		penaitsWheel.addChangingListener(new OnWheelChangedListener() {
+
+			@Override
+			public void onChanged(WheelView wheel, int oldValue, int newValue) {
+				
+				pentails = pentailsArray[newValue];
+			}
+		});
 		countWheel.addChangingListener(new OnWheelChangedListener() {
 
 			@Override
@@ -387,6 +390,87 @@ public class MajorScoreActivity extends Activity {
 
 		@Override
 		public void OnClickListView(int position) {
+			
+			
+			
+			if(majorArray.get(position).getCount().equals("1w")){
+				countWheel.setCurrentItem(0);
+			}else if(majorArray.get(position).getCount().equals("pt")){
+				countWheel.setCurrentItem(1);
+			}else if(majorArray.get(position).getCount().equals("3w")){
+				countWheel.setCurrentItem(2);
+			}else if(majorArray.get(position).getCount().equals("5w")){
+				countWheel.setCurrentItem(3);
+			}else if(majorArray.get(position).getCount().equals("7w")){
+				countWheel.setCurrentItem(4);
+			}else if(majorArray.get(position).getCount().equals("2h")){
+				countWheel.setCurrentItem(5);
+			}else if(majorArray.get(position).getCount().equals("3h")){
+				countWheel.setCurrentItem(6);
+			}else if(majorArray.get(position).getCount().equals("4h")){
+				countWheel.setCurrentItem(7);
+			}else if(majorArray.get(position).getCount().equals("5h")){
+				countWheel.setCurrentItem(8);
+			}else if(majorArray.get(position).getCount().equals("1i")){
+				countWheel.setCurrentItem(9);
+			}else if(majorArray.get(position).getCount().equals("2i")){
+				countWheel.setCurrentItem(10);
+			}else if(majorArray.get(position).getCount().equals("3i")){
+				countWheel.setCurrentItem(11);
+			}else if(majorArray.get(position).getCount().equals("4i")){
+				countWheel.setCurrentItem(12);
+			}else if(majorArray.get(position).getCount().equals("5i")){
+				countWheel.setCurrentItem(13);
+			}else if(majorArray.get(position).getCount().equals("6i")){
+				countWheel.setCurrentItem(14);
+			}else if(majorArray.get(position).getCount().equals("7i")){
+				countWheel.setCurrentItem(15);
+			}else if(majorArray.get(position).getCount().equals("8i")){
+				countWheel.setCurrentItem(16);
+			}else if(majorArray.get(position).getCount().equals("9i")){
+				countWheel.setCurrentItem(17);
+			}else if(majorArray.get(position).getCount().equals("pw")){
+				countWheel.setCurrentItem(18);
+			}else if(majorArray.get(position).getCount().equals("gw")){
+				countWheel.setCurrentItem(19);
+			}else if(majorArray.get(position).getCount().equals("sw")){
+				countWheel.setCurrentItem(20);
+			}else if(majorArray.get(position).getCount().equals("lw")){
+				countWheel.setCurrentItem(21);
+			}
+			
+			if(majorArray.get(position).getCool().equals("fairway")||majorArray.get(position).getCool().equals("球道")){
+				coolWheel.setCurrentItem(2);
+
+			}else if(majorArray.get(position).getCool().equals("green")||majorArray.get(position).getCool().equals("果岭")){
+				coolWheel.setCurrentItem(0);
+			}
+			else if(majorArray.get(position).getCool().equals("left_rough")||majorArray.get(position).getCool().equals("球道外左侧")){
+				coolWheel.setCurrentItem(1);
+			}
+			else if(majorArray.get(position).getCool().equals("right_rough")||majorArray.get(position).getCool().equals("球道外右侧")){
+				coolWheel.setCurrentItem(3);
+			}
+			else if(majorArray.get(position).getCool().equals("bunker")||majorArray.get(position).getCool().equals("沙坑")){
+				coolWheel.setCurrentItem(4);
+			}else if(majorArray.get(position).getCool().equals("unplayable")||majorArray.get(position).getCool().equals("不可打")){
+				coolWheel.setCurrentItem(5);
+			}
+			
+			if(majorArray.get(position).getPentails().equals("1")){
+				penaitsWheel.setCurrentItem(0);
+			}else if(majorArray.get(position).getPentails().equals("2")){
+				penaitsWheel.setCurrentItem(2);
+			}else if(majorArray.get(position).getPentails().equals("3")){
+				penaitsWheel.setCurrentItem(3);
+			}
+			int p = Integer.parseInt(majorArray.get(position).getDistance());
+			if(p<=50){
+				distanceWheel.setCurrentItem(p);
+			}else{
+				distanceWheel.setCurrentItem(((p-50)/5)+50);
+			}
+			
 			biaoshi = position;
 			flase = false;
 			tianjia.setVisibility(View.GONE);

@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg"
+    android:id="@+id/linear"
     android:orientation="vertical" >
 
     <RelativeLayout
@@ -65,6 +66,7 @@
         android:layout_marginLeft="10dp"
         android:background="@drawable/gridview_bg"
         android:layout_marginTop="@dimen/infor_view_x"
+        android:listSelector="@android:color/transparent" 
         android:gravity="center"
         android:numColumns="2" >
     </GridView>
