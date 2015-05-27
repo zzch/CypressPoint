@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class RankingAdapter extends BaseAdapter{
@@ -57,13 +58,26 @@ public class RankingAdapter extends BaseAdapter{
 			holder.nameTextView = (TextView) convertView.findViewById(R.id.ranking_username);
 			holder.totalTextView = (TextView) convertView.findViewById(R.id.score);
 			holder.scheduleTextView = (TextView) convertView.findViewById(R.id.count);
+			holder.image_rank = (ImageView) convertView.findViewById(R.id.image_rank);
 			convertView.setTag(holder);
 		}else{
 			holder = (RankHolder) convertView.getTag();
 		}
 		 	if(rankings.get(position).getPosition().equals("null")){
 		 		holder.positionTextView.setText("一");
+		 	}else if(rankings.get(position).getPosition().equals("1")){
+		 		
+		 		holder.positionTextView.setVisibility(View.GONE);
+		 		holder.image_rank.setBackgroundResource(R.drawable.one);
+		 	}else if(rankings.get(position).getPosition().equals("2")){
+		 		holder.positionTextView.setVisibility(View.GONE);
+		 		holder.image_rank.setBackgroundResource(R.drawable.two);
+		 	}else if(rankings.get(position).getPosition().equals("3")){
+		 		holder.positionTextView.setVisibility(View.GONE);
+		 		holder.image_rank.setBackgroundResource(R.drawable.three);
 		 	}else{
+		 		
+		 		holder.image_rank.setVisibility(View.GONE);
 		 		holder.positionTextView.setText(rankings.get(position).getPosition());
 		 	}
 		 	ImageService imageService = new ImageService();
@@ -86,5 +100,6 @@ public class RankingAdapter extends BaseAdapter{
 		TextView nameTextView;
 		TextView scheduleTextView;
 		TextView totalTextView;
+		ImageView image_rank;
 	}
 }

@@ -53,6 +53,11 @@
             android:src="@drawable/back_image"/>
 		</FrameLayout>
     </RelativeLayout>
+     <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#1e1c27"
+        />
      <ScrollView 
         android:layout_width="match_parent"
         android:layout_height="500dp"
@@ -68,7 +73,8 @@
                 >
                 <RelativeLayout 
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/create_score_left_xxx"
+                    android:layout_height="@dimen/view_image_2"
+                    android:background="@color/daohang"
                     >
                     <cn.com.zcty.ILovegolf.tools.CircleImageView 
                         android:id="@+id/head_image"
@@ -78,26 +84,47 @@
                         android:layout_marginLeft="@dimen/view_sss_ff"
                         android:layout_centerVertical="true"
                         />
-                    <TextView 
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:layout_marginLeft="@dimen/create_score_left"
-                        android:layout_centerVertical="true"
-                        android:textColor="@color/hei2"
-                        android:text="创始人:"
-                        android:textSize="@dimen/txsize_small_xxx"
-                        
-                        />
+                    
                      <TextView 
                         android:id="@+id/username"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:layout_marginLeft="@dimen/view_image_a"
-                        android:layout_centerVertical="true"
-                        android:textColor="@color/hei2"
+                        android:layout_marginLeft="100dp"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/white"
                         android:text="创始人"
-                        android:textSize="@dimen/txsize_mid_x"
+                        android:textSize="@dimen/txsize_small_xx"
                         />
+                     
+                <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" 
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="50dp"
+            >
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="@dimen/view_small_x"
+                android:layout_marginTop="@dimen/view_small_x"
+                android:src="@drawable/address_image" />
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_small_x"
+                android:layout_marginTop="8dp"
+                android:text="北京北湖高尔夫俱乐部"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txsize_small_x"
+                android:maxEms="13" 
+                android:singleLine="true"
+                android:ellipsize="end"
+                />
+        </LinearLayout>
                 </RelativeLayout>
                 <View 
        android:layout_width="match_parent"
@@ -216,7 +243,7 @@
 	         android:layout_centerVertical="true"
 	        android:textSize="@dimen/txsize_small_xx"
 	        android:layout_marginLeft="@dimen/view_Layout_x"
-	        android:text="选择子场"
+	        android:text="选择球场"
 	        />
 	    <TextView 
 	        android:id="@+id/competition_match_chang"
@@ -252,7 +279,7 @@
 	        android:textColor="@color/hei2"
 	        android:textSize="@dimen/txsize_small_xx"
 	        android:layout_marginLeft="@dimen/view_Layout_x"
-	        android:text="开球T台"
+	        android:text="发球台"
 	        />
 	    <TextView 
 	        android:id="@+id/competition_t_name"
@@ -321,7 +348,7 @@
 	        android:textColor="@color/hei2"
 	        android:textSize="@dimen/txsize_small_xx"
 	        android:layout_marginLeft="@dimen/view_Layout_x"
-	        android:text="选择子场"
+	        android:text="选择球场"
 	        />
 	    <TextView 
 	        android:id="@+id/competition_match_chang_2"
@@ -358,7 +385,7 @@
 	        android:textColor="@color/hei2"
 	        android:textSize="@dimen/txsize_small_xx"
 	         android:layout_marginLeft="@dimen/view_Layout_x"
-	        android:text="开球T台"
+	        android:text="发球台"
 	        />
 	    <TextView 
 	        android:id="@+id/competition_t_name_2"

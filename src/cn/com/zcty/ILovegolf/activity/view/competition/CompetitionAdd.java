@@ -136,7 +136,7 @@ public class CompetitionAdd extends Activity{
 			f = false;
 			selectSession_t.setVisibility(View.VISIBLE);
 			selectSession_t_2.setVisibility(View.GONE);
-			qiudongTextView.setText("前18洞");	
+			qiudongTextView.setText("球场");	
 			zichangTextView.setText(add.getTitai().get(0).getName());
 			qiuchang2Layout.setVisibility(View.GONE);
 			
