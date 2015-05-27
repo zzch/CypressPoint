@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.MajorScoreAdapter.ViewHolder;
 import cn.com.zcty.ILovegolf.model.MajorScore;
+import cn.com.zcty.ILovegolf.model.MajorScoreJiQiu;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,10 +19,24 @@ public class MajorScoresAdapter extends BaseAdapter{
 	private ArrayList<MajorScore> majorArrayList;
 	private Context context;
 	private LayoutInflater inflater;
+	private ArrayList<MajorScoreJiQiu> addArrayList = new ArrayList<MajorScoreJiQiu>();
 	public MajorScoresAdapter(Context context,ArrayList<MajorScore> majorArrayList) {
 		this.majorArrayList = majorArrayList;
 		inflater = LayoutInflater.from(context);
+		for(int i=0;i<majorArrayList.size();i++){
+			MajorScoreJiQiu m = new MajorScoreJiQiu();
+			m.setDistance_from_hole(majorArrayList.get(i).getDistance());
+			m.setPoint_of_fall(majorArrayList.get(i).getCool());
+			m.setPenalties(majorArrayList.get(i).getPentails());
+			m.setClub(majorArrayList.get(i).getCount());
+			addArrayList.add(m);
+		}
+		
 	}
+	public ArrayList<MajorScoreJiQiu> list(){
+		return addArrayList;
+	}
+	
 	@Override
 	public int getCount() {
 		Log.i("ceshijieguozhi", majorArrayList.size()+"zhou");
