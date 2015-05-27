@@ -57,19 +57,19 @@ public class Dialog_T_Adapter extends BaseAdapter{
 		holder.blend_dialog_t_item_textview.setText(list.get(position));
 		if(list.get(position).equals("red")){
 			holder.image_t.setBackgroundResource(R.drawable.e_red);
-			holder.blend_dialog_t_item_textview.setText("红色T台");
+			holder.blend_dialog_t_item_textview.setText("红色");
 		}else if(list.get(position).equals("white")){
 			holder.image_t.setBackgroundResource(R.drawable.e_white);
-			holder.blend_dialog_t_item_textview.setText("白色T台");
+			holder.blend_dialog_t_item_textview.setText("白色");
 		}else if(list.get(position).equals("blue")){
 			holder.image_t.setBackgroundResource(R.drawable.e_blue);
-			holder.blend_dialog_t_item_textview.setText("蓝色T台");
+			holder.blend_dialog_t_item_textview.setText("蓝色");
 		}else if(list.get(position).equals("black")){
 			holder.image_t.setBackgroundResource(R.drawable.e_black);
-			holder.blend_dialog_t_item_textview.setText("黑色T台");
+			holder.blend_dialog_t_item_textview.setText("黑色");
 		}else{
 			holder.image_t.setBackgroundResource(R.drawable.e_gold);
-			holder.blend_dialog_t_item_textview.setText("金色T台");
+			holder.blend_dialog_t_item_textview.setText("金色");
 		}
 		return convertView;
 	}

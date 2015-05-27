@@ -17,7 +17,7 @@ public class SelectSessionTAdapter extends BaseAdapter{
 	private Context context;
 	private ArrayList<String> nameArrayList = new ArrayList<String>();
 	private LayoutInflater inflater;
-	private String tiTai[]={"红色T台","白色T台","蓝色T台","黑色T台","金色T台"};
+	private String tiTai[]={"红色","白色","蓝色","黑色","金色"};
 	public SelectSessionTAdapter(Context context,ArrayList<String> nameArrayList) {
 		this.context = context;
 		this.nameArrayList = nameArrayList;
@@ -55,19 +55,19 @@ public class SelectSessionTAdapter extends BaseAdapter{
 		Log.i("sadfsd",nameArrayList.size()+""+nameArrayList);
 		if(nameArrayList.get(position).equals("red")){
 			holder.image.setBackgroundResource(R.drawable.e_red);
-			holder.nameTextView.setText("红色T台");
+			holder.nameTextView.setText("红色");
 		}else if(nameArrayList.get(position).equals("white")){
 			holder.image.setBackgroundResource(R.drawable.e_white);
-			holder.nameTextView.setText("白色T台");
+			holder.nameTextView.setText("白色");
 		}else if(nameArrayList.get(position).equals("blue")){
 			holder.image.setBackgroundResource(R.drawable.e_blue);
-			holder.nameTextView.setText("蓝色T台");
+			holder.nameTextView.setText("蓝色");
 		}else if(nameArrayList.get(position).equals("black")){
 			holder.image.setBackgroundResource(R.drawable.e_black);
-			holder.nameTextView.setText("黑色T台");
+			holder.nameTextView.setText("黑色");
 		}else{
 			holder.image.setBackgroundResource(R.drawable.e_gold);
-			holder.nameTextView.setText("金色T台");
+			holder.nameTextView.setText("金色");
 		}
 		return convertView;
 	}

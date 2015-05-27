@@ -71,7 +71,7 @@ public class CompetitionAdd extends Activity{
 	private RelativeLayout selectSession_t;
 	private RelativeLayout selectSession_t_2;
 	private Button createButton;
-	private String tiTai[]={"红色T台","白色T台","蓝色T台","黑色T台","金色T台"};
+	private String tiTai[]={"红色","白色","蓝色","黑色","金色"};
 	private int tiTaiColor[]={R.drawable.e_red,R.drawable.e_white,R.drawable.e_blue,R.drawable.e_black,R.drawable.e_gold};
 	private boolean f = false;
 	private String t_1 = "";
