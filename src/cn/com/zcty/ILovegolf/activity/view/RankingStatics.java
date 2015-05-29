@@ -126,7 +126,7 @@ public class RankingStatics extends FragmentActivity{
 					//radioButton_qian.setBackgroundResource(R.drawable.group_4);
 					//radioButton_qian.setText("前九");
 					//radioButton_qian.setTextColor(0xffF8d57a);
-					//tablePager.setCurrentItem(1);
+					tablePager.setCurrentItem(1);
 					break;
 				}
 			}
