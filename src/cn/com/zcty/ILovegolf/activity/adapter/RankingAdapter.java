@@ -99,6 +99,8 @@ public class RankingAdapter extends BaseAdapter{
 		 		holder.scheduleTextView.setTextColor(0xffffffff);
 			}else{
 				holder.color_myself.setBackgroundColor(Color.rgb(255, 255, 255));
+				holder.nameTextView.setTextColor(0xff222222);
+		 		holder.scheduleTextView.setTextColor(0xff222222);
 			}
 		 	
 		 	return convertView;
