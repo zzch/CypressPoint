@@ -21,14 +21,15 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.RankingAdapter;
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.model.Ranking;
-import cn.com.zcty.ILovegolf.tools.MyListView;
-import cn.com.zcty.ILovegolf.tools.MyListView.OnRefreshListener;
+import cn.com.zcty.ILovegolf.tools.AutoListView;
+import cn.com.zcty.ILovegolf.tools.AutoListView.OnRefreshListener;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
@@ -36,28 +37,29 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
 public class RankingActivity extends Activity{
 
 	private Button paiming_back;
-	private MyListView rankListView;
+	private AutoListView rankListView;
 	private RelativeLayout invite_much;
 	private Button rank_invite_but;
 	private RelativeLayout layout_rank;
 	private ProgressDialog progressDialog;
+	private LinearLayout linear;
 	private ArrayList<Ranking> rankings = new ArrayList<Ranking>();//adapter的数据
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
+			rankListView.onRefreshComplete();
 			if(msg.what==1){
 				hideProgressDialog();
 				if(msg.obj.equals("404")||msg.obj.equals("500")){
-					rankListView.onRefreshComplete();
 					Toast.makeText(RankingActivity.this, "网络错误，请稍后再试", Toast.LENGTH_LONG).show();
 					
-				}else if(msg.obj.equals("403")){
-					rankListView.onRefreshComplete();
+				}else if(msg.obj.equals("403")){					
 					Toast.makeText(RankingActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
 					FileUtil.delFile();
 					Intent intent = new Intent(RankingActivity.this,ShouYeActivity.class);
 					startActivity(intent);
 					finish();
 				}else{
+					linear.setVisibility(View.VISIBLE);
 					getData();
 				}
 				
@@ -70,8 +72,8 @@ public class RankingActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_ranking);
+		initView();		
 		showProgressDialog("提示", "正在加载", this);
-		initView();
 		setListeners();	
 		new Rankings().start();
 	}
@@ -143,11 +145,11 @@ public class RankingActivity extends Activity{
 			}
 		});
 		
-		rankListView.setonRefreshListener(new OnRefreshListener() {
+	
+		rankListView.setOnRefreshListener(new OnRefreshListener() {
 			
 			@Override
 			public void onRefresh() {
-				
 				new Rankings().start();
 			}
 		});
@@ -163,26 +165,34 @@ public class RankingActivity extends Activity{
 	 */
 	public void initView(){
 		paiming_back = (Button) findViewById(R.id.paiming_back);
-		rankListView = (MyListView) findViewById(R.id.ranking);
+		rankListView = (AutoListView) findViewById(R.id.ranking);
 		invite_much = (RelativeLayout) findViewById(R.id.invite_much);
 		rank_invite_but = (Button) findViewById(R.id.rank_invite_but);
 		layout_rank = (RelativeLayout) findViewById(R.id.layout_rank);
-		
+		linear = (LinearLayout) findViewById(R.id.linear);
+		linear.setVisibility(View.GONE);
+		rankListView.setLoadEnable(true);
 	}
 	/*
 	 * 数据的操作
 	 */
 	public void getData(){
-		rankListView.setAdapter(new RankingAdapter(this, rankings));
-		rankListView.onRefreshComplete();
-		if(rankings.size()<1){
-			   invite_much.setVisibility(View.GONE);
-			   Log.i("-----", "sdufhshdjhkjshfjhsjkhfjhs");
-			  layout_rank.setVisibility(View.VISIBLE);
-		   }else{
-			  layout_rank.setVisibility(View.GONE);
-			  invite_much.setVisibility(View.VISIBLE);
-		   }
+		rankListView.setAdapter(new RankingAdapter(this, rankings));	
+		if(!getIntent().getStringExtra("fangzhu").equals("true")){
+			invite_much.setVisibility(View.GONE);
+			layout_rank.setVisibility(View.GONE);
+		}else{
+			if(rankings.size()<1){
+				
+				   invite_much.setVisibility(View.GONE);
+				   Log.i("-----", "sdufhshdjhkjshfjhsjkhfjhs");
+				  layout_rank.setVisibility(View.VISIBLE);
+			   }else{
+				  layout_rank.setVisibility(View.GONE);
+				  invite_much.setVisibility(View.VISIBLE);
+			   }
+		}
+		
 	}
 	
 	/**

@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg"
+    android:id="@+id/linear"
     android:orientation="vertical" >
     
     <RelativeLayout
@@ -48,7 +49,7 @@
     </RelativeLayout>
     
     
-     <cn.com.zcty.ILovegolf.tools.MyListView
+     <cn.com.zcty.ILovegolf.tools.AutoListView
         android:id="@+id/ranking"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -57,7 +58,7 @@
         android:divider="@null"
        
         android:listSelector="@android:color/transparent" >
-    </cn.com.zcty.ILovegolf.tools.MyListView>
+    </cn.com.zcty.ILovegolf.tools.AutoListView>
     
     
     

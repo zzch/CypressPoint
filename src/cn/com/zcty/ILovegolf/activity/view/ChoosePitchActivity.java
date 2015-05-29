@@ -90,7 +90,6 @@ public class ChoosePitchActivity extends Activity {
 	}
 	private void setListeners() {
 		
-		
 		listpich.setOnRefreshListener(new OnRefreshListener() {
 			
 			@Override

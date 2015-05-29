@@ -227,6 +227,7 @@ public class CreateScoreCard extends Activity{
 		case R.id.competition_button_paiming:
 			Intent i = new Intent(CreateScoreCard.this,RankingActivity.class);
 			i.putExtra("cunzai", "0");
+			i.putExtra("fangzhu", owned);
 			i.putExtra("uuid", id);
 			startActivity(i);
 			break;
@@ -238,7 +239,7 @@ public class CreateScoreCard extends Activity{
 				//j = new Intent(CreateScoreCard.this,SelfhoodActivity.class);
 				j.setClass(CreateScoreCard.this,SelfhoodActivity.class);
 			}
-			j.putExtra("cunzai", "0");
+			j.putExtra("cunzai", "0");			
 			j.putExtra("uuid", id);
 			startActivity(j);
 			break;

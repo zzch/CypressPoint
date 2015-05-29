@@ -70,7 +70,7 @@ public class RankingAdapter extends BaseAdapter{
 			holder = (RankHolder) convertView.getTag();
 			
 		}
-		   
+		   Log.i("rankings",position+"");
 		   
 		 	if(rankings.get(position).getPosition().equals("null")){
 		 		
