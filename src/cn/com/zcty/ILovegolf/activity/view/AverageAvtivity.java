@@ -14,13 +14,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.MajorScoreAverageAdapter;
 
 public class AverageAvtivity extends Activity{
-	private ListView qiudongListView;
+	private GridView qiudongListView;
 	private ArrayList<String> statisticsModels = new ArrayList<String>();
 	private String scrambles;
 	private String scrambles_percentage;
@@ -58,7 +59,7 @@ public class AverageAvtivity extends Activity{
 		});		
 	}
 	private void initView() {
-		qiudongListView = (ListView) findViewById(R.id.major_average_qiudong);
+		qiudongListView = (GridView) findViewById(R.id.major_average_qiudong);
 		scramblesTextView = (TextView) findViewById(R.id.avaerage_shuju_scrambles);
 		percentageTextView = (TextView) findViewById(R.id.avaerage_shuju_percentage);
 		shujuTextView = (TextView) findViewById(R.id.avaerage_shuju);

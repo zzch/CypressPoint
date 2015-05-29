@@ -42,10 +42,16 @@
             android:gravity="center"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="hei2"
+            android:text="推杆"
             android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
     </RelativeLayout>
+    
+     <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#1e1c27"
+        />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -60,125 +66,163 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
 
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp" 
+                    android:orientation="horizontal"
+                    android:background="@color/daohang"
+                    android:gravity="center"
+                    >
 
                     <RelativeLayout
                         android:id="@+id/putts_relative_1"
-                        android:layout_width="180dp"
-                        android:layout_height="wrap_content" >
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@android:drawable/alert_dark_frame" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                         >
 
                         <TextView
                             android:id="@+id/putts_average"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="50dp"
-                            android:layout_marginTop="8dp"
+                            android:layout_centerHorizontal="true"
+                           
                             android:text="2.11"
-                            android:textSize="20dp" />
+                            android:textSize="@dimen/txsize_mid_xx"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
+                        
+                        
+                        <LinearLayout 
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_centerHorizontal="true"
+                            >
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginTop="45dp"
-                            android:text="平均推杆数"
-                            android:textSize="20dp" />
+                            
+                            android:layout_marginTop="35dp"
+                            android:text="平均/洞"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/txsize_small_x" />
 
                         <ImageView
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:layout_marginLeft="120dp"
-                            android:layout_marginTop="45dp"
-                            android:src="@drawable/e_card_yuan" />
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="35dp"
+                            android:src="@drawable/help" />
+                        </LinearLayout>
                     </RelativeLayout>
+                    
+                    <View 
+                        android:layout_width="0.5dp"
+                        android:layout_height="50dp"
+                        android:background="@color/white"
+                        />
 
                     <RelativeLayout
                         android:id="@+id/putts_relative_2"
-                        android:layout_width="180dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:layout_below="@+id/putts_relative_1" >
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@android:drawable/alert_dark_frame" />
+                        
 
                         <TextView
                             android:id="@+id/putts_average_gir"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="50dp"
-                            android:layout_marginTop="8dp"
+                            android:layout_centerHorizontal="true"
+                      
                             android:text="2.34"
-                            android:textSize="20dp" />
+                            android:textSize="@dimen/txsize_mid_xx"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
+                        
+                         <LinearLayout 
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_centerHorizontal="true"
+                            >
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginTop="45dp"
-                            android:text="GIR平均推杆数"
-                            android:textSize="20dp" />
+                            android:layout_marginTop="35dp"
+                            android:text="标准杆"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/txsize_small_x" />
 
                         <ImageView
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:layout_marginLeft="150dp"
-                            android:layout_marginTop="45dp"
-                            android:src="@drawable/e_card_yuan" />
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="35dp"
+                            android:src="@drawable/help" />
+                        
+                        </LinearLayout>
                     </RelativeLayout>
+                    
+                    
+                    <View 
+                        android:layout_width="0.5dp"
+                        android:layout_height="50dp"
+                        android:background="@color/white"
+                        />
 
                     <RelativeLayout
                         android:id="@+id/putts_relative_3"
-                        android:layout_width="300dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:layout_below="@+id/putts_relative_2" >
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@android:drawable/alert_dark_frame" />
+                        
 
                         <TextView
                             android:id="@+id/putts_average_gir_max"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="50dp"
-                            android:layout_marginTop="8dp"
+                            android:layout_centerHorizontal="true"
+                         
                             android:text="2.45"
-                            android:textSize="20dp" />
+                            android:textSize="@dimen/txsize_mid_xx"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"/>
+                        
+                         <LinearLayout 
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_centerHorizontal="true"
+                            >
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginTop="45dp"
-                            android:text="大于GIR平均推杆数"
-                            android:textSize="20dp" />
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="35dp"
+                            android:text="大于标准杆"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/txsize_small_x"/>
 
                         <ImageView
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:layout_marginLeft="190dp"
-                            android:layout_marginTop="45dp"
-                            android:src="@drawable/e_card_yuan" />
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="35dp"
+                            android:src="@drawable/help" />
+                        </LinearLayout>
                     </RelativeLayout>
 
-                    <ImageView
-                        android:id="@+id/major_putts_image"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/lan" />
-                </RelativeLayout>
+                    
+                </LinearLayout>
 
                 <RelativeLayout
                     android:id="@+id/putts_relative_4"
