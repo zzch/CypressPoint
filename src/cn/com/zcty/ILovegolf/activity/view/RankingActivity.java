@@ -134,11 +134,11 @@ public class RankingActivity extends Activity{
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
-				if(rankings.get(position).getSelf().equals("true")){
+				if(rankings.get(position-1).getSelf().equals("true")){
 					finish();
 				}else{
 				Intent intent = new Intent(RankingActivity.this,RankingStatics.class);
-				intent.putExtra("uuid", rankings.get(position).getUuid());
+				intent.putExtra("uuid", rankings.get(position-1).getUuid());
 				startActivity(intent);}
 			}
 		});
@@ -167,14 +167,7 @@ public class RankingActivity extends Activity{
 		invite_much = (RelativeLayout) findViewById(R.id.invite_much);
 		rank_invite_but = (Button) findViewById(R.id.rank_invite_but);
 		layout_rank = (RelativeLayout) findViewById(R.id.layout_rank);
-		if(rankings.size()<1){
-		  // holder.invite_much.setVisibility(View.GONE);
-		   Log.i("-----", "sdufhshdjhkjshfjhsjkhfjhs");
-		  layout_rank.setVisibility(View.VISIBLE);
-	   }else{
-		  layout_rank.setVisibility(View.GONE);
-		  invite_much.setVisibility(View.VISIBLE);
-	   }
+		
 	}
 	/*
 	 * 数据的操作
@@ -182,6 +175,14 @@ public class RankingActivity extends Activity{
 	public void getData(){
 		rankListView.setAdapter(new RankingAdapter(this, rankings));
 		rankListView.onRefreshComplete();
+		if(rankings.size()<1){
+			   invite_much.setVisibility(View.GONE);
+			   Log.i("-----", "sdufhshdjhkjshfjhsjkhfjhs");
+			  layout_rank.setVisibility(View.VISIBLE);
+		   }else{
+			  layout_rank.setVisibility(View.GONE);
+			  invite_much.setVisibility(View.VISIBLE);
+		   }
 	}
 	
 	/**

@@ -94,6 +94,9 @@ public class RankingAdapter extends BaseAdapter{
 		 	holder.scheduleTextView.setText(rankings.get(position).getRecorded_scorecards_count()+"/18");
 		 	if(rankings.get(position).getSelf().equals("true")){
 		 		holder.color_myself.setBackgroundColor(Color.rgb(55, 57, 59));
+		 		
+		 		holder.nameTextView.setTextColor(0xffffffff);
+		 		holder.scheduleTextView.setTextColor(0xffffffff);
 			}else{
 				holder.color_myself.setBackgroundColor(Color.rgb(255, 255, 255));
 			}
