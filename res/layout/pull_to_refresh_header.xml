@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:paddingBottom="10dp" >
 
         <LinearLayout
@@ -51,6 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/h_line"
+        android:visibility="gone"
         android:contentDescription="@string/d" />
 
 </LinearLayout>

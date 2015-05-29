@@ -110,7 +110,7 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
-/*				switch (position) {
+			switch (position) {
 				case 0:
 					Intent intent = new Intent(MajorStatisticsActivity.this,MajorStatisticsActivityScord.class);
 					intent.putExtra("JsonData", JsonData);
@@ -159,7 +159,7 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 				case 9:
 					
 					break;
-				}*/
+				}
 			}
 		});
 	}
