@@ -14,16 +14,14 @@
             android:layout_height="70dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="60dp"
-            android:src="@drawable/hugh" />
+            android:src="@drawable/login" />
 
-        <TextView
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="140dp"
-            android:text="我 爱 高 尔 夫"
-            android:textSize="@dimen/txsize_mid_x"
-            android:textColor="@color/hei2" />
+            android:layout_marginTop="150dp"
+            android:src="@drawable/igolf"/>
     </RelativeLayout>
 
     <LinearLayout
@@ -39,7 +37,7 @@
             android:background="#00c27b"
             android:onClick="onClick"
             android:text="竞技比赛"
-            android:textColor="@color/white"
+            android:textColor="@color/hei2"
             android:textSize="@dimen/txsize_small_xxx"
             android:layout_weight="1"/>
            <Button
@@ -49,7 +47,7 @@
             android:background="#48accc"
             android:onClick="onClick"
             android:text="技术统计"
-            android:textColor="@color/white"
+            android:textColor="@color/hei2"
             android:textSize="@dimen/txsize_small_xxx"
             android:layout_weight="1"/>
            <Button
@@ -59,7 +57,7 @@
             android:background="#e29f40"
             android:onClick="onClick"
             android:text="个人中心"
-            android:textColor="@color/white"
+            android:textColor="@color/hei2"
             android:textSize="@dimen/txsize_small_xxx"
             android:layout_weight="1"/>
 

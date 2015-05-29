@@ -169,7 +169,7 @@ public class RankingStatics extends FragmentActivity{
 			finish();
 			break;
 
-		
+
 		}
 	}
 	/*
@@ -190,10 +190,27 @@ public class RankingStatics extends FragmentActivity{
 		arrayFragment.add(new StaticsFragmentTwo(parArrayList,scoreArrayList,statusArrayList));
 		tablePager.setAdapter(new MyFragmentPagerAdapter(getSupportFragmentManager()));
 		usernameTextView.setText(username);	
-		rankingTextView.setText(ranking);
-		scheduleTextView.setText(schedule);
-		scoreTextView.setText(score);
-		parTextView.setText(par);
+		if(ranking.equals("null")){
+			rankingTextView.setText("一");
+		}else{
+			rankingTextView.setText(ranking);
+		}
+		if(schedule.equals("null")){
+			scheduleTextView.setText("一");
+		}else{
+			scheduleTextView.setText(schedule);
+		}
+		if(score.equals("null")){
+			scoreTextView.setText("一");
+		}else{
+			scoreTextView.setText(score);
+		}
+		if(par.equals("null")){
+			parTextView.setText("一");
+		}else{
+			parTextView.setText(par);
+		}
+		
 	}
 	/*
 	 * 初始化
@@ -206,7 +223,7 @@ public class RankingStatics extends FragmentActivity{
 		scoreTextView = (TextView) findViewById(R.id.competition_chengji);
 		parTextView = (TextView) findViewById(R.id.competition_par);
 		totleImage = (CircleImageView) findViewById(R.id.myself_head);
-		
+
 		tablePager = (ViewPager) findViewById(R.id.viewpager);
 		radioGroup = (RadioGroup) findViewById(R.id.main_radio);
 		radioButton_qian = (RadioButton) findViewById(R.id.mainTabs_radio_qian);
@@ -236,9 +253,9 @@ public class RankingStatics extends FragmentActivity{
 		}
 
 	}
-	
-	
-	
+
+
+
 	/**
 	 * 拿到统计数据
 	 * @author Administrator
@@ -272,7 +289,7 @@ public class RankingStatics extends FragmentActivity{
 				schedule = jsonObject.getString("recorded_scorecards_count");//进度
 				score = jsonObject.getString("strokes");//成绩
 				par = jsonObject.getString("total");//距标准杆
-				
+
 				String jsonArray = jsonObject.getString("scorecards");
 				JSONObject jsonObject2 = new JSONObject(jsonArray);	
 				JSONArray jsonArray2 = jsonObject2.getJSONArray("par");
@@ -325,34 +342,34 @@ public class RankingStatics extends FragmentActivity{
 			getData();
 		}
 		public void getData(){
-		
-		bitmap = HttpUtils.imageloder(portrait);
-		Message msg = handler.obtainMessage();
-		msg.what = 2;
-		handler.sendMessage(msg);	
-			
-	}
+
+			bitmap = HttpUtils.imageloder(portrait);
+			Message msg = handler.obtainMessage();
+			msg.what = 2;
+			handler.sendMessage(msg);	
+
+		}
 	}
 	/*
-     * 提示加载
-     */
-     public   void  showProgressDialog(String title,String message,Activity context){
-            if(progressDialog ==null){
-                   progressDialog = ProgressDialog.show( context, title, message,true,true );
+	 * 提示加载
+	 */
+	public   void  showProgressDialog(String title,String message,Activity context){
+		if(progressDialog ==null){
+			progressDialog = ProgressDialog.show( context, title, message,true,true );
 
-           } else if (progressDialog .isShowing()){
-                   progressDialog.setTitle(title);
-                   progressDialog.setMessage(message);
-           }
-            progressDialog.show();
+		} else if (progressDialog .isShowing()){
+			progressDialog.setTitle(title);
+			progressDialog.setMessage(message);
+		}
+		progressDialog.show();
 
-    }
-     /*
-     * 隐藏加载
-     */
-     public  void hideProgressDialog(){
-            if(progressDialog !=null &&progressDialog.isShowing()){
-                   progressDialog.dismiss();
-           }
-    }
+	}
+	/*
+	 * 隐藏加载
+	 */
+	public  void hideProgressDialog(){
+		if(progressDialog !=null &&progressDialog.isShowing()){
+			progressDialog.dismiss();
+		}
+	}
 }

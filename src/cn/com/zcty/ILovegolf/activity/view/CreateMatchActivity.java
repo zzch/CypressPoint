@@ -100,7 +100,6 @@ public class CreateMatchActivity extends Activity {
 	private RelativeLayout jifenfangshi;
 	private RelativeLayout leixing_layout;
 	private ImageView imageView1;
-
 	private ImageView imageView2;
 	private ImageView imageView3;
 	private ImageView imageView4;
