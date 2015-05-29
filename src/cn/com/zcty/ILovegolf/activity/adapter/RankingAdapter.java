@@ -81,6 +81,8 @@ public class RankingAdapter extends BaseAdapter{
 		 		holder.positionTextView.setText(rankings.get(position).getPosition());
 		 	}
 		 	ImageService imageService = new ImageService();
+		 	if(rankings.size()>0){
+		 	
 		 	imageService.setBitmapByURL
 		 	(rankings.get(position).getPortrait(),
 		 			holder.nameCircleImageView,
@@ -102,7 +104,8 @@ public class RankingAdapter extends BaseAdapter{
 				holder.nameTextView.setTextColor(0xff222222);
 		 		holder.scheduleTextView.setTextColor(0xff222222);
 			}
-		 	
+			
+		 	}
 		 	return convertView;
 	}
 	class RankHolder{
