@@ -46,38 +46,34 @@
             android:src="@drawable/back_image"  />
 		</FrameLayout>
     </RelativeLayout>
-	<TextView 
-	    android:id="@+id/number"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:textColor="#ffffff"
-	    android:text="当前可以输入140字"
-	    />
+	
     <EditText
         android:id="@+id/feedback"
-        android:layout_width="fill_parent"
+        android:layout_width="@dimen/register_view_width"
         android:layout_height="wrap_content"
-        android:background="@android:drawable/edit_text"
+        android:background="@drawable/wenbenkuang"
         android:enabled="true"
         android:gravity="top"
         android:inputType="textMultiLine"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
         android:maxLines="20"
         android:minLines="8"
         android:scrollbars="vertical"
-        android:hint="请输入您的意见"
+        android:hint="请输入您宝贵的意见(140字内)"
          />
-<RelativeLayout 
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    >
-    <Button 
-        android:id="@+id/submit"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="提交"
-        />
-    
-</RelativeLayout>
+
+
+<Button
+    android:id="@+id/submit"
+    android:layout_width="@dimen/register_view_width"
+    android:layout_height="@dimen/button_height"
+    android:layout_marginTop="30dp"
+    android:background="@drawable/button"
+    android:layout_marginLeft="10dp"
+    android:gravity="center_horizontal"
+    android:text="提交"
+    android:textColor="@color/bg"
+    android:textSize="@dimen/txsize_small_xxx" />
+
 </LinearLayout>

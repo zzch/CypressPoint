@@ -164,16 +164,16 @@ public class SelfhoodActivity extends Activity{
 					radio_nan.setBackgroundResource(R.drawable.nan_1);
 					sex = "1";
 					radio_nv.setBackgroundResource(R.drawable.nv);
-					//baocunButton.setBackgroundColor(0xff09850c);
-					//baocunButton.setTextColor(0xffffffff);
+					baocunButton.setBackgroundColor(0xff09850c);
+					baocunButton.setTextColor(0xffffffff);
 					break;
 
 				case R.id.mainTabs_radio_nv:
 					radio_nv.setBackgroundResource(R.drawable.nv_1);
 					sex = "2";
 					radio_nan.setBackgroundResource(R.drawable.nan);
-					//baocunButton.setBackgroundColor(0xff09850c);
-					//baocunButton.setTextColor(0xffffffff);
+					baocunButton.setBackgroundColor(0xff09850c);
+					baocunButton.setTextColor(0xffffffff);
 					break;
 				}
 			}
