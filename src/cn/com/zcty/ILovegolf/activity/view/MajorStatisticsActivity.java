@@ -114,6 +114,7 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 				case 0:
 					Intent intent = new Intent(MajorStatisticsActivity.this,MajorStatisticsActivityScord.class);
 					intent.putExtra("JsonData", JsonData);
+					intent.putExtra("name", getIntent().getStringExtra("name"));
 					startActivity(intent);
 					break;
 				case 1:

@@ -10,12 +10,15 @@ import org.json.JSONObject;
 
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.CountCoolAdapter;
+import cn.com.zcty.ILovegolf.activity.adapter.SectionScoreAdapter;
 import cn.com.zcty.ILovegolf.activity.adapter.StatisticAdapter;
 import cn.com.zcty.ILovegolf.activity.view.StatisticsAvtivity.MyFragmentPagerAdapter;
 import cn.com.zcty.ILovegolf.activity.view.StatisticsAvtivity.MyTask;
 import cn.com.zcty.ILovegolf.activity.view.fragment.StaticsFragmentOne;
 import cn.com.zcty.ILovegolf.activity.view.fragment.StaticsFragmentTwo;
 import cn.com.zcty.ILovegolf.model.MajorStatisticsModel;
+import cn.com.zcty.ILovegolf.model.SectionScore;
+import cn.com.zcty.ILovegolf.tools.ScrollViewWithListView;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
@@ -53,9 +56,7 @@ public class MajorStatisticsActivityScord extends FragmentActivity{
 	private RadioButton radioButton_hou;
 	private TextView golfnameTextView;
 	private GridView gridView;
-	private ListView countListView;
-	private ListView qiudongListView;
-	private ListView qiudongTypeListView;
+	private ScrollViewWithListView countListView;
 	private ArrayList<String> scoregrid = new ArrayList<String>();
 	private ArrayList<Fragment> arrayFragment = new ArrayList<Fragment>();
 	private ArrayList<String> parArrayList = new ArrayList<String>();
@@ -68,6 +69,7 @@ public class MajorStatisticsActivityScord extends FragmentActivity{
 	private ArrayList<String> qiuDongResult = new ArrayList<String>();
 	private ArrayList<String> qiuType = new ArrayList<String>();
 	private ArrayList<String> qiuTypeResult = new ArrayList<String>();
+	private SectionScore sectionScore = new SectionScore();
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -81,14 +83,11 @@ public class MajorStatisticsActivityScord extends FragmentActivity{
 		super.onCreate(savedInstanceState);
 		int a = this.getWindowManager().getDefaultDisplay().getRotation();
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity_statistics);
-		Log.i("zhouhe", a+"");
+		setContentView(R.layout.activity_majorstatistics);
 		initView();
 		setListener();	
 		new JsonTask().start();
-		countListView.setVisibility(View.GONE);
-		qiudongListView.setVisibility(View.GONE);
-		qiudongTypeListView.setVisibility(View.GONE);
+		
 	}
 	@Override
 	protected void onStart() {
@@ -124,9 +123,8 @@ public void onConfigurationChanged(Configuration newConfig) {
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日");
 		String date = simpleDateFormat.format(new Date());
 		dateText.setText(date);
-		countListView.setAdapter(new CountCoolAdapter(this, countCool, countCoolResult));
-		qiudongListView.setAdapter(new CountCoolAdapter(this, qiuDong, qiuDongResult));
-		qiudongTypeListView.setAdapter(new CountCoolAdapter(this, qiuType, qiuTypeResult));
+		countListView.setAdapter(new SectionScoreAdapter(this, sectionScore));
+		
 	}
 
 	private void setListener() {
@@ -214,12 +212,10 @@ public void onConfigurationChanged(Configuration newConfig) {
 		gridView.setSelector(new ColorDrawable(Color.TRANSPARENT));
 		dateText = (TextView) findViewById(R.id.golf_date);
 		golfnameTextView = (TextView) findViewById(R.id.golf_name);
-		SharedPreferences ss = getSharedPreferences("name", MODE_PRIVATE);
-		golfnameTextView.setText(ss.getString("name", "name"));
+		golfnameTextView.setText(getIntent().getStringExtra("name"));
 		
-		countListView = (ListView) findViewById(R.id.count);
-		qiudongListView = (ListView) findViewById(R.id.qiudong);
-		qiudongTypeListView = (ListView) findViewById(R.id.qiutype);
+		countListView = (ScrollViewWithListView) findViewById(R.id.count);
+		
 	}
 	class MyFragmentPagerAdapter  extends FragmentPagerAdapter{
 
@@ -247,6 +243,7 @@ public void onConfigurationChanged(Configuration newConfig) {
 		public void getData(){
 			Intent intent = getIntent();
 			String jsonData = intent.getStringExtra("JsonData");
+			Log.i("Major", jsonData);
 			try {
 				JSONObject jsonObject = new JSONObject(jsonData);
 				JSONObject jsonObjects = new JSONObject(jsonObject.getString("item_01"));
@@ -258,8 +255,10 @@ public void onConfigurationChanged(Configuration newConfig) {
 				scoregrid.add("推杆");
 				scoresArrayList.add(jsonObjects.getString("penalties"));
 				scoregrid.add("罚杆");
-				
-				
+				sectionScore.setFront_6_score(jsonObjects.getString("front_6_score"));
+				sectionScore.setMiddle_6_score(jsonObjects.getString("middle_6_score"));
+				sectionScore.setLast_6_score(jsonObjects.getString("last_6_score"));
+				Log.i("sectionscore",jsonObjects.getString("last_6_score"));
 				
 				JSONObject jsonObject2 = new JSONObject(jsonObject.getString("scorecards"));
 				JSONArray jsonArray2 = jsonObject2.getJSONArray("par");
