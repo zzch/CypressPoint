@@ -52,8 +52,11 @@ public class MajorScoreAverageAdapter extends BaseAdapter{
 		}else{
 			hold = (Hold) convertView.getTag();
 		}
+		if(statisticsModels.get(position).equals("null")){
+			hold.parScoreTextView.setText("一");
+		}else{		
 		hold.parScoreTextView.setText(statisticsModels.get(position));
-	
+		}
 		hold.parTextView.setText(name[position]);
 	
 		return convertView;

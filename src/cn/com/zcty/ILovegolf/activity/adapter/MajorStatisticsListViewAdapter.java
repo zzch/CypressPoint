@@ -58,20 +58,23 @@ public class MajorStatisticsListViewAdapter extends BaseAdapter{
 			holder.pick06 = (TextView) convertView.findViewById(R.id.majorstatic_5);
 			holder.pick07 = (TextView) convertView.findViewById(R.id.majorstatic_6);
 			holder.icon = (ImageView) convertView.findViewById(R.id.majorstatic_image_item);
+			holder.guide = (ImageView) convertView.findViewById(R.id.guide);
 			convertView.setTag(holder);
 		}else{
 			holder = (VoidHolder) convertView.getTag();
 		}
 		holder.pick01.setText(statisticsModels.get(position).getPlace1());
-		holder.pick02.setText(statisticsModels.get(position).getPlace2());
-		holder.pick03.setText(statisticsModels.get(position).getPlace3());
-		holder.pick04.setText(statisticsModels.get(position).getPlace4());
-		holder.pick05.setText(statisticsModels.get(position).getPlace5());
-		holder.pick06.setText(statisticsModels.get(position).getPlace6());
-		holder.pick07.setText(statisticsModels.get(position).getPlace7());
+		if(statisticsModels.get(position).getPlace2().equals("null")){
+			holder.guide.setVisibility(View.GONE);
+		}
+		holder.pick02.setText(panduan(statisticsModels.get(position).getPlace2()));
+		holder.pick03.setText(panduan(statisticsModels.get(position).getPlace3()));
+		holder.pick04.setText(panduan(statisticsModels.get(position).getPlace4()));
+		holder.pick05.setText(panduan(statisticsModels.get(position).getPlace5()));
+		holder.pick06.setText(panduan(statisticsModels.get(position).getPlace6()));
+		holder.pick07.setText(panduan(statisticsModels.get(position).getPlace7()));
 		holder.icon.setImageResource(image[position]);
 		
-		Log.i("tiancaishiwo", statisticsModels.get(position).getPlace1());
 
 		return convertView;
 	}
@@ -84,5 +87,13 @@ public class MajorStatisticsListViewAdapter extends BaseAdapter{
 		TextView pick06;
 		TextView pick07;
 		ImageView icon;
+		ImageView guide;
+	}
+	public String panduan(String p){
+		if(p.equals("null")){
+			p = "一";
+		}
+		return p;
+		
 	}
 }

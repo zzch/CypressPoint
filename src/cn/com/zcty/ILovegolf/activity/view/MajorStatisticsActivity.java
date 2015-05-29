@@ -7,6 +7,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -21,18 +22,24 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.MajorStatisticsListViewAdapter;
+import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.model.MajorStatisticsModel;
 import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 public class MajorStatisticsActivity extends Activity implements OnClickListener{
 	private Button  backButton;
+	private LinearLayout linear;
 	private ListView informationListView;
 	private TextView distance1TextView;
 	private TextView distance2TextView;
@@ -45,22 +52,35 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 	private RelativeLayout r1;
 	private RelativeLayout rrs;
 	private RelativeLayout statistic_layout;
+	private ImageView guide;
 	private ArrayList<String> distance = new ArrayList<String>();
 	private String JsonData;
 	private ArrayList<String> name = new ArrayList<String>();
+	private ProgressDialog progressDialog;
 
 	private MajorStatisticsListViewAdapter adapter;
 	private ArrayList<MajorStatisticsModel> statisticsModels = new ArrayList<MajorStatisticsModel>();
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
+				if(msg.obj.equals("404")||msg.obj.equals("500")){
+					Toast.makeText(MajorStatisticsActivity.this, "网络错误，请稍后再试", Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("403")){
+					Toast.makeText(MajorStatisticsActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+					FileUtil.delFile();
+					Intent intent = new Intent(MajorStatisticsActivity.this,ShouYeActivity.class);
+					startActivity(intent);
+					finish();
+				}else{
+				hideProgressDialog();
+				linear.setVisibility(View.VISIBLE);
 				getData();
 				setListViewHeightBasedOnChildren(informationListView);
 				if(statisticsModels.get(0).getPlace3().equals("")){
 					rrs.setVisibility(View.GONE);
 				}else{
 					rrs.setVisibility(View.VISIBLE);
-				}
+				}}
 			}
 		};
 	};
@@ -71,10 +91,13 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 		setContentView(R.layout.activity_majorstatic);
 		initView();
 		setListeners();
+		linear.setVisibility(View.INVISIBLE);
+		showProgressDialog("提示", "正在加载", this);
 		new Statistics().start();
 	}
 
 	private void initView() {
+		linear = (LinearLayout) findViewById(R.id.linear);
 		rrs = (RelativeLayout) findViewById(R.id.rrs1);
 		backButton = (Button) findViewById(R.id.major_scorecard_back);
 		informationListView = (ListView) findViewById(R.id.major_count);
@@ -87,6 +110,8 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 		name3TextView = (TextView) findViewById(R.id.static_name_3);
 		name4TextView = (TextView) findViewById(R.id.static_name_4);
 		r1 = (RelativeLayout) findViewById(R.id.major_qiugan_re);
+		guide = (ImageView) findViewById(R.id.gd);
+		guide.setVisibility(View.GONE);
 		statistic_layout = (RelativeLayout) findViewById(R.id.statistic_layout);
 		//statistic_layout.getBackground().setAlpha(80);
 		for(int i=0;i<4;i++){
@@ -103,6 +128,7 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 				/*Intent intent10 = new Intent(MajorStatisticsActivity.this,QiuGanActivity.class);
 				intent10.putExtra("JsonData", JsonData);
 				startActivity(intent10);*/
+				
 			}
 		});
 		informationListView.setOnItemClickListener(new OnItemClickListener() {
@@ -110,6 +136,7 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
+				if(!statisticsModels.get(0).getPlace2().equals("null")){
 			switch (position) {
 				case 0:
 					Intent intent = new Intent(MajorStatisticsActivity.this,MajorStatisticsActivityScord.class);
@@ -160,6 +187,7 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 				case 9:
 					
 					break;
+				}	
 				}
 			}
 		});
@@ -175,7 +203,11 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 		name4TextView.setText(name.get(3));
 		adapter = new MajorStatisticsListViewAdapter(this, statisticsModels);
 		informationListView.setAdapter(adapter);
-		
+		if(!statisticsModels.get(0).getPlace2().equals("null")){
+			guide.setVisibility(View.VISIBLE);
+			}else{
+				guide.setVisibility(View.GONE);
+			}
 		
 	}
 	@Override
@@ -309,6 +341,7 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 				}
 				Message msg = handler.obtainMessage();
 				msg.what = 1;
+				msg.obj = JsonData;
 				handler.sendMessage(msg);
 			} catch (JSONException e) {
 				e.printStackTrace();
@@ -349,5 +382,26 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 		final float scale = context.getResources().getDisplayMetrics().density;
 		return (int ) (dp * scale + 0.5f);
 	}
+	/*
+     * 提示加载
+     */
+     public   void  showProgressDialog(String title,String message,Activity context){
+            if(progressDialog ==null){
+                   progressDialog = ProgressDialog.show( context, title, message,true,true );
 
+           } else if (progressDialog .isShowing()){
+                   progressDialog.setTitle(title);
+                   progressDialog.setMessage(message);
+           }
+            progressDialog.show();
+
+    }
+     /*
+     * 隐藏加载
+     */
+     public  void hideProgressDialog(){
+            if(progressDialog !=null &&progressDialog.isShowing()){
+                   progressDialog.dismiss();
+           }
+    }
 }
