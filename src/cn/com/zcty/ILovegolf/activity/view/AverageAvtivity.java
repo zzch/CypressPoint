@@ -34,8 +34,14 @@ public class AverageAvtivity extends Activity{
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
 				getData();
+				if(scrambles.equals("null")){
+					scrambles = "一";
+				}
+				if(scrambles_percentage.equals("null")){
+					scrambles_percentage = "一";
+				}
 				scramblesTextView.setText(scrambles);
-				percentageTextView.setText(scrambles_percentage);
+				percentageTextView.setText(scrambles_percentage);			
 				shujuTextView.setText("救平标准杆率 "+scrambles+"/18("+scrambles_percentage+")");
 			}
 		};

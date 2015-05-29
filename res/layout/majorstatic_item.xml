@@ -125,6 +125,7 @@
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/guide"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_alignBottom="@+id/linearLayout2"
