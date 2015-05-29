@@ -43,6 +43,7 @@ public class RankingActivity extends Activity{
 	private RelativeLayout layout_rank;
 	private ProgressDialog progressDialog;
 	private LinearLayout linear;
+	private RankingAdapter adapter;
 	private ArrayList<Ranking> rankings = new ArrayList<Ranking>();//adapter的数据
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
@@ -150,6 +151,7 @@ public class RankingActivity extends Activity{
 			
 			@Override
 			public void onRefresh() {
+				rankings.clear();
 				new Rankings().start();
 			}
 		});
@@ -177,7 +179,12 @@ public class RankingActivity extends Activity{
 	 * 数据的操作
 	 */
 	public void getData(){
-		rankListView.setAdapter(new RankingAdapter(this, rankings));	
+		if(rankListView.getAdapter()==null){
+			adapter = new RankingAdapter(this, rankings);
+			rankListView.setAdapter(adapter);	
+		}else{
+			adapter.notifyDataSetChanged();
+		}
 		if(!getIntent().getStringExtra("fangzhu").equals("true")){
 			invite_much.setVisibility(View.GONE);
 			layout_rank.setVisibility(View.GONE);
@@ -207,7 +214,7 @@ public class RankingActivity extends Activity{
 			getData();
 		}
 		public void getData(){
-			rankings.clear();
+			//rankings.clear();
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String token=sp.getString("token", "token");
 			Intent intent=getIntent();
