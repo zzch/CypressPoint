@@ -154,7 +154,7 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 					intent3.putExtra("JsonData", JsonData);
 					startActivity(intent3);
 					break;
-				case 3:
+			/*	case 3:
 					Intent intent4 = new Intent(MajorStatisticsActivity.this,SandpickActivity.class);
 					intent4.putExtra("JsonData", JsonData);
 					startActivity(intent4);
@@ -186,7 +186,7 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 					break;
 				case 9:
 					
-					break;
+					break;*/
 				}	
 				}
 			}

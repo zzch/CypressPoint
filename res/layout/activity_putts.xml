@@ -114,7 +114,7 @@
                             android:layout_height="20dp"
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="35dp"
-                            android:src="@drawable/help" />
+                            android:src="@drawable/help_bai" />
                         </LinearLayout>
                     </RelativeLayout>
                     
@@ -164,7 +164,7 @@
                             android:layout_height="20dp"
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="35dp"
-                            android:src="@drawable/help" />
+                            android:src="@drawable/help_bai" />
                         
                         </LinearLayout>
                     </RelativeLayout>
@@ -217,7 +217,7 @@
                             android:layout_height="20dp"
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="35dp"
-                            android:src="@drawable/help" />
+                            android:src="@drawable/help_bai" />
                         </LinearLayout>
                     </RelativeLayout>
 
@@ -257,13 +257,27 @@
                         android:layout_marginLeft="270dp"
                         android:layout_marginTop="13dp"
                         android:src="@drawable/help" />
+                    
+                    <LinearLayout 
+                        
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                         
+                        <RelativeLayout 
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_weight="1"
+                         android:layout_marginTop="50dp"
+                            >
 
                     <TextView
                         android:id="@+id/putts_average_qiudong"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="55dp"
-                        android:layout_marginTop="40dp"
+                        android:layout_centerHorizontal="true"
+                        
                         android:text="9.8"
                         android:textSize="20dp"
                         android:textStyle="bold"
@@ -273,20 +287,34 @@
                         android:id="@+id/putts_average_qiudong_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="45dp"
+                        android:layout_centerHorizontal="true"
                         android:textColor="@color/hei5"
                          android:textSize="@dimen/txsize_small_x" 
                         android:layout_below="@+id/putts_average_qiudong"
                         android:text="每球洞" />
                     
-                    
+                    </RelativeLayout>
 
+                           <View 
+                    android:layout_width="0.5dp"
+                    android:layout_height="50dp"
+                    android:background="@color/fengexian"
+                    android:layout_marginTop="50dp"
+                    
+                    />
+                          
+                        <RelativeLayout 
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                        
+                         android:layout_weight="1"
+                         android:layout_marginTop="50dp"
+                            >
                     <TextView
                         android:id="@+id/putts_average_girs"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="135dp"
-                        android:layout_marginTop="40dp"
+                        android:layout_centerHorizontal="true"
                         android:text="16.8"
                         android:textStyle="bold"
                         android:textSize="20dp" />
@@ -294,19 +322,33 @@
                         android:id="@+id/putts_average_girs_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="133dp"
+                        android:layout_centerHorizontal="true"
                         android:textColor="@color/hei5"
                          android:textSize="@dimen/txsize_small_x" 
                         android:layout_below="@+id/putts_average_girs"
                         android:text="每GIR" />
+                    </RelativeLayout>
                     
+                      <View 
+                    android:layout_width="0.5dp"
+                    android:layout_height="50dp"
+                    android:background="@color/fengexian"
+                    android:layout_marginTop="50dp"
+                    
+                    />
+                        <RelativeLayout 
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                        
+                         android:layout_weight="1"
+                         android:layout_marginTop="50dp"
+                            >
 
                     <TextView
                         android:id="@+id/putts_average_nongir"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="240dp"
-                        android:layout_marginTop="40dp"
+                        android:layout_centerHorizontal="true"
                         android:text="19.8"
                         android:textStyle="bold"
                         android:textSize="20dp" />
@@ -318,11 +360,13 @@
                         android:id="@+id/putts_average_nongir_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="230dp"
+                        android:layout_centerHorizontal="true"
                         android:textColor="@color/hei5"
                          android:textSize="@dimen/txsize_small_x" 
                         android:layout_below="@+id/putts_average_nongir"
                         android:text="non-GIR" />
+                    </RelativeLayout>
+                    </LinearLayout>
                 </RelativeLayout>
                 
                 <View 
@@ -418,7 +462,7 @@
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/imageView1"
+                       
                         android:layout_marginTop="40dp"
                         android:layout_weight="1"
                         android:gravity="center" >
@@ -427,7 +471,6 @@
                             android:id="@+id/putts_average_cishu"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            
                             android:layout_centerHorizontal="true"
                             android:text="17"
                            
@@ -458,7 +501,7 @@
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/imageView1"
+                    
                         android:layout_marginTop="40dp"
                         android:layout_weight="1"
                         
@@ -498,7 +541,6 @@
                       <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/imageView1"
                         android:layout_marginTop="40dp"
                        
                         android:layout_weight="1"
@@ -608,78 +650,154 @@
                         android:layout_marginLeft="150dp"
                         android:layout_marginTop="13dp"
                         android:src="@drawable/help" />
+                    
+                    
+                    <LinearLayout 
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                       
+                        <RelativeLayout 
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:layout_weight="1"
+                       android:gravity="center"
+                            >
 
                     <TextView
                         android:id="@+id/putts_average_cishu_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="40dp"
+                       android:layout_centerHorizontal="true"
                         android:text="17"
-                        android:textSize="20dp" />
+                        android:textColor="@color/hei2"
+                        android:textSize="@dimen/txsize_mid_xx"
+                        android:textStyle="bold" />
+                    
+                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/putts_average_cishu_2"
+                         android:textColor="@color/hei5"
+                         android:textSize="@dimen/txsize_small_x"
+                        android:text="尝试次数" />
+                     
+                     </RelativeLayout>
+                     
+                          <View 
+                        android:layout_width="0.5dp"
+                        android:layout_height="50dp"
+                        android:background="@color/fengexian"
+                         android:layout_marginTop="40dp"
+                        />
+                     
+                         <RelativeLayout 
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                            >
 
                     <TextView
                         android:id="@+id/putts_average_gancount_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="80dp"
-                        android:layout_marginTop="40dp"
+                        android:layout_centerHorizontal="true"
                         android:text="1.2"
-                        android:textSize="20dp" />
+                        android:textColor="@color/hei2"
+                        android:textSize="@dimen/txsize_mid_xx"
+                        android:textStyle="bold" />
+                    
+                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/putts_average_gancount_2"
+                         android:textColor="@color/hei5"
+                         android:textSize="@dimen/txsize_small_x"
+                        android:text="平均杆数" />
 
-                    <TextView
+                   
+                    </RelativeLayout>
+                    
+                           <View 
+                        android:layout_width="0.5dp"
+                        android:layout_height="50dp"
+                        android:background="@color/fengexian"
+                         android:layout_marginTop="40dp"
+                        />
+                    
+                          <RelativeLayout 
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                            >
+                    
+                          <TextView
                         android:id="@+id/putts_average_fist_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="150dp"
-                        android:layout_marginTop="40dp"
+                        android:layout_centerHorizontal="true"
                         android:text="82%"
-                        android:textSize="20dp" />
+                        android:textColor="@color/hei2"
+                        android:textSize="@dimen/txsize_mid_xx"
+                        android:textStyle="bold" />
+                          
+                          
+                            <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/putts_average_fist_2"
+                         android:textColor="@color/hei5"
+                         android:textSize="@dimen/txsize_small_x"
+                        android:text="一杆推进%" />
+                            
+                         </RelativeLayout>
+                            
+                           <View 
+                        android:layout_width="0.5dp"
+                        android:layout_height="50dp"
+                        android:background="@color/fengexian"
+                         android:layout_marginTop="40dp"
+                        />
+                       <RelativeLayout 
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                            >
+                          
 
                     <TextView
                         android:id="@+id/putts_average_shengyu_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="240dp"
-                        android:layout_marginTop="40dp"
+                        android:layout_centerHorizontal="true"
                         android:text="0.12"
-                        android:textSize="20dp" />
+                        android:textColor="@color/hei2"
+                        android:textSize="@dimen/txsize_mid_xx"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="65dp"
-                         android:textColor="@color/hei5"
-                         android:textSize="@dimen/txsize_small_x"
-                        android:text="尝试次数" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="80dp"
-                        android:layout_marginTop="65dp"
-                         android:textColor="@color/hei5"
-                         android:textSize="@dimen/txsize_small_x"
-                        android:text="平均杆数" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="150dp"
-                        android:layout_marginTop="65dp"
-                         android:textColor="@color/hei5"
-                         android:textSize="@dimen/txsize_small_x"
-                        android:text="一杆推进%" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="240dp"
-                        android:layout_marginTop="65dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/putts_average_shengyu_2"
                          android:textColor="@color/hei5"
                          android:textSize="@dimen/txsize_small_x"
                         android:text="第一推后剩余平均码数" />
+                    
+                    </RelativeLayout>
+                    
+                    </LinearLayout>
                 </RelativeLayout>
                 
                 
@@ -687,6 +805,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
                     android:background="@color/fengexian"
+                    
                     />
 
                 <RelativeLayout
@@ -694,6 +813,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
+                    android:visibility="gone"
                     android:layout_below="@+id/putts_relative_7" >
 
                   
@@ -802,6 +922,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
                     android:background="@color/fengexian"
+                     android:visibility="gone"
                     />
 
                 <RelativeLayout
@@ -809,6 +930,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
+                    android:visibility="gone"
                     android:layout_below="@+id/putts_relative_8" >
 
                
@@ -908,6 +1030,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
                     android:background="@color/fengexian"
+                     android:visibility="gone"
                     />
                 
                 <View 

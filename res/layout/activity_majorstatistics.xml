@@ -18,7 +18,7 @@
             android:gravity="center"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="@string/text_statistics"
+            android:text="总成绩"
             android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
 
@@ -418,20 +418,24 @@
               />
 			<RelativeLayout 
 			    android:layout_width="match_parent"
-			    android:layout_height="wrap_content"
+			    android:layout_height="120dp"
+			    android:background="@color/white"
 			    >
 			    <TextView 
 			        android:layout_marginLeft="20dp"
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
 			        android:text="分段成绩"
+			        android:textColor="#80ff961d"
+			        android:layout_marginTop="20dp"
+			        android:textSize="@dimen/txsize_small_xx"
 			        />
 			
             <cn.com.zcty.ILovegolf.tools.ScrollViewWithListView
                 android:id="@+id/count"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="50dp"
                 android:listSelector="@android:color/transparent"
                 android:background="@color/white"
                 android:dividerHeight="0.5dp"
@@ -439,7 +443,11 @@
             </cn.com.zcty.ILovegolf.tools.ScrollViewWithListView>
                 
 			</RelativeLayout>
-           
+           <View 
+              android:layout_width="match_parent"
+               android:layout_height="0.5dp"
+               android:background="@color/fengexian"
+              />
         
         </LinearLayout>
     </ScrollView>
