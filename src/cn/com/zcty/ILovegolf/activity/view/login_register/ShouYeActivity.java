@@ -194,6 +194,7 @@ public class ShouYeActivity extends Activity {
 			    editor.putString("phone", phone);
 			    editor.putString("isRegister", "true");
 			    editor.putString("isfangshi", "0");
+			    editor.putString("portrait", "null");
 			    Log.i("----uuid", ""+sp.getString("uuid", ""));
 			    editor.commit();
 				if(data!=null){
@@ -338,12 +339,15 @@ public class ShouYeActivity extends Activity {
 						JSONObject jsonObject=new JSONObject(data);						
 						
 						
-								Log.i("yunxing","zhouhe");
+								Log.i("jinai",data);
 								String uuid=jsonObject.getString("uuid");
 								String type=jsonObject.getString("type");
 								String nickname=jsonObject.getString("nickname");
 								String token_r=jsonObject.getString("token");	
 								String phone = jsonObject.getString("phone");
+								String portraits = jsonObject.getString("portrait");
+								JSONObject portraitJsonObject = new JSONObject(portraits);
+								String portrait = portraitJsonObject.getString("url");
 								//保存数据
 								SharedPreferences sharedpres=getSharedPreferences("register",Context.MODE_PRIVATE);
 								SharedPreferences.Editor editor = sharedpres.edit();
@@ -354,6 +358,7 @@ public class ShouYeActivity extends Activity {
 								editor.putString("isRegister", "true");
 								editor.putString("isfangshi", "1");
 							    editor.putString("phone", phone);
+							    editor.putString("portrait", portrait);
 								editor.commit();
 						 Message msgs = h.obtainMessage();
 						 msgs.what=1;

@@ -28,6 +28,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.activity.view.HomePageActivity;
 import cn.com.zcty.ILovegolf.tools.RegexMobile;
 import cn.com.zcty.ILovegolf.utils.APIService;
 /**
@@ -89,7 +90,7 @@ public class RegisterActivity extends Activity {
 						//fristdialog();
 					
 						Toast.makeText(RegisterActivity.this, "恭喜您，注册成功！", Toast.LENGTH_SHORT).show();
-						 Intent intent=new Intent(RegisterActivity.this,ShouYeActivity.class);
+						 Intent intent=new Intent(RegisterActivity.this,HomePageActivity.class);
 							startActivity(intent);
 							finish();
 					}
@@ -265,14 +266,15 @@ public class RegisterActivity extends Activity {
 	    		
 	    		err = "";
 	    		messg = "";
-				JSONObject jsonObject=new JSONObject(data);	
 				JSONObject obj = new JSONObject(data);
 				String uuid=obj.getString("uuid");
 				String type=obj.getString("type");
 				String nickname=obj.getString("nickname");
 				String token_r=obj.getString("token");
 				String phone = obj.getString("phone");
-				
+				/*String portraits = obj.getString("portrait");
+				JSONObject portraitJsonObject = new JSONObject(portraits);
+				String portrait = portraitJsonObject.getString("url");*/
 				//保存数据
 				SharedPreferences sharedpre=getSharedPreferences("register",Context.MODE_PRIVATE);
 				SharedPreferences.Editor editor = sharedpre.edit();
@@ -281,6 +283,9 @@ public class RegisterActivity extends Activity {
 				editor.putString("nickname", nickname);
 				editor.putString("phone", phone);
 				editor.putString("token", token_r);
+				editor.putString("portrait", "null");
+				editor.putString("isfangshi", "1");
+				editor.putString("isRegister", "true");
 				editor.commit();
 	    		}
 			} catch (JSONException e) {

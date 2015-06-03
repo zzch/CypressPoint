@@ -6,10 +6,21 @@ import java.util.HashMap;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONObject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
+import android.util.Log;
+
+import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 /**
  *@author coolszy
@@ -57,5 +68,32 @@ public class ParseXmlService
 			}
 		}
 		return hashMap;
+	}
+	public HashMap<String, String> parseJson() throws Exception
+	{
+		HashMap<String, String> hashMap = new HashMap<String, String>();
+		String path = "http://123.57.210.52/api/v1/versions/newest";
+		Log.i("versoncode", path);
+		String jsonData = HttpUtils.HttpClientGet(path);
+		Log.i("versoncode", jsonData);
+		JSONObject jsonObject = new JSONObject(jsonData);
+		
+		hashMap.put("version",jsonObject.getString("code"));
+		hashMap.put("name",jsonObject.getString("name"));
+		
+		String file = jsonObject.getString("file");
+		JSONObject fileJsonObject = new JSONObject(file);
+		hashMap.put("url",fileJsonObject.getString("url"));
+		return hashMap;
+	}
+	class Json extends Thread{
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			super.run();
+		}
+		public void getData(){
+			
+		}
 	}
 }

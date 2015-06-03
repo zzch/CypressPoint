@@ -75,9 +75,10 @@ public class UpdateManager
 		};
 	};
 
-	public UpdateManager(Context context)
+	public UpdateManager(Context context,HashMap<String, String> mHashMap)
 	{
 		this.mContext = context;
+		this.mHashMap = mHashMap;
 	}
 
 	/**
@@ -105,12 +106,12 @@ public class UpdateManager
 		// 获取当前软件版本
 		int versionCode = getVersionCode(mContext);
 		// 把version.xml放到网络上，然后获取文件信息
-		InputStream inStream = ParseXmlService.class.getClassLoader().getResourceAsStream("version.xml");
+		//InputStream inStream = ParseXmlService.class.getClassLoader().getResourceAsStream("version.xml");
 		// 解析XML文件。 由于XML文件比较小，因此使用DOM方式进行解析
 		ParseXmlService service = new ParseXmlService();
 		try
 		{
-			mHashMap = service.parseXml(inStream);
+			//mHashMap = service.parseJson();
 		} catch (Exception e)
 		{
 			e.printStackTrace();
