@@ -31,6 +31,7 @@ import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.view.HomePageActivity;
 import cn.com.zcty.ILovegolf.tools.RegexMobile;
 import cn.com.zcty.ILovegolf.utils.APIService;
+import cn.com.zcty.ILovegolf.utils.HttpUtils;
 /**
  * 注册类
  * @author deii
@@ -50,56 +51,87 @@ public class RegisterActivity extends Activity {
 	private int code;
 	 private String err;
      private String messg = "";
+     private String result;
+     private String message;
+     private String registerData;
+     private String yanzhengmsg;
+     private String yanzhengResut;
+     private String yanzhengJson;
 	Handler handler = new Handler(){
 
 		@Override
 		public void handleMessage(Message msg) {
 			switch(msg.what){
 			case 0:
-				 Toast.makeText(RegisterActivity.this, "用户名不能为空！", Toast.LENGTH_SHORT).show();
+				 Toast.makeText(RegisterActivity.this, "用户名不能为空！", Toast.LENGTH_LONG).show();
 				break;
 			case 1:
-				Toast.makeText(RegisterActivity.this, "用户名不合法！", Toast.LENGTH_SHORT).show();
+				Toast.makeText(RegisterActivity.this, "用户名不合法！", Toast.LENGTH_LONG).show();
 				break;
 			case 2:
-				 Toast.makeText(RegisterActivity.this, "密码不能为空！", Toast.LENGTH_SHORT).show();
+				 Toast.makeText(RegisterActivity.this, "密码不能为空！", Toast.LENGTH_LONG).show();
 				break;
 			case 3:
-				 Toast.makeText(RegisterActivity.this, "确认密码不能为空！", Toast.LENGTH_SHORT).show();
+				 Toast.makeText(RegisterActivity.this, "确认密码不能为空！", Toast.LENGTH_LONG).show();
 				break;
 			case 4:
 				
-				Toast.makeText(RegisterActivity.this, "验证码不能为空！", Toast.LENGTH_SHORT).show();
+				Toast.makeText(RegisterActivity.this, "验证码不能为空！", Toast.LENGTH_LONG).show();
 				
 				 break;
-			case 5:
-				if(msg.arg1==2){
-					Toast.makeText(RegisterActivity.this, "网络异常！", Toast.LENGTH_SHORT).show();
-				}
-				if(msg.arg1==3){
-					if(messg.equals("用户重复注册")){
-						Toast.makeText(RegisterActivity.this, "该用户已注册,请您60秒后重新注册！", Toast.LENGTH_SHORT).show();
-					  }
-					}
+			case 8:
+				Toast.makeText(RegisterActivity.this, message, Toast.LENGTH_LONG).show();
+
 			case 6:
-				if(msg.arg1==0){
-					Toast.makeText(RegisterActivity.this, "网络异常！", Toast.LENGTH_SHORT).show();
-				}
-				if(msg.arg1==1){
+				
+				if(msg.obj.equals("404")||msg.obj.equals("500")){
+					Toast.makeText(RegisterActivity.this, "网络异常！", Toast.LENGTH_LONG).show();
+				}else {
 						//弹出一个Dialog
 						//fristdialog();
-					
-						Toast.makeText(RegisterActivity.this, "恭喜您，注册成功！", Toast.LENGTH_SHORT).show();
-						 Intent intent=new Intent(RegisterActivity.this,HomePageActivity.class);
-							startActivity(intent);
-							finish();
+						if(result==null){
+							registerData = (String) msg.obj;
+							new MyTask_().start();
+						}else{
+							Toast.makeText(RegisterActivity.this, "恭喜您，注册成功！", Toast.LENGTH_LONG).show();
+							 Intent intent=new Intent(RegisterActivity.this,HomePageActivity.class);
+								startActivity(intent);
+								finish();
+						}
+						
 					}
 					
 				break;
 			case 7:
-				 Toast.makeText(RegisterActivity.this, "确认密码与密码不一致！", Toast.LENGTH_SHORT).show();
+				 Toast.makeText(RegisterActivity.this, "确认密码与密码不一致！", Toast.LENGTH_LONG).show();
+				break;
+			case 5:
+				if(msg.obj.equals("404")||msg.obj.equals("500")){
+					Toast.makeText(RegisterActivity.this, "网络异常！", Toast.LENGTH_LONG).show();
+				}else {
+						//弹出一个Dialog
+						//fristdialog();
+						if(yanzhengResut==null){
+							yanzhengJson = (String) msg.obj;
+							new RegisterTask_().start();
+						}else{
+							Toast.makeText(RegisterActivity.this, "获取验证码成功", Toast.LENGTH_LONG).show();
+							
+						}
+						
+					}
+				break;
+			case 9:
+				daojishi.cancel();
+				Toast.makeText(RegisterActivity.this, yanzhengmsg, Toast.LENGTH_LONG).show();
+				et_mobile_reg.setText("");
+				et_password_reg.setText("");
+				et_confirm_password.setText("");
+				et_yanzhengma_reg.setText("");
+				yanzhengma.setText("获取验证码");
 				break;
 			}
+			
 			
 		}
 		
@@ -141,7 +173,7 @@ public class RegisterActivity extends Activity {
 	 */
 	public void on_yanzhengma(View v){
 				//倒计时
-				daojishi();
+		     daojishi.start(); 
 			new	RegisterTask().start();
 	}
 	
@@ -154,45 +186,57 @@ public class RegisterActivity extends Activity {
 		}
 		
 		public void getData(){
-			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
-			String token=sp.getString("token", "token");
+			
 			String phone = et_mobile_reg.getText().toString().trim();
 			String path=APIService.YANZHENGMA+"phone="+phone;
 			Log.i("path======", "----"+path);
-			String JsonData = HttpClientGet(path);
-			Log.i("JsonData======", "----"+JsonData);
-			Message msg = handler.obtainMessage();
-	    	try {
-	    		if(code==404||code>=500){
-	    			//弹出框提醒 网络异常
-	    			
-	    			isBoolean = "2";
-					msg.arg1 = 2;
-	    		}else{
-	    			msg.arg1 = 3;
-		    		isBoolean = "3";
-		    		
-		    		err = "";
-		    		messg = "";
-		    		JSONObject jsonObject=new JSONObject(JsonData);
-		    		Log.i("jsondata", "------------"+JsonData);
-					//JSONObject jsonObject=new JSONObject(data);						
-					 err = jsonObject.getString("error_code");
-					 messg = jsonObject.getString("message");
-	    			//json解析
-	    		}
+			String jsonData = HttpUtils.HttpClientGet(path);
+			Log.i("JsonData======", "----"+jsonData);
+			try {
+				JSONObject jsonObject = new JSONObject(jsonData);
+				yanzhengResut = jsonObject.getString("result");
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	    	
+	    	Message msg = handler.obtainMessage();
+	    	msg.obj = jsonData;
 	    	msg.what = 5;			
     		handler.sendMessage(msg);
 		}
 		
 		
 	}
-	
+	/**
+	 * 验证异常
+	 * @author yubo
+	 *
+	 */
+	class RegisterTask_ extends Thread {
+		
+		public void run(){
+			getData();
+		}
+		
+		public void getData(){
+			
+			
+			try {
+				JSONObject jsonObject = new JSONObject(yanzhengJson);
+				yanzhengmsg = jsonObject.getString("message");
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	    	
+	    	Message msg = handler.obtainMessage();
+	    	msg.what = 9;			
+    		handler.sendMessage(msg);
+		}
+		
+		
+	}
 	//点击注册按钮
     public void on_but_zhuce(View v){
     	
@@ -237,9 +281,7 @@ public class RegisterActivity extends Activity {
        }
     
     class MyTask extends Thread{
-    	public MyTask(){
-    		
-    	}
+    
     	public void run(){
     		getregister();	
     	}
@@ -252,29 +294,19 @@ public class RegisterActivity extends Activity {
 			String confirm_password = et_confirm_password.getText().toString().trim();
 			String y_yanzhengma = et_yanzhengma_reg.getText().toString().trim();
 			String url=APIService.USERREGISTER+"phone="+m_mobile+"&password="+p_password+"&password_confirmation="+confirm_password+"&verification_code="+y_yanzhengma;
-			String data=HttpClientPost(url);
-			Log.i("data=====", "------"+data);
-			Message msg = handler.obtainMessage();
+			String data=HttpUtils.HttpClientPost(url);
+			Log.i("resgisterss", "------"+data);
+			Log.i("resgisterss", "------"+url);
 			try {
-				if(code==404||code>=500){
-	    			//弹出框提醒 网络异常
-				isBoolean = "0";
-				msg.arg1 = 0;
-	    		}else{
-	    		msg.arg1 = 1;
-	    		isBoolean = "1";
-	    		
-	    		err = "";
-	    		messg = "";
+				
 				JSONObject obj = new JSONObject(data);
+				result = obj.getString("uuid");
 				String uuid=obj.getString("uuid");
 				String type=obj.getString("type");
 				String nickname=obj.getString("nickname");
 				String token_r=obj.getString("token");
 				String phone = obj.getString("phone");
-				/*String portraits = obj.getString("portrait");
-				JSONObject portraitJsonObject = new JSONObject(portraits);
-				String portrait = portraitJsonObject.getString("url");*/
+				
 				//保存数据
 				SharedPreferences sharedpre=getSharedPreferences("register",Context.MODE_PRIVATE);
 				SharedPreferences.Editor editor = sharedpre.edit();
@@ -287,29 +319,48 @@ public class RegisterActivity extends Activity {
 				editor.putString("isfangshi", "1");
 				editor.putString("isRegister", "true");
 				editor.commit();
-	    		}
+	    		
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
 			
-			
-			msg.what = 6;			
+			Message msg = handler.obtainMessage();
+			msg.what = 6;	
+			msg.obj = data;
     		handler.sendMessage(msg);
     	}
     }
     
     /**
-   	 * 点击获取验证码时，倒计时
-   	 */
-   	public void daojishi(){
-   		//判断获取验证码是否被点击
-   		boolean isChecked=false;
-   		if(isChecked){
-   			//未点击显示
-   			yanzhengma.setText("获取验证码");
-   		}else{
+     * 如果注册异常
+     */
+    class MyTask_ extends Thread{
+    
+    	public void run(){
+    		getregister();	
+    	}
+    	
+    	public void getregister(){
+    		
+			
+			
+		try {
+			JSONObject obj = new JSONObject(registerData);
+			message = obj.getString("message");
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+			Message msg = handler.obtainMessage();
+			msg.what = 8;
+			handler.sendMessage(msg);
+	    	
+    	}
+    }
+    
+    
+   		
    			//倒计时  点击后
-   			new CountDownTimer(60*1000, 1000){
+   		CountDownTimer	daojishi =  new CountDownTimer(60*1000, 1000){
 
    				//计时结束
    				@Override
@@ -324,9 +375,9 @@ public class RegisterActivity extends Activity {
    					yanzhengma.setText(""+millisUntilFinished/1000+"");
    				}
    				
-   			}.start();
-		   }
-		}
+   			};
+		   
+		
     
 
 	  public String HttpClientGet(String url)
