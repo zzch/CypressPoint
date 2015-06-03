@@ -5,7 +5,8 @@
     android:orientation="vertical" >
     <RelativeLayout 
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="90dp"
+        android:background="@color/white"
         >
         <TextView 
             android:id="@+id/qiugan_cool"
@@ -20,89 +21,137 @@
             android:id="@+id/qiugan_jiqiu_cishu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
+            android:layout_marginLeft="65dp"
             android:text="击球20次"
             android:layout_marginTop="10dp"
+            android:textSize="@dimen/txsize_small_s"
             />
         <TextView 
             android:id="@+id/qiugan_jiqiu_distance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="150dp"
+            android:layout_centerHorizontal="true"
             android:text="平均距离300"
             android:layout_marginTop="10dp"
+            android:textSize="@dimen/txsize_small_s"
             />
         <TextView 
             android:id="@+id/qiugan_jiqiu_min"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
-            android:layout_centerVertical="true"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="30dp"
             android:text="160"
-            android:textSize="20dp"
-            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textSize="@dimen/txsize_small_xx"
+            android:textStyle="bold"
             />
 		<TextView 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="73dp"
+            android:layout_marginLeft="70dp"
             android:text="min"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="55dp"
+            android:textSize="@dimen/txsize_small_s"
             />
+		
+		
+
         <RelativeLayout
-            android:layout_width="100dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="23dp"
+            android:layout_width="175dp"
+            android:layout_height="70dp"
+          android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
             android:layout_toRightOf="@+id/qiugan_jiqiu_min" >
 
             <TextView 
             android:id="@+id/qiugan_jiqiu_ci"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
             android:text="2次"
+            android:layout_marginTop="18dp"
+            android:textSize="@dimen/txsize_small_ss"
                         />
-            <TextView 
-            android:id="@+id/qiugan_jiqiu_average"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="300"
-                        />
+            
+           <FrameLayout 
+               android:layout_height="wrap_content"
+               android:layout_width="wrap_content"
+               android:layout_centerVertical="true"
+               android:layout_centerHorizontal="true"
+               >
+		    <View 
+		        android:layout_height="5dp"
+               android:layout_width="175dp"
+               android:background="#d4d4d4"
+              android:layout_marginTop="10dp"
+		        />
+
+            <TextView
+                android:id="@+id/qiugan_jiqiu_average"
+                android:layout_width="55dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="60dp"
+                android:background="@color/hei2"
+                android:text="300"
+                android:gravity="center"
+                android:textColor="@color/chengse"
+                android:textSize="20dp" />
+            
+           </FrameLayout>
+        
+  
             <TextView 
             android:id="@+id/qiugan_jiqiu_ci_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
             android:text="18次"
+            android:layout_marginTop="18dp"
+            android:textSize="@dimen/txsize_small_ss"
                         />
             <TextView 
+            android:id="@+id/pingjun_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="50dp"
             android:layout_centerHorizontal="true"
             android:text="平均"
+            android:textSize="@dimen/txsize_small_s"
                         />
             
         </RelativeLayout>
+        
+       
         <TextView 
             android:id="@+id/qiugan_jiqiu_max"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="230dp"
-            android:layout_centerVertical="true"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30dp"
             android:text="160"
-            android:textSize="20dp"
-            android:layout_marginTop="10dp"
+            android:textSize="@dimen/txsize_small_xx"
+            android:gravity="center"
+            android:layout_marginRight="20dp"
+            android:textStyle="bold"
             />
         <TextView 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="240dp"
+           android:layout_alignParentRight="true"
             android:text="max"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="55dp"
+            android:layout_marginRight="25dp"
+            android:textSize="@dimen/txsize_small_s"
             />
     </RelativeLayout>
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/fengexian"
+        />
 
 </LinearLayout>

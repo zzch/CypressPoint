@@ -6,6 +6,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,7 +16,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.ListView;
+import android.widget.GridView;
 import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.MajorScoreAverageAdapter;
@@ -24,7 +25,7 @@ public class GreenActivity extends Activity{
 	private ArrayList<String> statisticsModels = new ArrayList<String>();
 	private ArrayList<String> counts = new ArrayList<String>();
 	private ArrayList<String> counts_1 = new ArrayList<String>();
-	private ListView listView;
+	private GridView listView;
 	private TextView count1;
 	private TextView count2;
 	private TextView count3;
@@ -61,7 +62,7 @@ public class GreenActivity extends Activity{
 	private TextView count16_2;
 	private TextView count17_2;
 	private TextView count18_2;
-	private Button fanhuiButton;
+	private Button fanhuiBut;
 	private TextView countTextView;
 	private String count;
 	private String count_2;
@@ -89,7 +90,7 @@ public class GreenActivity extends Activity{
 		new Green().start();
 	}
 	private void setListeners() {
-		fanhuiButton.setOnClickListener(new OnClickListener() {
+		fanhuiBut.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
@@ -98,8 +99,8 @@ public class GreenActivity extends Activity{
 		});		
 	}
 	private void initView() {
-		fanhuiButton = (Button) findViewById(R.id.scorecard_green_back);
-		listView = (ListView) findViewById(R.id.major_green_qiudong);
+		fanhuiBut = (Button) findViewById(R.id.green_back);
+		listView = (GridView) findViewById(R.id.major_green_qiudong);
 		count1_2 = (TextView) findViewById(R.id.par_shuju_1_2);
 		count2_2 = (TextView) findViewById(R.id.par_shuju_2_2);
 		count3_2 = (TextView) findViewById(R.id.par_shuju_3_2);
@@ -191,6 +192,44 @@ public class GreenActivity extends Activity{
 		count_2TextView.setText(count_2);
 		mingzhongTextView.setText(mingzhong);
 		mingzhong2TextView.setText(mingzhong_2);
+		
+		bgdp(count1);
+		bgdp(count2);
+		bgdp(count3);
+		bgdp(count4);
+		bgdp(count5);
+		bgdp(count6);
+		bgdp(count7);
+		bgdp(count8);
+		bgdp(count9);
+		bgdp(count10);
+		bgdp(count11);
+		bgdp(count12);
+		bgdp(count13);
+		bgdp(count14);
+		bgdp(count15);
+		bgdp(count16);
+		bgdp(count17);
+		bgdp(count18);
+		
+		bgdp(count1_2);
+		bgdp(count2_2);
+		bgdp(count3_2);
+		bgdp(count4_2);
+		bgdp(count5_2);
+		bgdp(count6_2);
+		bgdp(count7_2);
+		bgdp(count8_2);
+		bgdp(count9_2);
+		bgdp(count10_2);
+		bgdp(count11_2);
+		bgdp(count12_2);
+		bgdp(count13_2);
+		bgdp(count14_2);
+		bgdp(count15_2);
+		bgdp(count16_2);
+		bgdp(count17_2);
+		bgdp(count18_2);
 	}
 	class Green extends Thread{
 		@Override
@@ -226,6 +265,12 @@ public class GreenActivity extends Activity{
 				e.printStackTrace();
 			}
 			
+		}
+	}
+	@SuppressLint("NewApi")
+	public void bgdp(TextView t){
+		if(t.getText().toString().equals("")){
+			t.setBackground(null);
 		}
 	}
 }

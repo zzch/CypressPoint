@@ -48,16 +48,40 @@ public class SandpickActivity extends Activity{
 				sand_saves_percentageTextView.setText(sand_saves_percentage);
 				
 				cishuTextView.setText(arrayDistances.get(0).getPer_round());
-				ganshuTextView.setText(arrayDistances.get(0).getShots_to_hole());
-				fisTextView.setText(arrayDistances.get(0).getDispersion());
+				if(arrayDistances.get(0).getShots_to_hole().equals("null")){
+					ganshuTextView.setText("一");
+				}else{
+					ganshuTextView.setText(arrayDistances.get(0).getShots_to_hole());
+				}
+				if(arrayDistances.get(0).getDispersion().equals("null")){
+					fisTextView.setText("一");
+				}else{
+					fisTextView.setText(arrayDistances.get(0).getDispersion());
+				}
 				
 				cishuTextView2.setText(arrayDistances.get(1).getPer_round());
-				ganshuTextView2.setText(arrayDistances.get(1).getShots_to_hole());
-				fisTextView2.setText(arrayDistances.get(1).getDispersion());
+				if(arrayDistances.get(1).getShots_to_hole().equals("null")){
+					ganshuTextView2.setText("一");
+				}else{
+					ganshuTextView2.setText(arrayDistances.get(1).getShots_to_hole());
+				}
+				if(arrayDistances.get(1).getDispersion().equals("null")){
+					fisTextView2.setText("一");
+				}else{
+					fisTextView2.setText(arrayDistances.get(1).getDispersion());
+				}
 				
 				cishuTextView3.setText(arrayDistances.get(2).getPer_round());
-				ganshuTextView3.setText(arrayDistances.get(2).getShots_to_hole());
-				fisTextView3.setText(arrayDistances.get(2).getDispersion());
+				if(arrayDistances.get(2).getShots_to_hole().equals("null")){
+					ganshuTextView3.setText("一");
+				}else{
+					ganshuTextView3.setText(arrayDistances.get(2).getShots_to_hole());
+				}
+				if(arrayDistances.get(2).getDispersion().equals("null")){
+					fisTextView3.setText("一");
+				}else{
+					fisTextView3.setText(arrayDistances.get(2).getDispersion());
+				}
 			}
 		};
 	};

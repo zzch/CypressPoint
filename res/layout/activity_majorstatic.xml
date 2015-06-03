@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg"
+    android:background="@color/white"
     android:id="@+id/linear"
     android:orientation="vertical" >
 
@@ -71,7 +71,8 @@
                  android:id="@+id/rrs1"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
-                  android:layout_marginTop="5dp"
+                  android:layout_marginTop="-40dp"
+                  android:background="@color/white"
                   android:visibility="gone"
                    >
 
@@ -99,7 +100,7 @@
                      
                         android:layout_toRightOf="@+id/static_image_1"
                         android:text="320"
-                        android:textColor="@color/hei2"
+                        android:textColor="@color/chengse"
                         android:textSize="30dp" />
                     <ImageView
                         android:id="@+id/static_image_1"
@@ -149,7 +150,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_toRightOf="@+id/static_image_2"
                         android:text="260"
-                        android:textColor="@color/hei2"
+                        android:textColor="@color/chengse"
                         android:textSize="30dp" />
 
                     <ImageView
@@ -170,7 +171,7 @@
                         android:layout_above="@+id/static_name_2"
                         android:layout_toRightOf="@+id/static_image_3"
                         android:text="160"
-                        android:textColor="@color/hei2"
+                        android:textColor="@color/chengse"
                         android:textSize="30dp" />
 
                     <TextView
@@ -202,7 +203,7 @@
                         android:layout_above="@+id/static_name_3"
                         android:layout_toRightOf="@+id/static_image_4"
                         android:text="145"
-                        android:textColor="@color/hei2"
+                        android:textColor="@color/chengse"
                         android:textSize="30dp" />
 
                     <TextView

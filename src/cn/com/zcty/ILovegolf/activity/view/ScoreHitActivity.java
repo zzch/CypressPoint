@@ -6,6 +6,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
@@ -23,7 +25,7 @@ import cn.com.zcty.ILovegolf.activity.adapter.MajorScoreAverageAdapter;
 
 public class ScoreHitActivity extends Activity{
 	private ArrayList<String> statisticsModels = new ArrayList<String>();
-	private ListView listView;
+	private GridView listView;
 	private TextView count1;
 	private TextView count2;
 	private TextView count3;
@@ -86,6 +88,9 @@ public class ScoreHitActivity extends Activity{
 	private String mingzhong;
 	private String mingzhong_2;
 	private String mingzhong_3;
+	private TextView hit_shuju;
+	private TextView hit_shuju_2;
+	private TextView hit_shuju_3;
 	private TextView countTextView;
 	private TextView mingzhongTextView;
 	private TextView count_2TextView;
@@ -123,7 +128,7 @@ public class ScoreHitActivity extends Activity{
 	}
 	private void initView() {
 		fanhuiButton = (Button) findViewById(R.id.scorecard_hit_back);
-		listView = (ListView) findViewById(R.id.major_green_qiudong);
+		listView = (GridView) findViewById(R.id.major_green_qiudong);
 		count1_3 = (TextView) findViewById(R.id.par_shuju_1_3);
 		count2_3 = (TextView) findViewById(R.id.par_shuju_2_3);
 		count3_3 = (TextView) findViewById(R.id.par_shuju_3_3);
@@ -179,8 +184,11 @@ public class ScoreHitActivity extends Activity{
 		count15 = (TextView) findViewById(R.id.par_shuju_15);
 		count16 = (TextView) findViewById(R.id.par_shuju_16);
 		count17 = (TextView) findViewById(R.id.par_shuju_17);
-		count18 = (TextView) findViewById(R.id.par_shuju_18);	
+		count18 = (TextView) findViewById(R.id.par_shuju_18);
 		
+		hit_shuju = (TextView) findViewById(R.id.hit_shuju);
+		hit_shuju_2 = (TextView) findViewById(R.id.hit_shuju_2);
+		hit_shuju_3 = (TextView) findViewById(R.id.hit_shuju_3);
 		countTextView = (TextView) findViewById(R.id.green_shuju_scrambles);
 		mingzhongTextView = (TextView) findViewById(R.id.green_shuju_percentage);
 		count_2TextView = (TextView) findViewById(R.id.green_shuju_scrambles_2);
@@ -251,12 +259,71 @@ public class ScoreHitActivity extends Activity{
 		count16_3.setText(counts_2.get(15));
 		count17_3.setText(counts_2.get(16));
 		count18_3.setText(counts_2.get(17));
+		
 		countTextView.setText(count);
 		count_2TextView.setText(count_2);
 		count_3TextView.setText(count_3);
 		mingzhongTextView.setText(mingzhong);
 		mingzhong2TextView.setText(mingzhong_2);
 		mingzhong3TextView.setText(mingzhong_3);
+		
+		
+		bgdp(count1);
+		bgdp(count2);
+		bgdp(count3);
+		bgdp(count4);
+		bgdp(count5);
+		bgdp(count6);
+		bgdp(count7);
+		bgdp(count8);
+		bgdp(count9);
+		bgdp(count10);
+		bgdp(count11);
+		bgdp(count12);
+		bgdp(count13);
+		bgdp(count14);
+		bgdp(count15);
+		bgdp(count16);
+		bgdp(count17);
+		bgdp(count18);
+		
+		bgdp(count1_2);
+		bgdp(count2_2);
+		bgdp(count3_2);
+		bgdp(count4_2);
+		bgdp(count5_2);
+		bgdp(count6_2);
+		bgdp(count7_2);
+		bgdp(count8_2);
+		bgdp(count9_2);
+		bgdp(count10_2);
+		bgdp(count11_2);
+		bgdp(count12_2);
+		bgdp(count13_2);
+		bgdp(count14_2);
+		bgdp(count15_2);
+		bgdp(count16_2);
+		bgdp(count17_2);
+		bgdp(count18_2);
+		
+		bgdp(count1_3);
+		bgdp(count2_3);
+		bgdp(count3_3);
+		bgdp(count4_3);
+		bgdp(count5_3);
+		bgdp(count6_3);
+		bgdp(count7_3);
+		bgdp(count8_3);
+		bgdp(count9_3);
+		bgdp(count10_3);
+		bgdp(count11_3);
+		bgdp(count12_3);
+		bgdp(count13_3);
+		bgdp(count14_3);
+		bgdp(count15_3);
+		bgdp(count16_3);
+		bgdp(count17_3);
+		bgdp(count18_3);
 	}
 	class ScoreHit extends Thread{
 		@Override
@@ -275,13 +342,17 @@ public class ScoreHitActivity extends Activity{
 				statisticsModels.add(jsonObject07.getString("drive_fairways_hit"));
 				statisticsModels.add(jsonObject07.getString("drive_left_roughs_hit"));	
 				statisticsModels.add(jsonObject07.getString("drive_right_roughs_hit"));	
-				Log.i("tiancai", jsonObject07.getString("drive_fairways_count"));
+				
 				count = jsonObject07.getString("drive_fairways_count");
+				Log.i("tiancai", jsonObject07.getString("drive_fairways_count"));
 				mingzhong = jsonObject07.getString("drive_fairways_hit");
 				count_2 = jsonObject07.getString("drive_left_roughs_count");
 				mingzhong_2 = jsonObject07.getString("drive_left_roughs_hit");
 				count_3 = jsonObject07.getString("drive_right_roughs_count");
 				mingzhong_3 = jsonObject07.getString("drive_right_roughs_hit");
+				hit_shuju.setText("命中"+count+"/18("+jsonObject07.getString("drive_fairways_hit")+")");
+				hit_shuju_2.setText("左侧"+count_2+"/18("+jsonObject07.getString("drive_left_roughs_hit")+")");
+				hit_shuju_3.setText("右侧"+count_3+"/18("+jsonObject07.getString("drive_right_roughs_hit")+")");
 				JSONArray jsarray = jsonObject07.getJSONArray("holes_of_drive_fairways");
 				for(int i=0;i<jsarray.length();i++){
 					counts.set(i, jsarray.getString(i));
@@ -301,6 +372,12 @@ public class ScoreHitActivity extends Activity{
 				e.printStackTrace();
 			}
 			
+		}
+	}
+	@SuppressLint("NewApi")
+	public void bgdp(TextView t){
+		if(t.getText().toString().equals("")){
+			t.setBackground(null);
 		}
 	}
 }

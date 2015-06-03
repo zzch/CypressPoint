@@ -15,6 +15,7 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
@@ -29,6 +30,7 @@ public class AverageAvtivity extends Activity{
 	private TextView percentageTextView;
 	private TextView shujuTextView;
 	private Button fanhuiButton;
+	private LinearLayout help_layout;
 	private String[] name = {"3杆洞","4杆洞","5杆洞"};
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
@@ -62,7 +64,19 @@ public class AverageAvtivity extends Activity{
 			public void onClick(View v) {
 				finish();
 			}
-		});		
+		});	
+		
+		help_layout.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(AverageAvtivity.this,HelpAverageActivity.class);
+				intent.putExtra("avg", "avg");
+				startActivity(intent);
+				
+			}
+		});
 	}
 	private void initView() {
 		qiudongListView = (GridView) findViewById(R.id.major_average_qiudong);
@@ -70,6 +84,8 @@ public class AverageAvtivity extends Activity{
 		percentageTextView = (TextView) findViewById(R.id.avaerage_shuju_percentage);
 		shujuTextView = (TextView) findViewById(R.id.avaerage_shuju);
 		fanhuiButton = (Button) findViewById(R.id.scorecard_average_back);
+		help_layout = (LinearLayout) findViewById(R.id.help_layout);
+		
 	}
 	public void getData(){
 		qiudongListView.setAdapter(new MajorScoreAverageAdapter(this, statisticsModels,name));

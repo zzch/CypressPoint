@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/daohang" >
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true" >
+
+            <Button
+                android:id="@+id/help_back"
+                android:layout_width="80dp"
+                android:layout_height="47dp"
+                android:layout_marginLeft="@dimen/title_button_left"
+                android:background="@null"
+                android:onClick="onclick"
+                android:text="@string/back"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txsize_small_xx" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="13dp"
+                android:src="@drawable/back_image" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/title_name"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="推杆"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_mid_x" />
+    </RelativeLayout>
+    
+    
+    <TextView 
+        android:id="@+id/text_avg_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="在这里告诉您每一个问号所代表的含义"
+        android:visibility="gone"
+        />
+    <TextView 
+        android:id="@+id/text_putt_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="平均/洞"
+        android:visibility="gone"
+        />
+    <TextView 
+        android:id="@+id/text_putt_2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="标准杆"
+        android:visibility="gone"
+        />
+    <TextView 
+        android:id="@+id/text_putt_3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="大于标准杆"
+        android:visibility="gone"
+        />
+    <TextView 
+        android:id="@+id/text_putt_4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="第一次推杆后"
+        android:visibility="gone"
+        />
+     <TextView 
+        android:id="@+id/text_putt_5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="推杆5"
+        android:visibility="gone"
+        />
+      <TextView 
+        android:id="@+id/text_putt_6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="推杆6"
+        android:visibility="gone"
+        />
+       <TextView 
+        android:id="@+id/text_putt_7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="推杆7"
+        android:visibility="gone"
+        />
+        <TextView 
+        android:id="@+id/text_putt_8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="推杆8"
+        android:visibility="gone"
+        />
+        <TextView 
+        android:id="@+id/text_putt_9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="推杆9"
+        android:visibility="gone"
+        />
+
+</LinearLayout>

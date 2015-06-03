@@ -400,7 +400,7 @@
             <GridView
                 android:id="@+id/gridView1"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/view_sss_b"
+                android:layout_height="125dp"
                 android:gravity="center"
                 android:background="@drawable/count_gridview_bg"
                 android:numColumns="2" >

@@ -11,13 +11,18 @@ import cn.com.zcty.ILovegolf.activity.adapter.ChipAdapter;
 import cn.com.zcty.ILovegolf.model.Chip;
 import cn.com.zcty.ILovegolf.model.Distance;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.Button;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -27,7 +32,7 @@ public class ChipActivity extends Activity{
 	private String up_and_downs_percentage;//成功率
 	private String chip_ins;
 	private String longest_chip_ins_length;
-	
+	private Button scorecard_back;
 	private TextView up_and_downs_countTextView;
 	private TextView shots_within_100TextView;
 	private TextView up_and_downs_percentageTextView;
@@ -59,6 +64,7 @@ public class ChipActivity extends Activity{
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_chip);
 		initView();
+		setLister();
 		new ChipPitTask().start();
 	}
 	private void initView() {
@@ -67,8 +73,20 @@ public class ChipActivity extends Activity{
 		up_and_downs_percentageTextView = (TextView) findViewById(R.id.chip_chenggonglv);
 		chip_insTextView = (TextView) findViewById(R.id.chip_chenggong_2);
 		longestTextView = (TextView) findViewById(R.id.chip_distance);
+		scorecard_back = (Button) findViewById(R.id.scorecard_back);
 		listView = (ListView) findViewById(R.id.listView1);
 	}
+	private void setLister(){
+		scorecard_back.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				finish();
+			}
+		});
+	}
+	
 	class ChipPitTask extends Thread{
 		@Override
 		public void run() {
@@ -109,4 +127,6 @@ public class ChipActivity extends Activity{
 			
 		}
 	}
+	
+	
 }

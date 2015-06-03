@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.model.Distance;
@@ -45,6 +46,7 @@ public class PuttsActivity extends Activity{
 	private TextView tuijinTextView4;
 	private TextView fisTextView4;
 	private Button fanhuiButton;
+	
 	private ArrayList<Distance> arrayDistances = new ArrayList<Distance>();
 
 	private Putts puts = new Putts();
@@ -128,6 +130,58 @@ public class PuttsActivity extends Activity{
 				finish();
 			}
 		});
+		
+	}
+	
+	public void onClick(View v){
+		Intent intent;
+		switch(v.getId()){
+		case R.id.help_putt_1:
+			intent = new Intent(PuttsActivity.this,HelpAverageActivity.class);
+			intent.putExtra("putt1", "putt1");
+			startActivity(intent);
+			break;
+		case R.id.help_putt_2:
+			intent = new Intent(PuttsActivity.this,HelpAverageActivity.class);
+			intent.putExtra("putt2", "putt2");
+			startActivity(intent);
+			break;
+		case R.id.help_putt_3:
+			intent = new Intent(PuttsActivity.this,HelpAverageActivity.class);
+			intent.putExtra("putt3", "putt3");
+			startActivity(intent);
+			break;
+		case R.id.help_putt_4:
+			intent = new Intent(PuttsActivity.this,HelpAverageActivity.class);
+			intent.putExtra("putt4", "putt4");
+			startActivity(intent);
+			break;
+		case R.id.help_putt_5:
+			intent = new Intent(PuttsActivity.this,HelpAverageActivity.class);
+			intent.putExtra("putt5", "putt5");
+			startActivity(intent);
+			break;
+		case R.id.help_putt_6:
+			intent = new Intent(PuttsActivity.this,HelpAverageActivity.class);
+			intent.putExtra("putt6", "putt6");
+			startActivity(intent);
+			break;
+		case R.id.help_putt_7:
+			intent = new Intent(PuttsActivity.this,HelpAverageActivity.class);
+			intent.putExtra("putt7", "putt7");
+			startActivity(intent);
+			break;
+		case R.id.help_putt_8:
+			intent = new Intent(PuttsActivity.this,HelpAverageActivity.class);
+			intent.putExtra("putt8", "putt8");
+			startActivity(intent);
+			break;
+		case R.id.help_putt_9:
+			intent = new Intent(PuttsActivity.this,HelpAverageActivity.class);
+			intent.putExtra("putt9", "putt9");
+			startActivity(intent);
+			break;
+		}
 	}
 	
 	class PuttsTask extends Thread{

@@ -47,7 +47,6 @@ public class QiuGanActivity extends Activity{
 		listView = (ListView) findViewById(R.id.listView1);
 		qiugan_layout = (RelativeLayout) findViewById(R.id.qiugan_layout);
 		fanhuiButton = (Button) findViewById(R.id.major_scorecard_back_er);
-		qiugan_layout.getBackground().setAlpha(80);
 		fanhuiButton.setOnClickListener(new OnClickListener() {
 			
 			@Override

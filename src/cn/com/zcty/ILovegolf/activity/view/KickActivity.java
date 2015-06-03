@@ -6,15 +6,18 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
@@ -27,9 +30,9 @@ public class KickActivity extends Activity{
 	private String mingzhong;
 	private TextView countTextView;
 	private TextView mingzhongTextView;
+	private TextView gree_shuju;
 	
-	
-	private ListView listView;
+	private GridView listView;
 	private TextView count1;
 	private TextView count2;
 	private TextView count3;
@@ -48,7 +51,7 @@ public class KickActivity extends Activity{
 	private TextView count16;
 	private TextView count17;
 	private TextView count18;
-	private String[] name = {"最远max","平均"};
+	private String[] name = {"最远max","平均","max/2"};
 	private Button fanhuiButton;
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
@@ -81,7 +84,7 @@ public class KickActivity extends Activity{
 
 	private void initView() {
 		fanhuiButton = (Button) findViewById(R.id.scorecard_green_back);
-		listView = (ListView) findViewById(R.id.major_green_qiudong);
+		listView = (GridView) findViewById(R.id.major_green_qiudong);
 		count1 = (TextView) findViewById(R.id.par_shuju_1);
 		count2 = (TextView) findViewById(R.id.par_shuju_2);
 		count3 = (TextView) findViewById(R.id.par_shuju_3);
@@ -100,6 +103,8 @@ public class KickActivity extends Activity{
 		count16 = (TextView) findViewById(R.id.par_shuju_16);
 		count17 = (TextView) findViewById(R.id.par_shuju_17);
 		count18 = (TextView) findViewById(R.id.par_shuju_18);
+		
+		gree_shuju = (TextView) findViewById(R.id.gree_shuju);
 		countTextView = (TextView) findViewById(R.id.green_shuju_scrambles);
 		mingzhongTextView = (TextView) findViewById(R.id.green_shuju_percentage);
 		for(int i=0;i<18;i++){
@@ -130,6 +135,24 @@ public class KickActivity extends Activity{
 		count18.setText(counts.get(17));
 		countTextView.setText(count);
 		mingzhongTextView.setText(mingzhong);
+		bgdp(count1);
+		bgdp(count2);
+		bgdp(count3);
+		bgdp(count4);
+		bgdp(count5);
+		bgdp(count6);
+		bgdp(count7);
+		bgdp(count8);
+		bgdp(count9);
+		bgdp(count10);
+		bgdp(count11);
+		bgdp(count12);
+		bgdp(count13);
+		bgdp(count14);
+		bgdp(count15);
+		bgdp(count16);
+		bgdp(count17);
+		bgdp(count18);
 	}
 	class Kick extends Thread{
 		@Override
@@ -145,9 +168,13 @@ public class KickActivity extends Activity{
 				jsonObject = new JSONObject(JsonData);
 				JSONObject jsonObject08 = new JSONObject(jsonObject.getString("item_08"));
 				statisticsModels.add(jsonObject08.getString("longest_drive_length"));
-				statisticsModels.add(jsonObject08.getString("average_drive_length"));	
+				statisticsModels.add(jsonObject08.getString("average_drive_length"));
+				statisticsModels.add(jsonObject08.getString("longest_2_drive_length"));
 				count = jsonObject08.getString("good_drives");
 				mingzhong = jsonObject08.getString("good_drives_percentage");
+				gree_shuju.setText("最佳球位("+count+"/18)");
+				//statisticsModels.add(mingzhong);
+				Log.i("count", count);
 				JSONArray jsarray = jsonObject08.getJSONArray("holes_of_good_drives");
 				for(int i=0;i<jsarray.length();i++){
 					counts.set(i, jsarray.getString(i));
@@ -160,6 +187,12 @@ public class KickActivity extends Activity{
 				e.printStackTrace();
 			}
 			
+		}
+	}
+	@SuppressLint("NewApi")
+	public void bgdp(TextView t){
+		if(t.getText().toString().equals("")){
+			t.setBackground(null);
 		}
 	}
 }

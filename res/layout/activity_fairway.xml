@@ -53,16 +53,11 @@
         <ListView
             android:id="@+id/major_fairway_qiudong"
             android:layout_width="150dp"
-            android:layout_height="300dp" >
+            android:layout_height="300dp" 
+            >
         </ListView>
 
-        <ImageView
-            android:id="@+id/major_fairway_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/e_card_yuan" />
+        
     </RelativeLayout>
 
     <ListView

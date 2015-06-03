@@ -125,9 +125,9 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 			
 			@Override
 			public void onClick(View v) {
-				/*Intent intent10 = new Intent(MajorStatisticsActivity.this,QiuGanActivity.class);
+			Intent intent10 = new Intent(MajorStatisticsActivity.this,QiuGanActivity.class);
 				intent10.putExtra("JsonData", JsonData);
-				startActivity(intent10);*/
+				startActivity(intent10);
 				
 			}
 		});
@@ -154,17 +154,17 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 					intent3.putExtra("JsonData", JsonData);
 					startActivity(intent3);
 					break;
-			/*	case 3:
+				case 3:
 					Intent intent4 = new Intent(MajorStatisticsActivity.this,SandpickActivity.class);
 					intent4.putExtra("JsonData", JsonData);
 					startActivity(intent4);
 					break;
-				case 4:
+						case 4:
 					Intent intent5 = new Intent(MajorStatisticsActivity.this,ChipActivity.class);
 					intent5.putExtra("JsonData", JsonData);
 					startActivity(intent5);
 					break;
-				case 5:
+					case 5:
 					Intent intent6 = new Intent(MajorStatisticsActivity.this,GreenActivity.class);
 					intent6.putExtra("JsonData", JsonData);
 					startActivity(intent6);
@@ -186,17 +186,33 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 					break;
 				case 9:
 					
-					break;*/
+					break;
 				}	
 				}
 			}
 		});
 	}
 	private void getData(){
-		distance1TextView.setText(distance.get(0));
-		distance2TextView.setText(distance.get(1));
-		distance3TextView.setText(distance.get(2));
-		distance4TextView.setText(distance.get(3));
+		if(distance.get(0).equals("null")){
+			distance1TextView.setText("一");
+		}else{
+			distance1TextView.setText(distance.get(0));
+		}
+		if(distance.get(1).equals("null")){
+			distance2TextView.setText("一");
+		}else{
+			distance2TextView.setText(distance.get(1));
+		}
+		if(distance.get(2).equals("null")){
+			distance3TextView.setText("一");
+		}else{
+			distance3TextView.setText(distance.get(2));
+		}
+		if(distance.get(3).equals("null")){
+			distance4TextView.setText("一");
+		}else{
+			distance4TextView.setText(distance.get(3));
+		}
 		name1TextView.setText(name.get(0));
 		name2TextView.setText(name.get(1));
 		name3TextView.setText(name.get(2));
@@ -239,6 +255,7 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 				JsonData = HttpUtils.HttpClientGet(path);
 				Log.i("majordata", JsonData);
 				JSONObject jsonObject = new JSONObject(JsonData);
+				
 				JSONObject jsonObjects = new JSONObject(jsonObject.getString("item_01"));
 				MajorStatisticsModel statistics = new MajorStatisticsModel();
 				statistics.setPlace1("总成绩");
@@ -271,33 +288,33 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 				statisticsModels.add(statistics03);
 				JSONObject jsonObject04 = new JSONObject(jsonObject.getString("item_04"));
 				MajorStatisticsModel statistics04 = new MajorStatisticsModel();
-				statistics04.setPlace1("沙坑");
+				statistics04.setPlace1("沙坑(40码)");
 				statistics04.setPlace2(jsonObject04.getString("sand_saves"));
-				statistics04.setPlace3("");
-				statistics04.setPlace4("");
-				statistics04.setPlace5("沙坑救球(40)");
-				statistics04.setPlace6("");
-				statistics04.setPlace7("");
+				statistics04.setPlace3(jsonObject04.getString("bunker_shots"));
+				statistics04.setPlace4(jsonObject04.getString("sand_saves_percentage"));
+				statistics04.setPlace5("沙坑救球");
+				statistics04.setPlace6("进入次数");
+				statistics04.setPlace7("成功率");
 				statisticsModels.add(statistics04);
 				JSONObject jsonObject05 = new JSONObject(jsonObject.getString("item_05"));
 				MajorStatisticsModel statistics05 = new MajorStatisticsModel();
 				statistics05.setPlace1("切杆");
 				statistics05.setPlace2(jsonObject05.getString("up_and_downs_count"));
-				statistics05.setPlace3("");
-				statistics05.setPlace4(jsonObject05.getString("chip_ins"));
+				statistics05.setPlace3(jsonObject05.getString("shots_within_100"));
+				statistics05.setPlace4(jsonObject05.getString("up_and_downs_percentage"));
 				statistics05.setPlace5("一切一推");
-				statistics05.setPlace6("");
-				statistics05.setPlace7("切杆进洞");
+				statistics05.setPlace6("次数");
+				statistics05.setPlace7("成功率");
 				statisticsModels.add(statistics05);
 				JSONObject jsonObject06 = new JSONObject(jsonObject.getString("item_06"));
 				MajorStatisticsModel statistics06 = new MajorStatisticsModel();
 				statistics06.setPlace1("攻果岭");
 				statistics06.setPlace2(jsonObject06.getString("gir_percentage"));
-				statistics06.setPlace3(jsonObject06.getString("non_gir_percentage"));
-				statistics06.setPlace4("");
+				statistics06.setPlace3("");
+				statistics06.setPlace4(jsonObject06.getString("non_gir_percentage"));
 				statistics06.setPlace5("命中");
-				statistics06.setPlace6("未命中");
-				statistics06.setPlace7("");
+				statistics06.setPlace6("");
+				statistics06.setPlace7("未命中");
 				statisticsModels.add(statistics06);
 				JSONObject jsonObject07 = new JSONObject(jsonObject.getString("item_07"));
 				MajorStatisticsModel statistics07 = new MajorStatisticsModel();
@@ -355,7 +372,7 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 		//获取listview的适配器
 		ListAdapter listAdapter = listView.getAdapter();
 		//item的高度
-		int itemHeight = 130;
+		int itemHeight = 136;
 
 
 		if (listAdapter == null) {

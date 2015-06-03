@@ -181,7 +181,7 @@
                     <RadioButton
                         android:id="@+id/mainTabs_radio_nan" 
                         android:layout_width="140dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="75dp"
                         android:background="@drawable/nan"
                         android:button="@null"
                         android:gravity="center"
@@ -195,7 +195,7 @@
                     <RadioButton
                         android:id="@+id/mainTabs_radio_nv"
                         android:layout_width="140dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="75dp"
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="@dimen/view_small_x"
                         android:background="@drawable/nv"

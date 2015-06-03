@@ -55,11 +55,11 @@ public class QiuDongAdapter extends BaseAdapter{
 			holder.countCoolResultTextView.setText("");
 		}else{
 			if(qiuDong.get(position).equals("3杆洞")){
-				holder.countCoolResultTextView.setText(qiuDongResult.get(position)+"个");
+				holder.countCoolResultTextView.setText(qiuDongResult.get(position)+"杆");
 			}else if(qiuDong.get(position).equals("4杆洞")){
-				holder.countCoolResultTextView.setText(qiuDongResult.get(position)+"个");
+				holder.countCoolResultTextView.setText(qiuDongResult.get(position)+"杆");
 			}else if(qiuDong.get(position).equals("5杆洞")){
-				holder.countCoolResultTextView.setText(qiuDongResult.get(position)+"个");
+				holder.countCoolResultTextView.setText(qiuDongResult.get(position)+"杆");
 			}
 			if(qiuDongResult.get(position).equals("null")){
 				holder.countCoolResultTextView.setText("一");

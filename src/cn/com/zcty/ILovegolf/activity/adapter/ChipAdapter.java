@@ -54,8 +54,8 @@ public class ChipAdapter extends BaseAdapter{
 		}
 		
 		holder.countTextView.setText(position+1+"");
-		holder.distanceTextView.setText(chipArrayList.get(position).getDistance_from_hole());
-		holder.puttsDistanceTextView.setText(chipArrayList.get(position).getPutt_length());
+		holder.distanceTextView.setText(chipArrayList.get(position).getDistance_from_hole()+"码");
+		holder.puttsDistanceTextView.setText(chipArrayList.get(position).getPutt_length()+"码");
 		return convertView;
 	}
 	class Holder{

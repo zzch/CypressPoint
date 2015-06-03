@@ -35,7 +35,7 @@ import cn.com.zcty.ILovegolf.utils.APIService;
  * @author deii
  *
  */
-public class RegisterActivity extends Activity implements OnClickListener{
+public class RegisterActivity extends Activity {
 
 	private Button yanzhengma;
 	private AlertDialog dialog;
@@ -323,32 +323,7 @@ public class RegisterActivity extends Activity implements OnClickListener{
 		   }
 		}
     
-   	/**
-     * 点击注册按钮后弹出一个Dialog
-     */
-    public void fristdialog(){
-    	AlertDialog.Builder builder = new Builder(this);
-		View view = View.inflate(this, R.layout.register_dialog, null);
-		confirm=(Button)view.findViewById(R.id.confirm);
-		confirm.setOnClickListener(this);
-		dialog = builder.create();
-		dialog.setView(view, 0, 0, 0, 0);
-		dialog.show();
-       }
 
-    /**
-     * dialog中确定按钮的点击事件
-     */
-	  @Override
-	   public void onClick(View v) {
-		// TODO Auto-generated method stub
-		
-			  Intent intent=new Intent(RegisterActivity.this,ShouYeActivity.class);
-				startActivity(intent);
-				finish();
-		
-		  
-	  }
 	  public String HttpClientGet(String url)
 		{
 		  String str = "";

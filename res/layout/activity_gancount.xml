@@ -2,300 +2,338 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
     android:background="@color/bg"
-    >
+    android:orientation="vertical" >
 
     <RelativeLayout
         android:layout_width="match_parent"
-         android:layout_height="@dimen/title_height"
+        android:layout_height="@dimen/title_height"
         android:background="@color/daohang" >
 
-        <FrameLayout 
+        <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            >
+            android:layout_centerVertical="true" >
 
-        <Button
-            android:id="@+id/scorecard_gancount_back"
-            android:layout_width="80dp"
-            android:layout_height="47dp"
-            android:layout_marginLeft="@dimen/title_button_left"
-            android:background="@null"
-            android:text="@string/back"
-            android:onClick="onclick"
-            android:textColor="@color/white"
-            android:textSize="@dimen/txsize_small_xx" />
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginLeft="10dp"
-            android:src="@drawable/back_image"/>
-		</FrameLayout>
+            <Button
+                android:id="@+id/scorecard_gancount_back"
+                android:layout_width="80dp"
+                android:layout_height="47dp"
+                android:layout_marginLeft="@dimen/title_button_left"
+                android:background="@null"
+                android:onClick="onclick"
+                android:text="@string/back"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txsize_small_xx" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="13dp"
+                android:src="@drawable/back_image" />
+        </FrameLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
             android:text="杆数"
             android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-
-        <RelativeLayout
-            android:id="@+id/re1"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content" >
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/e_card_yuan" />
-
-            <TextView
-                android:id="@+id/double_eagle_percentage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:text="10%"
-                android:textSize="20dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="90dp"
-                android:text="信天翁"
-                android:textSize="20dp" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/re2"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/re1" >
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/e_card_yuan" />
-
-            <TextView
-                android:id="@+id/eagle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:text="10%"
-                android:textSize="20dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="90dp"
-                android:text="老鹰"
-                android:textSize="20dp" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/re3"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/re2" >
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/e_card_yuan" />
-
-            <TextView
-                android:id="@+id/birdie"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:text="10%"
-                android:textSize="20dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="90dp"
-                android:text="小鸟球"
-                android:textSize="20dp" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/re4"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/re3" >
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/e_card_yuan" />
-
-            <TextView
-                android:id="@+id/par"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:text="10%"
-                android:textSize="20dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="90dp"
-                android:text="标准杆"
-                android:textSize="20dp" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/re5"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/re4" >
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/e_card_yuan" />
-
-            <TextView
-                android:id="@+id/bogey"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:text="10%"
-                android:textSize="20dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="90dp"
-                android:text="柏忌"
-                android:textSize="20dp" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/re6"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/re5" >
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/e_card_yuan" />
-
-            <TextView
-                android:id="@+id/double_bogey"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:text="10%"
-                android:textSize="20dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="90dp"
-                android:text="双柏忌"
-                android:textSize="20dp" />
-        </RelativeLayout>
-
-        <ImageView
-            android:id="@+id/major_gancount_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/e_card_yuan" />
-    </RelativeLayout>
-
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp" >
+        android:layout_height="match_parent" >
 
-        <TextView
-            android:id="@+id/green_shuju_scrambles"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="0"
-            android:textSize="30dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
 
-        <ImageView
-            android:id="@+id/green_shuju_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:src="@android:drawable/alert_dark_frame" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/gree_shuju"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
-            android:layout_marginTop="15dp"
-            android:text="小鸟球转化率 " />
+                <RelativeLayout
+                    android:id="@+id/re1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:background="@color/white"
+                    android:gravity="center" >
 
-        <ImageView
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:layout_marginLeft="230dp"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/e_card_yuan" />
-    </RelativeLayout>
+                    <TextView
+                        android:id="@+id/double_eagle_percentage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20dp"
+                        android:text="10%"
+                        android:textSize="@dimen/txsize_small_xx" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp" >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="信天翁"
+                        android:textSize="@dimen/txsize_small_xx" />
+                </RelativeLayout>
 
-        <TextView
-            android:id="@+id/green_shuju_scrambles_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="0"
-            android:textSize="30dp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/fengexian" />
 
-        <ImageView
-            android:id="@+id/green_shuju_images"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:src="@android:drawable/alert_dark_frame" />
+                <RelativeLayout
+                    android:id="@+id/re2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:layout_below="@+id/re1"
+                    android:background="@color/white"
+                    android:gravity="center" >
 
-        <TextView
-            android:id="@+id/gree_shuju_fantanlv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
-            android:layout_marginTop="15dp"
-            android:text="反弹率 " />
+                    <TextView
+                        android:id="@+id/eagle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20dp"
+                        android:text="10%"
+                        android:textSize="@dimen/txsize_small_xx" />
 
-        <ImageView
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:layout_marginLeft="230dp"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/e_card_yuan" />
-    </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="老鹰"
+                        android:textSize="@dimen/txsize_small_xx" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/fengexian" />
+
+                <RelativeLayout
+                    android:id="@+id/re3"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:layout_below="@+id/re2"
+                    android:background="@color/white"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/birdie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20dp"
+                        android:text="10%"
+                        android:textSize="@dimen/txsize_small_xx" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="小鸟球"
+                        android:textSize="@dimen/txsize_small_xx" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/fengexian" />
+
+                <RelativeLayout
+                    android:id="@+id/re4"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:layout_below="@+id/re3"
+                    android:background="@color/white"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/par"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20dp"
+                        android:text="10%"
+                        android:textSize="@dimen/txsize_small_xx" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="标准杆"
+                        android:textSize="@dimen/txsize_small_xx" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/fengexian" />
+
+                <RelativeLayout
+                    android:id="@+id/re5"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:layout_below="@+id/re4"
+                    android:background="@color/white"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/bogey"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20dp"
+                        android:text="10%"
+                        android:textSize="@dimen/txsize_small_xx" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="柏忌"
+                        android:textSize="@dimen/txsize_small_xx" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/fengexian" />
+
+                <RelativeLayout
+                    android:id="@+id/re6"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:layout_below="@+id/re5"
+                    android:layout_marginTop="0.5dp"
+                    android:background="@color/white"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/double_bogey"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20dp"
+                        android:text="10%"
+                        android:textSize="@dimen/txsize_small_xx" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="双柏忌"
+                        android:textSize="@dimen/txsize_small_xx" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/fengexian" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/fengexian" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/gree_shuju"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
+                    android:text="小鸟球转化率 "
+                    android:textColor="@color/chengse"
+                    android:textSize="@dimen/txsize_small_x" />
+
+                <TextView
+                    android:id="@+id/green_shuju_scrambles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="60dp"
+                    android:text="0"
+                    android:textColor="@color/hei2"
+                    android:textSize="@dimen/txsize_mid_xx"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginLeft="120dp"
+                    android:layout_marginTop="17dp"
+                    android:src="@drawable/help" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/fengexian" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/gree_shuju_fantanlv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
+                    android:text="反弹率 "
+                    android:textColor="@color/chengse"
+                    android:textSize="@dimen/txsize_small_x" />
+
+                <TextView
+                    android:id="@+id/green_shuju_scrambles_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="60dp"
+                    android:text="0"
+                    android:textColor="@color/hei2"
+                    android:textSize="@dimen/txsize_mid_xx"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginLeft="75dp"
+                    android:layout_marginTop="17dp"
+                    android:src="@drawable/help" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/fengexian" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

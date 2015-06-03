@@ -13,7 +13,7 @@
   	<dimen name="txsize_small_xx">16dp</dimen>
   	<dimen name="txsize_small_x">15dp</dimen>
   	<dimen name="txsize_small_s">12dp</dimen>
-  	
+  	<dimen name="txsize_small_ss">11dp</dimen>
   	<dimen name="txsize_small_a">15dp</dimen>
   	 <!-- 各种需要适配的宽度值 -->
     <dimen name="view_large_xxx_x">440dp</dimen>
@@ -70,7 +70,7 @@
   	
   	<dimen name="view_image_a">160dp</dimen>
   	<dimen name="view_image_b">130dp</dimen>
-  	
+  	<dimen name="view_image_xx">140dp</dimen>
   	
   	<dimen name="view_sss_a">52dp</dimen>
   	<dimen name="view_sss_aa">37dp</dimen>
