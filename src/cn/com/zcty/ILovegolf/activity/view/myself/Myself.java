@@ -13,6 +13,7 @@ import org.json.JSONObject;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -64,6 +65,7 @@ public class Myself extends Activity {
 	private Bitmap bmp;
 	private String type;
 	private RelativeLayout accountRelativeLayout;
+	private ProgressDialog progressDialog;
 	//private RelativeLayout settingRelativeLayout;
 	Intent intent;
 	Handler handler = new Handler(){
@@ -81,6 +83,7 @@ public class Myself extends Activity {
 				if(url==null){
 					bmp=BitmapFactory.decodeResource(Myself.this.getBaseContext().getResources(), R.drawable.hugh);
 					//saveMyBitmap(bmp);
+					hideProgressDialog();
 				}else{
 					new Imageloder().start();
 				}
@@ -90,6 +93,7 @@ public class Myself extends Activity {
 	Handler handler1 = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
+				hideProgressDialog();
 				//image_bg.setImageAlpha(80);
 				imageHead.setImageBitmap(bitmap);
 				//头像背景模糊
@@ -109,13 +113,14 @@ public class Myself extends Activity {
 		initView();		
 		setListeners();
 		new Ziliao().start();
-	
+		
 			if(FileUtil.fileIsExists()){
 				imageHead.setImageBitmap(FileUtil.converToBitmap(100,100));
 				//头像背景模糊
 				//FileUtil.blur(FileUtil.converToBitmap(100,100),Myself.this,headLayout);
 			}else{
 			new Touxiang().start();
+			showProgressDialog("提示", "正在加载", this);
 			}
 	
 	}
@@ -302,7 +307,28 @@ public class Myself extends Activity {
 	   }
 	}
 	
-	
+	/*
+     * 提示加载
+     */
+     public   void  showProgressDialog(String title,String message,Activity context){
+            if(progressDialog ==null){
+                   progressDialog = ProgressDialog.show( context, title, message,true,true );
+
+           } else if (progressDialog .isShowing()){
+                   progressDialog.setTitle(title);
+                   progressDialog.setMessage(message);
+           }
+            progressDialog.show();
+
+    }
+     /*
+     * 隐藏加载
+     */
+     public  void hideProgressDialog(){
+            if(progressDialog !=null &&progressDialog.isShowing()){
+                   progressDialog.dismiss();
+           }
+    }
 
 
 	

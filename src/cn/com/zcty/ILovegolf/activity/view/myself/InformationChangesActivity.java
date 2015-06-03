@@ -169,7 +169,19 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 					Editor editor = sp.edit();	
 					editor.putString("nickname", upname);
 					editor.commit();
-				}}
+					Toast.makeText(InformationChangesActivity.this, "已保存当前信息", Toast.LENGTH_LONG).show();
+					Intent intent = new Intent(InformationChangesActivity.this,Myself.class);
+					intent.putExtra("1", "1");
+					startActivity(intent);
+					finish();
+				}else{
+					Toast.makeText(InformationChangesActivity.this, "信息更新失败", Toast.LENGTH_LONG).show();
+					Intent intent = new Intent(InformationChangesActivity.this,Myself.class);
+					intent.putExtra("1", "1");
+					startActivity(intent);
+					finish();
+				}
+				}
 			}
 		};
 	};
@@ -504,10 +516,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			new GenxinName().start();
 
 
-			Intent intent = new Intent(InformationChangesActivity.this,Myself.class);
-			intent.putExtra("1", "1");
-			startActivity(intent);
-			finish();
+			
 			break;
 		}		
 	}

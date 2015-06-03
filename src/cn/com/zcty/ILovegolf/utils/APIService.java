@@ -36,7 +36,8 @@ public class APIService {
 	  public static final String USERREGISTER = "http://123.57.210.52/api/v1/users/sign_up.json?";
       //发送验证码
 	 public static final String  YANZHENGMA = "http://123.57.210.52/api/v1/verification_code/sign_up.json?";
-
+	 //重置密码
+	 public static final String RESTPSDYANZHENGMA = "http://123.57.210.52/api/v1/verification_code/reset_password.json?";
 	 
 	  //击球记录
 	  public static final String JILU = "http://123.57.210.52/api/v1/strokes.json?";
@@ -135,4 +136,7 @@ public class APIService {
 
 	 //意见反馈
 	 public static final String FEEDBACK = "http://123.57.210.52/api/v1/feedbacks.json?";
+	 
+	 //忘记密码
+	 public static final String RESTPASSWORD = "http://123.57.210.52/api/v1/users/reset_password.json?";
 }
