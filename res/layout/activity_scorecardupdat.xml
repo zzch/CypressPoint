@@ -274,7 +274,7 @@
            <TextView 
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text="开球距离"
+          android:text="距离球洞"
           android:textSize="@dimen/txsize_small_xx"
           android:textColor="@color/hei5"
          
