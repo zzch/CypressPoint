@@ -263,7 +263,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="15dp"
-                    android:text="小鸟球转化率 "
+                    android:text="优势转化率 "
                     android:textColor="@color/chengse"
                     android:textSize="@dimen/txsize_small_x" />
 

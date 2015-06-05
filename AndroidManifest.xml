@@ -66,7 +66,7 @@
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.count.AnalyzePKResultActivity" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.count.AnalyzePKActivity" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.MajorStatisticsActivity" android:screenOrientation="portrait"></activity> 
-        <activity android:name="cn.com.zcty.ILovegolf.activity.view.AverageAvtivity" android:screenOrientation="portrait"></activity> 
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.AverageAvtivity" android:screenOrientation="portrait" ></activity> 
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.PuttsActivity" android:screenOrientation="portrait"></activity> 
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.SandpickActivity" android:screenOrientation="portrait"></activity> 
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.ChipActivity" android:screenOrientation="portrait"></activity> 
@@ -109,7 +109,7 @@
             ></activity>
         
         
-         <activity android:name="cn.com.zcty.ILovegolf.activity.view.HelpAverageActivity" android:screenOrientation="portrait"></activity>
+         <activity android:name="cn.com.zcty.ILovegolf.activity.view.HelpAverageActivity" android:screenOrientation="portrait" android:theme="@style/MyDialogStyleBottom"></activity>
          <activity android:name="cn.com.zcty.ILovegolf.activity.view.CreateMatchActivity" android:screenOrientation="portrait"></activity>
           <activity android:name="cn.com.zcty.ILovegolf.activity.view.CreateScoreCard" android:screenOrientation="portrait"></activity>
          <activity android:name="cn.com.zcty.ILovegolf.activity.view.AddMatchActivity" android:screenOrientation="portrait" ></activity>

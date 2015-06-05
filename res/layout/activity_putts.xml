@@ -114,7 +114,7 @@
                                 <ImageView
                                     android:layout_width="18dp"
                                     android:layout_height="18dp"
-                                    android:layout_marginTop="10dp"
+                                    android:layout_marginTop="12dp"
                                     android:src="@drawable/help_bai" />
                             </LinearLayout>
                         </LinearLayout>
@@ -168,7 +168,7 @@
                             <ImageView
                                 android:layout_width="18dp"
                                 android:layout_height="18dp"
-                                android:layout_marginTop="10dp"
+                                android:layout_marginTop="12dp"
                                 android:src="@drawable/help_bai" />
                             </LinearLayout>
                         </LinearLayout>
@@ -225,7 +225,7 @@
                             <ImageView
                                 android:layout_width="18dp"
                                 android:layout_height="18dp"
-                                android:layout_marginTop="10dp"
+                                android:layout_marginTop="12dp"
                                 android:src="@drawable/help_bai" />
                             </LinearLayout>
                         </LinearLayout>
@@ -991,7 +991,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="100dp"
                         android:layout_marginTop="13dp"
-                        android:text="3 - 4码"
+                        android:text="3 - 5码"
                         android:textColor="@color/chengse"
                         android:textSize="@dimen/txsize_small_x" />
 
