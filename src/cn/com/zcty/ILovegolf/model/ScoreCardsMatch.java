@@ -12,6 +12,7 @@ public class ScoreCardsMatch {
 	private String penalties;
 	private String driving_distance;
 	private String direction;
+	private String distance_from_hole;
 	private ArrayList<TeeBoxsMatch> teeboxs;
 	public String getUuid() {
 		return uuid;
@@ -72,6 +73,12 @@ public class ScoreCardsMatch {
 	}
 	public void setCount(int count) {
 		this.count = count;
+	}
+	public String getDistance_from_hole() {
+		return distance_from_hole;
+	}
+	public void setDistance_from_hole(String distance_from_hole) {
+		this.distance_from_hole = distance_from_hole;
 	}
 	
 	

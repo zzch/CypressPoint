@@ -165,7 +165,9 @@ public class CreateScoreCard extends Activity{
 						intent.putExtra("par", scoreCardsMatchs.get(position).getScore());
 					}
 					intent.putExtra("direction", scoreCardsMatchs.get(position).getDirection());
-					intent.putExtra("distance", scoreCardsMatchs.get(position).getDriving_distance());
+					intent.putExtra("distance", scoreCardsMatchs.get(position).getDistance_from_hole());
+					intent.putExtra("putts", scoreCardsMatchs.get(position).getPutts());
+					intent.putExtra("penalties", scoreCardsMatchs.get(position).getPenalties());
 					intent.putExtra("number", (position+1)+"");
 					startActivity(intent);
 				}else{
@@ -322,7 +324,7 @@ public class CreateScoreCard extends Activity{
 					scoreCardsMatch.setPenalties(j.getString("penalties"));
 					scoreCardsMatch.setDriving_distance(j.getString("driving_distance"));
 					scoreCardsMatch.setDirection(j.getString("direction"));
-					
+					scoreCardsMatch.setDistance_from_hole(j.getString("distance_from_hole"));
 					/*
 					 * 获得T台的数组
 					 */

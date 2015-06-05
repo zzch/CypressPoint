@@ -117,7 +117,16 @@ public class ScoreCardUpDateActivity extends Activity{
 	}
 
 	private void getData() {
-
+		/*if(!getIntent().getStringExtra("putts").equals("null")){
+			
+			putcount = Integer.parseInt(getIntent().getStringExtra("putts"));
+			putTextView.setText(putcount+"");
+		}
+		if(!getIntent().getStringExtra("penalties").equals("null")){
+			
+			penaltiescount = Integer.parseInt(getIntent().getStringExtra("penalties"));
+			putTextView.setText(penaltiescount+"");
+		}*/
 
 
 		adapter = 	new ArrayNumberWheelAdapter(this);		
@@ -131,6 +140,8 @@ public class ScoreCardUpDateActivity extends Activity{
 		 * 5.20修改
 		 */
 		String par = intent.getStringExtra("par");
+		String putts = intent.getStringExtra("putts");
+		String penalties = intent.getStringExtra("penalties");
 		position = intent.getStringExtra("position");
 		String  dc= intent.getStringExtra("direction");
 		Log.i("sadfsdafsdafas", dc+"zhouhe");
@@ -156,7 +167,9 @@ public class ScoreCardUpDateActivity extends Activity{
 		SharedPreferences sp = getSharedPreferences("setCard",MODE_PRIVATE);	
 		if( !distance.equals("null")){
 			dataTextView.setText(par);
-			par = sp.getString("rodnum", par);
+			putTextView.setText(putts);
+			penaltiesTextView.setText(penalties);
+			//par = sp.getString("rodnum", par);
 			//putTextView.setText(sp.getString("putts", putcount+""));
 			//putcount = Integer.parseInt(sp.getString("putts", putcount+""));
 			//penaltiesTextView.setText(sp.getString("penalties", penaltiescount+""));
@@ -302,6 +315,8 @@ public class ScoreCardUpDateActivity extends Activity{
 
 	public void onClick(View v) {
 		count = Integer.parseInt(dataTextView.getText().toString());
+		putcount = Integer.parseInt(putTextView.getText().toString());
+		penaltiescount = Integer.parseInt(penaltiesTextView.getText().toString());
 		switch (v.getId()) {
 		case R.id.but_add_one:
 
@@ -460,7 +475,7 @@ public class ScoreCardUpDateActivity extends Activity{
 			}*/
 			String path = APIService.MODIFYINTEGRAL+"uuid="+uuid+"&score="+score+"&putts="+putts+
 					"&penalties="+penalties+
-					"&driving_distance="+driving_distance+
+					"&distance_from_hole="+driving_distance+
 					"&direction="+direction+
 					"&token="+token;
 			Log.i("pathd", path);
