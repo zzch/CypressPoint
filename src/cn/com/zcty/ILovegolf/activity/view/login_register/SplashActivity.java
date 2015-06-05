@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.Window;
 
@@ -37,6 +38,13 @@ public class SplashActivity extends Activity {
 	public void next(){
 		SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 		String isRegister=sp.getString("isRegister", "false");
+		SharedPreferences sps=getSharedPreferences("fff",Context.MODE_PRIVATE);
+		
+		if(!sps.getString("guide", "0").equals("1")){			
+			Intent intent = new Intent(this,GuidActivity.class);
+			startActivity(intent);
+			finish();
+		}else{				
 		if(isRegister.equals("true")){
 			Intent intent=new Intent(this,HomePageActivity.class);
 			startActivity(intent);
@@ -46,6 +54,6 @@ public class SplashActivity extends Activity {
 			Intent intent=new Intent(this,ShouYeActivity.class);
 			startActivity(intent);
 			finish();
-		}
+		}}
 	}
 }

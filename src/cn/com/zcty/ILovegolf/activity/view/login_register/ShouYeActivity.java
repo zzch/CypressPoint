@@ -109,8 +109,9 @@ public class ShouYeActivity extends Activity {
     	 public void handleMessage(Message msg) {
     		 if(msg.what==1){
     			 Intent intent = new Intent(ShouYeActivity.this,HomePageActivity.class);
-				 startActivity(intent);
+				 startActivity(intent);				
 				 finish();
+				 
     		 }
     	 };
      };
