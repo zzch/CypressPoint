@@ -104,12 +104,21 @@
             android:textColor="@color/chengse"
             android:textSize="@dimen/txsize_small_x" />
 
-        <ImageView
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:layout_marginLeft="140dp"
-            android:layout_marginTop="17dp"
-            android:src="@drawable/help" />
+       <LinearLayout
+            android:id="@+id/help_kaiqiu_1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@+id/gree_shuju"
+            android:gravity="center"
+            android:onClick="onClick" >
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/help" />
+        </LinearLayout>
 
         <RelativeLayout
             android:layout_width="wrap_content"

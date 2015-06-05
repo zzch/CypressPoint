@@ -1,19 +1,15 @@
 package cn.com.zcty.ILovegolf.activity.view;
 
-import java.util.ArrayList;
-
 import cn.com.zcty.ILovegolf.activity.R;
-import android.app.Activity;
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class HelpAverageActivity extends Activity {
-	
+public class Help_Dialog extends Dialog implements OnClickListener{
 	private Intent intent;
 	private Button help_back;
 	private TextView title_name;
@@ -42,17 +38,13 @@ public class HelpAverageActivity extends Activity {
 	
 	private TextView text_xiaoniao_1;
 	private TextView text_xiaoniao_2;
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
-		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_help);
-		initView();
-		getData();
 
+	public Help_Dialog(Context context) {
+		super(context);
+		// TODO Auto-generated constructor stub
+		setContentView(R.layout.register_dialog);
 	}
-	
+
 	public void initView(){
 		help_back = (Button) findViewById(R.id.help_back);
 		title_name = (TextView) findViewById(R.id.title_name);
@@ -88,17 +80,17 @@ public class HelpAverageActivity extends Activity {
 		text_xiaoniao_1 = (TextView) findViewById(R.id.text_xiaoniao_1);
 		text_xiaoniao_2 = (TextView) findViewById(R.id.text_xiaoniao_2);
 		
-		help_back.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				finish();
-			}
-		});
+		
 	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		dismiss();
+	}
+	
 	public void getData(){
-		intent =getIntent();
+		//intent =;
 		
 		if(intent.getStringExtra("avg")!=null){
 			title_name.setText("平均杆数");	
@@ -205,5 +197,5 @@ public class HelpAverageActivity extends Activity {
         
 	}
 	
-	
+
 }

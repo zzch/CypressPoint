@@ -98,6 +98,21 @@ public class GreenActivity extends Activity{
 			}
 		});		
 	}
+	public void onClick(View v){
+		Intent intent;
+		switch(v.getId()){
+		case R.id.help_green_1:
+			intent = new Intent(GreenActivity.this,HelpAverageActivity.class);
+			intent.putExtra("gree1", "gree1");
+			startActivity(intent);
+			break;
+		case R.id.help_green_2:
+			intent = new Intent(GreenActivity.this,HelpAverageActivity.class);
+			intent.putExtra("gree2", "gree2");
+			startActivity(intent);
+		}
+	}
+	
 	private void initView() {
 		fanhuiBut = (Button) findViewById(R.id.green_back);
 		listView = (GridView) findViewById(R.id.major_green_qiudong);
@@ -231,6 +246,7 @@ public class GreenActivity extends Activity{
 		bgdp(count17_2);
 		bgdp(count18_2);
 	}
+	
 	class Green extends Thread{
 		@Override
 		public void run() {

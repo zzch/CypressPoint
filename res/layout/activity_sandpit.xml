@@ -73,9 +73,10 @@
 
                     <RelativeLayout
                         android:id="@+id/putts_relative_1"
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.56" >
+                        
+                         >
 
                         <TextView
                             android:id="@+id/sandpit_average"
@@ -90,7 +91,7 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="10dp"
                             android:orientation="horizontal" >
 
                             <TextView
@@ -101,12 +102,20 @@
                                 android:textColor="@color/bg"
                                 android:textSize="@dimen/txsize_small_x" />
 
-                            <ImageView
-                                android:layout_width="18dp"
-                                android:layout_height="18dp"
-                                android:layout_marginLeft="5dp"
-                                android:layout_marginTop="37dp"
-                                android:src="@drawable/help_bai" />
+                           <LinearLayout
+                               android:id="@+id/help_shakeng_1"
+                               android:layout_width="35dp"
+                               android:layout_height="30dp"
+                               android:layout_marginLeft="5dp"
+                               android:layout_marginTop="27dp"
+                               android:onClick="onClick" >
+
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:layout_marginTop="10dp"
+                                    android:src="@drawable/help_bai" />
+                            </LinearLayout>
                         </LinearLayout>
                     </RelativeLayout>
 
@@ -218,12 +227,21 @@
                         android:textColor="@color/chengse"
                         android:textSize="@dimen/txsize_small_x" />
 
-                    <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:layout_marginLeft="150dp"
-                        android:layout_marginTop="15dp"
-                        android:src="@drawable/help" />
+                     <LinearLayout
+                        android:id="@+id/help_shakeng_2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_toRightOf="@+id/sand_average_distance_1"
+                        android:gravity="center"
+                        android:onClick="onClick" >
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginTop="2dp"
+                            android:src="@drawable/help" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -351,12 +369,21 @@
                         android:textColor="@color/chengse"
                         android:textSize="@dimen/txsize_small_x" />
 
-                    <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:layout_marginLeft="155dp"
-                        android:layout_marginTop="15dp"
-                        android:src="@drawable/help" />
+                   <LinearLayout
+                        android:id="@+id/help_shakeng_3"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_toRightOf="@+id/sand_average_distance_2"
+                        android:gravity="center"
+                        android:onClick="onClick" >
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginTop="2dp"
+                            android:src="@drawable/help" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -487,12 +514,22 @@
                         android:textColor="@color/chengse"
                         android:textSize="@dimen/txsize_small_x" />
 
-                    <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:layout_marginLeft="155dp"
-                        android:layout_marginTop="15dp"
-                        android:src="@drawable/help" />
+                     <LinearLayout
+                        android:id="@+id/help_shakeng_4"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_toRightOf="@+id/sand_average_distance_3"
+                        android:gravity="center"
+                        android:onClick="onClick" >
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginTop="2dp"
+                            android:src="@drawable/help" />
+                    </LinearLayout>
+
 
                     <LinearLayout
                         android:layout_width="match_parent"

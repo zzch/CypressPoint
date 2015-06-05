@@ -22,6 +22,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -39,6 +40,7 @@ public class ChipActivity extends Activity{
 	private TextView chip_insTextView;
 	private TextView longestTextView;
 	private ListView listView;
+	private LinearLayout help_giegan_1;
 	private ArrayList<Chip> chipArrayList = new ArrayList<Chip>();
 	
 	Handler handler = new Handler(){
@@ -75,14 +77,27 @@ public class ChipActivity extends Activity{
 		longestTextView = (TextView) findViewById(R.id.chip_distance);
 		scorecard_back = (Button) findViewById(R.id.scorecard_back);
 		listView = (ListView) findViewById(R.id.listView1);
+		help_giegan_1 = (LinearLayout) findViewById(R.id.help_giegan_1);
 	}
-	private void setLister(){
+	public void setLister(){
 		scorecard_back.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				finish();
+			}
+		});
+		
+		help_giegan_1.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(ChipActivity.this,HelpAverageActivity.class);
+				intent.putExtra("qiegan", "qiegan");
+				startActivity(intent);
+				
 			}
 		});
 	}
@@ -113,7 +128,7 @@ public class ChipActivity extends Activity{
 					chip.setDistance_from_hole(j.getString("distance_from_hole"));
 					chip.setPutt_length(j.getString("putt_length"));
 					chipArrayList.add(chip);
-					Log.i("xianshijiemian", j.getString("putt_length"));
+					Log.i("xianshijiemian", ""+chipArrayList.size());
 				}
 				
 				Message msg = handler.obtainMessage();

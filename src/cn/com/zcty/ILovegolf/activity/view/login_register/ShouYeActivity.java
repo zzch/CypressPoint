@@ -346,8 +346,12 @@ public class ShouYeActivity extends Activity {
 								String token_r=jsonObject.getString("token");	
 								String phone = jsonObject.getString("phone");
 								String portraits = jsonObject.getString("portrait");
-								JSONObject portraitJsonObject = new JSONObject(portraits);
-								String portrait = portraitJsonObject.getString("url");
+								String portrait = "null";
+								if(!portraits.equals("null")){
+									JSONObject portraitJsonObject = new JSONObject(portraits);
+									 portrait = portraitJsonObject.getString("url");
+								}
+								
 								//保存数据
 								SharedPreferences sharedpres=getSharedPreferences("register",Context.MODE_PRIVATE);
 								SharedPreferences.Editor editor = sharedpres.edit();

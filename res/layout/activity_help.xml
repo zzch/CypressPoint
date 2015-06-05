@@ -1,130 +1,276 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/dialogbg"
+    android:gravity="center"
     android:orientation="vertical" >
-    
-    <RelativeLayout
+
+   
+
+    <TextView
+        android:id="@+id/title_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:text="小鸟球反弹率" />
+
+    <View
+        android:id="@+id/v_1"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/title_height"
-        android:background="@color/daohang" >
+        android:layout_height="1dp"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="25dp"
+        android:background="@color/fengexian" />
 
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true" >
-
-            <Button
-                android:id="@+id/help_back"
-                android:layout_width="80dp"
-                android:layout_height="47dp"
-                android:layout_marginLeft="@dimen/title_button_left"
-                android:background="@null"
-                android:onClick="onclick"
-                android:text="@string/back"
-                android:textColor="@color/white"
-                android:textSize="@dimen/txsize_small_xx" />
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="13dp"
-                android:src="@drawable/back_image" />
-        </FrameLayout>
-
-        <TextView
-            android:id="@+id/title_name"
-            android:layout_width="wrap_content"
-            android:layout_height="47dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:gravity="center"
-            android:text="推杆"
-            android:textColor="@color/white"
-            android:textSize="@dimen/txsize_mid_x" />
-    </RelativeLayout>
-    
-    
-    <TextView 
+    <TextView
         android:id="@+id/text_avg_1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:layout_below="@+id/v_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:text="在这里告诉您每一个问号所代表的含义"
-        android:visibility="gone"
-        />
-    <TextView 
+        android:visibility="gone" />
+
+    <TextView
         android:id="@+id/text_putt_1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:layout_below="@+id/v_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:text="平均/洞"
-        android:visibility="gone"
-        />
-    <TextView 
+        android:visibility="gone" />
+
+    <TextView
         android:id="@+id/text_putt_2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:layout_below="@+id/v_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:text="标准杆"
-        android:visibility="gone"
-        />
-    <TextView 
+        android:visibility="gone" />
+
+    <TextView
         android:id="@+id/text_putt_3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:layout_below="@+id/v_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:text="大于标准杆"
-        android:visibility="gone"
-        />
-    <TextView 
+        android:visibility="gone" />
+
+    <TextView
         android:id="@+id/text_putt_4"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:layout_below="@+id/v_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:text="第一次推杆后"
-        android:visibility="gone"
-        />
-     <TextView 
+        android:visibility="gone" />
+
+    <TextView
         android:id="@+id/text_putt_5"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:layout_below="@+id/v_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:text="推杆5"
-        android:visibility="gone"
-        />
-      <TextView 
+        android:visibility="gone" />
+
+    <TextView
         android:id="@+id/text_putt_6"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:layout_below="@+id/v_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:text="推杆6"
-        android:visibility="gone"
-        />
-       <TextView 
+        android:visibility="gone" />
+
+    <TextView
         android:id="@+id/text_putt_7"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:layout_below="@+id/v_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:text="推杆7"
-        android:visibility="gone"
-        />
-        <TextView 
+        android:visibility="gone" />
+
+    <TextView
         android:id="@+id/text_putt_8"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:layout_below="@+id/v_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:text="推杆8"
-        android:visibility="gone"
-        />
-        <TextView 
+        android:visibility="gone" />
+
+    <TextView
         android:id="@+id/text_putt_9"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:layout_below="@+id/v_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:text="推杆9"
-        android:visibility="gone"
-        />
+        android:visibility="gone" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/text_shakeng_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/v_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="沙坑救球"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text_shakeng_2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/v_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="0 - 10码"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text_shakeng_3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/v_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="10 - 20码"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text_shakeng_4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/v_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="20 - 30码"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text_qiegan_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/v_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="切杆进洞"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text_gree_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/v_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="标准上果岭"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text_gree_2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/v_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="标准上果岭小于5码"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text_mingzhong_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/v_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="命中"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text_mingzhong_2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/v_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="左侧"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text_mingzhong_3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/v_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="右侧"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text_kaiqiu_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/v_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="开球"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text_xiaoniao_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/v_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="小鸟球转化率"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text_xiaoniao_2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/v_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="反弹率"
+        android:visibility="gone" />
+    
+     <Button
+        android:id="@+id/help_back"
+        android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView2"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="22dp"
+                android:layout_marginRight="22dp"
+                android:background="@drawable/shurukuang"
+                android:onClick="onClick"
+                android:text="确定" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_below="@+id/help_back" />
+
+</RelativeLayout>

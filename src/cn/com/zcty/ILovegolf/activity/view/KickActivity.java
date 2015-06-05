@@ -8,6 +8,8 @@ import org.json.JSONObject;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -18,12 +20,13 @@ import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.MajorScoreAverageAdapter;
 
-public class KickActivity extends Activity{
+public class KickActivity extends Activity implements OnClickListener{
 	private ArrayList<String> statisticsModels = new ArrayList<String>();
 	private ArrayList<String> counts = new ArrayList<String>();
 	private String count;
@@ -53,6 +56,14 @@ public class KickActivity extends Activity{
 	private TextView count18;
 	private String[] name = {"最远max","平均","max/2"};
 	private Button fanhuiButton;
+	private LinearLayout help_kaiqiu_1;
+	
+	private Button dialog_back;
+	private AlertDialog dialog;
+	private String title1;
+	private String title2;
+	private TextView textView1;
+	private TextView textView2;
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
 			if(msg.what==1){
@@ -72,6 +83,30 @@ public class KickActivity extends Activity{
 		new Kick().start();
 	}
 	
+	/**
+     * 点击帮助图标后弹出一个Dialog
+     */
+    public void fristdialog(String titie){
+    	AlertDialog.Builder builder = new Builder(this);
+    	 View view=View.inflate(this, R.layout.register_dialog, null);
+		//dialog=(AlertDialog) new Dialog(GanCountActivity.this,R.style.dialog);
+		dialog_back=(Button)view.findViewById(R.id.dialog_back);
+		textView1 = (TextView) view.findViewById(R.id.textView1);
+		textView2 = (TextView) view.findViewById(R.id.textView2);
+		textView1.setText(title1);
+		textView2.setText("4/5杆洞开球后未上球道，但是该球洞标准杆上果岭。");
+		dialog_back.setOnClickListener(this);
+		dialog = builder.create();
+		dialog.setView(view, 0, 0, 0, 0);
+		dialog.show();
+       }
+    
+    @Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		dialog.dismiss();
+	}
+	
 	private void setListeners() {
 		fanhuiButton.setOnClickListener(new OnClickListener() {
 			
@@ -80,9 +115,24 @@ public class KickActivity extends Activity{
 				finish();
 			}
 		});
+		help_kaiqiu_1.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				//Intent intent = new Intent(KickActivity.this,HelpAverageActivity.class);
+				//intent.putExtra("kaiqiu", "kaiqiu");
+				//startActivity(intent);
+				title1 = gree_shuju.getText().toString().trim();
+				fristdialog(title1);
+				
+			}
+		});
 	}
 
 	private void initView() {
+		
+		help_kaiqiu_1 = (LinearLayout) findViewById(R.id.help_kaiqiu_1);
 		fanhuiButton = (Button) findViewById(R.id.scorecard_green_back);
 		listView = (GridView) findViewById(R.id.major_green_qiudong);
 		count1 = (TextView) findViewById(R.id.par_shuju_1);
@@ -195,4 +245,6 @@ public class KickActivity extends Activity{
 			t.setBackground(null);
 		}
 	}
+
+	
 }

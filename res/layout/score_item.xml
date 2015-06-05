@@ -204,7 +204,7 @@
               android:layout_height="20dp"
               android:layout_marginLeft="45dp"
               android:layout_marginTop="17dp"
-              android:src="@drawable/juzhong"
+             
               />
           <TextView 
               android:id="@+id/score_cool"

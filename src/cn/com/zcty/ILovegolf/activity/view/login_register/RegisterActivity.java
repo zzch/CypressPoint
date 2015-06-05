@@ -8,11 +8,8 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -115,7 +112,7 @@ public class RegisterActivity extends Activity {
 							yanzhengJson = (String) msg.obj;
 							new RegisterTask_().start();
 						}else{
-							Toast.makeText(RegisterActivity.this, "获取验证码成功", Toast.LENGTH_LONG).show();
+							Toast.makeText(RegisterActivity.this, "已将验证码成功发送至您的手机！", Toast.LENGTH_LONG).show();
 							
 						}
 						

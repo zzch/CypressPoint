@@ -278,12 +278,21 @@
                     android:textSize="@dimen/txsize_mid_xx"
                     android:textStyle="bold" />
 
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_marginLeft="120dp"
-                    android:layout_marginTop="17dp"
-                    android:src="@drawable/help" />
+                <LinearLayout
+                    android:id="@+id/help_xiaoniao_1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_toRightOf="@+id/gree_shuju"
+                    android:gravity="center"
+                    android:onClick="onClick" >
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginTop="2dp"
+                        android:src="@drawable/help" />
+                </LinearLayout>
             </RelativeLayout>
 
             <View
@@ -297,16 +306,6 @@
                 android:background="@color/white" >
 
                 <TextView
-                    android:id="@+id/gree_shuju_fantanlv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="15dp"
-                    android:text="反弹率 "
-                    android:textColor="@color/chengse"
-                    android:textSize="@dimen/txsize_small_x" />
-
-                <TextView
                     android:id="@+id/green_shuju_scrambles_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -317,12 +316,31 @@
                     android:textSize="@dimen/txsize_mid_xx"
                     android:textStyle="bold" />
 
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_marginLeft="75dp"
-                    android:layout_marginTop="17dp"
-                    android:src="@drawable/help" />
+                <TextView
+                    android:id="@+id/gree_shuju_fantanlv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
+                    android:text="反弹率 "
+                    android:textColor="@color/chengse"
+                    android:textSize="@dimen/txsize_small_x" />
+
+                <LinearLayout
+                    android:id="@+id/help_xiaoniao_2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_toRightOf="@+id/gree_shuju_fantanlv"
+                    android:gravity="center"
+                    android:onClick="onClick" >
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginTop="1dp"
+                        android:src="@drawable/help" />
+                </LinearLayout>
             </RelativeLayout>
 
             <View

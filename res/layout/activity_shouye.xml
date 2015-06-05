@@ -112,7 +112,14 @@
              android:background="@null"
              android:onClick="forget_password"
              android:text="忘记密码？"
-             android:textColor="@color/fengexian" />
+             android:textColor="@color/hei5" />
+         
+         <View 
+             android:layout_width="70dp"
+             android:layout_height="1dp"
+            android:background="@color/fengexian"
+             android:layout_marginLeft="@dimen/create_score_left"
+             />
      </LinearLayout>
      
        <Button 
@@ -158,5 +165,4 @@
              android:layout_weight="1"
                 />
         </LinearLayout>
-
 </LinearLayout>
