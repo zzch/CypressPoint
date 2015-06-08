@@ -204,6 +204,7 @@ public class ScoreCardUpDateActivity extends Activity{
 			if(flase_1||flase_2||flase_3||flase_4||flase_5){
 				builder("提示", "是否保存", "取消", "确定");
 			}else{
+				
 				finish();
 			}
 		}

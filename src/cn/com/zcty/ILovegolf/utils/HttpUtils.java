@@ -87,6 +87,50 @@ public class HttpUtils
 	}
 	return code+"";
 	}
+
+
+
+
+
+
+
+
+	public static String httpliuyanpost(String url,Map<String,String> map){
+		HttpPost post = new HttpPost(url);
+		String str = "";
+		int code = 0;
+		List<NameValuePair> nvps = new ArrayList<NameValuePair>();
+		Iterator<Map.Entry<String, String>> it = map.entrySet().iterator();
+		while(it.hasNext()){
+			Map.Entry<String,String> map1 = it.next();
+			nvps.add(new BasicNameValuePair(map1.getKey(), map1.getValue()));
+		}
+		try {
+			post.setEntity(new UrlEncodedFormEntity(nvps,"utf-8"));
+			HttpClient httpClient = new DefaultHttpClient();
+			HttpResponse httpResponse = httpClient.execute(post);
+			code = httpResponse.getStatusLine().getStatusCode();
+			if(code==201||code==200){
+				str = EntityUtils.toString(httpResponse.getEntity(), "utf-8");
+				return str;
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return code+"";
+
+	}
+
+
+
+
+
+
+
+
+
+
 	/**
 	 * 采用HttpClient的POST请求发送数据
 	 * @param url
@@ -95,7 +139,7 @@ public class HttpUtils
 	 */
 	public static String HttpClientPost(String url,Map<String,String[]> map){
 		HttpPut post = new HttpPut(url);
-		
+
 		String str = "";
 		int code = 0;
 		List<NameValuePair> nvps = new ArrayList<NameValuePair>();
@@ -121,6 +165,34 @@ public class HttpUtils
 		}
 		return ""+code+"";
 	}
+	public static String Httpput(String url,Map<String,String> map){
+		HttpPut post = new HttpPut(url);
+		String str = "";
+		int code = 0;
+		List<NameValuePair> nvps = new ArrayList<NameValuePair>();
+		Iterator<Map.Entry<String, String>> it = map.entrySet().iterator();
+		while(it.hasNext()){
+			Map.Entry<String,String> map1 = it.next();
+			nvps.add(new BasicNameValuePair(map1.getKey(), map1.getValue()));
+		}
+		try {
+			post.setEntity(new UrlEncodedFormEntity(nvps,"utf-8"));
+			HttpClient httpClient = new DefaultHttpClient();
+			HttpResponse httpResponse = httpClient.execute(post);
+			code= httpResponse.getStatusLine().getStatusCode();
+			if(code==200||code==201){
+				str = EntityUtils.toString(httpResponse.getEntity(), "utf-8");
+				return str;
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return code+"";
+
+	}
+
+
 	/**
 	 * 采用HttpClient发送Get请求
 	 * @param username

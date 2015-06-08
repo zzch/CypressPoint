@@ -322,7 +322,6 @@
             android:layout_marginTop="@dimen/my_view_layout_top_xx">
 
             <ImageView
-                android:id="@+id/myself_image"
                 android:layout_width="@dimen/my_view_layout_top_x"
                 android:layout_height="@dimen/my_view_layout_top_x"
                 android:layout_centerVertical="true"
@@ -356,7 +355,6 @@
             android:layout_marginTop="@dimen/my_view_layout_top_xxx">
 
             <ImageView
-                android:id="@+id/myself_image"
                 android:layout_width="@dimen/my_view_layout_top_x"
                 android:layout_height="@dimen/my_view_layout_top_x"
                 android:layout_centerVertical="true"

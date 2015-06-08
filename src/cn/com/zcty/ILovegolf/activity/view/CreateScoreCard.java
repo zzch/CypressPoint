@@ -125,6 +125,11 @@ public class CreateScoreCard extends Activity{
 				CreateScoreCardAdapter adapter = new CreateScoreCardAdapter(CreateScoreCard.this, scoreCardsMatchs);
 				scoreListView.setAdapter(adapter);
 				hideProgressDialog();
+				SharedPreferences sps = getSharedPreferences("codes", Context.MODE_PRIVATE);
+				int c = sps.getInt("code", 18);
+				scoreListView.setSelection(c);
+					
+				
 				linearLayout.setVisibility(View.VISIBLE);
 				if(owned.equals("true")){
 					yaoqingButton.setVisibility(View.VISIBLE);
@@ -144,6 +149,10 @@ public class CreateScoreCard extends Activity{
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_scord);
+		SharedPreferences sp = getSharedPreferences("codes", Context.MODE_PRIVATE);
+		Editor editor = sp.edit();
+		editor.putInt("code", 0);
+		editor.commit();
 		initView();
 		setListeners();
 		linearLayout.setVisibility(View.INVISIBLE);
@@ -156,6 +165,10 @@ public class CreateScoreCard extends Activity{
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
+				SharedPreferences sp = getSharedPreferences("codes", Context.MODE_PRIVATE);
+				Editor editor = sp.edit();
+				editor.putInt("code", position);
+				editor.commit();
 				if(scoring_type.equals("simple")){
 					Intent intent = new Intent(CreateScoreCard.this,ScoreCardUpDateActivity.class);
 					intent.putExtra("uuid", scoreCardsMatchs.get(position).getUuid());
@@ -212,6 +225,10 @@ public class CreateScoreCard extends Activity{
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
 		super.onBackPressed();
+		SharedPreferences sp = getSharedPreferences("codes", Context.MODE_PRIVATE);
+		Editor editor = sp.edit();
+		editor.putInt("code", 0);
+		editor.commit();
 		Intent intent = new Intent(CreateScoreCard.this,QuickScoreActivity.class);
 		startActivity(intent);
 		overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
@@ -221,6 +238,10 @@ public class CreateScoreCard extends Activity{
 	 * 点击跳转
 	 */
 	public void onclick(View v){
+		SharedPreferences sp = getSharedPreferences("codes", Context.MODE_PRIVATE);
+		Editor editor = sp.edit();
+		editor.putInt("code", 0);
+		editor.commit();
 		switch (v.getId()) {
 		case R.id.scorecard_back:
 			Intent intent = new Intent(CreateScoreCard.this,QuickScoreActivity.class);

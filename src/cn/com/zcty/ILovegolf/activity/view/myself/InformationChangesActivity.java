@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 
 import org.apache.http.Header;
 import org.json.JSONException;
@@ -265,7 +266,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 
 			@Override
 			public void afterTextChanged(Editable s) {
-				sgin = removeAllSpace(sginEditText.getText().toString());
+				sgin = sginEditText.getText().toString().trim();
 			}
 		});
 
@@ -636,11 +637,13 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			getData();
 		}
 		public void getData(){
-			sgin = removeAllSpace(sginEditText.getText().toString());
+			sgin = sginEditText.getText().toString().trim();
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String token=sp.getString("token", "token");
-			String path = APIService.SIGNATURE+"token="+token+"&description="+sgin;
-			String jsonData = HttpUtils.HttpClientPut(path);
+			String path = APIService.SIGNATURE+"token="+token;
+			HashMap<String, String> map = new HashMap<String, String>();
+			map.put("description", sgin);
+			String jsonData = HttpUtils.Httpput(path, map);
 			Message msg = handler.obtainMessage();
 			msg.what = 3;
 			msg.obj = jsonData;

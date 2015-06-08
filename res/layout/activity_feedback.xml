@@ -14,66 +14,71 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="47dp"
-            android:gravity="center"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:gravity="center"
             android:text="意见反馈"
             android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
 
-       <FrameLayout 
+        <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            >
+            android:layout_centerVertical="true" >
 
-        <Button
-            android:id="@+id/back"
-           android:layout_width="80dp"
-            android:layout_height="47dp"
-            android:layout_marginLeft="@dimen/title_button_left"
-            android:background="@null"
-            android:onClick="onClick"
-            android:text="@string/back"
-            android:textColor="@color/white"
-            android:textSize="@dimen/txsize_small_xx" />
-        
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginLeft="10dp"
-            android:src="@drawable/back_image"  />
-		</FrameLayout>
+            <Button
+                android:id="@+id/back"
+                android:layout_width="80dp"
+                android:layout_height="47dp"
+                android:layout_marginLeft="@dimen/title_button_left"
+                android:background="@null"
+                android:onClick="onClick"
+                android:text="@string/back"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txsize_small_xx" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="13dp"
+                android:src="@drawable/back_image" />
+        </FrameLayout>
     </RelativeLayout>
-	
+
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="当前可以输入100字" />
+
     <EditText
         android:id="@+id/feedback"
         android:layout_width="@dimen/register_view_width"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/wenbenkuang"
         android:enabled="true"
         android:gravity="top"
+        android:hint="请输入您宝贵的意见(140字内)"
         android:inputType="textMultiLine"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="10dp"
         android:maxLines="20"
         android:minLines="8"
-        android:scrollbars="vertical"
-        android:hint="请输入您宝贵的意见(140字内)"
-         />
+        android:scrollbars="vertical" />
 
-
-<Button
-    android:id="@+id/submit"
-    android:layout_width="@dimen/register_view_width"
-    android:layout_height="@dimen/button_height"
-    android:layout_marginTop="30dp"
-    android:background="@drawable/button"
-    android:layout_marginLeft="10dp"
-    android:gravity="center_horizontal"
-    android:text="提交"
-    android:textColor="@color/bg"
-    android:textSize="@dimen/txsize_small_xxx" />
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="@dimen/register_view_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button"
+        android:gravity="center_horizontal"
+        android:text="提交"
+        android:textColor="@color/bg"
+        android:textSize="@dimen/txsize_small_xxx" />
 
 </LinearLayout>

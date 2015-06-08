@@ -71,6 +71,8 @@
              android:textColor="@color/hei5"
              android:lines="1"
             android:layout_centerHorizontal="true"
+           
+            android:imeOptions="actionNone"
             android:hint="请输入当前密码"
             android:password="true" />
 
@@ -83,8 +85,9 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="100dp"
             android:lines="1"
+            android:imeOptions="actionNone"
             android:hint="请设置密码"
-            android:password="true" />
+      />
 
         <EditText
             android:id="@+id/qdnewpsw"
@@ -95,6 +98,7 @@
             android:layout_centerHorizontal="true"
             android:lines="1"
             android:layout_marginTop="170dp"
+            android:imeOptions="actionNone"
             android:hint="请再次输入"
             android:password="true" />
     </RelativeLayout>
