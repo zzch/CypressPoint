@@ -34,6 +34,7 @@ public class AnlyzeDiamondFragment extends Fragment{
 	private ListView listView;
 	private TextView tishiTextView;
 	private ArrayList<AnlyzeDiamond> anDiamonds = new ArrayList<AnlyzeDiamond>();
+	private AnlyzeDiamondAdapter adapter;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -77,7 +78,13 @@ public class AnlyzeDiamondFragment extends Fragment{
 		/*
 		 * 添加适配器
 		 */
-		listView.setAdapter(new AnlyzeDiamondAdapter(getActivity(), anDiamonds));
+		adapter = new AnlyzeDiamondAdapter(getActivity(), anDiamonds);
+		if(listView.getAdapter()==null){
+			listView.setAdapter(adapter);
+		}else{
+			adapter.notifyDataSetChanged();
+		}
+	
 	}
 	/*
 	 * 找到控件
@@ -94,6 +101,7 @@ public class AnlyzeDiamondFragment extends Fragment{
 			
 		}
 		public void getData(){
+			anDiamonds.clear();
 			SharedPreferences sp = getActivity().getSharedPreferences("register", Context.MODE_PRIVATE);
 			String token = sp.getString("token", "token");
 			String path = APIService.VISTTED+"token="+token;
@@ -108,7 +116,7 @@ public class AnlyzeDiamondFragment extends Fragment{
 					diamond.setUuid(jsonObject.getString("uuid"));
 					diamond.setName(jsonObject.getString("name"));
 					diamond.setAddress(jsonObject.getString("address"));
-					diamond.setVisited_count(jsonObject.getString("visited_count"));
+					diamond.setVisited_count(jsonObject.getString("played_count"));
 					anDiamonds.add(diamond);
 				}
 				Message msg = handler.obtainMessage();
