@@ -20,10 +20,12 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Message;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -142,6 +144,10 @@ public class RegisterActivity extends Activity {
 		et_yanzhengma_reg = (EditText) findViewById(R.id.et_yanzhengma_reg);
 		yanzhengma = (Button) findViewById(R.id.but_getyanzhengma);
 		fanhuiButton = (Button) findViewById(R.id.fanhui);
+		setEdittext(et_password_reg);
+		setEdittext(et_confirm_password);
+		setNumberEditext(et_mobile_reg);
+		setNumberEditext(et_yanzhengma_reg);
 		fanhuiButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -150,6 +156,17 @@ public class RegisterActivity extends Activity {
 				startActivity(intent);
 			}
 		});
+	}
+	
+	public void setEdittext(EditText t){
+		t.setInputType(InputType.TYPE_CLASS_PHONE);//只能输入电话号码
+		t.setInputType(InputType.TYPE_CLASS_NUMBER);//只能输入数字
+		t.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);//只能输入邮箱地址
+	}
+	public void setNumberEditext(EditText t){
+		 t.setInputType(EditorInfo.TYPE_CLASS_PHONE);
+         t.setInputType(EditorInfo.TYPE_CLASS_PHONE);
+
 	}
 	@Override
 	public void onBackPressed() {

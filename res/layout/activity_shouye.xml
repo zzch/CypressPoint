@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical" 
     android:gravity="center_horizontal"
+    android:id="@+id/linear"
    >
     <RelativeLayout
         android:layout_width="match_parent"
@@ -23,7 +24,21 @@
 
         
     </RelativeLayout>
-    
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <RelativeLayout 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <LinearLayout 
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                >
     <Button 
         android:id="@+id/but1"
         android:layout_width="@dimen/register_view_width"
@@ -165,4 +180,7 @@
              android:layout_weight="1"
                 />
         </LinearLayout>
+        </LinearLayout>
+        </RelativeLayout>
+        </ScrollView>
 </LinearLayout>

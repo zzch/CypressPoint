@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Message;
+import android.text.InputType;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -132,10 +133,18 @@ public class ForGetPasswordActivity extends Activity {
 		passWordEditText = (EditText) findViewById(R.id.pswd);
 		surePaEditText = (EditText) findViewById(R.id.pswd_sure);
 		codeButton = (Button) findViewById(R.id.forget_mobile);
+		setEdittext(passWordEditText);
+		setEdittext(surePaEditText);
+		
 		shuzijianpan(et_mobile);
 		shuzijianpan(codeEditText);
 		//未点击显示
 			codeButton.setText("获取验证码");
+	}
+	public void setEdittext(EditText t){
+		t.setInputType(InputType.TYPE_CLASS_PHONE);//只能输入电话号码
+		t.setInputType(InputType.TYPE_CLASS_NUMBER);//只能输入数字
+		t.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);//只能输入邮箱地址
 	}
 	public void shuzijianpan(EditText s){
 		/*
