@@ -162,6 +162,7 @@
                 />
   
               <LinearLayout
+                  android:id="@+id/layout_sex"
                   android:layout_width="match_parent"
                   android:layout_height="@dimen/view_mid_xx_title"
                   android:gravity="center_vertical"
@@ -235,6 +236,7 @@
                 />
            
                 <LinearLayout
+                    android:id="@+id/layout_brithday"
                   android:layout_width="match_parent"
                   android:layout_height="@dimen/view_mid_xx_title"
                   android:gravity="center_vertical"

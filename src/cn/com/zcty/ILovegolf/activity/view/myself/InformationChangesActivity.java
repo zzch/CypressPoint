@@ -120,6 +120,8 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 	private ImageView imageView5;
 	private String nameSuccess;
 	private String sexSuccess;
+	private LinearLayout layout_brithday;
+	private LinearLayout layout_sex;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -222,6 +224,8 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		fanhuiButton.setOnClickListener(InformationChangesActivity.this);
 		diquTextView.setOnClickListener(this);
 		sexTextView.setOnClickListener(this);
+		layout_sex.setOnClickListener(this);
+		layout_brithday.setOnClickListener(this);
 		brithdayTextView.setOnClickListener(this);
 
 		upnameEditText.addTextChangedListener(new TextWatcher() {
@@ -369,6 +373,8 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 	}
 
 	private void initView() {
+		layout_brithday = (LinearLayout) findViewById(R.id.layout_brithday);
+		layout_sex = (LinearLayout) findViewById(R.id.layout_sex);
 		v_1 = findViewById(R.id.view_1);
 		v_2 = findViewById(R.id.view_2);
 		v_1.setVisibility(View.GONE);
@@ -395,6 +401,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		imageView2 = (ImageView) findViewById(R.id.imageView2);
 		imageView3 = (ImageView) findViewById(R.id.imageView3);
 		imageView5 = (ImageView) findViewById(R.id.imageView5);
+		
 		if(!FileUtil.fileIsExists()){	
 			
 		}else{
@@ -519,8 +526,32 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			new GenxinSgin().start();
 			new GenxinName().start();
 
-
+			break;
+		case R.id.layout_sex:
 			
+			if(sexWheel.getVisibility()==View.GONE){				
+				sexWheel.setVisibility(View.VISIBLE);
+				imageView2.setImageResource(R.drawable.image_icon_up);
+				v_1.setVisibility(View.VISIBLE);
+			}else{
+				sexWheel.setVisibility(View.GONE);	
+				v_1.setVisibility(View.GONE);	
+				imageView2.setImageResource(R.drawable.image_icon);
+				new GenxinSex().start();
+			}
+			break;
+			
+		case R.id.layout_brithday:
+			if(brithdayLinearLayout.getVisibility()==View.GONE){				
+				brithdayLinearLayout.setVisibility(View.VISIBLE);
+				imageView3.setImageResource(R.drawable.image_icon_up);
+				v_2.setVisibility(View.VISIBLE);	
+			}else{
+				brithdayLinearLayout.setVisibility(View.GONE);	
+				v_2.setVisibility(View.GONE);	
+				imageView3.setImageResource(R.drawable.image_icon);
+				new GenxinBrithday().start();
+			}
 			break;
 		}		
 	}
