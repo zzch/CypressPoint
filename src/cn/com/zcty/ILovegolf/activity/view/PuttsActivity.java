@@ -45,8 +45,20 @@ public class PuttsActivity extends Activity{
 	private TextView ganshuTextView4;
 	private TextView tuijinTextView4;
 	private TextView fisTextView4;
+	private TextView cishuTextView5;
+	private TextView ganshuTextView5;
+	private TextView tuijinTextView5;
+	private TextView fisTextView5;
+	private TextView cishuTextView6;
+	private TextView ganshuTextView6;
+	private TextView tuijinTextView6;
+	private TextView fisTextView6;
+	private TextView cishuTextView7;
+	private TextView ganshuTextView7;
+	private TextView tuijinTextView7;
+	private TextView fisTextView7;
 	private Button fanhuiButton;
-	
+
 	private ArrayList<Distance> arrayDistances = new ArrayList<Distance>();
 
 	private Putts puts = new Putts();
@@ -59,26 +71,41 @@ public class PuttsActivity extends Activity{
 			averageGirTextView.setText(puts.getAverageGir());
 			averageNonGirTextView.setText(puts.getAverageNonGir());
 			lastTextView.setText(puts.getLastAverage());
-			
+
 			cishuTextView.setText(arrayDistances.get(0).getPer_round());
 			ganshuTextView.setText(arrayDistances.get(0).getShots_to_hole());
 			tuijinTextView.setText(arrayDistances.get(0).getHoled_percentage());
 			fisTextView.setText(arrayDistances.get(0).getDispersion());
-			
+
 			cishuTextView2.setText(arrayDistances.get(1).getPer_round());
 			ganshuTextView2.setText(arrayDistances.get(1).getShots_to_hole());
 			tuijinTextView2.setText(arrayDistances.get(1).getHoled_percentage());
 			fisTextView2.setText(arrayDistances.get(1).getDispersion());
-			
+
 			cishuTextView3.setText(arrayDistances.get(2).getPer_round());
 			ganshuTextView3.setText(arrayDistances.get(2).getShots_to_hole());
 			tuijinTextView3.setText(arrayDistances.get(2).getHoled_percentage());
 			fisTextView3.setText(arrayDistances.get(2).getDispersion());
-			
+
 			cishuTextView4.setText(arrayDistances.get(3).getPer_round());
 			ganshuTextView4.setText(arrayDistances.get(3).getShots_to_hole());
 			tuijinTextView4.setText(arrayDistances.get(3).getHoled_percentage());
 			fisTextView4.setText(arrayDistances.get(3).getDispersion());
+			
+			cishuTextView5.setText(arrayDistances.get(4).getPer_round());
+			ganshuTextView5.setText(arrayDistances.get(4).getShots_to_hole());
+			tuijinTextView5.setText(arrayDistances.get(4).getHoled_percentage());
+			fisTextView5.setText(arrayDistances.get(4).getDispersion());
+			
+			cishuTextView6.setText(arrayDistances.get(5).getPer_round());
+			ganshuTextView6.setText(arrayDistances.get(5).getShots_to_hole());
+			tuijinTextView6.setText(arrayDistances.get(5).getHoled_percentage());
+			fisTextView6.setText(arrayDistances.get(5).getDispersion());
+			
+			cishuTextView7.setText(arrayDistances.get(6).getPer_round());
+			ganshuTextView7.setText(arrayDistances.get(6).getShots_to_hole());
+			tuijinTextView7.setText(arrayDistances.get(6).getHoled_percentage());
+			fisTextView7.setText(arrayDistances.get(6).getDispersion());
 		};
 	};
 	@Override
@@ -98,41 +125,56 @@ public class PuttsActivity extends Activity{
 		averageGirTextView = (TextView) findViewById(R.id.putts_average_girs);
 		averageNonGirTextView = (TextView) findViewById(R.id.putts_average_nongir);
 		lastTextView = (TextView) findViewById(R.id.putts_average_last);
-		
+
 		cishuTextView = (TextView) findViewById(R.id.putts_average_cishu);
 		ganshuTextView = (TextView) findViewById(R.id.putts_average_gancount);
 		tuijinTextView = (TextView) findViewById(R.id.putts_average_fist);
 		fisTextView = (TextView) findViewById(R.id.putts_average_shengyu);
-		
+
 		cishuTextView2 = (TextView) findViewById(R.id.putts_average_cishu_2);
 		ganshuTextView2 = (TextView) findViewById(R.id.putts_average_gancount_2);
 		tuijinTextView2 = (TextView) findViewById(R.id.putts_average_fist_2);
 		fisTextView2 = (TextView) findViewById(R.id.putts_average_shengyu_2);
-		
+
 		cishuTextView3 = (TextView) findViewById(R.id.putts_average_cishu_3);
 		ganshuTextView3 = (TextView) findViewById(R.id.putts_average_gancount_3);
 		tuijinTextView3 = (TextView) findViewById(R.id.putts_average_fist_3);
 		fisTextView3 = (TextView) findViewById(R.id.putts_average_shengyu_3);
-		
+
 		cishuTextView4 = (TextView) findViewById(R.id.putts_average_cishu_4);
 		ganshuTextView4 = (TextView) findViewById(R.id.putts_average_gancount_4);
 		tuijinTextView4 = (TextView) findViewById(R.id.putts_average_fist_4);
 		fisTextView4 = (TextView) findViewById(R.id.putts_average_shengyu_4);
-		
+
+		cishuTextView5 = (TextView) findViewById(R.id.putts_average_cishu_5);
+		ganshuTextView5 = (TextView) findViewById(R.id.putts_average_gancount_5);
+		tuijinTextView5 = (TextView) findViewById(R.id.putts_average_fist_5);
+		fisTextView5 = (TextView) findViewById(R.id.putts_average_shengyu_5);
+
+		cishuTextView6 = (TextView) findViewById(R.id.putts_average_cishu_6);
+		ganshuTextView6 = (TextView) findViewById(R.id.putts_average_gancount_6);
+		tuijinTextView6 = (TextView) findViewById(R.id.putts_average_fist_6);
+		fisTextView6 = (TextView) findViewById(R.id.putts_average_shengyu_6);
+
+		cishuTextView7 = (TextView) findViewById(R.id.putts_average_cishu_7);
+		ganshuTextView7 = (TextView) findViewById(R.id.putts_average_gancount_7);
+		tuijinTextView7 = (TextView) findViewById(R.id.putts_average_fist_7);
+		fisTextView7 = (TextView) findViewById(R.id.putts_average_shengyu_7);
+
 		fanhuiButton = (Button) findViewById(R.id.scorecard_back);
-		
+
 	}
 	private void setListeners(){
 		fanhuiButton.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				finish();
 			}
 		});
-		
+
 	}
-	
+
 	public void onClick(View v){
 		Intent intent;
 		switch(v.getId()){
@@ -181,9 +223,24 @@ public class PuttsActivity extends Activity{
 			intent.putExtra("putt9", "putt9");
 			startActivity(intent);
 			break;
+		case R.id.help_putt_10:
+			intent = new Intent(PuttsActivity.this,HelpAverageActivity.class);
+			intent.putExtra("putt10", "putt10");
+			startActivity(intent);
+			break;
+		case R.id.help_putt_11:
+			intent = new Intent(PuttsActivity.this,HelpAverageActivity.class);
+			intent.putExtra("putt11", "putt11");
+			startActivity(intent);
+			break;
+		case R.id.help_putt_12:
+			intent = new Intent(PuttsActivity.this,HelpAverageActivity.class);
+			intent.putExtra("putt12", "putt12");
+			startActivity(intent);
+			break;
 		}
 	}
-	
+
 	class PuttsTask extends Thread{
 		@Override
 		public void run() {
@@ -209,34 +266,58 @@ public class PuttsActivity extends Activity{
 				puts.setLastAverage(jsonObject03.getString("holed_putt_length"));
 				Log.i("nihaoa", jsonObject03.getString("distance_0_1_from_hole_in_green"));
 				JSONObject js1 = new JSONObject(jsonObject03.getString("distance_0_1_from_hole_in_green"));	
-					Distance d1 = new Distance();
-					d1.setPer_round(js1.getString("per_round"));
-					d1.setShots_to_hole(js1.getString("shots_to_hole"));
-					d1.setHoled_percentage(js1.getString("holed_percentage"));
-					d1.setDispersion(js1.getString("dispersion"));
-					arrayDistances.add(d1);
+				Distance d1 = new Distance();
+				d1.setPer_round(js1.getString("per_round"));
+				d1.setShots_to_hole(js1.getString("shots_to_hole"));
+				d1.setHoled_percentage(js1.getString("holed_percentage"));
+				d1.setDispersion(js1.getString("dispersion"));
+				arrayDistances.add(d1);
 				JSONObject js2 = new JSONObject(jsonObject03.getString("distance_1_2_from_hole_in_green"));	
-					Distance d2 = new Distance();
-					d2.setPer_round(js2.getString("per_round"));
-					d2.setShots_to_hole(js2.getString("shots_to_hole"));
-					d2.setHoled_percentage(js2.getString("holed_percentage"));
-					d2.setDispersion(js2.getString("dispersion"));
-					arrayDistances.add(d2);
+				Distance d2 = new Distance();
+				d2.setPer_round(js2.getString("per_round"));
+				d2.setShots_to_hole(js2.getString("shots_to_hole"));
+				d2.setHoled_percentage(js2.getString("holed_percentage"));
+				d2.setDispersion(js2.getString("dispersion"));
+				arrayDistances.add(d2);
 				JSONObject js3 = new JSONObject(jsonObject03.getString("distance_2_3_from_hole_in_green"));
-					Distance d3 = new Distance();
-					d3.setPer_round(js3.getString("per_round"));
-					d3.setShots_to_hole(js3.getString("shots_to_hole"));
-					d3.setHoled_percentage(js3.getString("holed_percentage"));
-					d3.setDispersion(js3.getString("dispersion"));
-					arrayDistances.add(d3);
+				Distance d3 = new Distance();
+				d3.setPer_round(js3.getString("per_round"));
+				d3.setShots_to_hole(js3.getString("shots_to_hole"));
+				d3.setHoled_percentage(js3.getString("holed_percentage"));
+				d3.setDispersion(js3.getString("dispersion"));
+				arrayDistances.add(d3);
 				JSONObject js4 = new JSONObject(jsonObject03.getString("distance_3_5_from_hole_in_green"));
-					Distance d4 = new Distance();
-					d4.setPer_round(js4.getString("per_round"));
-					d4.setShots_to_hole(js4.getString("shots_to_hole"));
-					d4.setHoled_percentage(js4.getString("holed_percentage"));
-					d4.setDispersion(js4.getString("dispersion"));
-					arrayDistances.add(d4);
+				Distance d4 = new Distance();
+				d4.setPer_round(js4.getString("per_round"));
+				d4.setShots_to_hole(js4.getString("shots_to_hole"));
+				d4.setHoled_percentage(js4.getString("holed_percentage"));
+				d4.setDispersion(js4.getString("dispersion"));
+				arrayDistances.add(d4);
+
+				JSONObject js5 = new JSONObject(jsonObject03.getString("distance_5_8_from_hole_in_green"));
+				Distance d5 = new Distance();
+				d5.setPer_round(js5.getString("per_round"));
+				d5.setShots_to_hole(js5.getString("shots_to_hole"));
+				d5.setHoled_percentage(js5.getString("holed_percentage"));
+				d5.setDispersion(js5.getString("dispersion"));
+				arrayDistances.add(d5);
+
+				JSONObject js6 = new JSONObject(jsonObject03.getString("distance_8_13_from_hole_in_green"));
+				Distance d6 = new Distance();
+				d6.setPer_round(js6.getString("per_round"));
+				d6.setShots_to_hole(js6.getString("shots_to_hole"));
+				d6.setHoled_percentage(js6.getString("holed_percentage"));
+				d6.setDispersion(js6.getString("dispersion"));
+				arrayDistances.add(d6);
 				
+				JSONObject js7 = new JSONObject(jsonObject03.getString("distance_13_33_from_hole_in_green"));
+				Distance d7 = new Distance();
+				d7.setPer_round(js7.getString("per_round"));
+				d7.setShots_to_hole(js7.getString("shots_to_hole"));
+				d7.setHoled_percentage(js7.getString("holed_percentage"));
+				d7.setDispersion(js7.getString("dispersion"));
+				arrayDistances.add(d7);
+
 				Message msg = handler.obtainMessage();
 				msg.what = 1;
 				handler.sendMessage(msg);

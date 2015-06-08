@@ -94,6 +94,20 @@ public class HelpAverageActivity extends Activity {
 			title_name.setText("距离球洞   3 - 5 码");	
 			textView2.setText("该项目计算在球位于球洞大于3码小于5码时尝试推杆的次数，该距离推进洞的平均杆数，该距离一杆进洞的几率，以及该距离第一推后平均剩余码数。");
 		}
+        if(intent.getStringExtra("putt10")!=null){
+			title_name.setText("距离球洞   5 - 8 码");	
+			textView2.setText("该项目计算在球位于球洞大于5码小于8码时尝试推杆的次数，该距离推进洞的平均杆数，该距离一杆进洞的几率，以及该距离第一推后平均剩余码数。");
+		}
+        if(intent.getStringExtra("putt11")!=null){
+			title_name.setText("距离球洞   8 - 13 码");	
+			textView2.setText("该项目计算在球位于球洞大于8码小于13码时尝试推杆的次数，该距离推进洞的平均杆数，该距离一杆进洞的几率，以及该距离第一推后平均剩余码数。");
+		}
+        if(intent.getStringExtra("putt12")!=null){
+			title_name.setText("距离球洞   13 - 33 码");	
+			textView2.setText("该项目计算在球位于球洞大于13码小于33码时尝试推杆的次数，该距离推进洞的平均杆数，该距离一杆进洞的几率，以及该距离第一推后平均剩余码数。");
+		}
+        
+        
         
         if(intent.getStringExtra("shakeng1")!=null){
 			title_name.setText("沙坑救球");	

@@ -1,5 +1,8 @@
 package cn.com.zcty.ILovegolf.activity.view.login_register;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -26,6 +29,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.view.HomePageActivity;
+import cn.com.zcty.ILovegolf.activity.view.login_register.ForGetPasswordActivity.RegisterTask;
 import cn.com.zcty.ILovegolf.tools.RegexMobile;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
@@ -54,34 +58,22 @@ public class RegisterActivity extends Activity {
      private String yanzhengmsg;
      private String yanzhengResut;
      private String yanzhengJson;
+     private String phone;
+     private boolean dianji;
 	Handler handler = new Handler(){
 
 		@Override
 		public void handleMessage(Message msg) {
 			switch(msg.what){
-			case 0:
-				 Toast.makeText(RegisterActivity.this, "用户名不能为空！", Toast.LENGTH_LONG).show();
-				break;
-			case 1:
-				Toast.makeText(RegisterActivity.this, "用户名不合法！", Toast.LENGTH_LONG).show();
-				break;
-			case 2:
-				 Toast.makeText(RegisterActivity.this, "密码不能为空！", Toast.LENGTH_LONG).show();
-				break;
-			case 3:
-				 Toast.makeText(RegisterActivity.this, "确认密码不能为空！", Toast.LENGTH_LONG).show();
-				break;
-			case 4:
-				
-				Toast.makeText(RegisterActivity.this, "验证码不能为空！", Toast.LENGTH_LONG).show();
-				
-				 break;
 			case 8:
 				Toast.makeText(RegisterActivity.this, message, Toast.LENGTH_LONG).show();
 
 			case 6:
-				
-				if(msg.obj.equals("404")||msg.obj.equals("500")){
+				Log.i("regist", msg.obj+"ffffff");
+				if(msg.obj==null){
+					new MyTask_().start();
+				}else{
+				if(msg.obj.toString().equals("404")||msg.obj.toString().equals("500")){
 					Toast.makeText(RegisterActivity.this, "网络异常！", Toast.LENGTH_LONG).show();
 				}else {
 						//弹出一个Dialog
@@ -96,13 +88,12 @@ public class RegisterActivity extends Activity {
 								finish();
 						}
 						
-					}
+					}}
 					
 				break;
-			case 7:
-				 Toast.makeText(RegisterActivity.this, "确认密码与密码不一致！", Toast.LENGTH_LONG).show();
-				break;
 			case 5:
+				
+				
 				if(msg.obj.equals("404")||msg.obj.equals("500")){
 					Toast.makeText(RegisterActivity.this, "网络异常！", Toast.LENGTH_LONG).show();
 				}else {
@@ -120,12 +111,16 @@ public class RegisterActivity extends Activity {
 				break;
 			case 9:
 				daojishi.cancel();
-				Toast.makeText(RegisterActivity.this, yanzhengmsg, Toast.LENGTH_LONG).show();
+				if(!(yanzhengmsg==null||yanzhengmsg.equals(""))){
+					
+					Toast.makeText(RegisterActivity.this, yanzhengmsg, Toast.LENGTH_LONG).show();
+				}
 				et_mobile_reg.setText("");
 				et_password_reg.setText("");
 				et_confirm_password.setText("");
 				et_yanzhengma_reg.setText("");
 				yanzhengma.setText("获取验证码");
+				dianji = false;
 				break;
 			}
 			
@@ -169,9 +164,21 @@ public class RegisterActivity extends Activity {
 	 * @param v
 	 */
 	public void on_yanzhengma(View v){
-				//倒计时
-		     daojishi.start(); 
-			new	RegisterTask().start();
+			phone = et_mobile_reg.getText().toString().trim();
+			if(isMobileNO(phone)){
+				if(!dianji){
+					dianji = true;
+					//倒计时
+				     daojishi.start(); 
+					new	RegisterTask().start();
+				}
+				
+				
+			}else{
+				Toast.makeText(RegisterActivity.this, "输入手机格式不对", Toast.LENGTH_LONG).show();
+
+			}
+				
 	}
 	
 	class RegisterTask extends Thread {
@@ -184,7 +191,7 @@ public class RegisterActivity extends Activity {
 		
 		public void getData(){
 			
-			String phone = et_mobile_reg.getText().toString().trim();
+			
 			String path=APIService.YANZHENGMA+"phone="+phone;
 			Log.i("path======", "----"+path);
 			String jsonData = HttpUtils.HttpClientGet(path);
@@ -241,40 +248,32 @@ public class RegisterActivity extends Activity {
 		 String mima = et_password_reg.getText().toString().trim();
 		 String querenmima = et_confirm_password.getText().toString().trim();
 		 String yanzheng  = et_yanzhengma_reg.getText().toString().trim();
-		 Message msg = handler.obtainMessage(); 
 		 if("".equals(mobilename))
 			{
-				 msg.what = 0;  
-              handler.sendMessage(msg); 
-              return;
+			 Toast.makeText(RegisterActivity.this, "用户名不能为空！", Toast.LENGTH_LONG).show();
 			}else if(!RegexMobile.VildateMobile(mobilename)){
-				 msg.what = 1;  
-              handler.sendMessage(msg);
-              return;
+				Toast.makeText(RegisterActivity.this, "用户名不合法！", Toast.LENGTH_LONG).show();
 			}else if("".equals(mima)){
-				 msg.what = 2;  
-              handler.sendMessage(msg); 
-              return;
+				 Toast.makeText(RegisterActivity.this, "密码不能为空！", Toast.LENGTH_LONG).show();
               
 			}else if("".equals(querenmima)){
-				 msg.what = 3;  
-	              handler.sendMessage(msg); 
-	              return;
+				 Toast.makeText(RegisterActivity.this, "确认密码不能为空！", Toast.LENGTH_LONG).show();
+
 	              
 	              
 		  }else if(!mima.equals(querenmima)){
-				 msg.what = 7;  
-	              handler.sendMessage(msg); 
-	              return;
+				 Toast.makeText(RegisterActivity.this, "确认密码与密码不一致！", Toast.LENGTH_LONG).show();
+
 	              
 			}
-	              else if("".equals(yanzheng)){
-					 msg.what = 4;  
-		              handler.sendMessage(msg); 
-		              return;     
+	            else if("".equals(yanzheng)){
+	  				Toast.makeText(RegisterActivity.this, "验证码不能为空！", Toast.LENGTH_LONG).show();
+    
+		}else{
+			new MyTask().start();
+
 		}
 		 
-		new MyTask().start();
        }
     
     class MyTask extends Thread{
@@ -364,6 +363,7 @@ public class RegisterActivity extends Activity {
    				public void onFinish() {
    					// TODO Auto-generated method stub
    					yanzhengma.setText("获取验证码");
+   					dianji = false;
    				}
                    //正在计时
    				@Override
@@ -425,6 +425,22 @@ public class RegisterActivity extends Activity {
 				
 			}
 			return str;
+		}
+	  
+	  /**
+		 * 判断输入手机格式
+		 * @param mobiles
+		 * @return
+		 */
+		public boolean isMobileNO(String mobiles) {
+			if(mobiles==null||mobiles.equals("")){
+				return false;
+			}
+			Pattern p = Pattern
+					.compile("^1[3458]\\d{9}$");
+			Matcher m = p.matcher(mobiles);
+
+			return m.matches();
 		}
 	}
     

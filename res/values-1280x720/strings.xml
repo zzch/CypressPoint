@@ -161,5 +161,8 @@
         
         
           <dimen name="text_whith_x">260dp</dimen> 
-         <dimen name="image_size">18dp</dimen> 
+         <dimen name="image_size">18dp</dimen>
+         
+         
+         <dimen name="guide_image_size">8dp</dimen> 
 </resources>

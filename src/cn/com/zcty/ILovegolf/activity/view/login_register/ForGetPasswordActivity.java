@@ -50,6 +50,7 @@ public class ForGetPasswordActivity extends Activity {
 	 private String forGetData;
 	 private String forGetMessage;
 	 private LinearLayout linear;
+	 private boolean dianji;
 	 Handler handler = new Handler(){
 		 public void handleMessage(Message msg) {
 			 if(msg.what==1){
@@ -68,6 +69,8 @@ public class ForGetPasswordActivity extends Activity {
 			 }
 			 if(msg.what==2){
 				 Toast.makeText(ForGetPasswordActivity.this, message, Toast.LENGTH_LONG).show();
+				 daojishi.cancel();
+				 codeButton.setText("获取验证码");
 			 }
 			 if(msg.what==3){
 				 if(msg.obj.equals("404")||msg.obj.equals("500")){
@@ -88,6 +91,7 @@ public class ForGetPasswordActivity extends Activity {
 			 }
 			 if(msg.what==4){
 				 Toast.makeText(ForGetPasswordActivity.this, forGetMessage, Toast.LENGTH_LONG).show();
+				
 			 }
 		 };
 	 };
@@ -107,9 +111,16 @@ public class ForGetPasswordActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				daojishi();
+				phone = et_mobile.getText().toString().trim();
+				if(!isMobileNO(phone)){
+					Toast.makeText(ForGetPasswordActivity.this, "输入手机格式不对", Toast.LENGTH_LONG).show();
+				}else{
+				if(!dianji){
+				dianji = true;
+				daojishi.start();
 				new RegisterTask().start();
-			}
+				}
+				}}
 		});
 	}
 
@@ -122,7 +133,8 @@ public class ForGetPasswordActivity extends Activity {
 		codeButton = (Button) findViewById(R.id.forget_mobile);
 		shuzijianpan(et_mobile);
 		shuzijianpan(codeEditText);
-
+		//未点击显示
+			codeButton.setText("获取验证码");
 	}
 	public void shuzijianpan(EditText s){
 		/*
@@ -148,21 +160,19 @@ public class ForGetPasswordActivity extends Activity {
 		startActivity(intent);
 		finish();
 	}
-	 /**
-   	 * 点击获取验证码时，倒计时
-   	 */
-   	public void daojishi(){
-   			//未点击显示
-   			codeButton.setText("获取验证码");
+	
+   		
+   			
    	
    			//倒计时  点击后
-   			new CountDownTimer(60*1000, 1000){
+	CountDownTimer	daojishi =	new CountDownTimer(60*1000, 1000){
 
    				//计时结束
    				@Override
    				public void onFinish() {
    					// TODO Auto-generated method stub
    					codeButton.setText("获取验证码");
+   					dianji = false;
    				}
                    //正在计时
    				@Override
@@ -171,8 +181,8 @@ public class ForGetPasswordActivity extends Activity {
    					codeButton.setText(""+millisUntilFinished/1000+"");
    				}
    				
-   			}.start();
-		   }
+   			};
+		   
 		
 	
 	/**
@@ -180,7 +190,7 @@ public class ForGetPasswordActivity extends Activity {
 	 * @param v
 	 */
 	public void on_submit(View v){
-		 phone = et_mobile.getText().toString().trim();
+		// phone = et_mobile.getText().toString().trim();
 		 password = passWordEditText.getText().toString().trim();
 		 password_confirmation = surePaEditText.getText().toString().trim();
 		 verification_code = codeEditText.getText().toString().trim();
@@ -205,6 +215,9 @@ public class ForGetPasswordActivity extends Activity {
 	 * @return
 	 */
 	public boolean isMobileNO(String mobiles) {
+		if(mobiles==null||mobiles.equals("")){
+			return false;
+		}
 		Pattern p = Pattern
 				.compile("^1[3458]\\d{9}$");
 		Matcher m = p.matcher(mobiles);
