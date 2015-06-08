@@ -205,6 +205,7 @@ public class SelfhoodActivity extends Activity{
 		if(cunzai.equals("1")){
 			Intent intent = new Intent(SelfhoodActivity.this,QuickScoreActivity.class);
 			startActivity(intent);
+			overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 			finish();
 		}else{
 			
@@ -217,9 +218,10 @@ public class SelfhoodActivity extends Activity{
 			if(cunzai.equals("1")){
 				Intent intent = new Intent(SelfhoodActivity.this,QuickScoreActivity.class);
 				startActivity(intent);
+				overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 				finish();
 			}else{
-				
+				overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 				finish();
 			}
 			

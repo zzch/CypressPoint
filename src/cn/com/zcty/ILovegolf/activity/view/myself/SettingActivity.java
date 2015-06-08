@@ -58,6 +58,7 @@ public class SettingActivity extends Activity{
 		super.onBackPressed();
 		Intent intent = new Intent(SettingActivity.this,Myself.class);
 		startActivity(intent);
+		overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 		finish();
 	}
 	public void onClick(View v){
@@ -65,6 +66,7 @@ public class SettingActivity extends Activity{
 		case R.id.back:
 			Intent intent = new Intent(SettingActivity.this,Myself.class);
 			startActivity(intent);
+			overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 			finish();
 			break;
 

@@ -103,6 +103,7 @@ public class AddMatchActivity extends Activity {
 					FileUtil.delFile();
 					Intent intent = new Intent(AddMatchActivity.this,ShouYeActivity.class);
 					startActivity(intent);
+					overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 					finish();
 				}else{
 					
@@ -185,6 +186,7 @@ public class AddMatchActivity extends Activity {
 		case R.id.add_back:
 			Intent intent = new Intent(AddMatchActivity.this,QuickScoreActivity.class);
 			startActivity(intent);
+			overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 			finish();
 			break;
 
@@ -199,6 +201,7 @@ public class AddMatchActivity extends Activity {
 		super.onBackPressed();
 		Intent intent = new Intent(AddMatchActivity.this,QuickScoreActivity.class);
 		startActivity(intent);
+		overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 		finish();
 	}
 	/**

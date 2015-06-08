@@ -144,21 +144,7 @@
                             android:textColor="@color/chengse"
                             android:textSize="@dimen/txsize_small_x" />
 
-                        <LinearLayout
-                            android:id="@+id/help_mingzhongs_1"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_marginTop="2dp"
-                            android:layout_toRightOf="@+id/hit_shuju"
-                            android:gravity="center"
-                            android:onClick="onClick" >
-
-                            <ImageView
-                                android:layout_width="18dp"
-                                android:layout_height="18dp"
-                                android:layout_marginTop="1dp"
-                                android:src="@drawable/help" />
-                        </LinearLayout>
+                       
 
                         <TextView
                             android:id="@+id/par_shuju_1"
@@ -386,21 +372,7 @@
                         android:textColor="@color/chengse"
                         android:textSize="@dimen/txsize_small_x" />
 
-                   <LinearLayout
-                            android:id="@+id/help_mingzhongs_2"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_marginTop="2dp"
-                            android:layout_toRightOf="@+id/hit_shuju_2"
-                            android:gravity="center"
-                            android:onClick="onClick" >
-
-                            <ImageView
-                                android:layout_width="18dp"
-                                android:layout_height="18dp"
-                                android:layout_marginTop="1dp"
-                                android:src="@drawable/help" />
-                        </LinearLayout>
+                  
 
                     <TextView
                         android:id="@+id/par_shuju_1_2"
@@ -605,21 +577,7 @@
                             android:textColor="@color/chengse"
                             android:textSize="@dimen/txsize_small_x" />
 
-                       <LinearLayout
-                            android:id="@+id/help_mingzhongs_3"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_marginTop="2dp"
-                            android:layout_toRightOf="@+id/hit_shuju_3"
-                            android:gravity="center"
-                            android:onClick="onClick" >
-
-                            <ImageView
-                                android:layout_width="18dp"
-                                android:layout_height="18dp"
-                                android:layout_marginTop="3dp"
-                                android:src="@drawable/help" />
-                        </LinearLayout>
+                       
                    
 
                     <RelativeLayout

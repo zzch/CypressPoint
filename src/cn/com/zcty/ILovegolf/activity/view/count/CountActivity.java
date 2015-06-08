@@ -192,6 +192,7 @@ public class CountActivity extends Activity implements OnClickListener{
 		case R.id.k_back:
 			intent=new Intent(CountActivity.this,HomePageActivity.class);
 			startActivity(intent);
+			overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 			finish();
 			break;
 		}

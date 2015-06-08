@@ -201,6 +201,7 @@ public class CompetitionAdd extends Activity{
 			public void onClick(View v) {
 				Intent intent = new Intent(CompetitionAdd.this,QuickScoreActivity.class);
 				startActivity(intent);
+				overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 				finish();
 			}
 		});
@@ -370,6 +371,7 @@ public class CompetitionAdd extends Activity{
 		super.onBackPressed();
 		Intent intent = new Intent(CompetitionAdd.this,QuickScoreActivity.class);
 		startActivity(intent);
+		overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 		finish();
 	}
 	/**

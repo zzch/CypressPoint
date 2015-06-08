@@ -50,6 +50,7 @@ public class AnalyzeActivity extends FragmentActivity{
 			public void onClick(View v) {
 				Intent intent  = new Intent(AnalyzeActivity.this,CountActivity.class);
 				startActivity(intent);
+				overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 				finish();
 			}
 		});

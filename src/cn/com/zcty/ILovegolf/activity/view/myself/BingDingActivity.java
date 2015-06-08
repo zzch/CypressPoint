@@ -51,6 +51,7 @@ public class BingDingActivity extends Activity{
 					FileUtil.delFile();
 					Intent intent = new Intent(BingDingActivity.this,ShouYeActivity.class);
 					startActivity(intent);
+					overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 					finish();
 				}else{
 					if(result==null){
@@ -119,6 +120,7 @@ public class BingDingActivity extends Activity{
 		super.onBackPressed();
 		Intent intent = new Intent(this,Myself.class);
 		startActivity(intent);
+		overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 		finish();
 	}
 	public void onClick(View v){
@@ -126,6 +128,7 @@ public class BingDingActivity extends Activity{
 		case R.id.back:
 			Intent intent = new Intent(this,Myself.class);
 			startActivity(intent);
+			overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 			finish();
 			break;
 

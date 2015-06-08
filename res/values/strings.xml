@@ -133,4 +133,5 @@
     <string name="more">加载中</string>
     <!-- 消除警告，可忽略 -->
     <string name="d">图片描述</string>
+    
 </resources>

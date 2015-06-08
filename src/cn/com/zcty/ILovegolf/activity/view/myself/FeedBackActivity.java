@@ -44,12 +44,14 @@ public class FeedBackActivity extends Activity{
 					FileUtil.delFile();
 					Intent intent = new Intent(FeedBackActivity.this,ShouYeActivity.class);
 					startActivity(intent);
+					overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 					finish();
 				}else{
 					if(result.equals("success")){
 						Toast.makeText(FeedBackActivity.this, "反馈成功", Toast.LENGTH_LONG).show();
 						Intent intent = new Intent(FeedBackActivity.this,Myself.class);
 						startActivity(intent);
+						overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 						finish();
 					}else{
 						Toast.makeText(FeedBackActivity.this, "反馈失败", Toast.LENGTH_LONG).show();
@@ -74,11 +76,13 @@ public class FeedBackActivity extends Activity{
 		super.onBackPressed();
 		Intent intent = new Intent(FeedBackActivity.this,Myself.class);
 		startActivity(intent);
+		overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 		finish();
 	}
 	public void onClick(View v){
 		Intent intent = new Intent(FeedBackActivity.this,Myself.class);
 		startActivity(intent);
+		overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 		finish();
 	}
 	private void setListeners() {

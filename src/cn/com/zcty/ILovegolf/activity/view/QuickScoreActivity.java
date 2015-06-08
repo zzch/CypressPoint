@@ -74,6 +74,7 @@ public class QuickScoreActivity extends Activity {
 					FileUtil.delFile();
 					Intent intent = new Intent(QuickScoreActivity.this,ShouYeActivity.class);
 					startActivity(intent);
+					overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 					finish();
 				}else{
 					/*
@@ -165,7 +166,7 @@ public class QuickScoreActivity extends Activity {
 				intent.putExtra("scoring_type", quickArrayList.get(position).getScoring_type());
 				intent.putExtra("name", quickArrayList.get(position).getName());
 				startActivity(intent);
-
+				
 			}
 		});
 
@@ -180,6 +181,7 @@ public class QuickScoreActivity extends Activity {
 		case R.id.k_back:
 			intent=new Intent(QuickScoreActivity.this,HomePageActivity.class);
 			startActivity(intent);
+			overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 			finish();
 			break;
 			
@@ -211,6 +213,7 @@ public class QuickScoreActivity extends Activity {
 		super.onBackPressed();
 		intent=new Intent(QuickScoreActivity.this,HomePageActivity.class);
 		startActivity(intent);
+		overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 		finish();
 	}
 

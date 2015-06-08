@@ -107,7 +107,7 @@
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.StatisticsActivityLand"
             	 android:configChanges="orientation|screenSize"
             ></activity>
-        
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.myself.AboutMyself" android:screenOrientation="portrait"></activity>
         
          <activity android:name="cn.com.zcty.ILovegolf.activity.view.HelpAverageActivity" android:screenOrientation="portrait" android:theme="@style/MyDialogStyleBottom"></activity>
          <activity android:name="cn.com.zcty.ILovegolf.activity.view.CreateMatchActivity" android:screenOrientation="portrait"></activity>

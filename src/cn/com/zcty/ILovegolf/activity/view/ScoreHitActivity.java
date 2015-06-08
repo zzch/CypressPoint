@@ -25,7 +25,7 @@ import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.MajorScoreAverageAdapter;
 
-public class ScoreHitActivity extends Activity implements OnClickListener{
+public class ScoreHitActivity extends Activity {
 	private ArrayList<String> statisticsModels = new ArrayList<String>();
 	private GridView listView;
 	private TextView count1;
@@ -103,17 +103,7 @@ public class ScoreHitActivity extends Activity implements OnClickListener{
 	private ArrayList<String> counts_1 = new ArrayList<String>();
 	private ArrayList<String> counts_2 = new ArrayList<String>();
 	private String[] name = {"命中","左侧","右侧"};
-	
-	private Button dialog_back;
-	private AlertDialog dialog;
-	private TextView textView1;
-	private TextView textView2;
-	private String title1;
-	private String title2;
-	private String title3;
-	private String a;
-	private String b;
-	private String c;
+
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
 			if(msg.what==1){
@@ -140,55 +130,8 @@ public class ScoreHitActivity extends Activity implements OnClickListener{
 		});
 	}
 	
-	
-	/**
-     * 点击帮助图标后弹出一个Dialog
-     */
-    public void fristdialog(String titie,String isa){
-    	AlertDialog.Builder builder = new Builder(this);
-    	 View view=View.inflate(this, R.layout.register_dialog, null);
-		//dialog=(AlertDialog) new Dialog(GanCountActivity.this,R.style.dialog);
-		dialog_back=(Button)view.findViewById(R.id.dialog_back);
-		textView1 = (TextView) view.findViewById(R.id.textView1);
-		textView2 = (TextView) view.findViewById(R.id.textView2);
-		if("isa".equals("a")){
-			textView1.setText(title1);
-			textView2.setText("3/4/5杆洞小于等于标准杆上果岭后并且该洞成绩小于标准杆与当前所完成洞的比例。");
-		}else{
-			textView1.setText(title2);
-			textView2.setText("相邻的2个球洞之间成绩的反弹，上一个球洞大于标准杆，下一个球洞小于标准杆为反弹。");
-		}
-		
-		dialog_back.setOnClickListener(this);
-		dialog = builder.create();
-		dialog.setView(view, 0, 0, 0, 0);
-		dialog.show();
-       }
     
-	public void onClick(View v){
-		Intent intent;
-		switch(v.getId()){
-		case R.id.help_mingzhongs_1:
-			intent = new Intent(ScoreHitActivity.this,HelpAverageActivity.class);
-			intent.putExtra("mingzhong1", "mingzhong1");
-			startActivity(intent);
-			break;
-		case R.id.help_mingzhongs_2:
-			intent = new Intent(ScoreHitActivity.this,HelpAverageActivity.class);
-			intent.putExtra("mingzhong2", "mingzhong2");
-			startActivity(intent);
-			break;
-		case R.id.help_mingzhongs_3:
-			intent = new Intent(ScoreHitActivity.this,HelpAverageActivity.class);
-			intent.putExtra("mingzhong3", "mingzhong3");
-			startActivity(intent);
-			break;
-			
-		case R.id.dialog_back:
-			dialog.dismiss();
-			break;
-		}
-	}
+	
 	private void initView() {
 		fanhuiButton = (Button) findViewById(R.id.scorecard_hit_back);
 		listView = (GridView) findViewById(R.id.major_green_qiudong);

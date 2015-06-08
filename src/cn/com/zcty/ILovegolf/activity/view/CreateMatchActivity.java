@@ -155,6 +155,7 @@ public class CreateMatchActivity extends Activity {
 					FileUtil.delFile();
 					Intent intent = new Intent(CreateMatchActivity.this,ShouYeActivity.class);
 					startActivity(intent);
+					overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 					finish();
 				}else{
 				//正常情况下
@@ -300,6 +301,7 @@ public class CreateMatchActivity extends Activity {
 		super.onBackPressed();
 		Intent intent = new Intent(CreateMatchActivity.this,QuickScoreActivity.class);
 		startActivity(intent);
+		overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 		finish();
 	}
 	public void onclckLister(){
@@ -356,6 +358,7 @@ public class CreateMatchActivity extends Activity {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent(CreateMatchActivity.this,QuickScoreActivity.class);
 				startActivity(intent);
+				overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 				finish();
 			}
 		});

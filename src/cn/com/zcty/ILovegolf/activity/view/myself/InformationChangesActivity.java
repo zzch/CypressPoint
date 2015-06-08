@@ -131,6 +131,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 					FileUtil.delFile();
 					Intent intent = new Intent(InformationChangesActivity.this,ShouYeActivity.class);
 					startActivity(intent);
+					overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 					finish();
 				}else{
 					if(imageurl==null){
@@ -162,6 +163,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 					FileUtil.delFile();
 					Intent intent = new Intent(InformationChangesActivity.this,ShouYeActivity.class);
 					startActivity(intent);
+					overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 					finish();
 				}else{
 				if(nameSuccess.equals("success")){
@@ -173,12 +175,14 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 					Intent intent = new Intent(InformationChangesActivity.this,Myself.class);
 					intent.putExtra("1", "1");
 					startActivity(intent);
+					overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 					finish();
 				}else{
 					Toast.makeText(InformationChangesActivity.this, "信息更新失败", Toast.LENGTH_LONG).show();
 					Intent intent = new Intent(InformationChangesActivity.this,Myself.class);
 					intent.putExtra("1", "1");
 					startActivity(intent);
+					overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 					finish();
 				}
 				}
@@ -530,6 +534,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		Intent intent = new Intent(InformationChangesActivity.this,Myself.class);
 		intent.putExtra("1", "1");
 		startActivity(intent);
+		overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 		finish();
 	}
 	/*private void showSelectedResult() {

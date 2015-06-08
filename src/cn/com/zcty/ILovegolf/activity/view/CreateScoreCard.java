@@ -214,6 +214,7 @@ public class CreateScoreCard extends Activity{
 		super.onBackPressed();
 		Intent intent = new Intent(CreateScoreCard.this,QuickScoreActivity.class);
 		startActivity(intent);
+		overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 		finish();
 	}
 	/*
@@ -224,6 +225,7 @@ public class CreateScoreCard extends Activity{
 		case R.id.scorecard_back:
 			Intent intent = new Intent(CreateScoreCard.this,QuickScoreActivity.class);
 			startActivity(intent);
+			overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 			finish();
 			break;
 		case R.id.competition_button_paiming:
@@ -361,9 +363,7 @@ public class CreateScoreCard extends Activity{
 			msg.obj = jsonArrayData;
 			handler.sendMessage(msg);
 		}
-			
-			
-		
+	
 	}
 	
 	/**

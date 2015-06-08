@@ -40,7 +40,9 @@ public class ChipActivity extends Activity{
 	private TextView chip_insTextView;
 	private TextView longestTextView;
 	private ListView listView;
+	private LinearLayout help_giegan_0;
 	private LinearLayout help_giegan_1;
+	
 	private ArrayList<Chip> chipArrayList = new ArrayList<Chip>();
 	
 	Handler handler = new Handler(){
@@ -77,6 +79,7 @@ public class ChipActivity extends Activity{
 		longestTextView = (TextView) findViewById(R.id.chip_distance);
 		scorecard_back = (Button) findViewById(R.id.scorecard_back);
 		listView = (ListView) findViewById(R.id.listView1);
+		help_giegan_0 = (LinearLayout) findViewById(R.id.help_giegan_0);
 		help_giegan_1 = (LinearLayout) findViewById(R.id.help_giegan_1);
 	}
 	public void setLister(){
@@ -98,6 +101,18 @@ public class ChipActivity extends Activity{
 				intent.putExtra("qiegan", "qiegan");
 				startActivity(intent);
 				
+			}
+			
+		});
+		
+		help_giegan_0.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(ChipActivity.this,HelpAverageActivity.class);
+				intent.putExtra("qiegan0", "qiegan0");
+				startActivity(intent);
 			}
 		});
 	}
@@ -128,9 +143,8 @@ public class ChipActivity extends Activity{
 					chip.setDistance_from_hole(j.getString("distance_from_hole"));
 					chip.setPutt_length(j.getString("putt_length"));
 					chipArrayList.add(chip);
-					Log.i("xianshijiemian", ""+chipArrayList.size());
+					Log.i("xianshijiemian----", ""+chipArrayList.size());
 				}
-				
 				Message msg = handler.obtainMessage();
 				msg.what = 1;
 				handler.sendMessage(msg);

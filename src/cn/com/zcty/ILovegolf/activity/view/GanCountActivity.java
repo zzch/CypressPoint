@@ -20,7 +20,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
 
-public class GanCountActivity extends Activity implements OnClickListener{
+public class GanCountActivity extends Activity {
 	private ArrayList<String> statisticsModels = new ArrayList<String>();
 	private String double_eagle;//信天翁
 	private String eagle;//老鹰球
@@ -40,13 +40,7 @@ public class GanCountActivity extends Activity implements OnClickListener{
 	private TextView text_xiaoniao_2;
 	private Button fanhuiButton;
 	private String bounce;
-	private Button dialog_back;
-	private AlertDialog dialog;
-	private TextView gree_shuju;
-	private TextView gree_shuju_fantanlv;
-	private String title1;
-	private String title2;
-	private TextView textView1;
+	
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
 			if(msg.what==1){
@@ -80,53 +74,24 @@ public class GanCountActivity extends Activity implements OnClickListener{
 			}
 		});		
 	}
-	/**
-     * 点击帮助图标后弹出一个Dialog
-     */
-    public void fristdialog(String titie,Boolean isa){
-    	AlertDialog.Builder builder = new Builder(this);
-    	 View view=View.inflate(this, R.layout.register_dialog, null);
-		//dialog=(AlertDialog) new Dialog(GanCountActivity.this,R.style.dialog);
-		dialog_back=(Button)view.findViewById(R.id.dialog_back);
-		textView1 = (TextView) view.findViewById(R.id.textView1);
-		textView2 = (TextView) view.findViewById(R.id.textView2);
-		if(isa==true){
-			textView1.setText(title1);
-			textView2.setText("3/4/5杆洞小于等于标准杆上果岭后并且该洞成绩小于标准杆与当前所完成洞的比例。");
-		}else{
-			textView1.setText(title2);
-			textView2.setText("相邻的2个球洞之间成绩的反弹，上一个球洞大于标准杆，下一个球洞小于标准杆为反弹。");
-		}
-		
-		dialog_back.setOnClickListener(this);
-		dialog = builder.create();
-		dialog.setView(view, 0, 0, 0, 0);
-		dialog.show();
-       }
-    
+	
 	public void onClick(View v){
 		Intent intent;
 		switch(v.getId()){
 		case R.id.help_xiaoniao_1:
-			//intent = new Intent(GanCountActivity.this,HelpAverageActivity.class);
-			//intent.putExtra("xiaoniao1", "xiaoniao1");
-			//startActivity(intent);
-			title1=gree_shuju.getText().toString().trim();
-		
-			fristdialog(title1,true);
+			intent = new Intent(GanCountActivity.this,HelpAverageActivity.class);
+			intent.putExtra("xiaoniao1", "xiaoniao1");
+			startActivity(intent);
+			
 			break;
 		case R.id.help_xiaoniao_2:
-			
-			title2 = gree_shuju_fantanlv.getText().toString().trim();
-			fristdialog(title2,false);
-			//intent = new Intent(GanCountActivity.this,HelpAverageActivity.class);
-			//intent.putExtra("xiaoniao2", "xiaoniao2");
-			//startActivity(intent);
+		
+			intent = new Intent(GanCountActivity.this,HelpAverageActivity.class);
+			intent.putExtra("xiaoniao2", "xiaoniao2");
+			startActivity(intent);
 			break;
 			
-		case R.id.dialog_back:
-			dialog.dismiss();
-			break;
+		
 		}
 	}
 	
@@ -135,10 +100,7 @@ public class GanCountActivity extends Activity implements OnClickListener{
 	  
 	private void initView() {
 		
-		textView1 = (TextView) findViewById(R.id.textView1);
-		gree_shuju = (TextView) findViewById(R.id.gree_shuju);
-		gree_shuju_fantanlv =(TextView) findViewById(R.id.gree_shuju_fantanlv); 
-		dialog_back = (Button) findViewById(R.id.dialog_back);
+		
 		double_eagleTextView = (TextView) findViewById(R.id.double_eagle_percentage);
 		bogeyTextView = (TextView) findViewById(R.id.bogey);
 		double_bogeyTextView = (TextView) findViewById(R.id.double_bogey);

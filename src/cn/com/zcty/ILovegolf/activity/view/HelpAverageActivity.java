@@ -112,6 +112,11 @@ public class HelpAverageActivity extends Activity {
 			textView2.setText("该项目计算球进入距离果岭大于20小于50码的沙坑后一切一推进洞。");
 		}
         
+        if(intent.getStringExtra("qiegan0")!=null){
+			title_name.setText("一切一推");	
+			textView2.setText("（100码内）果岭外100码一切一推进洞（含一杆进洞）。");
+		}
+        
         if(intent.getStringExtra("qiegan")!=null){
 			title_name.setText("切杆进洞");	
 			textView2.setText("果岭外一杆进洞。");
@@ -126,26 +131,13 @@ public class HelpAverageActivity extends Activity {
 			textView2.setText("3/4/5杆洞的标准杆上果岭后第一次推杆前距离果岭小于等于5码。");
 		}
         
-        if(intent.getStringExtra("mingzhong1")!=null){
-			title_name.setText("命中");	
-			textView2.setText("");
-		}
-        if(intent.getStringExtra("mingzhong2")!=null){
-			title_name.setText("左侧");	
-			textView2.setText("");
-		}
-        if(intent.getStringExtra("mingzhong3")!=null){
-			title_name.setText("右侧");	
-			textView2.setText("");
-		}
-        
         if(intent.getStringExtra("kaiqiu")!=null){
 			title_name.setText("最佳球位");	
 			textView2.setText("4/5杆洞开球后未上球道，但是该球洞标准杆上果岭。");
 		}
         
         if(intent.getStringExtra("xiaoniao1")!=null){
-			title_name.setText("小鸟球转化率");	
+			title_name.setText("优势转化率");	
 			textView2.setText("3/4/5杆洞小于等于标准杆上果岭后并且该洞成绩小于标准杆与当前所完成洞的比例。");
 		}
         if(intent.getStringExtra("xiaoniao2")!=null){

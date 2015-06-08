@@ -66,6 +66,8 @@ public class Myself extends Activity {
 	private String type;
 	private RelativeLayout accountRelativeLayout;
 	private ProgressDialog progressDialog;
+	private RelativeLayout setting_me;
+	
 	//private RelativeLayout settingRelativeLayout;
 	Intent intent;
 	Handler handler = new Handler(){
@@ -136,6 +138,7 @@ public class Myself extends Activity {
 			}
 		});
 		
+          
 		/*settingRelativeLayout.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -145,6 +148,17 @@ public class Myself extends Activity {
 				
 			}
 		});*/
+          
+          setting_me.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent =  new Intent(Myself.this,AboutMyself.class);
+				startActivity(intent);
+				
+			}
+		});
 	}
 	public void onclick(View v){
 		
@@ -152,6 +166,7 @@ public class Myself extends Activity {
 		case R.id.k_back:
 			intent=new Intent(Myself.this,HomePageActivity.class);
 			startActivity(intent);
+			overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 			finish();
 			break;
 
@@ -165,6 +180,7 @@ public class Myself extends Activity {
 		super.onBackPressed();
 		intent=new Intent(Myself.this,HomePageActivity.class);
 		startActivity(intent);
+		overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 		finish();
 	}
 	private void getListeners() {
@@ -208,6 +224,7 @@ public class Myself extends Activity {
 		});
 	}
 	private void initView() {
+		setting_me = (RelativeLayout) findViewById(R.id.setting_me);
 		opinionLayout = (RelativeLayout) findViewById(R.id.setting_opinion);
 		accountRelativeLayout = (RelativeLayout) findViewById(R.id.setting_account);
 		nameTextView = (TextView) findViewById(R.id.myself_name);		

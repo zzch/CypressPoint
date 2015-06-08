@@ -44,7 +44,7 @@ public class SettionsActivity extends Activity{
 
 				//Intent intent = new Intent(SettionsActivity.this,Myself.class);
 				//startActivity(intent);
-
+				
 				finish();
 			}
 		});
@@ -56,7 +56,7 @@ public class SettionsActivity extends Activity{
 
 		//Intent intent = new Intent(SettionsActivity.this,Myself.class);
 		//startActivity(intent);
-
+		
 		finish();
 	}
 	private void initView() {
