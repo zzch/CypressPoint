@@ -39,14 +39,14 @@ public class GuidActivity extends FragmentActivity{
 			public void onPageSelected(int arg0) {
 				switch (arg0) {
 				case 0:
-					imageView_1.setImageResource(R.drawable.sdian);
-					imageView_2.setImageResource(R.drawable.dian);
-					imageView_3.setImageResource(R.drawable.dian);
+					imageView_1.setImageResource(R.drawable.dian);
+					imageView_2.setImageResource(R.drawable.ssdian);
+					imageView_3.setImageResource(R.drawable.ssdian);
 					break;
 				case 1:
-					imageView_1.setImageResource(R.drawable.dian);
-					imageView_2.setImageResource(R.drawable.sdian);
-					imageView_3.setImageResource(R.drawable.dian);
+					imageView_1.setImageResource(R.drawable.sdian);
+					imageView_2.setImageResource(R.drawable.dian);
+					imageView_3.setImageResource(R.drawable.sdian);
 					break;
 				case 2:
 					imageView_1.setImageBitmap(null);
@@ -81,7 +81,9 @@ public class GuidActivity extends FragmentActivity{
 		imageView_1 = (ImageView) findViewById(R.id.select_dian_1);
 		imageView_2 = (ImageView) findViewById(R.id.select_dian_2);
 		imageView_3 = (ImageView) findViewById(R.id.select_dian_3);
-		imageView_1.setImageResource(R.drawable.sdian);
+		imageView_1.setImageResource(R.drawable.dian);
+		imageView_2.setImageResource(R.drawable.ssdian);
+		imageView_3.setImageResource(R.drawable.ssdian);
 	}
 	class MyFragmentPagerAdapter  extends FragmentPagerAdapter{
 

@@ -21,21 +21,21 @@
         >
 	<ImageView 
 	    android:id="@+id/select_dian_1"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"	    
+	    android:layout_width="@dimen/guide_image_size"
+	    android:layout_height="@dimen/guide_image_size"	    
 	    android:src="@drawable/sdian"
 	    />
 	<ImageView 
 	    android:id="@+id/select_dian_2"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
+	    android:layout_width="@dimen/guide_image_size"
+	    android:layout_height="@dimen/guide_image_size"
 	    android:layout_marginLeft="20dp"	    
 	    android:src="@drawable/dian"
 	    />
 	<ImageView 
 	    android:id="@+id/select_dian_3"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
+	    android:layout_width="@dimen/guide_image_size"
+	    android:layout_height="@dimen/guide_image_size"
 	    android:layout_marginLeft="40dp"	    
 	    android:src="@drawable/dian"
 	    />

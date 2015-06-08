@@ -10,6 +10,7 @@ import cn.com.zcty.ILovegolf.activity.update.UpdateManager;
 import cn.com.zcty.ILovegolf.activity.view.count.CountActivity;
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.activity.view.myself.Myself;
+import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 import android.app.Activity;
@@ -93,7 +94,7 @@ public class HomePageActivity extends Activity{
 			getData();
 		}
 		public void getData() {
-			String path = "http://123.57.210.52/api/v1/versions/newest";
+			String path = APIService.hostName+"/v1/versions/newest";
 			Log.i("versoncode", path);
 			String jsonData = HttpUtils.HttpClientGet(path);
 			Log.i("versoncode", jsonData);
