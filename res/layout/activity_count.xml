@@ -42,7 +42,7 @@
             android:gravity="center"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="@string/playset"
+            android:text="技术统计"
             android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
 
@@ -90,8 +90,8 @@
 
                 <ImageView
                     android:id="@+id/count_image"
-                    android:layout_width="@dimen/view_sss_eee"
-                    android:layout_height="@dimen/view_sss_eee"
+                    android:layout_width="@dimen/view_count_size"
+                    android:layout_height="@dimen/view_count_size"
                     android:layout_marginLeft="@dimen/count_image_left"
                     android:layout_marginTop="@dimen/count_image_top"
                     android:src="@drawable/white" />
@@ -155,7 +155,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="3dp"
                     android:src="@drawable/icon_xintianwen" />
 
                 <TextView
@@ -188,7 +188,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="3dp"
                     android:src="@drawable/icon_shuangboji" />
 
                 <TextView
@@ -223,7 +223,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="3dp"
                     android:src="@drawable/icon_laoying" />
 
                 <TextView
@@ -258,7 +258,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="3dp"
                     android:src="@drawable/icon_biaozhungan" />
 
                 <TextView
@@ -293,7 +293,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="3dp"
                     android:src="@drawable/icon_xiaoniao" />
 
                 <TextView
@@ -328,7 +328,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="3dp"
                     android:src="@drawable/icon_baiji" />
 
                 <TextView

@@ -89,6 +89,7 @@
              android:layout_height="@dimen/view_mid_xx_title"
             android:layout_centerHorizontal="true"
             android:hint="输入验证码" 
+            android:lines="1"
             android:background="@drawable/wenbenkuang"
             />
     </RelativeLayout>

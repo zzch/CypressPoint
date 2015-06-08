@@ -69,8 +69,9 @@
              android:background="@drawable/wenbenkuang"
              android:layout_marginTop="30dp"
              android:textColor="@color/hei5"
+             android:lines="1"
             android:layout_centerHorizontal="true"
-            android:lines="1"
+           
             android:imeOptions="actionNone"
             android:hint="请输入当前密码"
             android:password="true" />
@@ -86,7 +87,7 @@
             android:lines="1"
             android:imeOptions="actionNone"
             android:hint="请设置密码"
-            android:password="true" />
+      />
 
         <EditText
             android:id="@+id/qdnewpsw"
@@ -95,8 +96,8 @@
              android:background="@drawable/wenbenkuang"
              android:textColor="@color/hei5"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="170dp"
             android:lines="1"
+            android:layout_marginTop="170dp"
             android:imeOptions="actionNone"
             android:hint="请再次输入"
             android:password="true" />
