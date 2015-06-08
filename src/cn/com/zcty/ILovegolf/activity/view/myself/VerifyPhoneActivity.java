@@ -1,5 +1,7 @@
 package cn.com.zcty.ILovegolf.activity.view.myself;
 
+import java.util.HashMap;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -203,11 +205,13 @@ public class VerifyPhoneActivity extends Activity{
 		public void getData(){
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String token=sp.getString("token", "token");
-			String path = APIService.UPGRADE+"token="+token+
-					"&phone="+phone+
-					"&password="+newpsd+
-					"&password_confirmation="+affirpsd+"&verification_code="+verify;
-			String jsonData = HttpUtils.HttpClientPut(path);
+			String path = APIService.UPGRADE+"token="+token;
+			HashMap<String, String> map = new HashMap<String, String>();
+			map.put("phone", phone);	
+			map.put("password", newpsd);
+			map.put("password_confirmation", affirpsd);
+			map.put("verification_code", verify);			
+			String jsonData = HttpUtils.Httpput(path, map);
 			Log.i("verifyPhone", path);
 			Log.i("verifyPhone", jsonData);
 			try {

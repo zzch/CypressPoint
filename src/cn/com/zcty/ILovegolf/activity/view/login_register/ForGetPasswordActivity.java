@@ -1,5 +1,6 @@
 package cn.com.zcty.ILovegolf.activity.view.login_register;
 
+import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -191,8 +192,8 @@ public class ForGetPasswordActivity extends Activity {
 	 */
 	public void on_submit(View v){
 		// phone = et_mobile.getText().toString().trim();
-		 password = passWordEditText.getText().toString().trim();
-		 password_confirmation = surePaEditText.getText().toString().trim();
+		 password = passWordEditText.getText().toString();
+		 password_confirmation = surePaEditText.getText().toString();
 		 verification_code = codeEditText.getText().toString().trim();
 		if(!isMobileNO(phone)){
 			Toast.makeText(ForGetPasswordActivity.this, "输入手机格式不对", Toast.LENGTH_LONG).show();
@@ -298,8 +299,13 @@ public class ForGetPasswordActivity extends Activity {
 		}
 		public void getData(){
 			
-			String path = APIService.RESTPASSWORD+"phone="+phone+"&password="+password+"&password_confirmation="+password_confirmation+"&verification_code="+verification_code;
-			String jsonData = HttpUtils.HttpClientPut(path);
+			String path = APIService.RESTPASSWORD;
+			HashMap<String, String> map = new HashMap<String, String>();
+			map.put("phone", phone);	
+			map.put("password", password);
+			map.put("password_confirmation", password_confirmation);
+			map.put("verification_code", verification_code);
+			String jsonData = HttpUtils.Httpput(path, map);
 			Log.i("ForGetPassword", jsonData);
 			try {
 				JSONObject jsonObject = new JSONObject(jsonData);

@@ -2,13 +2,20 @@ package cn.com.zcty.ILovegolf.activity.view.login_register;
 
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -246,7 +253,7 @@ public class ShouYeActivity extends Activity {
 			//获取用户名
 			u_name=et_username.getText().toString().trim();
 			//获取密码
-			p_pwd=et_password.getText().toString().trim();
+			p_pwd=et_password.getText().toString();
 			Message msg = handler.obtainMessage(); 
 			 
 			if("".equals(u_name))
@@ -263,8 +270,11 @@ public class ShouYeActivity extends Activity {
                  handler.sendMessage(msg); 
                  return;
 			}
-			String url=APIService.USERLOGIN+"phone="+u_name+"&password="+p_pwd+"&token="+token;
-			String data=HttpClientPost(url);
+			String url=APIService.USERLOGIN+"&token="+token;
+			HashMap<String, String> map = new HashMap<String, String>();
+			map.put("phone", u_name);	
+			map.put("password", p_pwd);
+			String data=httpliuyanpost(url, map);
 			Log.i("jsonData======", "----"+data);
 			
 			
@@ -310,7 +320,7 @@ public class ShouYeActivity extends Activity {
 			//获取用户名
 			u_name=et_username.getText().toString().trim();
 			//获取密码
-			p_pwd=et_password.getText().toString().trim();
+			p_pwd=et_password.getText().toString();
 			Message msg = handler.obtainMessage(); 
 			 
 			if("".equals(u_name))
@@ -327,8 +337,11 @@ public class ShouYeActivity extends Activity {
                  handler.sendMessage(msg); 
                  return;
 			}
-			String url=APIService.USERLOGIN+"phone="+u_name+"&password="+p_pwd+"&token="+token;
-			String data=HttpClientPost(url);
+			String url=APIService.USERLOGIN+"&token="+token;
+			HashMap<String, String> map = new HashMap<String, String>();
+			map.put("phone", u_name);	
+			map.put("password", p_pwd);
+			String data=httpliuyanpost(url, map);
 			Log.i("jsonData======", "----"+url);
 			
 			
@@ -435,5 +448,31 @@ public class ShouYeActivity extends Activity {
 	                   progressDialog.dismiss();
 	           }
 	    }
+	     
+	     public  String httpliuyanpost(String url,Map<String,String> map){
+	 		HttpPost post = new HttpPost(url);
+	 		String str = "";
+	 		List<NameValuePair> nvps = new ArrayList<NameValuePair>();
+	 		Iterator<Map.Entry<String, String>> it = map.entrySet().iterator();
+	 		while(it.hasNext()){
+	 			Map.Entry<String,String> map1 = it.next();
+	 			nvps.add(new BasicNameValuePair(map1.getKey(), map1.getValue()));
+	 		}
+	 		try {
+	 			post.setEntity(new UrlEncodedFormEntity(nvps,"utf-8"));
+	 			HttpClient httpClient = new DefaultHttpClient();
+	 			HttpResponse httpResponse = httpClient.execute(post);
+	 			code = httpResponse.getStatusLine().getStatusCode();
+	 			if(code==201||code==200){
+	 				str = EntityUtils.toString(httpResponse.getEntity(), "utf-8");
+	 				return str;
+	 			}
+	 		} catch (Exception e) {
+	 			// TODO Auto-generated catch block
+	 			e.printStackTrace();
+	 		}
+	 		return code+"";
+
+	 	}
 		
 }

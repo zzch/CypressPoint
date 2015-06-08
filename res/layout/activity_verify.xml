@@ -119,6 +119,7 @@
              android:layout_height="@dimen/view_mid_xx_title"
              android:background="@drawable/wenbenkuang"
             android:layout_centerHorizontal="true"
+            android:lines="1"
             android:password="true"
             android:hint="请输入密码"
              />
@@ -130,6 +131,7 @@
              android:background="@drawable/wenbenkuang"
             android:layout_centerHorizontal="true"
             android:password="true"
+            android:lines="1"
             android:layout_marginTop="70dp"
             android:hint="请再次输入"
              />

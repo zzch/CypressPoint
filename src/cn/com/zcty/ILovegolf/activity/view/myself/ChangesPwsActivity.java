@@ -1,5 +1,7 @@
 package cn.com.zcty.ILovegolf.activity.view.myself;
 
+import java.util.HashMap;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -135,11 +137,13 @@ public class ChangesPwsActivity extends Activity {
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String token=sp.getString("token", "token");
 			String path = APIService.UPPASSWORD+
-					"token="+token+
-					"&original_password="+oldPwsd+
-					"&password="+newPwsd+
-					"&password_confirmation="+affirPwsd;
-			String jsonData = HttpUtils.HttpClientPut(path);
+					"token="+token;
+			
+			HashMap<String, String> map = new HashMap<String, String>();
+			map.put("original_password", oldPwsd);	
+			map.put("password", newPwsd);
+			map.put("password_confirmation", affirPwsd);
+			String jsonData = HttpUtils.Httpput(path, map);
 			Log.i("changesPws", path);
 			Log.i("changesPws", jsonData);
 			try {

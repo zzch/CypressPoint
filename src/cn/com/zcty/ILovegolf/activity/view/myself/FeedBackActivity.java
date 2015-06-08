@@ -1,5 +1,7 @@
 package cn.com.zcty.ILovegolf.activity.view.myself;
 
+import java.util.HashMap;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -124,7 +126,7 @@ public class FeedBackActivity extends Activity{
 			
 			@Override
 			public void onClick(View v) {
-				opinionContent = opinionEditText.getText().toString();
+				opinionContent = opinionEditText.getText().toString().trim();
 				new FeedBack().start();
 			}
 		});
@@ -143,8 +145,10 @@ public class FeedBackActivity extends Activity{
 		public void getData(){
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String token=sp.getString("token", "token");
-			String path = APIService.FEEDBACK+"token="+token+"&content="+opinionContent;
-			String jsonData = HttpUtils.HttpClientPost(path);
+			String path = APIService.FEEDBACK+"token="+token;
+			HashMap<String, String> map = new HashMap<String, String>();
+			map.put("content", opinionContent);			
+			String jsonData = HttpUtils.httpliuyanpost(path, map);
 			Log.i("FeedBack", path);
 			Log.i("FeedBack", jsonData);
 			try {
