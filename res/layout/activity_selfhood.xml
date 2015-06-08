@@ -141,6 +141,7 @@
                     android:background="@drawable/wenbenkuang"
                     android:ems="10"
                     android:hint="请输入昵称"
+                    android:lines="1"
                     android:textColor="@color/hei5"
                     android:textColorHint="@color/hei6" >
 
@@ -186,12 +187,9 @@
                         android:button="@null"
                         android:gravity="center"
                         android:text="男"
-                        android:textColor="@color/bg"
-                        android:textSize="@dimen/txsize_small_x" />
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/txsize_small_xx" />
 
-                     
-
-                   
                     <RadioButton
                         android:id="@+id/mainTabs_radio_nv"
                         android:layout_width="140dp"
@@ -202,15 +200,15 @@
                         android:button="@null"
                         android:gravity="center"
                         android:text="女"
-                        android:textColor="@color/bg"
-                        android:textSize="@dimen/txsize_small_x" />
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/txsize_small_xx" />
                 </RadioGroup>
             </RelativeLayout>
         </LinearLayout>
 
 	<Button
         android:id="@+id/selfhood_baocun"
-       android:layout_width="match_parent"
+        android:layout_width="match_parent"
 	    android:layout_height="@dimen/view_mid_xx_title"
 	    android:layout_alignParentBottom="true"
 	    android:gravity="center"

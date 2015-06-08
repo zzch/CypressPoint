@@ -19,7 +19,7 @@
             
              android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="@string/playset"
+            android:text="统计分析"
             android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x"/>
 

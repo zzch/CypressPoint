@@ -93,6 +93,8 @@
     <dimen name="view_sss_ee">305dp</dimen>
     <dimen name="view_sss_eee">170dp</dimen>
     
+    <dimen name="view_count_size">145dp</dimen>
+    
     <dimen name="view_sss_f">185dp</dimen>
     <dimen name="view_sss_ff">10dp</dimen>
     <dimen name="view_sss_fff">165dp</dimen>

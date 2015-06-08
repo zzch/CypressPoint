@@ -93,6 +93,7 @@
         android:digits="1234567890" 
     	android:singleLine="true"
         android:gravity="center"
+        android:lines="1"
         android:hint="请输入手机号码"
         />
 </RelativeLayout>

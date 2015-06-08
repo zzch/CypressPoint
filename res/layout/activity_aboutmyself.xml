@@ -102,18 +102,13 @@
             android:layout_marginTop="25dp"
          >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1:"
-            
-            android:textSize="@dimen/txsize_small_xxx" />
+      
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
            android:layout_marginTop="3dp"
-            android:text="     《我爱高尔夫》拥有丰富的线下教学与教练资源，并通过云计算和大数据应用于高尔夫，打造线上高尔夫平台的第一品牌。"
+            android:text="《我爱高尔夫》拥有丰富的线下教学与教练资源，并通过云计算和大数据应用于高尔夫，打造线上高尔夫平台的第一品牌。"
             android:textSize="@dimen/txsize_small_x" />
     </RelativeLayout>
 
@@ -129,15 +124,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-           android:text="2:"
-           
-            android:textSize="@dimen/txsize_small_xxx" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
-            android:text="       简单记分卡：清晰明了的录入界面，友好的用户体验，永久的云端储存从此告别纸质记分卡。"
+            android:text="简单记分卡：清晰明了的录入界面，友好的用户体验，永久的云端储存从此告别纸质记分卡。"
             android:textSize="@dimen/txsize_small_x" />
     </RelativeLayout>
 
@@ -150,18 +138,13 @@
             android:layout_marginTop="25dp"
          >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="3:"
        
-            android:textSize="@dimen/txsize_small_xxx" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
-            android:text="      专业记分卡：独创的专业记分录入系统，简洁的界面让您轻松的录入整场比赛成绩；赛后能够从铁杆、短杆、推杆、切杆等方面得到详细的数据分析。是的！只需要录入码数，专业记分卡都可以搞定！"
+            android:text="专业记分卡：独创的专业记分录入系统，简洁的界面让您轻松的录入整场比赛成绩；赛后能够从铁杆、短杆、推杆、切杆等方面得到详细的数据分析。是的！只需要录入码数，专业记分卡都可以搞定！"
             android:textSize="@dimen/txsize_small_x" />
     </RelativeLayout>
 
@@ -174,16 +157,11 @@
             android:layout_marginTop="25dp"
         >
 
+    
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="4:"
-            android:textSize="@dimen/txsize_small_xxx" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="      大数据分析：根据用户历史数据《我爱高尔夫》将为您提供数百项多维度数据分析报告，进而帮您找到问题的所在让用户更有针对性的提高球技，更有职业选手与您同台竞技。"
+            android:text="大数据分析：根据用户历史数据《我爱高尔夫》将为您提供数百项多维度数据分析报告，进而帮您找到问题的所在让用户更有针对性的提高球技，更有职业选手与您同台竞技。"
             android:layout_marginTop="3dp"
             android:textSize="@dimen/txsize_small_x" />
     </RelativeLayout>

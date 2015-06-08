@@ -95,7 +95,7 @@
         android:layout_marginLeft="100dp"
         android:digits="1234567890" 
     	android:singleLine="true"
-       
+       android:lines="1"
         android:hint="请输入手机号码"
         android:background="@drawable/wenbenkuang"
         />
