@@ -60,6 +60,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:focusable="true"
+                android:gravity="center_horizontal"
                 android:focusableInTouchMode="true"
                 >
      <LinearLayout 
@@ -96,13 +97,13 @@
           
            <EditText 
            android:id="@+id/et_password_reg"
-          android:layout_width="@dimen/register_view_width"
-          android:layout_height="@dimen/view_mid_xx_title"
-            android:password="true"
+           android:layout_width="@dimen/register_view_width"
+           android:layout_height="@dimen/view_mid_xx_title"
+           android:password="true"
            android:hint=" 至少6位密码"
            android:lines="1"
-            android:textColor="@color/hei5"
-            android:textColorHint="@color/fengexian"
+           android:textColor="@color/hei5"
+           android:textColorHint="@color/fengexian"
            android:background="@drawable/wenbenkuang"
              />
            
