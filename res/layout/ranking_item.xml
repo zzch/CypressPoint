@@ -76,7 +76,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:text="-6"
-                android:textColor="@color/chengse"
+                android:textColor="@color/white"
                 android:textSize="@dimen/txsize_large_x" />
             
              <TextView
