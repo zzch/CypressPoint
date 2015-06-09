@@ -84,6 +84,7 @@ public class KeyboardUtil {
                         // 返回值，并清理本次记录，自动进入下次  
                         listEd.get(4).setText(thisPwdText);  
                         thisPwdText = "";  
+                         
                     }  
                 }  
             }  
