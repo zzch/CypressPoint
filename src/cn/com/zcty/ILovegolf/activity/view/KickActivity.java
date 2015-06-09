@@ -26,7 +26,7 @@ import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.MajorScoreAverageAdapter;
 
-public class KickActivity extends Activity implements OnClickListener{
+public class KickActivity extends Activity {
 	private ArrayList<String> statisticsModels = new ArrayList<String>();
 	private ArrayList<String> counts = new ArrayList<String>();
 	private String count;
@@ -58,12 +58,7 @@ public class KickActivity extends Activity implements OnClickListener{
 	private Button fanhuiButton;
 	private LinearLayout help_kaiqiu_1;
 	
-	private Button dialog_back;
-	private AlertDialog dialog;
-	private String title1;
-	private String title2;
-	private TextView textView1;
-	private TextView textView2;
+
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
 			if(msg.what==1){
@@ -83,30 +78,7 @@ public class KickActivity extends Activity implements OnClickListener{
 		new Kick().start();
 	}
 	
-	/**
-     * 点击帮助图标后弹出一个Dialog
-     */
-    public void fristdialog(String titie){
-    	AlertDialog.Builder builder = new Builder(this);
-    	 View view=View.inflate(this, R.layout.register_dialog, null);
-		//dialog=(AlertDialog) new Dialog(GanCountActivity.this,R.style.dialog);
-		dialog_back=(Button)view.findViewById(R.id.dialog_back);
-		textView1 = (TextView) view.findViewById(R.id.textView1);
-		textView2 = (TextView) view.findViewById(R.id.textView2);
-		textView1.setText(title1);
-		textView2.setText("4/5杆洞开球后未上球道，但是该球洞标准杆上果岭。");
-		dialog_back.setOnClickListener(this);
-		dialog = builder.create();
-		dialog.setView(view, 0, 0, 0, 0);
-		dialog.show();
-       }
-    
-    @Override
-	public void onClick(View v) {
-		// TODO Auto-generated method stub
-		dialog.dismiss();
-	}
-	
+   
 	private void setListeners() {
 		fanhuiButton.setOnClickListener(new OnClickListener() {
 			
@@ -120,11 +92,11 @@ public class KickActivity extends Activity implements OnClickListener{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				//Intent intent = new Intent(KickActivity.this,HelpAverageActivity.class);
-				//intent.putExtra("kaiqiu", "kaiqiu");
-				//startActivity(intent);
-				title1 = gree_shuju.getText().toString().trim();
-				fristdialog(title1);
+				Intent intent = new Intent(KickActivity.this,HelpAverageActivity.class);
+				intent.putExtra("kaiqiu", "kaiqiu");
+				startActivity(intent);
+				//title1 = gree_shuju.getText().toString().trim();
+				//fristdialog(title1);
 				
 			}
 		});
