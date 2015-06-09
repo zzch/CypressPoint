@@ -26,7 +26,7 @@
         android:layout_height="@dimen/view_mid_xx_title"
         android:background="@drawable/green"
         android:textSize="@dimen/txsize_small_xx"
-        android:textStyle="bold"
+        android:textColor="@color/white"
         android:text="拍照"
          />
 
@@ -39,8 +39,7 @@
         android:layout_height="@dimen/view_mid_xx_title"
         android:background="@drawable/huise"
         android:textSize="@dimen/txsize_small_xx"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
+         android:textColor="@color/white"
         android:text="从相册选择"
          />
 
@@ -54,7 +53,7 @@
         android:layout_height="@dimen/view_mid_xx_title"
         android:background="@drawable/red_button"
         android:textSize="@dimen/txsize_small_xx"
-        android:textStyle="bold"
+         android:textColor="@color/white"
         android:text="取消"
        
         />
