@@ -95,14 +95,17 @@ public class RankingAdapter extends BaseAdapter{
 		 	}
 		 	holder.scheduleTextView.setText(rankings.get(position).getRecorded_scorecards_count()+"/18");
 		 	if(rankings.get(position).getSelf().equals("true")){
-		 		holder.color_myself.setBackgroundColor(0xff961d);
-		 		
-		 		holder.nameTextView.setTextColor(0xffffffff);
-		 		holder.scheduleTextView.setTextColor(0xffffffff);
+		 		holder.color_myself.setBackgroundColor(0xffffffff);
+		 		holder.totalTextView.setTextColor(0xffff961d);
+		 		holder.nameTextView.setTextColor(0xffff961d);
+		 		holder.scheduleTextView.setTextColor(0xffff961d);
+		 		holder.positionTextView.setTextColor(0xffff961d);
 			}else{
 				holder.color_myself.setBackgroundColor(0xffffff);
 				holder.nameTextView.setTextColor(0xff222222);
+				holder.totalTextView.setTextColor(0xff222222);
 		 		holder.scheduleTextView.setTextColor(0xff222222);
+		 		holder.positionTextView.setTextColor(0xff222222);
 			}
 			
 		 	}
