@@ -79,6 +79,7 @@
            android:hint=" 请输入手机号"
            android:textColor="@color/hei5"
            android:lines="1"
+           android:singleLine="true" 
            android:textColorHint="@color/fengexian"
            android:background="@drawable/wenbenkuang"
           
@@ -105,6 +106,7 @@
            android:textColor="@color/hei5"
            android:textColorHint="@color/fengexian"
            android:background="@drawable/wenbenkuang"
+           android:singleLine="true" 
              />
            
   </LinearLayout>
@@ -130,6 +132,7 @@
            android:textColor="@color/hei5"
            android:textColorHint="@color/fengexian"
            android:background="@drawable/wenbenkuang"
+           android:singleLine="true" 
              />
            
   </LinearLayout>
@@ -154,6 +157,7 @@
            android:textColor="@color/hei5"
            android:layout_marginLeft="10dp"
            android:textColorHint="@color/fengexian"
+           android:singleLine="true" 
              />
            <Button 
            android:id="@+id/but_getyanzhengma"
