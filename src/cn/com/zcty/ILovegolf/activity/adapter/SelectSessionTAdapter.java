@@ -17,7 +17,7 @@ public class SelectSessionTAdapter extends BaseAdapter{
 	private Context context;
 	private ArrayList<String> nameArrayList = new ArrayList<String>();
 	private LayoutInflater inflater;
-	private String tiTai[]={"红色","白色","蓝色","黑色","金色"};
+	private String tiTai[]={"红色","白色","蓝色","金色","黑色"};
 	public SelectSessionTAdapter(Context context,ArrayList<String> nameArrayList) {
 		this.context = context;
 		this.nameArrayList = nameArrayList;
@@ -26,7 +26,7 @@ public class SelectSessionTAdapter extends BaseAdapter{
 	}
 	@Override
 	public int getCount() {
-		return 5;
+		return nameArrayList.size();
 	}
 
 	@Override

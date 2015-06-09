@@ -107,8 +107,8 @@ public class CreateMatchActivity extends Activity {
 	private ImageView titaicolor_1;
 	private ImageView titaicolor_2;
 	private Button startButton;
-	private String tiTai[]={"红色","白色","蓝色","黑色","金色"};
-	private int tiTaiColor[]={R.drawable.e_red,R.drawable.e_white,R.drawable.e_blue,R.drawable.e_black,R.drawable.e_gold};
+	private String tiTai[]={"红色","白色","蓝色","金色","黑色"};
+	private int tiTaiColor[]={R.drawable.e_red,R.drawable.e_white,R.drawable.e_blue,R.drawable.e_gold,R.drawable.e_black};
 	private String tee_boxes;//T台颜色
 	private String uuid;
 	private boolean f = false;
@@ -464,8 +464,14 @@ public class CreateMatchActivity extends Activity {
 		selectSession_t.setOnClickListener(new OnClickListener() {
 
 			@Override
-			public void onClick(View v) {				
-				v_3.setVisibility(View.GONE);
+			public void onClick(View v) {		
+				if(selectSession_2.getVisibility()==View.GONE){
+					v_3.setVisibility(View.GONE);
+
+				}else{
+					v_3.setVisibility(View.VISIBLE);
+
+				}
 				if(selectSession_tListView.getVisibility()==View.GONE){
 					selectSession_tListView.setVisibility(View.VISIBLE);
 					imageView3.setImageResource(R.drawable.image_up);
@@ -484,8 +490,24 @@ public class CreateMatchActivity extends Activity {
 				imageView3.setImageResource(R.drawable.image_down);
 				titaicolor_1.setVisibility(View.VISIBLE);
 				tee = color.get(position);
-				titaiTextView.setText(tiTai[position]);
-				titaicolor_1.setImageResource(tiTaiColor[position]);
+				
+				if(color.get(position).equals("red")){
+					titaicolor_1.setImageResource(R.drawable.e_red);
+					titaiTextView.setText("红色");
+				}else if(color.get(position).equals("white")){
+					titaicolor_1.setImageResource(R.drawable.e_white);
+					titaiTextView.setText("白色");
+				}else if(color.get(position).equals("blue")){
+					titaicolor_1.setImageResource(R.drawable.e_blue);
+					titaiTextView.setText("蓝色");
+				}else if(color.get(position).equals("black")){
+					titaicolor_1.setImageResource(R.drawable.e_black);
+					titaiTextView.setText("黑色");
+				}else{
+					titaicolor_1.setImageResource(R.drawable.e_gold);
+					titaiTextView.setText("金色");
+				}
+				
 				selectSession_tListView.setVisibility(View.GONE);
 				startButton.setBackgroundColor(0xff09850c);
 				startButton.setTextColor(0xffffffff);
@@ -621,6 +643,7 @@ public class CreateMatchActivity extends Activity {
 			getData();
 		}
 		public void getData(){
+			color.clear();
 			//取球场信息uuid的值
 			Intent intent=getIntent();
 			String uuid=intent.getStringExtra("uuid");
@@ -650,8 +673,17 @@ public class CreateMatchActivity extends Activity {
 					}
 					diamodDong.add(Integer.parseInt(jsonobj.getString("holes_count")));
 					JSONArray jj = jsonobj.getJSONArray("tee_boxes");
+					boolean f = false;
 					for(int i=0;i<jj.length();i++){
-						color.add(jj.getString(i));
+						for(String c:color){
+							if(c.equals(jj.getString(i))){
+								f = true;
+							}
+						}
+						if(f==false){
+							
+							color.add(jj.getString(i));
+						}
 						//Log.i("color", ""+color);
 					}
 					uuids.add(jsonobj.getString("uuid"));
@@ -712,9 +744,18 @@ public class CreateMatchActivity extends Activity {
 					}
 					diamodDong.add(Integer.parseInt(jsonobj.getString("holes_count")));
 					JSONArray jj = jsonobj.getJSONArray("tee_boxes");
+					boolean f = false;
 					for(int i=0;i<jj.length();i++){
-						color.add(jj.getString(i));
-						Log.i("color", ""+color);
+						for(String c:color){
+							if(c.equals(jj.getString(i))){
+								f = true;
+							}
+						}
+						if(f==false){
+							
+							color.add(jj.getString(i));
+						}
+						//Log.i("color", ""+color);
 					}
 					uuids.add(jsonobj.getString("uuid"));
 				}
@@ -775,7 +816,13 @@ public class CreateMatchActivity extends Activity {
 		diamond2Adapter = new SelectSession1Adapter(this, diamond_t);
 		color2Adapter = new SelectSessionTAdapter(this,color);
 		selectSessionListView.setAdapter(diamondAdapter);
-		selectSession_tListView.setAdapter(colorAdapter);
+		if(selectSession_tListView.getAdapter()==null){
+			selectSession_tListView.setAdapter(colorAdapter);
+
+		}else{
+			colorAdapter.notifyDataSetChanged();
+
+		}
 		selectSession_2ListView.setAdapter(diamond2Adapter);
 		selectSession_t_2ListView.setAdapter(color2Adapter);
 		
@@ -819,6 +866,7 @@ public class CreateMatchActivity extends Activity {
 		super.onRestart();
 		diamond.clear();
 		diamodDong_2.clear();
+		color.clear();
 		if(flase.equals("0")){
 			
 			showProgressDialog("提示", "正在加载", this);
@@ -831,6 +879,7 @@ public class CreateMatchActivity extends Activity {
 			v_2.setVisibility(View.GONE);
 			v_3.setVisibility(View.GONE);
 			v_4.setVisibility(View.GONE);
+			selectSession_tListView.setVisibility(View.GONE);
 			selectSessionListView.setVisibility(View.VISIBLE);
 			qiudongTextView.setText("选择子场");
 			zichangTextView.setText("");
