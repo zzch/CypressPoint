@@ -6,6 +6,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
+import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
+
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -23,31 +27,34 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.RankingAdapter;
+import cn.com.zcty.ILovegolf.activity.view.QuickScoreActivity.MyTask;
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.model.Ranking;
-import cn.com.zcty.ILovegolf.tools.AutoListView;
-import cn.com.zcty.ILovegolf.tools.AutoListView.OnRefreshListener;
+import cn.com.zcty.ILovegolf.tools.ScrollViewWithListView;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 public class RankingActivity extends Activity{
+	private ScrollView mScrollView;
 
 	private Button paiming_back;
-	private AutoListView rankListView;
+	private ScrollViewWithListView rankListView;
 	private RelativeLayout invite_much;
 	private Button rank_invite_but;
 	private RelativeLayout layout_rank;
 	private ProgressDialog progressDialog;
 	private LinearLayout linear;
 	private RankingAdapter adapter;
+	private PullToRefreshScrollView mPullRefreshScrollView;
 	private ArrayList<Ranking> rankings = new ArrayList<Ranking>();//adapter的数据
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
-			rankListView.onRefreshComplete();
+			mPullRefreshScrollView.onRefreshComplete();//刷新
 			if(msg.what==1){
 				hideProgressDialog();
 				if(msg.obj.equals("404")||msg.obj.equals("500")){
@@ -83,6 +90,24 @@ public class RankingActivity extends Activity{
 	 *存放监听器 
 	 */
 	private void setListeners() {
+		/*
+		 * 下拉或者上拉的时候
+		 */
+		mPullRefreshScrollView.setOnRefreshListener(new OnRefreshListener<ScrollView>() {
+
+			@Override
+			public void onRefresh(PullToRefreshBase<ScrollView> refreshView) {
+
+				rankings.clear();
+				new Rankings().start();				
+
+			}
+		});
+
+		mScrollView = mPullRefreshScrollView.getRefreshableView();
+		
+		
+		
 		// TODO Auto-generated method stub
 		paiming_back.setOnClickListener(new OnClickListener() {
 
@@ -137,24 +162,17 @@ public class RankingActivity extends Activity{
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
-				if(rankings.get(position-1).getSelf().equals("true")){
+				if(rankings.get(position).getSelf().equals("true")){
 					finish();
 				}else{
 				Intent intent = new Intent(RankingActivity.this,RankingStatics.class);
-				intent.putExtra("uuid", rankings.get(position-1).getUuid());
+				intent.putExtra("uuid", rankings.get(position).getUuid());
 				startActivity(intent);}
 			}
 		});
 		
 	
-		rankListView.setOnRefreshListener(new OnRefreshListener() {
-			
-			@Override
-			public void onRefresh() {
-				rankings.clear();
-				new Rankings().start();
-			}
-		});
+		
 	}
 	@Override
 	public void onBackPressed() {
@@ -166,14 +184,15 @@ public class RankingActivity extends Activity{
 	 * 初始化控件
 	 */
 	public void initView(){
+		mPullRefreshScrollView = (PullToRefreshScrollView) findViewById(R.id.pull_refresh_scrollview);
 		paiming_back = (Button) findViewById(R.id.paiming_back);
-		rankListView = (AutoListView) findViewById(R.id.ranking);
+		rankListView = (ScrollViewWithListView) findViewById(R.id.ranking);
 		invite_much = (RelativeLayout) findViewById(R.id.invite_much);
 		rank_invite_but = (Button) findViewById(R.id.rank_invite_but);
 		layout_rank = (RelativeLayout) findViewById(R.id.layout_rank);
 		linear = (LinearLayout) findViewById(R.id.linear);
 		linear.setVisibility(View.GONE);
-		rankListView.setLoadEnable(true);
+		
 	}
 	/*
 	 * 数据的操作
