@@ -11,7 +11,7 @@
     android:layout_height="wrap_content"
    android:layout_marginTop="@dimen/my_tuichu_top"
     android:layout_centerHorizontal="true"
-    android:background="#ced1d4"
+    android:background="@color/bg"
     android:gravity="center_horizontal"
     android:orientation="vertical" >
 
@@ -20,7 +20,7 @@
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:gravity="center"
-	    android:textColor="@color/bg"
+	    android:textColor="#7f8c8d"
 	    android:textSize="@dimen/txsize_small_xx"
 	    android:text="您当前未设置账号和密码，请设置，否则您的数据将会丢失"
 	    />
@@ -34,7 +34,7 @@
         android:layout_height="@dimen/view_mid_xx_title"
         android:background="@drawable/green"
         android:textSize="@dimen/txsize_small_xx"
-        android:textStyle="bold"
+        android:textColor="@color/white"
         android:text="设置帐号和密码"
          />
 
@@ -47,7 +47,7 @@
         android:layout_height="@dimen/view_mid_xx_title"
          android:background="@drawable/red_button"
          android:textSize="@dimen/txsize_small_xx"
-         android:textStyle="bold"
+         android:textColor="@color/white"
         android:text="退出登录"
          />
 
@@ -61,8 +61,7 @@
         android:layout_height="@dimen/view_mid_xx_title"
         android:background="@drawable/huise"
         android:textSize="@dimen/txsize_small_xx"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
+        android:textColor="@color/white"
         android:text="取消"
        
         />

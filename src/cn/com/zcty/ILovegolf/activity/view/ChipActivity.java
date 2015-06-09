@@ -48,6 +48,7 @@ public class ChipActivity extends Activity{
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
 			if(msg.what == 1){
+				Log.i("up_and_downs_count", "fffffff");
 				up_and_downs_countTextView.setText(up_and_downs_count);
 				shots_within_100TextView.setText(shots_within_100);
 				up_and_downs_percentageTextView.setText(up_and_downs_percentage);
@@ -56,7 +57,7 @@ public class ChipActivity extends Activity{
 				if(up_and_downs_count.equals("0")){
 					listView.setVisibility(View.GONE);
 				}else{
-					listView.setVisibility(View.VISIBLE);
+					listView.setVisibility(View.VISIBLE);					
 					listView.setAdapter(new ChipAdapter(ChipActivity.this, chipArrayList));
 				}
 			}
@@ -125,6 +126,7 @@ public class ChipActivity extends Activity{
 		}
 
 		public void getData(){
+			chipArrayList.clear();
 			Intent intent = getIntent();
 			String JsonData = intent.getStringExtra("JsonData");
 			try {
@@ -137,16 +139,26 @@ public class ChipActivity extends Activity{
 				longest_chip_ins_length = js05.getString("longest_chip_ins_length");
 				
 				JSONArray jsonArray = js05.getJSONArray("up_and_downs");
+				Log.i("xianshijiemian----", ""+jsonArray.length()+"z");
+				/*
+				 * 6.8
+				 */
 				for(int i=0;i<jsonArray.length();i++){
+					Log.i("xianshijiemian----", ""+jsonArray.toString()+"f");					
+
+					if(!jsonArray.get(i).toString().equals("null")){
 					JSONObject j = jsonArray.getJSONObject(i);
-					Chip chip = new Chip();
-					chip.setDistance_from_hole(j.getString("distance_from_hole"));
-					chip.setPutt_length(j.getString("putt_length"));
-					chipArrayList.add(chip);
-					Log.i("xianshijiemian----", ""+chipArrayList.size());
+						Chip chip = new Chip();
+						chip.setDistance_from_hole(j.getString("distance_from_hole"));
+						chip.setPutt_length(j.getString("putt_length"));
+						chipArrayList.add(chip);
+					}
+					
 				}
+				Log.i("xianshijiemian----", ""+chipArrayList.size());
 				Message msg = handler.obtainMessage();
 				msg.what = 1;
+				
 				handler.sendMessage(msg);
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block

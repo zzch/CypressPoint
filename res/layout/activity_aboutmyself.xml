@@ -4,173 +4,166 @@
     android:layout_height="match_parent"
     android:background="#e4e4e4"
     android:orientation="vertical" >
-    
-    
-   
-    
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_height"
-        android:gravity="center_vertical"
-        android:background="@color/daohang" >
-
-       
+        android:background="@color/daohang"
+        android:gravity="center_vertical" >
 
         <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" 
-            android:layout_centerVertical="true"
-            >
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true" >
 
+            <Button
+                android:id="@+id/about_back"
+                android:layout_width="80dp"
+                android:layout_height="47dp"
+                android:layout_marginLeft="@dimen/title_button_left"
+                android:background="@null"
+                android:onClick="onClick"
+                android:text="@string/back"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txsize_small_xx" />
 
-        <Button
-            android:id="@+id/about_back"
-            android:layout_width="80dp"
-            android:layout_height="47dp"
-            android:layout_marginLeft="@dimen/title_button_left"
-            android:background="@null"
-            android:text="@string/back"
-            android:textColor="@color/white"
-            android:textSize="@dimen/txsize_small_xx" 
-           android:onClick="onClick"
-             />
-
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginLeft="10dp"
-            android:src="@drawable/back_image" />
-
-		</FrameLayout>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="13dp"
+                android:src="@drawable/back_image" />
+        </FrameLayout>
 
         <TextView
-              android:layout_width="wrap_content"
+            android:layout_width="wrap_content"
             android:layout_height="47dp"
-            android:gravity="center"        
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:gravity="center"
             android:text="加入比赛"
             android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x" />
     </RelativeLayout>
-    
-    
-     <ScrollView 
-         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-    <LinearLayout 
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        
-        >
-        
-    
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="188dp"
-        android:background="@color/bg" >
+        android:layout_height="match_parent" >
 
-        <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/login" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
 
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="30dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="120dp"
-            android:src="@drawable/igolf" />
-    </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="188dp"
+                android:background="@color/bg" >
 
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:background="@color/fengexian" />
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="40dp"
+                    android:src="@drawable/login" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-         android:layout_marginLeft="19dp"
-            android:layout_marginRight="19dp"
-            android:layout_marginTop="25dp"
-         >
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="120dp"
+                    android:src="@drawable/igolf" />
+            </RelativeLayout>
 
-      
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/fengexian" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-           android:layout_marginTop="3dp"
-            android:text="《我爱高尔夫》拥有丰富的线下教学与教练资源，并通过云计算和大数据应用于高尔夫，打造线上高尔夫平台的第一品牌。"
-            android:textSize="@dimen/txsize_small_x" />
-    </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19dp"
+                android:layout_marginRight="19dp"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal" >
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" 
-        android:layout_marginLeft="19dp"
-            android:layout_marginRight="19dp"
-            android:layout_marginTop="25dp"
-        >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="《我爱高尔夫》拥有丰富的线下教学与教练资源，并通过云计算和大数据应用于高尔夫，打造线上高尔夫平台的第一品牌。"
+                    android:textSize="@dimen/txsize_small_x" />
+            </RelativeLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:text="简单记分卡：清晰明了的录入界面，友好的用户体验，永久的云端储存从此告别纸质记分卡。"
-            android:textSize="@dimen/txsize_small_x" />
-    </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19dp"
+                android:layout_marginRight="19dp"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal" >
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-         android:layout_marginLeft="19dp"
-            android:layout_marginRight="19dp"
-            android:layout_marginTop="25dp"
-         >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="简单记分卡：清晰明了的录入界面，友好的用户体验，永久的云端储存从此告别纸质记分卡。"
+                    android:textSize="@dimen/txsize_small_x" />
+            </RelativeLayout>
 
-       
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19dp"
+                android:layout_marginRight="19dp"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal" >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:text="专业记分卡：独创的专业记分录入系统，简洁的界面让您轻松的录入整场比赛成绩；赛后能够从铁杆、短杆、推杆、切杆等方面得到详细的数据分析。是的！只需要录入码数，专业记分卡都可以搞定！"
-            android:textSize="@dimen/txsize_small_x" />
-    </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="专业记分卡：独创的专业记分录入系统，简洁的界面让您轻松的录入整场比赛成绩；赛后能够从铁杆、短杆、推杆、切杆等方面得到详细的数据分析。是的！只需要录入码数，专业记分卡都可以搞定！"
+                    android:textSize="@dimen/txsize_small_x" />
+            </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" 
-          android:layout_marginLeft="19dp"
-            android:layout_marginRight="19dp"
-            android:layout_marginTop="25dp"
-        >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19dp"
+                android:layout_marginRight="19dp"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal" >
 
-    
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="大数据分析：根据用户历史数据《我爱高尔夫》将为您提供数百项多维度数据分析报告，进而帮您找到问题的所在让用户更有针对性的提高球技，更有职业选手与您同台竞技。"
-            android:layout_marginTop="3dp"
-            android:textSize="@dimen/txsize_small_x" />
-    </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="多人竞技赛：实时排名，队友相互查看比赛成绩，百人同台竞技。"
+                    android:textSize="@dimen/txsize_small_x" />
+            </RelativeLayout>
 
-    <View 
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        />
-    </LinearLayout>
-        </ScrollView>
-    
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19dp"
+                android:layout_marginRight="19dp"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="大数据分析：根据用户历史数据《我爱高尔夫》将为您提供数百项多维度数据分析报告，进而帮您找到问题的所在让用户更有针对性的提高球技，更有职业选手与您同台竞技。"
+                    android:textSize="@dimen/txsize_small_x" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>

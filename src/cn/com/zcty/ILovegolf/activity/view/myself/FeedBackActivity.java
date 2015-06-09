@@ -136,7 +136,7 @@ public class FeedBackActivity extends Activity{
 		submitButton = (Button) findViewById(R.id.submit);
 		numberTextView = (TextView) findViewById(R.id.number);
 	}
-	class FeedBack extends Thread{
+	class FeedBack extends Thread{ 
 		@Override
 		public void run() {
 			super.run();

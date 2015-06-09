@@ -51,7 +51,7 @@
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:textColor="#ffffff"
-	    android:text="当前可以输入100字"
+	    android:text="当前可以输入140字"
 	    />
     <EditText
         android:id="@+id/add_content"
