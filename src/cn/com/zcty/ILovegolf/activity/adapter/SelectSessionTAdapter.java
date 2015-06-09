@@ -26,7 +26,7 @@ public class SelectSessionTAdapter extends BaseAdapter{
 	}
 	@Override
 	public int getCount() {
-		return 5;
+		return nameArrayList.size();
 	}
 
 	@Override

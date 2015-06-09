@@ -621,6 +621,7 @@ public class CreateMatchActivity extends Activity {
 			getData();
 		}
 		public void getData(){
+			color.clear();
 			//取球场信息uuid的值
 			Intent intent=getIntent();
 			String uuid=intent.getStringExtra("uuid");
@@ -650,8 +651,17 @@ public class CreateMatchActivity extends Activity {
 					}
 					diamodDong.add(Integer.parseInt(jsonobj.getString("holes_count")));
 					JSONArray jj = jsonobj.getJSONArray("tee_boxes");
+					boolean f = false;
 					for(int i=0;i<jj.length();i++){
-						color.add(jj.getString(i));
+						for(String c:color){
+							if(c.equals(jj.getString(i))){
+								f = true;
+							}
+						}
+						if(f==false){
+							
+							color.add(jj.getString(i));
+						}
 						//Log.i("color", ""+color);
 					}
 					uuids.add(jsonobj.getString("uuid"));
@@ -712,9 +722,18 @@ public class CreateMatchActivity extends Activity {
 					}
 					diamodDong.add(Integer.parseInt(jsonobj.getString("holes_count")));
 					JSONArray jj = jsonobj.getJSONArray("tee_boxes");
+					boolean f = false;
 					for(int i=0;i<jj.length();i++){
-						color.add(jj.getString(i));
-						Log.i("color", ""+color);
+						for(String c:color){
+							if(c.equals(jj.getString(i))){
+								f = true;
+							}
+						}
+						if(f==false){
+							
+							color.add(jj.getString(i));
+						}
+						//Log.i("color", ""+color);
 					}
 					uuids.add(jsonobj.getString("uuid"));
 				}
@@ -775,7 +794,13 @@ public class CreateMatchActivity extends Activity {
 		diamond2Adapter = new SelectSession1Adapter(this, diamond_t);
 		color2Adapter = new SelectSessionTAdapter(this,color);
 		selectSessionListView.setAdapter(diamondAdapter);
-		selectSession_tListView.setAdapter(colorAdapter);
+		if(selectSession_tListView.getAdapter()==null){
+			selectSession_tListView.setAdapter(colorAdapter);
+
+		}else{
+			colorAdapter.notifyDataSetChanged();
+
+		}
 		selectSession_2ListView.setAdapter(diamond2Adapter);
 		selectSession_t_2ListView.setAdapter(color2Adapter);
 		
@@ -819,6 +844,7 @@ public class CreateMatchActivity extends Activity {
 		super.onRestart();
 		diamond.clear();
 		diamodDong_2.clear();
+		color.clear();
 		if(flase.equals("0")){
 			
 			showProgressDialog("提示", "正在加载", this);
@@ -831,6 +857,7 @@ public class CreateMatchActivity extends Activity {
 			v_2.setVisibility(View.GONE);
 			v_3.setVisibility(View.GONE);
 			v_4.setVisibility(View.GONE);
+			selectSession_tListView.setVisibility(View.GONE);
 			selectSessionListView.setVisibility(View.VISIBLE);
 			qiudongTextView.setText("选择子场");
 			zichangTextView.setText("");
