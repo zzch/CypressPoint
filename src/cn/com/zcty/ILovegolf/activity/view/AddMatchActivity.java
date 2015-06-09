@@ -66,7 +66,7 @@ public class AddMatchActivity extends Activity {
 						startActivity(intent);
 						finish();
 					}else{
-				
+						
 				if(uuid==null||uuid.equals("")){
 				new AddMatchYiChang().start();
 				}else{
@@ -86,13 +86,16 @@ public class AddMatchActivity extends Activity {
 					startActivity(intent);
 					finish();
 				}else{
-				
+					if(!etPwdFour.getText().toString().equals("")&&etPwdText.getText().toString().length()==4){
+						etPwdOne.setText("");
+						etPwdTwo.setText("");
+						etPwdThree.setText("");
+						etPwdFour.setText("");
+					}
+					
 				Toast.makeText(AddMatchActivity.this, message, Toast.LENGTH_LONG).show();
 				//passwordEditText.setInputnumber(null);//如果错误就清空当前输入的密码
-				etPwdOne.setText(null);
-				etPwdTwo.setText(null);
-				etPwdThree.setText(null);
-				etPwdFour.setText(null);
+				
 				}
 			}
 			if(msg.what==3){
@@ -148,8 +151,18 @@ public class AddMatchActivity extends Activity {
 	  
 	            @Override  
 	            public void afterTextChanged(Editable arg0) {  
+	            	if((etPwdOne.getText().toString().equals("")&&!etPwdTwo.getText().toString().equals(""))
+	            	||(etPwdOne.getText().toString().equals("")&&!etPwdThree.getText().toString().equals(""))
+	            	||(etPwdOne.getText().toString().equals("")&&!etPwdFour.getText().toString().equals(""))
+	            			){
+	            		Log.i("aaaa","aaaa");
+	            		etPwdOne.setText("");
+						etPwdTwo.setText("");
+						etPwdThree.setText("");
+						etPwdFour.setText("");
+	            	}
 	                if (etPwdFour.getText() != null  
-	                        && etPwdFour.getText().toString().length() >= 1) {  
+	                        && etPwdFour.getText().toString().length() >= 1&&etPwdText.getText().length()==4) {  
 	                	passWord = etPwdText.getText().toString();
 	                	showProgressDialog("提示", "正在验证密码",AddMatchActivity.this);
 						new AddMatch().start();
@@ -332,7 +345,8 @@ public class AddMatchActivity extends Activity {
      */
      public   void  showProgressDialog(String title,String message,Activity context){
             if(progressDialog ==null){
-                   progressDialog = ProgressDialog.show( context, title, message,true,true );
+                   progressDialog = ProgressDialog.show( context, title, message,false,false);
+                   
 
            } else if (progressDialog .isShowing()){
                    progressDialog.setTitle(title);
