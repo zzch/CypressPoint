@@ -229,8 +229,26 @@ public class CompetitionAdd extends Activity{
 				v_4.setVisibility(View.GONE);
 				imageView3.setImageResource(R.drawable.image_down);
 				titaicolor_1.setVisibility(View.VISIBLE);
-				titaiTextView.setText(tiTai[position]);
-				titaicolor_1.setImageResource(tiTaiColor[position]);
+			
+				
+				if(add.getTitai().get(0).getBoxs().get(position).equals("red")){
+					titaicolor_1.setImageResource(R.drawable.e_red);
+					titaiTextView.setText("红色");
+				}else if(add.getTitai().get(0).getBoxs().get(position).equals("white")){
+					titaicolor_1.setImageResource(R.drawable.e_white);
+					titaiTextView.setText("白色");
+				}else if(add.getTitai().get(0).getBoxs().get(position).equals("blue")){
+					titaicolor_1.setImageResource(R.drawable.e_blue);
+					titaiTextView.setText("蓝色");
+				}else if(add.getTitai().get(0).getBoxs().get(position).equals("black")){
+					titaicolor_1.setImageResource(R.drawable.e_black);
+					titaiTextView.setText("黑色");
+				}else{
+					titaicolor_1.setImageResource(R.drawable.e_gold);
+					titaiTextView.setText("金色");
+				}
+				
+				
 				titaiListView.setVisibility(View.GONE);
 				t_1 = add.getTitai().get(0).getBoxs().get(position);
 				

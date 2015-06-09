@@ -107,8 +107,8 @@ public class CreateMatchActivity extends Activity {
 	private ImageView titaicolor_1;
 	private ImageView titaicolor_2;
 	private Button startButton;
-	private String tiTai[]={"红色","白色","蓝色","黑色","金色"};
-	private int tiTaiColor[]={R.drawable.e_red,R.drawable.e_white,R.drawable.e_blue,R.drawable.e_black,R.drawable.e_gold};
+	private String tiTai[]={"红色","白色","蓝色","金色","黑色"};
+	private int tiTaiColor[]={R.drawable.e_red,R.drawable.e_white,R.drawable.e_blue,R.drawable.e_gold,R.drawable.e_black};
 	private String tee_boxes;//T台颜色
 	private String uuid;
 	private boolean f = false;
@@ -464,8 +464,14 @@ public class CreateMatchActivity extends Activity {
 		selectSession_t.setOnClickListener(new OnClickListener() {
 
 			@Override
-			public void onClick(View v) {				
-				v_3.setVisibility(View.GONE);
+			public void onClick(View v) {		
+				if(selectSession_2.getVisibility()==View.GONE){
+					v_3.setVisibility(View.GONE);
+
+				}else{
+					v_3.setVisibility(View.VISIBLE);
+
+				}
 				if(selectSession_tListView.getVisibility()==View.GONE){
 					selectSession_tListView.setVisibility(View.VISIBLE);
 					imageView3.setImageResource(R.drawable.image_up);
@@ -484,8 +490,24 @@ public class CreateMatchActivity extends Activity {
 				imageView3.setImageResource(R.drawable.image_down);
 				titaicolor_1.setVisibility(View.VISIBLE);
 				tee = color.get(position);
-				titaiTextView.setText(tiTai[position]);
-				titaicolor_1.setImageResource(tiTaiColor[position]);
+				
+				if(color.get(position).equals("red")){
+					titaicolor_1.setImageResource(R.drawable.e_red);
+					titaiTextView.setText("红色");
+				}else if(color.get(position).equals("white")){
+					titaicolor_1.setImageResource(R.drawable.e_white);
+					titaiTextView.setText("白色");
+				}else if(color.get(position).equals("blue")){
+					titaicolor_1.setImageResource(R.drawable.e_blue);
+					titaiTextView.setText("蓝色");
+				}else if(color.get(position).equals("black")){
+					titaicolor_1.setImageResource(R.drawable.e_black);
+					titaiTextView.setText("黑色");
+				}else{
+					titaicolor_1.setImageResource(R.drawable.e_gold);
+					titaiTextView.setText("金色");
+				}
+				
 				selectSession_tListView.setVisibility(View.GONE);
 				startButton.setBackgroundColor(0xff09850c);
 				startButton.setTextColor(0xffffffff);
