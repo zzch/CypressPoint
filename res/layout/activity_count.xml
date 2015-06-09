@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/bg"
     android:id="@+id/linear"
+    android:gravity="center_horizontal"
     android:orientation="vertical" >
 
     <RelativeLayout
@@ -63,18 +64,26 @@
         android:id="@+id/gridView1"
         android:layout_width="@dimen/view_sss_ee"
         android:layout_height="130dp"
-        android:layout_marginLeft="10dp"
         android:background="@drawable/gridview_bg"
         android:layout_marginTop="@dimen/infor_view_x"
         android:listSelector="@android:color/transparent" 
         android:gravity="center"
         android:numColumns="2" >
     </GridView>
+    
+    <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                   
+                    android:layout_marginTop="15dp"
+                    android:text="@string/count_avg"
+                    android:textSize="18dp"
+                    android:textColor="@color/hei5" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" 
-        android:layout_marginTop="10dp"
+      
         >
 
         <FrameLayout
@@ -115,9 +124,7 @@
                     android:src="@drawable/orange" />
             </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+          
 
                 <TextView
                     android:id="@+id/count_average"
@@ -126,18 +133,11 @@
                     android:gravity="center"
                     android:layout_marginLeft="@dimen/count_text_left"
                     android:layout_marginTop="@dimen/count_text_top"
-                    android:textSize="@dimen/txsize_small_xx"
+                    android:textSize="20dp"
                     android:textColor="@color/chengse" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/count_avg_left"
-                    android:layout_marginTop="@dimen/count_avg_top"
-                    android:text="@string/count_avg"
-                    android:textSize="12dp"
-                    android:textColor="@color/white" />
-            </RelativeLayout>
+                
+          
         </FrameLayout>
 
         <RelativeLayout
@@ -189,10 +189,11 @@
                     android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="3dp"
-                    android:src="@drawable/icon_shuangboji" />
+                   android:src="@drawable/icon_biaozhungan"
+                    />
 
                 <TextView
-                    android:id="@+id/double_bogey"
+                    android:id="@+id/par"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
@@ -206,7 +207,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="90dp"
                     android:layout_marginTop="3dp"
-                    android:text="@string/shuangbaijijia"
+                    android:text="@string/biaozhungan"
                     android:textColor="@color/hei5"
                     android:textSize="@dimen/txsize_small_x" />
             </RelativeLayout>
@@ -259,10 +260,12 @@
                     android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="3dp"
-                    android:src="@drawable/icon_biaozhungan" />
+                     android:src="@drawable/icon_baiji"
+                    />
 
                 <TextView
-                    android:id="@+id/par"
+                    
+                    android:id="@+id/bogey"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
@@ -276,7 +279,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="90dp"
                     android:layout_marginTop="3dp"
-                    android:text="@string/biaozhungan"
+                   
+                     android:text="@string/baiji"
                     android:textColor="@color/hei5"
                     android:textSize="@dimen/txsize_small_x" />
             </RelativeLayout>
@@ -329,10 +333,12 @@
                     android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="3dp"
-                    android:src="@drawable/icon_baiji" />
+                     android:src="@drawable/icon_shuangboji"
+                    />
 
                 <TextView
-                    android:id="@+id/bogey"
+                    
+                    android:id="@+id/double_bogey"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
@@ -346,7 +352,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="90dp"
                     android:layout_marginTop="3dp"
-                    android:text="@string/baiji"
+                    android:text="@string/shuangbaijijia"
                     android:textColor="@color/hei5"
                     android:textSize="@dimen/txsize_small_x" />
             </RelativeLayout>

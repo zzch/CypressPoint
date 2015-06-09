@@ -15,9 +15,14 @@ import android.os.Message;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.ActionMode;
+import android.view.ActionMode.Callback;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.Window;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -88,6 +93,9 @@ public class FeedBackActivity extends Activity{
 		finish();
 	}
 	private void setListeners() {
+		
+		
+		
 		opinionEditText.addTextChangedListener(new TextWatcher() {
 			private CharSequence temp;
             private int selectionStart;
@@ -114,10 +122,10 @@ public class FeedBackActivity extends Activity{
 	               selectionStart = opinionEditText.getSelectionStart();
 	               selectionEnd = opinionEditText.getSelectionEnd();
 	               if (temp.length() > num) {
-	                   s.delete(selectionStart - 1, selectionEnd);
+	                  String f =  s.toString().substring(0, 140);
 	                   int tempSelection = selectionStart;
-	                   opinionEditText.setText(s);
-	                   opinionEditText.setSelection(tempSelection);//设置光标在最后
+	                   opinionEditText.setText(f);
+	                  // opinionEditText.setSelection(tempSelection);//设置光标在最后
 	                }
 			}
 		});

@@ -41,13 +41,13 @@
   	
   	<dimen name="count_frame">-29dp</dimen>
   	<dimen name="count_frame_top">-75dp</dimen>
-  	<dimen name="count_image_top">79dp</dimen>
-  	<dimen name="count_image_left">114dp</dimen>
+  	<dimen name="count_image_top">89dp</dimen>
+  	<dimen name="count_image_left">124dp</dimen>
   	<dimen name="count_orange_left">166dp</dimen>
   	<dimen name="count_orange_top">128dp</dimen>
   	<dimen name="count_orange_size">65dp</dimen>
   	<dimen name="count_text_left">172dp</dimen>
-  	<dimen name="count_text_top">140dp</dimen>
+  	<dimen name="count_text_top">145dp</dimen>
   	<dimen name="count_avg_left">175dp</dimen>
   	<dimen name="count_avg_top">155dp</dimen>
   	<dimen name="count_ccc">0dp</dimen>
@@ -165,5 +165,13 @@
         
         <dimen name="text_whith_x">230dp</dimen>
         
-        <dimen name="image_size">15dp</dimen> 
+        <dimen name="image_size">15dp</dimen>
+         
+        <dimen name="yaoqing_width">13dp</dimen> 
+         <dimen name="yaoqing_height">14dp</dimen> 
+         <dimen name="paiming_width">16dp</dimen> 
+         <dimen name="paiming_height">13dp</dimen> 
+         <dimen name="tongji_width">16dp</dimen> 
+         <dimen name="tongji_height">13dp</dimen>
+        <dimen name="scord_left">40dp</dimen>
 </resources>

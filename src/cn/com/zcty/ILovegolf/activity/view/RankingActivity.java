@@ -198,6 +198,7 @@ public class RankingActivity extends Activity{
 	 * 数据的操作
 	 */
 	public void getData(){
+		
 		if(rankListView.getAdapter()==null){
 			adapter = new RankingAdapter(this, rankings);
 			rankListView.setAdapter(adapter);	
@@ -210,12 +211,12 @@ public class RankingActivity extends Activity{
 		}else{
 			if(rankings.size()<1){
 				
-				   invite_much.setVisibility(View.GONE);
+				   mPullRefreshScrollView.setVisibility(View.GONE);
 				   Log.i("-----", "sdufhshdjhkjshfjhsjkhfjhs");
 				  layout_rank.setVisibility(View.VISIBLE);
 			   }else{
 				  layout_rank.setVisibility(View.GONE);
-				  invite_much.setVisibility(View.VISIBLE);
+				  mPullRefreshScrollView.setVisibility(View.VISIBLE);
 			   }
 		}
 		
@@ -263,7 +264,10 @@ public class RankingActivity extends Activity{
 					ranking.setTotal(jsonObject.getString("total"));
 					
 					rankings.add(ranking);
+					Log.i("afdsfsaf", rankings.size()+"ff");
 				}
+				
+
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

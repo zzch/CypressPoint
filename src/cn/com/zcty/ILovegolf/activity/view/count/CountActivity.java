@@ -61,7 +61,7 @@ public class CountActivity extends Activity implements OnClickListener{
 	private TextView bogeyTextView;
 	private TextView double_bogeyTextView;
 	private ArrayList<String> gridArrayList = new ArrayList<String>();
-	private int color[] = new int[]{Color.rgb(32, 66, 171),Color.rgb(200, 141, 25),Color.rgb(92, 132, 208),Color.rgb(230, 230, 230),Color.rgb(173, 195, 243),Color.rgb(213, 181, 58)};
+	private int color[] = new int[]{Color.rgb(32, 66, 171),Color.rgb(200, 141, 25),Color.rgb(92, 132, 208),Color.rgb(212, 212, 212),Color.rgb(173, 195, 243),Color.rgb(213, 181, 58)};
 	private float percent[] = new float[6];
 	private String names[] = new String[]{"","","","","",""};
 	private float width;

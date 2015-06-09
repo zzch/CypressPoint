@@ -23,6 +23,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -80,10 +82,10 @@ public class SelfhoodActivity extends Activity{
 					}else{
 						if(success==null){
 							FileUtil.delFile();
-							Toast.makeText(SelfhoodActivity.this, "保存失败", Toast.LENGTH_LONG).show();
+							Toast.makeText(SelfhoodActivity.this, "保存失败", Toast.LENGTH_SHORT).show();
 						}else{
 						if(success.equals("success")){
-							Toast.makeText(SelfhoodActivity.this, "保存成功", Toast.LENGTH_LONG).show();
+							Toast.makeText(SelfhoodActivity.this, "保存成功", Toast.LENGTH_SHORT).show();
 							
 							if(cunzai.equals("1")){
 								Log.i("sdfsdfsdf", "yanzheng");
@@ -103,7 +105,7 @@ public class SelfhoodActivity extends Activity{
 							
 						}else{
 							FileUtil.delFile();
-							Toast.makeText(SelfhoodActivity.this, "保存失败", Toast.LENGTH_LONG).show();
+							Toast.makeText(SelfhoodActivity.this, "保存失败", Toast.LENGTH_SHORT).show();
 						}}
 					}
 				}
@@ -140,6 +142,31 @@ public class SelfhoodActivity extends Activity{
 		add = (CompetitionAddmatch) getIntent().getSerializableExtra("add");
 	}
 	private void setListeners(){
+		userNameEditText.addTextChangedListener(new TextWatcher() {
+			
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void afterTextChanged(Editable s) {
+				// TODO Auto-generated method stub
+				if(s.length()>6){
+					String f = s.toString().substring(0, 6);
+					userNameEditText.setText(f);
+				}
+			}
+		});
+		
 		/*
 		 *获得头像 
 		 */

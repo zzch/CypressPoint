@@ -136,7 +136,9 @@
                     android:background="@color/white"
                     android:layout_marginLeft="15dp"
                     android:text="vhhjkvv "
-                    android:textColor="@color/hei2" />
+                    android:textColor="@color/hei2" 
+                    android:singleLine="true"
+                    />
                
           
                 </LinearLayout>
@@ -249,7 +251,7 @@
                     android:layout_height="@dimen/view_mid_xx_title"
                     android:layout_marginLeft="10dp"                   
                     android:gravity="center_vertical"
-                    android:text=" 1989-12-1"
+                    android:text=" 1980-1-1"
                     android:textColor="@color/hei2"
                     android:textSize="@dimen/txsize_small_xx" />
              

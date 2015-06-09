@@ -7,7 +7,7 @@
         android:id="@+id/score_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="#ededed"
         >
         <RelativeLayout 
             android:id="@+id/score_t"
@@ -120,7 +120,7 @@
         android:id="@+id/score_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="#ededed"
         android:visibility="gone"
         
         >

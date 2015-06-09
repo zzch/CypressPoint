@@ -228,7 +228,31 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		layout_sex.setOnClickListener(this);
 		layout_brithday.setOnClickListener(this);
 		brithdayTextView.setOnClickListener(this);
-
+		sginEditText.addTextChangedListener(new TextWatcher() {
+			
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void afterTextChanged(Editable s) {
+				if(s.length()>60){
+					String f = s.toString().substring(0, 60);
+					sginEditText.setText(f);
+				}
+			}
+		});
+		
+		
 		upnameEditText.addTextChangedListener(new TextWatcher() {
 
 			@Override
@@ -246,7 +270,12 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 
 			@Override
 			public void afterTextChanged(Editable s) {
-				upname = upnameEditText.getText().toString();
+				if(s.length()>6){
+					String f = s.toString().substring(0, 6);
+					upnameEditText.setText(f);
+					upname = upnameEditText.getText().toString();
+
+				}
 			}
 		});
 		sginEditText.addTextChangedListener(new TextWatcher() {
@@ -424,6 +453,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 
 		int year =Integer.parseInt(intent.getStringExtra("year"));
 		SimpleDateFormat time = new SimpleDateFormat("yyyy");
+		
 		year = Integer.parseInt(time.format(new Date()))-year;
 		nianlingTextView.setText(year+"");
 
@@ -694,8 +724,10 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			upname = upnameEditText.getText().toString();
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String token=sp.getString("token", "token");
-			String path = APIService.UPNAME+"token="+token+"&nickname="+upname;
-			String jsonData = HttpUtils.HttpClientPut(path);
+			String path = APIService.UPNAME+"token="+token;
+			HashMap<String, String> map = new HashMap<String, String>();
+			map.put("nickname", upname);
+			String jsonData = HttpUtils.Httpput(path, map);
 			try {
 				JSONObject jsonObject = new JSONObject(jsonData);
 				nameSuccess = jsonObject.getString("result");

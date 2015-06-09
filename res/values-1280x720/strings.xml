@@ -39,15 +39,15 @@
   	
   	<dimen name="view_text_right">59dp</dimen>
   	
-  	<dimen name="count_frame">35dp</dimen>
-  	<dimen name="count_frame_top">0dp</dimen>
-  	<dimen name="count_image_top">32dp</dimen>
+  	<dimen name="count_frame">30.5dp</dimen>
+  	<dimen name="count_frame_top">-15dp</dimen>
+  	<dimen name="count_image_top">32.5dp</dimen>
   	<dimen name="count_image_left">62dp</dimen>
   	<dimen name="count_orange_left">115dp</dimen>
   	<dimen name="count_orange_top">86dp</dimen>
   	<dimen name="count_orange_size">70dp</dimen>
   	<dimen name="count_text_left">125dp</dimen>
-  	<dimen name="count_text_top">98dp</dimen>
+  	<dimen name="count_text_top">106dp</dimen>
   	<dimen name="count_avg_left">125dp</dimen>
   	<dimen name="count_avg_top">118dp</dimen>
   	<dimen name="count_ccc">0dp</dimen>
@@ -93,7 +93,7 @@
     
     <dimen name="view_count_size">175dp</dimen>
     
-     <dimen name="view_sss_f">250dp</dimen>
+     <dimen name="view_sss_f">230dp</dimen>
      <dimen name="view_sss_ff">20dp</dimen>
      <dimen name="view_sss_fff">200dp</dimen>
      
@@ -167,4 +167,13 @@
          
          
          <dimen name="guide_image_size">8dp</dimen> 
+         
+         <dimen name="yaoqing_width">16dp</dimen> 
+         <dimen name="yaoqing_height">18dp</dimen> 
+         <dimen name="paiming_width">21dp</dimen> 
+         <dimen name="paiming_height">18dp</dimen> 
+         <dimen name="tongji_width">20dp</dimen> 
+         <dimen name="tongji_height">17dp</dimen> 
+         
+         <dimen name="scord_left">40dp</dimen>
 </resources>

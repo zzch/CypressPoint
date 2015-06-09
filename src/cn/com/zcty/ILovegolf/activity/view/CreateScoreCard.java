@@ -1,15 +1,11 @@
 package cn.com.zcty.ILovegolf.activity.view;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -17,19 +13,19 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
@@ -41,7 +37,6 @@ import cn.com.zcty.ILovegolf.tools.CircleImageView;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
-import cn.com.zcty.ILovegolf.utils.ViewUtil;
 /**
  * 记分卡
  * @author Administrator
@@ -75,6 +70,9 @@ public class CreateScoreCard extends Activity{
 	private String owned;
 	private String picname;
 	private ArrayList<ScoreCardsMatch> scoreCardsMatchs = new ArrayList<ScoreCardsMatch>();//存放成绩
+	private RelativeLayout yaoqing;
+	private RelativeLayout paiming;
+	private RelativeLayout tongji;
 	 
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
@@ -132,9 +130,9 @@ public class CreateScoreCard extends Activity{
 				
 				linearLayout.setVisibility(View.VISIBLE);
 				if(owned.equals("true")){
-					yaoqingButton.setVisibility(View.VISIBLE);
+					yaoqing.setVisibility(View.VISIBLE);
 				}else{
-					yaoqingButton.setVisibility(View.GONE);
+					yaoqing.setVisibility(View.GONE);
 				}
 				}
 			}
@@ -194,8 +192,54 @@ public class CreateScoreCard extends Activity{
 				}
 			}
 		});
+		yaoqing.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent j = new Intent();
+				if(FileUtil.fileIsExists()||!portrait.equals("null")){
+					j.setClass(CreateScoreCard.this,InviteActivity.class);
+				}else{
+					//j = new Intent(CreateScoreCard.this,SelfhoodActivity.class);
+					j.setClass(CreateScoreCard.this,SelfhoodActivity.class);
+				}
+				j.putExtra("cunzai", "0");			
+				j.putExtra("uuid", id);
+				startActivity(j);
+			}
+		});
+		paiming.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(CreateScoreCard.this,RankingActivity.class);
+				i.putExtra("cunzai", "0");
+				i.putExtra("fangzhu", owned);
+				i.putExtra("uuid", id);
+				startActivity(i);
+			}
+		});
+		tongji.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent f = new Intent();
+				if(scoring_type.equals("simple")){
+					f.setClass(CreateScoreCard.this,StatisticsAvtivity.class);
+				}else{
+					f.setClass(CreateScoreCard.this,MajorStatisticsActivity.class);
+				}
+				
+				f.putExtra("name", picname);
+				f.putExtra("uuid", id);
+				startActivity(f);
+			}
+		});
 	}
 	private void initView() {
+		yaoqing = (RelativeLayout) findViewById(R.id.competition_button_yaoqing);
+		paiming = (RelativeLayout) findViewById(R.id.competition_button_paiming);
+		tongji = (RelativeLayout) findViewById(R.id.competition_button_tongji);
 		linearLayout = (LinearLayout) findViewById(R.id.linears);
 		totleImage = (CircleImageView) findViewById(R.id.myself_head);
 		usernameTextView = (TextView) findViewById(R.id.competition_username);
@@ -204,7 +248,6 @@ public class CreateScoreCard extends Activity{
 		scoreTextView = (TextView) findViewById(R.id.competition_chengji);
 		parTextView = (TextView) findViewById(R.id.competition_par);
 		scoreListView = (ListView) findViewById(R.id.score_match);
-		yaoqingButton = (Button) findViewById(R.id.competition_button_yaoqing);
 		Intent intent=getIntent();
 		id = intent.getStringExtra("uuid");
 		scoring_type = intent.getStringExtra("scoring_type");
@@ -249,39 +292,7 @@ public class CreateScoreCard extends Activity{
 			overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 			finish();
 			break;
-		case R.id.competition_button_paiming:
-			Intent i = new Intent(CreateScoreCard.this,RankingActivity.class);
-			i.putExtra("cunzai", "0");
-			i.putExtra("fangzhu", owned);
-			i.putExtra("uuid", id);
-			startActivity(i);
-			break;
-		case R.id.competition_button_yaoqing:
-			Intent j = new Intent();
-			if(FileUtil.fileIsExists()){
-				j.setClass(CreateScoreCard.this,InviteActivity.class);
-			}else{
-				//j = new Intent(CreateScoreCard.this,SelfhoodActivity.class);
-				j.setClass(CreateScoreCard.this,SelfhoodActivity.class);
-			}
-			j.putExtra("cunzai", "0");			
-			j.putExtra("uuid", id);
-			startActivity(j);
-			break;
-		case R.id.competition_button_tongji:
-			Intent f = new Intent();
-			if(scoring_type.equals("simple")){
-				f.setClass(CreateScoreCard.this,StatisticsAvtivity.class);
-			}else{
-				f.setClass(CreateScoreCard.this,MajorStatisticsActivity.class);
-			}
-			
-			f.putExtra("name", picname);
-			f.putExtra("uuid", id);
-			startActivity(f);
-			break;
-		default:
-			break;
+		
 		}
 	}
 	/**

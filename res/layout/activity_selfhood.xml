@@ -144,7 +144,9 @@
                     android:hint="请输入昵称"
                     android:lines="1"
                     android:textColor="@color/hei5"
-                    android:textColorHint="@color/hei6" >
+                    android:textColorHint="@color/hei6" 
+                    android:singleLine="true"
+                    >
 
                     <requestFocus />
                 </EditText>

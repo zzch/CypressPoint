@@ -90,6 +90,7 @@ public class RankingAdapter extends BaseAdapter{
 		 	holder.nameTextView.setText(rankings.get(position).getNickname());
 		 	if(rankings.get(position).getTotal().equals("null")){
 		 		holder.totalTextView.setText("一");
+		 		holder.totalTextView.setTextSize(20);
 		 	}else{
 		 		holder.totalTextView.setText(rankings.get(position).getTotal());
 		 	}
