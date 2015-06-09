@@ -162,11 +162,11 @@ public class RankingActivity extends Activity{
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
-				if(rankings.get(position-1).getSelf().equals("true")){
+				if(rankings.get(position).getSelf().equals("true")){
 					finish();
 				}else{
 				Intent intent = new Intent(RankingActivity.this,RankingStatics.class);
-				intent.putExtra("uuid", rankings.get(position-1).getUuid());
+				intent.putExtra("uuid", rankings.get(position).getUuid());
 				startActivity(intent);}
 			}
 		});
