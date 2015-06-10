@@ -221,7 +221,7 @@ public class ShouYeActivity extends Activity {
 					intent=new Intent(ShouYeActivity.this,HomePageActivity.class);
 				    startActivity(intent);
 				    finish();	
-				    Toast.makeText(ShouYeActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+
 				}else{
 					
 				}
