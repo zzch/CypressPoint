@@ -49,7 +49,9 @@
         android:id="@+id/myself_head_self"
         android:layout_width="match_parent"
         android:background="@color/daohang"
-        android:layout_height="@dimen/my_view_layout" >
+        android:layout_height="@dimen/my_view_layout"
+       
+         >
 
         <FrameLayout
             android:id="@+id/frameLayout1"

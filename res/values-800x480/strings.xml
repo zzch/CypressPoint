@@ -120,11 +120,11 @@
      <dimen name="my_view_frame_left">15dp</dimen>
      <dimen name="my_view_layout">170dp</dimen>
      <dimen name="my_view_image">82dp</dimen> 
-     <dimen name="my_view_image_left">104dp</dimen>
+     <dimen name="my_view_image_left">129dp</dimen>
      <dimen name="my_view_image_top">18.5dp</dimen> 
      <dimen name="my_view_Circle_x">71dp</dimen> 
      <dimen name="my_view_Circle_top">23dp</dimen> 
-     <dimen name="my_view_Circle_left">109dp</dimen> 
+     <dimen name="my_view_Circle_left">134dp</dimen> 
      <dimen name="my_view_name_top">105dp</dimen>
      <dimen name="my_view_qianming_top">135dp</dimen>
      <dimen name="my_view_qianming_height">26dp</dimen>
@@ -167,6 +167,8 @@
         
         <dimen name="image_size">15dp</dimen>
          
+        <dimen name="guide_image_size">10dp</dimen> 
+        
         <dimen name="yaoqing_width">13dp</dimen> 
          <dimen name="yaoqing_height">14dp</dimen> 
          <dimen name="paiming_width">16dp</dimen> 
