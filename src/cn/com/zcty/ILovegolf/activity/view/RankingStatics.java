@@ -70,18 +70,12 @@ public class RankingStatics extends FragmentActivity{
 			if(msg.what==1){
 				getData();
 				hideProgressDialog();
-				Log.i("askldfjlks",FileUtil.fileIsExists()+"");
-				if(!portrait.equals("null")){
-					if(!FileUtil.fileIsExists()){						
+										
 						new Imageloder().start();
-					}else{
-						totleImage.setImageBitmap(FileUtil.converToBitmap(100,100));
-					}
-				}
+					
 			}
 			if(msg.what==2){
 				totleImage.setImageBitmap(bitmap);
-				FileUtil.saveMyBitmap(bitmap);//把bitmap保存到手机目录中
 			}
 		};
 	};

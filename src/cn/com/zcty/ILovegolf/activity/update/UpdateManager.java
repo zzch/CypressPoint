@@ -23,6 +23,7 @@ import android.net.Uri;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -117,7 +118,8 @@ public class UpdateManager
 			e.printStackTrace();
 		}
 		if (null != mHashMap)
-		{
+		{	
+			Log.i("aaaaaaa", mHashMap.get("version"));
 			int serviceCode = Integer.valueOf(mHashMap.get("version"));
 			// 版本判断
 			if (serviceCode > versionCode)
