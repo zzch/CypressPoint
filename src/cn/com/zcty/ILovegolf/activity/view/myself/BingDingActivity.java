@@ -46,8 +46,8 @@ public class BingDingActivity extends Activity{
 				if(msg.obj.equals("404")||msg.obj.equals("500")){
 					Toast.makeText(BingDingActivity.this, "网络错误，请稍后再试", Toast.LENGTH_LONG).show();
 
-				}else if(msg.obj.equals("403")){
-					Toast.makeText(BingDingActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("401")){
+					Toast.makeText(BingDingActivity.this, "帐号异地登录，请重新登录", Toast.LENGTH_LONG).show();
 					FileUtil.delFile();
 					Intent intent = new Intent(BingDingActivity.this,ShouYeActivity.class);
 					startActivity(intent);
@@ -108,6 +108,9 @@ public class BingDingActivity extends Activity{
 		phoneEditText.setInputType(EditorInfo.TYPE_CLASS_PHONE);
 		TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 		phone = tm.getLine1Number();
+		if(phone.length()>12){
+			phone = phone.substring(3, 14);
+		}
 		phoneEditText.setText(phone);
 
 		submitButton = (Button) findViewById(R.id.bingding_next);

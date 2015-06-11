@@ -69,12 +69,12 @@ public class QuickScoreActivity extends Activity {
 				mPullRefreshScrollView.onRefreshComplete();//刷新
 				if(msg.obj.equals("404")||msg.obj.equals("500")){//判断是服务端问题
 					Toast.makeText(QuickScoreActivity.this, "网络异常，错误提示"+msg.obj, Toast.LENGTH_LONG).show();
-				}else if(msg.obj.equals("403")){
-					Toast.makeText(QuickScoreActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("401")){
 					FileUtil.delFile();
 					Intent intent = new Intent(QuickScoreActivity.this,ShouYeActivity.class);
 					startActivity(intent);
 					overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+					Toast.makeText(QuickScoreActivity.this, "帐号异地登录，请重新登录", Toast.LENGTH_LONG).show();
 					finish();
 				}else{
 					/*

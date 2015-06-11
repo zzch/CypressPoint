@@ -136,8 +136,8 @@ public class MajorScoreActivity extends Activity {
 			if(msg.what==4){
 				if(msg.obj.equals("404")||msg.obj.equals("500")){
 					Toast.makeText(MajorScoreActivity.this, "网络异常，错误提示"+msg.obj, Toast.LENGTH_LONG).show();
-				}else if(msg.obj.equals("403")){
-					Toast.makeText(MajorScoreActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("401")){
+					Toast.makeText(MajorScoreActivity.this, "帐号异地登录，请重新登录", Toast.LENGTH_LONG).show();
 					FileUtil.delFile();
 					Intent intent = new Intent(MajorScoreActivity.this,ShouYeActivity.class);
 					startActivity(intent);
