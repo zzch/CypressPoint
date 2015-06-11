@@ -1,5 +1,7 @@
 package cn.com.zcty.ILovegolf.activity.view;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
 import org.json.JSONException;
@@ -17,6 +19,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -30,12 +33,27 @@ public class HomePageActivity extends Activity {
 	private Bitmap bitmap;
 	HashMap<String, String> hashMap = new HashMap<String, String>();
 	private String url;
+	private String  day;
+	private String daytime;
 	Handler handler = new Handler() {
 		public void handleMessage(android.os.Message msg) {
 			if (msg.what == 1) {
-				UpdateManager manager = new UpdateManager(
-						HomePageActivity.this, hashMap);
-				manager.checkUpdate();
+				SimpleDateFormat format = new SimpleDateFormat("dd");
+				daytime = format.format(new Date());
+				
+				SharedPreferences ss = getSharedPreferences("time",
+						Context.MODE_PRIVATE);
+				day = ss.getString("day", "day");
+				
+				 Log.i("2222", ""+day);
+				if(!day.equals(daytime)){
+					UpdateManager manager = new UpdateManager(
+							HomePageActivity.this, hashMap);
+					manager.checkUpdate();
+					timeDay();
+				}
+				
+			
 			}
 			if (msg.what == 2) {
 				FileUtil.saveMyBitmap(bitmap);
@@ -50,6 +68,9 @@ public class HomePageActivity extends Activity {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_homepage);
 		ShouYeActivity.getInstance().addActivity(this);
+		SimpleDateFormat format = new SimpleDateFormat("dd");
+		day = format.format(new Date());
+		Log.i("wwwww", day);
 		new Json().start();
 		SharedPreferences sp = getSharedPreferences("register",
 				Context.MODE_PRIVATE);
@@ -58,8 +79,19 @@ public class HomePageActivity extends Activity {
 		if (!url.equals("null")) {
 			new Imageloder().start();
 		}
+		
+		
 	}
-
+  
+	public void timeDay(){
+		
+		SharedPreferences ss=getSharedPreferences("time",Context.MODE_PRIVATE);
+		Editor editor = ss.edit();
+	    editor.putString("day", daytime);
+	    editor.commit();
+	   
+	}
+	 
 	/*
 	 * 点击跳转事件
 	 */
@@ -128,7 +160,6 @@ public class HomePageActivity extends Activity {
 			Message msg = handler.obtainMessage();
 			msg.what = 1;
 			handler.sendMessage(msg);
-
 		}
 	}
 
@@ -140,12 +171,10 @@ public class HomePageActivity extends Activity {
 		}
 
 		public void getData() {
-
 			bitmap = HttpUtils.imageloder(url);
 			Message msg = handler.obtainMessage();
 			msg.what = 2;
 			handler.sendMessage(msg);
-
 		}
 	}
 }

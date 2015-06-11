@@ -26,8 +26,10 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.RankingAdapter;
@@ -44,6 +46,7 @@ public class RankingActivity extends Activity{
 
 	private Button paiming_back;
 	private ScrollViewWithListView rankListView;
+	//private ListView rankListViews;
 	private RelativeLayout invite_much;
 	private Button rank_invite_but;
 	private RelativeLayout layout_rank;
@@ -186,7 +189,9 @@ public class RankingActivity extends Activity{
 	public void initView(){
 		mPullRefreshScrollView = (PullToRefreshScrollView) findViewById(R.id.pull_refresh_scrollview);
 		paiming_back = (Button) findViewById(R.id.paiming_back);
+		
 		rankListView = (ScrollViewWithListView) findViewById(R.id.ranking);
+		
 		invite_much = (RelativeLayout) findViewById(R.id.invite_much);
 		rank_invite_but = (Button) findViewById(R.id.rank_invite_but);
 		layout_rank = (RelativeLayout) findViewById(R.id.layout_rank);

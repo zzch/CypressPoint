@@ -195,6 +195,9 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 		}
 		return convertView;
 	}
+	/*
+	 * 添加球的颜色
+	 */
 	public void color(int position,int color,TextView textView){
 		Log.i("sdfasdf",scoreCardsMatchs.get(position).getTeeboxs().get(color).getColor()+"1");
 		textView.setTextColor(Color.rgb(122, 122, 122));

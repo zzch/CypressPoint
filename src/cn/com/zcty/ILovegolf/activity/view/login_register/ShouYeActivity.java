@@ -71,6 +71,12 @@ public class ShouYeActivity extends Activity {
      private String messg = "";
      private ProgressDialog progressDialog;
      private LinearLayout linear;
+     private String uuid = null;
+     private String nickname = null;
+     private String token = null;
+     private String type = null;
+     private String phone = null;
+     private String data;
    //单例实现返回MyApplication实例  
      public static ShouYeActivity getInstance(){  
          if(null == instance){  
@@ -112,8 +118,39 @@ public class ShouYeActivity extends Activity {
 					}
 					
 				 break;
+				 
+			 case 4:
+				 
+				//保存数据
+					SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
+					Editor editor = sp.edit();
+				    editor.putString("uuid", uuid);
+				    editor.putString("nickname", nickname);
+				    editor.putString("token", token);
+				    editor.putString("type", type);
+				    editor.putString("phone", phone);
+				    editor.putString("isRegister", "true");
+				    editor.putString("isfangshi", "0");
+				    editor.putString("portrait", "null");
+				    editor.commit();
+				    Log.i("----uuid", ""+sp.getString("uuid", ""));
+				    Log.i("----nickname", ""+sp.getString("nickname", ""));
+				    Log.i("Regis===token----", ""+sp.getString("token", ""));
+				    Log.i("----type", ""+sp.getString("type", ""));
+				    Log.i("----phone", ""+sp.getString("phone", ""));
+				    if(data!=null){
+				    	Toast.makeText(ShouYeActivity.this, "注册成功！",  Toast.LENGTH_SHORT).show();
+						hideProgressDialog();
+						intent=new Intent(ShouYeActivity.this,HomePageActivity.class);
+					    startActivity(intent);
+					    finish();	
+
+					}else{
+						
+			   }
+				
+				break; 
 			 }
-			
 		}
     		
      };
@@ -123,8 +160,7 @@ public class ShouYeActivity extends Activity {
     			 Intent intent = new Intent(ShouYeActivity.this,HomePageActivity.class);
 				 startActivity(intent);			
 				 finish();
-				 Toast.makeText(ShouYeActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
-				 
+				 Toast.makeText(ShouYeActivity.this, "登录成功", Toast.LENGTH_SHORT).show(); 
     		 }
     	 };
      };
@@ -166,72 +202,59 @@ public class ShouYeActivity extends Activity {
 		
 	}
 	
+	
+	
+
 	/**
 	 * 一键注册
 	 * @param v
 	 */
 	public void but_register(View v){
+		
 		showProgressDialog("提示", "加载中。。。",ShouYeActivity.this);
 		
-		new AsyncTask<Void, Void, Void>() {
-
-			@Override
-			protected Void doInBackground(Void... arg0) {
-				// TODO Auto-generated method stub
+	new RegisterTask().start();
+		
+	}
+	
+	  class RegisterTask extends Thread{
+			
+			public void run(){
+				getData();
+			}
+			
+			public void getData(){
+				
 				//请求数据
 				String url=APIService.ONE_REGISTER;
-				String data=HttpUtils.HttpClientPost(url);
+				data=HttpUtils.HttpClientPost(url);
 				Log.i("Data----->", ""+data);
-				String uuid = null;
-				String nickname = null;
-				String token = null;
-				String type = null;
-				String phone = null;
+				
+				Message msg = handler.obtainMessage(); 
 				try {
 					//json解析
 					JSONObject jsonObject=new JSONObject(data);
-					Log.i("jsonarray----->", ""+data);
 						uuid=jsonObject.getString("uuid");
-						Log.i("uuid--->>", ""+uuid);
 						nickname=jsonObject.getString("nickname");
-						Log.i("nickname--->>", ""+nickname);
 						token=jsonObject.getString("token");
-						Log.i("token--->>", ""+token);
 						type = jsonObject.getString("type");
 						phone = jsonObject.getString("phone");
+						
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				//保存数据
-				SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
-				Editor editor = sp.edit();
-			    editor.putString("uuid", uuid);
-			    editor.putString("nickname", nickname);
-			    editor.putString("token", token);
-			    editor.putString("type", type);
-			    editor.putString("phone", phone);
-			    editor.putString("isRegister", "true");
-			    editor.putString("isfangshi", "0");
-			    editor.putString("portrait", "null");
-			    Log.i("----uuid", ""+sp.getString("uuid", ""));
-			    editor.commit();
-				if(data!=null){
-					hideProgressDialog();
-					intent=new Intent(ShouYeActivity.this,HomePageActivity.class);
-				    startActivity(intent);
-				    finish();	
-
-				}else{
-					
-				}
+				msg.what = 4;	
+	    		handler.sendMessage(msg);
 				
-				return null;
 			}
-		}.execute();
-		
-		
-	}
+      	
+      }
+    
+	
+	
+ 
+	
 	/**
 	 * 手机注册
 	 * @param v
@@ -317,6 +340,7 @@ public class ShouYeActivity extends Activity {
 		}
 		
 	}
+	
 	class ShouYeTask_login extends Thread{
 		public void MyTask(){
 			
@@ -355,16 +379,9 @@ public class ShouYeActivity extends Activity {
 			map.put("password", p_pwd);
 			String data=httpliuyanpost(url, map);
 			Log.i("jsonData======", "----"+url);
-			
-			
-	    		
 	    			//json解析
 	    			try {
-	    				
-	   
 						JSONObject jsonObject=new JSONObject(data);						
-						
-						
 								Log.i("jinai",data);
 								String uuid=jsonObject.getString("uuid");
 								String type=jsonObject.getString("type");
@@ -527,5 +544,7 @@ public class ShouYeActivity extends Activity {
 	                  return false ; 
 	              }
 
-		
+	        
+	        
+	      
 }

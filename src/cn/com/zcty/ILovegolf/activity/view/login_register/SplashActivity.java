@@ -38,6 +38,7 @@ public class SplashActivity extends Activity {
 	public void next(){
 		SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 		String isRegister=sp.getString("isRegister", "false");
+		
 		SharedPreferences sps=getSharedPreferences("fff",Context.MODE_PRIVATE);
 		
 		if(!sps.getString("guide", "0").equals("1")){			

@@ -1,5 +1,7 @@
 package cn.com.zcty.ILovegolf.model;
 
+import org.apache.http.entity.SerializableEntity;
+
 public class AnlyzeDiamond {
 	/**
 	 * 定义属性
