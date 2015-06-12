@@ -236,7 +236,9 @@ public class Myself extends Activity {
 		//settingRelativeLayout = (RelativeLayout) findViewById(R.id.myself_setting);
 		SharedPreferences sp = getSharedPreferences("register", MODE_PRIVATE);
 		String name = sp.getString("nickname", "nickname");
+		
 		nameTextView.setText(name);
+		Log.i("nick===name", name);
 	}
 	
 	class Ziliao extends Thread{
@@ -292,6 +294,7 @@ public class Myself extends Activity {
 			String token=sp.getString("token", "token");
 			String path = APIService.TITLE+"token="+token;
 			String jsonData = HttpUtils.HttpClientGet(path);
+			Log.i("myself", jsonData);
 			try {
 				JSONObject jsonObject = new JSONObject(jsonData);
 				JSONObject jsObjectuser = new JSONObject(jsonObject.getString("user"));
@@ -346,9 +349,6 @@ public class Myself extends Activity {
                    progressDialog.dismiss();
            }
     }
-
-
-	
 
 
 

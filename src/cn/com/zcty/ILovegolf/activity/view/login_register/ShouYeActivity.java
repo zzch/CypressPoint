@@ -65,7 +65,7 @@ public class ShouYeActivity extends Activity {
      private Button but_login;
      private String u_name;
      private String p_pwd;
-     private int code;
+     private int code = 404;
      private String isBoolean;
      private String err;
      private String messg = "";
@@ -89,6 +89,7 @@ public class ShouYeActivity extends Activity {
 		@Override
 		public void handleMessage(Message msg) {
 			 switch(msg.what){
+			 
 			 case 0:
 				 Toast.makeText(ShouYeActivity.this, "用户名不能为空！", Toast.LENGTH_SHORT).show();
 				 break;
@@ -99,8 +100,9 @@ public class ShouYeActivity extends Activity {
 				 Toast.makeText(ShouYeActivity.this, "密码不能为空！", Toast.LENGTH_SHORT).show();
 				 break;
 			 case 3:
-				if(msg.arg1==0){
-				   Toast.makeText(ShouYeActivity.this, "网络异常！", Toast.LENGTH_SHORT).show();
+				 hideProgressDialog();
+				if(msg.arg1==0||msg.obj.equals("404")){
+				   Toast.makeText(ShouYeActivity.this, "网络异常，请稍后再试", Toast.LENGTH_SHORT).show();
 					}
 				if(msg.arg1==1){
 					if(messg.equals("无效的密码")){
@@ -120,7 +122,11 @@ public class ShouYeActivity extends Activity {
 				 break;
 				 
 			 case 4:
-				 
+				 hideProgressDialog();
+				 if(msg.obj.equals("404")){
+					 Toast.makeText(ShouYeActivity.this, "网络异常，请稍后再试", Toast.LENGTH_LONG).show();
+				 }else{
+				 Log.i("----uuid", ""+uuid);
 				//保存数据
 					SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 					Editor editor = sp.edit();
@@ -149,6 +155,7 @@ public class ShouYeActivity extends Activity {
 						
 			   }
 				
+				 }
 				break; 
 			 }
 		}
@@ -211,7 +218,7 @@ public class ShouYeActivity extends Activity {
 	 */
 	public void but_register(View v){
 		
-		showProgressDialog("提示", "加载中。。。",ShouYeActivity.this);
+		//showProgressDialog("提示", "加载中。。。",ShouYeActivity.this);
 		
 	new RegisterTask().start();
 		
@@ -235,16 +242,22 @@ public class ShouYeActivity extends Activity {
 					//json解析
 					JSONObject jsonObject=new JSONObject(data);
 						uuid=jsonObject.getString("uuid");
+						 Log.i("uuid====",uuid );
 						nickname=jsonObject.getString("nickname");
+						 Log.i("nickname====",nickname );
 						token=jsonObject.getString("token");
+						 Log.i("token====",token );
 						type = jsonObject.getString("type");
+						 Log.i("type====",type );
 						phone = jsonObject.getString("phone");
+						 Log.i("phone====",phone );
 						
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				msg.what = 4;	
+				msg.obj = data;
 	    		handler.sendMessage(msg);
 				
 			}
@@ -336,6 +349,7 @@ public class ShouYeActivity extends Activity {
 	    			
 	    		}
 	    		msg.what = 3;	
+	    		msg.obj = data;
 	    		handler.sendMessage(msg);
 		}
 		

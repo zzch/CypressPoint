@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="@string/chooisepith"
+            android:text="修改记分卡"
             android:layout_marginTop="10dp"
             android:textColor="@color/white"
             android:textSize="@dimen/txsize_mid_x"
@@ -62,6 +62,52 @@
            />
 
      </RelativeLayout>
+     
+   
+   <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp" 
+         android:background="@color/daohang"
+        >
+
+        <TextView
+            android:id="@+id/score_par"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="4标准杆"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/score_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/score_par"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="70dp"
+            android:text="564码"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/score_t"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/score_distance"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="55dp"
+            android:text="黑T"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        
+
+        
+
+        
+    </RelativeLayout>
      
    
    
@@ -274,7 +320,7 @@
            <TextView 
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text="距离球洞"
+          android:text="第一杆距离球洞"
           android:textSize="@dimen/txsize_small_xx"
           android:textColor="@color/hei5"
          
