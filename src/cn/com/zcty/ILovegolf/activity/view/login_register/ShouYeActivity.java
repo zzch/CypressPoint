@@ -101,7 +101,7 @@ public class ShouYeActivity extends Activity {
 				 break;
 			 case 3:
 				 hideProgressDialog();
-				if(msg.arg1==0||msg.obj.equals("404")){
+				if(msg.arg1==0||msg.obj.equals("404")||msg.obj.equals("500")){
 				   Toast.makeText(ShouYeActivity.this, "网络异常，请稍后再试", Toast.LENGTH_SHORT).show();
 					}
 				if(msg.arg1==1){
@@ -123,7 +123,7 @@ public class ShouYeActivity extends Activity {
 				 
 			 case 4:
 				 hideProgressDialog();
-				 if(msg.obj.equals("404")){
+				 if(msg.obj.equals("404")||msg.obj.equals("500")){
 					 Toast.makeText(ShouYeActivity.this, "网络异常，请稍后再试", Toast.LENGTH_LONG).show();
 				 }else{
 				 Log.i("----uuid", ""+uuid);

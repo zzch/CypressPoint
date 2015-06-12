@@ -64,6 +64,11 @@
      </RelativeLayout>
      
    
+     <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#1e1c27"
+        />
    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp" 
@@ -314,7 +319,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginLeft="@dimen/view_small_xx"
+        android:layout_marginLeft="@dimen/view_small_x"
         android:gravity="center"
            >
            <TextView 
@@ -342,7 +347,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
-        android:layout_marginLeft="@dimen/view_mid_xxx"
+        android:layout_marginLeft="@dimen/view_mid_xx_x"
         
         >
       

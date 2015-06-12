@@ -179,6 +179,8 @@ public class CreateScoreCard extends Activity{
 					intent.putExtra("distance", scoreCardsMatchs.get(position).getDistance_from_hole());
 					intent.putExtra("putts", scoreCardsMatchs.get(position).getPutts());
 					intent.putExtra("penalties", scoreCardsMatchs.get(position).getPenalties());
+					intent.putExtra("color", color.get(position));
+					intent.putExtra("dis", distance.get(position));
 					intent.putExtra("number", (position+1)+"");
 					startActivity(intent);
 				}else{

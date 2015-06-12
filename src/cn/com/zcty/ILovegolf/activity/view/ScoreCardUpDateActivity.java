@@ -79,6 +79,9 @@ public class ScoreCardUpDateActivity extends Activity{
 	private ProgressDialog progressDialog;
 	private String code;
 	private String distance;
+	private TextView score_par;
+	private TextView score_distance;
+	private TextView score_t;
 	private String d = "命中";
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
@@ -144,6 +147,7 @@ public class ScoreCardUpDateActivity extends Activity{
 		String penalties = intent.getStringExtra("penalties");
 		position = intent.getStringExtra("position");
 		String  dc= intent.getStringExtra("direction");
+		String dis = intent.getStringExtra("dis");
 		Log.i("sadfsdafsdafas", dc+"zhouhe");
 
 		if(dc.equals("pure")){
@@ -164,6 +168,7 @@ public class ScoreCardUpDateActivity extends Activity{
 		}
 		d = hit_scorecard.getText().toString();
 		distance = intent.getStringExtra("distance");
+		String t = intent.getStringExtra("color");
 		SharedPreferences sp = getSharedPreferences("setCard",MODE_PRIVATE);	
 		if( !distance.equals("null")){
 			dataTextView.setText(par);
@@ -195,6 +200,28 @@ public class ScoreCardUpDateActivity extends Activity{
 		//count = par;
 		puttsstart = Integer.parseInt(putTextView.getText().toString());
 		penaltiesstart = Integer.parseInt(penaltiesTextView.getText().toString());
+		//par 标准杆
+		score_par.setText(intent.getStringExtra("par")+"标准杆");
+		//distance  码 
+		score_distance.setText(dis+"码");
+		
+		//t台
+		String color;
+		if(intent.getStringExtra("color").equals("white")){
+			color = "白T";
+		}else if(intent.getStringExtra("color").equals("black")){
+			color = "黑T";
+		}else if(intent.getStringExtra("color").equals("yellow")){
+			color = "黄T";
+		}else if(intent.getStringExtra("color").equals("red")){
+			color = "红T";
+		}else{
+			color = "蓝T";
+		}
+		score_t.setText(color);
+	
+		
+		
 	}
 
 	@Override
@@ -288,6 +315,9 @@ public class ScoreCardUpDateActivity extends Activity{
 		scorecard_image_up = (ImageView) findViewById(R.id.scorecard_image_up);
 		wheel_layout = (LinearLayout)findViewById(R.id.wheel_layout);
 		scorecard_image_up = (ImageView) findViewById(R.id.scorecard_image_up);
+		score_par = (TextView) findViewById(R.id.score_par);
+		score_distance = (TextView) findViewById(R.id.score_distance);
+		score_t = (TextView) findViewById(R.id.score_t);
 		/*
 		 *获取状态
 		 */
