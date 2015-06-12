@@ -28,6 +28,7 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.widget.Toast;
 
 public class HomePageActivity extends Activity {
 	private Bitmap bitmap;
@@ -38,6 +39,9 @@ public class HomePageActivity extends Activity {
 	Handler handler = new Handler() {
 		public void handleMessage(android.os.Message msg) {
 			if (msg.what == 1) {
+				if(!msg.obj.equals("404")){					
+				
+				
 				SimpleDateFormat format = new SimpleDateFormat("dd");
 				daytime = format.format(new Date());
 				Log.i("daytime", daytime);
@@ -45,13 +49,15 @@ public class HomePageActivity extends Activity {
 						Context.MODE_PRIVATE);
 			    day = ss.getString("day", "day");
 				
-				 Log.i("2222", ""+day);
 				if(!day.equals(daytime)){
 					UpdateManager manager = new UpdateManager(
 							HomePageActivity.this, hashMap);
 					manager.checkUpdate();
 					timeDay();
+				  }
+
 				}
+
 			}
 			if (msg.what == 2) {
 				FileUtil.saveMyBitmap(bitmap);
@@ -155,6 +161,7 @@ public class HomePageActivity extends Activity {
 			}
 			Message msg = handler.obtainMessage();
 			msg.what = 1;
+			msg.obj = jsonData;
 			handler.sendMessage(msg);
 		}
 	}

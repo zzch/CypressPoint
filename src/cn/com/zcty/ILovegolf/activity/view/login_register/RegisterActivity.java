@@ -275,21 +275,14 @@ public class RegisterActivity extends Activity {
               
 			}else if("".equals(querenmima)){
 				 Toast.makeText(RegisterActivity.this, "确认密码不能为空！", Toast.LENGTH_LONG).show();
+		    }else if(!mima.equals(querenmima)){
+				 Toast.makeText(RegisterActivity.this, "确认密码与密码不一致！", Toast.LENGTH_LONG).show();  
+			}else if("".equals(yanzheng)){
+	  			 Toast.makeText(RegisterActivity.this, "验证码不能为空！", Toast.LENGTH_LONG).show();
+            }else{
+			     new MyTask().start();
 
-	              
-	              
-		  }else if(!mima.equals(querenmima)){
-				 Toast.makeText(RegisterActivity.this, "确认密码与密码不一致！", Toast.LENGTH_LONG).show();
-
-	              
-			}
-	            else if("".equals(yanzheng)){
-	  				Toast.makeText(RegisterActivity.this, "验证码不能为空！", Toast.LENGTH_LONG).show();
-    
-		}else{
-			new MyTask().start();
-
-		}
+		    }
 		 
        }
     
