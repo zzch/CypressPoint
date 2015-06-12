@@ -40,10 +40,10 @@ public class HomePageActivity extends Activity {
 			if (msg.what == 1) {
 				SimpleDateFormat format = new SimpleDateFormat("dd");
 				daytime = format.format(new Date());
-				
+				Log.i("daytime", daytime);
 				SharedPreferences ss = getSharedPreferences("time",
 						Context.MODE_PRIVATE);
-				day = ss.getString("day", "day");
+			    day = ss.getString("day", "day");
 				
 				 Log.i("2222", ""+day);
 				if(!day.equals(daytime)){
@@ -52,8 +52,6 @@ public class HomePageActivity extends Activity {
 					manager.checkUpdate();
 					timeDay();
 				}
-				
-			
 			}
 			if (msg.what == 2) {
 				FileUtil.saveMyBitmap(bitmap);
@@ -78,9 +76,7 @@ public class HomePageActivity extends Activity {
 
 		if (!url.equals("null")) {
 			new Imageloder().start();
-		}
-		
-		
+		}	
 	}
   
 	public void timeDay(){

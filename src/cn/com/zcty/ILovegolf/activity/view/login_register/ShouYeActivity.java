@@ -235,10 +235,15 @@ public class ShouYeActivity extends Activity {
 					//json解析
 					JSONObject jsonObject=new JSONObject(data);
 						uuid=jsonObject.getString("uuid");
+						 Log.i("uuid====",uuid );
 						nickname=jsonObject.getString("nickname");
+						 Log.i("nickname====",nickname );
 						token=jsonObject.getString("token");
+						 Log.i("token====",token );
 						type = jsonObject.getString("type");
+						 Log.i("type====",type );
 						phone = jsonObject.getString("phone");
+						 Log.i("phone====",phone );
 						
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block

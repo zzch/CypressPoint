@@ -348,9 +348,6 @@ public class Myself extends Activity {
     }
 
 
-	
-
-
 
 }
 
