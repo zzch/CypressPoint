@@ -59,7 +59,7 @@ public class HttpUtils
 	 * @return
 	 */
 	public static String HttpClientPost(String url)
-	{		int code = 0;
+	{		int code = 404;
 	try {
 		String str = "";
 		//创建HttpClient对象
@@ -98,7 +98,7 @@ public class HttpUtils
 	public static String httpliuyanpost(String url,Map<String,String> map){
 		HttpPost post = new HttpPost(url);
 		String str = "";
-		int code = 0;
+		int code = 404;
 		List<NameValuePair> nvps = new ArrayList<NameValuePair>();
 		Iterator<Map.Entry<String, String>> it = map.entrySet().iterator();
 		while(it.hasNext()){
@@ -141,7 +141,7 @@ public class HttpUtils
 		HttpPut post = new HttpPut(url);
 
 		String str = "";
-		int code = 0;
+		int code = 404;
 		List<NameValuePair> nvps = new ArrayList<NameValuePair>();
 		Iterator<Map.Entry<String, String[]>> it = map.entrySet().iterator();
 		while(it.hasNext()){
@@ -168,7 +168,7 @@ public class HttpUtils
 	public static String Httpput(String url,Map<String,String> map){
 		HttpPut post = new HttpPut(url);
 		String str = "";
-		int code = 0;
+		int code = 404;
 		List<NameValuePair> nvps = new ArrayList<NameValuePair>();
 		Iterator<Map.Entry<String, String>> it = map.entrySet().iterator();
 		while(it.hasNext()){
@@ -206,7 +206,7 @@ public class HttpUtils
 		HttpClient client=new DefaultHttpClient();
 		//创建请求路径的HttpGet对象
 		HttpGet httpGet=new HttpGet(path);
-		int code = 0;
+		int code = 404;
 		try {
 			//让HttpClient往服务器发送数据
 			HttpResponse response=client.execute(httpGet);
@@ -232,7 +232,7 @@ public class HttpUtils
 	 * @return
 	 */
 	public static String HttpClientPut(String path)
-	{	int code = 0;
+	{	int code = 404;
 	String str = "";
 	//创建HttpClient对象
 	HttpClient client=new DefaultHttpClient();
@@ -269,7 +269,7 @@ public class HttpUtils
 	public static String HttpClientDelete(String path){
 
 		String str = "";
-		int code = 0;
+		int code = 404;
 		//创建一个http客户端  
 		HttpClient client=new DefaultHttpClient();  
 		//创建一个DELETE请求  
@@ -305,7 +305,7 @@ public class HttpUtils
 	@SuppressWarnings("deprecation")
 	public static String uploadImage(String url, String filepath) {
 		String str = "";
-		int statusCode = 0;;
+		int statusCode = 404;;
 		File file = new File(filepath);
 
 		if (!file.exists()) {
