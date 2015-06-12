@@ -262,9 +262,11 @@ public class MajorScoreActivity extends Activity {
 					cool = "hole";
 				}else{
 					coolWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, coolArray));	
+					cool = "球道";
 				}
 			}
 		});
+		cool = "球道";	
 		coolWheel.addChangingListener(new OnWheelChangedListener() {
 
 			@Override
