@@ -108,8 +108,10 @@ public class BingDingActivity extends Activity{
 		phoneEditText.setInputType(EditorInfo.TYPE_CLASS_PHONE);
 		TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 		phone = tm.getLine1Number();
+		if(phone!=null){			
 		if(phone.length()>12){
 			phone = phone.substring(3, 14);
+		}
 		}
 		phoneEditText.setText(phone);
 

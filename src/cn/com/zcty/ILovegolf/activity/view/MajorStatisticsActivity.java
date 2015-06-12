@@ -318,12 +318,14 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 				statistics06.setPlace7("未命中");
 				statisticsModels.add(statistics06);
 				JSONObject jsonObject07 = new JSONObject(jsonObject.getString("item_07"));
+				Log.i("tiancaishiwo", jsonObject.getString("item_07"));
 				MajorStatisticsModel statistics07 = new MajorStatisticsModel();
 				statistics07.setPlace1("球道命中");
 				Log.i("tiancaishiwo", jsonObject07.getString("drive_fairways_hit"));
 				statistics07.setPlace2(jsonObject07.getString("drive_fairways_hit"));
 				
 				statistics07.setPlace3(jsonObject07.getString("drive_left_roughs_hit"));
+				Log.i("tiancaishiwo", jsonObject07.getString("drive_left_roughs_hit")+"dd");
 				statistics07.setPlace4(jsonObject07.getString("drive_right_roughs_hit"));
 				statistics07.setPlace5("命中");
 				statistics07.setPlace6("左侧");
