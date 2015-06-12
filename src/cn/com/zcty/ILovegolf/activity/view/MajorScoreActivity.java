@@ -111,7 +111,7 @@ public class MajorScoreActivity extends Activity {
 	private String maps;
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
-			
+			hideProgressDialog();
 			if(msg.what==3){
 				if(majorArray.size()>0){	
 					count = Integer.parseInt(majorArray.get(majorArray.size()-1).getOrder());
@@ -322,6 +322,27 @@ public class MajorScoreActivity extends Activity {
 				/*if(distance.equals("0")){
 					cool = "hole";
 				}*/
+				if(cool.equals("fairway")||cool.equals("球道")){
+					cool = "fairway";
+
+				}else if(cool.equals("green")||cool.equals("果岭")){
+					cool = "green";
+				}
+				else if(cool.equals("left_rough")||cool.equals("球道外左侧")){
+					cool = "left_rough";
+				}
+				else if(cool.equals("right_rough")||cool.equals("球道外右侧")){
+					cool = "right_rough";
+				}
+				else if(cool.equals("bunker")||cool.equals("沙坑")){
+					cool = "bunker";
+				}else if(cool.equals("unplayable")||cool.equals("不可打")){
+					cool = "unplayable";
+				}else{
+				}
+				
+				
+				
 				majorScore.setCool(cool);
 				majorScore.setOrder(count+"");							
 				majorScore.setDistance(distance);
@@ -713,6 +734,7 @@ public class MajorScoreActivity extends Activity {
 			String uuid = intent.getStringExtra("uuid");
 			String path = APIService.SHIYAN+"token="+token+"&uuid="+uuid;	
 			String jsonArray =	HttpUtils.HttpClientPost(path, map);
+			Log.i("majorscore", map.get("strokes[]").toString()+"zhou");
 			try {
 				JSONObject jsObject = new JSONObject(jsonArray);	
 				Log.i("jiqiujilu", jsObject.toString());

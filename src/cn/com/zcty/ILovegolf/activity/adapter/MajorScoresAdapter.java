@@ -40,6 +40,9 @@ public class MajorScoresAdapter extends BaseAdapter{
 		
 	}
 	public ArrayList<MajorScoreJiQiu> list(){
+		
+		
+		
 		return addArrayList;
 	}
 	
