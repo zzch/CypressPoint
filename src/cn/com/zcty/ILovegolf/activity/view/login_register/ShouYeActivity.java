@@ -216,10 +216,7 @@ public class ShouYeActivity extends Activity {
 	 * 一键注册
 	 * @param v
 	 */
-	public void but_register(View v){
-		
-		//showProgressDialog("提示", "加载中。。。",ShouYeActivity.this);
-		
+	public void but_register(View v){	
 	new RegisterTask().start();
 		
 	}
@@ -430,7 +427,6 @@ public class ShouYeActivity extends Activity {
 					}
 	
 		}
-		
 	}
 	/**
 	 * 忘记密码按钮

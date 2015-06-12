@@ -17,7 +17,7 @@
 		<Button
             android:id="@+id/back"
             android:layout_width="80dp"
-            android:layout_height="47dp"
+            android:layout_height="50dp"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="@dimen/title_button_left"
             android:onClick="onClick"
@@ -28,7 +28,7 @@
 		<ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="10dp"
             android:src="@drawable/back_image" />
 		</FrameLayout>
@@ -42,12 +42,12 @@
             android:layout_centerVertical="true"
             android:text="@string/phone"
             android:textColor="@color/white"
-            android:textSize="@dimen/txsize_mid_x" />
+            android:textSize="@dimen/txsize_small_xxx"/>
 
         <Button
             android:id="@+id/pk"
             android:layout_width="80dp"
-            android:layout_height="47dp" 
+            android:layout_height="50dp" 
             android:layout_alignParentRight="true"
             android:layout_marginRight="-10dp"
             android:background="@null"

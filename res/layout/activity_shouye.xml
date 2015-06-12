@@ -20,7 +20,7 @@
             android:gravity="center"
             android:text="我爱高尔夫"
             android:textColor="@color/white"
-            android:textSize="@dimen/txsize_mid_x" />
+            android:textSize="@dimen/txsize_small_xxx"/>
     </RelativeLayout>
     <ScrollView 
         android:layout_width="match_parent"
@@ -109,7 +109,7 @@
             android:lines="1"
             android:textColor="@color/hei5"
             android:singleLine="true" 
-            android:textColorHint="@color/hei6" />
+            android:textColorHint="@color/fengexian" />
 
         <EditText
             android:id="@+id/et_password"
@@ -120,10 +120,10 @@
             android:ellipsize="end"
             android:hint=" 请输入密码"
             android:lines="1"
-            android:password="true"
+             android:inputType="textPassword"
             android:textColor="@color/hei5"
             android:singleLine="true" 
-            android:textColorHint="@color/hei6" />
+            android:textColorHint="@color/fengexian" />
 
         <Button
             android:layout_width="wrap_content"

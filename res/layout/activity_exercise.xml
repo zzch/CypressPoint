@@ -20,7 +20,7 @@
             android:gravity="center"
             android:text="@string/title"
             android:textColor="@color/white"
-            android:textSize="@dimen/txsize_mid_x" />
+            android:textSize="@dimen/txsize_small_xxx"/>
     </LinearLayout>
    
     <LinearLayout
