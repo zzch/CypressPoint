@@ -1,6 +1,8 @@
 package cn.com.zcty.ILovegolf.activity.view.myself;
 
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -61,7 +63,7 @@ public class BingDingActivity extends Activity{
 
 					}else if(result.equals("success")){					 
 						//如果手机号验证成功 跳转下一步
-						Toast.makeText(BingDingActivity.this,"验证码已发送至您的手机，请注意查收", Toast.LENGTH_LONG).show();
+						Toast.makeText(BingDingActivity.this,"验证码已发送至您的手机，请注意查收",  Toast.LENGTH_LONG).show();
 						Intent intent = new Intent(BingDingActivity.this,VerifyPhoneActivity.class);
 						intent.putExtra("phone", phone);
 						startActivity(intent);
@@ -82,8 +84,8 @@ public class BingDingActivity extends Activity{
 		setContentView(R.layout.activity_bingding);
 		initView();
 		setListeners();
+		
 	}
-
 	private void setListeners() {
 		submitButton.setOnClickListener(new OnClickListener() {
 
@@ -94,6 +96,7 @@ public class BingDingActivity extends Activity{
 					Toast.makeText(BingDingActivity.this, "输入手机格式不对", Toast.LENGTH_LONG).show();
 				}else{
 					//上传
+					
 					new BingDing().start();
 				}
 			}
