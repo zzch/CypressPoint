@@ -120,7 +120,7 @@ public class CreateScoreCard extends Activity{
 						totleImage.setImageBitmap(FileUtil.converToBitmap(100,100));
 					}
 				}
-				CreateScoreCardAdapter adapter = new CreateScoreCardAdapter(CreateScoreCard.this, scoreCardsMatchs);
+				CreateScoreCardAdapter adapter = new CreateScoreCardAdapter(CreateScoreCard.this, scoreCardsMatchs,color);
 				scoreListView.setAdapter(adapter);
 				hideProgressDialog();
 				SharedPreferences sps = getSharedPreferences("codes", Context.MODE_PRIVATE);

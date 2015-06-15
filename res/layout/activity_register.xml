@@ -156,7 +156,7 @@
            android:hint=" 验证码"
            android:lines="1"
            android:textColor="@color/hei5"
-           android:layout_marginLeft="10dp"
+           android:layout_marginLeft="@dimen/zhuce_left"
            android:textColorHint="@color/fengexian"
            android:singleLine="true" 
              />

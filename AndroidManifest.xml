@@ -83,7 +83,7 @@
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.competition.CompetitionNewActivity" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.competition.CompetitionScordActivity" android:screenOrientation="portrait"></activity>
        <activity android:name="cn.com.zcty.ILovegolf.activity.view.competition.CompetitionAdd" android:screenOrientation="portrait"></activity>
-        <activity android:name="cn.com.zcty.ILovegolf.activity.view.RankingStatics" android:screenOrientation="portrait"></activity>
+       
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.SelfhoodActivity" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.competition.CompetitionPassWord" android:theme="@style/MyDialogStyleBottom" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.competition.SginText" android:screenOrientation="portrait"></activity>
@@ -96,7 +96,7 @@
        <activity android:name="cn.com.zcty.ILovegolf.activity.view.myself.ChangesPhone" android:screenOrientation="portrait"></activity>
        <activity android:name="cn.com.zcty.ILovegolf.activity.view.myself.FeedBackActivity" android:screenOrientation="portrait"></activity>
        <activity android:name="cn.com.zcty.ILovegolf.activity.view.HomePageActivity" android:screenOrientation="portrait"></activity>
-       <activity android:name="cn.com.zcty.ILovegolf.activity.view.MajorStatisticsActivityScord" android:screenOrientation="portrait"></activity> 
+
        <activity android:name="cn.com.zcty.ILovegolf.activity.view.myself.SettionsActivity" android:screenOrientation="portrait"></activity> 
        <activity android:name="cn.com.zcty.ILovegolf.activity.view.login_register.GuidActivity" android:screenOrientation="portrait"></activity> 
        
@@ -108,7 +108,14 @@
             ></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.StatisticsActivityLand"
             	 android:configChanges="orientation|screenSize"
-            ></activity>
+         ></activity>
+        
+         <activity android:name="cn.com.zcty.ILovegolf.activity.view.MajorStatisticsActivityScord" android:screenOrientation="portrait" ></activity> 
+         <activity android:name="cn.com.zcty.ILovegolf.activity.view.RankingStatics" android:configChanges="orientation|screenSize"></activity>
+         <activity android:name="cn.com.zcty.ILovegolf.activity.view.RankingStaticsLand" 
+                    android:configChanges="orientation|screenSize"
+                    ></activity> 
+        
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.myself.AboutMyself" android:screenOrientation="portrait"></activity>
         
          <activity android:name="cn.com.zcty.ILovegolf.activity.view.HelpAverageActivity" android:screenOrientation="portrait" android:theme="@style/MyDialogStyleBottom"></activity>

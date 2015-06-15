@@ -372,7 +372,7 @@ public class StatisticsActivityLand extends Activity{
 	public void onConfigurationChanged(Configuration newConfig) {
 		super.onConfigurationChanged(newConfig);
 		if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) { 
-			Log.i("zhouhe", "zhouhea");
+			Log.i("zhouhe", "zhouhea---land");
 
 
 		} 

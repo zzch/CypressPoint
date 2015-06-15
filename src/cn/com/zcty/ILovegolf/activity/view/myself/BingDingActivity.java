@@ -60,7 +60,6 @@ public class BingDingActivity extends Activity{
 						map = (String) msg.obj;
 						new BingDing_().start();
 
-
 					}else if(result.equals("success")){					 
 						//如果手机号验证成功 跳转下一步
 						Toast.makeText(BingDingActivity.this,"验证码已发送至您的手机，请注意查收",  Toast.LENGTH_LONG).show();
