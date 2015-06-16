@@ -68,7 +68,7 @@ public class RegisterActivity extends Activity {
 		public void handleMessage(Message msg) {
 			switch(msg.what){
 			case 8:
-				Toast.makeText(RegisterActivity.this, message, Toast.LENGTH_LONG).show();
+				Toast.makeText(RegisterActivity.this, "您还未获取验证码！", Toast.LENGTH_LONG).show();
 
 			case 6:
 				Log.i("regist", msg.obj+"ffffff");
@@ -269,18 +269,20 @@ public class RegisterActivity extends Activity {
 		 String yanzheng  = et_yanzhengma_reg.getText().toString().trim();
 		 if("".equals(mobilename))
 			{
-			 Toast.makeText(RegisterActivity.this, "用户名不能为空！", Toast.LENGTH_LONG).show();
+			 Toast.makeText(RegisterActivity.this, "用户名不能为空！", Toast.LENGTH_SHORT).show();
 			}else if(!RegexMobile.VildateMobile(mobilename)){
-				Toast.makeText(RegisterActivity.this, "用户名不合法！", Toast.LENGTH_LONG).show();
+				Toast.makeText(RegisterActivity.this, "用户名不合法！", Toast.LENGTH_SHORT).show();
 			}else if("".equals(mima)){
-				 Toast.makeText(RegisterActivity.this, "密码不能为空！", Toast.LENGTH_LONG).show();
+				 Toast.makeText(RegisterActivity.this, "密码不能为空！", Toast.LENGTH_SHORT).show();
               
+			}else if(mima.length()<6||mima.length()>15){
+				 Toast.makeText(RegisterActivity.this, "密码必须大于6位，小于15位！", Toast.LENGTH_SHORT).show();
 			}else if("".equals(querenmima)){
-				 Toast.makeText(RegisterActivity.this, "确认密码不能为空！", Toast.LENGTH_LONG).show();
+				 Toast.makeText(RegisterActivity.this, "确认密码不能为空！", Toast.LENGTH_SHORT).show();
 		    }else if(!mima.equals(querenmima)){
-				 Toast.makeText(RegisterActivity.this, "确认密码与密码不一致！", Toast.LENGTH_LONG).show();  
+				 Toast.makeText(RegisterActivity.this, "确认密码与密码不一致！", Toast.LENGTH_SHORT).show();  
 			}else if("".equals(yanzheng)){
-	  			 Toast.makeText(RegisterActivity.this, "验证码不能为空！", Toast.LENGTH_LONG).show();
+	  			 Toast.makeText(RegisterActivity.this, "验证码不能为空！", Toast.LENGTH_SHORT).show();
             }else{
 			     new MyTask().start();
 

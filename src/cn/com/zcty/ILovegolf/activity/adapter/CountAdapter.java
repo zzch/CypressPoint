@@ -51,7 +51,11 @@ public class CountAdapter extends BaseAdapter{
 		}else{
 			holder = (Holder) convertView.getTag();
 		}
-		holder.valueTextView.setText(grildArrayList.get(position));
+		if(grildArrayList.get(position).equals("null")){
+			holder.valueTextView.setText("一");	
+		}else{
+			holder.valueTextView.setText(grildArrayList.get(position));
+		}
 		holder.valueNameTextView.setText(valueName[position]);
 		return convertView;
 	}

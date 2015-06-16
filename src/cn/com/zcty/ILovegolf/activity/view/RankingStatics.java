@@ -13,7 +13,9 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -83,12 +85,20 @@ public class RankingStatics extends FragmentActivity{
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		int a = this.getWindowManager().getDefaultDisplay().getRotation();
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_rankingstatics);
+		Log.i("zhouhe", a+"");
 		initView();
 		setListeners();
 		showProgressDialog("提示", "正在加载", this);
 		new MyTask().start();
+	}
+	
+	@Override
+	protected void onStart() {
+		super.onStart();
+		Log.i("zhouhe", "zhouhe---major");
 	}
 	/*
 	 * 监听器
@@ -125,6 +135,8 @@ public class RankingStatics extends FragmentActivity{
 				}
 			}
 		});
+		
+		
 		tablePager.setOnPageChangeListener(new OnPageChangeListener() {
 
 			@Override
@@ -165,6 +177,25 @@ public class RankingStatics extends FragmentActivity{
 
 
 		}
+	}
+	
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+		super.onConfigurationChanged(newConfig);
+		if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) { 
+			Log.i("zhouhe", "zhouhe----a");		
+			Intent intent = new Intent(this,RankingStaticsLand.class);
+			intent.putExtra("uuid", match_uuid);
+			startActivity(intent);
+			finish();
+			
+		} 
+			
+		else if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) { 
+
+		}
+
+
 	}
 	/*
 	 * (non-Javadoc)返回键

@@ -81,7 +81,6 @@ public class MajorStatisticsActivityScord extends FragmentActivity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		int a = this.getWindowManager().getDefaultDisplay().getRotation();
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_majorstatistics);
 		initView();
@@ -89,30 +88,8 @@ public class MajorStatisticsActivityScord extends FragmentActivity{
 		new JsonTask().start();
 		
 	}
-	@Override
-	protected void onStart() {
-		super.onStart();
-		Log.i("zhouhe", "zhouhe");
-	}
+	
 
-@Override
-public void onConfigurationChanged(Configuration newConfig) {
-	super.onConfigurationChanged(newConfig);
-	if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) { 
-		Log.i("zhouhe", "zhouhea");		
-		Intent intent = new Intent(this,StatisticsActivityLand.class);
-		startActivity(intent);
-		finish();
-		
-	} 
-
-			
-	else if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) { 
-
-	}
-
-
-}
 	private void getData() {
 		arrayFragment.add(new StaticsFragmentOne(parArrayList,scoreArrayList,statusArrayList));
 		arrayFragment.add(new StaticsFragmentTwo(parArrayList,scoreArrayList,statusArrayList));

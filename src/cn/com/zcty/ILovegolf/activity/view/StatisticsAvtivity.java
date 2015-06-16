@@ -119,14 +119,14 @@ public class StatisticsAvtivity extends FragmentActivity{
 	@Override
 	protected void onStart() {
 		super.onStart();
-		Log.i("zhouhe", "zhouhe");
+		Log.i("zhouhe", "zhouhe--onstart");
 	}
 
 @Override
 public void onConfigurationChanged(Configuration newConfig) {
 	super.onConfigurationChanged(newConfig);
 	if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) { 
-		Log.i("zhouhe", "zhouhea");		
+		Log.i("zhouhe", "zhouhe==a----");		
 		Intent intent = new Intent(this,StatisticsActivityLand.class);
 		intent.putExtra("name", name);
 		intent.putExtra("uuid", match_uuid);
