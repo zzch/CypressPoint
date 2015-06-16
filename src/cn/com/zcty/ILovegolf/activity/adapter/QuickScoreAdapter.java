@@ -98,6 +98,8 @@ public  class QuickScoreAdapter extends BaseAdapter {
 			holder.image_type.setBackgroundResource(R.drawable.fz_zhuan);
 		}
 		if(quickContents.get(position).getOwend().equals("true")){
+			Log.i("fangzhu", quickContents.get(position).getOwend());
+			holder.image_fanzhu.setVisibility(View.VISIBLE);
 			holder.image_fanzhu.setBackgroundResource(R.drawable.xing_fz);
 		}else{
 			holder.image_fanzhu.setVisibility(View.GONE);

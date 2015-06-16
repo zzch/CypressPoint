@@ -259,7 +259,7 @@ public class RankingStaticsLand extends Activity{
 		TextView tthv10 = (TextView)findViewById(R.id.tth10);
 		tthv10.setText(scoreArrayList.get(19));
 		TextView tthv11 = (TextView)findViewById(R.id.tth11);
-		if(tthv11.getText().toString().equals("null")){
+		if(tthv11.getText().toString().equals("nul")){
 			tthv11.setText("");
 		}else{
 			tthv11.setText(scoreArrayList.get(20));
@@ -286,11 +286,8 @@ public class RankingStaticsLand extends Activity{
 		TextView ttthv10 = (TextView)findViewById(R.id.ttth10);
 		ttthv10.setText(statusArrayList.get(19));
 		TextView ttthv11 = (TextView)findViewById(R.id.ttth11);
-		if(ttthv11.getText().equals("null")){
-			ttthv11.setText("");
-		}else{
-			ttthv11.setText(statusArrayList.get(20));
-		}
+		ttthv11.setText(statusArrayList.get(20));
+		
 		if(panDuan(ttv1)){
 			getBack(tv1, ttv1);
 		}else{
@@ -347,7 +344,7 @@ public class RankingStaticsLand extends Activity{
 		panDuan(tttv8);
 		panDuan(tttv9);
 		panDuan(tttv10);
-		
+		panDuan(tthv11);
 		if(panDuan(tthv1)){
 			getBack(thv1, tthv1);
 		}else{
@@ -404,6 +401,7 @@ public class RankingStaticsLand extends Activity{
 		panDuan(ttthv8);
 		panDuan(ttthv9);
 		panDuan(ttthv10);
+		panDuan(ttthv11);
 	}
 	
 	@Override
