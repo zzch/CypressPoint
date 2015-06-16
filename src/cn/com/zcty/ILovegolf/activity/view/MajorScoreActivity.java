@@ -278,8 +278,8 @@ public class MajorScoreActivity extends Activity {
 					penaitsWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, pentailsArray));
 					
 				}else{
-					penaitsWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, pentailsArray_));
 					pentails = "0";
+					penaitsWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, pentailsArray_));
 				}
 			}
 		});

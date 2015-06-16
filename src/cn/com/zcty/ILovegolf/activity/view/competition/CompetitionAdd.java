@@ -178,6 +178,7 @@ public class CompetitionAdd extends Activity{
 				majorRelativeLayout.setVisibility(View.GONE);
 				fangshiTextView.setText(easyTextView.getText().toString());
 				imageView1.setImageResource(R.drawable.image_down);
+				Log.i("majordddd",easyTextView.getText().toString()+"zhou");
 			}
 		});
 		majorRelativeLayout.setOnClickListener(new OnClickListener() {
@@ -189,6 +190,7 @@ public class CompetitionAdd extends Activity{
 				leixing_layout.setVisibility(View.GONE);
 				majorRelativeLayout.setVisibility(View.GONE);
 				fangshiTextView.setText(majorTextView.getText().toString());
+				Log.i("majordddd",majorTextView.getText().toString());
 				imageView1.setImageResource(R.drawable.image_down);
 			}
 		});
@@ -375,7 +377,8 @@ public class CompetitionAdd extends Activity{
 		}else if(fangshiTextView.getText().toString().equals("专业")){
 			scoring_type = "professional";
 		}
-		
+		Log.i("majordddd",scoring_type);
+
 		leixing_layout.setVisibility(View.GONE);
 		majorRelativeLayout.setVisibility(View.GONE);
 		v1.setVisibility(View.GONE);
@@ -408,7 +411,12 @@ public class CompetitionAdd extends Activity{
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
 			String token=sp.getString("token", "token");
 			String path;
-			
+			if(fangshiTextView.getText().toString().equals("简单")){
+				scoring_type = "simple";
+			}else if(fangshiTextView.getText().toString().equals("专业")){
+				scoring_type = "professional";
+			}
+			Log.i("majordddd",scoring_type);
 			
 			if(f){
 				 path = APIService.COMPETITIONCREAT+"token="+token+"&uuid="+uuid+"&scoring_type="+scoring_type+"&tee_boxes="+t_1+","+t_2;
