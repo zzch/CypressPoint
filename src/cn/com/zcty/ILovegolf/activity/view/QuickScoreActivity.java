@@ -149,6 +149,7 @@ public class QuickScoreActivity extends Activity {
 	private void initView() {
 		mListView = (ScrollViewWithListView) findViewById(R.id.listview);
 		image_tishi = (ImageView) findViewById(R.id.tishi);
+		
 		mPullRefreshScrollView = (PullToRefreshScrollView) findViewById(R.id.pull_refresh_scrollview);
 
 	}
@@ -239,6 +240,7 @@ public class QuickScoreActivity extends Activity {
 			String JsonData=HttpUtils.HttpClientGet(path);
 			try {
 				JSONArray jsonarray=new JSONArray(JsonData);
+				Log.i("JsonData--", JsonData);
 				for(int i=0;i<jsonarray.length();i++){
 					JSONObject jsonObject = jsonarray.getJSONObject(i);
 					QuickContent quickContent = new QuickContent();
@@ -250,6 +252,8 @@ public class QuickScoreActivity extends Activity {
 
 					String player = jsonObject.getString("player");//获得player 的map集合
 					JSONObject playerJsonObject = new JSONObject(player);
+					quickContent.setOwend(playerJsonObject.getString("owned"));
+					Log.i("owned", playerJsonObject.getString("owned"));
 					quickContent.setScoring_type(playerJsonObject.getString("scoring_type"));
 					quickContent.setScore(playerJsonObject.getString("strokes"));
 					Log.i("quickscore",playerJsonObject.getString("strokes"));

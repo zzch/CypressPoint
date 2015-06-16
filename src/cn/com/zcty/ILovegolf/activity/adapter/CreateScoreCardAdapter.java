@@ -18,14 +18,16 @@ import cn.com.zcty.ILovegolf.model.ScoreCardsMatch;
 
 public class CreateScoreCardAdapter extends BaseAdapter{
 	private ArrayList<ScoreCardsMatch> scoreCardsMatchs;
+	private ArrayList<String> scoreCardsMatchs_2;
 	private Context context;
 	private LayoutInflater inflater;
 	private ArrayList<String> color;
 	private String count[] = new String[18];
-	public CreateScoreCardAdapter(Context context,ArrayList<ScoreCardsMatch> scoreCardsMatchs,ArrayList<String> color) {
+	public CreateScoreCardAdapter(Context context,ArrayList<ScoreCardsMatch> scoreCardsMatchs,ArrayList<String> color,ArrayList<String> scoreCardsMatchs_2) {
 		this.context = context;
 		this.color = color;
 		this.scoreCardsMatchs = scoreCardsMatchs;
+		this.scoreCardsMatchs_2 = scoreCardsMatchs_2;
 		inflater = LayoutInflater.from(context);
 		for(int i=0;i<18;i++){
 			count[i] = (i+1)+"";
@@ -79,6 +81,10 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 		}else{
 			holder = (Holder) convertView.getTag();
 		}
+		if(!scoreCardsMatchs_2.get(position).equals("null")){
+			
+			holder.score_distance_2.setText(scoreCardsMatchs_2.get(position));
+		}
 		if(scoreCardsMatchs.get(position).getScore().equals("null")){
 			//如果score为null 则调用第一种布局否则调用第二种布局
 			holder.score_1RelativeLayout.setVisibility(View.VISIBLE);
@@ -103,7 +109,7 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 				holder.score_distance_1.
 				setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(0).getDistance_from_hole());
-				color(position, 0, holder.color_3,holder.score_distance_1,holder.score_distance_2,holder.t_score_1,holder.t_score_2);	
+				color(position, 0, holder.color_3,holder.score_distance_1,holder.t_score_1);	
 				
 				holder.color_4.setText("");
 				holder.color_5.setText("");
@@ -113,59 +119,59 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 				holder.color_1.setText("");
 				holder.color_2.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(0).getDistance_from_hole());
-				color(position, 0, holder.color_2,holder.score_distance_1,holder.score_distance_2,holder.t_score_1,holder.t_score_2);	
+				color(position, 0, holder.color_2,holder.score_distance_1,holder.t_score_1);	
 				holder.color_3.setText("");
 				holder.color_4.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(1).getDistance_from_hole());
 				
-				color(position, 1, holder.color_4,holder.score_distance_1,holder.score_distance_2,holder.t_score_1,holder.t_score_2);	
+				color(position, 1, holder.color_4,holder.score_distance_1,holder.t_score_1);	
 				holder.color_5.setText("");
 				break;
 			case 3:
 				holder.color_1.setText("");
 				holder.color_2.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(0).getDistance_from_hole());
-				color(position, 0, holder.color_2,holder.score_distance_1,holder.score_distance_2,holder.t_score_1,holder.t_score_2);	
+				color(position, 0, holder.color_2,holder.score_distance_1,holder.t_score_1);	
 				
 				holder.color_3.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(1).getDistance_from_hole());
-				color(position, 1, holder.color_3,holder.score_distance_1,holder.score_distance_2,holder.t_score_1,holder.t_score_2);	
+				color(position, 1, holder.color_3,holder.score_distance_1,holder.t_score_1);	
 				holder.color_4.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(2).getDistance_from_hole());
-				color(position, 2, holder.color_4,holder.score_distance_1,holder.score_distance_2,holder.t_score_1,holder.t_score_2);	
+				color(position, 2, holder.color_4,holder.score_distance_1,holder.t_score_1);	
 				holder.color_5.setText("");
 				break;
 			case 4:
 				holder.color_1.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(0).getDistance_from_hole());
-				color(position, 0, holder.color_1,holder.score_distance_1,holder.score_distance_2,holder.t_score_1,holder.t_score_2);	
+				color(position, 0, holder.color_1,holder.score_distance_1,holder.t_score_1);	
 				holder.color_2.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(1).getDistance_from_hole());
-				color(position, 1, holder.color_2,holder.score_distance_1,holder.score_distance_2,holder.t_score_1,holder.t_score_2);	
+				color(position, 1, holder.color_2,holder.score_distance_1,holder.t_score_1);	
 				holder.color_3.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(2).getDistance_from_hole());
-				color(position, 2, holder.color_3,holder.score_distance_1,holder.score_distance_2,holder.t_score_1,holder.t_score_2);	
+				color(position, 2, holder.color_3,holder.score_distance_1,holder.t_score_1);	
 				holder.color_4.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(3).getDistance_from_hole());
-				color(position, 3, holder.color_4,holder.score_distance_1,holder.score_distance_2,holder.t_score_1,holder.t_score_2);	
+				color(position, 3, holder.color_4,holder.score_distance_1,holder.t_score_1);	
 				holder.color_5.setText("");
 				break;
 			case 5:
 				holder.color_1.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(0).getDistance_from_hole());
-				color(position, 0, holder.color_1,holder.score_distance_1,holder.score_distance_2,holder.t_score_1,holder.t_score_2);	
+				color(position, 0, holder.color_1,holder.score_distance_1,holder.t_score_1);	
 				holder.color_2.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(1).getDistance_from_hole());
-				color(position, 1, holder.color_2,holder.score_distance_1,holder.score_distance_2,holder.t_score_1,holder.t_score_2);	
+				color(position, 1, holder.color_2,holder.score_distance_1,holder.t_score_1);	
 				holder.color_3.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(2).getDistance_from_hole());
-				color(position, 2, holder.color_3,holder.score_distance_1,holder.score_distance_2,holder.t_score_1,holder.t_score_2);	
+				color(position, 2, holder.color_3,holder.score_distance_1,holder.t_score_1);	
 				holder.color_4.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(3).getDistance_from_hole());
-				color(position, 3, holder.color_4,holder.score_distance_1,holder.score_distance_2,holder.t_score_1,holder.t_score_2);	
+				color(position, 3, holder.color_4,holder.score_distance_1,holder.t_score_1);	
 				holder.color_5.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(4).getDistance_from_hole());
-				color(position, 4, holder.color_5,holder.score_distance_1,holder.score_distance_2,holder.t_score_1,holder.t_score_2);	
+				color(position, 4, holder.color_5,holder.score_distance_1,holder.t_score_1);	
 				break;
 
 			}
@@ -174,9 +180,8 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 			//第二种布局
 			holder.score_2RelativeLayout.setVisibility(View.VISIBLE);
 			holder.score_1RelativeLayout.setVisibility(View.GONE);		
-			color(position, holder.t_score_2);
-			
-			
+			color(position,holder.t_score_2);
+	        
 			holder.score2TextView.setText(count[position]);
 			holder.scorePar2TextView
 			.setText(scoreCardsMatchs.get(position).getPar());
@@ -213,7 +218,7 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 	/*
 	 * 添加球的颜色
 	 */
-	public void color(int position,int color,TextView textView,TextView y,TextView d,ImageView t_score1,ImageView t_score2){
+	public void color(int position,int color,TextView textView,TextView y,ImageView t_score1){
 		Log.i("sdfasdf",scoreCardsMatchs.get(position).getTeeboxs().get(color).getColor()+"1");
 		textView.setTextColor(Color.rgb(122, 122, 122));
 		if(scoreCardsMatchs.get(position).getTeeboxs().get(color).getColor().equals("red")){
@@ -223,16 +228,14 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 				
 				y.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(0).getDistance_from_hole());
-				d.setText(scoreCardsMatchs.get(position).getTeeboxs()
-						.get(0).getDistance_from_hole());
+				//d.setText(scoreCardsMatchs.get(position).getTeeboxs().get(0).getDistance_from_hole());
 				t_score1.setBackgroundResource(R.drawable.xiao_red);
-				t_score2.setBackgroundResource(R.drawable.xiao_red);
+				
 				
 			}else{
 				textView.setBackgroundResource(R.drawable.jfk_hong_zhihui);
 				textView.setTextColor(Color.WHITE);
 			}
-			
 		}else if(scoreCardsMatchs.get(position).getTeeboxs().get(color).getColor().equals("white")){
 			if(scoreCardsMatchs.get(position).getTeeboxs().get(color).getUsed().equals("true")){
 				textView.setBackgroundResource(R.drawable.jfk_bai);
@@ -240,10 +243,9 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 				
 				y.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(1).getDistance_from_hole());
-				d.setText(scoreCardsMatchs.get(position).getTeeboxs()
-						.get(0).getDistance_from_hole());
+				//d.setText(scoreCardsMatchs.get(position).getTeeboxs().get(1).getDistance_from_hole());
 				t_score1.setBackgroundResource(R.drawable.xiao_bai);
-				t_score2.setBackgroundResource(R.drawable.xiao_bai);
+				
 			}else{
 				textView.setBackgroundResource(R.drawable.jfk_bai_zhihui);
 				textView.setTextColor(Color.BLACK);
@@ -256,10 +258,9 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 				
 				y.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(2).getDistance_from_hole());
-				d.setText(scoreCardsMatchs.get(position).getTeeboxs()
-						.get(0).getDistance_from_hole());
+				//d.setText(scoreCardsMatchs.get(position).getTeeboxs().get(2).getDistance_from_hole());
 				t_score1.setBackgroundResource(R.drawable.xiao_lan);
-				t_score2.setBackgroundResource(R.drawable.xiao_lan);
+				
 			}else{
 				textView.setBackgroundResource(R.drawable.jfk_lan_zhihui);
 				textView.setTextColor(Color.WHITE);
@@ -272,10 +273,9 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 				
 				y.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(3).getDistance_from_hole());
-				d.setText(scoreCardsMatchs.get(position).getTeeboxs()
-						.get(0).getDistance_from_hole());
+				//d.setText(scoreCardsMatchs.get(position).getTeeboxs().get(3).getDistance_from_hole());
 				t_score1.setBackgroundResource(R.drawable.xiao_hei);
-				t_score2.setBackgroundResource(R.drawable.xiao_hei);
+			
 			}else{
 				textView.setBackgroundResource(R.drawable.jfk_hei_zhihui);
 				textView.setTextColor(Color.WHITE);
@@ -287,10 +287,9 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 				textView.setTextColor(Color.WHITE);
 				y.setText(scoreCardsMatchs.get(position).getTeeboxs()
 						.get(4).getDistance_from_hole());
-				d.setText(scoreCardsMatchs.get(position).getTeeboxs()
-						.get(0).getDistance_from_hole());
+				//d.setText(scoreCardsMatchs.get(position).getTeeboxs().get(4).getDistance_from_hole());
 				t_score1.setBackgroundResource(R.drawable.xiao_jin);
-				t_score2.setBackgroundResource(R.drawable.xiao_jin);
+				
 				
 			}else{
 				textView.setBackgroundResource(R.drawable.jfk_jin_zhihui);
@@ -305,7 +304,8 @@ public class CreateScoreCardAdapter extends BaseAdapter{
 	 * 添加球的颜色
 	 */
 	public void color(int position,ImageView t_score2){
-		if(color.get(position).equals("red")){
+		
+		if(color.get(position).equals("red")){		
 			t_score2.setBackgroundResource(R.drawable.xiao_red);
 			
 		}else if(color.get(position).equals("white")){

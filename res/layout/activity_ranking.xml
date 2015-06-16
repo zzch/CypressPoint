@@ -124,8 +124,8 @@
 
         <ImageView
             android:id="@+id/image_rank"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:src="@drawable/rank_image" />
@@ -148,8 +148,8 @@
 
         <Button
             android:id="@+id/rank_invite_but"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
             android:layout_below="@+id/image_rank"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="60dp"

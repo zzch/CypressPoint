@@ -120,7 +120,7 @@ public class CreateScoreCard extends Activity{
 						totleImage.setImageBitmap(FileUtil.converToBitmap(100,100));
 					}
 				}
-				CreateScoreCardAdapter adapter = new CreateScoreCardAdapter(CreateScoreCard.this, scoreCardsMatchs,color);
+				CreateScoreCardAdapter adapter = new CreateScoreCardAdapter(CreateScoreCard.this, scoreCardsMatchs,color,distance);
 				scoreListView.setAdapter(adapter);
 				hideProgressDialog();
 				SharedPreferences sps = getSharedPreferences("codes", Context.MODE_PRIVATE);
@@ -361,6 +361,10 @@ public class CreateScoreCard extends Activity{
 					scoreCardsMatch.setDriving_distance(j.getString("driving_distance"));
 					scoreCardsMatch.setDirection(j.getString("direction"));
 					scoreCardsMatch.setDistance_from_hole(j.getString("distance_from_hole"));
+					Log.i("createscore", j.getString("distance_from_hole"));
+						
+					
+					
 					/*
 					 * 获得T台的数组
 					 */

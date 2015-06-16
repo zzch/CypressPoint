@@ -262,7 +262,6 @@ public class RegisterActivity extends Activity {
 	}
 	//点击注册按钮
     public void on_but_zhuce(View v){
-    	
     	 String mobilename= et_mobile_reg.getText().toString().trim();
 		 String mima = et_password_reg.getText().toString().trim();
 		 String querenmima = et_confirm_password.getText().toString().trim();
@@ -272,10 +271,7 @@ public class RegisterActivity extends Activity {
 			 Toast.makeText(RegisterActivity.this, "用户名不能为空！", Toast.LENGTH_SHORT).show();
 			}else if(!RegexMobile.VildateMobile(mobilename)){
 				Toast.makeText(RegisterActivity.this, "用户名不合法！", Toast.LENGTH_SHORT).show();
-			}else if("".equals(mima)){
-				 Toast.makeText(RegisterActivity.this, "密码不能为空！", Toast.LENGTH_SHORT).show();
-              
-			}else if(mima.length()<6||mima.length()>15){
+			}else if("".equals(mima)||mima.length()<6||mima.length()>15){
 				 Toast.makeText(RegisterActivity.this, "密码必须大于6位，小于15位！", Toast.LENGTH_SHORT).show();
 			}else if("".equals(querenmima)){
 				 Toast.makeText(RegisterActivity.this, "确认密码不能为空！", Toast.LENGTH_SHORT).show();

@@ -205,14 +205,14 @@ public class ForGetPasswordActivity extends Activity {
 		 password_confirmation = surePaEditText.getText().toString();
 		 verification_code = codeEditText.getText().toString().trim();
 		if(!isMobileNO(phone)){
-			Toast.makeText(ForGetPasswordActivity.this, "输入手机格式不对", Toast.LENGTH_LONG).show();
+			Toast.makeText(ForGetPasswordActivity.this, "输入手机格式不对", Toast.LENGTH_SHORT).show();
 		}else if(!password.equals(password_confirmation)){
-			Toast.makeText(ForGetPasswordActivity.this, "输入的两次密码不一致", Toast.LENGTH_LONG).show();
+			Toast.makeText(ForGetPasswordActivity.this, "输入的两次密码不一致", Toast.LENGTH_SHORT).show();
 
 		}else if(password.length()<6||password_confirmation.length()>15){
-			Toast.makeText(ForGetPasswordActivity.this, "请输入6位到15位数字的密码", Toast.LENGTH_LONG).show();
+			Toast.makeText(ForGetPasswordActivity.this, "请输入6位到15位数字的密码", Toast.LENGTH_SHORT).show();
 		}else if(verification_code.equals("")||verification_code.length()!=4){
-			Toast.makeText(ForGetPasswordActivity.this, "请输入4位数字的验证码", Toast.LENGTH_LONG).show();
+			Toast.makeText(ForGetPasswordActivity.this, "请输入4位数字的验证码", Toast.LENGTH_SHORT).show();
 
 		}else{
 			new ForGetPassWord().start();

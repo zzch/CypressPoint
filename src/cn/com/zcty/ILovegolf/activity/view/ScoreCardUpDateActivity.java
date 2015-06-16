@@ -389,7 +389,7 @@ public class ScoreCardUpDateActivity extends Activity{
 			break;
 		case R.id.but_add_two:
 
-			if(count<=99){
+			if(count<99){
 				putcount++;
 				putTextView.setText(putcount+"");
 				if(count<(putcount)+(penaltiescount*2)+1){
@@ -411,7 +411,7 @@ public class ScoreCardUpDateActivity extends Activity{
 			
 			break;
 		case R.id.but_add_three:
-			if(count<=99){
+			if(count<99){
 				dataTextView.setText(count+"");
 				penaltiescount++;
 				penaltiesTextView.setText(penaltiescount+"");

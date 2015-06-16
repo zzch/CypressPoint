@@ -52,7 +52,7 @@
   	<dimen name="count_avg_top">118dp</dimen>
   	<dimen name="count_ccc">0dp</dimen>
   	<dimen name="count_time_height">60dp</dimen>
-  	<dimen name="zhuce_left">20dp</dimen>
+  	<dimen name="zhuce_left">10dp</dimen>
   	<dimen name="title_height">50dp</dimen>
   	<dimen name="title_button_left">10dp</dimen>
   	<dimen name="easy_shaozi">20dp</dimen>

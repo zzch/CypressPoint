@@ -54,11 +54,11 @@ public class AnlyzeDiamondAdapter extends BaseAdapter{
 			holder = (Holder) convertView.getTag();
 		}
 		if(anDiamonds.get(position).getAddress().equals("null")){
-			holder.addressTextView.setText("星园国际D做805");
-			//holder.addressTextView.setVisibility(View.GONE);
-			//holder.image_addres.setVisibility(View.GONE);
+			holder.addressTextView.setVisibility(View.GONE);
+			holder.image_addres.setVisibility(View.GONE);
 		}else{
 			holder.image_addres.setVisibility(View.VISIBLE);
+			holder.addressTextView.setVisibility(View.VISIBLE);
 			holder.addressTextView.setText(anDiamonds.get(position).getAddress());
 		}
 		holder.nameTextView.setText(anDiamonds.get(position).getName());

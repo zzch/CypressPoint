@@ -104,13 +104,13 @@ public class VerifyPhoneActivity extends Activity{
 				newpsd = newpassword.getText().toString();
 				affirpsd = affirmpassword.getText().toString();
 				if(verify.length()!=4){
-					Toast.makeText(VerifyPhoneActivity.this, "请输入4位验证码", Toast.LENGTH_LONG).show();
+					Toast.makeText(VerifyPhoneActivity.this, "请输入4位验证码", Toast.LENGTH_SHORT).show();
 				}else if(!newpsd.equals(affirpsd)){
-					Toast.makeText(VerifyPhoneActivity.this, "两次输入的密码不一致", Toast.LENGTH_LONG).show();
+					Toast.makeText(VerifyPhoneActivity.this, "两次输入的密码不一致", Toast.LENGTH_SHORT).show();
 				}else if(newpsd.length()<1||affirpsd.length()<1){
-					Toast.makeText(VerifyPhoneActivity.this, "请把信息输入完整", Toast.LENGTH_LONG).show();									
+					Toast.makeText(VerifyPhoneActivity.this, "请把信息输入完整", Toast.LENGTH_SHORT).show();									
 				}else if(newpsd.length()<6||newpsd.length()>15){
-					Toast.makeText(VerifyPhoneActivity.this, "新密码必须大于6位，小于15位", Toast.LENGTH_LONG).show();
+					Toast.makeText(VerifyPhoneActivity.this, "新密码必须大于6位，小于15位", Toast.LENGTH_SHORT).show();
 
 				}else{
 					//上传设置的信息 启动线程
