@@ -99,13 +99,11 @@ public class RegisterActivity extends Activity {
 				if(msg.obj.equals("404")||msg.obj.equals("500")){
 					Toast.makeText(RegisterActivity.this, "网络异常！", Toast.LENGTH_LONG).show();
 				}else {
-						//弹出一个Dialog
-						//fristdialog();
 						if(yanzhengResut==null){
 							yanzhengJson = (String) msg.obj;
 							new RegisterTask_().start();
 						}else{
-							Toast.makeText(RegisterActivity.this, "已将验证码成功发送至您的手机！", Toast.LENGTH_LONG).show();
+							Toast.makeText(RegisterActivity.this, "已将验证码成功发送至您的手机！", Toast.LENGTH_SHORT).show();
 							
 						}
 						
@@ -190,11 +188,12 @@ public class RegisterActivity extends Activity {
 					//倒计时
 				     daojishi.start(); 
 					new	RegisterTask().start();
+					Toast.makeText(RegisterActivity.this, "已将验证码成功发送至您的手机！", Toast.LENGTH_LONG).show();
 				}
 				
 				
 			}else{
-				Toast.makeText(RegisterActivity.this, "输入手机格式不对", Toast.LENGTH_LONG).show();
+				Toast.makeText(RegisterActivity.this, "手机号为空或手机格式错误！", Toast.LENGTH_LONG).show();
 
 			}
 				
