@@ -8,7 +8,7 @@ public class APIService {
 	/**
 	 * 正式服务器地址
 	 */
-	  //public static String hostName = "http://ilovegolfclub.com/api";
+	  //  public static String hostName = "http://ilovegolfclub.com/api";
 	//一键注册
 	  public static final String ONE_REGISTER=hostName+"/v1/users/sign_up_simple";
 

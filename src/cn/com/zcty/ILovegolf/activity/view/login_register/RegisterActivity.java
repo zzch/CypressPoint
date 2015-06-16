@@ -62,21 +62,22 @@ public class RegisterActivity extends Activity {
      private String yanzhengJson;
      private String phone;
      private boolean dianji;
+     private String m_mobile;
 	Handler handler = new Handler(){
 
 		@Override
 		public void handleMessage(Message msg) {
 			switch(msg.what){
 			case 8:
-				Toast.makeText(RegisterActivity.this, "您还未获取验证码！", Toast.LENGTH_LONG).show();
-
+				Toast.makeText(RegisterActivity.this, "用户重复注册！", Toast.LENGTH_LONG).show();
+				break;
 			case 6:
 				Log.i("regist", msg.obj+"ffffff");
 				if(msg.obj==null){
 					new MyTask_().start();
 				}else{
 				if(msg.obj.toString().equals("404")||msg.obj.toString().equals("500")){
-					Toast.makeText(RegisterActivity.this, "网络异常！", Toast.LENGTH_LONG).show();
+					Toast.makeText(RegisterActivity.this, "网络异常！", Toast.LENGTH_SHORT).show();
 				}else {
 						//弹出一个Dialog
 						//fristdialog();
@@ -94,10 +95,8 @@ public class RegisterActivity extends Activity {
 					
 				break;
 			case 5:
-				
-				
 				if(msg.obj.equals("404")||msg.obj.equals("500")){
-					Toast.makeText(RegisterActivity.this, "网络异常！", Toast.LENGTH_LONG).show();
+					Toast.makeText(RegisterActivity.this, "网络异常！", Toast.LENGTH_SHORT).show();
 				}else {
 						if(yanzhengResut==null){
 							yanzhengJson = (String) msg.obj;
@@ -181,17 +180,15 @@ public class RegisterActivity extends Activity {
 	 * @param v
 	 */
 	public void on_yanzhengma(View v){
+		   
 			phone = et_mobile_reg.getText().toString().trim();
 			if(isMobileNO(phone)){
 				if(!dianji){
 					dianji = true;
 					//倒计时
 				     daojishi.start(); 
-					new	RegisterTask().start();
-					Toast.makeText(RegisterActivity.this, "已将验证码成功发送至您的手机！", Toast.LENGTH_LONG).show();
+					new	RegisterTask().start();					
 				}
-				
-				
 			}else{
 				Toast.makeText(RegisterActivity.this, "手机号为空或手机格式错误！", Toast.LENGTH_LONG).show();
 
@@ -294,7 +291,7 @@ public class RegisterActivity extends Activity {
     	public void getregister(){
     		//向服务器发送注册数据
 			
-			String m_mobile = et_mobile_reg.getText().toString().trim();
+			m_mobile = et_mobile_reg.getText().toString().trim();
 			String p_password = et_password_reg.getText().toString().trim();
 			String confirm_password = et_confirm_password.getText().toString().trim();
 			String y_yanzhengma = et_yanzhengma_reg.getText().toString().trim();
@@ -352,6 +349,7 @@ public class RegisterActivity extends Activity {
 		try {
 			JSONObject obj = new JSONObject(registerData);
 			message = obj.getString("message");
+			Log.i("message--", message);
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
