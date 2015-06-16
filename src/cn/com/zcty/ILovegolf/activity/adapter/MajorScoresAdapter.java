@@ -82,7 +82,7 @@ public class MajorScoresAdapter extends BaseAdapter{
 		}else{
 			holder = (Holder) convertView.getTag();
 		}
-	
+		Log.i("aaaadfsadfs", majorArrayList.get(position).getCool());
 		if(majorArrayList.get(position).getCool().equals("fairway")||majorArrayList.get(position).getCool().equals("球道")){
 			holder.coolText.setText("球道");
 			holder.pentanilsText.setText("0");
@@ -107,6 +107,7 @@ public class MajorScoresAdapter extends BaseAdapter{
 			holder.pentanilsText.setText(majorArrayList.get(position).getPentails());
 		}else{
 			holder.coolText.setText("");
+			holder.pentanilsText.setText("0");
 		}
 		
 		if(majorArrayList.get(position).getCount().equals("1w")){

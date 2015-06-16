@@ -66,6 +66,7 @@ public class MajorScoreActivity extends Activity {
 	private LinearLayout wheelLinearLayout;
 	private RelativeLayout addsRelativeLayout;
 	private LinearLayout resultLinearLayout;
+	private String	scool;
 	private Button addButton;
 	private Button quedingButton;
 	private ProgressDialog progressDialog;
@@ -262,17 +263,29 @@ public class MajorScoreActivity extends Activity {
 					cool = "hole";
 				}else{
 					coolWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, coolArray));	
-					cool = "球道";
+					cool = scool;
+					if(scool!=null){
+						
+						Log.i("coolaaaa", scool);
+						if(scool.equals("不可打")){
+							penaitsWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, pentailsArray));
+							pentails = "1";
+							cool = "不可打";
+						}
+					}
+					//cool = "球道";dd
+					
 				}
 			}
 		});
-		cool = "球道";	
+		//cool = "球道";	
 		coolWheel.addChangingListener(new OnWheelChangedListener() {
 
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
 				flase_3 = true;
 				cool = coolArray[newValue];		
+				scool = coolArray[newValue];	
 				if(coolArray[newValue].equals("不可打")){
 					pentails = "1";
 					penaitsWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, pentailsArray));
@@ -340,7 +353,6 @@ public class MajorScoreActivity extends Activity {
 					cool = "bunker";
 				}else if(cool.equals("unplayable")||cool.equals("不可打")){
 					cool = "unplayable";
-				}else{
 				}
 				
 				
