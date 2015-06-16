@@ -72,9 +72,10 @@ public class ForGetPasswordActivity extends Activity {
 				 }
 			 }
 			 if(msg.what==2){
-				 Toast.makeText(ForGetPasswordActivity.this, "未注册过的用户", Toast.LENGTH_LONG).show();
+				 Toast.makeText(ForGetPasswordActivity.this, message, Toast.LENGTH_LONG).show();
 				 daojishi.cancel();
 				 codeButton.setText("获取验证码");
+				 result = null;
 			 }
 			 if(msg.what==3){
 				 if(msg.obj.equals("404")||msg.obj.equals("500")){
@@ -275,6 +276,7 @@ public class ForGetPasswordActivity extends Activity {
 		}
 		
 		public void getData(){
+			result = null;
 			String phone = et_mobile.getText().toString().trim();
 			String path=APIService.RESTPSDYANZHENGMA+"phone="+phone;
 			String jsonData = HttpUtils.HttpClientGet(path);

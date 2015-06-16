@@ -69,7 +69,7 @@ public class RegisterActivity extends Activity {
 		public void handleMessage(Message msg) {
 			switch(msg.what){
 			case 8:
-				Toast.makeText(RegisterActivity.this, "用户重复注册！", Toast.LENGTH_LONG).show();
+				Toast.makeText(RegisterActivity.this, message, Toast.LENGTH_LONG).show();
 				break;
 			case 6:
 				Log.i("regist", msg.obj+"ffffff");
