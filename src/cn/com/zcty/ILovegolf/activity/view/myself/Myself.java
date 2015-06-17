@@ -209,6 +209,7 @@ public class Myself extends Activity {
 				Intent intent = new Intent(Myself.this,InformationChangesActivity.class);
 				intent.putExtra("birthday", birthday);
 				intent.putExtra("year", year);
+				intent.putExtra("gender", gender);
 				startActivity(intent);
 				//finish();
 			}
@@ -255,6 +256,7 @@ public class Myself extends Activity {
 			try {
 				JSONObject jsonObject = new JSONObject(jsonData);
 				gender = jsonObject.getString("gender");
+				Log.i("gender", gender);
 				description = jsonObject.getString("description");
 				Log.i("xihuan", description);
 				//if(jsonObject.getString("birthday").equals("null")){

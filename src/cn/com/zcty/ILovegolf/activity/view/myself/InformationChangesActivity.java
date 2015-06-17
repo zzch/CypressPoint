@@ -169,6 +169,9 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 					overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 					finish();
 				}else{
+					if(nameSuccess==null){
+						
+					}else{
 				if(nameSuccess.equals("success")){
 					SharedPreferences sp = getSharedPreferences("register", MODE_PRIVATE);	
 					Editor editor = sp.edit();	
@@ -187,7 +190,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 					startActivity(intent);
 					overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 					finish();
-				}
+				}}
 				}
 			}
 		};
@@ -318,13 +321,21 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
-				year =  (String) yearadapter.getItemText(newValue).subSequence(0, yearadapter.getItemText(newValue).length()-1);
-				brithdayTextView.setText(year+"-"+moth+"-"+day);
-				years = Integer.parseInt(year);
-				SimpleDateFormat time = new SimpleDateFormat("yyyy");
-				years = Integer.parseInt(time.format(new Date()))-years;
-				nianlingTextView.setText(years+"");
-			}
+				if(yearadapter.getItemText(newValue)==null||(String) yearadapter.getItemText(newValue)==null){
+					
+				}else{
+				if((String) yearadapter.getItemText(newValue).subSequence(0, yearadapter.getItemText(newValue).length()-1)==null){
+					
+				}else{
+					year =  (String) yearadapter.getItemText(newValue).subSequence(0, yearadapter.getItemText(newValue).length()-1);
+					brithdayTextView.setText(year+"-"+moth+"-"+day);
+					years = Integer.parseInt(year);
+					SimpleDateFormat time = new SimpleDateFormat("yyyy");
+					years = Integer.parseInt(time.format(new Date()))-years;
+					nianlingTextView.setText(years+"");
+				}
+				}}
+			
 		});
 		monthWheelView.addChangingListener(new OnWheelChangedListener() {
 
@@ -334,6 +345,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 				if(Integer.parseInt(moth)<10){
 					moth = "0"+moth;
 				}
+				
 				brithdayTextView.setText(year+"-"+moth+"-"+day);
 			}
 		});
@@ -431,7 +443,20 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		imageView2 = (ImageView) findViewById(R.id.imageView2);
 		imageView3 = (ImageView) findViewById(R.id.imageView3);
 		imageView5 = (ImageView) findViewById(R.id.imageView5);
-		
+		Intent intents = getIntent();
+		if(intents.getStringExtra("gender")==null){
+			
+		}else{
+		String gender = intents.getStringExtra("gender");
+		if(!gender.equals("null")){
+			if(gender.equals("1")){
+				gender = "男";
+			}else{
+				gender = "女";
+			}
+			sexTextView.setText(gender);
+		}
+		}
 		if(!FileUtil.fileIsExists()){	
 			
 		}else{
@@ -445,17 +470,21 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			sginEditText.setText(sgin);
 		}
 		Intent intent = getIntent();
+		if(intent.getStringExtra("birthday")==null){}else{
 		if(!intent.getStringExtra("birthday").equals("null")){
 			
 			brithdayTextView.setText(intent.getStringExtra("birthday"));
 		}
 		Log.i("brithdays", intent.getStringExtra("year"));
-
-		int year =Integer.parseInt(intent.getStringExtra("year"));
+		year = intent.getStringExtra("year");
+		int years =Integer.parseInt(intent.getStringExtra("year"));
 		SimpleDateFormat time = new SimpleDateFormat("yyyy");
 		
-		year = Integer.parseInt(time.format(new Date()))-year;
-		nianlingTextView.setText(year+"");
+		years = Integer.parseInt(time.format(new Date()))-years;
+		nianlingTextView.setText(years+"");
+		}
+
+		
 
 
 	}
@@ -556,7 +585,8 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		case R.id.information_back:
 			new GenxinSgin().start();
 			new GenxinName().start();
-
+			new GenxinBrithday().start();
+			new GenxinSex().start();
 			break;
 		case R.id.layout_sex:
 			
@@ -591,7 +621,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		super.onBackPressed();
 		new GenxinSgin().start();
 		new GenxinName().start();
-
+		new GenxinSex().start();
 
 		Intent intent = new Intent(InformationChangesActivity.this,Myself.class);
 		intent.putExtra("1", "1");
@@ -700,6 +730,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			String token=sp.getString("token", "token");
 			String path = APIService.SEX+"token="+token+"&gender="+s;
 			String jsonData = HttpUtils.HttpClientPut(path);
+			Log.i("cccasdfjlk", jsonData);
 			try {
 				JSONObject jsonObject = new JSONObject(jsonData);
 				sexSuccess = jsonObject.getString("result");
@@ -728,6 +759,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			HashMap<String, String> map = new HashMap<String, String>();
 			map.put("nickname", upname);
 			String jsonData = HttpUtils.Httpput(path, map);
+			Log.i("ddddddddad","jsonData");
 			try {
 				JSONObject jsonObject = new JSONObject(jsonData);
 				nameSuccess = jsonObject.getString("result");

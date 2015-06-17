@@ -54,6 +54,7 @@ public class PicPopupWindow extends Activity {
 		dayWheelView.setViewAdapter(daydapter);
 		
 		Intent intent = getIntent();
+		if(intent.getStringExtra("dates")==null){}else{
 		String dates = intent.getStringExtra("dates");
 		
 		String[] s = dates.split("-");
@@ -63,7 +64,7 @@ public class PicPopupWindow extends Activity {
 		yearWheelView.setCurrentItem(y-1930);
 		monthWheelView.setCurrentItem(m-1);
 		dayWheelView.setCurrentItem(d-1);
-		
+		}
 		
 	}
 	private void setListeners() {
@@ -101,11 +102,12 @@ public class PicPopupWindow extends Activity {
 
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
+				if(yearadapter.getItemText(newValue)==null){}else{
 				year =  (String) yearadapter.getItemText(newValue).subSequence(0, yearadapter.getItemText(newValue).length()-1);
 				//years = Integer.parseInt(year);
 				//SimpleDateFormat time = new SimpleDateFormat("yyyy");
 				//years = Integer.parseInt(time.format(new Date()))-years;
-				date = year+"-"+moth+"-"+day;
+				date = year+"-"+moth+"-"+day;}
 			}
 		});
 		monthWheelView.addChangingListener(new OnWheelChangedListener() {

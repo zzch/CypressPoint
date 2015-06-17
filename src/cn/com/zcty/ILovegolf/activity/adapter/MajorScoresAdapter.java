@@ -25,6 +25,9 @@ public class MajorScoresAdapter extends BaseAdapter{
 		inflater = LayoutInflater.from(context);
 		for(int i=0;i<majorArrayList.size();i++){
 			MajorScoreJiQiu m = new MajorScoreJiQiu();
+			if(majorArrayList.get(i).getCool()==null){
+				
+			}else{
 			if(majorArrayList.get(i).getCool().equals("unplayable")||majorArrayList.get(i).getCool().equals("不可打")){
 					m.setPoint_of_fall("unplayable");
 					m.setPenalties(majorArrayList.get(i).getPentails());
@@ -38,7 +41,7 @@ public class MajorScoresAdapter extends BaseAdapter{
 			
 			m.setClub(majorArrayList.get(i).getCount());
 			addArrayList.add(m);
-		}
+		}}
 		
 	}
 	public ArrayList<MajorScoreJiQiu> list(){
@@ -82,7 +85,9 @@ public class MajorScoresAdapter extends BaseAdapter{
 		}else{
 			holder = (Holder) convertView.getTag();
 		}
-		Log.i("aaaadfsadfs", majorArrayList.get(position).getCool());
+		if(majorArrayList.get(position).getCool()==null){
+			
+		}else{
 		if(majorArrayList.get(position).getCool().equals("fairway")||majorArrayList.get(position).getCool().equals("球道")){
 			holder.coolText.setText("球道");
 			holder.pentanilsText.setText("0");
@@ -109,7 +114,7 @@ public class MajorScoresAdapter extends BaseAdapter{
 			holder.coolText.setText("");
 			holder.pentanilsText.setText("0");
 		}
-		
+		}
 		if(majorArrayList.get(position).getCount().equals("1w")){
 			holder.countText.setText("Driver");
 		}else if(majorArrayList.get(position).getCount().equals("pt")){

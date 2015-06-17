@@ -173,9 +173,10 @@ public class ForGetPasswordActivity extends Activity {
 			codeButton.setText("获取验证码");
 	}
 	public void setEdittext(EditText t){
-		t.setInputType(InputType.TYPE_CLASS_PHONE);//只能输入电话号码
-		t.setInputType(InputType.TYPE_CLASS_NUMBER);//只能输入数字
-		t.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);//只能输入邮箱地址
+		t.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+		//t.setInputType(InputType.TYPE_CLASS_PHONE);//只能输入电话号码
+		//t.setInputType(InputType.TYPE_CLASS_NUMBER);//只能输入数字
+		//t.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);//只能输入邮箱地址
 	}
 	public void shuzijianpan(EditText s){
 		/*

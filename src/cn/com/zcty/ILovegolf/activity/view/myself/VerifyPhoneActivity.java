@@ -81,6 +81,9 @@ public class VerifyPhoneActivity extends Activity{
 					}
 			}
 			if(msg.what==2){
+				if(result==null){
+					result = "验证码错误";
+				}
 				Toast.makeText(VerifyPhoneActivity.this, result, Toast.LENGTH_LONG).show();
 				
 			}

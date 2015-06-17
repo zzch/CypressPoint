@@ -337,6 +337,9 @@ public class MajorScoreActivity extends Activity {
 				/*if(distance.equals("0")){
 					cool = "hole";
 				}*/
+				if(cool==null){}else{
+					
+				
 				if(cool.equals("fairway")||cool.equals("球道")){
 					cool = "fairway";
 
@@ -354,7 +357,7 @@ public class MajorScoreActivity extends Activity {
 				}else if(cool.equals("unplayable")||cool.equals("不可打")){
 					cool = "unplayable";
 				}
-				
+				}
 				
 				
 				majorScore.setCool(cool);
@@ -365,7 +368,9 @@ public class MajorScoreActivity extends Activity {
 				count++;
 				orderText.setText(count+"");
 				String c = "hole";
-				Log.i("greens", cool);
+				if(cool==null){
+					
+				}else{
 				if(cool.equals("球道")){
 					c = "fairway";
 				}else if(cool.equals("果岭")){
@@ -384,7 +389,7 @@ public class MajorScoreActivity extends Activity {
 				}else{
 					c = "hole";
 				}
-				
+				}
 				/*MajorScoreJiQiu m = new MajorScoreJiQiu();
 				m.setDistance_from_hole(distance);
 				m.setPoint_of_fall(c);

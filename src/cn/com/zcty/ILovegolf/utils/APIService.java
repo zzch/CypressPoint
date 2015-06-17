@@ -4,7 +4,7 @@ public class APIService {
 	/**
 	 * 测试服务器地址
 	 */
-	//  public static String hostName = "http://123.57.210.52/api";
+	// public static String hostName = "http://123.57.210.52/api";
 	/**
 	 * 正式服务器地址
 	 */

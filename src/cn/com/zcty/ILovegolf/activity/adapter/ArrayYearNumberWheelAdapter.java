@@ -15,6 +15,9 @@
  */
 package cn.com.zcty.ILovegolf.activity.adapter;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import android.content.Context;
 import android.util.Log;
 
@@ -41,11 +44,17 @@ public class ArrayYearNumberWheelAdapter extends AbstractWheelTextAdapter {
     
 	@Override
     public CharSequence getItemText(int index) {
-		 int a = 1930; 
-	    	String items[] = new String[600];
-	        for(int i=0;i<600;i++){
-	        	items[i] = a+"";
-	        	a = a+1;
+			int a = 1930; 
+		 	SimpleDateFormat date = new SimpleDateFormat("yyyy");
+	    	String d = date.format(new Date());
+	    	int y = Integer.parseInt(d);
+	    	String items[] = new String[y-1930+1];	    	
+	        for(int i=0;i<items.length;i++){
+	        	if(a<=y){
+	        		items[i] = a+"";
+		        	 a = a+1;
+	        	}
+	        	
 	        	
 	        }
         if (index >= 0 && index < items.length) {
@@ -60,6 +69,9 @@ public class ArrayYearNumberWheelAdapter extends AbstractWheelTextAdapter {
 
     @Override
     public int getItemsCount() {
-        return 600;
+    	SimpleDateFormat date = new SimpleDateFormat("yyyy");
+    	String d = date.format(new Date());
+    	int y = Integer.parseInt(d);
+        return y-1930+1;
     }
 }
