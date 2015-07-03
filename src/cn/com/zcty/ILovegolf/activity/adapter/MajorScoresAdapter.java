@@ -71,7 +71,6 @@ public class MajorScoresAdapter extends BaseAdapter{
 	public View getView(int position, View convertView, ViewGroup parent) {
 		Holder holder;
 		Log.i("ceshijieguozhi", majorArrayList.get(position).getOrder()+"zhou");
-
 		if(convertView==null){
 			convertView = inflater.inflate(R.layout.manager_group_list_item_parent, parent, false);
 			holder = new Holder();
@@ -167,10 +166,6 @@ public class MajorScoresAdapter extends BaseAdapter{
 		}else{
 			holder.distanceText.setText(majorArrayList.get(position).getDistance());
 		}
-		
-		
-
-
 		return convertView;
 	}
 	class Holder{
@@ -179,6 +174,5 @@ public class MajorScoresAdapter extends BaseAdapter{
 		TextView coolText;
 		TextView pentanilsText;
 		TextView countText;
-
 	}
 }

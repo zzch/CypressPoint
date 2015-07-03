@@ -37,6 +37,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
@@ -123,6 +124,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 	private String sexSuccess;
 	private LinearLayout layout_brithday;
 	private LinearLayout layout_sex;
+	private static final int PHOTO_REQUEST_CUT = 3;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
@@ -255,7 +257,6 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			}
 		});
 		
-		
 		upnameEditText.addTextChangedListener(new TextWatcher() {
 
 			@Override
@@ -308,6 +309,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			public void onClick(View v) {
 				startActivityForResult(new Intent(InformationChangesActivity.this,
 						SelectPicPopupWindow.class), 1);
+			
 			}
 		});
 		sexWheel.addChangingListener(new OnWheelChangedListener() {
@@ -466,7 +468,6 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		upnameEditText.setText(name);
 		String sgin = sp.getString("description", "description");
 		if(!sgin.equals("null")){
-			
 			sginEditText.setText(sgin);
 		}
 		Intent intent = getIntent();
@@ -483,38 +484,31 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		years = Integer.parseInt(time.format(new Date()))-years;
 		nianlingTextView.setText(years+"");
 		}
-
-		
-
-
 	}
 	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-		switch (resultCode) {
+		switch (requestCode) {
 		case 1:
 			if (data != null) {
 				//取得返回的Uri,基本上选择照片的时候返回的是以Uri形式，但是在拍照中有得机子呢Uri是空的，所以要特别注意
 				Uri mImageCaptureUri = data.getData();
+				
 				//返回的Uri不为空时，那么图片信息数据都会在Uri中获得。如果为空，那么我们就进行下面的方式获取
 				if (mImageCaptureUri != null) {
-
 					try {
-
-						//这个方法是根据Uri获取Bitmap图片的静态方法
+						crop(mImageCaptureUri);
+						//这个方法是根据Uri获取Bitmap图片的静态方法，将Uri格式转化成Bitmap
 						image = MediaStore.Images.Media.getBitmap(this.getContentResolver(), mImageCaptureUri);	
 						image = FileUtil.comp(image);
 						Log.i("ceshipath", image+"1");
 						if (image != null) {
 							showProgressDialog("提示","正在上传",this);
-
 							String phoneName = android.os.Build.BRAND; 
 							if(phoneName.equals("samsung")){								
 								image = FileUtil.rotaingImageView(90,image);							
 							}
-							new GenxinHead().start();
-
+							//new GenxinHead().start();
 						}
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -524,19 +518,38 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 					if (extras != null) {
 						//这里是有些拍照后的图片是直接存放到Bundle中的所以我们可以从这里面获取Bitmap图片
 						image = extras.getParcelable("data");
+						//将Bitmap格式转化成Uri格式
+						Uri uri = Uri.parse(MediaStore.Images.Media.insertImage(getContentResolver(), image, null,null));
 						if (image != null) {
+							crop(uri);
 							showProgressDialog("提示","正在上传",this);
 							image = FileUtil.rotaingImageView(0,image);
 							image = FileUtil.comp(image);
 							Log.i("ceshipath", image+"2");
-							//headMyImage.setImageBitmap(image);
-							new GenxinHead().start();
-
-
+						    headMyImage.setImageBitmap(image);
+						//	new GenxinHead().start();
 						}
 					}
 				}
-
+			}
+			break;
+		
+		case PHOTO_REQUEST_CUT:
+			if (data != null) {
+				Bundle bundle = data.getExtras();
+				if (bundle != null) {
+					image = bundle.getParcelable("data");
+					if (image != null) {
+						showProgressDialog("提示","正在上传",this);
+						image = FileUtil.rotaingImageView(0,image);
+						image = FileUtil.comp(image);
+						Log.i("ceshipath", image+"2");
+						FileUtil.saveMyBitmap(image);
+						Log.i("image---", image+"----3");
+					    headMyImage.setImageBitmap(image);
+						new GenxinHead().start();
+					}
+				}
 			}
 			break;
 		default:
@@ -545,6 +558,28 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		}
 
 	}
+	/*
+	 * 剪切图片
+	 */
+	private void crop(Uri uri) {
+		// 裁剪图片意图
+		Intent intent = new Intent("com.android.camera.action.CROP");
+		intent.setDataAndType(uri, "image/*");
+		intent.putExtra("crop", "true");
+		// 裁剪框的比例，1：1
+		intent.putExtra("aspectX", 1);
+		intent.putExtra("aspectY", 1);
+		// 裁剪后输出图片的尺寸大小
+		intent.putExtra("outputX", 250);
+		intent.putExtra("outputY", 250);
+
+		intent.putExtra("outputFormat", "JPEG");// 图片格式
+		intent.putExtra("noFaceDetection", true);// 取消人脸识别
+		intent.putExtra("return-data", true);
+		// 开启一个带有返回值的Activity，请求码为PHOTO_REQUEST_CUT
+		startActivityForResult(intent, PHOTO_REQUEST_CUT);
+	}
+	
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {

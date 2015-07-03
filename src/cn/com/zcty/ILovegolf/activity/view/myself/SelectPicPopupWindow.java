@@ -1,9 +1,14 @@
 package cn.com.zcty.ILovegolf.activity.view.myself;
 
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.MotionEvent;
 import android.view.View;
@@ -18,7 +23,8 @@ public class SelectPicPopupWindow extends Activity implements OnClickListener {
 	private Button btn_take_photo, btn_pick_photo, btn_cancel;
 	private LinearLayout layout;
 	private Intent intent;
-
+	private File tempFile = new File(Environment.getExternalStorageDirectory(),
+            getPhotoFileName());
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -60,8 +66,10 @@ public class SelectPicPopupWindow extends Activity implements OnClickListener {
 		//选择完或者拍完照后会在这里处理，然后我们继续使用setResult返回Intent以便可以传递数据和调用
 		if (data.getExtras() != null)
 			intent.putExtras(data.getExtras());
+			
 		if (data.getData()!= null)
 			intent.setData(data.getData());
+		
 		setResult(1, intent);
 		finish();
 
@@ -70,6 +78,7 @@ public class SelectPicPopupWindow extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.btn_take_photo:
+			
 			try {
 				//拍照我们用Action为MediaStore.ACTION_IMAGE_CAPTURE，
 				//有些人使用其他的Action但我发现在有些机子中会出问题，所以优先选择这个
@@ -101,4 +110,11 @@ public class SelectPicPopupWindow extends Activity implements OnClickListener {
 
 	}
 
+	 // 使用系统当前日期加以调整作为照片的名称
+    private String getPhotoFileName() {
+        Date date = new Date(System.currentTimeMillis());
+        SimpleDateFormat dateFormat = new SimpleDateFormat(
+                "'IMG'_yyyyMMdd_HHmmss");
+        return dateFormat.format(date) + ".jpg";
+    }
 }
