@@ -190,7 +190,7 @@ public class ForGetPasswordActivity extends Activity {
 	 * @param v
 	 */
 	public void forgetp_back(View v){
-		Intent intent=new Intent(this,ShouYeActivity.class);
+		Intent intent=new Intent(this,LoginActivity.class);
 		startActivity(intent);
 		finish();
 	}

@@ -9,7 +9,7 @@
   	<dimen name="txsize_mid_xxx">30dp</dimen>
   	<dimen name="txsize_mid_xx">24dp</dimen>
   	<dimen name="txsize_mid_x">23dp</dimen>
-  	
+  	<dimen name="txsize_mid_m">21dp</dimen>
   	<dimen name="txsize_small_xxx">20dp</dimen>
   	<dimen name="txsize_small_xx">18dp</dimen>
   	<dimen name="txsize_small_x">15dp</dimen>

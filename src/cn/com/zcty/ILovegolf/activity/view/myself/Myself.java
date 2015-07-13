@@ -192,7 +192,7 @@ public class Myself extends Activity {
 				type = sp.getString("type", "type");
 				Intent intent = new Intent();
 				if(type.equals("guest")){
-					intent.setClass(Myself.this, BingDingActivity.class);
+					intent.setClass(Myself.this, VerifyPhoneActivity.class);
 					startActivity(intent);
 				}else{
 					intent.setClass(Myself.this, SettingActivity.class);

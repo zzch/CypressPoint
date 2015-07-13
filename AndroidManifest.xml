@@ -36,8 +36,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+          <activity android:name="cn.com.zcty.ILovegolf.activity.view.login_register.LoginActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name="cn.com.zcty.ILovegolf.activity.view.login_register.RegisterSuccessActivity" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity" android:screenOrientation="portrait"></activity>
-        <activity android:name="cn.com.zcty.ILovegolf.activity.view.login_register.LoginActivity" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.login_register.RegisterActivity" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.login_register.ForGetPasswordActivity" android:screenOrientation="portrait"></activity>
         <activity android:name="cn.com.zcty.ILovegolf.activity.view.ScoreCardUpDateActivity" android:screenOrientation="portrait"></activity>

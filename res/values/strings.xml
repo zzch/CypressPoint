@@ -113,7 +113,7 @@
     <string name="me">关于我们</string>
     <string name="exit">退出登录</string>
     <string name="phone">手机号</string>
-     <string name="verifyphone">验证手机号</string>
+     <string name="verifyphone">绑定手机号</string>
      <string name="setting">设置</string>
      <string name="pws">帐号密码</string>
     <string name="content">其他用户无权查看您的手机号码绑定后可用其它手机登录</string>
