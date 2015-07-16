@@ -54,7 +54,8 @@ public class RegisterSuccessActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent(RegisterSuccessActivity.this,VerifyPhoneActivity.class);
-			    startActivity(intent);
+			   intent.putExtra("bangding", "2");
+				startActivity(intent);
 			    finish();
 			}
 		});

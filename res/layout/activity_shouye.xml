@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="已经有我爱高尔夫账户了？"
-            android:textColor="#ff0000"
+            android:textColor="#615894"
             android:textSize="15dp"
            android:layout_centerHorizontal="true"
             android:layout_above="@+id/but2"
@@ -61,7 +61,7 @@
             android:layout_marginLeft="46dp"
             android:layout_marginRight="46dp"
             android:text="登录"
-            android:textColor="@color/bg"
+            android:textColor="#615894"
             android:textSize="@dimen/txsize_mid_m" />
 
       

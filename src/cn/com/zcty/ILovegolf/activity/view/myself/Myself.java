@@ -192,7 +192,8 @@ public class Myself extends Activity {
 				type = sp.getString("type", "type");
 				Intent intent = new Intent();
 				if(type.equals("guest")){
-					intent.setClass(Myself.this, VerifyPhoneActivity.class);
+					intent = new Intent(Myself.this, VerifyPhoneActivity.class);
+					intent.putExtra("bangding", "1");
 					startActivity(intent);
 				}else{
 					intent.setClass(Myself.this, SettingActivity.class);

@@ -26,6 +26,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.activity.view.HomePageActivity;
 import cn.com.zcty.ILovegolf.activity.view.login_register.RegisterActivity;
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.tools.RegexMobile;
@@ -51,6 +52,9 @@ public class VerifyPhoneActivity extends Activity {
 	private String map;
 	private String type;
 	private boolean dianji;
+	private String bangding;
+	private String success;
+	private Intent intent;
 	Handler handler = new Handler() {
 		public void handleMessage(android.os.Message msg) {
 			if (msg.what == 1) {
@@ -145,7 +149,7 @@ public class VerifyPhoneActivity extends Activity {
 	}
 
 	private void initView() {
-		back = (Button) findViewById(R.id.back);
+		back = (Button) findViewById(R.id.back_verify);
 		but_getyanzhengma = (Button) findViewById(R.id.but_getyanzhengma);
 		phoneEditText = (EditText) findViewById(R.id.exittext_phon);
 		linear = (LinearLayout) findViewById(R.id.linear);
@@ -159,7 +163,10 @@ public class VerifyPhoneActivity extends Activity {
 		newpassword = (EditText) findViewById(R.id.psw);
 		affirmpassword = (EditText) findViewById(R.id.qdpsw);
 		submitButton = (Button) findViewById(R.id.tijiao);
+		bangding = getIntent().getStringExtra("bangding");
+
 	}
+
 
 	private void setListeners() {
 		submitButton.setOnClickListener(new OnClickListener() {
@@ -223,10 +230,26 @@ public class VerifyPhoneActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				finish();
+				if(bangding.equals("1")){
+					Log.i("bangding", ""+bangding);
+					 intent = new Intent(VerifyPhoneActivity.this, Myself.class);
+					 startActivity(intent);
+						overridePendingTransition(android.R.anim.slide_in_left,
+								android.R.anim.slide_out_right);
+						finish();
+				}else {
+					Log.i("home", "回到首页");
+					 intent = new Intent(VerifyPhoneActivity.this, HomePageActivity.class);
+					 startActivity(intent);
+						overridePendingTransition(android.R.anim.slide_in_left,
+								android.R.anim.slide_out_right);
+						finish();  
+				}
+				
 			}
 		});
 	}
+	
 
 	// 倒计时 点击后
 	CountDownTimer daojishi = new CountDownTimer(60 * 1000, 1000) {
@@ -248,6 +271,8 @@ public class VerifyPhoneActivity extends Activity {
 
 	};
 
+
+	
 	class BingDing extends Thread {
 		@Override
 		public void run() {
@@ -314,25 +339,24 @@ public class VerifyPhoneActivity extends Activity {
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
 		super.onBackPressed();
-		Intent intent = new Intent(VerifyPhoneActivity.this, Myself.class);
-		startActivity(intent);
-		overridePendingTransition(android.R.anim.slide_in_left,
-				android.R.anim.slide_out_right);
-		finish();
-	}
-
-	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.back:
-			Intent intent = new Intent(VerifyPhoneActivity.this, Myself.class);
-			startActivity(intent);
-			overridePendingTransition(android.R.anim.slide_in_left,
-					android.R.anim.slide_out_right);
-			finish();
-			break;
-
+		if(bangding.equals("1")){
+			 intent = new Intent(VerifyPhoneActivity.this, Myself.class);
+			 startActivity(intent);
+				overridePendingTransition(android.R.anim.slide_in_left,
+						android.R.anim.slide_out_right);
+				finish();
+		}else {
+			Log.i("home", "回到首页");
+			 intent = new Intent(VerifyPhoneActivity.this, HomePageActivity.class);
+			 startActivity(intent);
+				overridePendingTransition(android.R.anim.slide_in_left,
+						android.R.anim.slide_out_right);
+				finish();  
 		}
+		
 	}
+
+
 
 	@Override
 	public boolean dispatchTouchEvent(MotionEvent ev) {

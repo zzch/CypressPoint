@@ -18,13 +18,12 @@
             >
 
             <Button
-                android:id="@+id/back"
+                android:id="@+id/back_verify"
                 android:layout_width="80dp"
                 android:layout_height="50dp"
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="@dimen/title_button_left"
                 android:background="@null"
-                android:onClick="onClick"
                 android:text="@string/back"
                 android:textColor="@color/white"
                 android:textSize="@dimen/txsize_small_xx" />

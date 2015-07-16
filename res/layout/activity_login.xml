@@ -166,7 +166,7 @@
         android:background="@drawable/mimadenglu"
         android:gravity="center"
         android:text="短信验证码登录"
-        android:textColor="#fff000"
+        android:textColor="#09850c"
         android:textSize="20dp" />
  
 </LinearLayout>
