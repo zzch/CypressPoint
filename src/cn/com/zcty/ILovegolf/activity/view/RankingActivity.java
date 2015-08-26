@@ -61,7 +61,7 @@ public class RankingActivity extends Activity{
 				hideProgressDialog();
 				if(msg.obj.equals("404")||msg.obj.equals("500")){
 					Toast.makeText(RankingActivity.this, "网络错误，请稍后再试", Toast.LENGTH_LONG).show();
-				}else if(msg.obj.equals("401")){					
+				}else if(msg.obj.equals("401")){
 					FileUtil.delFile();
 					Intent intent = new Intent(RankingActivity.this,ShouYeActivity.class);
 					startActivity(intent);
@@ -80,9 +80,9 @@ public class RankingActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_ranking);
-		initView();		
+		initView();
 		showProgressDialog("提示", "正在加载", this);
-		setListeners();	
+		setListeners();
 		new Rankings().start();
 	}
 
@@ -99,13 +99,13 @@ public class RankingActivity extends Activity{
 			public void onRefresh(PullToRefreshBase<ScrollView> refreshView) {
 
 				rankings.clear();
-				new Rankings().start();				
+				new Rankings().start();
 
 			}
 		});
 
 		mScrollView = mPullRefreshScrollView.getRefreshableView();
-		
+
 		// TODO Auto-generated method stub
 		paiming_back.setOnClickListener(new OnClickListener() {
 
@@ -114,10 +114,10 @@ public class RankingActivity extends Activity{
 				finish();
 			}
 		});
-		
+
 		//邀请更多好友
-         invite_much.setOnClickListener(new OnClickListener() {
-			
+		invite_much.setOnClickListener(new OnClickListener() {
+
 			@Override
 			public void onClick(View v) {
 				String	uuid = getIntent().getStringExtra("uuid");
@@ -131,13 +131,13 @@ public class RankingActivity extends Activity{
 				j.putExtra("cunzai", "0");
 				j.putExtra("uuid", uuid);
 				startActivity(j);
-			    finish();
+				finish();
 			}
 		});
-         
-         //邀请好友
-         rank_invite_but.setOnClickListener(new OnClickListener() {
-			
+
+		//邀请好友
+		rank_invite_but.setOnClickListener(new OnClickListener() {
+
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
@@ -152,24 +152,24 @@ public class RankingActivity extends Activity{
 				j.putExtra("cunzai", "0");
 				j.putExtra("uuid", uuid);
 				startActivity(j);
-			    finish();
+				finish();
 			}
 		});
 		rankListView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
-					long arg3) {
+									long arg3) {
 				Log.i("hughzfk",rankings.get(position).getUuid()+"");
 				Log.i("hughzfk",position+"");
 				if(rankings.get(position).getSelf().equals("true")){
 					finish();
 				}else{
-				Log.i("hughzfk",rankings.get(position).getUuid()+"");
-				Log.i("hughzfk",position+"");
-				Intent intent = new Intent(RankingActivity.this,RankingStatics.class);
-				intent.putExtra("uuid", rankings.get(position).getUuid());
-				startActivity(intent);}
+					Log.i("hughzfk",rankings.get(position).getUuid()+"");
+					Log.i("hughzfk",position+"");
+					Intent intent = new Intent(RankingActivity.this,RankingStatics.class);
+					intent.putExtra("uuid", rankings.get(position).getUuid());
+					startActivity(intent);}
 			}
 		});
 	}
@@ -191,16 +191,16 @@ public class RankingActivity extends Activity{
 		layout_rank = (RelativeLayout) findViewById(R.id.layout_rank);
 		linear = (LinearLayout) findViewById(R.id.linear);
 		linear.setVisibility(View.GONE);
-		
+
 	}
 	/*
 	 * 数据的操作
 	 */
 	public void getData(){
-		
+
 		if(rankListView.getAdapter()==null){
 			adapter = new RankingAdapter(this, rankings);
-			rankListView.setAdapter(adapter);	
+			rankListView.setAdapter(adapter);
 		}else{
 			adapter.notifyDataSetChanged();
 		}
@@ -209,18 +209,18 @@ public class RankingActivity extends Activity{
 			layout_rank.setVisibility(View.GONE);
 		}else{
 			if(rankings.size()<1){
-				
-				   mPullRefreshScrollView.setVisibility(View.GONE);
-				   Log.i("-----", "sdufhshdjhkjshfjhsjkhfjhs");
-				  layout_rank.setVisibility(View.VISIBLE);
-			   }else{
-				  layout_rank.setVisibility(View.GONE);
-				  mPullRefreshScrollView.setVisibility(View.VISIBLE);
-			   }
+
+				mPullRefreshScrollView.setVisibility(View.GONE);
+				Log.i("-----", "sdufhshdjhkjshfjhsjkhfjhs");
+				layout_rank.setVisibility(View.VISIBLE);
+			}else{
+				layout_rank.setVisibility(View.GONE);
+				mPullRefreshScrollView.setVisibility(View.VISIBLE);
+			}
 		}
-		
+
 	}
-	
+
 	/**
 	 * 获取排名的数据
 	 * @author Administrator
@@ -254,18 +254,18 @@ public class RankingActivity extends Activity{
 					JSONObject userJsonObject = new JSONObject(user);
 					Log.i("ranking", userJsonObject.getString("nickname"));
 					ranking.setNickname(userJsonObject.getString("nickname"));
-					
+
 					String portrait = userJsonObject.getString("portrait");//获得头像 map集合
 					JSONObject portraitJsonObject = new JSONObject(portrait);
 					ranking.setPortrait(portraitJsonObject.getString("url"));
-					
+
 					ranking.setRecorded_scorecards_count(jsonObject.getString("recorded_scorecards_count"));
 					ranking.setTotal(jsonObject.getString("total"));
-					
+
 					rankings.add(ranking);
 					Log.i("afdsfsaf", rankings.size()+"ff");
 				}
-				
+
 
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
@@ -280,23 +280,23 @@ public class RankingActivity extends Activity{
 	/*
      * 提示加载
      */
-     public   void  showProgressDialog(String title,String message,Activity context){
-            if(progressDialog ==null){
-                   progressDialog = ProgressDialog.show( context, title, message,true,true );
+	public   void  showProgressDialog(String title,String message,Activity context){
+		if(progressDialog ==null){
+			progressDialog = ProgressDialog.show( context, title, message,true,true );
 
-           } else if (progressDialog .isShowing()){
-                   progressDialog.setTitle(title);
-                   progressDialog.setMessage(message);
-           }
-            progressDialog.show();
+		} else if (progressDialog .isShowing()){
+			progressDialog.setTitle(title);
+			progressDialog.setMessage(message);
+		}
+		progressDialog.show();
 
-    }
-     /*
+	}
+	/*
      * 隐藏加载
      */
-     public  void hideProgressDialog(){
-            if(progressDialog !=null &&progressDialog.isShowing()){
-                   progressDialog.dismiss();
-           }
-    }
+	public  void hideProgressDialog(){
+		if(progressDialog !=null &&progressDialog.isShowing()){
+			progressDialog.dismiss();
+		}
+	}
 }

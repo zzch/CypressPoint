@@ -11,9 +11,9 @@
         android:layout_height="match_parent"
         android:focusable="true"
         android:focusableInTouchMode="true"
-         >
-         
-        <ImageView 
+        >
+
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/woaigaoerfu"
@@ -21,77 +21,77 @@
             android:layout_centerHorizontal="true"
             />
 
-       
-     <ImageView 
-         android:id="@+id/zhuceimage"
+
+        <ImageView
+            android:id="@+id/zhuceimage"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:src="@drawable/zhucechenggong"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             />
-      <TextView 
-          android:id="@+id/texte"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="注册成功"
-          android:layout_below="@+id/zhuceimage"
-          android:layout_centerHorizontal="true"
-          android:textColor="#ffffff"
-          android:textSize="15dp"
-          android:layout_marginTop="5dp"
-          />
-      
-      <TextView 
-           android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="是否绑定手机号"
-          android:layout_centerHorizontal="true"
-          android:textColor="#ffffff"
-          android:layout_below="@+id/texte"
-          android:layout_marginTop="30dp"
-          android:textSize="23dp"
-          />
-      <TextView 
-           android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="绑定后数据永久保存"
-          android:layout_centerHorizontal="true"
-          android:textColor="#ffffff"
-          android:layout_below="@+id/texte"
-          android:layout_marginTop="60dp"
-          android:textSize="15dp"
-          />
-      
-      <LinearLayout 
-          
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:orientation="horizontal"
-          android:layout_below="@+id/texte"
-          android:layout_marginTop="90dp"
-          >
-          
-          <Button 
-              android:id="@+id/cancel"
-              android:layout_width="130dp"
-              android:layout_height="55dp"
-              android:text="取消"
-              android:background="@drawable/yijianzhuceanniu"
-              android:textColor="@color/daohang"
-              android:layout_marginLeft="46dp"
-              />
-          
-          <Button 
-              android:id="@+id/ok"
-              android:layout_width="130dp"
-              android:layout_height="55dp"
-              android:text="确定"
-              android:layout_marginLeft="11dp"
-              android:background="@drawable/yijianzhuceanniu"
-               android:textColor="@color/daohang"
-              />
-      </LinearLayout>
+        <TextView
+            android:id="@+id/texte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注册成功"
+            android:layout_below="@+id/zhuceimage"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ffffff"
+            android:textSize="15dp"
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="是否绑定手机号"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ffffff"
+            android:layout_below="@+id/texte"
+            android:layout_marginTop="30dp"
+            android:textSize="23dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="绑定后数据永久保存"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ffffff"
+            android:layout_below="@+id/texte"
+            android:layout_marginTop="60dp"
+            android:textSize="15dp"
+            />
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/texte"
+            android:layout_marginTop="90dp"
+            >
+
+            <Button
+                android:id="@+id/cancel"
+                android:layout_width="130dp"
+                android:layout_height="55dp"
+                android:text="取消"
+                android:background="@drawable/yijianzhuceanniu"
+                android:textColor="@color/daohang"
+                android:layout_marginLeft="46dp"
+                />
+
+            <Button
+                android:id="@+id/ok"
+                android:layout_width="130dp"
+                android:layout_height="55dp"
+                android:text="确定"
+                android:layout_marginLeft="11dp"
+                android:background="@drawable/yijianzhuceanniu"
+                android:textColor="@color/daohang"
+                />
+        </LinearLayout>
     </RelativeLayout>
 
 </LinearLayout>

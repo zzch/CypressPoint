@@ -35,7 +35,7 @@ public class DoudizhuMain extends Activity
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.doudizhu_main);
-      // getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.etmode_title);
+        // getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.etmode_title);
         ActivityCollector.addActivity(this);
         //这个方法是假的，模拟的是一个已经登录的
         initMyUser();;

@@ -24,7 +24,7 @@ public class AnlyzeDiamond {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public String getAddress() {
 		return address;
 	}
@@ -37,5 +37,5 @@ public class AnlyzeDiamond {
 	public void setVisited_count(String visited_count) {
 		this.visited_count = visited_count;
 	}
-	
+
 }

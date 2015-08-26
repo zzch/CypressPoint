@@ -39,26 +39,26 @@ public class HomePageActivity extends Activity {
 	private String url;
 	private String  day;
 	private String daytime;
-	
+
 	Handler handler = new Handler() {
 		public void handleMessage(android.os.Message msg) {
 			if (msg.what == 1) {
-				if(!msg.obj.equals("404")){					
-				
-				
-				SimpleDateFormat format = new SimpleDateFormat("dd");
-				daytime = format.format(new Date());
-				Log.i("daytime", daytime);
-				SharedPreferences ss = getSharedPreferences("time",
-						Context.MODE_PRIVATE);
-			    day = ss.getString("day", "day");
-				
-				if(!day.equals(daytime)){
-					UpdateManager manager = new UpdateManager(
-							HomePageActivity.this, hashMap);
-					manager.checkUpdate();
-					timeDay();
-				  }
+				if(!msg.obj.equals("404")){
+
+
+					SimpleDateFormat format = new SimpleDateFormat("dd");
+					daytime = format.format(new Date());
+					Log.i("daytime", daytime);
+					SharedPreferences ss = getSharedPreferences("time",
+							Context.MODE_PRIVATE);
+					day = ss.getString("day", "day");
+
+					if(!day.equals(daytime)){
+						UpdateManager manager = new UpdateManager(
+								HomePageActivity.this, hashMap);
+						manager.checkUpdate();
+						timeDay();
+					}
 
 				}
 			}
@@ -75,7 +75,7 @@ public class HomePageActivity extends Activity {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_homepage);
 		ShouYeActivity.getInstance().addActivity(this);
-	   
+
 		SimpleDateFormat format = new SimpleDateFormat("dd");
 		day = format.format(new Date());
 		Log.i("wwwww", day);
@@ -86,48 +86,48 @@ public class HomePageActivity extends Activity {
 
 		if (!url.equals("null")) {
 			new Imageloder().start();
-		}	
+		}
 	}
 	public void timeDay(){
-		
+
 		SharedPreferences ss=getSharedPreferences("time",Context.MODE_PRIVATE);
 		Editor editor = ss.edit();
-	    editor.putString("day", daytime);
-	    editor.commit();
-	   
+		editor.putString("day", daytime);
+		editor.commit();
+
 	}
-	 
+
 	/*
 	 * 点击跳转事件
 	 */
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.homepage_match:
-			Intent intent = new Intent(HomePageActivity.this,
-					QuickScoreActivity.class);
-			startActivity(intent);
+			case R.id.homepage_match:
+				Intent intent = new Intent(HomePageActivity.this,
+						QuickScoreActivity.class);
+				startActivity(intent);
 
-			finish();
-			break;
-		case R.id.homepage_statistics:
-			Intent statisticsIntent = new Intent(HomePageActivity.this,
-					CountActivity.class);
-			startActivity(statisticsIntent);
+				finish();
+				break;
+			case R.id.homepage_statistics:
+				Intent statisticsIntent = new Intent(HomePageActivity.this,
+						CountActivity.class);
+				startActivity(statisticsIntent);
 
-			finish();
-			break;
-		case R.id.homepage_personal_center:
-			Intent mySelfIntent = new Intent(HomePageActivity.this,
-					Myself.class);
-			startActivity(mySelfIntent);
-			finish();
-			break;
-		case R.id.buttondb:
-			Intent yulemoshi = new Intent(HomePageActivity.this,
-					DoudizhuMain.class);
-			startActivity(yulemoshi);
-			finish();
-			break;
+				finish();
+				break;
+			case R.id.homepage_personal_center:
+				Intent mySelfIntent = new Intent(HomePageActivity.this,
+						Myself.class);
+				startActivity(mySelfIntent);
+				finish();
+				break;
+			case R.id.buttondb:
+				Intent yulemoshi = new Intent(HomePageActivity.this,
+						DoudizhuMain.class);
+				startActivity(yulemoshi);
+				finish();
+				break;
 		}
 	}
 
