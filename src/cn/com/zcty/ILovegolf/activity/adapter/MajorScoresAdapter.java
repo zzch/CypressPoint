@@ -25,21 +25,29 @@ public class MajorScoresAdapter extends BaseAdapter{
 		inflater = LayoutInflater.from(context);
 		for(int i=0;i<majorArrayList.size();i++){
 			MajorScoreJiQiu m = new MajorScoreJiQiu();
+			if(majorArrayList.get(i).getCool()==null){
+				
+			}else{
 			if(majorArrayList.get(i).getCool().equals("unplayable")||majorArrayList.get(i).getCool().equals("不可打")){
 					m.setPoint_of_fall("unplayable");
+					m.setPenalties(majorArrayList.get(i).getPentails());
 				}else{
 					m.setPoint_of_fall(majorArrayList.get(i).getCool());	
+					m.setPenalties("0");
 				}
 			
 			m.setDistance_from_hole(majorArrayList.get(i).getDistance());
 			
-			m.setPenalties(majorArrayList.get(i).getPentails());
+			
 			m.setClub(majorArrayList.get(i).getCount());
 			addArrayList.add(m);
-		}
+		}}
 		
 	}
 	public ArrayList<MajorScoreJiQiu> list(){
+		
+		
+		
 		return addArrayList;
 	}
 	
@@ -63,7 +71,6 @@ public class MajorScoresAdapter extends BaseAdapter{
 	public View getView(int position, View convertView, ViewGroup parent) {
 		Holder holder;
 		Log.i("ceshijieguozhi", majorArrayList.get(position).getOrder()+"zhou");
-
 		if(convertView==null){
 			convertView = inflater.inflate(R.layout.manager_group_list_item_parent, parent, false);
 			holder = new Holder();
@@ -77,27 +84,36 @@ public class MajorScoresAdapter extends BaseAdapter{
 		}else{
 			holder = (Holder) convertView.getTag();
 		}
-	
+		if(majorArrayList.get(position).getCool()==null){
+			
+		}else{
 		if(majorArrayList.get(position).getCool().equals("fairway")||majorArrayList.get(position).getCool().equals("球道")){
 			holder.coolText.setText("球道");
+			holder.pentanilsText.setText("0");
 
 		}else if(majorArrayList.get(position).getCool().equals("green")||majorArrayList.get(position).getCool().equals("果岭")){
 			holder.coolText.setText("果岭");
+			holder.pentanilsText.setText("0");
 		}
 		else if(majorArrayList.get(position).getCool().equals("left_rough")||majorArrayList.get(position).getCool().equals("球道外左侧")){
 			holder.coolText.setText("球道外左侧");
+			holder.pentanilsText.setText("0");
 		}
 		else if(majorArrayList.get(position).getCool().equals("right_rough")||majorArrayList.get(position).getCool().equals("球道外右侧")){
 			holder.coolText.setText("球道外右侧");
+			holder.pentanilsText.setText("0");
 		}
 		else if(majorArrayList.get(position).getCool().equals("bunker")||majorArrayList.get(position).getCool().equals("沙坑")){
 			holder.coolText.setText("沙坑");
+			holder.pentanilsText.setText("0");
 		}else if(majorArrayList.get(position).getCool().equals("unplayable")||majorArrayList.get(position).getCool().equals("不可打")){
 			holder.coolText.setText("不可打");
+			holder.pentanilsText.setText(majorArrayList.get(position).getPentails());
 		}else{
 			holder.coolText.setText("");
+			holder.pentanilsText.setText("0");
 		}
-		
+		}
 		if(majorArrayList.get(position).getCount().equals("1w")){
 			holder.countText.setText("Driver");
 		}else if(majorArrayList.get(position).getCount().equals("pt")){
@@ -150,10 +166,6 @@ public class MajorScoresAdapter extends BaseAdapter{
 		}else{
 			holder.distanceText.setText(majorArrayList.get(position).getDistance());
 		}
-		holder.pentanilsText.setText(majorArrayList.get(position).getPentails());
-		
-
-
 		return convertView;
 	}
 	class Holder{
@@ -162,6 +174,5 @@ public class MajorScoresAdapter extends BaseAdapter{
 		TextView coolText;
 		TextView pentanilsText;
 		TextView countText;
-
 	}
 }

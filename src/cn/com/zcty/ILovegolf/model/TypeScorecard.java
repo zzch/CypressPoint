@@ -4,14 +4,14 @@ import java.util.List;
 
 public class TypeScorecard {
 	/**
-	 * 赛事类型
+	 * 璧涗簨绫诲瀷
 	 */
 	private String type;
 	/**
-	 * 成绩
+	 * 鎴愮哗
 	 */
 	private List<Scorecards> scorecards;
-	
+
 	public TypeScorecard(){}
 
 	public TypeScorecard(String type, List<Scorecards> scorecards) {
@@ -36,5 +36,5 @@ public class TypeScorecard {
 		this.scorecards = scorecards;
 	}
 
-    
+
 }

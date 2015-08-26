@@ -1,0 +1,107 @@
+package cn.com.zcty.ILovegolf.doudizhu.utills;
+
+import android.content.Context;
+import android.graphics.BitmapFactory;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+
+import java.util.List;
+import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.doudizhu.entity.Match;
+import cn.com.zcty.ILovegolf.doudizhu.entity.Player;
+
+/**
+ * Created by wangm on 2015/8/13.
+ */
+
+public class CustomRankAdapter extends BaseAdapter
+{
+    private Context mContext;
+    //    private List<List<Player>> players;
+    List<Player> players;
+    private Match match;
+
+    public CustomRankAdapter(Context mContext, List<Player> players, Match match)
+    {
+        this.mContext = mContext;
+        this.players = players;
+        this.match = match;
+    }
+
+    @Override
+    public int getCount()
+    {
+        return players.size();
+
+    }
+
+    @Override
+    public Object getItem(int position)
+    {
+        return players.get(position);
+    }
+
+    @Override
+    public long getItemId(int position)
+    {
+        return 0;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent)
+    {
+        Player player = players.get(position);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.rank_list_item, null);
+        ImageView HorSImage = (ImageView) view.findViewById(R.id.HorSImage);
+        LinearLayout ll = (LinearLayout) view.findViewById(R.id.ll);
+        if (position == 0)
+        {
+//            TODO  设置第一名前面的奖杯图标
+//            HorSImage.setImageBitmap(BitmapFactory.decodeFile(R.drawable.));
+        } else if (position == players.size() - 1)
+        {
+//            TODO  设置最后一名前面的图标
+//            HorSImage.setImageBitmap(BitmapFactory.decodeFile(R.drawable.));
+        }
+//        for (int i = 0; i <players.size() ; i++)
+//        {
+//            String face = players.get(i).getPortrait();
+//            String name = players.get(i).getNickname();
+//            int hole = match.getCurrenthole();
+//
+//            int score = getearned(players.get(i),hole);
+//            ((ImageView)ll.getChildAt(i).findViewById(R.id.rankPlayerimage)).setImageBitmap(BitmapFactory.decodeFile(face));
+//            ((TextView)ll.getChildAt(i).findViewById(R.id.rankPlayername)).setText(name);
+//            ((TextView)ll.getChildAt(i).findViewById(R.id.rankPlayerscore)).setText(score);
+//        }
+        int hole = match.getCurrenthole();
+        int stroke = getearned(player, hole);
+        String face = player.getPortrait();
+        String name = player.getNickname();
+        ((ImageView) ll.getChildAt(0).findViewById(R.id.rankPlayerimage)).setImageBitmap(BitmapFactory.decodeFile(face));
+        ((TextView) ll.getChildAt(0).findViewById(R.id.rankPlayername)).setText(name);
+        ((TextView) ll.getChildAt(0).findViewById(R.id.rankPlayerscore)).setText(String.valueOf(stroke));
+
+        return view;
+    }
+
+    int getearned(Player player, int hole)
+    {
+        int score = 0;
+        for (int i = 0; i < hole; i++)
+        {
+
+            score += WmUtil.getStroke(hole, player);
+
+        }
+        return score;
+    }
+}

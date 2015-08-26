@@ -66,6 +66,7 @@ public class MajorScoreActivity extends Activity {
 	private LinearLayout wheelLinearLayout;
 	private RelativeLayout addsRelativeLayout;
 	private LinearLayout resultLinearLayout;
+	private String	scool;
 	private Button addButton;
 	private Button quedingButton;
 	private ProgressDialog progressDialog;
@@ -111,7 +112,7 @@ public class MajorScoreActivity extends Activity {
 	private String maps;
 	Handler handler = new Handler(){
 		public void handleMessage(Message msg) {
-			
+			hideProgressDialog();
 			if(msg.what==3){
 				if(majorArray.size()>0){	
 					count = Integer.parseInt(majorArray.get(majorArray.size()-1).getOrder());
@@ -136,8 +137,8 @@ public class MajorScoreActivity extends Activity {
 			if(msg.what==4){
 				if(msg.obj.equals("404")||msg.obj.equals("500")){
 					Toast.makeText(MajorScoreActivity.this, "网络异常，错误提示"+msg.obj, Toast.LENGTH_LONG).show();
-				}else if(msg.obj.equals("403")){
-					Toast.makeText(MajorScoreActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("401")){
+					Toast.makeText(MajorScoreActivity.this, "帐号异地登录，请重新登录", Toast.LENGTH_LONG).show();
 					FileUtil.delFile();
 					Intent intent = new Intent(MajorScoreActivity.this,ShouYeActivity.class);
 					startActivity(intent);
@@ -262,22 +263,36 @@ public class MajorScoreActivity extends Activity {
 					cool = "hole";
 				}else{
 					coolWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, coolArray));	
+					cool = scool;
+					if(scool!=null){
+						
+						Log.i("coolaaaa", scool);
+						if(scool.equals("不可打")){
+							penaitsWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, pentailsArray));
+							pentails = "1";
+							cool = "不可打";
+						}
+					}
+					//cool = "球道";dd
+					
 				}
 			}
 		});
+		//cool = "球道";	
 		coolWheel.addChangingListener(new OnWheelChangedListener() {
 
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
 				flase_3 = true;
 				cool = coolArray[newValue];		
+				scool = coolArray[newValue];	
 				if(coolArray[newValue].equals("不可打")){
 					pentails = "1";
 					penaitsWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, pentailsArray));
 					
 				}else{
-					penaitsWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, pentailsArray_));
 					pentails = "0";
+					penaitsWheel.setViewAdapter(new ArrayWheelAdapter<String>(MajorScoreActivity.this, pentailsArray_));
 				}
 			}
 		});
@@ -322,6 +337,29 @@ public class MajorScoreActivity extends Activity {
 				/*if(distance.equals("0")){
 					cool = "hole";
 				}*/
+				if(cool==null){}else{
+					
+				
+				if(cool.equals("fairway")||cool.equals("球道")){
+					cool = "fairway";
+
+				}else if(cool.equals("green")||cool.equals("果岭")){
+					cool = "green";
+				}
+				else if(cool.equals("left_rough")||cool.equals("球道外左侧")){
+					cool = "left_rough";
+				}
+				else if(cool.equals("right_rough")||cool.equals("球道外右侧")){
+					cool = "right_rough";
+				}
+				else if(cool.equals("bunker")||cool.equals("沙坑")){
+					cool = "bunker";
+				}else if(cool.equals("unplayable")||cool.equals("不可打")){
+					cool = "unplayable";
+				}
+				}
+				
+				
 				majorScore.setCool(cool);
 				majorScore.setOrder(count+"");							
 				majorScore.setDistance(distance);
@@ -330,7 +368,9 @@ public class MajorScoreActivity extends Activity {
 				count++;
 				orderText.setText(count+"");
 				String c = "hole";
-				Log.i("greens", cool);
+				if(cool==null){
+					
+				}else{
 				if(cool.equals("球道")){
 					c = "fairway";
 				}else if(cool.equals("果岭")){
@@ -349,7 +389,7 @@ public class MajorScoreActivity extends Activity {
 				}else{
 					c = "hole";
 				}
-				
+				}
 				/*MajorScoreJiQiu m = new MajorScoreJiQiu();
 				m.setDistance_from_hole(distance);
 				m.setPoint_of_fall(c);
@@ -713,6 +753,7 @@ public class MajorScoreActivity extends Activity {
 			String uuid = intent.getStringExtra("uuid");
 			String path = APIService.SHIYAN+"token="+token+"&uuid="+uuid;	
 			String jsonArray =	HttpUtils.HttpClientPost(path, map);
+			Log.i("majorscore", map.get("strokes[]").toString()+"zhou");
 			try {
 				JSONObject jsObject = new JSONObject(jsonArray);	
 				Log.i("jiqiujilu", jsObject.toString());

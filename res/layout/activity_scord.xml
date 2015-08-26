@@ -25,7 +25,7 @@
                 <Button
                     android:id="@+id/scorecard_back"
                     android:layout_width="80dp"
-                    android:layout_height="47dp"
+                    android:layout_height="50dp"
                     android:layout_marginLeft="@dimen/title_button_left"
                     android:background="@null"
                     android:onClick="onclick"
@@ -37,7 +37,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="13dp"
+                   android:layout_marginTop="15dp"
                     android:src="@drawable/back_image" />
             </FrameLayout>
 
@@ -49,7 +49,7 @@
                 android:gravity="center"
                 android:text="@string/score_card"
                 android:textColor="@color/white"
-                android:textSize="@dimen/txsize_mid_x" />
+                android:textSize="@dimen/txsize_small_xxx" />
         </RelativeLayout>
 
         <View
@@ -193,23 +193,24 @@
                     android:id="@+id/competition_button_paiming"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/view_mid_x"
-                    android:layout_weight="1"
-                    android:background="@color/daohang"
-                     >
+                    android:layout_weight="1.18"
+                    android:background="@color/daohang" >
 
                     <ImageView
                         android:layout_width="@dimen/paiming_width"
                         android:layout_height="@dimen/paiming_height"
-                        android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="@dimen/paiming_bottom"
                         android:src="@drawable/paihang" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
                         android:layout_marginLeft="@dimen/scord_left"
                         android:text="排行榜"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="9dp"
                         android:textColor="#ffffff" />
                 </RelativeLayout>
 
@@ -222,21 +223,22 @@
                     android:id="@+id/competition_button_yaoqing"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/view_mid_x"
-                    android:layout_weight="1"
-                    android:background="@color/daohang"
-                     >
+                    android:layout_weight="0.83"
+                    android:background="@color/daohang" >
 
                     <ImageView
                         android:layout_width="@dimen/yaoqing_width"
                         android:layout_height="@dimen/yaoqing_height"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="10dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="@dimen/paiming_bottom"
+                        android:layout_marginLeft="15dp"
                         android:src="@drawable/yaoqing" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="9dp"
                         android:layout_marginLeft="@dimen/scord_left"
                         android:text="邀请好友"
                         android:textColor="#ffffff" />
@@ -256,14 +258,16 @@
                     <ImageView
                         android:layout_width="@dimen/tongji_width"
                         android:layout_height="@dimen/tongji_height"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="10dp"
+                        android:layout_alignParentBottom="true"
+                         android:layout_marginBottom="@dimen/paiming_bottom"
+                        android:layout_marginLeft="13dp"
                         android:src="@drawable/tongji" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="9dp"
                         android:layout_marginLeft="@dimen/scord_left"
                         android:text="技术分析"
                         android:textColor="#ffffff" />

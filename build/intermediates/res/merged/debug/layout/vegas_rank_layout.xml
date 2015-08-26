@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/red">
+        <View
+            android:id="@+id/vegasRank1Midline"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_centerVertical="true"/>
+        <ImageView
+            android:id="@+id/vegasRankWinnerImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/vegasRank1Midline"
+            android:background="@color/red"
+            />
+
+        <RelativeLayout
+            android:layout_below="@+id/vegasRank1Midline"
+            android:id="@+id/relativeLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="false"
+            android:layout_marginLeft="65dp">
+
+            <TextView
+                android:id="@+id/vegasRankWinnerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="黄大治"/>
+
+            <ImageView
+                android:id="@+id/vegasRankWinnerGold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/vegasRankWinnerName"/>
+
+            <TextView
+                android:id="@+id/vegasRankWinnerScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/vegasRankWinnerName"
+                android:layout_toRightOf="@+id/vegasRankWinnerGold"
+                android:text="0"/>
+
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/vegasGoldCup"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="25dp"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1">
+        <View
+            android:id="@+id/vegasRank2Midline"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_centerVertical="true"/>
+
+        <ImageView
+            android:id="@+id/vegasRankSecImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/vegasRank2Midline"
+            android:background="@color/red"/>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="false"
+            android:layout_below="@+id/vegasRank2Midline"
+            android:layout_alignParentStart="false"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="65dp">
+
+            <TextView
+                android:id="@+id/vegasRankSecName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="黄大治"/>
+
+            <ImageView
+                android:id="@+id/vegasRankSecGold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/vegasRankSecName"/>
+
+            <TextView
+                android:id="@+id/vegasRankSecScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/vegasRankSecName"
+                android:layout_toRightOf="@+id/vegasRankSecGold"
+                android:text="0"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1">
+        <View
+            android:id="@+id/vegasRank3Midline"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_centerVertical="true"/>
+        <ImageView
+            android:id="@+id/vegasRankThirdImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/vegasRank3Midline"
+            android:background="@color/red"/>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="false"
+            android:layout_below="@+id/vegasRank3Midline"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="65dp">
+
+            <TextView
+                android:id="@+id/vegasRankThirdName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="黄大治"/>
+
+            <ImageView
+                android:id="@+id/vegasRankThirdGold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/vegasRankThirdName"/>
+
+            <TextView
+                android:id="@+id/vegasRankThirdScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/vegasRankThirdName"
+                android:layout_toRightOf="@+id/vegasRankThirdGold"
+                android:text="0"/>
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1">
+        <View
+            android:id="@+id/vegasRank4Midline"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_centerVertical="true"/>
+        <ImageView
+            android:id="@+id/vegasRankLoserImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/vegasRank4Midline"
+            android:background="@color/red"/>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="false"
+            android:layout_below="@+id/vegasRank4Midline"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="65dp">
+
+            <TextView
+                android:id="@+id/vegasRankLoserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="黄大治"/>
+
+            <ImageView
+                android:id="@+id/vegasRankLoserGold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/vegasRankLoserName"/>
+
+            <TextView
+                android:id="@+id/vegasRankLoserScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/vegasRankLoserName"
+                android:layout_toRightOf="@+id/vegasRankLoserGold"
+                android:text="0"/>
+        </RelativeLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/vegasLoserNoCup"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="25dp"/>
+    </RelativeLayout>
+
+</LinearLayout>
+<!-- From: file:/D:/workspace/GolfAndroid/res/layout/vegas_rank_layout.xml -->

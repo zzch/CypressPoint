@@ -26,8 +26,10 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.adapter.RankingAdapter;
@@ -41,9 +43,9 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
 
 public class RankingActivity extends Activity{
 	private ScrollView mScrollView;
-
 	private Button paiming_back;
 	private ScrollViewWithListView rankListView;
+	//private ListView rankListViews;
 	private RelativeLayout invite_much;
 	private Button rank_invite_but;
 	private RelativeLayout layout_rank;
@@ -59,18 +61,16 @@ public class RankingActivity extends Activity{
 				hideProgressDialog();
 				if(msg.obj.equals("404")||msg.obj.equals("500")){
 					Toast.makeText(RankingActivity.this, "网络错误，请稍后再试", Toast.LENGTH_LONG).show();
-					
-				}else if(msg.obj.equals("403")){					
-					Toast.makeText(RankingActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("401")){					
 					FileUtil.delFile();
 					Intent intent = new Intent(RankingActivity.this,ShouYeActivity.class);
 					startActivity(intent);
+					Toast.makeText(RankingActivity.this, "帐号异地登录，请重新登录", Toast.LENGTH_LONG).show();
 					finish();
 				}else{
 					linear.setVisibility(View.VISIBLE);
 					getData();
 				}
-				
 			}
 		};
 	};
@@ -105,8 +105,6 @@ public class RankingActivity extends Activity{
 		});
 
 		mScrollView = mPullRefreshScrollView.getRefreshableView();
-		
-		
 		
 		// TODO Auto-generated method stub
 		paiming_back.setOnClickListener(new OnClickListener() {
@@ -162,17 +160,18 @@ public class RankingActivity extends Activity{
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
+				Log.i("hughzfk",rankings.get(position).getUuid()+"");
+				Log.i("hughzfk",position+"");
 				if(rankings.get(position).getSelf().equals("true")){
 					finish();
 				}else{
+				Log.i("hughzfk",rankings.get(position).getUuid()+"");
+				Log.i("hughzfk",position+"");
 				Intent intent = new Intent(RankingActivity.this,RankingStatics.class);
 				intent.putExtra("uuid", rankings.get(position).getUuid());
 				startActivity(intent);}
 			}
 		});
-		
-	
-		
 	}
 	@Override
 	public void onBackPressed() {

@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/daohang" >
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true" >
+
+            <Button
+                android:id="@+id/green_back"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/title_button_left"
+                android:background="@null"
+                android:text="@string/back"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txsize_small_xx" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/back_image" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="攻果岭"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xxx" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#1e1c27" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/daohang"
+        android:gravity="center" >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp" >
+
+            <GridView
+                android:id="@+id/major_green_qiudong"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:numColumns="2" >
+            </GridView>
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="170dp"
+                android:layout_marginTop="25dp"
+                android:background="@color/white" />
+        </FrameLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/fengexian" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/white" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="45dp" >
+
+            <TextView
+                android:id="@+id/green_shuju_scrambles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="0"
+                android:textSize="@dimen/txsize_mid_xx"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/green_shuju_percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/green_shuju_scrambles"
+                android:layout_centerHorizontal="true"
+                android:text="0%"
+                android:textSize="@dimen/txsize_small_x" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/gree_shuju"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:text="标准上果岭 "
+            android:textColor="@color/chengse"
+            android:textSize="@dimen/txsize_small_x" />
+
+        <LinearLayout
+            android:id="@+id/help_green_1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@+id/gree_shuju"
+            android:gravity="center"
+            android:onClick="onClick" >
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/help" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/par_shuju_1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="1 " />
+
+        <TextView
+            android:id="@+id/par_shuju_2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="95dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="2 " />
+
+        <TextView
+            android:id="@+id/par_shuju_3"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="3 " />
+
+        <TextView
+            android:id="@+id/par_shuju_4"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="155dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="4 " />
+
+        <TextView
+            android:id="@+id/par_shuju_5"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="185dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="5 " />
+
+        <TextView
+            android:id="@+id/par_shuju_6"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="215dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="6" />
+
+        <TextView
+            android:id="@+id/par_shuju_7"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="245dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="7" />
+
+        <TextView
+            android:id="@+id/par_shuju_8"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="275dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="8" />
+
+        <TextView
+            android:id="@+id/par_shuju_9"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="305dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="9" />
+
+        <TextView
+            android:id="@+id/par_shuju_10"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="75dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="10 " />
+
+        <TextView
+            android:id="@+id/par_shuju_11"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="95dp"
+            android:layout_marginTop="75dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="11 " />
+
+        <TextView
+            android:id="@+id/par_shuju_12"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginTop="75dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="12" />
+
+        <TextView
+            android:id="@+id/par_shuju_13"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="155dp"
+            android:layout_marginTop="75dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="13" />
+
+        <TextView
+            android:id="@+id/par_shuju_14"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="185dp"
+            android:layout_marginTop="75dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="14" />
+
+        <TextView
+            android:id="@+id/par_shuju_15"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="215dp"
+            android:layout_marginTop="75dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="15" />
+
+        <TextView
+            android:id="@+id/par_shuju_16"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="245dp"
+            android:layout_marginTop="75dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="16" />
+
+        <TextView
+            android:id="@+id/par_shuju_17"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="275dp"
+            android:layout_marginTop="75dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="17" />
+
+        <TextView
+            android:id="@+id/par_shuju_18"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="305dp"
+            android:layout_marginTop="75dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="18" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/fengexian" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/white" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="45dp" >
+
+            <TextView
+                android:id="@+id/green_shuju_scrambles_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="0"
+                android:textSize="@dimen/txsize_mid_xx"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/green_shuju_percentage_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/green_shuju_scrambles_2"
+                android:layout_centerHorizontal="true"
+                android:text="0%" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/gree_shuju_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:text="标准上果岭距离小于5码 "
+            android:textColor="@color/chengse"
+            android:textSize="@dimen/txsize_small_x" />
+
+       <LinearLayout
+            android:id="@+id/help_green_2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@+id/gree_shuju_2"
+            android:gravity="center"
+            android:onClick="onClick" >
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/help" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/par_shuju_1_2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="1 " />
+
+        <TextView
+            android:id="@+id/par_shuju_2_2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="95dp"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="2 " />
+
+        <TextView
+            android:id="@+id/par_shuju_3_2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="3 " />
+
+        <TextView
+            android:id="@+id/par_shuju_4_2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="155dp"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="4 " />
+
+        <TextView
+            android:id="@+id/par_shuju_5_2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="185dp"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="5 " />
+
+        <TextView
+            android:id="@+id/par_shuju_6_2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="215dp"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="6" />
+
+        <TextView
+            android:id="@+id/par_shuju_7_2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="245dp"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="7" />
+
+        <TextView
+            android:id="@+id/par_shuju_8_2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="275dp"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="8" />
+
+        <TextView
+            android:id="@+id/par_shuju_9_2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="305dp"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="9" />
+
+        <TextView
+            android:id="@+id/par_shuju_10_2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="10 " />
+
+        <TextView
+            android:id="@+id/par_shuju_11_2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="95dp"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="11 " />
+
+        <TextView
+            android:id="@+id/par_shuju_12_2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="12" />
+
+        <TextView
+            android:id="@+id/par_shuju_13_2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="155dp"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="13" />
+
+        <TextView
+            android:id="@+id/par_shuju_14_2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="185dp"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="14" />
+
+        <TextView
+            android:id="@+id/par_shuju_15_2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="215dp"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="15" />
+
+        <TextView
+            android:id="@+id/par_shuju_16_2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="245dp"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="16" />
+
+        <TextView
+            android:id="@+id/par_shuju_17_2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="275dp"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="17" />
+
+        <TextView
+            android:id="@+id/par_shuju_18_2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="305dp"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/jfk_xiaoyu"
+            android:gravity="center"
+            android:text="18" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/fengexian" />
+
+</LinearLayout><!-- From: file:/D:/workspace/GolfAndroid/res/layout/activity_green.xml -->

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/GolfAndroid.iml" filepath="$PROJECT_DIR$/GolfAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SlideSwitch/SlideSwitch.iml" filepath="$PROJECT_DIR$/SlideSwitch/SlideSwitch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library_userimg/library_userimg.iml" filepath="$PROJECT_DIR$/library_userimg/library_userimg.iml" />
+    </modules>
+  </component>
+</project>

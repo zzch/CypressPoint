@@ -90,14 +90,8 @@ public class GanCountActivity extends Activity {
 			intent.putExtra("xiaoniao2", "xiaoniao2");
 			startActivity(intent);
 			break;
-			
-		
 		}
 	}
-	
-	
-   
-	  
 	private void initView() {
 		
 		
@@ -116,7 +110,6 @@ public class GanCountActivity extends Activity {
 		public void run() {
 			super.run();
 			getData();
-			
 		}
 		
 		public void getData(){
@@ -133,14 +126,12 @@ public class GanCountActivity extends Activity {
 				double_bogey = jsonObject09.getString("double_bogey_percentage");
 				par = jsonObject09.getString("par_percentage");
 				bounce = jsonObject09.getString("bounce");
-				
 				Message msg = handler.obtainMessage();
 				msg.what = 1;
 				handler.sendMessage(msg);
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
-			
 		}
 	}
 }

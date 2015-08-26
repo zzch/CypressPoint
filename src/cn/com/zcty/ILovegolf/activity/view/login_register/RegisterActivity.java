@@ -31,7 +31,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.view.HomePageActivity;
-import cn.com.zcty.ILovegolf.activity.view.login_register.ForGetPasswordActivity.RegisterTask;
+
 import cn.com.zcty.ILovegolf.tools.RegexMobile;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
@@ -62,6 +62,7 @@ public class RegisterActivity extends Activity {
      private String yanzhengJson;
      private String phone;
      private boolean dianji;
+     private String m_mobile;
 	Handler handler = new Handler(){
 
 		@Override
@@ -69,14 +70,14 @@ public class RegisterActivity extends Activity {
 			switch(msg.what){
 			case 8:
 				Toast.makeText(RegisterActivity.this, message, Toast.LENGTH_LONG).show();
-
+				break;
 			case 6:
 				Log.i("regist", msg.obj+"ffffff");
 				if(msg.obj==null){
 					new MyTask_().start();
 				}else{
 				if(msg.obj.toString().equals("404")||msg.obj.toString().equals("500")){
-					Toast.makeText(RegisterActivity.this, "网络异常！", Toast.LENGTH_LONG).show();
+					Toast.makeText(RegisterActivity.this, "网络异常！", Toast.LENGTH_SHORT).show();
 				}else {
 						//弹出一个Dialog
 						//fristdialog();
@@ -94,18 +95,14 @@ public class RegisterActivity extends Activity {
 					
 				break;
 			case 5:
-				
-				
 				if(msg.obj.equals("404")||msg.obj.equals("500")){
-					Toast.makeText(RegisterActivity.this, "网络异常！", Toast.LENGTH_LONG).show();
+					Toast.makeText(RegisterActivity.this, "网络异常！", Toast.LENGTH_SHORT).show();
 				}else {
-						//弹出一个Dialog
-						//fristdialog();
 						if(yanzhengResut==null){
 							yanzhengJson = (String) msg.obj;
 							new RegisterTask_().start();
 						}else{
-							Toast.makeText(RegisterActivity.this, "已将验证码成功发送至您的手机！", Toast.LENGTH_LONG).show();
+							Toast.makeText(RegisterActivity.this, "已将验证码成功发送至您的手机！", Toast.LENGTH_SHORT).show();
 							
 						}
 						
@@ -159,11 +156,13 @@ public class RegisterActivity extends Activity {
 	}
 	
 	public void setEdittext(EditText t){
-		t.setInputType(InputType.TYPE_CLASS_PHONE);//只能输入电话号码
-		t.setInputType(InputType.TYPE_CLASS_NUMBER);//只能输入数字
-		t.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);//只能输入邮箱地址
+		t.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+		//t.setInputType(InputType.TYPE_CLASS_PHONE);//只能输入电话号码
+		//t.setInputType(InputType.TYPE_CLASS_NUMBER);//只能输入数字
+		//t.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);//只能输入邮箱地址
 	}
 	public void setNumberEditext(EditText t){
+		
 		 t.setInputType(EditorInfo.TYPE_CLASS_PHONE);
          t.setInputType(EditorInfo.TYPE_CLASS_PHONE);
 
@@ -181,18 +180,17 @@ public class RegisterActivity extends Activity {
 	 * @param v
 	 */
 	public void on_yanzhengma(View v){
+		   
 			phone = et_mobile_reg.getText().toString().trim();
 			if(isMobileNO(phone)){
 				if(!dianji){
 					dianji = true;
 					//倒计时
 				     daojishi.start(); 
-					new	RegisterTask().start();
+					new	RegisterTask().start();					
 				}
-				
-				
 			}else{
-				Toast.makeText(RegisterActivity.this, "输入手机格式不对", Toast.LENGTH_LONG).show();
+				Toast.makeText(RegisterActivity.this, "手机号为空或手机格式错误！", Toast.LENGTH_LONG).show();
 
 			}
 				
@@ -260,36 +258,27 @@ public class RegisterActivity extends Activity {
 	}
 	//点击注册按钮
     public void on_but_zhuce(View v){
-    	
     	 String mobilename= et_mobile_reg.getText().toString().trim();
 		 String mima = et_password_reg.getText().toString().trim();
 		 String querenmima = et_confirm_password.getText().toString().trim();
 		 String yanzheng  = et_yanzhengma_reg.getText().toString().trim();
 		 if("".equals(mobilename))
 			{
-			 Toast.makeText(RegisterActivity.this, "用户名不能为空！", Toast.LENGTH_LONG).show();
+			 Toast.makeText(RegisterActivity.this, "用户名不能为空！", Toast.LENGTH_SHORT).show();
 			}else if(!RegexMobile.VildateMobile(mobilename)){
-				Toast.makeText(RegisterActivity.this, "用户名不合法！", Toast.LENGTH_LONG).show();
-			}else if("".equals(mima)){
-				 Toast.makeText(RegisterActivity.this, "密码不能为空！", Toast.LENGTH_LONG).show();
-              
+				Toast.makeText(RegisterActivity.this, "用户名不合法！", Toast.LENGTH_SHORT).show();
+			}else if("".equals(mima)||mima.length()<6||mima.length()>15){
+				 Toast.makeText(RegisterActivity.this, "密码必须大于6位，小于15位！", Toast.LENGTH_SHORT).show();
 			}else if("".equals(querenmima)){
-				 Toast.makeText(RegisterActivity.this, "确认密码不能为空！", Toast.LENGTH_LONG).show();
+				 Toast.makeText(RegisterActivity.this, "确认密码不能为空！", Toast.LENGTH_SHORT).show();
+		    }else if(!mima.equals(querenmima)){
+				 Toast.makeText(RegisterActivity.this, "确认密码与密码不一致！", Toast.LENGTH_SHORT).show();  
+			}else if("".equals(yanzheng)){
+	  			 Toast.makeText(RegisterActivity.this, "验证码不能为空！", Toast.LENGTH_SHORT).show();
+            }else{
+			     new MyTask().start();
 
-	              
-	              
-		  }else if(!mima.equals(querenmima)){
-				 Toast.makeText(RegisterActivity.this, "确认密码与密码不一致！", Toast.LENGTH_LONG).show();
-
-	              
-			}
-	            else if("".equals(yanzheng)){
-	  				Toast.makeText(RegisterActivity.this, "验证码不能为空！", Toast.LENGTH_LONG).show();
-    
-		}else{
-			new MyTask().start();
-
-		}
+		    }
 		 
        }
     
@@ -302,7 +291,7 @@ public class RegisterActivity extends Activity {
     	public void getregister(){
     		//向服务器发送注册数据
 			
-			String m_mobile = et_mobile_reg.getText().toString().trim();
+			m_mobile = et_mobile_reg.getText().toString().trim();
 			String p_password = et_password_reg.getText().toString().trim();
 			String confirm_password = et_confirm_password.getText().toString().trim();
 			String y_yanzhengma = et_yanzhengma_reg.getText().toString().trim();
@@ -360,6 +349,7 @@ public class RegisterActivity extends Activity {
 		try {
 			JSONObject obj = new JSONObject(registerData);
 			message = obj.getString("message");
+			Log.i("message--", message);
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}

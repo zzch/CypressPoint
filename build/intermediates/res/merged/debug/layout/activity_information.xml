@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:gravity="center_horizontal"
+    android:id="@+id/linear"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/daohang" >
+
+        <FrameLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            >
+
+        <Button
+            android:id="@+id/information_back"
+            android:layout_width="80dp"
+           android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/title_button_left"
+            android:background="@null"
+            android:text="@string/back"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xx"  />
+         <ImageView
+           android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_image" />
+		</FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/myself"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xxx"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+         
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                android:layout_marginTop="@dimen/shouye_login_top"
+                />
+
+            <RelativeLayout
+                android:id="@+id/information_head_image"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                
+                
+                android:background="@color/white"
+                android:gravity="center_vertical" >
+
+                <cn.com.zcty.ILovegolf.tools.CircleImageView
+                    android:id="@+id/information_head"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/shouye_login_top"
+                    android:src="@drawable/hugh" />
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="@dimen/view_small_xx"
+                    android:layout_height="@dimen/view_small_xx"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/infor_view_xx"
+                    android:src="@drawable/icon_arrow" />
+
+                <TextView
+                    android:id="@+id/information_tishi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/information_head"
+                    android:text="更换头像"
+                    android:textColor="@color/hei2"
+                    android:textSize="@dimen/txsize_mid_x" />
+            </RelativeLayout>
+
+             <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:text="  名称"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/hei5"
+                    android:textSize="@dimen/txsize_small_xxx" />
+
+                  <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"/>
+                  
+                   <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="@dimen/view_mid_xx_title"
+                  android:gravity="center_vertical"
+                  android:background="@color/white"
+                  >
+                  
+                  
+                <EditText
+                    android:id="@+id/information_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:background="@color/white"
+                    android:layout_marginLeft="15dp"
+                    android:text="vhhjkvv "
+                    android:textColor="@color/hei2" 
+                    android:singleLine="true"
+                    />
+               
+          
+                </LinearLayout>
+
+            <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:text="  性别"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/hei5"
+                    android:textSize="@dimen/txsize_small_xxx" />
+                
+                 <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                />
+  
+              <LinearLayout
+                  android:id="@+id/layout_sex"
+                  android:layout_width="match_parent"
+                  android:layout_height="@dimen/view_mid_xx_title"
+                  android:gravity="center_vertical"
+                  android:background="@color/white"
+                  
+                  
+                  android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/information_sex"
+                    android:layout_width="@dimen/infor_view_width"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:layout_marginLeft="15dp"
+                   android:gravity="center_vertical"
+                    android:text="男"
+                    android:textColor="@color/hei2"
+                    android:textSize="@dimen/txsize_small_xx" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="@dimen/view_small_xx"
+                    android:layout_height="@dimen/view_small_xx"
+                    android:layout_marginLeft="35dp"
+                    android:src="@drawable/image_icon" />
+
+            </LinearLayout>
+               <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                />
+               
+               
+          
+            <cn.com.zcty.ILovegolf.tools.WheelView
+                android:id="@+id/information_sex_wheel"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:onClick="onClick"
+                android:visibility="gone" />
+            
+            
+            
+                  
+          <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  >
+                 <View 
+                android:id="@+id/view_1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:text="  生日"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/hei5"
+                    android:textSize="@dimen/txsize_small_xxx" />
+                
+                 <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                />
+           
+                <LinearLayout
+                    android:id="@+id/layout_brithday"
+                  android:layout_width="match_parent"
+                  android:layout_height="@dimen/view_mid_xx_title"
+                  android:gravity="center_vertical"
+                  android:background="@color/white"
+                 
+                  android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/information_brithday"
+                    android:layout_width="@dimen/infor_view_width"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:layout_marginLeft="10dp"                   
+                    android:gravity="center_vertical"
+                    android:text=" 1980-1-1"
+                    android:textColor="@color/hei2"
+                    android:textSize="@dimen/txsize_small_xx" />
+             
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="@dimen/view_small_xx"
+                    android:layout_height="@dimen/view_small_xx"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/information_brithday"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/image_icon" />
+           
+                 </LinearLayout>
+                  <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                />
+              </LinearLayout>
+            <LinearLayout
+                android:id="@+id/information_brithday_wheel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <cn.com.zcty.ILovegolf.tools.WheelView
+                    android:id="@+id/information_brithday_wheel_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="170dp"
+                    android:layout_weight="1" />
+
+                <cn.com.zcty.ILovegolf.tools.WheelView
+                    android:id="@+id/information_brithday_wheel_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="170dp"
+                    android:layout_weight="1" />
+
+                <cn.com.zcty.ILovegolf.tools.WheelView
+                    android:id="@+id/information_brithday_wheel_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="170dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+           
+                <View 
+                    android:id="@+id/view_2"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:text="  年龄"
+                     android:gravity="center_vertical"
+                    android:textColor="@color/hei5"
+                    android:textSize="@dimen/txsize_small_xxx" />
+                 <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                />
+                
+             <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="@dimen/view_mid_xx_title"
+                  android:gravity="center_vertical"
+                  android:background="@color/white"
+                  
+                 
+                  android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/information_year"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:layout_marginLeft="15dp"
+                    android:gravity="center_vertical"
+                    android:text="24"
+                    android:textColor="@color/hei2"
+                    android:textSize="@dimen/txsize_small_xx" />
+
+               
+             </LinearLayout>
+
+           
+
+                <TextView
+                    android:layout_width="wrap_content"
+                   android:layout_height="@dimen/view_mid_xx_title"
+                    android:text="  地区"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/hei5"
+                    android:visibility="gone"
+                    android:textSize="@dimen/txsize_small_xxx" />
+
+                <LinearLayout
+                  android:layout_width="@dimen/infor_view_layout"
+                  android:layout_height="@dimen/view_mid_xx_title"
+                  android:gravity="center_vertical"
+                  android:background="@drawable/button_moreng"
+                  android:layout_marginLeft="5dp"
+                  android:layout_marginTop="5dp"
+                  android:visibility="gone"
+                  android:orientation="horizontal" >
+                <TextView
+                    android:id="@+id/information_area"
+                   android:layout_width="@dimen/infor_view_width"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:gravity="center"
+                    android:layout_marginLeft="15dp"
+                    android:text="北京市-海淀区"
+                    android:textColor="@color/hei2"
+                    android:textSize="@dimen/txsize_small_xx"
+                    android:maxEms="15" 
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                     />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="@dimen/view_small_xx"
+                    android:layout_height="@dimen/view_small_xx"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/information_area"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/image_icon" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/information_area_wheel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <cn.com.zcty.ILovegolf.tools.WheelView
+                    android:id="@+id/information_brithday_area_qu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="170dp"
+                    android:layout_weight="1" />
+
+                <cn.com.zcty.ILovegolf.tools.WheelView
+                    android:id="@+id/information_brithday_area_shi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="170dp"
+                    android:layout_weight="1" />
+
+                <cn.com.zcty.ILovegolf.tools.WheelView
+                    android:id="@+id/information_brithday_area_xian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="170dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+             <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:text="  签名"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/hei5"
+                    android:textSize="@dimen/txsize_small_xxx" />
+                
+                 <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                />
+                
+                 <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="80dp"
+                  android:gravity="center_vertical"
+                  android:background="@color/white"
+                  android:orientation="vertical" >
+
+                <EditText
+                    android:id="@+id/information_qianming"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:background="@null"
+                    android:hint="请设置您的个性签名"
+                    android:textColorHint="@null"
+                    android:textColor="@color/hei2"
+                    android:textSize="@dimen/txsize_small_xx" />
+              
+             </LinearLayout>
+               <View 
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" 
+                android:background="@color/fengexian"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout><!-- From: file:/D:/workspace/GolfAndroid/res/layout/activity_information.xml -->

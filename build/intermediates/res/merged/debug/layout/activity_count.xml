@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:id="@+id/linear"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+         android:layout_height="@dimen/title_height"
+        android:background="@color/daohang" >
+        
+        
+        <FrameLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            >
+		<Button
+                android:id="@+id/k_back"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/title_button_left"
+                android:background="@null"
+                android:onClick="onClick"
+                android:text="@string/back"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txsize_small_xx" />
+		
+		 <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_image" />
+		</FrameLayout>
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="技术统计"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xxx"/>
+
+        <Button
+            android:id="@+id/count_start"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="-10dp"
+            android:background="@null"
+            android:text="@string/count_fenxi"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xx" />
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/gridView1"
+        android:layout_width="@dimen/view_sss_ee"
+        android:layout_height="130dp"
+        android:background="@drawable/gridview_bg"
+        android:layout_marginTop="@dimen/infor_view_x"
+        android:listSelector="@android:color/transparent" 
+        android:gravity="center"
+        android:numColumns="2" >
+    </GridView>
+    
+    <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                   
+                    android:layout_marginTop="15dp"
+                    android:text="@string/count_avg"
+                    android:textSize="18dp"
+                    android:textColor="@color/hei5" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+      
+        >
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/count_frame" 
+            android:layout_marginTop="@dimen/count_frame_top"
+            >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/count_image"
+                    android:layout_width="@dimen/view_count_size"
+                    android:layout_height="@dimen/view_count_size"
+                    android:layout_marginLeft="@dimen/count_image_left"
+                    android:layout_marginTop="@dimen/count_image_top"
+                    android:src="@drawable/white" />
+            </RelativeLayout>
+
+            <cn.com.zcty.ILovegolf.tools.ChartView
+                android:id="@+id/chartView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/count_ccc" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:layout_width="@dimen/count_orange_size"
+                    android:layout_height="@dimen/count_orange_size"
+                    android:layout_marginLeft="@dimen/count_orange_left"
+                    android:layout_marginTop="@dimen/count_orange_top"
+                    android:src="@drawable/orange" />
+            </RelativeLayout>
+
+          
+
+                <TextView
+                    android:id="@+id/count_average"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginLeft="@dimen/count_text_left"
+                    android:layout_marginTop="@dimen/count_text_top"
+                    android:textSize="20dp"
+                    android:textColor="@color/chengse" />
+
+                
+          
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_sss_f" >
+
+            <RelativeLayout
+                android:id="@+id/re1"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_sss_ff" >
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    android:src="@drawable/icon_xintianwen" />
+
+                <TextView
+                    android:id="@+id/double_eagle_percentage"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:gravity="center"
+                    android:text="10%"
+                    android:textColor="@color/hei2"
+                    android:textSize="@dimen/txsize_small_xxx" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/xintianwen"
+                    android:textColor="@color/hei5"
+                    android:textSize="@dimen/txsize_small_x" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/re2"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_sss_fff" >
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                   android:src="@drawable/icon_biaozhungan"
+                    />
+
+                <TextView
+                    android:id="@+id/par"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="10%"
+                    android:gravity="center"
+                    android:textColor="@color/hei2"
+                    android:textSize="@dimen/txsize_small_xxx" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/biaozhungan"
+                    android:textColor="@color/hei5"
+                    android:textSize="@dimen/txsize_small_x" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/re3"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/re1"
+                android:layout_marginLeft="@dimen/view_sss_ff"
+                android:layout_marginTop="@dimen/view_Layout_x" >
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    android:src="@drawable/icon_laoying" />
+
+                <TextView
+                    android:id="@+id/eagle"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="10%"
+                    android:gravity="center"
+                    android:textColor="@color/hei2"
+                    android:textSize="@dimen/txsize_small_xxx" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/laoyin"
+                    android:textColor="@color/hei5"
+                    android:textSize="@dimen/txsize_small_x" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/re4"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/re2"
+                android:layout_marginLeft="@dimen/view_sss_fff"
+                android:layout_marginTop="@dimen/view_Layout_x" >
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                     android:src="@drawable/icon_baiji"
+                    />
+
+                <TextView
+                    
+                    android:id="@+id/bogey"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:gravity="center"
+                    android:text="10%"
+                    android:textColor="@color/hei2"
+                    android:textSize="@dimen/txsize_small_xxx" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="3dp"
+                   
+                     android:text="@string/baiji"
+                    android:textColor="@color/hei5"
+                    android:textSize="@dimen/txsize_small_x" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/re5"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/re3"
+                android:layout_marginLeft="@dimen/view_sss_ff"
+                android:layout_marginTop="@dimen/view_Layout_x" >
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    android:src="@drawable/icon_xiaoniao" />
+
+                <TextView
+                    android:id="@+id/birdie"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:gravity="center"
+                    android:text="10%"
+                    android:textColor="@color/hei2"
+                    android:textSize="@dimen/txsize_small_xxx" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/xiaoniao"
+                    android:textColor="@color/hei5"
+                    android:textSize="@dimen/txsize_small_x" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/re6"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/re4"
+                android:layout_marginLeft="@dimen/view_sss_fff"
+                android:layout_marginTop="@dimen/view_Layout_x" >
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                     android:src="@drawable/icon_shuangboji"
+                    />
+
+                <TextView
+                    
+                    android:id="@+id/double_bogey"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:gravity="center"
+                    android:text="10%"
+                    android:textColor="@color/hei2"
+                    android:textSize="@dimen/txsize_small_xxx" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/shuangbaijijia"
+                    android:textColor="@color/hei5"
+                    android:textSize="@dimen/txsize_small_x" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout><!-- From: file:/D:/workspace/GolfAndroid/res/layout/activity_count.xml -->

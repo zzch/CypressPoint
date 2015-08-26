@@ -39,7 +39,7 @@
         android:layout_weight="1"
         android:textSize="18dp"
         android:textColor="@color/hei2" 
-        android:text="1" />
+        android:text="球道" />
 
     <TextView
         android:id="@+id/major_pentails_item"
@@ -49,7 +49,7 @@
         android:layout_weight="1"
         android:textSize="22dp"
         android:textColor="@color/hei2" 
-        android:text="1" />
+        android:text="0" />
 
     <TextView
         android:id="@+id/major_count_item"

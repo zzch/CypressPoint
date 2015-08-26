@@ -51,6 +51,8 @@ public  class QuickScoreAdapter extends BaseAdapter {
 		if(convertView == null){
 			convertView = mInflater.inflate(R.layout.quick_score_item, null); 
 			holder = new ViewHolder();
+			holder.image_fanzhu =(ImageView) convertView.findViewById(R.id.image_fanzhu);
+			holder.image_type =(ImageView) convertView.findViewById(R.id.image_type);
 			//holder.xlist_item_relayout = (LinearLayout) view.findViewById(R.id.xlist_item_relayout);
 			//球场名称
 			holder.kpitname=(TextView) convertView.findViewById(R.id.kpitname);     
@@ -90,6 +92,18 @@ public  class QuickScoreAdapter extends BaseAdapter {
 			holder.Pole_number.setTextSize(33);
 			holder.Pole_number.setText(quickContents.get(position).getScore()); 
 		}
+		if(quickContents.get(position).getScoring_type().equals("simple")){
+			holder.image_type.setBackgroundResource(R.drawable.fz_jian);
+		}else{
+			holder.image_type.setBackgroundResource(R.drawable.fz_zhuan);
+		}
+		if(quickContents.get(position).getOwend().equals("true")){
+			Log.i("fangzhu", quickContents.get(position).getOwend());
+			holder.image_fanzhu.setVisibility(View.VISIBLE);
+			holder.image_fanzhu.setBackgroundResource(R.drawable.xing_fz);
+		}else{
+			holder.image_fanzhu.setVisibility(View.GONE);
+		}
 		
 		return convertView;
 	}
@@ -103,7 +117,9 @@ public  class QuickScoreAdapter extends BaseAdapter {
 		public ViewGroup deleteHolder;
 		public ImageView coating;
 		public TextView functions;
-		//public ImageView image_1;
+		
+		public ImageView image_fanzhu;
+		public ImageView image_type;
 		//LinearLayout xlist_item_relayout;
 
 	}

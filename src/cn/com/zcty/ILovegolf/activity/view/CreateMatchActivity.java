@@ -129,8 +129,8 @@ public class CreateMatchActivity extends Activity {
 				if(msg.obj.equals("404")||msg.obj.equals("500")){
 					Toast.makeText(CreateMatchActivity.this, "网络错误，请稍后再试", Toast.LENGTH_LONG).show();
 				
-				}else if(msg.obj.equals("403")){
-					Toast.makeText(CreateMatchActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("401")){
+					Toast.makeText(CreateMatchActivity.this, "帐号异地登录，请重新登录", Toast.LENGTH_LONG).show();
 					FileUtil.delFile();
 					Intent intent = new Intent(CreateMatchActivity.this,ShouYeActivity.class);
 					startActivity(intent);

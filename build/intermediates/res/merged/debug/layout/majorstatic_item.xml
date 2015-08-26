@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/view_image_xx"
+    android:background="@color/white"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        android:id="@+id/majorstatic_image_item_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/view_image_b" >
+
+        <ImageView
+            android:id="@+id/majorstatic_image_item"
+            android:layout_width="@dimen/view_image_a"
+            android:layout_height="@dimen/view_image_b"
+            android:src="@drawable/zongchengji_icon_1" />
+    </FrameLayout>
+
+    
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="140dp"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/majorstatic_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:text="总成绩"
+                android:textColor="@color/hei2"
+                android:textSize="@dimen/txsize_small_x" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="30dp"
+            android:orientation="horizontal"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/majorstatic_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+               android:layout_marginLeft="@dimen/view_sss_d"
+                android:text="总杆"
+               android:layout_centerVertical="true"
+                android:textColor="@color/hei2"
+                android:textSize="@dimen/txsize_small_s" />
+
+            <TextView
+                android:id="@+id/majorstatic_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="90dp"
+                android:layout_centerVertical="true"
+                android:text="134"
+                android:textColor="@color/chengse"
+                android:textSize="@dimen/txsize_mid_x"
+                android:textStyle="bold"
+                 />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="30dp"
+            android:orientation="horizontal" 
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/majorstatic_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/view_sss_d"
+                android:layout_centerVertical="true"
+                android:text="推杆"
+                android:textColor="@color/hei2"
+                android:textSize="@dimen/txsize_small_s" />
+
+            <TextView
+                android:id="@+id/majorstatic_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="90dp"
+                android:layout_centerVertical="true"
+                android:text="135"
+                android:textColor="@color/chengse"
+                android:textSize="@dimen/txsize_mid_x"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="30dp" >
+
+            <TextView
+                android:id="@+id/majorstatic_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_sss_d"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="净杆"
+                android:textColor="@color/hei2"
+                android:textSize="@dimen/txsize_small_s" />
+
+            <TextView
+                android:id="@+id/majorstatic_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                
+                 android:layout_alignParentLeft="true"
+                android:layout_marginLeft="90dp"
+                 android:layout_centerVertical="true"
+                android:text="134"
+                android:textColor="@color/chengse"
+                android:textSize="@dimen/txsize_mid_x"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/guide"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/linearLayout2"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="32dp"
+        android:src="@drawable/icon_arrow" />
+
+</RelativeLayout><!-- From: file:/D:/workspace/GolfAndroid/res/layout/majorstatic_item.xml -->

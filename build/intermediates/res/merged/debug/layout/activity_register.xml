@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/bg"
+    android:gravity="center_horizontal"
+   >
+
+  <RelativeLayout
+        android:layout_width="match_parent"
+         android:layout_height="@dimen/title_height"
+         android:background="@color/daohang"  >
+		
+		  
+		    <FrameLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            
+            >
+          <Button
+            android:id="@+id/fanhui"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/title_button_left"
+            android:background="@null"
+            android:text="@string/back"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xx" 
+            android:onClick="choosepith_back" />
+         <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_image"  />
+		</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="注 册"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xxx"/>
+
+    </RelativeLayout>
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <RelativeLayout 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <LinearLayout 
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:focusable="true"
+                android:gravity="center_horizontal"
+                android:focusableInTouchMode="true"
+                >
+     <LinearLayout 
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:background="@null"
+      android:gravity="center"
+       android:layout_marginTop="50dip"
+      >
+  
+           <EditText 
+           android:id="@+id/et_mobile_reg"
+           android:layout_width="@dimen/register_view_width"
+           android:layout_height="@dimen/view_mid_xx_title"
+           android:hint=" 请输入手机号"
+           android:textColor="@color/hei5"
+           android:lines="1"
+           android:singleLine="true" 
+           android:textColorHint="@color/fengexian"
+           android:background="@drawable/wenbenkuang"
+          
+             />
+  </LinearLayout>
+  
+      <LinearLayout 
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:background="@null"
+       android:gravity="center"
+       android:layout_marginTop="25dip"
+      >
+
+          
+           <EditText 
+           android:id="@+id/et_password_reg"
+            android:layout_width="@dimen/register_view_width"
+            android:layout_height="@dimen/view_mid_xx_title"
+            android:background="@drawable/wenbenkuang"
+            android:ellipsize="end"
+            android:hint=" 至少六位密码"
+            android:inputType="textPassword"
+            android:textColor="@color/hei5"
+            android:singleLine="true" 
+            android:textColorHint="@color/fengexian" 
+             />
+           
+  </LinearLayout>
+  
+      
+       <LinearLayout 
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:background="@null"
+       android:gravity="center"
+       android:layout_marginTop="25dp"
+      >
+         
+          
+           <EditText 
+           android:id="@+id/et_confirm_password"
+           android:layout_width="@dimen/register_view_width"
+            android:layout_height="@dimen/view_mid_xx_title"
+            android:background="@drawable/wenbenkuang"
+           
+            android:hint=" 请确认您的密码"
+           
+            android:inputType="textPassword"
+            android:textColor="@color/hei5"
+            android:singleLine="true" 
+            android:textColorHint="@color/fengexian" 
+             />
+           
+  </LinearLayout>
+      
+  
+       <LinearLayout 
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:background="@null"
+     android:gravity="center_vertical"
+       android:layout_marginTop="25dip"
+      >
+          
+           <EditText 
+           android:id="@+id/et_yanzhengma_reg"
+           android:layout_width="@dimen/register_view_yanzhen"
+           android:layout_height="@dimen/view_mid_xx_title"
+           android:background="@drawable/wenbenkuang"
+           android:hint=" 验证码"
+           android:lines="1"
+           android:textColor="@color/hei5"
+           android:layout_marginLeft="@dimen/zhuce_left"
+           android:textColorHint="@color/fengexian"
+           android:singleLine="true" 
+             />
+           <Button 
+           android:id="@+id/but_getyanzhengma"
+           android:layout_width="@dimen/register_view_huoquyanzhen"
+           android:layout_height="@dimen/view_sss_e"
+           android:text="获取验证码" 
+           android:gravity="center"
+           android:textSize="@dimen/txsize_small_x"
+           android:textColor="@color/hei2"
+           android:layout_marginLeft="10dp"
+           android:background="@drawable/shurukuang"
+           android:onClick="on_yanzhengma"
+          />
+  
+       
+  </LinearLayout>
+
+         <Button 
+           android:id="@+id/but_zhuce"
+           android:layout_width="@dimen/register_view_width"
+           android:layout_height="@dimen/button_height"
+           android:text="注 册"
+           android:layout_marginTop="60dp"
+           android:onClick="on_but_zhuce"
+           android:gravity="center"
+           android:textSize="@dimen/txsize_small_xxx"
+           android:textColor="@color/bg"
+           android:background="@drawable/button"
+          />
+         </LinearLayout>
+        </RelativeLayout>
+        </ScrollView>
+</LinearLayout><!-- From: file:/D:/workspace/GolfAndroid/res/layout/activity_register.xml -->

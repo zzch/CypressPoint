@@ -66,8 +66,8 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 				if(msg.obj.equals("404")||msg.obj.equals("500")){
 					hideProgressDialog();
 					Toast.makeText(MajorStatisticsActivity.this, "网络错误，请稍后再试", Toast.LENGTH_LONG).show();
-				}else if(msg.obj.equals("403")){
-					Toast.makeText(MajorStatisticsActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("401")){
+					Toast.makeText(MajorStatisticsActivity.this, "帐号异地登录，请重新登录", Toast.LENGTH_LONG).show();
 					FileUtil.delFile();
 					Intent intent = new Intent(MajorStatisticsActivity.this,ShouYeActivity.class);
 					startActivity(intent);
@@ -318,12 +318,14 @@ public class MajorStatisticsActivity extends Activity implements OnClickListener
 				statistics06.setPlace7("未命中");
 				statisticsModels.add(statistics06);
 				JSONObject jsonObject07 = new JSONObject(jsonObject.getString("item_07"));
+				Log.i("tiancaishiwo", jsonObject.getString("item_07"));
 				MajorStatisticsModel statistics07 = new MajorStatisticsModel();
 				statistics07.setPlace1("球道命中");
 				Log.i("tiancaishiwo", jsonObject07.getString("drive_fairways_hit"));
 				statistics07.setPlace2(jsonObject07.getString("drive_fairways_hit"));
 				
 				statistics07.setPlace3(jsonObject07.getString("drive_left_roughs_hit"));
+				Log.i("tiancaishiwo", jsonObject07.getString("drive_left_roughs_hit")+"dd");
 				statistics07.setPlace4(jsonObject07.getString("drive_right_roughs_hit"));
 				statistics07.setPlace5("命中");
 				statistics07.setPlace6("左侧");

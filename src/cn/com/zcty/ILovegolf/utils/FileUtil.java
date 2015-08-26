@@ -8,11 +8,13 @@ import java.lang.ref.WeakReference;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.renderscript.Allocation;
 import android.renderscript.Element;
 import android.renderscript.RenderScript;
@@ -26,6 +28,7 @@ import android.widget.RelativeLayout;
  *
  */
 public class FileUtil {
+	
 	/**
 	 * 删除文件
 	 */
@@ -110,7 +113,6 @@ public class FileUtil {
           if(!f.exists()){
 
                      return false;
-
              }
 
              return true;
@@ -235,4 +237,7 @@ public class FileUtil {
 					bitmap.getWidth(), bitmap.getHeight(), matrix, true);  
 			return resizedBitmap;  
 		}
+		
+		
+		
 }

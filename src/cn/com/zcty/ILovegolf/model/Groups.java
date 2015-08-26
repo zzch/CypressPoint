@@ -4,25 +4,25 @@ import java.util.List;
 
 public class Groups {
 	/**
-	 * Ã¿×éµÄuuid
+	 * æ¯ç»„çš„uuid
 	 */
 	private String uuid;
 	/**
-	 * Çò³¡Ãû³Æ
+	 * çƒåœºåç§°
 	 */
 	private String name;
 	/**
-	 * Çò¶´
+	 * çƒæ´
 	 */
 	private String holes_count;
 	/**
-	 * TÌ¨
+	 * Tå°
 	 */
 	private String tee_boxes;
-	
+
 	public Groups(){}
 
-	
+
 
 	public Groups(String uuid, String name, String holes_count, String tee_boxes) {
 		super();
@@ -68,8 +68,8 @@ public class Groups {
 		this.tee_boxes = tee_boxes;
 	}
 
-	
 
-	
-	
+
+
+
 }

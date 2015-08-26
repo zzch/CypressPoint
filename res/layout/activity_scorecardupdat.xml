@@ -16,10 +16,10 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="@string/chooisepith"
+            android:text="修改记分卡"
             android:layout_marginTop="10dp"
             android:textColor="@color/white"
-            android:textSize="@dimen/txsize_mid_x"
+            android:textSize="@dimen/txsize_small_xxx"
              />
          
          
@@ -31,7 +31,7 @@
         <Button
             android:id="@+id/scorecard_cancel"
             android:layout_width="80dp"
-            android:layout_height="47dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="@dimen/title_button_left"
             android:background="@null"
             android:text="@string/back"
@@ -40,7 +40,7 @@
          <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="10dp"
             android:src="@drawable/back_image"  />
 		</FrameLayout>
@@ -62,6 +62,57 @@
            />
 
      </RelativeLayout>
+     
+   
+     <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#1e1c27"
+        />
+   <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp" 
+         android:background="@color/daohang"
+        >
+
+        <TextView
+            android:id="@+id/score_par"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="4标准杆"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/score_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/score_par"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="70dp"
+            android:text="564码"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/score_t"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/score_distance"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="55dp"
+            android:text="黑T"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        
+
+        
+
+        
+    </RelativeLayout>
      
    
    
@@ -268,13 +319,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginLeft="@dimen/view_small_xx"
+        android:layout_marginLeft="@dimen/view_small_x"
         android:gravity="center"
            >
            <TextView 
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text="距离球洞"
+          android:text="第一杆距离球洞"
           android:textSize="@dimen/txsize_small_xx"
           android:textColor="@color/hei5"
          
@@ -296,7 +347,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
-        android:layout_marginLeft="@dimen/view_mid_xxx"
+        android:layout_marginLeft="@dimen/view_mid_xx_x"
         
         >
       

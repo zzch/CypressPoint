@@ -192,7 +192,8 @@ public class Myself extends Activity {
 				type = sp.getString("type", "type");
 				Intent intent = new Intent();
 				if(type.equals("guest")){
-					intent.setClass(Myself.this, BingDingActivity.class);
+					intent = new Intent(Myself.this, VerifyPhoneActivity.class);
+					intent.putExtra("bangding", "1");
 					startActivity(intent);
 				}else{
 					intent.setClass(Myself.this, SettingActivity.class);
@@ -209,6 +210,7 @@ public class Myself extends Activity {
 				Intent intent = new Intent(Myself.this,InformationChangesActivity.class);
 				intent.putExtra("birthday", birthday);
 				intent.putExtra("year", year);
+				intent.putExtra("gender", gender);
 				startActivity(intent);
 				//finish();
 			}
@@ -236,7 +238,9 @@ public class Myself extends Activity {
 		//settingRelativeLayout = (RelativeLayout) findViewById(R.id.myself_setting);
 		SharedPreferences sp = getSharedPreferences("register", MODE_PRIVATE);
 		String name = sp.getString("nickname", "nickname");
+		
 		nameTextView.setText(name);
+		Log.i("nick===name", name);
 	}
 	
 	class Ziliao extends Thread{
@@ -253,6 +257,7 @@ public class Myself extends Activity {
 			try {
 				JSONObject jsonObject = new JSONObject(jsonData);
 				gender = jsonObject.getString("gender");
+				Log.i("gender", gender);
 				description = jsonObject.getString("description");
 				Log.i("xihuan", description);
 				//if(jsonObject.getString("birthday").equals("null")){
@@ -292,6 +297,7 @@ public class Myself extends Activity {
 			String token=sp.getString("token", "token");
 			String path = APIService.TITLE+"token="+token;
 			String jsonData = HttpUtils.HttpClientGet(path);
+			Log.i("myself", jsonData);
 			try {
 				JSONObject jsonObject = new JSONObject(jsonData);
 				JSONObject jsObjectuser = new JSONObject(jsonObject.getString("user"));
@@ -346,9 +352,6 @@ public class Myself extends Activity {
                    progressDialog.dismiss();
            }
     }
-
-
-	
 
 
 

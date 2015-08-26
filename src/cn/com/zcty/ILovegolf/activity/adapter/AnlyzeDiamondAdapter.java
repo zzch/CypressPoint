@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class AnlyzeDiamondAdapter extends BaseAdapter{
@@ -44,6 +45,7 @@ public class AnlyzeDiamondAdapter extends BaseAdapter{
 		if(convertView==null){
 			convertView = inflater.inflate(R.layout.diamond_item, null);
 			holder = new Holder();
+			holder.image_addres = (ImageView) convertView.findViewById(R.id.image_addres);
 			holder.nameTextView = (TextView) convertView.findViewById(R.id.diamond_name);
 			holder.addressTextView = (TextView) convertView.findViewById(R.id.diamond_address);
 			holder.changciTextView = (TextView) convertView.findViewById(R.id.diamond_changci);
@@ -51,8 +53,15 @@ public class AnlyzeDiamondAdapter extends BaseAdapter{
 		}else{
 			holder = (Holder) convertView.getTag();
 		}
+		if(anDiamonds.get(position).getAddress().equals("null")){
+			holder.addressTextView.setVisibility(View.GONE);
+			holder.image_addres.setVisibility(View.GONE);
+		}else{
+			holder.image_addres.setVisibility(View.VISIBLE);
+			holder.addressTextView.setVisibility(View.VISIBLE);
+			holder.addressTextView.setText(anDiamonds.get(position).getAddress());
+		}
 		holder.nameTextView.setText(anDiamonds.get(position).getName());
-		holder.addressTextView.setText(anDiamonds.get(position).getAddress());
 		holder.changciTextView.setText(anDiamonds.get(position).getVisited_count());
 		return convertView;
 	}
@@ -60,6 +69,6 @@ public class AnlyzeDiamondAdapter extends BaseAdapter{
 		TextView nameTextView;
 		TextView addressTextView;
 		TextView changciTextView;
-		
+		ImageView image_addres;
 	}
 }

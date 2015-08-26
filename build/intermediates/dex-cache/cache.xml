@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\workspace\GolfAndroid\build\intermediates\exploded-aar\com.android.support\appcompat-v7\20.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef">
+        <dex dex="D:\workspace\GolfAndroid\build\intermediates\pre-dexed\debug\classes-926ef34ffc70991bf14eb0ea900023cea56c9dbf.jar" />
+    </item>
+    <item
+        jar="D:\android\sdk\extras\android\m2repository\com\android\support\support-annotations\20.0.0\support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa">
+        <dex dex="D:\workspace\GolfAndroid\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-fa1c07f61feec446e19d3831748a8c5252d195cc.jar" />
+    </item>
+    <item
+        jar="D:\workspace\GolfAndroid\build\intermediates\exploded-aar\GolfAndroid\library_userimg\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4f171ccae318f510ebf62a2c18ea4076402a47b2">
+        <dex dex="D:\workspace\GolfAndroid\build\intermediates\pre-dexed\debug\classes-1ff61cdb286c45b05fa8e278b334b134b904be01.jar" />
+    </item>
+    <item
+        jar="D:\workspace\GolfAndroid\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0">
+        <dex dex="D:\workspace\GolfAndroid\build\intermediates\pre-dexed\debug\classes-196f0e8bb93ec6d01fe7667d82287b5f7829ce7d.jar" />
+    </item>
+    <item
+        jar="D:\workspace\GolfAndroid\libs\commons-codec-1.6.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b7f0fc8f61ecadeb3695f0b9464755eee44374d4">
+        <dex dex="D:\workspace\GolfAndroid\build\intermediates\pre-dexed\debug\commons-codec-1.6-380d71b751183d98e7e21ad01dd7eeba79358f93.jar" />
+    </item>
+    <item
+        jar="D:\workspace\GolfAndroid\build\intermediates\exploded-aar\GolfAndroid\library\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="7c68b12692bf6db4a8b13f545323b1d526c7745e">
+        <dex dex="D:\workspace\GolfAndroid\build\intermediates\pre-dexed\debug\classes-56de640e7df2ccc8ffa2987925159e94c5c2b5b8.jar" />
+    </item>
+    <item
+        jar="D:\workspace\GolfAndroid\libs\android-async-http-1.4.5.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="77bf7cacf9cefe19dc105e5425d2eb1bb5285881">
+        <dex dex="D:\workspace\GolfAndroid\build\intermediates\pre-dexed\debug\android-async-http-1.4.5-e9864f9cb688f8501427995784ead70ece150439.jar" />
+    </item>
+    <item
+        jar="D:\workspace\GolfAndroid\libs\httpclient-cache-4.2.6.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8f80dbdf3a82e1d9d555f7ec7322b1a6507e3ee8">
+        <dex dex="D:\workspace\GolfAndroid\build\intermediates\pre-dexed\debug\httpclient-cache-4.2.6-106498b1cdf621d3c83cbecc986b422db6981dfc.jar" />
+    </item>
+    <item
+        jar="D:\workspace\GolfAndroid\build\intermediates\exploded-aar\GolfAndroid\SlideSwitch\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a9b559d2f351342a5321424eddd09713e572da21">
+        <dex dex="D:\workspace\GolfAndroid\build\intermediates\pre-dexed\debug\classes-7e7579d95e47f0220d60bcf177b3cb8fb47936e2.jar" />
+    </item>
+    <item
+        jar="D:\workspace\GolfAndroid\libs\commons-logging-1.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5043bfebc3db072ed80fbd362e7caf00e885d8ae">
+        <dex dex="D:\workspace\GolfAndroid\build\intermediates\pre-dexed\debug\commons-logging-1.1.1-79b742e4123c691004d711a6e1340e55dbf02cf3.jar" />
+    </item>
+    <item
+        jar="D:\workspace\GolfAndroid\libs\gson-2.2.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="973e832af433b44c3ed11c426f2f390b29f3f3f8">
+        <dex dex="D:\workspace\GolfAndroid\build\intermediates\pre-dexed\debug\gson-2.2.4-65431e7fe29a5ab6a723c119167b1cc47551da50.jar" />
+    </item>
+    <item
+        jar="D:\workspace\GolfAndroid\libs\locSDK_4.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8b405c3054e12d913fa5aafb160c294e642dc673">
+        <dex dex="D:\workspace\GolfAndroid\build\intermediates\pre-dexed\debug\locSDK_4.0-c54bae51a88eaf63021e4ae545892a05c5aaa582.jar" />
+    </item>
+    <item
+        jar="D:\workspace\GolfAndroid\libs\httpmime-4.2.6.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="15b713f66acc0988850b989649174add104083ed">
+        <dex dex="D:\workspace\GolfAndroid\build\intermediates\pre-dexed\debug\httpmime-4.2.6-c1ee60c0ec6d57ad72ede7f059541db815a56c72.jar" />
+    </item>
+    <item
+        jar="D:\workspace\GolfAndroid\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\jars\libs\internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d">
+        <dex dex="D:\workspace\GolfAndroid\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-aa616f19435aefaebd8795856c6a3af087e25b78.jar" />
+    </item>
+    <item
+        jar="D:\workspace\GolfAndroid\libs\easyandroidanimationslibrary-v0.5.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="81d390299222db75e62708400b299080d122b28b">
+        <dex dex="D:\workspace\GolfAndroid\build\intermediates\pre-dexed\debug\easyandroidanimationslibrary-v0.5-fe48bfc7f65edfc18543262445e0b512085a1f2c.jar" />
+    </item>
+    <item
+        jar="D:\workspace\GolfAndroid\libs\fluent-hc-4.2.6.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="43e7ff34c24fe1ace65b94b9204c7333b3628ef1">
+        <dex dex="D:\workspace\GolfAndroid\build\intermediates\pre-dexed\debug\fluent-hc-4.2.6-9b0da0006705ebfe287d9af2ee5778d70a587a9e.jar" />
+    </item>
+
+</items>

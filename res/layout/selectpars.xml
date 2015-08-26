@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp">
+
+        <RadioGroup
+            android:id="@+id/bdChooseParRdg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:id="@+id/bdChooseParRdb3"
+                android:checked="false"
+                android:text="3"
+                android:textColor="@color/white"
+                android:textSize="26dp"
+                android:button="@null"
+                android:background="@drawable/ganshuluru"
+
+                android:layout_marginTop="38dp"
+                android:gravity="center"/>
+
+            <RadioButton
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:text="4"
+                android:textColor="@color/white"
+                android:textSize="26dp"
+                android:id="@+id/bdChooseParRdb4"
+                android:checked="false"
+               android:layout_marginLeft="20dp"
+                android:button="@null"
+                android:background="@drawable/ganshuluru"
+                android:gravity="center"/>
+
+            <RadioButton
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:text="5"
+                android:textColor="@color/white"
+                android:textSize="26dp"
+                android:id="@+id/bdChooseParRdb5"
+                android:checked="false"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="38dp"
+                android:button="@null"
+                android:background="@drawable/ganshuluru"
+                android:gravity="center"/>
+        </RadioGroup>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="76dp"
+        android:layout_height="76dp"
+
+        android:id="@+id/btnBdChooseParDone"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/guanbi"
+        android:layout_marginBottom="75dp"/>
+</RelativeLayout>

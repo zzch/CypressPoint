@@ -24,50 +24,50 @@
                 >
             <TextView 
             android:id="@+id/score_t_1"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="43dp"
+            android:layout_height="42dp"
 			android:gravity="center"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="8dp"
             android:textSize="@dimen/txsize_small_a"
             android:textColor="#ffffff"
             android:text="97"
             />
             <TextView 
             android:id="@+id/score_t_2"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+           android:layout_width="43dp"
+            android:layout_height="42dp"
             android:gravity="center"
-           android:layout_marginLeft="15dp"
+           android:layout_marginLeft="8dp"
             android:textColor="#ffffff"
             android:textSize="@dimen/txsize_small_a"
             android:text="132"
             />
             <TextView 
             android:id="@+id/score_t_3"
-           android:layout_width="35dp"
-            android:layout_height="35dp"
+          android:layout_width="43dp"
+            android:layout_height="42dp"
             android:gravity="center"
-           android:layout_marginLeft="15dp"
+           android:layout_marginLeft="8dp"
             android:textSize="@dimen/txsize_small_a"
             android:textColor="#ffffff"
             android:text="184"
             />
             <TextView 
             android:id="@+id/score_t_4"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+           android:layout_width="43dp"
+            android:layout_height="42dp"
             android:gravity="center"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="8dp"
             android:textSize="@dimen/txsize_small_a"
             android:textColor="#ffffff"
             android:text="226"
             />
             <TextView 
             android:id="@+id/score_t_5"
-             android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="43dp"
+            android:layout_height="42dp"
             android:gravity="center"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="8dp"
             android:textSize="@dimen/txsize_small_a"
             android:textColor="#ffffff"
             android:text="290"
@@ -77,8 +77,8 @@
             android:layout_height="18dp"
             android:src="@drawable/icon_arrow"
             android:gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginTop="11dp"
+          
                 />
           </LinearLayout>  
         </RelativeLayout>
@@ -95,22 +95,63 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:text="1"
-                android:textStyle="bold"
                 android:textColor="@color/hei2"
                 android:textSize="@dimen/txsize_large_x" />
+            <LinearLayout 
+                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                >
 
             <TextView
                 android:id="@+id/score_par_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="45dp"
-                android:layout_centerHorizontal="true"
-                android:text="Par 3"
+                android:text="3"
                 android:textColor="@color/hei2"
-                android:textSize="@dimen/txsize_small_xx" />
-
+                android:textSize="15dp" />
+            
+             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:text="P"
+                android:textColor="@color/hei2"
+                android:textSize="10dp" />
+            
+              <TextView
+                android:id="@+id/score_distance_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:layout_marginLeft="7dp"
+                android:text="345"
+                android:textColor="@color/hei2"
+                android:textSize="15dp" />
+              
+               <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:text="Y"
+                android:textColor="@color/hei2"
+                android:textSize="10dp" />
+               
+               
+               <ImageView 
+                   android:id="@+id/t_score_1"
+                   android:layout_width="7dp"
+                   android:layout_height="7dp"
+                  
+                   android:layout_marginTop="55dp"
+                   />
+              
+              </LinearLayout>
         </RelativeLayout>
         
         
@@ -121,7 +162,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#ededed"
-        android:visibility="gone"
+      
         
         >
         <RelativeLayout 
@@ -132,24 +173,67 @@
             <TextView 
                 android:id="@+id/score_two"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:textStyle="bold"
                 android:textColor="@color/hei2"
                 android:textSize="@dimen/txsize_large_x"
                 />
+            
+            
+           <LinearLayout 
+                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                >
             <TextView 
                 android:id="@+id/score_par_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="45dp"
-                android:text="Par 3"
+                android:text="3"
                 android:textColor="@color/hei2"
-                 android:layout_centerHorizontal="true"
-                android:textSize="@dimen/txsize_small_xx"
+                android:textSize="15dp"
                 />
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:text="P"
+                android:textColor="@color/hei2"
+                android:textSize="10dp"
+                />
+            
+             <TextView
+                android:id="@+id/score_distance_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:layout_marginLeft="7dp"
+                android:layout_centerHorizontal="true"
+                android:text="375"
+                android:textColor="@color/hei2"
+                android:textSize="15dp" />
+             
+              <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:text="Y"
+                android:textColor="@color/hei2"
+                android:textSize="10dp"
+                />
+             <ImageView 
+                   android:id="@+id/t_score_2"
+                   android:layout_width="7dp"
+                   android:layout_height="7dp"
+                  
+                   android:layout_marginTop="55dp"
+                   />
+             </LinearLayout>
         </RelativeLayout>
         
            

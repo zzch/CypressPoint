@@ -17,7 +17,7 @@
             <Button
                 android:id="@+id/back"
                 android:layout_width="80dp"
-                android:layout_height="47dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="@dimen/title_button_left"
                 android:background="@null"
                 android:onClick="onClick"
@@ -29,7 +29,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="15dp"
                 android:src="@drawable/back_image" />
         </FrameLayout>
 
@@ -42,12 +42,12 @@
             android:gravity="center"
             android:text="@string/pws"
             android:textColor="@color/white"
-            android:textSize="@dimen/txsize_mid_x" />
+            android:textSize="@dimen/txsize_small_xxx" />
 
         <Button
             android:id="@+id/pk"
             android:layout_width="80dp"
-            android:layout_height="47dp"
+            android:layout_height="50dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="-10dp"
             android:background="@null"
@@ -70,11 +70,11 @@
              android:layout_marginTop="30dp"
              android:textColor="@color/hei5"
              android:lines="1"
-            android:layout_centerHorizontal="true"
-           
-            android:imeOptions="actionNone"
-            android:hint="请输入当前密码"
-            android:password="true" />
+             android:layout_centerHorizontal="true"
+             android:inputType="textPassword"
+             android:imeOptions="actionNone"
+             android:hint="请输入当前密码"
+             />
 
         <EditText
             android:id="@+id/newpsw"
@@ -85,6 +85,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="100dp"
             android:lines="1"
+            android:inputType="textPassword"
             android:imeOptions="actionNone"
             android:hint="请设置密码"
       />
@@ -100,7 +101,7 @@
             android:layout_marginTop="170dp"
             android:imeOptions="actionNone"
             android:hint="请再次输入"
-            android:password="true" />
+            android:inputType="textPassword" />
     </RelativeLayout>
 
     <RelativeLayout

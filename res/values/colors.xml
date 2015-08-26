@@ -32,6 +32,8 @@
      <!-- 灰色 -->
      <color name="gray">#797979</color>
      
+     <color name="red">#f06450</color>
+     
      <color name="lightgray">#F7F7F7</color>
     <color name="lightblack">#696969</color>
 
@@ -42,8 +44,9 @@
     <color name="grays">#ffcccccc</color>
     <color name="textview">#ffffcc99</color>
     <color name="province_line_border">#aaaaaa</color>
-    
-    <color name="white">#ffffff</color>
+    <color name="yellow">#ffeb3b</color>
+    <color name="yellowdark">#ffb91b</color>
+  
     <color name="transparent">#00000000</color>
     <color name="gold">#b89766</color>
     

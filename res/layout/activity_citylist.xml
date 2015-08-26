@@ -20,7 +20,7 @@
             android:layout_centerHorizontal="true"
             android:text="@string/searchpith"
             android:textColor="@color/white"
-            android:textSize="@dimen/txsize_mid_x" />
+            android:textSize="@dimen/txsize_small_xxx"/>
 
          <FrameLayout 
             android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
          <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="14dp"
             android:layout_marginLeft="10dp"
             android:src="@drawable/back_image" />
 		</FrameLayout>

@@ -1,0 +1,108 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/pith_item_onclick"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout 
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal" 
+        >
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/pitchname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_small_x"
+            android:layout_marginTop="@dimen/view_small_x"
+            android:text="@string/pith_name"
+            android:textColor="@color/hei2"
+            android:textSize="@dimen/txsize_small_xxx"
+            android:maxEms="13" 
+            android:singleLine="true"
+            android:ellipsize="end"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/view_small_x"
+            android:layout_marginBottom="@dimen/view_Layout_x"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="@dimen/view_small_xx_w"
+                android:layout_height="@dimen/view_small_xx_w"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/qiudong" />
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_Layout_x"
+                
+                android:text="18"
+                android:textColor="@color/hei5"
+                android:textSize="@dimen/txsize_small_xx" 
+                android:maxEms="13" 
+                android:singleLine="true"
+                android:ellipsize="end"
+                />
+            
+            
+        
+        <ImageView
+                android:layout_width="@dimen/view_small_xx_w"
+                android:layout_height="@dimen/view_small_xx_w"
+                android:layout_marginLeft="60dp"
+                
+                android:src="@drawable/weizhi" />
+                 
+                 
+        <TextView
+            android:id="@+id/distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_marginLeft="@dimen/view_Layout_x"
+            android:gravity="center"
+            android:text="12"
+            android:textColor="@color/hei5"
+            android:textSize="@dimen/txsize_small_xx" />
+         <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="km"
+            android:textColor="@color/hei2"
+            android:layout_marginRight="5dp"
+            android:visibility="gone"
+            android:textSize="@dimen/txsize_small_xx" />
+
+   
+            
+        </LinearLayout>
+    </LinearLayout>
+
+   
+
+   </LinearLayout>
+   <View 
+       android:layout_width="match_parent"
+       android:layout_height="0.2dp"
+       android:background="@color/fengexian"
+       />
+
+</LinearLayout><!-- From: file:/D:/workspace/GolfAndroid/res/layout/choosepitch_item.xml -->

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/red">
+        <ImageView
+            android:id="@+id/bdRankWinnerImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/relativeLayout3"
+            android:background="@color/red"/>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="false"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="65dp">
+
+            <TextView
+                android:id="@+id/bdRankWinnerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="黄大治"/>
+
+            <ImageView
+                android:id="@+id/bdRankWinnerGold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bdRankWinnerName"/>
+
+            <TextView
+                android:id="@+id/bdRankWinnerScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bdRankWinnerName"
+                android:layout_toRightOf="@+id/bdRankWinnerGold"
+                android:text="0"/>
+
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bdGoldCup"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="25dp"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1">
+
+    <ImageView
+        android:id="@+id/bdRankLoserImage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/relativeLayout4"
+        android:background="@color/red"/>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="65dp">
+
+        <TextView
+            android:id="@+id/bdRankLoserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="黄大治"/>
+
+        <ImageView
+            android:id="@+id/bdRankLoserGold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bdRankLoserName"/>
+
+        <TextView
+            android:id="@+id/bdRankLoserScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bdRankLoserName"
+            android:layout_toRightOf="@+id/bdRankLoserGold"
+            android:text="0"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bdLoserNoCup"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="25dp"/>
+    </RelativeLayout>
+</LinearLayout>
+<!-- From: file:/D:/workspace/GolfAndroid/res/layout/bd_rank_layout.xml -->

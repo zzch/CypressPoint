@@ -4,12 +4,12 @@ public class APIService {
 	/**
 	 * 测试服务器地址
 	 */
-	//  public static String hostName = "http://123.57.210.52/api";
+	 public static String hostName = "http://123.57.210.52/api";
 	/**
 	 * 正式服务器地址
 	 */
-	  public static String hostName = "http://ilovegolfclub.com/api";
-	//一键注册
+     //   public static String hostName = "http://ilovegolfclub.com/api";
+	 //一键注册
 	  public static final String ONE_REGISTER=hostName+"/v1/users/sign_up_simple";
 
 	  //球场信息，   根据球场信息的uuid来获取该球场的具体信息，打球设置类

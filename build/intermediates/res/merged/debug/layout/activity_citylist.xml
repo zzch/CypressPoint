@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:background="@color/bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/daohang" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/searchpith"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xxx"/>
+
+         <FrameLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            >
+
+        <Button
+            android:id="@+id/search_back"
+            android:layout_width="80dp"
+            android:layout_height="47dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/title_button_left"
+            android:background="@null"
+            android:text="@string/back"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xx"/>
+         <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_image" />
+		</FrameLayout>
+    </RelativeLayout>
+
+    <cn.com.zcty.ILovegolf.activity.exercise.city.ClearEditText
+        android:id="@+id/filter_edit"
+        android:layout_width="@dimen/view_citylist_x"
+        android:layout_height="@dimen/view_mid_x"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/wenbenkuang"
+        android:drawableLeft="@drawable/search_bar_icon"
+        android:hint="搜索球场的名称"
+        android:singleLine="true"
+        android:textColor="@color/hei5"
+        android:textColorHint="@color/hei6"
+        android:textSize="@dimen/txsize_small_x" />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10dp" >
+
+        <ExpandableListView
+            android:id="@+id/country_lvcountry"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:divider="@null"
+            android:groupIndicator="@null" />
+
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:divider="@null"
+            android:visibility="gone" >
+        </ListView>
+    </FrameLayout>
+
+</LinearLayout><!-- From: file:/D:/workspace/GolfAndroid/res/layout/activity_citylist.xml -->

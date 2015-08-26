@@ -7,29 +7,29 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 /***
- * ¹¤¾ßÀà£¬¼ì²éµ±Ç°ÍøÂç×´Ì¬
- * 
+ * å·¥å…·ç±»ï¼Œæ£€æŸ¥å½“å‰ç½‘ç»œçŠ¶æ€
+ *
  * @author shuimu
- * 
+ *
  */
 public class NetUtil {
 
     public static boolean checkNet(Context context) {
 
-        // »ñÈ¡ÊÖ»úËùÒÔÁ¬½Ó¹ÜÀí¶ÔÏó£¨°üÀ¨wi-fi£¬netµÈÁ¬½ÓµÄ¹ÜÀí£©
+        // è·å–æ‰‹æœºæ‰€ä»¥è¿æ¥ç®¡ç†å¯¹è±¡ï¼ˆåŒ…æ‹¬wi-fiï¼Œnetç­‰è¿æ¥çš„ç®¡ç†ï¼‰
         ConnectivityManager conn = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
         if (conn != null) {
-            // ÍøÂç¹ÜÀíÁ¬½Ó¶ÔÏó
+            // ç½‘ç»œç®¡ç†è¿æ¥å¯¹è±¡
             NetworkInfo info = conn.getActiveNetworkInfo();
-            
+
             if(info != null && info.isConnected()) {
-                // ÅĞ¶Ïµ±Ç°ÍøÂçÊÇ·ñÁ¬½Ó
+                // åˆ¤æ–­å½“å‰ç½‘ç»œæ˜¯å¦è¿æ¥
                 if (info.getState() == NetworkInfo.State.CONNECTED) {
                     return true;
                 }
             }
-            
+
         }
 
         return false;

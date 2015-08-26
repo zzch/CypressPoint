@@ -2,47 +2,47 @@ package cn.com.zcty.ILovegolf.model;
 
 public class Scorecards {
 	/**
-	 * Ã¿Ò»¸öÇò¶´µÄuuid
+	 * æ¯ä¸€ä¸ªçƒæ´çš„uuid
 	 */
 	private String uuid;
 	/**
-	 * Çò¶´ÁĞ±í1~18
+	 * çƒæ´åˆ—è¡¨1~18
 	 */
 	private String number;
 	/**
-	 * ±ê×¼¸Ë
+	 * æ ‡å‡†æ†
 	 */
 	private String par;
 	/**
-	 * ¿ªÇòTÌ¨
+	 * å¼€çƒTå°
 	 */
 	private String tee_box_color;
 	/**
-	 * ¿ªÇòTÌ¨µ½Çò¶´µÄ¾àÀë
+	 * å¼€çƒTå°åˆ°çƒæ´çš„è·ç¦»
 	 */
 	private String distance_from_hole_to_tee_box;
 	/**
-	 * ³É¼¨
+	 * æˆç»©
 	 */
 	private String score;
 	/**
-	 * ÍÆ¸Ë
+	 * æ¨æ†
 	 */
 	private String putts;
 	/**
-	 * ·£¸Ë
+	 * ç½šæ†
 	 */
 	private String penalties;
 	/**
-	 * ×î¼ÑÂëÊı
+	 * æœ€ä½³ç æ•°
 	 */
-    private String driving_distance;
-    /**
-     * ÇòµÀÃüÖĞ·½Ïò
-     */
-    private String direction;
-    
-    public Scorecards(){}
+	private String driving_distance;
+	/**
+	 * çƒé“å‘½ä¸­æ–¹å‘
+	 */
+	private String direction;
+
+	public Scorecards(){}
 
 	public String getUuid() {
 		return uuid;
@@ -138,5 +138,5 @@ public class Scorecards {
 
 
 
-	
+
 }

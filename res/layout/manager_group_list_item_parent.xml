@@ -13,5 +13,4 @@
 
         <include layout="@layout/major_score_item" />
     </LinearLayout>
-
 </RelativeLayout>

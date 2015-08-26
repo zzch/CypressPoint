@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/daohang" >
+
+        <Button
+            android:id="@+id/k_build"
+             android:layout_width="80dp"
+            android:layout_height="50dp" 
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="-10dp"
+            android:background="@null"
+            android:onClick="onclick"
+            android:text="@string/new_build"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xx" />
+
+         <FrameLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            >
+        
+
+        <Button
+            android:id="@+id/k_back"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/title_button_left"
+            android:background="@null"
+            android:text="@string/back"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xx" 
+            android:onClick="onclick"
+             />
+        
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_image" />
+		</FrameLayout>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:gravity="center"        
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="竞技记分卡"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xxx" />
+    </RelativeLayout>
+
+    <cn.com.zcty.ILovegolf.tools.XListView
+        android:id="@+id/xListView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:divider="@null" >
+    </cn.com.zcty.ILovegolf.tools.XListView>
+
+    <ImageView
+        android:id="@+id/tishi"
+        android:layout_width="300dp"
+        android:layout_height="90dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/quick_text_gone" />
+
+</LinearLayout><!-- From: file:/D:/workspace/GolfAndroid/res/layout/activity_competition_score.xml -->

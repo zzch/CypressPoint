@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="50dp"
+              android:layout_height="match_parent">
+    <View
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/midLine"/>
+    <ImageView
+        android:id="@+id/rankPlayerimage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_above="@+id/midLine"
+        android:layout_centerHorizontal="true"
+        android:background="@color/red"/>
+
+    <RelativeLayout
+        android:id="@+id/rankPlayerNameArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/midLine"
+       >
+
+        <TextView
+            android:id="@+id/rankPlayername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="黄大治"/>
+
+        <ImageView
+            android:id="@+id/rankPlayergold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rankPlayername"/>
+
+        <TextView
+            android:id="@+id/rankPlayerscore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rankPlayername"
+            android:layout_toRightOf="@+id/rankPlayergold"
+            android:text="0"/>
+
+
+    </RelativeLayout>
+</RelativeLayout>

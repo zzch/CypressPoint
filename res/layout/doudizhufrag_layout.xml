@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:slideswitch="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:textColor="#222222"
+            android:text="平民"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:textColor="#222222"
+            android:text="地主"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:textColor="#222222"
+            android:text="平民"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:textColor="#555555"
+            android:text="1号发球"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:textColor="#555555"
+            android:text="2号发球"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:textColor="#555555"
+            android:text="3号发球"/>
+    </LinearLayout>
+
+    <cn.com.zcty.ILovegolf.doudizhu.utills.DragGridView
+        android:id="@+id/dragGridView"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:cacheColorHint="@android:color/transparent"
+        android:listSelector="@android:color/transparent"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        android:background="@drawable/taimian"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        >
+    </cn.com.zcty.ILovegolf.doudizhu.utills.DragGridView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:textSize="14dp"
+        android:text="拖动头像来改变开球顺序"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+
+            android:background="#aaaaaa"
+            />
+
+        <RelativeLayout
+            android:id="@+id/ddz_bird"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:background="@color/white"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="小鸟球翻1倍"
+                android:textColor="#222222"
+                android:textSize="18dp"/>
+
+            <com.leaking.slideswitch.SlideSwitch
+                android:id="@+id/ddzswitch_birdie"
+                android:layout_width="20dip"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                slideswitch:shape1="circle"
+                slideswitch:themeColor="#f200aa96">
+            </com.leaking.slideswitch.SlideSwitch>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#aaaaaa"
+            />
+        <RelativeLayout
+            android:id="@+id/ddz_eagle"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:background="@color/white"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="老鹰球翻2倍"
+                android:textColor="#222222"
+                android:textSize="18dp"/>
+
+            <com.leaking.slideswitch.SlideSwitch
+                android:id="@+id/ddzswitch_eagle"
+                android:layout_width="20dip"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                slideswitch:shape1="circle"
+                slideswitch:themeColor="#f200aa96">
+            </com.leaking.slideswitch.SlideSwitch>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#aaaaaa"
+            />
+
+        <RelativeLayout
+            android:id="@+id/ddzpardouble"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:background="@color/white"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="双倍标准杆翻一倍"
+                android:textColor="#222222"
+                android:textSize="18dp"/>
+
+            <com.leaking.slideswitch.SlideSwitch
+                android:id="@+id/ddzswitch_pardouble"
+                android:layout_width="20dip"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                slideswitch:shape1="circle"
+                slideswitch:themeColor="#f200aa96">
+            </com.leaking.slideswitch.SlideSwitch>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#aaaaaa"
+            />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+        <Button
+            android:id="@+id/btnStart2"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginBottom="0dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:text="开始"
+            android:textColor="@color/white"
+            android:background="#09850c"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+</LinearLayout>

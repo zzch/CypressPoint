@@ -88,11 +88,11 @@ public class StatisticsAvtivity extends FragmentActivity{
 				hideProgressDialog();
 				if(msg.obj.equals("404")||msg.obj.equals("500")){//判断是服务端问题
 					Toast.makeText(StatisticsAvtivity.this, "网络异常，错误提示"+msg.obj, Toast.LENGTH_LONG).show();
-				}else if(msg.obj.equals("403")){
-					Toast.makeText(StatisticsAvtivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("401")){
 					FileUtil.delFile();
 					Intent intent = new Intent(StatisticsAvtivity.this,ShouYeActivity.class);
 					startActivity(intent);
+					Toast.makeText(StatisticsAvtivity.this, "帐号异地登录，请重新登录", Toast.LENGTH_LONG).show();
 					finish();
 				}else{
 					getData();
@@ -119,14 +119,14 @@ public class StatisticsAvtivity extends FragmentActivity{
 	@Override
 	protected void onStart() {
 		super.onStart();
-		Log.i("zhouhe", "zhouhe");
+		Log.i("zhouhe", "zhouhe--onstart");
 	}
 
 @Override
 public void onConfigurationChanged(Configuration newConfig) {
 	super.onConfigurationChanged(newConfig);
 	if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) { 
-		Log.i("zhouhe", "zhouhea");		
+		Log.i("zhouhe", "zhouhe==a----");		
 		Intent intent = new Intent(this,StatisticsActivityLand.class);
 		intent.putExtra("name", name);
 		intent.putExtra("uuid", match_uuid);

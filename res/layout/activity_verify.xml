@@ -18,13 +18,12 @@
             >
 
             <Button
-                android:id="@+id/back"
+                android:id="@+id/back_verify"
                 android:layout_width="80dp"
-                android:layout_height="47dp"
+                android:layout_height="50dp"
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="@dimen/title_button_left"
                 android:background="@null"
-                android:onClick="onClick"
                 android:text="@string/back"
                 android:textColor="@color/white"
                 android:textSize="@dimen/txsize_small_xx" />
@@ -33,7 +32,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="15dp"
                 android:src="@drawable/back_image" />
         </FrameLayout>
 
@@ -46,7 +45,7 @@
             android:gravity="center"
             android:text="@string/verifyphone"
             android:textColor="@color/white"
-            android:textSize="@dimen/txsize_mid_x" />
+            android:textSize="@dimen/txsize_small_xxx"/>
 
         <Button
             android:id="@+id/pk"
@@ -66,48 +65,59 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp" >
 
-        <TextView
-            android:id="@+id/phone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:gravity="center"
-            android:text="请输入+8618363172323"
-            android:textColor="@color/hei2"
-            android:textSize="@dimen/txsize_small_s"
-             />
+       
+        <EditText 
+		android:id="@+id/exittext_phon"
+        android:layout_width="@dimen/register_view_width"
+        android:layout_height="@dimen/view_mid_xx_title"
+        android:background="@drawable/wenbenkuang"
+        android:layout_centerHorizontal="true"
+        android:digits="1234567890" 
+    	android:singleLine="true"
+        android:lines="1"
+        android:hint="请输入手机号码"
+       
+        />
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp" >
+    
+       <LinearLayout 
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:background="@null"
+      android:gravity="center_vertical"
+       android:layout_marginTop="25dip"
+      >
 
         <EditText
             android:id="@+id/verify_phonesd"
-            android:layout_width="150dp"
-             android:layout_height="@dimen/view_mid_xx_title"
+            android:layout_width="@dimen/register_view_yanzhen"
+           android:layout_height="@dimen/view_mid_xx_title"
             android:layout_centerHorizontal="true"
             android:hint="输入验证码" 
             android:lines="1"
+            android:layout_marginLeft="10dp"
             android:background="@drawable/wenbenkuang"
             />
-    </RelativeLayout>
+        
+            <Button 
+           android:id="@+id/but_getyanzhengma"
+           android:layout_width="@dimen/register_view_huoquyanzhen"
+           android:layout_height="@dimen/view_sss_e"
+           android:text="获取验证码" 
+           android:gravity="center"
+           android:textSize="@dimen/txsize_small_x"
+           android:textColor="@color/hei2"
+           android:layout_marginLeft="10dp"
+           android:background="@drawable/shurukuang"
+           android:onClick="on_yanzhengma"
+          />
+  
+       
+  </LinearLayout>
+   
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:gravity="center"
-             android:textColor="@color/hei2"
-            android:textSize="@dimen/txsize_small_s"
-            android:text="还差最后一步请设置您的密码" />
-    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"

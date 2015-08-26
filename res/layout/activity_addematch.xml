@@ -17,7 +17,7 @@
         <Button
             android:id="@+id/k_build"
             android:layout_width="80dp"
-            android:layout_height="47dp"
+            android:layout_height="50dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="-10dp"
             android:onClick="onclick"
@@ -37,7 +37,7 @@
         <Button
             android:id="@+id/add_back"
             android:layout_width="80dp"
-            android:layout_height="47dp"
+           android:layout_height="50dp"
             android:layout_marginLeft="@dimen/title_button_left"
             android:background="@null"
             android:text="@string/back"
@@ -49,7 +49,7 @@
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="10dp"
             android:src="@drawable/back_image" />
 
@@ -63,7 +63,7 @@
             android:layout_centerVertical="true"
             android:text="加入比赛"
             android:textColor="@color/white"
-            android:textSize="@dimen/txsize_mid_x" />
+           android:textSize="@dimen/txsize_small_xxx" />
     </RelativeLayout>
 
     <TextView

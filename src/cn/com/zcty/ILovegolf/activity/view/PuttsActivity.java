@@ -72,40 +72,180 @@ public class PuttsActivity extends Activity{
 			averageNonGirTextView.setText(puts.getAverageNonGir());
 			lastTextView.setText(puts.getLastAverage());
 
-			cishuTextView.setText(arrayDistances.get(0).getPer_round());
-			ganshuTextView.setText(arrayDistances.get(0).getShots_to_hole());
-			tuijinTextView.setText(arrayDistances.get(0).getHoled_percentage());
-			fisTextView.setText(arrayDistances.get(0).getDispersion());
-
-			cishuTextView2.setText(arrayDistances.get(1).getPer_round());
-			ganshuTextView2.setText(arrayDistances.get(1).getShots_to_hole());
-			tuijinTextView2.setText(arrayDistances.get(1).getHoled_percentage());
-			fisTextView2.setText(arrayDistances.get(1).getDispersion());
-
-			cishuTextView3.setText(arrayDistances.get(2).getPer_round());
-			ganshuTextView3.setText(arrayDistances.get(2).getShots_to_hole());
-			tuijinTextView3.setText(arrayDistances.get(2).getHoled_percentage());
-			fisTextView3.setText(arrayDistances.get(2).getDispersion());
-
-			cishuTextView4.setText(arrayDistances.get(3).getPer_round());
-			ganshuTextView4.setText(arrayDistances.get(3).getShots_to_hole());
-			tuijinTextView4.setText(arrayDistances.get(3).getHoled_percentage());
-			fisTextView4.setText(arrayDistances.get(3).getDispersion());
 			
-			cishuTextView5.setText(arrayDistances.get(4).getPer_round());
-			ganshuTextView5.setText(arrayDistances.get(4).getShots_to_hole());
-			tuijinTextView5.setText(arrayDistances.get(4).getHoled_percentage());
-			fisTextView5.setText(arrayDistances.get(4).getDispersion());
+			if(arrayDistances.get(0).getPer_round().equals("null")){
+				cishuTextView.setText("一");
+			}else{
+				cishuTextView.setText(arrayDistances.get(0).getPer_round());
+			}
+			if(arrayDistances.get(0).getShots_to_hole().equals("null")){
+				ganshuTextView.setText("一");
+			}else{
+				ganshuTextView.setText(arrayDistances.get(0).getShots_to_hole());
+			}
 			
-			cishuTextView6.setText(arrayDistances.get(5).getPer_round());
-			ganshuTextView6.setText(arrayDistances.get(5).getShots_to_hole());
-			tuijinTextView6.setText(arrayDistances.get(5).getHoled_percentage());
-			fisTextView6.setText(arrayDistances.get(5).getDispersion());
+			if(arrayDistances.get(0).getHoled_percentage().equals("null")){
+				tuijinTextView.setText("一");
+			}else{
+				tuijinTextView.setText(arrayDistances.get(0).getHoled_percentage());
+			}
+			if(arrayDistances.get(0).getDispersion().equals("null")){
+				fisTextView.setText("一");
+			}else{
+				fisTextView.setText(arrayDistances.get(0).getDispersion());
+			}
 			
-			cishuTextView7.setText(arrayDistances.get(6).getPer_round());
-			ganshuTextView7.setText(arrayDistances.get(6).getShots_to_hole());
-			tuijinTextView7.setText(arrayDistances.get(6).getHoled_percentage());
-			fisTextView7.setText(arrayDistances.get(6).getDispersion());
+             if(arrayDistances.get(1).getPer_round().equals("null")){
+            	 cishuTextView2.setText("一"); 
+             }else{
+            	 cishuTextView2.setText(arrayDistances.get(1).getPer_round());
+             }
+			if(arrayDistances.get(1).getShots_to_hole().equals("null")){
+				ganshuTextView2.setText("一");
+			}else{
+				ganshuTextView2.setText(arrayDistances.get(1).getShots_to_hole());
+			}
+			if(arrayDistances.get(1).getHoled_percentage().equals("null")){
+				tuijinTextView2.setText("一");
+			}else{
+				tuijinTextView2.setText(arrayDistances.get(1).getHoled_percentage());
+			}
+			if(arrayDistances.get(1).getDispersion().equals("null")){
+				fisTextView2.setText("一");
+			}else{
+				fisTextView2.setText(arrayDistances.get(1).getDispersion());
+			}
+			
+            if(arrayDistances.get(2).getPer_round().equals("null")){
+            	cishuTextView3.setText("一");
+            }else{
+            	cishuTextView3.setText(arrayDistances.get(2).getPer_round());
+            }
+			if(arrayDistances.get(2).getShots_to_hole().equals("null")){
+				ganshuTextView3.setText("一");
+			}else{
+				ganshuTextView3.setText(arrayDistances.get(2).getShots_to_hole());
+			}
+			
+			if(arrayDistances.get(2).getHoled_percentage().equals("null")){
+				tuijinTextView3.setText("一");
+			}else{
+				tuijinTextView3.setText(arrayDistances.get(2).getHoled_percentage());
+			}
+			if(arrayDistances.get(2).getDispersion().equals("null")){
+				fisTextView3.setText("一");
+			}else{
+				
+				fisTextView3.setText(arrayDistances.get(2).getDispersion());
+			}
+
+			if(arrayDistances.get(3).getPer_round().equals("null")){
+				cishuTextView4.setText("一");
+			}else{
+				
+				cishuTextView4.setText(arrayDistances.get(3).getPer_round());
+			}
+			if(arrayDistances.get(3).getShots_to_hole().equals("null")){
+				ganshuTextView4.setText("一");
+			}else{
+				
+				ganshuTextView4.setText(arrayDistances.get(3).getShots_to_hole());
+			}
+			
+			if(arrayDistances.get(3).getHoled_percentage().equals("null")){
+				tuijinTextView4.setText("一");
+			}else{
+				
+				tuijinTextView4.setText(arrayDistances.get(3).getHoled_percentage());
+			}
+			
+			if(arrayDistances.get(3).getDispersion().equals("null")){
+				fisTextView4.setText("一");
+			}else{
+				
+				fisTextView4.setText(arrayDistances.get(3).getDispersion());
+			}
+			
+			if(arrayDistances.get(4).getPer_round().equals("null")){
+				cishuTextView5.setText("一");
+			}else{
+				
+				cishuTextView5.setText(arrayDistances.get(4).getPer_round());
+			}
+			if(arrayDistances.get(4).getShots_to_hole().equals("null")){
+				ganshuTextView5.setText("一");
+			}else{
+				
+				ganshuTextView5.setText(arrayDistances.get(4).getShots_to_hole());
+			}
+			
+			if(arrayDistances.get(4).getHoled_percentage().equals("null")){
+				tuijinTextView5.setText("一");
+			}else{
+				
+				tuijinTextView5.setText(arrayDistances.get(4).getHoled_percentage());
+			}
+			
+			if(arrayDistances.get(4).getDispersion().equals("null")){
+				fisTextView5.setText("一");
+			}else{
+				
+				fisTextView5.setText(arrayDistances.get(4).getDispersion());
+			}
+			if(arrayDistances.get(5).getPer_round().equals("null")){
+				cishuTextView6.setText("一");
+			}else{
+				
+				cishuTextView6.setText(arrayDistances.get(5).getPer_round());
+			}
+			
+			if(arrayDistances.get(5).getShots_to_hole().equals("null")){
+				ganshuTextView6.setText("一");
+			}else{
+				
+				ganshuTextView6.setText(arrayDistances.get(5).getShots_to_hole());
+			}
+			
+			if(arrayDistances.get(5).getHoled_percentage().equals("null")){
+				tuijinTextView6.setText("一");
+			}else{
+				
+				tuijinTextView6.setText(arrayDistances.get(5).getHoled_percentage());
+			}
+			if(arrayDistances.get(5).getDispersion().equals("null")){
+				fisTextView6.setText("一");
+			}else{
+				
+				fisTextView6.setText(arrayDistances.get(5).getDispersion());
+			}
+			
+			if(arrayDistances.get(6).getPer_round().equals("null")){
+				cishuTextView7.setText("一");
+			}else{
+				
+				cishuTextView7.setText(arrayDistances.get(6).getPer_round());
+			}
+			
+			if(arrayDistances.get(6).getShots_to_hole().equals("null")){
+				ganshuTextView7.setText("一");
+			}else{
+				
+				ganshuTextView7.setText(arrayDistances.get(6).getShots_to_hole());
+			}
+			
+			if(arrayDistances.get(6).getHoled_percentage().equals("null")){
+				tuijinTextView7.setText("一");
+			}else{
+				
+				tuijinTextView7.setText(arrayDistances.get(6).getHoled_percentage());
+			}
+			
+			if(arrayDistances.get(6).getDispersion().equals("null")){
+				fisTextView7.setText("一");
+			}else{
+				
+				fisTextView7.setText(arrayDistances.get(6).getDispersion());
+			}
 		};
 	};
 	@Override

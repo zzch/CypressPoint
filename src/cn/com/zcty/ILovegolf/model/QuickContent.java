@@ -25,6 +25,18 @@ public class QuickContent {
 	 * 时间戳
 	 */
 	private String started_at;
+	private String owend;
+	
+	
+	public QuickContent() {
+		// TODO Auto-generated constructor stub
+	}
+	public String getOwend() {
+		return owend;
+	}
+	public void setOwend(String owend) {
+		this.owend = owend;
+	}
 	public String getUuid() {
 		return uuid;
 	}

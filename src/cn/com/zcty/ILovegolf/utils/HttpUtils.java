@@ -1,4 +1,4 @@
-﻿package cn.com.zcty.ILovegolf.utils;
+package cn.com.zcty.ILovegolf.utils;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -54,38 +54,36 @@ public class HttpUtils
 {
 	/**
 	 * 采用HttpClient的POST请求发送数据
-	 * @param username
-	 * @param password
 	 * @return
 	 */
 	public static String HttpClientPost(String url)
-	{		int code = 0;
-	try {
-		String str = "";
-		//创建HttpClient对象
-		HttpClient client=new DefaultHttpClient();
-		//创建请求路径的HttpGet对象
-		HttpPost httpPost=new HttpPost(url);   
-		//client将response与httpPost连接
-		HttpResponse response=client.execute(httpPost);			
-		//找到服务返回的状态码 200表示成功
-		code=response.getStatusLine().getStatusCode();
-		Log.i("code---->", ""+code);
-		if(code==201||code==200)
-		{
+	{		int code = 404;
+		try {
+			String str = "";
+			//创建HttpClient对象
+			HttpClient client=new DefaultHttpClient();
+			//创建请求路径的HttpGet对象
+			HttpPost httpPost=new HttpPost(url);
+			//client将response与httpPost连接
+			HttpResponse response=client.execute(httpPost);
+			//找到服务返回的状态码 200表示成功
+			code=response.getStatusLine().getStatusCode();
+			Log.i("code---->", ""+code);
+			if(code==201||code==200)
+			{
 
-			//InputStream is=response.getEntity().getContent();
-			str = EntityUtils.toString(response.getEntity(), "utf-8");
-			System.out.println("is---->"+str);
-			Log.i("is---->", ""+str);
-			return str;
+				//InputStream is=response.getEntity().getContent();
+				str = EntityUtils.toString(response.getEntity(), "utf-8");
+				System.out.println("is---->"+str);
+				Log.i("is---->", ""+str);
+				return str;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
 		}
-
-	} catch (Exception e) {
-		e.printStackTrace();
-
-	}
-	return code+"";
+		return code+"";
 	}
 
 
@@ -98,7 +96,7 @@ public class HttpUtils
 	public static String httpliuyanpost(String url,Map<String,String> map){
 		HttpPost post = new HttpPost(url);
 		String str = "";
-		int code = 0;
+		int code = 404;
 		List<NameValuePair> nvps = new ArrayList<NameValuePair>();
 		Iterator<Map.Entry<String, String>> it = map.entrySet().iterator();
 		while(it.hasNext()){
@@ -122,15 +120,6 @@ public class HttpUtils
 
 	}
 
-
-
-
-
-
-
-
-
-
 	/**
 	 * 采用HttpClient的POST请求发送数据
 	 * @param url
@@ -141,12 +130,12 @@ public class HttpUtils
 		HttpPut post = new HttpPut(url);
 
 		String str = "";
-		int code = 0;
+		int code = 404;
 		List<NameValuePair> nvps = new ArrayList<NameValuePair>();
 		Iterator<Map.Entry<String, String[]>> it = map.entrySet().iterator();
 		while(it.hasNext()){
 			Map.Entry<String,String[]> map1 = it.next();
-			for(int i=0;i<map1.getValue().length;i++){	        	  
+			for(int i=0;i<map1.getValue().length;i++){
 				nvps.add(new BasicNameValuePair(map1.getKey(),map1.getValue()[i]));
 			}
 		}
@@ -168,7 +157,7 @@ public class HttpUtils
 	public static String Httpput(String url,Map<String,String> map){
 		HttpPut post = new HttpPut(url);
 		String str = "";
-		int code = 0;
+		int code = 404;
 		List<NameValuePair> nvps = new ArrayList<NameValuePair>();
 		Iterator<Map.Entry<String, String>> it = map.entrySet().iterator();
 		while(it.hasNext()){
@@ -195,8 +184,7 @@ public class HttpUtils
 
 	/**
 	 * 采用HttpClient发送Get请求
-	 * @param username
-	 * @param password
+
 	 * @return
 	 */
 	public static String HttpClientGet(String path)
@@ -206,7 +194,7 @@ public class HttpUtils
 		HttpClient client=new DefaultHttpClient();
 		//创建请求路径的HttpGet对象
 		HttpGet httpGet=new HttpGet(path);
-		int code = 0;
+		int code = 404;
 		try {
 			//让HttpClient往服务器发送数据
 			HttpResponse response=client.execute(httpGet);
@@ -222,7 +210,7 @@ public class HttpUtils
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();		
+			e.printStackTrace();
 		}
 		return code+"";
 	}
@@ -232,31 +220,31 @@ public class HttpUtils
 	 * @return
 	 */
 	public static String HttpClientPut(String path)
-	{	int code = 0;
-	String str = "";
-	//创建HttpClient对象
-	HttpClient client=new DefaultHttpClient();
-	//创建请求路径的HttpGet对象
-	HttpPut httpPut=new HttpPut(path);
-	Log.i("---path", "path==="+path);
-	try {
-		//让HttpClient往服务器发送数据
-		HttpResponse response=client.execute(httpPut);
-		//找到服务返回的状态码 200表示成功
-		code=response.getStatusLine().getStatusCode();
-		Log.i("code----->>>", ""+code);
-		if(code==HttpStatus.SC_OK)
-		{
-			//InputStream is=response.getEntity().getContent();
-			str = EntityUtils.toString(response.getEntity(), "utf-8");
-			Log.i("is---->>", ""+str);
-			return str;
-		}
+	{	int code = 404;
+		String str = "";
+		//创建HttpClient对象
+		HttpClient client=new DefaultHttpClient();
+		//创建请求路径的HttpGet对象
+		HttpPut httpPut=new HttpPut(path);
+		Log.i("---path", "path==="+path);
+		try {
+			//让HttpClient往服务器发送数据
+			HttpResponse response=client.execute(httpPut);
+			//找到服务返回的状态码 200表示成功
+			code=response.getStatusLine().getStatusCode();
+			Log.i("code----->>>", ""+code);
+			if(code==HttpStatus.SC_OK)
+			{
+				//InputStream is=response.getEntity().getContent();
+				str = EntityUtils.toString(response.getEntity(), "utf-8");
+				Log.i("is---->>", ""+str);
+				return str;
+			}
 
-	} catch (Exception e) {
-		e.printStackTrace();		
-	}
-	return ""+code+"";
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ""+code+"";
 	}
 
 
@@ -269,11 +257,11 @@ public class HttpUtils
 	public static String HttpClientDelete(String path){
 
 		String str = "";
-		int code = 0;
+		int code = 404;
 		//创建一个http客户端  
-		HttpClient client=new DefaultHttpClient();  
+		HttpClient client=new DefaultHttpClient();
 		//创建一个DELETE请求  
-		HttpDelete httpDelete=new HttpDelete(path);  
+		HttpDelete httpDelete=new HttpDelete(path);
 		//向服务器发送DELETE请求并获取服务器返回的结果，可能是删除成功，或者失败等信息  
 		HttpResponse response;
 		try {
@@ -283,19 +271,19 @@ public class HttpUtils
 			if(code==200){
 				str = EntityUtils.toString(response.getEntity(),"utf-8");
 				Log.i("is---->>", ""+str);
-				return str;	
+				return str;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			str = "5";
-		} 
+		}
 
 
 		return code+"";
 	}
 	/**
 	 * 上传图片
-	 * 
+	 *
 	 * @param url
 	 *            上传地址
 	 * @param filepath
@@ -305,7 +293,7 @@ public class HttpUtils
 	@SuppressWarnings("deprecation")
 	public static String uploadImage(String url, String filepath) {
 		String str = "";
-		int statusCode = 0;;
+		int statusCode = 404;;
 		File file = new File(filepath);
 
 		if (!file.exists()) {
@@ -341,7 +329,7 @@ public class HttpUtils
 		}
 
 		return statusCode+"";
-	} 
+	}
 
 	/**
 	 * 获取头像
@@ -349,17 +337,17 @@ public class HttpUtils
 	 * @return
 	 */
 	public static Bitmap imageloder(String url){
-		HttpGet httpRequest = new HttpGet(url); 
+		HttpGet httpRequest = new HttpGet(url);
 		HttpClient httpclient = new DefaultHttpClient();
 		try {
 			HttpResponse httpResponse = httpclient.execute(httpRequest);
-			if(httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK){  
+			if(httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK){
 				//取得相关信息 取得HttpEntiy   
-				HttpEntity httpEntity = httpResponse.getEntity();  
+				HttpEntity httpEntity = httpResponse.getEntity();
 				//获得一个输入流   
-				InputStream is = httpEntity.getContent();  
-				Bitmap bitmap = BitmapFactory.decodeStream(is);  
-				is.close();  
+				InputStream is = httpEntity.getContent();
+				Bitmap bitmap = BitmapFactory.decodeStream(is);
+				is.close();
 
 				return bitmap;
 			}
@@ -369,7 +357,7 @@ public class HttpUtils
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null; 
+		return null;
 	}
 }
 

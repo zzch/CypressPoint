@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/linears"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/layout_scord_card"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_height"
+            android:background="@color/daohang" >
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true" >
+
+                <Button
+                    android:id="@+id/scorecard_back"
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="@dimen/title_button_left"
+                    android:background="@null"
+                    android:onClick="onclick"
+                    android:text="@string/back"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/txsize_small_xx" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                   android:layout_marginTop="15dp"
+                    android:src="@drawable/back_image" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="47dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="@string/score_card"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txsize_small_xxx" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#1e1c27" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="@color/daohang" >
+
+                <TextView
+                    android:id="@+id/competition_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/create_score_left"
+                    android:layout_marginTop="@dimen/view_Layout_x"
+                    android:maxEms="14"
+                    android:text="xxxxxx"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/txsize_small_xxx" />
+
+                <TextView
+                    android:id="@+id/name_paiming"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/competition_username"
+                    android:layout_marginLeft="@dimen/create_score_left"
+                    android:layout_marginTop="5dp"
+                    android:text="排名:"
+                    android:textColor="@color/bg"
+                    android:textSize="@dimen/txsize_small_s" />
+
+                <TextView
+                    android:id="@+id/competition_paiming"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/name_paiming"
+                    android:layout_below="@+id/competition_username"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="5dp"
+                    android:text="78"
+                    android:textColor="@color/bg"
+                    android:textSize="@dimen/txsize_small_s" />
+
+                <TextView
+                    android:id="@+id/name_jindu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/competition_username"
+                    android:layout_marginLeft="@dimen/create_score_left_xx"
+                    android:layout_marginTop="5dp"
+                    android:text="进度:"
+                    android:textColor="@color/bg"
+                    android:textSize="@dimen/txsize_small_s" />
+
+                <TextView
+                    android:id="@+id/competition_jindu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/name_jindu"
+                    android:layout_below="@+id/competition_username"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="5dp"
+                    android:text="31"
+                    android:textColor="@color/bg"
+                    android:textSize="@dimen/txsize_small_s" />
+
+                <TextView
+                    android:id="@+id/name_chengji"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/competition_paiming"
+                    android:layout_marginLeft="@dimen/create_score_left"
+                    android:text="成绩:"
+                    android:textColor="@color/bg"
+                    android:textSize="@dimen/txsize_small_s" />
+
+                <TextView
+                    android:id="@+id/competition_chengji"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/name_chengji"
+                    android:layout_below="@+id/competition_paiming"
+                    android:layout_marginLeft="45dp"
+                    android:text="+6"
+                    android:textColor="@color/bg"
+                    android:textSize="@dimen/txsize_small_s" />
+
+                <TextView
+                    android:id="@+id/name_par"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/competition_paiming"
+                    android:layout_marginLeft="@dimen/create_score_left_xx"
+                    android:text="距标准杆:"
+                    android:textColor="@color/bg"
+                    android:textSize="@dimen/txsize_small_s" />
+
+                <TextView
+                    android:id="@+id/competition_par"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/name_par"
+                    android:layout_below="@+id/competition_paiming"
+                    android:layout_marginLeft="@dimen/create_score_left_xxx"
+                    android:text="+6"
+                    android:textColor="@color/bg"
+                    android:textSize="@dimen/txsize_small_s" />
+
+                <cn.com.zcty.ILovegolf.tools.CircleImageView
+                    android:id="@+id/myself_head"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/view_sss_ff"
+                    android:layout_marginTop="@dimen/view_sss_ff"
+                    android:src="@drawable/hugh" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_mid_x"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <RelativeLayout
+                    android:id="@+id/competition_button_paiming"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/view_mid_x"
+                    android:layout_weight="1.18"
+                    android:background="@color/daohang" >
+
+                    <ImageView
+                        android:layout_width="@dimen/paiming_width"
+                        android:layout_height="@dimen/paiming_height"
+                        android:layout_marginLeft="10dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="@dimen/paiming_bottom"
+                        android:src="@drawable/paihang" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/scord_left"
+                        android:text="排行榜"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="9dp"
+                        android:textColor="#ffffff" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="@dimen/view_mid_x"
+                    android:background="@color/white" />
+
+                <RelativeLayout
+                    android:id="@+id/competition_button_yaoqing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/view_mid_x"
+                    android:layout_weight="0.83"
+                    android:background="@color/daohang" >
+
+                    <ImageView
+                        android:layout_width="@dimen/yaoqing_width"
+                        android:layout_height="@dimen/yaoqing_height"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="@dimen/paiming_bottom"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/yaoqing" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="9dp"
+                        android:layout_marginLeft="@dimen/scord_left"
+                        android:text="邀请好友"
+                        android:textColor="#ffffff" />
+                </RelativeLayout>
+				<View
+                    android:layout_width="0.5dp"
+                    android:layout_height="@dimen/view_mid_x"
+                    android:background="@color/white" />
+                <RelativeLayout
+                    android:id="@+id/competition_button_tongji"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/view_mid_x"
+                    android:layout_weight="1"
+                    android:background="@color/daohang"
+                    >
+
+                    <ImageView
+                        android:layout_width="@dimen/tongji_width"
+                        android:layout_height="@dimen/tongji_height"
+                        android:layout_alignParentBottom="true"
+                         android:layout_marginBottom="@dimen/paiming_bottom"
+                        android:layout_marginLeft="13dp"
+                        android:src="@drawable/tongji" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="9dp"
+                        android:layout_marginLeft="@dimen/scord_left"
+                        android:text="技术分析"
+                        android:textColor="#ffffff" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/score_match"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@color/fengexian"
+                android:dividerHeight="0.5dp"
+                android:listSelector="@android:color/transparent" >
+            </ListView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/D:/workspace/GolfAndroid/res/layout/activity_scord.xml -->

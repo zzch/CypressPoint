@@ -1,5 +1,7 @@
 package cn.com.zcty.ILovegolf.model;
 
+
+
 public class AnlyzeDiamond {
 	/**
 	 * 定义属性

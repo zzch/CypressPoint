@@ -69,12 +69,12 @@ public class QuickScoreActivity extends Activity {
 				mPullRefreshScrollView.onRefreshComplete();//刷新
 				if(msg.obj.equals("404")||msg.obj.equals("500")){//判断是服务端问题
 					Toast.makeText(QuickScoreActivity.this, "网络异常，错误提示"+msg.obj, Toast.LENGTH_LONG).show();
-				}else if(msg.obj.equals("403")){
-					Toast.makeText(QuickScoreActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("401")){
 					FileUtil.delFile();
 					Intent intent = new Intent(QuickScoreActivity.this,ShouYeActivity.class);
 					startActivity(intent);
 					overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+					Toast.makeText(QuickScoreActivity.this, "帐号异地登录，请重新登录", Toast.LENGTH_LONG).show();
 					finish();
 				}else{
 					/*
@@ -138,7 +138,6 @@ public class QuickScoreActivity extends Activity {
 				new MyTask().start();
 
 
-				
 
 			}
 		});
@@ -149,6 +148,7 @@ public class QuickScoreActivity extends Activity {
 	private void initView() {
 		mListView = (ScrollViewWithListView) findViewById(R.id.listview);
 		image_tishi = (ImageView) findViewById(R.id.tishi);
+		
 		mPullRefreshScrollView = (PullToRefreshScrollView) findViewById(R.id.pull_refresh_scrollview);
 
 	}
@@ -239,6 +239,7 @@ public class QuickScoreActivity extends Activity {
 			String JsonData=HttpUtils.HttpClientGet(path);
 			try {
 				JSONArray jsonarray=new JSONArray(JsonData);
+				Log.i("JsonData--", JsonData);
 				for(int i=0;i<jsonarray.length();i++){
 					JSONObject jsonObject = jsonarray.getJSONObject(i);
 					QuickContent quickContent = new QuickContent();
@@ -250,6 +251,8 @@ public class QuickScoreActivity extends Activity {
 
 					String player = jsonObject.getString("player");//获得player 的map集合
 					JSONObject playerJsonObject = new JSONObject(player);
+					quickContent.setOwend(playerJsonObject.getString("owned"));
+					Log.i("owned", playerJsonObject.getString("owned"));
 					quickContent.setScoring_type(playerJsonObject.getString("scoring_type"));
 					quickContent.setScore(playerJsonObject.getString("strokes"));
 					Log.i("quickscore",playerJsonObject.getString("strokes"));

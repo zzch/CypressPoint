@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"    
+    android:orientation="vertical" >
+    <TextView 
+        android:id="@+id/lianxi_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="自己"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/chengse"
+        android:textSize="@dimen/txsize_mid_xx"
+        />
+   <TextView 
+        android:id="@+id/lianxi_name_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="成绩"
+        android:textColor="@color/hei6"
+        android:textSize="@dimen/txsize_small_s"
+        />
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- From: file:/D:/workspace/GolfAndroid/res/layout/simple_list_item.xml -->

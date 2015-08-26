@@ -14,7 +14,9 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Message;
+import android.text.Editable;
 import android.text.InputType;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -73,6 +75,7 @@ public class ForGetPasswordActivity extends Activity {
 				 Toast.makeText(ForGetPasswordActivity.this, message, Toast.LENGTH_LONG).show();
 				 daojishi.cancel();
 				 codeButton.setText("获取验证码");
+				 result = null;
 			 }
 			 if(msg.what==3){
 				 if(msg.obj.equals("404")||msg.obj.equals("500")){
@@ -113,6 +116,7 @@ public class ForGetPasswordActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+				Log.i("button", "点击了一下");
 				phone = et_mobile.getText().toString().trim();
 				if(!isMobileNO(phone)){
 					Toast.makeText(ForGetPasswordActivity.this, "输入手机格式不对", Toast.LENGTH_LONG).show();
@@ -120,9 +124,36 @@ public class ForGetPasswordActivity extends Activity {
 				if(!dianji){
 				dianji = true;
 				daojishi.start();
+				Log.i("button1", "点击了一下");
 				new RegisterTask().start();
 				}
-				}}
+			 }
+				
+			}
+		});
+		et_mobile.addTextChangedListener(new TextWatcher() {
+			
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {
+				
+			}
+			
+			@Override
+			public void afterTextChanged(Editable s) {
+				
+				if(!s.toString().equals(phone)){
+					dianji = false;
+					daojishi.cancel();
+					codeButton.setText("获取验证码");
+				}
+			}
 		});
 	}
 
@@ -142,9 +173,10 @@ public class ForGetPasswordActivity extends Activity {
 			codeButton.setText("获取验证码");
 	}
 	public void setEdittext(EditText t){
-		t.setInputType(InputType.TYPE_CLASS_PHONE);//只能输入电话号码
-		t.setInputType(InputType.TYPE_CLASS_NUMBER);//只能输入数字
-		t.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);//只能输入邮箱地址
+		t.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+		//t.setInputType(InputType.TYPE_CLASS_PHONE);//只能输入电话号码
+		//t.setInputType(InputType.TYPE_CLASS_NUMBER);//只能输入数字
+		//t.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);//只能输入邮箱地址
 	}
 	public void shuzijianpan(EditText s){
 		/*
@@ -158,7 +190,7 @@ public class ForGetPasswordActivity extends Activity {
 	 * @param v
 	 */
 	public void forgetp_back(View v){
-		Intent intent=new Intent(this,ShouYeActivity.class);
+		Intent intent=new Intent(this,LoginActivity.class);
 		startActivity(intent);
 		finish();
 	}
@@ -170,10 +202,6 @@ public class ForGetPasswordActivity extends Activity {
 		startActivity(intent);
 		finish();
 	}
-	
-   		
-   			
-   	
    			//倒计时  点击后
 	CountDownTimer	daojishi =	new CountDownTimer(60*1000, 1000){
 
@@ -205,14 +233,14 @@ public class ForGetPasswordActivity extends Activity {
 		 password_confirmation = surePaEditText.getText().toString();
 		 verification_code = codeEditText.getText().toString().trim();
 		if(!isMobileNO(phone)){
-			Toast.makeText(ForGetPasswordActivity.this, "输入手机格式不对", Toast.LENGTH_LONG).show();
+			Toast.makeText(ForGetPasswordActivity.this, "输入手机格式不对", Toast.LENGTH_SHORT).show();
 		}else if(!password.equals(password_confirmation)){
-			Toast.makeText(ForGetPasswordActivity.this, "输入的两次密码不一致", Toast.LENGTH_LONG).show();
+			Toast.makeText(ForGetPasswordActivity.this, "输入的两次密码不一致", Toast.LENGTH_SHORT).show();
 
 		}else if(password.length()<6||password_confirmation.length()>15){
-			Toast.makeText(ForGetPasswordActivity.this, "请输入6位到15位数字的密码", Toast.LENGTH_LONG).show();
+			Toast.makeText(ForGetPasswordActivity.this, "请输入6位到15位数字的密码", Toast.LENGTH_SHORT).show();
 		}else if(verification_code.equals("")||verification_code.length()!=4){
-			Toast.makeText(ForGetPasswordActivity.this, "请输入4位数字的验证码", Toast.LENGTH_LONG).show();
+			Toast.makeText(ForGetPasswordActivity.this, "请输入4位数字的验证码", Toast.LENGTH_SHORT).show();
 
 		}else{
 			new ForGetPassWord().start();
@@ -249,6 +277,7 @@ public class ForGetPasswordActivity extends Activity {
 		}
 		
 		public void getData(){
+			result = null;
 			String phone = et_mobile.getText().toString().trim();
 			String path=APIService.RESTPSDYANZHENGMA+"phone="+phone;
 			String jsonData = HttpUtils.HttpClientGet(path);
@@ -283,6 +312,7 @@ public class ForGetPasswordActivity extends Activity {
 	    	try {
 				JSONObject jsonObject = new JSONObject(jData);
 				message = jsonObject.getString("message");
+				Log.i("message++", message);
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
@@ -346,6 +376,7 @@ public class ForGetPasswordActivity extends Activity {
 			try {
 				JSONObject jsonObject = new JSONObject(forGetData);
 				forGetMessage = jsonObject.getString("message");
+				Log.i("forGetMessage--", forGetMessage);
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}

@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/daohang" >
+        
+        <FrameLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            >
+		<Button
+                android:id="@+id/k_back"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/title_button_left"
+                android:background="@null"
+                android:onClick="onclick"
+                android:text="@string/back"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txsize_small_xx" />
+		
+		<ImageView
+           android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_image" />
+		</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="个人信息"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xxx"/>
+    </RelativeLayout>
+    
+    
+    <RelativeLayout
+        android:id="@+id/myself_head_self"
+        android:layout_width="match_parent"
+        android:background="@color/daohang"
+        android:layout_height="@dimen/my_view_layout"
+       
+         >
+
+        <FrameLayout
+            android:id="@+id/frameLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/my_view_frame_left">
+
+            <RelativeLayout
+                android:id="@+id/myself_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/my_view_image_left"
+                android:layout_marginTop="@dimen/my_view_image_top" >
+
+                <ImageView
+                    android:id="@+id/myself_bg"
+                    android:layout_width="@dimen/my_view_image"
+                    android:layout_height="@dimen/my_view_image"
+                    android:src="@drawable/my_image_frame_bg" />
+            </RelativeLayout>
+
+            <cn.com.zcty.ILovegolf.tools.CircleImageView
+                android:id="@+id/myself_head"
+                android:layout_width="@dimen/my_view_Circle_x"
+                android:layout_height="@dimen/my_view_Circle_x"
+                android:layout_marginLeft="@dimen/my_view_Circle_left"
+                android:layout_marginTop="@dimen/my_view_Circle_top"
+                android:src="@drawable/hugh" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/myself_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/my_view_name_top"
+            android:text="游客"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xxx" />
+
+        <TextView
+            android:id="@+id/myself_sign"
+            android:layout_width="@dimen/my_view_qianming_width"
+            android:layout_height="@dimen/my_view_qianming_height"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/my_view_qianming_top"
+            android:text="签名"
+            android:gravity="center"
+            android:background="@drawable/my_qianming_bg"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_a"
+            android:maxEms="11" 
+            android:visibility="gone"
+            android:singleLine="true"
+            android:ellipsize="end"
+             />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="@dimen/view_small_xx"
+            android:layout_height="@dimen/view_small_xx"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="18dp"
+            android:src="@drawable/icon_arrow" />
+       
+    </RelativeLayout>
+    
+    
+    
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@color/bg"
+    android:orientation="vertical"
+    >
+        
+        <View 
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="25dp"
+            android:background="@color/fengexian"
+            />
+	    <RelativeLayout
+
+            android:id="@+id/setting_account"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_view_layout_height"
+            android:background="@color/white"
+            android:layout_centerHorizontal="true"
+            
+          >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/shouye_login_top"
+                android:textColor="@color/hei2"
+                android:textSize="20dp"
+                android:text="@string/account"
+                />
+
+            <ImageView
+                android:layout_width="@dimen/view_small_xx"
+                android:layout_height="@dimen/view_small_xx"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/infor_view_xx"
+                android:src="@drawable/icon_arrow" />
+            
+        </RelativeLayout>
+        
+        <View 
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/fengexian"
+            />
+            
+            
+            
+            <View 
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/fengexian"
+            />
+	    <RelativeLayout
+
+            android:id="@+id/setting_opinion"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_view_layout_height"
+            android:background="@color/white"
+            android:layout_centerHorizontal="true"
+            >
+
+            
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/shouye_login_top"
+                android:textColor="@color/hei2"
+                android:textSize="20dp"
+                android:text="@string/opinion"
+                />
+
+            <ImageView
+                android:layout_width="@dimen/view_small_xx"
+                android:layout_height="@dimen/view_small_xx"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/infor_view_xx"
+                android:src="@drawable/icon_arrow" />
+            
+        </RelativeLayout>
+        
+            
+           <View 
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/fengexian"
+            />
+            
+            
+	    <RelativeLayout
+
+            android:id="@+id/setting_me"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_view_layout_height"
+            android:background="@color/white"
+            android:layout_centerHorizontal="true"
+           >
+
+            
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/shouye_login_top"
+                android:textColor="@color/hei2"
+                android:textSize="20dp"
+                android:text="@string/me"
+                />
+
+            <ImageView
+                android:layout_width="@dimen/view_small_xx"
+                android:layout_height="@dimen/view_small_xx"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/infor_view_xx"
+                android:src="@drawable/icon_arrow" />
+            
+        </RelativeLayout>
+        <View 
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/fengexian"
+            />
+        
+         <View 
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/fengexian"
+             android:layout_marginTop="50dp"
+            />
+          <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_view_layout_height"
+            android:background="@color/white"
+            android:layout_centerHorizontal="true"
+           
+           >
+	    
+	    <Button
+            android:id="@+id/setting_exit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_view_layout_height"
+            android:text="@string/exit"
+            android:gravity="center"
+            android:textSize="@dimen/txsize_mid_x"
+            android:textColor="#ff0000"
+            android:background="@null"
+             />
+	    </RelativeLayout>
+	    
+          <View 
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/fengexian"
+            />
+	</LinearLayout>
+    
+    
+    
+   <!-- 消息设置已隐藏  --> 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:visibility="gone"
+        >
+
+        <RelativeLayout
+
+            android:id="@+id/myself_xiaoxi"
+            android:layout_width="@dimen/infor_view_layout_x"
+            android:layout_height="@dimen/my_view_layout_height"
+            android:background="@drawable/button_moreng"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/my_view_layout_top_x">
+
+            <ImageView
+                android:id="@+id/myself_image"
+                android:layout_width="@dimen/my_view_layout_top_x"
+                android:layout_height="@dimen/my_view_layout_top_x"
+               android:layout_centerVertical="true"
+                android:layout_marginLeft="13dp"
+                android:src="@drawable/my_xiaoxi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/my_view_layout_height"
+                android:textColor="@color/hei2"
+                android:textSize="20dp"
+                android:text="消息" />
+
+            <ImageView
+                android:layout_width="@dimen/view_small_xx"
+                android:layout_height="@dimen/view_small_xx"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/infor_view_xx"
+                android:src="@drawable/icon_arrow" />
+        </RelativeLayout>
+        
+        
+        <RelativeLayout
+
+            android:id="@+id/myself_jifen"
+            android:layout_width="@dimen/infor_view_layout_x"
+            android:layout_height="@dimen/my_view_layout_height"
+            android:background="@drawable/button_moreng"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/my_view_layout_top_xx">
+
+            <ImageView
+                android:layout_width="@dimen/my_view_layout_top_x"
+                android:layout_height="@dimen/my_view_layout_top_x"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="13dp"
+                android:src="@drawable/my_jifen" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/my_view_layout_height"
+                android:textColor="@color/hei2"
+                android:textSize="20dp"
+                android:text="积分" />
+
+            <ImageView
+                android:layout_width="@dimen/view_small_xx"
+                android:layout_height="@dimen/view_small_xx"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/infor_view_xx"
+                android:src="@drawable/icon_arrow" />
+        </RelativeLayout>
+        
+        <RelativeLayout
+            android:id="@+id/myself_setting"
+            android:layout_width="@dimen/infor_view_layout_x"
+            android:layout_height="@dimen/my_view_layout_height"
+            android:background="@drawable/button_moreng"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/my_view_layout_top_xxx">
+
+            <ImageView
+                android:layout_width="@dimen/my_view_layout_top_x"
+                android:layout_height="@dimen/my_view_layout_top_x"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="13dp"
+                android:src="@drawable/my_shezhi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/my_view_layout_height"
+                android:textColor="@color/hei2"
+                android:textSize="20dp"
+                android:text="设置" />
+
+            <ImageView
+               android:layout_width="@dimen/view_small_xx"
+                android:layout_height="@dimen/view_small_xx"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/infor_view_xx"
+                android:src="@drawable/icon_arrow" />
+        </RelativeLayout>
+    </RelativeLayout>
+  
+
+</LinearLayout><!-- From: file:/D:/workspace/GolfAndroid/res/layout/activity_myself.xml -->

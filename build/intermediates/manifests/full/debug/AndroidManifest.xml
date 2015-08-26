@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.com.zcty.ILovegolf.activity"
+    android:versionCode="4"
+    android:versionName="1.0.2" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="11" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_LOGS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <application
+        android:name="cn.com.zcty.ILovegolf.tools.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/iconc"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.login_register.SplashActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.login_register.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.login_register.RegisterSuccessActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.login_register.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.login_register.ForGetPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.ScoreCardUpDateActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.TabHostActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.SchematicScoreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.myself.Myself"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.count.CountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.ExerciseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.ChoosePitchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.PlaySetActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.QuickScoreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.ScoreCardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.ListChoosePitchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.MajorChoosePitchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.MajorScoreCardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.MajorScoreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.myself.InformationChangesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.count.AnalyzeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.count.AnalyzeResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.count.AnalyzePKResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.count.AnalyzePKActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.MajorStatisticsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.AverageAvtivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.PuttsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.SandpickActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.ChipActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.GreenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.ScoreHitActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.MajorListChoosePitchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.competition.CompetitionChoosePitchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.competition.CompetitionListChoosePitchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.KickActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.GanCountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.QiuGanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.competition.CompetitionScoreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.competition.CompetitionHomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.competition.CompetitionNewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.competition.CompetitionScordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.competition.CompetitionAdd"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.SelfhoodActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.competition.CompetitionPassWord"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyDialogStyleBottom" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.competition.SginText"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.RankingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.myself.BingDingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.myself.VerifyPhoneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.myself.SettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.InviteActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.myself.ChangesPwsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.myself.ChangesPhone"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.myself.FeedBackActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.HomePageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.myself.SettionsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.login_register.GuidActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.myself.SelecPicpupExit"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyDialogStyleBottom" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.myself.SelectPicPopupWindow"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyDialogStyleBottom" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.count.PicPopupWindow"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyDialogStyleBottom" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.StatisticsAvtivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.StatisticsActivityLand"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.MajorStatisticsActivityScord"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.RankingStatics"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.RankingStaticsLand"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.myself.AboutMyself"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.HelpAverageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyDialogStyleBottom" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.CreateMatchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.CreateScoreCard"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.activity.view.AddMatchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.doudizhu.DoudizhuMain"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.doudizhu.AtyBidongStart"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.doudizhu.AtyDoudizhuStart"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.doudizhu.AtyVegasStart"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.doudizhu.BdChoosePars"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.doudizhu.PlayerChoosePars"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.doudizhu.History"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.doudizhu.BirdActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyDialogStyleBottom" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.doudizhu.LaoyingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyDialogStyleBottom" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.doudizhu.ShuangBeibzgActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyDialogStyleBottom" />
+        <activity
+            android:name="cn.com.zcty.ILovegolf.doudizhu.RankActivity"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.2" >
+                </action>
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

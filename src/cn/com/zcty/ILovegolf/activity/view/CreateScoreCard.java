@@ -79,8 +79,8 @@ public class CreateScoreCard extends Activity{
 			if(msg.what==1){
 				if(msg.obj.equals("404")||msg.obj.equals("500")){
 					Toast.makeText(CreateScoreCard.this, "网络错误，请稍后再试", Toast.LENGTH_LONG).show();
-				}else if(msg.obj.equals("403")){
-					Toast.makeText(CreateScoreCard.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("401")){
+					Toast.makeText(CreateScoreCard.this, "帐号异地登录，请重新登录", Toast.LENGTH_LONG).show();
 					FileUtil.delFile();
 					Intent intent = new Intent(CreateScoreCard.this,ShouYeActivity.class);
 					startActivity(intent);
@@ -120,7 +120,7 @@ public class CreateScoreCard extends Activity{
 						totleImage.setImageBitmap(FileUtil.converToBitmap(100,100));
 					}
 				}
-				CreateScoreCardAdapter adapter = new CreateScoreCardAdapter(CreateScoreCard.this, scoreCardsMatchs);
+				CreateScoreCardAdapter adapter = new CreateScoreCardAdapter(CreateScoreCard.this, scoreCardsMatchs,color,distance);
 				scoreListView.setAdapter(adapter);
 				hideProgressDialog();
 				SharedPreferences sps = getSharedPreferences("codes", Context.MODE_PRIVATE);
@@ -179,6 +179,8 @@ public class CreateScoreCard extends Activity{
 					intent.putExtra("distance", scoreCardsMatchs.get(position).getDistance_from_hole());
 					intent.putExtra("putts", scoreCardsMatchs.get(position).getPutts());
 					intent.putExtra("penalties", scoreCardsMatchs.get(position).getPenalties());
+					intent.putExtra("color", color.get(position));
+					intent.putExtra("dis", distance.get(position));
 					intent.putExtra("number", (position+1)+"");
 					startActivity(intent);
 				}else{
@@ -359,6 +361,10 @@ public class CreateScoreCard extends Activity{
 					scoreCardsMatch.setDriving_distance(j.getString("driving_distance"));
 					scoreCardsMatch.setDirection(j.getString("direction"));
 					scoreCardsMatch.setDistance_from_hole(j.getString("distance_from_hole"));
+					Log.i("createscore", j.getString("distance_from_hole"));
+						
+					
+					
 					/*
 					 * 获得T台的数组
 					 */

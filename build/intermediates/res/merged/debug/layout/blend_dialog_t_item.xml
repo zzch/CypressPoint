@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/blend_view_bg_default"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <ImageView 
+        android:id="@+id/image_t"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="@dimen/view_small_x"
+       
+        
+        />
+    <TextView
+        android:id="@+id/blend_dialog_t_item_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:minHeight="48dp"
+		android:paddingLeft="@dimen/view_small_x"
+		android:paddingRight="16dp"
+		android:paddingTop="@dimen/view_small_x"
+		android:paddingBottom="8dp"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:textColor="@color/bg"
+        android:textSize="@dimen/txsize_small_xx" 
+        android:text="weofiwuf"
+        />
+
+</LinearLayout><!-- From: file:/D:/workspace/GolfAndroid/res/layout/blend_dialog_t_item.xml -->

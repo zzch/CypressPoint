@@ -22,7 +22,7 @@
           <Button
             android:id="@+id/fanhui"
             android:layout_width="80dp"
-            android:layout_height="47dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="@dimen/title_button_left"
             android:background="@null"
             android:text="@string/back"
@@ -32,7 +32,7 @@
          <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="10dp"
             android:src="@drawable/back_image"  />
 		</FrameLayout>
@@ -44,7 +44,7 @@
             android:layout_centerVertical="true"
             android:text="注 册"
             android:textColor="@color/white"
-            android:textSize="@dimen/txsize_small_xxx" />
+            android:textSize="@dimen/txsize_small_xxx"/>
 
     </RelativeLayout>
     <ScrollView 
@@ -98,15 +98,15 @@
           
            <EditText 
            android:id="@+id/et_password_reg"
-           android:layout_width="@dimen/register_view_width"
-           android:layout_height="@dimen/view_mid_xx_title"
-           android:password="true"
-           android:hint=" 至少6位密码"
-           android:lines="1"
-           android:textColor="@color/hei5"
-           android:textColorHint="@color/fengexian"
-           android:background="@drawable/wenbenkuang"
-           android:singleLine="true" 
+            android:layout_width="@dimen/register_view_width"
+            android:layout_height="@dimen/view_mid_xx_title"
+            android:background="@drawable/wenbenkuang"
+            android:ellipsize="end"
+            android:hint=" 至少六位密码"
+            android:inputType="textPassword"
+            android:textColor="@color/hei5"
+            android:singleLine="true" 
+            android:textColorHint="@color/fengexian" 
              />
            
   </LinearLayout>
@@ -118,21 +118,22 @@
       android:orientation="horizontal"
       android:background="@null"
        android:gravity="center"
-       android:layout_marginTop="25dip"
+       android:layout_marginTop="25dp"
       >
          
           
            <EditText 
            android:id="@+id/et_confirm_password"
            android:layout_width="@dimen/register_view_width"
-           android:layout_height="@dimen/view_mid_xx_title"
-           android:password="true"
-           android:hint=" 请确认您的密码"
-           android:lines="1"
-           android:textColor="@color/hei5"
-           android:textColorHint="@color/fengexian"
-           android:background="@drawable/wenbenkuang"
-           android:singleLine="true" 
+            android:layout_height="@dimen/view_mid_xx_title"
+            android:background="@drawable/wenbenkuang"
+           
+            android:hint=" 请确认您的密码"
+           
+            android:inputType="textPassword"
+            android:textColor="@color/hei5"
+            android:singleLine="true" 
+            android:textColorHint="@color/fengexian" 
              />
            
   </LinearLayout>
@@ -155,7 +156,7 @@
            android:hint=" 验证码"
            android:lines="1"
            android:textColor="@color/hei5"
-           android:layout_marginLeft="10dp"
+           android:layout_marginLeft="@dimen/zhuce_left"
            android:textColorHint="@color/fengexian"
            android:singleLine="true" 
              />

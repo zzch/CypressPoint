@@ -37,6 +37,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
@@ -123,14 +124,15 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 	private String sexSuccess;
 	private LinearLayout layout_brithday;
 	private LinearLayout layout_sex;
+	private static final int PHOTO_REQUEST_CUT = 3;
 	Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			if(msg.what==1){
 				hideProgressDialog();
 				if(msg.obj.equals("404")||msg.obj.equals("500")){
 					Toast.makeText(InformationChangesActivity.this, "网络错误，请稍后再试", Toast.LENGTH_LONG).show();
-				}else if(msg.obj.equals("403")){
-					Toast.makeText(InformationChangesActivity.this, "此帐号在其它android手机登录，请检查身份信息是否被泄漏", Toast.LENGTH_LONG).show();
+				}else if(msg.obj.equals("401")){
+					Toast.makeText(InformationChangesActivity.this, "帐号异地登录，请重新登录", Toast.LENGTH_LONG).show();
 					FileUtil.delFile();
 					Intent intent = new Intent(InformationChangesActivity.this,ShouYeActivity.class);
 					startActivity(intent);
@@ -169,6 +171,9 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 					overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 					finish();
 				}else{
+					if(nameSuccess==null){
+						
+					}else{
 				if(nameSuccess.equals("success")){
 					SharedPreferences sp = getSharedPreferences("register", MODE_PRIVATE);	
 					Editor editor = sp.edit();	
@@ -187,7 +192,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 					startActivity(intent);
 					overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 					finish();
-				}
+				}}
 				}
 			}
 		};
@@ -252,7 +257,6 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			}
 		});
 		
-		
 		upnameEditText.addTextChangedListener(new TextWatcher() {
 
 			@Override
@@ -305,6 +309,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			public void onClick(View v) {
 				startActivityForResult(new Intent(InformationChangesActivity.this,
 						SelectPicPopupWindow.class), 1);
+			
 			}
 		});
 		sexWheel.addChangingListener(new OnWheelChangedListener() {
@@ -318,13 +323,21 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 
 			@Override
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
-				year =  (String) yearadapter.getItemText(newValue).subSequence(0, yearadapter.getItemText(newValue).length()-1);
-				brithdayTextView.setText(year+"-"+moth+"-"+day);
-				years = Integer.parseInt(year);
-				SimpleDateFormat time = new SimpleDateFormat("yyyy");
-				years = Integer.parseInt(time.format(new Date()))-years;
-				nianlingTextView.setText(years+"");
-			}
+				if(yearadapter.getItemText(newValue)==null||(String) yearadapter.getItemText(newValue)==null){
+					
+				}else{
+				if((String) yearadapter.getItemText(newValue).subSequence(0, yearadapter.getItemText(newValue).length()-1)==null){
+					
+				}else{
+					year =  (String) yearadapter.getItemText(newValue).subSequence(0, yearadapter.getItemText(newValue).length()-1);
+					brithdayTextView.setText(year+"-"+moth+"-"+day);
+					years = Integer.parseInt(year);
+					SimpleDateFormat time = new SimpleDateFormat("yyyy");
+					years = Integer.parseInt(time.format(new Date()))-years;
+					nianlingTextView.setText(years+"");
+				}
+				}}
+			
 		});
 		monthWheelView.addChangingListener(new OnWheelChangedListener() {
 
@@ -334,6 +347,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 				if(Integer.parseInt(moth)<10){
 					moth = "0"+moth;
 				}
+				
 				brithdayTextView.setText(year+"-"+moth+"-"+day);
 			}
 		});
@@ -431,7 +445,20 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		imageView2 = (ImageView) findViewById(R.id.imageView2);
 		imageView3 = (ImageView) findViewById(R.id.imageView3);
 		imageView5 = (ImageView) findViewById(R.id.imageView5);
-		
+		Intent intents = getIntent();
+		if(intents.getStringExtra("gender")==null){
+			
+		}else{
+		String gender = intents.getStringExtra("gender");
+		if(!gender.equals("null")){
+			if(gender.equals("1")){
+				gender = "男";
+			}else{
+				gender = "女";
+			}
+			sexTextView.setText(gender);
+		}
+		}
 		if(!FileUtil.fileIsExists()){	
 			
 		}else{
@@ -441,51 +468,47 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		upnameEditText.setText(name);
 		String sgin = sp.getString("description", "description");
 		if(!sgin.equals("null")){
-			
 			sginEditText.setText(sgin);
 		}
 		Intent intent = getIntent();
+		if(intent.getStringExtra("birthday")==null){}else{
 		if(!intent.getStringExtra("birthday").equals("null")){
 			
 			brithdayTextView.setText(intent.getStringExtra("birthday"));
 		}
 		Log.i("brithdays", intent.getStringExtra("year"));
-
-		int year =Integer.parseInt(intent.getStringExtra("year"));
+		year = intent.getStringExtra("year");
+		int years =Integer.parseInt(intent.getStringExtra("year"));
 		SimpleDateFormat time = new SimpleDateFormat("yyyy");
 		
-		year = Integer.parseInt(time.format(new Date()))-year;
-		nianlingTextView.setText(year+"");
-
-
+		years = Integer.parseInt(time.format(new Date()))-years;
+		nianlingTextView.setText(years+"");
+		}
 	}
 	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-		switch (resultCode) {
+		switch (requestCode) {
 		case 1:
 			if (data != null) {
 				//取得返回的Uri,基本上选择照片的时候返回的是以Uri形式，但是在拍照中有得机子呢Uri是空的，所以要特别注意
 				Uri mImageCaptureUri = data.getData();
+				
 				//返回的Uri不为空时，那么图片信息数据都会在Uri中获得。如果为空，那么我们就进行下面的方式获取
 				if (mImageCaptureUri != null) {
-
 					try {
-
-						//这个方法是根据Uri获取Bitmap图片的静态方法
+						crop(mImageCaptureUri);
+						//这个方法是根据Uri获取Bitmap图片的静态方法，将Uri格式转化成Bitmap
 						image = MediaStore.Images.Media.getBitmap(this.getContentResolver(), mImageCaptureUri);	
 						image = FileUtil.comp(image);
 						Log.i("ceshipath", image+"1");
 						if (image != null) {
 							showProgressDialog("提示","正在上传",this);
-
 							String phoneName = android.os.Build.BRAND; 
 							if(phoneName.equals("samsung")){								
 								image = FileUtil.rotaingImageView(90,image);							
 							}
-							new GenxinHead().start();
-
+							//new GenxinHead().start();
 						}
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -495,19 +518,38 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 					if (extras != null) {
 						//这里是有些拍照后的图片是直接存放到Bundle中的所以我们可以从这里面获取Bitmap图片
 						image = extras.getParcelable("data");
+						//将Bitmap格式转化成Uri格式
+						Uri uri = Uri.parse(MediaStore.Images.Media.insertImage(getContentResolver(), image, null,null));
 						if (image != null) {
+							crop(uri);
 							showProgressDialog("提示","正在上传",this);
 							image = FileUtil.rotaingImageView(0,image);
 							image = FileUtil.comp(image);
 							Log.i("ceshipath", image+"2");
-							//headMyImage.setImageBitmap(image);
-							new GenxinHead().start();
-
-
+						    headMyImage.setImageBitmap(image);
+						//	new GenxinHead().start();
 						}
 					}
 				}
-
+			}
+			break;
+		
+		case PHOTO_REQUEST_CUT:
+			if (data != null) {
+				Bundle bundle = data.getExtras();
+				if (bundle != null) {
+					image = bundle.getParcelable("data");
+					if (image != null) {
+						showProgressDialog("提示","正在上传",this);
+						image = FileUtil.rotaingImageView(0,image);
+						image = FileUtil.comp(image);
+						Log.i("ceshipath", image+"2");
+						FileUtil.saveMyBitmap(image);
+						Log.i("image---", image+"----3");
+					    headMyImage.setImageBitmap(image);
+						new GenxinHead().start();
+					}
+				}
 			}
 			break;
 		default:
@@ -516,6 +558,28 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		}
 
 	}
+	/*
+	 * 剪切图片
+	 */
+	private void crop(Uri uri) {
+		// 裁剪图片意图
+		Intent intent = new Intent("com.android.camera.action.CROP");
+		intent.setDataAndType(uri, "image/*");
+		intent.putExtra("crop", "true");
+		// 裁剪框的比例，1：1
+		intent.putExtra("aspectX", 1);
+		intent.putExtra("aspectY", 1);
+		// 裁剪后输出图片的尺寸大小
+		intent.putExtra("outputX", 250);
+		intent.putExtra("outputY", 250);
+
+		intent.putExtra("outputFormat", "JPEG");// 图片格式
+		intent.putExtra("noFaceDetection", true);// 取消人脸识别
+		intent.putExtra("return-data", true);
+		// 开启一个带有返回值的Activity，请求码为PHOTO_REQUEST_CUT
+		startActivityForResult(intent, PHOTO_REQUEST_CUT);
+	}
+	
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
@@ -556,7 +620,8 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		case R.id.information_back:
 			new GenxinSgin().start();
 			new GenxinName().start();
-
+			new GenxinBrithday().start();
+			new GenxinSex().start();
 			break;
 		case R.id.layout_sex:
 			
@@ -591,7 +656,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 		super.onBackPressed();
 		new GenxinSgin().start();
 		new GenxinName().start();
-
+		new GenxinSex().start();
 
 		Intent intent = new Intent(InformationChangesActivity.this,Myself.class);
 		intent.putExtra("1", "1");
@@ -700,6 +765,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			String token=sp.getString("token", "token");
 			String path = APIService.SEX+"token="+token+"&gender="+s;
 			String jsonData = HttpUtils.HttpClientPut(path);
+			Log.i("cccasdfjlk", jsonData);
 			try {
 				JSONObject jsonObject = new JSONObject(jsonData);
 				sexSuccess = jsonObject.getString("result");
@@ -728,6 +794,7 @@ public class InformationChangesActivity extends BaseActivity implements OnClickL
 			HashMap<String, String> map = new HashMap<String, String>();
 			map.put("nickname", upname);
 			String jsonData = HttpUtils.Httpput(path, map);
+			Log.i("ddddddddad","jsonData");
 			try {
 				JSONObject jsonObject = new JSONObject(jsonData);
 				nameSuccess = jsonObject.getString("result");

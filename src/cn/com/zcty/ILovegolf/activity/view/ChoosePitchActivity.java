@@ -114,10 +114,6 @@ public class ChoosePitchActivity extends Activity {
 
 			}
 		});
-		
-		
-		
-		
 		//子条目点击事件
 		listpich.setOnItemClickListener(new OnItemClickListener() {
 			@Override
@@ -301,7 +297,6 @@ public class ChoosePitchActivity extends Activity {
 			progressDialog.setMessage(message);
 		}
 		progressDialog.show();
-
 	}
 	/*
 	 * 隐藏加载

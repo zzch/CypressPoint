@@ -6,12 +6,6 @@ import java.util.HashMap;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpStatus;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -32,35 +26,35 @@ public class ParseXmlService
 	public HashMap<String, String> parseXml(InputStream inStream) throws Exception
 	{
 		HashMap<String, String> hashMap = new HashMap<String, String>();
-		
-		// ÊµÀı»¯Ò»¸öÎÄµµ¹¹½¨Æ÷¹¤³§
+
+		// å®ä¾‹åŒ–ä¸€ä¸ªæ–‡æ¡£æ„å»ºå™¨å·¥å‚
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		// Í¨¹ıÎÄµµ¹¹½¨Æ÷¹¤³§»ñÈ¡Ò»¸öÎÄµµ¹¹½¨Æ÷
+		// é€šè¿‡æ–‡æ¡£æ„å»ºå™¨å·¥å‚è·å–ä¸€ä¸ªæ–‡æ¡£æ„å»ºå™¨
 		DocumentBuilder builder = factory.newDocumentBuilder();
-		// Í¨¹ıÎÄµµÍ¨¹ıÎÄµµ¹¹½¨Æ÷¹¹½¨Ò»¸öÎÄµµÊµÀı
+		// é€šè¿‡æ–‡æ¡£é€šè¿‡æ–‡æ¡£æ„å»ºå™¨æ„å»ºä¸€ä¸ªæ–‡æ¡£å®ä¾‹
 		Document document = builder.parse(inStream);
-		//»ñÈ¡XMLÎÄ¼ş¸ù½Úµã
+		//è·å–XMLæ–‡ä»¶æ ¹èŠ‚ç‚¹
 		Element root = document.getDocumentElement();
-		//»ñµÃËùÓĞ×Ó½Úµã
+		//è·å¾—æ‰€æœ‰å­èŠ‚ç‚¹
 		NodeList childNodes = root.getChildNodes();
 		for (int j = 0; j < childNodes.getLength(); j++)
 		{
-			//±éÀú×Ó½Úµã
+			//éå†å­èŠ‚ç‚¹
 			Node childNode = (Node) childNodes.item(j);
 			if (childNode.getNodeType() == Node.ELEMENT_NODE)
 			{
 				Element childElement = (Element) childNode;
-				//°æ±¾ºÅ
+				//ç‰ˆæœ¬å·
 				if ("version".equals(childElement.getNodeName()))
 				{
 					hashMap.put("version",childElement.getFirstChild().getNodeValue());
 				}
-				//Èí¼şÃû³Æ
+				//è½¯ä»¶åç§°
 				else if (("name".equals(childElement.getNodeName())))
 				{
 					hashMap.put("name",childElement.getFirstChild().getNodeValue());
 				}
-				//ÏÂÔØµØÖ·
+				//ä¸‹è½½åœ°å€
 				else if (("url".equals(childElement.getNodeName())))
 				{
 					hashMap.put("url",childElement.getFirstChild().getNodeValue());
@@ -77,10 +71,10 @@ public class ParseXmlService
 		String jsonData = HttpUtils.HttpClientGet(path);
 		Log.i("versoncode", jsonData);
 		JSONObject jsonObject = new JSONObject(jsonData);
-		
+
 		hashMap.put("version",jsonObject.getString("code"));
 		hashMap.put("name",jsonObject.getString("name"));
-		
+
 		String file = jsonObject.getString("file");
 		JSONObject fileJsonObject = new JSONObject(file);
 		hashMap.put("url",fileJsonObject.getString("url"));
@@ -93,7 +87,7 @@ public class ParseXmlService
 			super.run();
 		}
 		public void getData(){
-			
+
 		}
 	}
 }

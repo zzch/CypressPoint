@@ -128,8 +128,6 @@ import cn.com.zcty.ILovegolf.utils.HttpUtils;
 		return false;
 	}
 	private void setListeners() {
-		
-		
 		search_back.setOnClickListener(new OnClickListener() {
 			
 			@Override

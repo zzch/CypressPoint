@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ExerciseActivity" >
+
+     <TabHost 
+        android:id="@android:id/tabhost"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+        
+        <RelativeLayout 
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent"
+             
+            >
+		        <TabWidget 
+		            android:id="@android:id/tabs"
+		            android:layout_width="fill_parent"
+		            android:layout_height="@dimen/tab_height_x"
+		            android:layout_alignParentBottom="true"
+		            android:background="@color/bg"
+		            >
+		            
+		        </TabWidget>
+		        
+		        <FrameLayout
+		            android:layout_width="fill_parent"
+		            android:layout_height="fill_parent"
+		            android:layout_marginBottom="@dimen/tab_height_x"
+		            android:id="@android:id/tabcontent"
+		            >
+		            
+		        </FrameLayout>
+        
+        </RelativeLayout>
+    </TabHost>
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- From: file:/D:/workspace/GolfAndroid/res/layout/tabactivity_main.xml -->
