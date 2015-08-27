@@ -124,7 +124,7 @@ public class BidongFrag extends Fragment implements View.OnClickListener
         chose_play_0 = (ImageView) getActivity().findViewById(R.id.chose_play_0);
         chose_play_1 = (ImageView) getActivity().findViewById(R.id.chose_play_1);
         chose_play_2 =(ImageView) getActivity().findViewById(R.id.chose_play_2);
-       chose_play_3 = (ImageView) getActivity().findViewById(R.id.chose_play_3);
+        chose_play_3 = (ImageView) getActivity().findViewById(R.id.chose_play_3);
        myself_bg3 =(ImageView) getActivity().findViewById(R.id.myself_bg3);
        myself_bg4 =(ImageView) getActivity().findViewById(R.id.myself_bg4);
         bdTvDrawP1win = (TextView)getActivity().findViewById(R.id.bdTvDrawP1win);
@@ -344,8 +344,8 @@ public class BidongFrag extends Fragment implements View.OnClickListener
             case R.id.bdDrawP2winRl:
                 bdDrawP1winRl.setBackgroundColor(0xffe2e2e2);
                 bdDrawP2winRl.setBackgroundColor(0xffff771d);
-               chose_play_0.setVisibility(View.GONE);
-               chose_play_1.setVisibility(View.GONE);
+                chose_play_0.setVisibility(View.GONE);
+                chose_play_1.setVisibility(View.GONE);
                 chose_play_2.setVisibility(View.VISIBLE);
                 chose_play_3.setVisibility(View.VISIBLE);
                 myself_bg3.setImageResource(R.drawable.baiquan);
