@@ -179,7 +179,7 @@
 
                     <com.leaking.slideswitch.SlideSwitch
                         android:id="@+id/bdswitch_birdie"
-                        android:layout_width="5dp"
+                        android:layout_width="20dp"
                         android:layout_height="match_parent"
                         android:layout_alignParentRight="true"
                         slideswitch:shape1="circle"

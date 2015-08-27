@@ -70,6 +70,8 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
     private Button back;
     private TextView textView1;
     private Button btnTitleHis;
+    private String vergname1,vergname2,vergname3,vergname4;
+    private Intent intent;
 
     public static void launch(Context context, Match match, List<Player> list,boolean isnew)
     {
@@ -345,7 +347,7 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
 
         ddzllayout1 = (LinearLayout) findViewById(R.id.ddzllayout1);
         btnSelectPars.setOnClickListener(this);
-        rl_right.setOnClickListener(this);
+//        rl_right.setOnClickListener(this);
         btnP1stPars.setOnClickListener(this);
         btnP2stPars.setOnClickListener(this);
         btnP3stPars.setOnClickListener(this);
@@ -357,6 +359,10 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
         ddzP2Name = (TextView) findViewById(R.id.ddzp2stname);
         ddzP3Name = (TextView) findViewById(R.id.ddzp3stname);
         ddzP4Name = (TextView) findViewById(R.id.ddzp4stname);
+        vergname1 = ddzP1Name.getText().toString().trim();
+        vergname2 = ddzP2Name.getText().toString().trim();
+        vergname3 = ddzP3Name.getText().toString().trim();
+        vergname4 = ddzP4Name.getText().toString().trim();
 
         textView1 =(TextView) findViewById(R.id.textView1);
         textView1.setText("拉斯维加斯");
@@ -480,12 +486,18 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
 
                 break;
             case 1:
-                tv_ddzbird1.setText("bird !");
-                tv_ddzbird1.setVisibility(View.VISIBLE);
+                intent = new Intent(AtyVegasStart.this,BirdActivity.class);
+                intent.putExtra("vergxiao1", vergname1);
+                startActivity(intent);
+              //  tv_ddzbird1.setText("bird !");
+               // tv_ddzbird1.setVisibility(View.VISIBLE);
                 break;
             case 2:
-                tv_ddzbird1.setText("eagle !");
-                tv_ddzbird1.setVisibility(View.VISIBLE);
+                intent = new Intent(AtyVegasStart.this,LaoyingActivity.class);
+                intent.putExtra("verglao1", vergname1);
+                startActivity(intent);
+              //  tv_ddzbird1.setText("eagle !");
+              //  tv_ddzbird1.setVisibility(View.VISIBLE);
                 break;
         }
         //p2动画
@@ -495,12 +507,18 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
 
                 break;
             case 1:
-                tv_ddzbird1.setText("bird !");
-                tv_ddzbird1.setVisibility(View.VISIBLE);
+                intent = new Intent(AtyVegasStart.this,BirdActivity.class);
+                intent.putExtra("vergxiao2", vergname2);
+                startActivity(intent);
+              //  tv_ddzbird1.setText("bird !");
+              //  tv_ddzbird1.setVisibility(View.VISIBLE);
                 break;
             case 2:
-                tv_ddzbird1.setText("eagle !");
-                tv_ddzbird1.setVisibility(View.VISIBLE);
+                intent = new Intent(AtyVegasStart.this,LaoyingActivity.class);
+                intent.putExtra("verglao2", vergname2);
+                startActivity(intent);
+              //  tv_ddzbird1.setText("eagle !");
+              //  tv_ddzbird1.setVisibility(View.VISIBLE);
                 break;
         }
 
@@ -511,12 +529,18 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
 
                 break;
             case 1:
-                tv_ddzbird3.setText("bird !");
-                tv_ddzbird3.setVisibility(View.VISIBLE);
+                intent = new Intent(AtyVegasStart.this,BirdActivity.class);
+                intent.putExtra("vergxiao3", vergname3);
+                startActivity(intent);
+               // tv_ddzbird3.setText("bird !");
+               // tv_ddzbird3.setVisibility(View.VISIBLE);
                 break;
             case 2:
-                tv_ddzbird3.setText("eagle !");
-                tv_ddzbird3.setVisibility(View.VISIBLE);
+                intent = new Intent(AtyVegasStart.this,LaoyingActivity.class);
+                intent.putExtra("verglao3", vergname3);
+                startActivity(intent);
+               // tv_ddzbird3.setText("eagle !");
+               // tv_ddzbird3.setVisibility(View.VISIBLE);
                 break;
         }
         //p4动画
@@ -526,12 +550,18 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
 
                 break;
             case 1:
-                tv_ddzbird4.setText("bird ! x 2");
-                tv_ddzbird4.setVisibility(View.VISIBLE);
+                intent = new Intent(AtyVegasStart.this,BirdActivity.class);
+                intent.putExtra("vergxiao4", vergname4);
+                startActivity(intent);
+              //  tv_ddzbird4.setText("bird ! x 2");
+              //  tv_ddzbird4.setVisibility(View.VISIBLE);
                 break;
             case 2:
-                tv_ddzbird4.setText("eagle ! x 4");
-                tv_ddzbird4.setVisibility(View.VISIBLE);
+                intent = new Intent(AtyVegasStart.this,LaoyingActivity.class);
+                intent.putExtra("verglao4", vergname4);
+                startActivity(intent);
+               // tv_ddzbird4.setText("eagle ! x 4");
+               // tv_ddzbird4.setVisibility(View.VISIBLE);
                 break;
         }
 

@@ -76,6 +76,8 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
     private Button back;
     private TextView textView1;
     private Button btnTitleHis;
+    private String ddzname1,ddzname2,ddzname3;
+    Intent  intent;
 
     public static void launch(Context context, Match match, List<Player> list, boolean isnew) {
         Intent intent = new Intent(context, AtyDoudizhuStart.class);
@@ -180,11 +182,11 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
 
         btnSelectPars.setText(""+info.getPar());
 
-        ddzp1stscore_add.setText("0");
+        ddzp1stscore_add.setText("一");
         ddzp1stscore.setText("" + info.getPlayerscore().get(list.get(0)));
-        ddzp2stscore_add.setText("0");
+        ddzp2stscore_add.setText("一");
         ddzp2stscore.setText("" + info.getPlayerscore().get(list.get(1)));
-        ddzp3stscore_add.setText("0");
+        ddzp3stscore_add.setText("一");
         ddzp3stscore.setText("" + info.getPlayerscore().get(list.get(2)));
 
         btnP1stPars.setText(""+info.getP1().getStroke(hole_number));
@@ -210,16 +212,16 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
 
         btnSelectPars.setText(""+info.getPar());
 
-        ddzp1stscore_add.setText("0");
+        ddzp1stscore_add.setText("一");
         ddzp1stscore.setText("" + info.getPlayerscore().get(list.get(0)));
-        ddzp2stscore_add.setText("0");
+        ddzp2stscore_add.setText("一");
         ddzp2stscore.setText("" + info.getPlayerscore().get(list.get(1)));
-        ddzp3stscore_add.setText("0");
+        ddzp3stscore_add.setText("一");
         ddzp3stscore.setText("" + info.getPlayerscore().get(list.get(2)));
 
-        btnP1stPars.setText("0");
-        btnP2stPars.setText("0");
-        btnP3stPars.setText("0");
+        btnP1stPars.setText("一");
+        btnP2stPars.setText("一");
+        btnP3stPars.setText("一");
 
         ddzp1stscore_add.setVisibility(View.GONE);
         ddzp2stscore_add.setVisibility(View.GONE);
@@ -377,6 +379,9 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
         ddzP2Name = (TextView) findViewById(R.id.ddzp2stname);
         ddzP3Name = (TextView) findViewById(R.id.ddzp3stname);
 
+        ddzname1 = ddzP1Name.getText().toString().trim();
+        ddzname2 = ddzP2Name.getText().toString().trim();
+        ddzname3 = ddzP3Name.getText().toString().trim();
         textView1 =(TextView) findViewById(R.id.textView1);
         textView1.setText("斗地主");
 
@@ -484,12 +489,18 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
 
                 break;
             case 1:
-                tv_ddzbird1.setText("bird ! x 2");
-                tv_ddzbird1.setVisibility(View.VISIBLE);
+                intent = new Intent(AtyDoudizhuStart.this,BirdActivity.class);
+                intent.putExtra("ddzxiao1", ddzname1);
+                startActivity(intent);
+              //  tv_ddzbird1.setText("bird ! x 2");
+              //  tv_ddzbird1.setVisibility(View.VISIBLE);
                 break;
             case 2:
-                tv_ddzbird1.setText("eagle ! x 4");
-                tv_ddzbird1.setVisibility(View.VISIBLE);
+                intent = new Intent(AtyDoudizhuStart.this,LaoyingActivity.class);
+                intent.putExtra("ddzlao1", ddzname1);
+                startActivity(intent);
+              //  tv_ddzbird1.setText("eagle ! x 4");
+              //  tv_ddzbird1.setVisibility(View.VISIBLE);
                 break;
         }
         //p2动画
@@ -498,12 +509,18 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
 
                 break;
             case 1:
-                tv_ddzbird1.setText("bird ! x 2");
-                tv_ddzbird1.setVisibility(View.VISIBLE);
+                intent = new Intent(AtyDoudizhuStart.this,BirdActivity.class);
+                intent.putExtra("ddzxiao2", ddzname2);
+                startActivity(intent);
+              //  tv_ddzbird1.setText("bird ! x 2");
+             //   tv_ddzbird1.setVisibility(View.VISIBLE);
                 break;
             case 2:
-                tv_ddzbird1.setText("eagle ! x 4");
-                tv_ddzbird1.setVisibility(View.VISIBLE);
+                intent = new Intent(AtyDoudizhuStart.this,LaoyingActivity.class);
+                intent.putExtra("ddzlao2", ddzname2);
+                startActivity(intent);
+             //   tv_ddzbird1.setText("eagle ! x 4");
+            //    tv_ddzbird1.setVisibility(View.VISIBLE);
                 break;
         }
 
@@ -513,12 +530,18 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
 
                 break;
             case 1:
-                tv_ddzbird3.setText("bird ! x 2");
-                tv_ddzbird3.setVisibility(View.VISIBLE);
+                intent = new Intent(AtyDoudizhuStart.this,BirdActivity.class);
+                intent.putExtra("ddzxiao3", ddzname3);
+                startActivity(intent);
+              //  tv_ddzbird3.setText("bird ! x 2");
+              //  tv_ddzbird3.setVisibility(View.VISIBLE);
                 break;
             case 2:
-                tv_ddzbird3.setText("eagle ! x 4");
-                tv_ddzbird3.setVisibility(View.VISIBLE);
+                intent = new Intent(AtyDoudizhuStart.this,LaoyingActivity.class);
+                intent.putExtra("ddzlao3", ddzname3);
+                startActivity(intent);
+              //  tv_ddzbird3.setText("eagle ! x 4");
+              //  tv_ddzbird3.setVisibility(View.VISIBLE);
                 break;
         }
 

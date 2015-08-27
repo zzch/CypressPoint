@@ -65,7 +65,8 @@ public class AtyBidongStart extends Activity implements View.OnClickListener
     private Button back;
     private TextView textView1;
     private Button btnTitleHis;
-
+   private String name1,name2;
+    Intent intent;
     public static void launch(Context context, Match match, List<Player> players, boolean isnew)
     {
         Intent intent = new Intent(context, AtyBidongStart.class);
@@ -320,6 +321,9 @@ public class AtyBidongStart extends Activity implements View.OnClickListener
         bdP1Score = (TextView) findViewById(R.id.bdp1stscore);
         bdP2Name = (TextView) findViewById(R.id.bdp2stname);
         bdP2Score = (TextView) findViewById(R.id.bdp2stscore);
+        name1 = bdP1Name.getText().toString().trim();
+        name2 = bdP2Name.getText().toString().trim();
+
         btnSelectPars.setOnClickListener(this);
         btnP1stPars.setOnClickListener(this);
         btnP2stPars.setOnClickListener(this);
@@ -336,6 +340,7 @@ public class AtyBidongStart extends Activity implements View.OnClickListener
         bdp1stscore = (TextView) findViewById(R.id.bdp1stscore);
         bdp2stscore = (TextView) findViewById(R.id.bdp2stscore);
 //
+
         textView1 =(TextView) findViewById(R.id.textView1);
         textView1.setText("比洞赛");
 
@@ -445,16 +450,19 @@ public class AtyBidongStart extends Activity implements View.OnClickListener
         Xlog.d("ani=======" + i);
         if(i==1)
         {
-            String name1 = bdP1Name.getText().toString().trim();
-            Intent intent = new Intent(AtyBidongStart.this,BirdActivity.class);
-            intent.putExtra("name1",name1);
+
+            intent = new Intent(AtyBidongStart.this,BirdActivity.class);
+            intent.putExtra("xiao1",name1);
             startActivity(intent);
-           // tv_bird1.setText("bird ! x 2");
+            // tv_bird1.setText("bird ! x 2");
             //tv_bird1.setVisibility(View.VISIBLE);
         }else if(i==2)
         {
-            tv_bird1.setText("eagle ! x 4");
-            tv_bird1.setVisibility(View.VISIBLE);
+            intent = new Intent(AtyBidongStart.this,LaoyingActivity.class);
+            intent.putExtra("lao1", name1);
+            startActivity(intent);
+           // tv_bird1.setText("eagle ! x 4");
+           // tv_bird1.setVisibility(View.VISIBLE);
         }
 
         switch (i)
@@ -463,13 +471,19 @@ public class AtyBidongStart extends Activity implements View.OnClickListener
 
                 break;
             case 1:
-
-                tv_bird1.setText("bird ! x 2");
-                tv_bird1.setVisibility(View.VISIBLE);
+                intent = new Intent(AtyBidongStart.this,BirdActivity.class);
+                intent.putExtra("xiao1", name1);
+                startActivity(intent);
+               // tv_bird1.setText("bird ! x 2");
+              //  tv_bird1.setVisibility(View.VISIBLE);
                 break;
             case 2:
-                tv_bird1.setText("eagle ! x 4");
-                tv_bird1.setVisibility(View.VISIBLE);
+                Toast.makeText(this,bdP2Name.getText().toString(),Toast.LENGTH_SHORT);
+                 intent = new Intent(AtyBidongStart.this,LaoyingActivity.class);
+                 intent.putExtra("lao1", name1);
+                startActivity(intent);
+              //  tv_bird1.setText("eagle ! x 4");
+               // tv_bird1.setVisibility(View.VISIBLE);
                 break;
         }
 
@@ -479,12 +493,18 @@ public class AtyBidongStart extends Activity implements View.OnClickListener
 
                 break;
             case 1:
-                tv_bird2.setText("bird ! x 2");
-                tv_bird2.setVisibility(View.VISIBLE);
+                intent = new Intent(AtyBidongStart.this,BirdActivity.class);
+                intent.putExtra("xiao2", name2);
+                startActivity(intent);
+                //tv_bird2.setText("bird ! x 2");
+               // tv_bird2.setVisibility(View.VISIBLE);
                 break;
             case 2:
-                tv_bird2.setText("eagle ! x 4");
-                tv_bird2.setVisibility(View.VISIBLE);
+                intent = new Intent(AtyBidongStart.this,LaoyingActivity.class);
+               intent.putExtra("lao2", name2);
+               startActivity(intent);
+              //  tv_bird2.setText("eagle ! x 4");
+               // tv_bird2.setVisibility(View.VISIBLE);
                 break;
         }
 

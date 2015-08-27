@@ -27,7 +27,8 @@ public class BirdActivity extends Activity
 
 private ImageView xiaoniao;
 private TextView player_name;
-    private String names;
+
+    private String names,names4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -35,14 +36,15 @@ private TextView player_name;
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_bird);
-        Intent  intent = getIntent();
-        names = intent.getStringExtra("name1");
+        initView();
+        initDate();
+
     }
 
 private void initView(){
     xiaoniao = (ImageView) findViewById(R.id.xiaoniao);
     player_name =(TextView) findViewById(R.id.player_name);
-    player_name.setText(names);
+
     xiaoniao.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -50,6 +52,45 @@ private void initView(){
             finish();
         }
     });
-}
+    }
+
+    private  void initDate(){
+        Intent  intent = getIntent();
+        String xiao1 = intent.getStringExtra("xiao1");
+        String xiao2 = intent.getStringExtra("xiao2");
+
+        String ddzxiao1 = intent.getStringExtra("ddzxiao1");
+        String ddzxiao2 = intent.getStringExtra("ddzxiao2");
+        String ddzxiao3 = intent.getStringExtra("ddzxiao3");
+
+        String vergxiao1 = intent.getStringExtra("vergxiao1");
+        String vergxiao2 = intent.getStringExtra("vergxiao2");
+        String vergxiao3 = intent.getStringExtra("vergxiao3");
+        String vergxiao4 = intent.getStringExtra("vergxiao4");
+        if(xiao1!=null){
+            player_name.setText(xiao1+"打出了一个小鸟球");
+        }else if(xiao2!=null){
+            player_name.setText(xiao2+"打出了一个小鸟球");
+        }
+
+        if(ddzxiao1!=null){
+              player_name.setText(ddzxiao1+"打出了一个小鸟球");
+          }else if(ddzxiao2!=null){
+              player_name.setText(ddzxiao2+"打出了一个小鸟球");
+          }else if(ddzxiao3!=null){
+              player_name.setText(ddzxiao3+"打出了一个小鸟球");
+          }
+
+        if(vergxiao1!=null){
+            player_name.setText(vergxiao1+"打出了一个小鸟球");
+        }else if(vergxiao2!=null){
+            player_name.setText(vergxiao2+"打出了一个小鸟球");
+        }else if(vergxiao3!=null){
+            player_name.setText(vergxiao3+"打出了一个小鸟球");
+        }else if(vergxiao4!=null){
+            player_name.setText(vergxiao4+"打出了一个小鸟球");
+        }
+
+    }
 
 }
