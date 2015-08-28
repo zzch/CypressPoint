@@ -5,7 +5,6 @@ import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -55,7 +54,7 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
     private Player player4;
     private User myUser;
     private LinearLayout ddzllayout1;
-    private RelativeLayout rl_right;
+
     private RelativeLayout root;
     int hole_number = 1;
     int par;
@@ -67,11 +66,11 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
     boolean isnew;
     //返回的控制开关
     int backflag = 2;
+    private boolean isReEdit;
     private Button back;
     private TextView textView1;
     private Button btnTitleHis;
     private String vergname1,vergname2,vergname3,vergname4;
-    private Intent intent;
 
     public static void launch(Context context, Match match, List<Player> list,boolean isnew)
     {
@@ -149,8 +148,6 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
 
         changeImg();
 
-        setValue();
-
         if(hole_number<18)
         {
             setValue();
@@ -178,7 +175,7 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
         ddzp4stscore_add.setText("0");
         ddzp4stscore.setText("" + info.getPlayerscore().get(list.get(3)));
 
-        btnP1stPars.setText("" + info.getP1().getStroke(hole_number));
+        btnP1stPars.setText(""+info.getP1().getStroke(hole_number));
         btnP2stPars.setText(""+info.getP2().getStroke(hole_number));
         btnP3stPars.setText(""+info.getP3().getStroke(hole_number));
         btnP4stPars.setText(""+info.getP4().getStroke(hole_number));
@@ -306,7 +303,9 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
             if ("1".equals(list.get(i).getIs_owner())) {
                 ((ImageView) ddzllayout1.getChildAt(i)).setImageResource(R.mipmap.images);
             } else {
-                ((ImageView) ddzllayout1.getChildAt(i)).setImageBitmap(BitmapFactory.decodeFile(list.get(i).getPortrait()));
+//                ((ImageView) ddzllayout1.getChildAt(i)).setImageBitmap(BitmapFactory.decodeFile(list.get(i).getPortrait()));
+
+                WmUtil.setPortrait(list.get(i), (ImageView) ddzllayout1.getChildAt(i), this);
             }
 
 
@@ -326,6 +325,7 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
         btnP2stPars = (Button) findViewById(R.id.btnddzp2stpars);
         btnP3stPars = (Button) findViewById(R.id.btnddzp3stpars);
         btnP4stPars = (Button) findViewById(R.id.btnddzp4stpars);
+
         btnPreHole = (Button) findViewById(R.id.ddzprevioushole);
         btnConfirmResult = (Button) findViewById(R.id.ddzresultcomfirm);
 
@@ -347,7 +347,7 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
 
         ddzllayout1 = (LinearLayout) findViewById(R.id.ddzllayout1);
         btnSelectPars.setOnClickListener(this);
-//        rl_right.setOnClickListener(this);
+
         btnP1stPars.setOnClickListener(this);
         btnP2stPars.setOnClickListener(this);
         btnP3stPars.setOnClickListener(this);
@@ -359,6 +359,7 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
         ddzP2Name = (TextView) findViewById(R.id.ddzp2stname);
         ddzP3Name = (TextView) findViewById(R.id.ddzp3stname);
         ddzP4Name = (TextView) findViewById(R.id.ddzp4stname);
+
         vergname1 = ddzP1Name.getText().toString().trim();
         vergname2 = ddzP2Name.getText().toString().trim();
         vergname3 = ddzP3Name.getText().toString().trim();
@@ -388,22 +389,22 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
     {
         ddzHoles.setText("球洞 " + hole_number);
 
-        ddzp1stscore_add.setText("一");
-        ddzp1stscore.setText("一");
+        ddzp1stscore_add.setText("0");
+        ddzp1stscore.setText("0");
 
-        ddzp2stscore_add.setText("一");
-        ddzp2stscore.setText("一");
+        ddzp2stscore_add.setText("0");
+        ddzp2stscore.setText("0");
 
-        ddzp3stscore_add.setText("一");
-        ddzp3stscore.setText("一");
+        ddzp3stscore_add.setText("0");
+        ddzp3stscore.setText("0");
 
         ddzp4stscore_add.setText("0");
         ddzp4stscore.setText("0");
 
-        btnP1stPars.setText("一");
-        btnP2stPars.setText("一");
-        btnP3stPars.setText("一");
-        btnP4stPars.setText("一");
+        btnP1stPars.setText("");
+        btnP2stPars.setText("");
+        btnP3stPars.setText("");
+        btnP4stPars.setText("");
 
         tv_ddzbird1.setVisibility(View.GONE);
         tv_ddzbird2.setVisibility(View.GONE);
@@ -486,18 +487,12 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
 
                 break;
             case 1:
-                intent = new Intent(AtyVegasStart.this,BirdActivity.class);
-                intent.putExtra("vergxiao1", vergname1);
-                startActivity(intent);
-              //  tv_ddzbird1.setText("bird !");
-               // tv_ddzbird1.setVisibility(View.VISIBLE);
+                tv_ddzbird1.setText("bird !");
+                tv_ddzbird1.setVisibility(View.VISIBLE);
                 break;
             case 2:
-                intent = new Intent(AtyVegasStart.this,LaoyingActivity.class);
-                intent.putExtra("verglao1", vergname1);
-                startActivity(intent);
-              //  tv_ddzbird1.setText("eagle !");
-              //  tv_ddzbird1.setVisibility(View.VISIBLE);
+                tv_ddzbird1.setText("eagle !");
+                tv_ddzbird1.setVisibility(View.VISIBLE);
                 break;
         }
         //p2动画
@@ -507,18 +502,12 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
 
                 break;
             case 1:
-                intent = new Intent(AtyVegasStart.this,BirdActivity.class);
-                intent.putExtra("vergxiao2", vergname2);
-                startActivity(intent);
-              //  tv_ddzbird1.setText("bird !");
-              //  tv_ddzbird1.setVisibility(View.VISIBLE);
+                tv_ddzbird1.setText("bird !");
+                tv_ddzbird1.setVisibility(View.VISIBLE);
                 break;
             case 2:
-                intent = new Intent(AtyVegasStart.this,LaoyingActivity.class);
-                intent.putExtra("verglao2", vergname2);
-                startActivity(intent);
-              //  tv_ddzbird1.setText("eagle !");
-              //  tv_ddzbird1.setVisibility(View.VISIBLE);
+                tv_ddzbird1.setText("eagle !");
+                tv_ddzbird1.setVisibility(View.VISIBLE);
                 break;
         }
 
@@ -529,18 +518,12 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
 
                 break;
             case 1:
-                intent = new Intent(AtyVegasStart.this,BirdActivity.class);
-                intent.putExtra("vergxiao3", vergname3);
-                startActivity(intent);
-               // tv_ddzbird3.setText("bird !");
-               // tv_ddzbird3.setVisibility(View.VISIBLE);
+                tv_ddzbird3.setText("bird !");
+                tv_ddzbird3.setVisibility(View.VISIBLE);
                 break;
             case 2:
-                intent = new Intent(AtyVegasStart.this,LaoyingActivity.class);
-                intent.putExtra("verglao3", vergname3);
-                startActivity(intent);
-               // tv_ddzbird3.setText("eagle !");
-               // tv_ddzbird3.setVisibility(View.VISIBLE);
+                tv_ddzbird3.setText("eagle !");
+                tv_ddzbird3.setVisibility(View.VISIBLE);
                 break;
         }
         //p4动画
@@ -550,18 +533,12 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
 
                 break;
             case 1:
-                intent = new Intent(AtyVegasStart.this,BirdActivity.class);
-                intent.putExtra("vergxiao4", vergname4);
-                startActivity(intent);
-              //  tv_ddzbird4.setText("bird ! x 2");
-              //  tv_ddzbird4.setVisibility(View.VISIBLE);
+                tv_ddzbird4.setText("bird ! x 2");
+                tv_ddzbird4.setVisibility(View.VISIBLE);
                 break;
             case 2:
-                intent = new Intent(AtyVegasStart.this,LaoyingActivity.class);
-                intent.putExtra("verglao4", vergname4);
-                startActivity(intent);
-               // tv_ddzbird4.setText("eagle ! x 4");
-               // tv_ddzbird4.setVisibility(View.VISIBLE);
+                tv_ddzbird4.setText("eagle ! x 4");
+                tv_ddzbird4.setVisibility(View.VISIBLE);
                 break;
         }
 
@@ -731,23 +708,64 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
 //                RankActivity.launch(this, match, list, 0);
                 break;
             case R.id.ddzselectpars:
-                startActivityForResult(new Intent(this, BdChoosePars.class), 1);
+                if (isReEditStatus() ) {
+                    if(WmUtil.holesinfos[hole_number - 1].isEdit()) {
+                        handleButtonStatus();
+                        startActivityForResult(new Intent(this, BdChoosePars.class), 1);
+                    }
+                }else {
+                    startActivityForResult(new Intent(this, BdChoosePars.class), 1);
+                }
                 break;
             case R.id.btnddzp1stpars:
-                startActivityForResult(new Intent(this, PlayerChoosePars.class), 2);
+                if (isReEditStatus() ) {
+                    if(WmUtil.holesinfos[hole_number - 1].isEdit()) {
+                        handleButtonStatus();
+                        startActivityForResult(new Intent(this, PlayerChoosePars.class), 2);
+                    }
+                }else {
+                    startActivityForResult(new Intent(this, PlayerChoosePars.class), 2);
+                }
                 break;
             case R.id.btnddzp2stpars:
-                startActivityForResult(new Intent(this, PlayerChoosePars.class), 3);
+                if (isReEditStatus() ) {
+                    if(WmUtil.holesinfos[hole_number - 1].isEdit()) {
+                        handleButtonStatus();
+                        startActivityForResult(new Intent(this, PlayerChoosePars.class), 3);
+                    }
+                }else {
+                    startActivityForResult(new Intent(this, PlayerChoosePars.class), 3);
+                }
                 break;
             case R.id.btnddzp3stpars:
-                startActivityForResult(new Intent(this, PlayerChoosePars.class), 4);
+                if (isReEditStatus() ) {
+                    if(WmUtil.holesinfos[hole_number - 1].isEdit()) {
+                        handleButtonStatus();
+                        startActivityForResult(new Intent(this, PlayerChoosePars.class), 4);
+                    }
+                }else {
+                    startActivityForResult(new Intent(this, PlayerChoosePars.class), 4);
+                }
                 break;
             case R.id.btnddzp4stpars:
-                startActivityForResult(new Intent(this, PlayerChoosePars.class), 5);
+                if (isReEditStatus() ) {
+                    if(WmUtil.holesinfos[hole_number - 1].isEdit()) {
+                        handleButtonStatus();
+                        startActivityForResult(new Intent(this, PlayerChoosePars.class), 5);
+                    }
+                }else {
+                    startActivityForResult(new Intent(this, PlayerChoosePars.class), 5);
+                }
                 break;
             //点击上一洞
             case R.id.ddzprevioushole:
-                previousHole();
+                if (isReEdit) {
+                    resetValue();
+                    isReEdit = false;
+                    isnext = true;
+                } else {
+                    previousHole();
+                }
                 break;
 
 
@@ -760,29 +778,68 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
                     {
                         finish();
                     }
-                    nextHole();
+                   nextHole();
                 } else
                 {
-                    String btext1 =  btnSelectPars.getText().toString().trim();
-                    String btext2 = btnP1stPars.getText().toString().trim();
-                    String  btext3 = btnP2stPars.getText().toString().trim();
-                    String  btext4 = btnP3stPars.getText().toString().trim();
-                    String  btext5 = btnP4stPars.getText().toString().trim();
-                    if(btext1.equals("一") ){
-                        Toast.makeText(this,"请选择标准杆",Toast.LENGTH_SHORT).show();
-                    }else if( btext2.equals("一") || btext3.equals("一")||btext4.equals("一")||btext5.equals("一")){
-                        Toast.makeText(this,"请选择杆数",Toast.LENGTH_SHORT).show();
-                    }else {
-                        confirmRem();
-                        if (hole_number == 18) {
-                            btnConfirmResult.setText("结束比赛");
-                        }
+                    if(isReEdit)
+                    {
+                        btnPreHole.setText("上一洞");
+                        isReEdit = false;
+                    }
+                    confirmRem();
+                    if(hole_number==18)
+                    {
+                        btnConfirmResult.setText("结束比赛");
                     }
                 }
                 break;
             default:
                 break;
         }
+    }
+
+    private void resetValue() {
+        btnConfirmResult.setText("下一洞");
+        btnPreHole.setText("上一洞");
+
+        HolesInfo info = WmUtil.holesinfos[hole_number - 1];
+
+        btnSelectPars.setText("" + info.getPar());
+
+        ddzp1stscore_add.setText("0");
+        ddzp1stscore.setText("" + info.getPlayerscore().get(list.get(0)));
+        ddzp2stscore_add.setText("0");
+        ddzp2stscore.setText("" + info.getPlayerscore().get(list.get(1)));
+        ddzp3stscore_add.setText("0");
+        ddzp3stscore.setText("" + info.getPlayerscore().get(list.get(2)));
+        ddzp4stscore_add.setText("0");
+        ddzp4stscore.setText("" + info.getPlayerscore().get(list.get(3)));
+
+        btnP1stPars.setText("" + info.getP1().getStroke(hole_number));
+        btnP2stPars.setText("" + info.getP2().getStroke(hole_number));
+        btnP3stPars.setText("" + info.getP3().getStroke(hole_number));
+        btnP4stPars.setText("" + info.getP4().getStroke(hole_number));
+
+        ddzp1stscore_add.setVisibility(View.GONE);
+        ddzp2stscore_add.setVisibility(View.GONE);
+        ddzp3stscore_add.setVisibility(View.GONE);
+        ddzp4stscore_add.setVisibility(View.GONE);
+
+        tv_ddzbird1.setVisibility(View.GONE);
+        tv_ddzbird2.setVisibility(View.GONE);
+        tv_ddzbird3.setVisibility(View.GONE);
+        tv_ddzbird4.setVisibility(View.GONE);
+    }
+
+    private boolean isReEditStatus() {
+        return WmUtil.holesinfos[hole_number - 1] != null;
+    }
+
+    private void handleButtonStatus() {
+        btnConfirmResult.setText("确认修改");
+        btnPreHole.setText("取消");
+        isReEdit = true;
+        isnext = false;
     }
 
     private void previousHole() {
@@ -797,13 +854,8 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
 
         //get holeinfo
         HolesInfo info = WmUtil.holesinfos[hole_number - 1];
-        if (info.isEdit()) {
-            btnConfirmResult.setText("确认成绩");
-            isnext = false;
-        } else {
-            btnConfirmResult.setText("下一洞");
-            isnext = true;
-        }
+        isnext = true;
+        btnConfirmResult.setText("下一洞");
 
         //2.换位置
         list.clear();
@@ -816,13 +868,13 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
         //3.重新赋值
         btnSelectPars.setText("" + info.getPar());
 
-        ddzp1stscore_add.setText("一");
+        ddzp1stscore_add.setText("0");
         ddzp1stscore.setText("" + info.getPlayerscore().get(list.get(0)));
-        ddzp2stscore_add.setText("一");
+        ddzp2stscore_add.setText("0");
         ddzp2stscore.setText("" + info.getPlayerscore().get(list.get(1)));
-        ddzp3stscore_add.setText("一");
+        ddzp3stscore_add.setText("0");
         ddzp3stscore.setText("" + info.getPlayerscore().get(list.get(2)));
-        ddzp4stscore_add.setText("一");
+        ddzp4stscore_add.setText("0");
         ddzp4stscore.setText("" + info.getPlayerscore().get(list.get(3)));
 
         btnP1stPars.setText("" + info.getP1().getStroke(hole_number));
@@ -847,7 +899,7 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
         ddzHoles.setText("球洞" + hole_number);
         //取下一洞holeinfo判断状态
         HolesInfo nextInfo = WmUtil.holesinfos[hole_number - 1];
-        if (nextInfo != null && !nextInfo.isEdit()) {
+        if (nextInfo != null) {
             btnConfirmResult.setText("下一洞");
             isnext = true;
         } else {
@@ -872,13 +924,13 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
         //3.重新赋值
         HolesInfo info = WmUtil.holesinfos[hole_number - 2];
 
-        ddzp1stscore_add.setText("一");
+        ddzp1stscore_add.setText("0");
         ddzp1stscore.setText("" + info.getPlayerscore().get(list.get(0)));
-        ddzp2stscore_add.setText("一");
+        ddzp2stscore_add.setText("0");
         ddzp2stscore.setText("" + info.getPlayerscore().get(list.get(1)));
-        ddzp3stscore_add.setText("一");
+        ddzp3stscore_add.setText("0");
         ddzp3stscore.setText("" + info.getPlayerscore().get(list.get(2)));
-        ddzp4stscore_add.setText("一");
+        ddzp4stscore_add.setText("0");
         ddzp4stscore.setText("" + info.getPlayerscore().get(list.get(3)));
 
         if (nextInfo != null) {
@@ -889,10 +941,10 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
         }
         else
         {
-            btnP1stPars.setText("一");
-            btnP2stPars.setText("一");
-            btnP3stPars.setText("一");
-            btnP4stPars.setText("一");
+            btnP1stPars.setText("0");
+            btnP2stPars.setText("0");
+            btnP3stPars.setText("0");
+            btnP4stPars.setText("0");
         }
 
         ddzp1stscore_add.setVisibility(View.GONE);
@@ -1154,7 +1206,9 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
                 ((ImageView) ddzllayout1.getChildAt(i)).setImageResource(R.mipmap.images);
             } else
             {
-                ((ImageView) ddzllayout1.getChildAt(i)).setImageBitmap(BitmapFactory.decodeFile(list.get(i).getPortrait()));
+//                ((ImageView) ddzllayout1.getChildAt(i)).setImageBitmap(BitmapFactory.decodeFile(list.get(i).getPortrait()));
+
+                WmUtil.setPortrait(list.get(i), (ImageView) ddzllayout1.getChildAt(i), this);
             }
 
 
@@ -1297,6 +1351,14 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
+        if(data==null)
+        {
+            btnConfirmResult.setText("下一洞");
+            btnPreHole.setText("上一洞");
+            isReEdit = false;
+            isnext = true;
+            return;
+        }
         Log.d("onActivityResult", "onActivityResult===================onActivityResult==" + requestCode + "======" + resultCode);
         switch (requestCode)
         {

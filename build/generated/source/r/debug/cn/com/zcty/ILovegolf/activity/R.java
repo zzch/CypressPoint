@@ -1854,7 +1854,6 @@ containing a value of this type.
         public static final int help_shakeng_4=0x7f0d0258;
         public static final int help_xiaoniao_1=0x7f0d00f4;
         public static final int help_xiaoniao_2=0x7f0d00f7;
-        public static final int hisItemPlayerScore=0x7f0d0383;
         public static final int hisTotalScore=0x7f0d037d;
         public static final int historyListView=0x7f0d037e;
         public static final int hit_scorecard=0x7f0d0272;
@@ -2480,6 +2479,7 @@ containing a value of this type.
         public static final int tv_ddzbird2=0x7f0d0361;
         public static final int tv_ddzbird3=0x7f0d0362;
         public static final int tv_ddzbird4=0x7f0d042a;
+        public static final int tv_eared=0x7f0d0383;
         public static final int tv_functions=0x7f0d0385;
         public static final int tv_text=0x7f0d014c;
         public static final int tv_time=0x7f0d0380;

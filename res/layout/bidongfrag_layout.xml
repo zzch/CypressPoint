@@ -124,7 +124,6 @@
                             android:layout_width="62dp"
                             android:layout_height="62dp"
                             android:layout_centerHorizontal="true"
-
                             android:layout_marginLeft="3dp"
                             android:layout_marginTop="3dp"
                             android:src="@mipmap/images"/>
@@ -280,8 +279,6 @@
                     android:id="@+id/bd_tieEx"
                     android:layout_width="match_parent"
                     android:layout_height="43dp"
-
-
                     android:padding="10dp">
 
                     <TextView
@@ -306,7 +303,6 @@
                     android:layout_height="0.5dp"
                     android:background="#aaaaaa"
                     />
-
             </LinearLayout>
 
             <LinearLayout
@@ -388,7 +384,6 @@
                             android:textAppearance="?android:attr/textAppearanceMedium"
                             android:src="@drawable/sheng"
                             android:layout_centerVertical="true"
-
                             android:layout_marginRight="10dp"
                             android:layout_toStartOf="@+id/frameLayout3"/>
                         <ImageView
@@ -399,19 +394,14 @@
                             android:src="@drawable/li"
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="10dp"
-
                             android:layout_toEndOf="@+id/frameLayout3"/>
-
                     </RelativeLayout>
-
-
                     <RelativeLayout
                         android:id="@+id/bdDrawP2winRl"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:background="#e2e2e2"
                         android:layout_weight="1">
-
                         <FrameLayout
                             android:id="@+id/frameLayout4"
                             android:layout_width="wrap_content"
@@ -419,7 +409,6 @@
                             android:layout_centerVertical="true"
                             android:layout_centerHorizontal="true"
                             >
-
                             <RelativeLayout
                                 android:id="@+id/myself_layout4"
                                 android:layout_width="wrap_content"
@@ -427,7 +416,6 @@
                                 android:layout_centerVertical="true"
                                 android:layout_centerHorizontal="true"
                                 >
-
                                 <ImageView
                                     android:id="@+id/myself_bg4"
                                     android:layout_width="68dp"
@@ -436,7 +424,6 @@
                                     android:layout_centerHorizontal="true"
                                     android:src="@drawable/baiquan" />
                             </RelativeLayout>
-
                             <com.meg7.widget.CircleImageView
                                 android:id="@+id/bdDrawP2win"
 

@@ -73,15 +73,15 @@ public class Match implements Serializable{
 	private int par_18;
 
 	private int drawWhoWin = -1;
-
+	
 	public Match(){}
 
 	public Match(String id, String type, String played_at, String eagle_x4,
-				 String birdie_x2, String double_par_x2, String draw_to_next,
-				 String draw_to_win, int earned, int par_1, int par_2, int par_3,
-				 int par_4, int par_5, int par_6, int par_7, int par_8, int par_9,
-				 int par_10, int par_11, int par_12, int par_13, int par_14,
-				 int par_15, int par_16, int par_17, int par_18) {
+			String birdie_x2, String double_par_x2, String draw_to_next,
+			String draw_to_win, int earned, int par_1, int par_2, int par_3,
+			int par_4, int par_5, int par_6, int par_7, int par_8, int par_9,
+			int par_10, int par_11, int par_12, int par_13, int par_14,
+			int par_15, int par_16, int par_17, int par_18) {
 		super();
 		this.id = id;
 		this.type = type;
@@ -384,7 +384,7 @@ public class Match implements Serializable{
 	public void setPar_18(int par_18) {
 		this.par_18 = par_18;
 	}
-
+	
 	public int getPar(int hole)
 	{
 		switch (hole)

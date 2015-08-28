@@ -83,7 +83,7 @@
             android:textColor="#ff961d"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="10dp"
-            android:id="@+id/hisItemPlayerScore"
+            android:id="@+id/tv_eared"
             android:layout_gravity="center_vertical"/>
 
     </LinearLayout>

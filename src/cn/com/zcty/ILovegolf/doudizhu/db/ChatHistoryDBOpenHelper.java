@@ -19,7 +19,7 @@ public class ChatHistoryDBOpenHelper extends SQLiteOpenHelper {
     }
 
     public static final String CREATE_MATCH = "CREATE TABLE match (" +
-            "                id integer primary key autoincrement, " +
+            "                id text primary key , " +
             "               type text, " +
             "               played_at text, " +
             "               currenthole integer, " +
@@ -46,12 +46,14 @@ public class ChatHistoryDBOpenHelper extends SQLiteOpenHelper {
             "                 par_15 integer," +
             "                 par_16 integer," +
             "                 par_17 integer," +
-            "                 par_18 integer" +
+            "                 par_18 integer," +
+            "                 drawWhoWin integer" +
             "                )";
     public static final String CREATE_USER = "CREATE TABLE player (" +
-            "                        uid integer primary key autoincrement," +
-            "                        match_id integer, " +
+            "                        uid text primary key ," +
+            "                        match_id text, " +
             "                        is_owner text," +
+            "                        earned integer," +
             "                        nickname text," +
             "                        portrait text," +
             "                        stroke_1 integer," +
@@ -71,7 +73,8 @@ public class ChatHistoryDBOpenHelper extends SQLiteOpenHelper {
             "                        stroke_15 integer," +
             "                        stroke_16 integer," +
             "                        stroke_17 integer," +
-            "                        stroke_18 integer" +
+            "                        stroke_18 integer," +
+            "                        position text" +
             "                        )";
 
     // 数据库表结构创建初始化

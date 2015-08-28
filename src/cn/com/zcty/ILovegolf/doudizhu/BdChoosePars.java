@@ -59,21 +59,18 @@ public class BdChoosePars extends Activity implements RadioGroup.OnCheckedChange
         {
             case R.id.bdChooseParRdb3:
                 Intent intent1 = new Intent();
-                intent1.putExtra("whichPar", "3");
-                setResult(RESULT_OK, intent1);
-                finish();
+                intent1.putExtra("whichPar","3");
+                setResult(RESULT_OK,intent1);
                 break;
             case R.id.bdChooseParRdb4:
                 Intent intent2 = new Intent();
-                intent2.putExtra("whichPar", "4");
-                setResult(RESULT_OK, intent2);
-                finish();
+                intent2.putExtra("whichPar","4");
+                setResult(RESULT_OK,intent2);
                 break;
             case R.id.bdChooseParRdb5:
                 Intent intent3 = new Intent();
-                intent3.putExtra("whichPar", "5");
-                setResult(RESULT_OK, intent3);
-                finish();
+                intent3.putExtra("whichPar","5");
+                setResult(RESULT_OK,intent3);
                 break;
         }
     }

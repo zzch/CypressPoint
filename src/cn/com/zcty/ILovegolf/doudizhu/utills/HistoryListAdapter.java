@@ -9,11 +9,10 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-
-
-import java.util.List;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.doudizhu.entity.Match;
+
+import java.util.List;
 
 /**
  * Created by wangm on 2015/8/6.
@@ -61,7 +60,7 @@ public class HistoryListAdapter extends BaseAdapter
         hisMatchTypeTv = ViewHolder.get(convertView, R.id.tv_type);
         hisDateTv = ViewHolder.get(convertView, R.id.tv_time);
         hisCurrentParTv = ViewHolder.get(convertView, R.id.tv_currenthole);
-       // hisGetScoreTv = ViewHolder.get(convertView, R.id.tv_eared);
+        hisGetScoreTv = ViewHolder.get(convertView, R.id.tv_eared);
         hisCurrentParTv.setText(match.getCurrenthole()+"/18");
         hisMatchTypeTv.setText(match.getType());
         hisDateTv.setText(match.getPlayed_at());

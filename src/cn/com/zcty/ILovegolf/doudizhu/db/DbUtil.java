@@ -6,13 +6,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-
-import  cn.com.zcty.ILovegolf.doudizhu.entity.Player;
+import cn.com.zcty.ILovegolf.doudizhu.entity.Match;
+import cn.com.zcty.ILovegolf.doudizhu.entity.Player;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import cn.com.zcty.ILovegolf.doudizhu.entity.Match;
 
 public class DbUtil
 {

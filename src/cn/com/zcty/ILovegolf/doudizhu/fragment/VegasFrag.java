@@ -2,7 +2,6 @@ package cn.com.zcty.ILovegolf.doudizhu.fragment;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.database.Cursor;
@@ -12,6 +11,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,8 +22,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-
-import cn.com.zcty.ILovegolf.doudizhu.AtyDoudizhuStart;
 import cn.com.zcty.ILovegolf.doudizhu.AtyVegasStart;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.doudizhu.entity.Match;
@@ -227,10 +225,19 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
     Uri imageUri;
 
 
-    private void setImage()
+    private void setImage(int num)
     {
 
-        imageUri = Uri.fromFile(WmUtil.setOutPutImage("name"));
+
+        if(num==1){
+            imageUri = Uri.fromFile(WmUtil.setOutPutImage(time1));
+        }else if(num==2){
+            imageUri = Uri.fromFile(WmUtil.setOutPutImage(time2));
+        }else{
+            imageUri = Uri.fromFile(WmUtil.setOutPutImage(time3));
+        }
+
+
         Intent getAlbum = new Intent("android.intent.action.GET_CONTENT");
         getAlbum.setType("image/*");
         getAlbum.putExtra("crop", true);
@@ -238,9 +245,18 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
         startActivityForResult(getAlbum, 1);
     }
 
-    private void takePhoto()
+    private void takePhoto(int num)
+
     {
-        imageUri = Uri.fromFile(WmUtil.setOutPutImage(player1.getNickname()));
+
+        if(num==1){
+            imageUri = Uri.fromFile(WmUtil.setOutPutImage(time1));
+        }else if(num==2){
+            imageUri = Uri.fromFile(WmUtil.setOutPutImage(time2));
+        }else{
+            imageUri = Uri.fromFile(WmUtil.setOutPutImage(time3));
+        }
+
         Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
         intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
         startActivityForResult(intent, 3);
@@ -269,6 +285,11 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
     }
 
     int currentPosition;
+    String time1;
+    String time2;
+    String time3;
+    String time4;
+
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, final int position, long id)
@@ -295,6 +316,7 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
                         mSimpleAdapter.notifyDataSetChanged();
                         player1.setNickname(et.getText().toString());
 
+
                     }
 
                     @Override
@@ -306,15 +328,17 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
                     @Override
                     public void takePicture(ImageView iv)
                     {
+                        time1 = System.currentTimeMillis() + "";
                         dialogFace = iv;
-                        takePhoto();
+                        takePhoto(1);
                     }
 
                     @Override
                     public void choosePicture(ImageView iv)
                     {
+                        time1 = System.currentTimeMillis() + "";
                         dialogFace = iv;
-                        setImage();
+                        setImage(1);
                     }
                 });
 
@@ -342,15 +366,17 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
                     @Override
                     public void takePicture(ImageView iv)
                     {
+                        time2 = System.currentTimeMillis() + "";
                         dialogFace = iv;
-                        takePhoto();
+                        takePhoto(2);
                     }
 
                     @Override
                     public void choosePicture(ImageView iv)
                     {
+                        time2 = System.currentTimeMillis() + "";
                         dialogFace = iv;
-                        setImage();
+                        setImage(2);
                     }
                 });
 
@@ -379,15 +405,17 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
                     @Override
                     public void takePicture(ImageView iv)
                     {
+                        time3 = System.currentTimeMillis() + "";
                         dialogFace = iv;
-                        takePhoto();
+                        takePhoto(3);
                     }
 
                     @Override
                     public void choosePicture(ImageView iv)
                     {
+                        time3 = System.currentTimeMillis() + "";
                         dialogFace = iv;
-                        setImage();
+                        setImage(3);
                     }
                 });
             }
@@ -574,6 +602,14 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
                 dialogFace.setImageBitmap(bitmap);
                 dataSourceList.get(currentPosition).put("ddzplayerimg", bitmap);
                 mSimpleAdapter.notifyDataSetChanged();
+
+                if(choosePlayer==1){
+                    player1.setPortrait(time1);
+                }else if(choosePlayer==2){
+                    player2.setPortrait(time2);
+                }else{
+                    player3.setPortrait(time3);
+                }
 //                ddz.setImageBitmap(bitmap);
 
 

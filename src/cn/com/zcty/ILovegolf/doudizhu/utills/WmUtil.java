@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -734,6 +735,22 @@ public class WmUtil {
         }
         return 99;
 
+    }
+
+
+    public static void setPortrait(Player player,ImageView bdP2,Context context){
+
+        File outputimage = new File(Environment.getExternalStorageDirectory(),
+                player.getPortrait() + ".jpg");
+        Uri imageUri=Uri.fromFile(outputimage);
+
+
+        try {
+            bdP2.setImageBitmap(BitmapFactory.decodeStream(context.getContentResolver()
+                    .openInputStream(imageUri)));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
 

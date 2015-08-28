@@ -11,9 +11,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import cn.com.zcty.ILovegolf.activity.R;
-
 import cn.com.zcty.ILovegolf.doudizhu.db.DbUtil;
 import cn.com.zcty.ILovegolf.doudizhu.entity.Match;
 import cn.com.zcty.ILovegolf.doudizhu.entity.Player;
@@ -34,13 +32,12 @@ public class History extends Activity
     private List<Match> matchesData;
     private HistoryListAdapter adapter;
     private Player player1,player2,player3,player4;
-//    private List<Player> list;
-private Button back;
+    private Button back;
     private TextView textView1;
     private Button btnTitleHis;
+//    private List<Player> list;
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.history);
@@ -70,7 +67,6 @@ private Button back;
                 overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
             }
         });
-
     }
 //
     @Override
@@ -79,7 +75,7 @@ private Button back;
         Match match = matchesData.get(position);
         String type = match.getType();
         String matchId = String.valueOf(match.getId()) ;
-        Log.d("matchid", "matchid========" + matchId);
+        Log.d("matchid","matchid========"+matchId);
         List<Player> players = DbUtil.getInstance(this).getPlayerList(matchId);
 
         Xlog.d(type+"----------------------type");

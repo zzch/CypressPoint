@@ -1096,7 +1096,6 @@ int id help_shakeng_3 0x7f0d0252
 int id help_shakeng_4 0x7f0d0258
 int id help_xiaoniao_1 0x7f0d00f4
 int id help_xiaoniao_2 0x7f0d00f7
-int id hisItemPlayerScore 0x7f0d0383
 int id hisTotalScore 0x7f0d037d
 int id historyListView 0x7f0d037e
 int id hit_scorecard 0x7f0d0272
@@ -1722,6 +1721,7 @@ int id tv_ddzbird1 0x7f0d0360
 int id tv_ddzbird2 0x7f0d0361
 int id tv_ddzbird3 0x7f0d0362
 int id tv_ddzbird4 0x7f0d042a
+int id tv_eared 0x7f0d0383
 int id tv_functions 0x7f0d0385
 int id tv_text 0x7f0d014c
 int id tv_time 0x7f0d0380

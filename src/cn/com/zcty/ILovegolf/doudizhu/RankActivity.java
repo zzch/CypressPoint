@@ -4,11 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import cn.com.zcty.ILovegolf.doudizhu.db.DbUtil;
 import cn.com.zcty.ILovegolf.doudizhu.entity.Match;
@@ -45,68 +42,28 @@ public class RankActivity extends Activity
     }
 
     private Intent intent;
-    private Button back;
-    private TextView textView1;
-    private Button btnTitleHis;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
         setContentView(R.layout.rank_listview_layout);
-        initView();
-
         intent = getIntent();
         int type = intent.getIntExtra("type", 0);
-        initData();
         if (type == 0)
         {
-           // getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.bd_rank_title);
-
-            back.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    startActivity(new Intent(RankActivity.this, AtyBidongStart.class));
-                    //overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-                }
-            });
+            getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.bd_rank_title);
         } else if (type == 1)
         {
-           // getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.doudizhu_rank_title);
-
-            back.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    startActivity(new Intent(RankActivity.this, AtyDoudizhuStart.class));
-                    overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-                }
-            });
+            getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.doudizhu_rank_title);
         } else
         {
-           // getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.vegas_rank_title);
-
-            back.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    startActivity(new Intent(RankActivity.this, AtyVegasStart.class));
-                    overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-                }
-            });
+            getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.vegas_rank_title);
         }
 //        list = new ArrayList<>();
+        initData();
 
-
-
-    }
-
-    private void initView(){
-        textView1 =(TextView) findViewById(R.id.textView1);
-        textView1.setText("排行榜");
-
-        btnTitleHis = (Button) findViewById(R.id.btnTitleHis);
-        btnTitleHis.setVisibility(View.GONE);
-
-        back = (Button)findViewById(R.id.back);
 
     }
 

@@ -12,9 +12,9 @@ import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.view.HomePageActivity;
 import cn.com.zcty.ILovegolf.doudizhu.entity.User;
+
 import cn.com.zcty.ILovegolf.doudizhu.fragment.BidongFrag;
 import cn.com.zcty.ILovegolf.doudizhu.fragment.DoudizhuFrag;
-
 import cn.com.zcty.ILovegolf.doudizhu.fragment.VegasFrag;
 import cn.com.zcty.ILovegolf.doudizhu.utills.ActivityCollector;
 import cn.com.zcty.ILovegolf.doudizhu.utills.CacheUtils;
@@ -28,14 +28,13 @@ public class DoudizhuMain extends Activity
     private TextView btnHistory;
     private Button back;
     private TextView textView1;
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.doudizhu_main);
-        // getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.etmode_title);
+       // getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.etmode_title);
         ActivityCollector.addActivity(this);
         //这个方法是假的，模拟的是一个已经登录的
         initMyUser();;
@@ -58,31 +57,36 @@ public class DoudizhuMain extends Activity
 
     private void initView()
     {
-
+        btnHistory = (TextView) findViewById(R.id.btnTitleHis);
         ddzRdg = (RadioGroup) findViewById(R.id.ddzRdg);
         bdRdb = (RadioButton) findViewById(R.id.modeBidong);
         ddzRdb = (RadioButton) findViewById(R.id.modeDoudizhu);
         vegasRdb = (RadioButton) findViewById(R.id.modeVegas);
+        btnHistory = (TextView) findViewById(R.id.btnTitleHis);
+        back = (Button)findViewById(R.id.back);
+        textView1 =(TextView) findViewById(R.id.textView1);
         bdRdb.setChecked(true);
-//        btnStart = (Button) findViewById(R.id.btnStart);
         getFragmentManager().beginTransaction().replace(R.id.frameLayout, new BidongFrag()).commit();
-        ddzRdg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        ddzRdg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == bdRdb.getId()) {
+            public void onCheckedChanged(RadioGroup group, int checkedId)
+            {
+                if (checkedId == bdRdb.getId())
+                {
                     getFragmentManager().beginTransaction().replace(R.id.frameLayout, new BidongFrag()).commit();
                 }
-                if (checkedId == ddzRdb.getId()) {
+                if (checkedId == ddzRdb.getId())
+                {
                     getFragmentManager().beginTransaction().replace(R.id.frameLayout, new DoudizhuFrag()).commit();
                 }
-                if (checkedId == vegasRdb.getId()) {
+                if (checkedId == vegasRdb.getId())
+                {
                     getFragmentManager().beginTransaction().replace(R.id.frameLayout, new VegasFrag()).commit();
                 }
             }
         });
-        btnHistory = (TextView) findViewById(R.id.btnTitleHis);
-        back = (Button)findViewById(R.id.back);
-        textView1 =(TextView) findViewById(R.id.textView1);
+
 
         textView1.setText("娱乐模式");
         btnHistory.setText("历史");
@@ -90,7 +94,7 @@ public class DoudizhuMain extends Activity
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(DoudizhuMain.this, HomePageActivity.class));
-                overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
             }
         });
         btnHistory.setOnClickListener(new View.OnClickListener() {
@@ -99,7 +103,6 @@ public class DoudizhuMain extends Activity
                 startActivity(new Intent(DoudizhuMain.this, History.class));
             }
         });
-
     }
 
 

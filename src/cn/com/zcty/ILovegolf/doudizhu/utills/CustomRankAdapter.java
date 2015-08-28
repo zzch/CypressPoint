@@ -2,7 +2,6 @@ package cn.com.zcty.ILovegolf.doudizhu.utills;
 
 import android.content.Context;
 import android.graphics.BitmapFactory;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,13 +9,13 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-
-import java.util.List;
 import cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.doudizhu.entity.HolesInfo;
 import cn.com.zcty.ILovegolf.doudizhu.entity.Match;
 import cn.com.zcty.ILovegolf.doudizhu.entity.Player;
+
+import java.util.List;
 
 /**
  * Created by wangm on 2015/8/13.
@@ -40,7 +39,6 @@ public class CustomRankAdapter extends BaseAdapter
     public int getCount()
     {
         return players.size();
-
     }
 
     @Override
@@ -60,7 +58,7 @@ public class CustomRankAdapter extends BaseAdapter
     {
         Player player = players.get(position);
         View view = LayoutInflater.from(mContext).inflate(R.layout.rank_list_item, null);
-        ImageView HorSImage = (ImageView) view.findViewById(R.id.HorSImage);
+//        ImageView HorSImage = (ImageView) view.findViewById(R.id.HorSImage);
         LinearLayout ll = (LinearLayout) view.findViewById(R.id.ll);
         if (position == 0)
         {
@@ -83,10 +81,13 @@ public class CustomRankAdapter extends BaseAdapter
 //            ((TextView)ll.getChildAt(i).findViewById(R.id.rankPlayerscore)).setText(score);
 //        }
         int hole = match.getCurrenthole();
-        int stroke = getearned(player, hole);
-        String face = player.getPortrait();
+        HolesInfo info  = WmUtil.holesinfos[hole-1];
+        int stroke = info!=null?info.getPlayerscore().get(player):0;
+//        String face = player.getPortrait();
         String name = player.getNickname();
-        ((ImageView) ll.getChildAt(0).findViewById(R.id.rankPlayerimage)).setImageBitmap(BitmapFactory.decodeFile(face));
+        ImageView playerImage = ((ImageView) ll.getChildAt(0).findViewById(R.id.rankPlayerimage));
+        WmUtil.setPortrait(player,playerImage,mContext);
+//                ((ImageView) ll.getChildAt(0).findViewById(R.id.rankPlayerimage)).setImageBitmap(BitmapFactory.decodeFile(face));
         ((TextView) ll.getChildAt(0).findViewById(R.id.rankPlayername)).setText(name);
         ((TextView) ll.getChildAt(0).findViewById(R.id.rankPlayerscore)).setText(String.valueOf(stroke));
 

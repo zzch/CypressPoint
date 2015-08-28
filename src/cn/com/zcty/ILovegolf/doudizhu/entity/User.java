@@ -2,9 +2,8 @@ package cn.com.zcty.ILovegolf.doudizhu.entity;
 
 import android.content.Context;
 
-import com.google.gson.Gson;
-
 import cn.com.zcty.ILovegolf.doudizhu.utills.CacheUtils;
+import com.google.gson.Gson;
 
 public class User {
 	

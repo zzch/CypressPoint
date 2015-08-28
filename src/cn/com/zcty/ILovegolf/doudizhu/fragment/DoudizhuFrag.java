@@ -2,7 +2,7 @@ package cn.com.zcty.ILovegolf.doudizhu.fragment;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.app.Fragment;
+
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.database.Cursor;
@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -252,7 +253,6 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
     private void setImage(Player player)
     {
 
-        imageUri = Uri.fromFile(WmUtil.setOutPutImage(player.getNickname()));
         Intent getAlbum = new Intent("android.intent.action.GET_CONTENT");
         getAlbum.setType("image/*");
         getAlbum.putExtra("crop", true);
@@ -336,10 +336,15 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
     }
 
 
-    private void setImage()
+    private void setImage(int num)
     {
+        if(num==1){
+            imageUri = Uri.fromFile(WmUtil.setOutPutImage(time1));
+        }else{
+            imageUri = Uri.fromFile(WmUtil.setOutPutImage(time2));
+        }
 
-        imageUri = Uri.fromFile(WmUtil.setOutPutImage("name"));
+
         Intent getAlbum = new Intent("android.intent.action.GET_CONTENT");
         getAlbum.setType("image/*");
         getAlbum.putExtra("crop", true);
@@ -347,15 +352,26 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
         startActivityForResult(getAlbum, 1);
     }
 
-    private void takePhoto()
+    private void takePhoto(int num)
     {
-        imageUri = Uri.fromFile(WmUtil.setOutPutImage(player1.getNickname()));
+
+        if(num==1){
+            imageUri = Uri.fromFile(WmUtil.setOutPutImage(time1));
+        }else{
+            imageUri = Uri.fromFile(WmUtil.setOutPutImage(time2));
+        }
+
         Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
         intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
         startActivityForResult(intent, 3);
     }
 
     int currentPosition = 0;
+
+    String time1;
+    String time2;
+
+
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, final int position, long id)
@@ -391,15 +407,19 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
                     @Override
                     public void takePicture(ImageView iv)
                     {
+
+                     time1 = System.currentTimeMillis() + "";
+
                         dialogFace = iv;
-                        takePhoto();
+                        takePhoto(1);
                     }
 
                     @Override
                     public void choosePicture(ImageView iv)
                     {
+                        time1 = System.currentTimeMillis() + "";
                         dialogFace = iv;
-                        setImage();
+                        setImage(1);
                     }
                 });
 
@@ -426,15 +446,18 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
                     @Override
                     public void takePicture(ImageView iv)
                     {
+
+                        time2 = System.currentTimeMillis() + "";
                         dialogFace = iv;
-                        takePhoto();
+                        takePhoto(2);
                     }
 
                     @Override
                     public void choosePicture(ImageView iv)
                     {
+                        time2 = System.currentTimeMillis() + "";
                         dialogFace = iv;
-                        setImage();
+                        setImage(2);
                     }
                 });
 
@@ -562,6 +585,13 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
                 dialogFace.setImageBitmap(bitmap);
                 dataSourceList.get(currentPosition).put("ddzplayerimg", bitmap);
                 mSimpleAdapter.notifyDataSetChanged();
+
+                if(choosePlayer==1){
+                    player1.setPortrait( time1);
+                }else {
+                    player2.setPortrait(time2);
+                }
+
 //                ddz.setImageBitmap(bitmap);
 
 

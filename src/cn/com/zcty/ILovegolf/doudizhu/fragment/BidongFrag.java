@@ -2,7 +2,6 @@ package cn.com.zcty.ILovegolf.doudizhu.fragment;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.database.Cursor;
@@ -10,9 +9,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
-import android.transition.Visibility;
+import android.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,17 +24,13 @@ import android.widget.TextView;
 
 import cn.com.zcty.ILovegolf.doudizhu.AtyBidongStart;
 import cn.com.zcty.ILovegolf.activity.R;
-import cn.com.zcty.ILovegolf.doudizhu.db.DbUtil;
+
 import cn.com.zcty.ILovegolf.doudizhu.entity.Match;
 import cn.com.zcty.ILovegolf.doudizhu.entity.Player;
 import cn.com.zcty.ILovegolf.doudizhu.entity.User;
 import cn.com.zcty.ILovegolf.doudizhu.utills.WmUtil;
+import cn.com.zcty.ILovegolf.doudizhu.utills.Xlog;
 import com.leaking.slideswitch.SlideSwitch;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -58,16 +52,12 @@ public class BidongFrag extends Fragment implements View.OnClickListener
     public Match match;
     public ImageView playerface;
     private Button btnStart;
-    private ImageView chose_play_0;
-    private ImageView chose_play_1;
-    private ImageView chose_play_2;
-    private ImageView chose_play_3;
-    private ImageView myself_bg3;
-    private ImageView myself_bg4;
-    private TextView bdTvDrawP1win;
-    private TextView bdTvDrawP2win;
     private LinearLayout bdDrawWhichWinRoot;
     private RelativeLayout bdDrawP1winRl, bdDrawP2winRl;
+
+
+    String timechuo
+            ;
 
 
     @Override
@@ -121,14 +111,7 @@ public class BidongFrag extends Fragment implements View.OnClickListener
         doubleParsDouble = (SlideSwitch) getActivity().findViewById(R.id.bdswitch_pardouble);
         tie2NextHole = (SlideSwitch) getActivity().findViewById(R.id.bdswitch_tie2next);
         tieHS = (SlideSwitch) getActivity().findViewById(R.id.bdswitch_tieEx);
-        chose_play_0 = (ImageView) getActivity().findViewById(R.id.chose_play_0);
-        chose_play_1 = (ImageView) getActivity().findViewById(R.id.chose_play_1);
-        chose_play_2 =(ImageView) getActivity().findViewById(R.id.chose_play_2);
-        chose_play_3 = (ImageView) getActivity().findViewById(R.id.chose_play_3);
-       myself_bg3 =(ImageView) getActivity().findViewById(R.id.myself_bg3);
-       myself_bg4 =(ImageView) getActivity().findViewById(R.id.myself_bg4);
-        bdTvDrawP1win = (TextView)getActivity().findViewById(R.id.bdTvDrawP1win);
-        bdTvDrawP2win =(TextView) getActivity().findViewById(R.id.bdTvDrawP2win);
+
         dialog = WmUtil.createEditPlayer(getActivity(), new WmUtil.EditPlayerListener()
         {
             @Override
@@ -136,6 +119,10 @@ public class BidongFrag extends Fragment implements View.OnClickListener
             {
                 bdp2Name.setText(et.getText().toString());
                 player.setNickname(et.getText().toString());
+
+
+
+                Xlog.d("nickname ========"+player.getNickname());
             }
 
             @Override
@@ -147,7 +134,7 @@ public class BidongFrag extends Fragment implements View.OnClickListener
             @Override
             public void takePicture(ImageView iv)
             {
-
+                timechuo = System.currentTimeMillis() + "";
                 playerface = iv;
                 takePhoto();
             }
@@ -155,6 +142,8 @@ public class BidongFrag extends Fragment implements View.OnClickListener
             @Override
             public void choosePicture(ImageView iv)
             {
+
+                timechuo = System.currentTimeMillis() + "";
                 playerface = iv;
                 setImage();
             }
@@ -229,7 +218,7 @@ public class BidongFrag extends Fragment implements View.OnClickListener
                 } else
                 {
                     tieHS.setState(false);
-                    bdDrawWhichWinRoot.setVisibility(View.GONE);
+                    bdDrawWhichWinRoot.setVisibility(View.INVISIBLE);
                     bdDrawP1winRl.setClickable(false);
                     bdDrawP2winRl.setClickable(false);
                     match.setDraw_to_win("0");
@@ -329,29 +318,9 @@ public class BidongFrag extends Fragment implements View.OnClickListener
 
                 break;
             case R.id.bdDrawP1winRl:
-                bdDrawP1winRl.setBackgroundColor(0xffff771d);
-                bdDrawP2winRl.setBackgroundColor(0xffe2e2e2);
-                chose_play_0.setVisibility(View.VISIBLE);
-                chose_play_1.setVisibility(View.VISIBLE);
-               chose_play_2.setVisibility(View.GONE);
-                chose_play_3.setVisibility(View.GONE);
-               myself_bg3.setImageResource(R.drawable.huangse);
-                myself_bg4.setImageResource(R.drawable.baiquan);
-                bdTvDrawP1win.setTextColor(0xffffffff);
-                bdTvDrawP2win.setTextColor(0xff222222);
                 match.setDrawWhoWin(Match.LEFT);
                 break;
             case R.id.bdDrawP2winRl:
-                bdDrawP1winRl.setBackgroundColor(0xffe2e2e2);
-                bdDrawP2winRl.setBackgroundColor(0xffff771d);
-                chose_play_0.setVisibility(View.GONE);
-                chose_play_1.setVisibility(View.GONE);
-                chose_play_2.setVisibility(View.VISIBLE);
-                chose_play_3.setVisibility(View.VISIBLE);
-                myself_bg3.setImageResource(R.drawable.baiquan);
-                myself_bg4.setImageResource(R.drawable.huangse);
-                bdTvDrawP1win.setTextColor(0xff222222);
-                bdTvDrawP2win.setTextColor(0xffffffff);
                 match.setDrawWhoWin(Match.RIGHT);
                 break;
             case R.id.btnStart:
@@ -385,7 +354,7 @@ public class BidongFrag extends Fragment implements View.OnClickListener
     private void setImage()
     {
 
-        imageUri = Uri.fromFile(WmUtil.setOutPutImage(player.getNickname()));
+        imageUri = Uri.fromFile(WmUtil.setOutPutImage( timechuo ));
         Intent getAlbum = new Intent("android.intent.action.GET_CONTENT");
         getAlbum.setType("image/*");
         getAlbum.putExtra("crop", true);
@@ -395,7 +364,7 @@ public class BidongFrag extends Fragment implements View.OnClickListener
 
     private void takePhoto()
     {
-        imageUri = Uri.fromFile(WmUtil.setOutPutImage(player.getNickname()));
+        imageUri = Uri.fromFile(WmUtil.setOutPutImage(timechuo));
         Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
         intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
         //
@@ -500,8 +469,13 @@ public class BidongFrag extends Fragment implements View.OnClickListener
                 {
                     e.printStackTrace();
                 }
+                Xlog.d("========uri====" + imageUri.toString());
+
+
                 playerface.setImageBitmap(bitmap);
                 bdp2Image.setImageBitmap(bitmap);
+
+                player.setPortrait( timechuo );
 
 
                 // imgPath.setText(path);
