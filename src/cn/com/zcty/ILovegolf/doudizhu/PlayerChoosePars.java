@@ -2,6 +2,7 @@ package cn.com.zcty.ILovegolf.doudizhu;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -26,7 +27,15 @@ public class PlayerChoosePars extends Activity implements View.OnClickListener
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.playerchoosepar);
         initView();
+        if(getIntent().getStringExtra("imageUrl")==null)
+        {
+            pChooseparsImage.setImageBitmap(BitmapFactory.decodeResource(this.getBaseContext().getResources(), R.drawable.hugh));
+        }else
+        {
 
+            pChooseparsImage.setImageBitmap(BitmapFactory.decodeFile(getIntent().getStringExtra("imageUrl")));
+        }
+        pChooseparsName.setText(getIntent().getStringExtra("nickname"));
     }
 
     private void initView()

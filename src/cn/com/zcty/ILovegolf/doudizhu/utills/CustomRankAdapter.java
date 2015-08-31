@@ -58,17 +58,22 @@ public class CustomRankAdapter extends BaseAdapter
     {
         Player player = players.get(position);
         View view = LayoutInflater.from(mContext).inflate(R.layout.rank_list_item, null);
-//        ImageView HorSImage = (ImageView) view.findViewById(R.id.HorSImage);
+       ImageView HorSImage = (ImageView) view.findViewById(R.id.rank_image);
         LinearLayout ll = (LinearLayout) view.findViewById(R.id.ll);
         if (position == 0)
         {
 //            TODO  设置第一名前面的奖杯图标
-//            HorSImage.setImageBitmap(BitmapFactory.decodeFile(R.drawable.));
-        } else if (position == players.size() - 1)
+           HorSImage.setImageResource(R.drawable.one);
+        } else if(position == 1){
+            HorSImage.setImageResource(R.drawable.two);
+        }else if(position == 2){
+            HorSImage.setImageResource(R.drawable.three);
+        }
+        /*else if (position == players.size() - 1)
         {
 //            TODO  设置最后一名前面的图标
-//            HorSImage.setImageBitmap(BitmapFactory.decodeFile(R.drawable.));
-        }
+           HorSImage.setImageResource(R.drawable.three);
+        }*/
 //        for (int i = 0; i <players.size() ; i++)
 //        {
 //            String face = players.get(i).getPortrait();

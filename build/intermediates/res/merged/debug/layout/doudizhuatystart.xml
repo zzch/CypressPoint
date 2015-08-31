@@ -68,25 +68,32 @@
         android:layout_marginTop="10dp"
         android:layout_below="@+id/linearLayout2">
 
+
         <com.meg7.widget.CircleImageView
             android:id="@+id/ddzp1mage"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="3dp"
             android:layout_marginLeft="35dp"
+            android:src="@drawable/hugh"
             />
 
         <com.meg7.widget.CircleImageView
             android:id="@+id/ddzp2image"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="3dp"
             android:layout_marginLeft="70dp"
+            android:src="@drawable/hugh"
             />
 
         <com.meg7.widget.CircleImageView
             android:id="@+id/ddzp3image"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="3dp"
             android:layout_marginLeft="60dp"
+            android:src="@drawable/hugh"
             />
     </LinearLayout>
 
@@ -117,7 +124,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textColor="#ff8000"
-                android:text="蓝大治"/>
+               />
 
             <ImageView
                 android:id="@+id/ddzp1stgold"
@@ -165,7 +172,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="#ff0000"
                 android:textSize="20dp"
-                android:text="蓝大治"/>
+               />
 
             <ImageView
                 android:id="@+id/ddzp2stgold"
@@ -214,7 +221,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textColor="#ff8000"
-                android:text="蓝大治"/>
+               />
 
             <ImageView
                 android:id="@+id/ddzp3stgold"

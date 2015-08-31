@@ -4,8 +4,11 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import cn.com.zcty.ILovegolf.doudizhu.db.DbUtil;
 import cn.com.zcty.ILovegolf.doudizhu.entity.Match;
@@ -47,13 +50,15 @@ public class RankActivity extends Activity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.rank_listview_layout);
+
         intent = getIntent();
         int type = intent.getIntExtra("type", 0);
         if (type == 0)
         {
             getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.bd_rank_title);
+
         } else if (type == 1)
         {
             getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.doudizhu_rank_title);
@@ -63,9 +68,17 @@ public class RankActivity extends Activity
         }
 //        list = new ArrayList<>();
         initData();
-
+        Button back = (Button) findViewById(R.id.backTmp);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                RankActivity.this.finish();
+            }
+        });
 
     }
+
+
 
     private void initData()
     {

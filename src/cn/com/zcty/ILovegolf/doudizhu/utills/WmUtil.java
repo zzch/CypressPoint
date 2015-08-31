@@ -740,8 +740,13 @@ public class WmUtil {
 
     public static void setPortrait(Player player,ImageView bdP2,Context context){
 
-        File outputimage = new File(Environment.getExternalStorageDirectory(),
-                player.getPortrait() + ".jpg");
+        if(player.getPortrait()==null)
+        {
+            bdP2.setImageBitmap(BitmapFactory.decodeResource(context.getResources(),R.drawable.hugh));
+            return;
+        }
+        File outputimage = new File(
+                player.getPortrait() );
         Uri imageUri=Uri.fromFile(outputimage);
 
 

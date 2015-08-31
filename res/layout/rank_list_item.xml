@@ -4,21 +4,16 @@
               android:layout_height="120dp"
               android:gravity="center_horizontal"
               android:orientation="horizontal"
-              android:padding="10dp">
+
+              android:minHeight="100dp">
 
 
-    <ImageView
-        android:id="@+id/HorSImage"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_gravity="center_vertical"
-        />
+
 
     <LinearLayout
         android:id="@+id/ll"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
 
         android:orientation="horizontal">
 

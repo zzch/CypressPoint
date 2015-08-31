@@ -72,30 +72,34 @@
 
         <com.meg7.widget.CircleImageView
             android:id="@+id/ddzp1mage"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginLeft="20dp"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:src="@drawable/hugh"
+            android:layout_marginLeft="10dp"
             />
 
         <com.meg7.widget.CircleImageView
             android:id="@+id/ddzp2image"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginLeft="40dp"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:src="@drawable/hugh"
+            android:layout_marginLeft="30dp"
             />
 
         <com.meg7.widget.CircleImageView
             android:id="@+id/ddzp3image"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginLeft="45dp"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:src="@drawable/hugh"
+            android:layout_marginLeft="30dp"
             />
 
         <com.meg7.widget.CircleImageView
             android:id="@+id/ddzp4image"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginLeft="45dp"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:src="@drawable/hugh"
+            android:layout_marginLeft="30dp"
             />
     </LinearLayout>
 
@@ -122,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textColor="#ff0000"
-                android:text="蓝大治"/>
+               />
 
             <ImageView
                 android:id="@+id/ddzp1stgold"
@@ -171,7 +175,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textColor="#ff0000"
-                android:text="黄大治"/>
+               />
 
             <ImageView
                 android:id="@+id/ddzp2stgold"
@@ -222,7 +226,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textColor="#ff8000"
-                android:text="王大治"/>
+                />
 
             <ImageView
                 android:id="@+id/ddzp3stgold"
@@ -275,7 +279,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textColor="#ff8000"
-                android:text="大治"/>
+               />
 
             <ImageView
                 android:id="@+id/ddzp4stgold"

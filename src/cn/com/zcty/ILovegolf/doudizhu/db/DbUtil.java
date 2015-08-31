@@ -72,6 +72,16 @@ public class DbUtil
         return list;
     }
 
+    public int getTotalScore()
+    {
+        int result = 0;
+        Cursor cursor = db.rawQuery("select sum(earned) score from match",null);
+        if (cursor.moveToFirst())
+        {
+            result = Integer.valueOf(cursor.getString(cursor.getColumnIndex("score")));
+        }
+        return result;
+    }
 
     public Match getMatch()
     {

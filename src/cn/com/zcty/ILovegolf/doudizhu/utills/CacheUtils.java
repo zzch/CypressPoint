@@ -9,7 +9,7 @@ import android.content.SharedPreferences;
 public class CacheUtils
 {
 
-	private static final String CACHE_FILE_NAME = "zhongtuke";
+	private static final String CACHE_FILE_NAME = "register";
 	private static SharedPreferences mSharedPreferences;
 
 	public static void putBoolean(Context context, String key, boolean value) {

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -28,6 +29,7 @@ import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.doudizhu.entity.Match;
 import cn.com.zcty.ILovegolf.doudizhu.entity.Player;
 import cn.com.zcty.ILovegolf.doudizhu.entity.User;
+import cn.com.zcty.ILovegolf.doudizhu.utills.CacheUtils;
 import cn.com.zcty.ILovegolf.doudizhu.utills.WmUtil;
 import cn.com.zcty.ILovegolf.doudizhu.utills.Xlog;
 import com.leaking.slideswitch.SlideSwitch;
@@ -41,7 +43,7 @@ import java.util.List;
  */
 public class BidongFrag extends Fragment implements View.OnClickListener
 {
-    private ImageView bdp1Image, bdp2Image;
+    private ImageView bdp1Image, bdp2Image,chose_play_0,chose_play_1,chose_play_3,chose_play_2;
     private TextView bdp1Name, bdp2Name;
     private SlideSwitch birdieDouble, eagletriple, doubleParsDouble, tie2NextHole, tieHS;
     private EditText setName;
@@ -54,8 +56,13 @@ public class BidongFrag extends Fragment implements View.OnClickListener
     private Button btnStart;
     private LinearLayout bdDrawWhichWinRoot;
     private RelativeLayout bdDrawP1winRl, bdDrawP2winRl;
-
-
+    private ImageView myself_bg3;
+    private ImageView myself_bg4;
+    private ImageView bdDrawP1win,bdDrawP2win;
+    private TextView bdTvDrawP1win;
+    private TextView bdTvDrawP2win;
+    private  Bitmap myuser_face;
+    private  String nickname;
     String timechuo
             ;
 
@@ -92,20 +99,36 @@ public class BidongFrag extends Fragment implements View.OnClickListener
         match = new Match();
 
         myuser = User.getMyuserFromJson(getActivity());
+
         bdDrawWhichWinRoot = (LinearLayout) getActivity().findViewById(R.id.bdDrawWhichWinRoot);
         //设置头像
         bdp1Image = (ImageView) getActivity().findViewById(R.id.bdp1image);
         bdDrawP1winRl = (RelativeLayout) getActivity().findViewById(R.id.bdDrawP1winRl);
         bdDrawP2winRl = (RelativeLayout) getActivity().findViewById(R.id.bdDrawP2winRl);
 
+        chose_play_0 = (ImageView)getActivity().findViewById(R.id.chose_play_0);
+        chose_play_1 = (ImageView)getActivity().findViewById(R.id.chose_play_1);
+        chose_play_2 = (ImageView)getActivity().findViewById(R.id.chose_play_2);
+        chose_play_3 = (ImageView)getActivity().findViewById(R.id.chose_play_3);
+        myself_bg3 =(ImageView) getActivity().findViewById(R.id.myself_bg3);
+        myself_bg4 =(ImageView) getActivity().findViewById(R.id.myself_bg4);
+        bdTvDrawP1win = (TextView)getActivity().findViewById(R.id.bdTvDrawP1win);
+
+        bdTvDrawP2win =(TextView) getActivity().findViewById(R.id.bdTvDrawP2win);
+        bdDrawP1win = (ImageView)getActivity().findViewById(R.id.bdDrawP1win);
+        bdDrawP2win = (ImageView)getActivity().findViewById(R.id.bdDrawP2win);
+        nickname = CacheUtils.getString(getActivity(), "nickname", "");
         //取本地图片    可以自己取图片路径
-//        Bitmap myuser_face = BitmapFactory.decodeFile(myuser.getPortrait());
-//        bdp1Image.setImageBitmap(myuser_face);
-
-
+         myuser_face = BitmapFactory.decodeFile("/mnt/sdcard/testfile/golf.jpg");
         bdp2Image = (ImageView) getActivity().findViewById(R.id.bdp2image);
         bdp1Name = (TextView) getActivity().findViewById(R.id.bdp1name);
         bdp2Name = (TextView) getActivity().findViewById(R.id.bdp2editname);
+        bdp1Image.setImageBitmap(myuser_face);
+        bdDrawP1win.setImageBitmap(myuser_face);
+        bdTvDrawP1win.setText(nickname);
+        bdp1Name.setText(nickname);
+
+
         birdieDouble = (SlideSwitch) getActivity().findViewById(R.id.bdswitch_birdie);
         eagletriple = (SlideSwitch) getActivity().findViewById(R.id.bdswitch_eagle);
         doubleParsDouble = (SlideSwitch) getActivity().findViewById(R.id.bdswitch_pardouble);
@@ -119,7 +142,7 @@ public class BidongFrag extends Fragment implements View.OnClickListener
             {
                 bdp2Name.setText(et.getText().toString());
                 player.setNickname(et.getText().toString());
-
+                bdTvDrawP2win.setText(et.getText().toString());
 
 
                 Xlog.d("nickname ========"+player.getNickname());
@@ -218,7 +241,7 @@ public class BidongFrag extends Fragment implements View.OnClickListener
                 } else
                 {
                     tieHS.setState(false);
-                    bdDrawWhichWinRoot.setVisibility(View.INVISIBLE);
+                    bdDrawWhichWinRoot.setVisibility(View.GONE);
                     bdDrawP1winRl.setClickable(false);
                     bdDrawP2winRl.setClickable(false);
                     match.setDraw_to_win("0");
@@ -278,7 +301,7 @@ public class BidongFrag extends Fragment implements View.OnClickListener
                 {
                     match.setDraw_to_next("1");
                     tie2NextHole.setState(true);
-                    bdDrawWhichWinRoot.setVisibility(View.INVISIBLE);
+                    bdDrawWhichWinRoot.setVisibility(View.GONE);
                     bdDrawP1winRl.setClickable(false);
                     bdDrawP2winRl.setClickable(false);
                 }
@@ -318,9 +341,27 @@ public class BidongFrag extends Fragment implements View.OnClickListener
 
                 break;
             case R.id.bdDrawP1winRl:
+                bdDrawP1winRl.setBackgroundColor(0xffff771d);
+                bdDrawP2winRl.setBackgroundColor(0xffe2e2e2);
+                chose_play_0.setVisibility(View.VISIBLE);
+                chose_play_1.setVisibility(View.VISIBLE);
+                chose_play_2.setVisibility(View.GONE);
+                chose_play_3.setVisibility(View.GONE);
+                myself_bg3.setImageResource(R.drawable.huangse);
+                myself_bg4.setImageResource(R.drawable.baiquan);
+
                 match.setDrawWhoWin(Match.LEFT);
                 break;
             case R.id.bdDrawP2winRl:
+                bdDrawP1winRl.setBackgroundColor(0xffe2e2e2);
+                bdDrawP2winRl.setBackgroundColor(0xffff771d);
+                chose_play_0.setVisibility(View.GONE);
+                chose_play_1.setVisibility(View.GONE);
+                chose_play_2.setVisibility(View.VISIBLE);
+                chose_play_3.setVisibility(View.VISIBLE);
+                myself_bg3.setImageResource(R.drawable.baiquan);
+                myself_bg4.setImageResource(R.drawable.huangse);
+
                 match.setDrawWhoWin(Match.RIGHT);
                 break;
             case R.id.btnStart:
@@ -331,8 +372,9 @@ public class BidongFrag extends Fragment implements View.OnClickListener
                 Player myplayer = new Player();
                 myplayer.setIs_owner("1");
                 myplayer.setMatch_id(match.getId());
-                myplayer.setNickname(myUser.getUsername());
-                myplayer.setPortrait(myUser.getPortrait());
+                String nickname = CacheUtils.getString(getActivity(),"nickname","");
+                myplayer.setNickname(nickname);
+                myplayer.setPortrait("/mnt/sdcard/testfile/golf.jpg");
                 players.add(myplayer);
                 player.setIs_owner("0");
                 players.add(player);
@@ -474,8 +516,8 @@ public class BidongFrag extends Fragment implements View.OnClickListener
 
                 playerface.setImageBitmap(bitmap);
                 bdp2Image.setImageBitmap(bitmap);
-
-                player.setPortrait( timechuo );
+                bdDrawP2win.setImageBitmap(bitmap);
+                player.setPortrait( imageUri.toString().substring(7) );
 
 
                 // imgPath.setText(path);

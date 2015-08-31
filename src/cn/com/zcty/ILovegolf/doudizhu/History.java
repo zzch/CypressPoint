@@ -35,6 +35,7 @@ public class History extends Activity
     private Button back;
     private TextView textView1;
     private Button btnTitleHis;
+    private TextView scoreView;
 //    private List<Player> list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,11 @@ public class History extends Activity
     private void initView()
     {
         hisListView = (ListView) findViewById(R.id.historyListView);
+
+        scoreView = (TextView) findViewById(R.id.hisTotalScore);
+        int totalScore = DbUtil.getInstance(this).getTotalScore();
+        scoreView.setText(""+totalScore);
+
         matchesData= DbUtil.getInstance(this).getMatchList();
         hisListView.setOnItemClickListener(this);
 //         = new ArrayList<Match>();

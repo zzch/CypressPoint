@@ -30,6 +30,7 @@ import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.doudizhu.entity.Match;
 import cn.com.zcty.ILovegolf.doudizhu.entity.Player;
 import cn.com.zcty.ILovegolf.doudizhu.entity.User;
+import cn.com.zcty.ILovegolf.doudizhu.utills.CacheUtils;
 import cn.com.zcty.ILovegolf.doudizhu.utills.DragGridView;
 import cn.com.zcty.ILovegolf.doudizhu.utills.WmUtil;
 import com.leaking.slideswitch.SlideSwitch;
@@ -102,16 +103,16 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
         HashMap<String, Object> itemHashMap1 = new HashMap<String, Object>();
         HashMap<String, Object> itemHashMap2 = new HashMap<String, Object>();
         HashMap<String, Object> itemHashMap3 = new HashMap<String, Object>();
-        itemHashMap1.put("ddzplayerimg", R.mipmap.images);
-        itemHashMap1.put("ddzplayername", "黄大治");
+        itemHashMap1.put("ddzplayerimg", BitmapFactory.decodeFile("/mnt/sdcard/testfile/golf.jpg"));
+        itemHashMap1.put("ddzplayername", CacheUtils.getString(getActivity(), "nickname", ""));
         itemHashMap1.put("isOwner", true);
         itemHashMap1.put("playernum", "player0");
-        itemHashMap2.put("ddzplayerimg", R.mipmap.images);
+        itemHashMap2.put("ddzplayerimg", R.drawable.hugh);
         itemHashMap2.put("isOwner", false);
         itemHashMap2.put("ddzplayername", "编辑资料");
         itemHashMap2.put("playernum", "player1");
         itemHashMap3.put("isOwner", false);
-        itemHashMap3.put("ddzplayerimg", R.mipmap.images);
+        itemHashMap3.put("ddzplayerimg", R.drawable.hugh);
         itemHashMap3.put("ddzplayername", "编辑资料");
         itemHashMap3.put("playernum", "player2");
         dataSourceList.add(itemHashMap1);
@@ -239,6 +240,11 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
         //创建对手
         player0 = new Player();
 
+        User myUser = User.getMyuserFromJson(getActivity());
+        String nickname = CacheUtils.getString(getActivity(), "nickname", "");
+        player0.setNickname(nickname);
+
+        player0.setPortrait("/mnt/sdcard/testfile/golf.jpg");
         player1 = new Player();
 
         player2 = new Player();
@@ -288,8 +294,9 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
                 player2.setIs_owner("0");
                 player0.setIs_owner("1");
                 player0.setMatch_id(match.getId());
-                player0.setNickname("黄大志");
-                player0.setPortrait(myUser.getPortrait());
+                String nickname = CacheUtils.getString(getActivity(), "nickname", "");
+//                player0.setNickname(nickname);
+//                player0.setPortrait(myUser.getPortrait());
 
                 List<Player> list = new ArrayList<>();
                 String playernumber = (String) dataSourceList.get(0).get("playernum");
@@ -587,9 +594,9 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
                 mSimpleAdapter.notifyDataSetChanged();
 
                 if(choosePlayer==1){
-                    player1.setPortrait( time1);
+                    player1.setPortrait( imageUri.toString().substring(7));
                 }else {
-                    player2.setPortrait(time2);
+                    player2.setPortrait(imageUri.toString().substring(7));
                 }
 
 //                ddz.setImageBitmap(bitmap);
