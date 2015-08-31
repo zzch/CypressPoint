@@ -1454,9 +1454,10 @@ containing a value of this type.
         public static final int yiqibisai=0x7f020152;
         public static final int yiqieyitui_5=0x7f020153;
         public static final int yuan=0x7f020154;
-        public static final int yulemoshi=0x7f020155;
-        public static final int zhucechenggong=0x7f020156;
-        public static final int zongchengji_icon_1=0x7f020157;
+        public static final int yule_huise=0x7f020155;
+        public static final int yulemoshi=0x7f020156;
+        public static final int zhucechenggong=0x7f020157;
+        public static final int zongchengji_icon_1=0x7f020158;
     }
     public static final class id {
         public static final int Pole_number=0x7f0d03c2;
@@ -2219,8 +2220,8 @@ containing a value of this type.
         public static final int rankPlayerimage=0x7f0d03d6;
         public static final int rankPlayername=0x7f0d03d7;
         public static final int rankPlayerscore=0x7f0d03d9;
-        public static final int rank_image=0x7f0d03d5;
         public static final int rank_invite_but=0x7f0d01f5;
+        public static final int rank_text=0x7f0d03d5;
         public static final int ranking=0x7f0d01f1;
         public static final int ranking_count=0x7f0d03d0;
         public static final int ranking_head_image=0x7f0d03d1;

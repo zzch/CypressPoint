@@ -110,15 +110,15 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
         itemHashMap1.put("playernum", "player0");
         itemHashMap2.put("ddzplayerimg", R.drawable.hugh);
         itemHashMap2.put("isOwner", false);
-        itemHashMap2.put("ddzplayername", "编辑资料");
+        itemHashMap2.put("ddzplayername", "球手2");
         itemHashMap2.put("playernum", "player1");
         itemHashMap3.put("isOwner", false);
         itemHashMap3.put("ddzplayerimg",R.drawable.hugh);
-        itemHashMap3.put("ddzplayername", "编辑资料");
+        itemHashMap3.put("ddzplayername", "球手3");
         itemHashMap3.put("playernum", "player2");
         itemHashMap4.put("isOwner", false);
         itemHashMap4.put("ddzplayerimg",R.drawable.hugh);
-        itemHashMap4.put("ddzplayername", "编辑资料");
+        itemHashMap4.put("ddzplayername", "球手4");
         itemHashMap4.put("playernum", "player3");
 
         dataSourceList.add(itemHashMap1);

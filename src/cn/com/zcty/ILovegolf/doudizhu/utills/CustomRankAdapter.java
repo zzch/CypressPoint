@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.doudizhu.entity.HolesInfo;
 import cn.com.zcty.ILovegolf.doudizhu.entity.Match;
@@ -58,16 +60,18 @@ public class CustomRankAdapter extends BaseAdapter
     {
         Player player = players.get(position);
         View view = LayoutInflater.from(mContext).inflate(R.layout.rank_list_item, null);
-       ImageView HorSImage = (ImageView) view.findViewById(R.id.rank_image);
+       TextView HorSImage = (TextView) view.findViewById(R.id.rank_text);
         LinearLayout ll = (LinearLayout) view.findViewById(R.id.ll);
         if (position == 0)
         {
 //            TODO  设置第一名前面的奖杯图标
-           HorSImage.setImageResource(R.drawable.one);
+           HorSImage.setBackgroundResource(R.drawable.one);
         } else if(position == 1){
-            HorSImage.setImageResource(R.drawable.two);
+            HorSImage.setText("2");
         }else if(position == 2){
-            HorSImage.setImageResource(R.drawable.three);
+            HorSImage.setText("3");
+        }else  if(position == 3) {
+            HorSImage.setText("4");
         }
         /*else if (position == players.size() - 1)
         {

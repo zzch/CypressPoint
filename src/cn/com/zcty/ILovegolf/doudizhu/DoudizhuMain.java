@@ -62,7 +62,6 @@ public class DoudizhuMain extends Activity
         bdRdb = (RadioButton) findViewById(R.id.modeBidong);
         ddzRdb = (RadioButton) findViewById(R.id.modeDoudizhu);
         vegasRdb = (RadioButton) findViewById(R.id.modeVegas);
-        btnHistory = (TextView) findViewById(R.id.btnTitleHis);
         back = (Button)findViewById(R.id.back);
         textView1 =(TextView) findViewById(R.id.textView1);
         bdRdb.setChecked(true);

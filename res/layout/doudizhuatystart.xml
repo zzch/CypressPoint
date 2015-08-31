@@ -343,7 +343,7 @@
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:textSize="18dp"
-            android:textColor="#222222"
+            android:textColor="#fff000"
             android:text="平民"/>
 
         <TextView
@@ -353,7 +353,7 @@
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:textSize="18dp"
-            android:textColor="#222222"
+            android:textColor="#ff0000"
             android:text="地主"/>
 
         <TextView
@@ -363,7 +363,7 @@
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:textSize="18dp"
-            android:textColor="#222222"
+            android:textColor="#fff000"
             android:text="平民"/>
     </LinearLayout>
 

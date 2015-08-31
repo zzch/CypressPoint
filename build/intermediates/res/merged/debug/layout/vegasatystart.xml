@@ -361,7 +361,7 @@
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:textSize="16dp"
-            android:textColor="#555555"
+            android:textColor="#fff000"
             android:text="1号发球"/>
 
         <TextView
@@ -371,7 +371,7 @@
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:textSize="16dp"
-            android:textColor="#555555"
+            android:textColor="#fff000"
             android:text="2号发球"/>
 
         <TextView
@@ -381,7 +381,7 @@
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:textSize="16dp"
-            android:textColor="#555555"
+            android:textColor="#ff0000"
             android:text="3号发球"/>
         <TextView
             android:layout_width="wrap_content"
@@ -389,7 +389,7 @@
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:textSize="16dp"
-            android:textColor="#555555"
+            android:textColor="#ff0000"
             android:text="4号发球"/>
     </LinearLayout>
 

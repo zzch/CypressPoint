@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
+              android:background="@color/white"
               android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/rank_image"
+    <TextView
+        android:id="@+id/rank_text"
         android:layout_width="25dp"
         android:layout_height="35dp"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="10dp"
-        android:src="@drawable/one"/>
+android:layout_marginLeft="10dp"
+        android:gravity="center"
+
+        android:textSize="30dp"/>
 
     <FrameLayout
         android:id="@+id/frameLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="30dp"
-        android:layout_toRightOf="@+id/rank_image"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/rank_text"
 
         >
 
@@ -32,7 +35,7 @@
             android:id="@+id/myself_bg"
             android:layout_width="68dp"
             android:layout_height="68dp"
-            android:src="@drawable/hongse" />
+            android:src="@drawable/yule_huise" />
     </RelativeLayout>
     <com.meg7.widget.CircleImageView
         android:id="@+id/rankPlayerimage"
@@ -51,9 +54,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/frameLayout1"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="17dp"
         android:layout_centerVertical="true"
-        android:textSize="18dp"
+        android:textSize="20dp"
         android:text="黄大治"/>
 
     <ImageView
@@ -63,7 +66,7 @@
         android:src="@drawable/jinbi"
         android:layout_toRightOf="@+id/rankPlayername"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="50dp"
         />
 
     <TextView
@@ -76,7 +79,8 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="10dp"
-        android:textSize="18dp"
+        android:textSize="20dp"
+        android:textColor="@color/chengse"
         android:text="0"/>
 
 </RelativeLayout>

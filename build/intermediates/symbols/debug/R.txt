@@ -698,9 +698,10 @@ int drawable yijianzhuceanniu 0x7f020151
 int drawable yiqibisai 0x7f020152
 int drawable yiqieyitui_5 0x7f020153
 int drawable yuan 0x7f020154
-int drawable yulemoshi 0x7f020155
-int drawable zhucechenggong 0x7f020156
-int drawable zongchengji_icon_1 0x7f020157
+int drawable yule_huise 0x7f020155
+int drawable yulemoshi 0x7f020156
+int drawable zhucechenggong 0x7f020157
+int drawable zongchengji_icon_1 0x7f020158
 int id Pole_number 0x7f0d03c2
 int id aa 0x7f0d0375
 int id about_back 0x7f0d004c
@@ -1461,8 +1462,8 @@ int id rankPlayergold 0x7f0d03d8
 int id rankPlayerimage 0x7f0d03d6
 int id rankPlayername 0x7f0d03d7
 int id rankPlayerscore 0x7f0d03d9
-int id rank_image 0x7f0d03d5
 int id rank_invite_but 0x7f0d01f5
+int id rank_text 0x7f0d03d5
 int id ranking 0x7f0d01f1
 int id ranking_count 0x7f0d03d0
 int id ranking_head_image 0x7f0d03d1

@@ -22,7 +22,7 @@ public class SlideSwitch extends View {
 	public static final int SHAPE_RECT = 1;
 	public static final int SHAPE_CIRCLE = 2;
 	private static final int RIM_SIZE = 6;
-	private static final int COLOR_THEME = Color.parseColor("#ff00ee00");
+	private static final int COLOR_THEME = Color.parseColor("#ffff0000");
 	// 3 attributes
 	private int color_theme;
 	private boolean isOpen;

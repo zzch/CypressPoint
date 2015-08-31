@@ -184,7 +184,8 @@
                         android:layout_height="match_parent"
                         android:layout_alignParentRight="true"
                         slideswitch:shape1="circle"
-                        slideswitch:themeColor="#f200aa96">
+                        slideswitch:themeColor="#f200aa96"
+                        >
                     </com.leaking.slideswitch.SlideSwitch>
                 </RelativeLayout>
                 <View

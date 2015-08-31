@@ -103,6 +103,7 @@ public class BidongFrag extends Fragment implements View.OnClickListener
         bdDrawWhichWinRoot = (LinearLayout) getActivity().findViewById(R.id.bdDrawWhichWinRoot);
         //设置头像
         bdp1Image = (ImageView) getActivity().findViewById(R.id.bdp1image);
+        bdp1Image.setImageResource(R.drawable.hugh);
         bdDrawP1winRl = (RelativeLayout) getActivity().findViewById(R.id.bdDrawP1winRl);
         bdDrawP2winRl = (RelativeLayout) getActivity().findViewById(R.id.bdDrawP2winRl);
 
@@ -119,7 +120,7 @@ public class BidongFrag extends Fragment implements View.OnClickListener
         bdDrawP2win = (ImageView)getActivity().findViewById(R.id.bdDrawP2win);
         nickname = CacheUtils.getString(getActivity(), "nickname", "");
         //取本地图片    可以自己取图片路径
-         myuser_face = BitmapFactory.decodeFile("/mnt/sdcard/testfile/golf.jpg");
+        myuser_face = BitmapFactory.decodeFile("/mnt/sdcard/testfile/golf.jpg");
         bdp2Image = (ImageView) getActivity().findViewById(R.id.bdp2image);
         bdp1Name = (TextView) getActivity().findViewById(R.id.bdp1name);
         bdp2Name = (TextView) getActivity().findViewById(R.id.bdp2editname);
