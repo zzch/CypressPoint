@@ -121,6 +121,9 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
         namelist.add(ddzP1Name);
         namelist.add(ddzP2Name);
         namelist.add(ddzP3Name);
+        ddzname1 = ddzP1Name.getText().toString().trim();
+        ddzname2 = ddzP2Name.getText().toString().trim();
+        ddzname3 = ddzP3Name.getText().toString().trim();
 
         for (int i = 0; i < ddzllayout1.getChildCount(); i++) {
             namelist.get(i).setText(list.get(i).getNickname());
@@ -148,9 +151,7 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
             ddzP1Name.setText(p.getNickname());
             ddzP2Name.setText(p.getNickname());
             ddzP3Name.setText(p.getNickname());
-            ddzname1 = ddzP1Name.getText().toString().trim();
-            ddzname2 = ddzP2Name.getText().toString().trim();
-            ddzname3 = ddzP3Name.getText().toString().trim();
+
         }
         namelist.add(ddzP1Name);
         namelist.add(ddzP2Name);
