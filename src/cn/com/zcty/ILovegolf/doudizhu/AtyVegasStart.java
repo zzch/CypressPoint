@@ -828,7 +828,8 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
                     {
                         finish();
                     }
-                   nextHole();
+                    else{
+                   nextHole();}
                 } else
                 {
                     if(isReEdit)

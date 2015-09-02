@@ -492,6 +492,11 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
                 // tv_ddzbird1.setText("eagle ! x 4");
                 // tv_ddzbird1.setVisibility(View.VISIBLE);
                 break;
+            case 3:
+                intent = new Intent(AtyDoudizhuStart.this,ShuangBeibzgActivity.class);
+                intent.putExtra("ddzshuang1", ddzname1);
+                startActivity(intent);
+           break;
         }
         //p2动画
         switch (WmUtil.whatPar(par, parsP2)) {
@@ -512,6 +517,12 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
                 //tv_ddzbird1.setText("eagle ! x 4");
                 //tv_ddzbird1.setVisibility(View.VISIBLE);
                 break;
+            case 3:
+                intent = new Intent(AtyDoudizhuStart.this,ShuangBeibzgActivity.class);
+                intent.putExtra("ddzshuang2", ddzname2);
+                startActivity(intent);
+                break;
+
         }
 
         //p3动画
@@ -532,6 +543,11 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
                 startActivity(intent);
                 // tv_ddzbird3.setText("eagle ! x 4");
                 // tv_ddzbird3.setVisibility(View.VISIBLE);
+                break;
+            case 3:
+                intent = new Intent(AtyDoudizhuStart.this,ShuangBeibzgActivity.class);
+                intent.putExtra("ddzshuang3", ddzname3);
+                startActivity(intent);
                 break;
         }
 
@@ -836,8 +852,9 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
                     if (hole_number == 18) {
                         finish();
                     }
+                    else{
                     // 点击下一洞按钮事件
-                    this.nextHole();
+                    this.nextHole();}
                 } else {
                     if(isReEdit)
                     {

@@ -474,6 +474,14 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
 
                 }
 
+                Bitmap bitmap = (Bitmap) dataSourceList.get(0).get("ddzplayerimg");
+                bitmap.recycle();
+                bitmap = (Bitmap) dataSourceList.get(1).get("ddzplayerimg");
+                bitmap.recycle();
+                bitmap = (Bitmap) dataSourceList.get(2).get("ddzplayerimg");
+                bitmap.recycle();
+                bitmap = (Bitmap) dataSourceList.get(3).get("ddzplayerimg");
+                bitmap.recycle();
 
                 AtyVegasStart.launch(getActivity(), match, player1, player2,list);
 //                Intent intent = new Intent(getActivity(), AtyDoudizhuStart.class);

@@ -257,15 +257,16 @@ public class BidongFrag extends Fragment implements View.OnClickListener
                 if ("1".equals(match.getDraw_to_win()))
                 {
                     return;
-                } else
-                {
-
-                    match.setDraw_to_win("1");
-                    tieHS.setState(true);
-                    bdDrawWhichWinRoot.setVisibility(View.VISIBLE);
-                    bdDrawP1winRl.setClickable(true);
-                    bdDrawP2winRl.setClickable(true);
                 }
+//                else
+//                {
+//
+//                    match.setDraw_to_win("1");
+//                    tieHS.setState(true);
+//                    bdDrawWhichWinRoot.setVisibility(View.VISIBLE);
+//                    bdDrawP1winRl.setClickable(true);
+//                    bdDrawP2winRl.setClickable(true);
+//                }
             }
         });
         tieHS.setState(false);
@@ -298,17 +299,18 @@ public class BidongFrag extends Fragment implements View.OnClickListener
                 if ("1".equals(match.getDraw_to_next()))
                 {
                     return;
-                } else
-                {
-                    match.setDraw_to_next("1");
-                    tie2NextHole.setState(true);
-                    bdDrawWhichWinRoot.setVisibility(View.GONE);
-                    bdDrawP1winRl.setClickable(false);
-                    bdDrawP2winRl.setClickable(false);
                 }
+//                else
+//                {
+//                    match.setDraw_to_next("1");
+//                    tie2NextHole.setState(true);
+//                    bdDrawWhichWinRoot.setVisibility(View.GONE);
+//                    bdDrawP1winRl.setClickable(false);
+//                    bdDrawP2winRl.setClickable(false);
+//                }
 
-                match.setDraw_to_win("0");
-                tie2NextHole.setState(true);
+//                match.setDraw_to_win("0");
+//                tie2NextHole.setState(true);
             }
         });
 

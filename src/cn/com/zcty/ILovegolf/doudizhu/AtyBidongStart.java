@@ -47,7 +47,7 @@ import java.util.TreeMap;
 public class AtyBidongStart extends Activity implements View.OnClickListener {
     private Button btnSelectPars, btnP1stPars, btnP2stPars, btnPreHole, btnConfirmResult;
     private ImageView bdP1, bdP2;
-    private TextView bdHoles, bdP1Name, bdP1Score, bdP2Name, bdP2Score, tv_bird1, tv_bird2, bdp1stscore, bdp2stscore, bdp1stscore_add, bdp2stscore_add;
+    private TextView bdHoles, bdP1Name, bdP1Score, bdP2Name, bdP2Score, tv_bird1, tv_bird2, bdp1stscore, bdp2stscore, bdp1stscore_add, bdp2stscore_add,bdTieInfo;
 
     private Match match;
     private Player myplayer;
@@ -332,6 +332,7 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
         bdP1Score = (TextView) findViewById(R.id.bdp1stscore);
         bdP2Name = (TextView) findViewById(R.id.bdp2stname);
         bdP2Score = (TextView) findViewById(R.id.bdp2stscore);
+        bdTieInfo = (TextView) findViewById(R.id.bdTieInfo);
         btnSelectPars.setOnClickListener(this);
         btnP1stPars.setOnClickListener(this);
         btnP2stPars.setOnClickListener(this);
@@ -466,6 +467,11 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
                 //tv_bird1.setText("eagle ! x 4");
                 //  tv_bird1.setVisibility(View.VISIBLE);
                 break;
+            case 3:
+                intent = new Intent(AtyBidongStart.this,BirdActivity.class);
+                intent.putExtra("shuang1", bname1);
+                startActivity(intent);
+                break;
         }
 
         switch (WmUtil.whatPar(par, parsP2))
@@ -486,6 +492,11 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
                 startActivity(intent);
                 // tv_bird2.setText("eagle ! x 4");
                 //tv_bird2.setVisibility(View.VISIBLE);
+                break;
+            case 3:
+                intent = new Intent(AtyBidongStart.this,BirdActivity.class);
+                intent.putExtra("shuang2", bname2);
+                startActivity(intent);
                 break;
         }
 
@@ -696,7 +707,9 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
                     if (hole_number == 18) {
                         finish();
                     }
-                    nextHole();
+                    else{
+                        nextHole();
+                    }
                 } else {
                     if (isReEdit) {
                         btnPreHole.setText("上一洞");
@@ -804,7 +817,14 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
 
         int tieNumber = WmUtil.whoWinsBD(this.parsP1, this.parsP2) == WmUtil.DRAW ? 1 : 0;
 
-        WmUtil.tie_number = info == null ? tieNumber : (tieNumber == 1 ? info.getTie_nubmer() + tieNumber : info.getTie_nubmer());
+        if(match.getDraw_to_next()=="1")
+        {
+
+            WmUtil.tie_number = info == null ? tieNumber : (tieNumber == 1 ? info.getTie_nubmer() + tieNumber : info.getTie_nubmer());
+        }else
+        {
+            WmUtil.tie_number = 0;
+        }
 
         int score = WmUtil.bdScore(this.par, this.parsP1, this.parsP2, hole_number);
         //界面设值+动画
