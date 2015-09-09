@@ -66,6 +66,14 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
     int choosePlayer;
     SimpleAdapter mSimpleAdapter;
 
+    private Dialog dlg2 = null;
+
+
+    private Dialog dlg3=  null;
+    private Dialog dlg4=  null;
+
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -225,7 +233,7 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
         player1 = new Player();
         player2 = new Player();
         player3 = new Player();
-
+        initDlg();
     }
 
     Uri imageUri;
@@ -244,7 +252,7 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
         }
 
 
-        Intent getAlbum = new Intent("android.intent.action.GET_CONTENT");
+        Intent getAlbum = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         getAlbum.setType("image/*");
         getAlbum.putExtra("crop", true);
         getAlbum.putExtra("scale", true);
@@ -312,118 +320,121 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
             if("player1".equals(playernumber)){
                 Log.d("onitem","onItemClick=="+1);
                 choosePlayer=1;
-                dialog = WmUtil.createEditPlayer(getActivity(), new WmUtil.EditPlayerListener()
-                {
-                    @Override
-                    public void clickOk(EditText et)
-                    {
-
-                        dataSourceList.get(position).put("ddzplayername", et.getText().toString());
-                        mSimpleAdapter.notifyDataSetChanged();
-                        player1.setNickname(et.getText().toString());
-
-
-                    }
-
-                    @Override
-                    public void clickCancel()
-                    {
-
-                    }
-
-                    @Override
-                    public void takePicture(ImageView iv)
-                    {
-                        time1 = System.currentTimeMillis() + "";
-                        dialogFace = iv;
-                        takePhoto(1);
-                    }
-
-                    @Override
-                    public void choosePicture(ImageView iv)
-                    {
-                        time1 = System.currentTimeMillis() + "";
-                        dialogFace = iv;
-                        setImage(1);
-                    }
-                });
+                dialog = dlg2;
+//                        WmUtil.createEditPlayer(getActivity(), new WmUtil.EditPlayerListener()
+//                {
+//                    @Override
+//                    public void clickOk(EditText et)
+//                    {
+//
+//                        dataSourceList.get(position).put("ddzplayername", et.getText().toString());
+//                        mSimpleAdapter.notifyDataSetChanged();
+//                        player1.setNickname(et.getText().toString());
+//
+//
+//                    }
+//
+//                    @Override
+//                    public void clickCancel()
+//                    {
+//
+//                    }
+//
+//                    @Override
+//                    public void takePicture(ImageView iv)
+//                    {
+//                        time1 = System.currentTimeMillis() + "";
+//                        dialogFace = iv;
+//                        takePhoto(1);
+//                    }
+//
+//                    @Override
+//                    public void choosePicture(ImageView iv)
+//                    {
+//                        time1 = System.currentTimeMillis() + "";
+//                        dialogFace = iv;
+//                        setImage(1);
+//                    }
+//                });
 
             }else if("player2".equals(playernumber)){
                 Log.d("onitem","onItemClick=="+2);
                 choosePlayer=2;
-                dialog = WmUtil.createEditPlayer(getActivity(), new WmUtil.EditPlayerListener()
-                {
-                    @Override
-                    public void clickOk(EditText et)
-                    {
-
-                        dataSourceList.get(position).put("ddzplayername", et.getText().toString());
-                        mSimpleAdapter.notifyDataSetChanged();
-                        player2.setNickname(et.getText().toString());
-
-                    }
-
-                    @Override
-                    public void clickCancel()
-                    {
-
-                    }
-
-                    @Override
-                    public void takePicture(ImageView iv)
-                    {
-                        time2 = System.currentTimeMillis() + "";
-                        dialogFace = iv;
-                        takePhoto(2);
-                    }
-
-                    @Override
-                    public void choosePicture(ImageView iv)
-                    {
-                        time2 = System.currentTimeMillis() + "";
-                        dialogFace = iv;
-                        setImage(2);
-                    }
-                });
+                dialog = dlg3;
+//                WmUtil.createEditPlayer(getActivity(), new WmUtil.EditPlayerListener()
+//                {
+//                    @Override
+//                    public void clickOk(EditText et)
+//                    {
+//
+//                        dataSourceList.get(position).put("ddzplayername", et.getText().toString());
+//                        mSimpleAdapter.notifyDataSetChanged();
+//                        player2.setNickname(et.getText().toString());
+//
+//                    }
+//
+//                    @Override
+//                    public void clickCancel()
+//                    {
+//
+//                    }
+//
+//                    @Override
+//                    public void takePicture(ImageView iv)
+//                    {
+//                        time2 = System.currentTimeMillis() + "";
+//                        dialogFace = iv;
+//                        takePhoto(2);
+//                    }
+//
+//                    @Override
+//                    public void choosePicture(ImageView iv)
+//                    {
+//                        time2 = System.currentTimeMillis() + "";
+//                        dialogFace = iv;
+//                        setImage(2);
+//                    }
+//                });
 
             }else
             {
                 choosePlayer = 3;
                 Log.d("onitem","onItemClick=="+3);
-                dialog = WmUtil.createEditPlayer(getActivity(), new WmUtil.EditPlayerListener()
-                {
-                    @Override
-                    public void clickOk(EditText et)
-                    {
-
-                        dataSourceList.get(position).put("ddzplayername", et.getText().toString());
-                        mSimpleAdapter.notifyDataSetChanged();
-                        player3.setNickname(et.getText().toString());
-
-                    }
-
-                    @Override
-                    public void clickCancel()
-                    {
-
-                    }
-
-                    @Override
-                    public void takePicture(ImageView iv)
-                    {
-                        time3 = System.currentTimeMillis() + "";
-                        dialogFace = iv;
-                        takePhoto(3);
-                    }
-
-                    @Override
-                    public void choosePicture(ImageView iv)
-                    {
-                        time3 = System.currentTimeMillis() + "";
-                        dialogFace = iv;
-                        setImage(3);
-                    }
-                });
+                dialog = dlg4;
+//                WmUtil.createEditPlayer(getActivity(), new WmUtil.EditPlayerListener()
+//                {
+//                    @Override
+//                    public void clickOk(EditText et)
+//                    {
+//
+//                        dataSourceList.get(position).put("ddzplayername", et.getText().toString());
+//                        mSimpleAdapter.notifyDataSetChanged();
+//                        player3.setNickname(et.getText().toString());
+//
+//                    }
+//
+//                    @Override
+//                    public void clickCancel()
+//                    {
+//
+//                    }
+//
+//                    @Override
+//                    public void takePicture(ImageView iv)
+//                    {
+//                        time3 = System.currentTimeMillis() + "";
+//                        dialogFace = iv;
+//                        takePhoto(3);
+//                    }
+//
+//                    @Override
+//                    public void choosePicture(ImageView iv)
+//                    {
+//                        time3 = System.currentTimeMillis() + "";
+//                        dialogFace = iv;
+//                        setImage(3);
+//                    }
+//                });
             }
 
 
@@ -456,15 +467,29 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
 //                player0.setNickname("黄大志");
 //                player0.setPortrait(myUser.getPortrait());
 
+                if(player1.getNickname()==null|| "".equals(player1.getNickname()))
+                {
+                    player1.setNickname("球手2");
+                }
+                if(player2.getNickname()==null|| "".equals(player2.getNickname()))
+                {
+                    player2.setNickname("球手3");
+                }
+                if(player3.getNickname()==null|| "".equals(player3.getNickname()))
+                {
+                    player3.setNickname("球手4");
+                }
+
+
                 List<Player> list = new ArrayList<>();
                 String playernumber = (String) dataSourceList.get(0).get("playernum");
-                list.add(siwtchNumber(playernumber));
+                list.add(switchNumber(playernumber));
                 String playernumber1 = (String) dataSourceList.get(1).get("playernum");
-                list.add(siwtchNumber(playernumber1));
+                list.add(switchNumber(playernumber1));
                 String playernumber2 = (String) dataSourceList.get(2).get("playernum");
-                list.add(siwtchNumber(playernumber2));
+                list.add(switchNumber(playernumber2));
                 String playernumber3 = (String) dataSourceList.get(3).get("playernum");
-                list.add(siwtchNumber(playernumber3));
+                list.add(switchNumber(playernumber3));
 
 
                 for (Player player : list)
@@ -474,6 +499,14 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
 
                 }
 
+//                Bitmap bitmap = (Bitmap) dataSourceList.get(0).get("ddzplayerimg");
+//                bitmap.recycle();
+//                bitmap = (Bitmap) dataSourceList.get(1).get("ddzplayerimg");
+//                bitmap.recycle();
+//                bitmap = (Bitmap) dataSourceList.get(2).get("ddzplayerimg");
+//                bitmap.recycle();
+//                bitmap = (Bitmap) dataSourceList.get(3).get("ddzplayerimg");
+//                bitmap.recycle();
 
                 AtyVegasStart.launch(getActivity(), match, player1, player2,list);
 //                Intent intent = new Intent(getActivity(), AtyDoudizhuStart.class);
@@ -489,7 +522,140 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
 
     }
 
+    private void initDlg()
+    {
+        dlg2 = WmUtil.createEditPlayer(getActivity(), new WmUtil.EditPlayerListener()
+        {
+            @Override
+            public void clickOk(EditText et)
+            {
 
+
+                if (et.getText().toString().equals(""))
+                {
+                    player1.setNickname("球手2");
+
+                }else
+                {
+                    player1.setNickname(et.getText().toString());
+                }
+//                        player1.setNickname(et.getText().toString());
+                dataSourceList.get(1).put("ddzplayername", player1.getNickname());
+                mSimpleAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void clickCancel()
+            {
+
+            }
+
+            @Override
+            public void takePicture(ImageView iv)
+            {
+
+                time1 = System.currentTimeMillis() + "";
+
+                dialogFace = iv;
+                takePhoto(1);
+            }
+
+            @Override
+            public void choosePicture(ImageView iv)
+            {
+                time1 = System.currentTimeMillis() + "";
+                dialogFace = iv;
+                setImage(1);
+            }
+        });
+
+        dlg3 = WmUtil.createEditPlayer(getActivity(), new WmUtil.EditPlayerListener()
+        {
+            @Override
+            public void clickOk(EditText et)
+            {
+
+
+                if (et.getText().toString().equals(""))
+                {
+                    player2.setNickname("球手3");
+
+                }else
+                {
+                    player2.setNickname(et.getText().toString());
+                }
+//                            player2.setNickname(et.getText().toString());
+                dataSourceList.get(2).put("ddzplayername", player2.getNickname());
+                mSimpleAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void clickCancel()
+            {
+
+            }
+
+            @Override
+            public void takePicture(ImageView iv)
+            {
+
+                time2 = System.currentTimeMillis() + "";
+                dialogFace = iv;
+                takePhoto(2);
+            }
+
+            @Override
+            public void choosePicture(ImageView iv)
+            {
+                time2 = System.currentTimeMillis() + "";
+                dialogFace = iv;
+                setImage(2);
+            }
+        });
+
+        dlg4 = WmUtil.createEditPlayer(getActivity(), new WmUtil.EditPlayerListener()
+    {
+        @Override
+        public void clickOk(EditText et)
+        {
+
+
+            if (et.getText().toString().equals(""))
+            {
+                player3.setNickname("球手4");
+
+            }else
+            {
+                player3.setNickname(et.getText().toString());
+            }
+//
+            dataSourceList.get(3).put("ddzplayername", player3.getNickname());
+            mSimpleAdapter.notifyDataSetChanged();
+        }
+
+        @Override
+        public void clickCancel()
+        {
+
+        }
+
+        @Override
+        public void takePicture(ImageView iv)
+        {
+            time3 = System.currentTimeMillis() + "";
+            dialogFace = iv;
+            takePhoto(3);
+        }
+
+        @Override
+        public void choosePicture(ImageView iv)
+        {
+            time3 = System.currentTimeMillis() + "";
+            dialogFace = iv;
+            setImage(3);
+        }
+    });
+    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data)
@@ -517,31 +683,33 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
                 // 此处的用于判断接收的Activity是不是你想要的那个
                 if (requestCode == 1)
                 {
-                    try
-                    {
-                        Uri originalUri = data.getData(); // 获得图片的uri
-                        bm = MediaStore.Images.Media.getBitmap(resolver,
-                                originalUri);
-                        String[] proj = {MediaStore.MediaColumns.DATA};
-                        // 好像是android多媒体数据库的封装接口，具体的看Android文档
-                        @SuppressWarnings("deprecation")
-                        Cursor cursor = getActivity().managedQuery(originalUri, proj, null, null,
-                                null);
-                        // 按我个人理解 这个是获得用户选择的图片的索引值
-                        int column_index = cursor
-                                .getColumnIndexOrThrow(MediaStore.MediaColumns.DATA);
-                        // 将光标移至开头 ，这个很重要，不小心很容易引起越界
-                        cursor.moveToFirst();
-                        // 最后根据索引值获取图片路径
-                        String path = cursor.getString(column_index);
-                        if(choosePlayer==1){
-                            player1.setPortrait(path);
-                        }else if(choosePlayer==2){
-                            player2.setPortrait(path);
-                        }else{
-                            player3.setPortrait(path);
-                        }
+                    Uri originalUri = data.getData(); // 获得图片的uri
+//                    try {
+//                        bm = MediaStore.Images.Media.getBitmap(resolver,
+//                                originalUri);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
 
+                    String[] proj = {MediaStore.Images.Media.DATA};
+                    // 好像是android多媒体数据库的封装接口，具体的看Android文档
+                    @SuppressWarnings("deprecation")
+                    Cursor cursor = getActivity().managedQuery(originalUri, proj, null, null,
+                            null);
+                    // 按我个人理解 这个是获得用户选择的图片的索引值
+                    int column_index = cursor
+                            .getColumnIndexOrThrow(MediaStore.MediaColumns.DATA);
+                    // 将光标移至开头 ，这个很重要，不小心很容易引起越界
+                    cursor.moveToFirst();
+                    // 最后根据索引值获取图片路径
+                    String path = cursor.getString(column_index);
+//                    if(choosePlayer==1){
+//                        player1.setPortrait(path);
+//                    }else if(choosePlayer==2){
+//                        player2.setPortrait(path);
+//                    }else{
+//                        player3.setPortrait(path);
+//                    }
 
 
 //
@@ -549,19 +717,27 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
 //                                .decodeSampledBitmapFromResource(path, 960, 960);
 //                        WmUtil.saveImage(compressBitmap, "faceimg,jpg");
 
-                        Intent intent = new Intent("com.android.camera.action.CROP");
+//                    BitmapFactory.Options options = new BitmapFactory.Options();
+//                    options.inJustDecodeBounds = true;
+//
+//                    // Calculate inSampleSize
+//                    options.inSampleSize = 4;
+//
+//                    // Decode bitmap with inSampleSize set
+//                    options.inJustDecodeBounds = false;
+//
+//                    bm = BitmapFactory.decodeFile(path, options);
 
-                        intent.setDataAndType(data.getData(), "image/*");
-                        intent.putExtra("crop", true);
-                        intent.putExtra("scale", true);
-                        intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+                    Intent intent = new Intent("com.android.camera.action.CROP");
 
-                        startActivityForResult(intent, 2);
+                    intent.setDataAndType(data.getData(), "image/*");
+                    intent.putExtra("crop", true);
+                    intent.putExtra("scale", true);
+                    intent.putExtra("outputX", 800);
+                    intent.putExtra("outputY", 800);
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
 
-                    } catch (IOException e)
-                    {
-                        Log.e("TAG-->Error", e.toString());
-                    }
+                    startActivityForResult(intent, 2);
 
                 }
                 break;
@@ -590,8 +766,16 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
                 Bitmap bitmap = null;
                 try
                 {
+                    BitmapFactory.Options options = new BitmapFactory.Options();
+                    options.inJustDecodeBounds = true;
+
+                    // Calculate inSampleSize
+                    options.inSampleSize = 4;
+
+                    // Decode bitmap with inSampleSize set
+                    options.inJustDecodeBounds = false;
                     bitmap = BitmapFactory.decodeStream(getActivity().getContentResolver()
-                            .openInputStream(imageUri));
+                            .openInputStream(imageUri),null,options);
                 } catch (FileNotFoundException e)
                 {
                     e.printStackTrace();
@@ -625,7 +809,7 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
         }
     }
 
-    Player siwtchNumber(String str)
+    Player switchNumber(String str)
     {
         if ("player0".equals(str))
         {

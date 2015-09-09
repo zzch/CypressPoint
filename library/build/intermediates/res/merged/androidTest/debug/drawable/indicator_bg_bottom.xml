@@ -15,4 +15,4 @@
         android:topLeftRadius="@dimen/indicator_corner_radius"
         android:topRightRadius="@dimen/indicator_corner_radius" />
 
-</shape><!-- From: file:/D:/workspace/GolfAndroid/library/res/drawable/indicator_bg_bottom.xml --><!-- From: file:/D:/workspace/GolfAndroid/library/build/intermediates/bundles/debug/res/drawable/indicator_bg_bottom.xml -->
+</shape><!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/library/res/drawable/indicator_bg_bottom.xml --><!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/library/build/intermediates/bundles/debug/res/drawable/indicator_bg_bottom.xml -->

@@ -156,7 +156,7 @@ public class ShouYeActivity extends Activity {
 	}
 	/**
      * 手机登录
-     * @param v
+     * @param
      */
 	public void initView(){
 		but2 = (Button) findViewById(R.id.but2);

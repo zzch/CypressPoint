@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/D:/workspace/GolfAndroid/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
+    <!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="actionBarDivider"/>
     <attr format="reference" name="actionBarItemBackground"/>
@@ -65,12 +65,12 @@
     <attr format="reference" name="textAppearanceSmallPopupMenu"/>
     <attr format="reference|color" name="textColorSearchUrl"/>
     <attr format="string" name="title"/>
-    <!-- From: file:/D:/workspace/GolfAndroid/res/values/attrs.xml -->
+    <!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/res/values/attrs.xml -->
     <eat-comment/>
     <attr format="string" name="titleText"/>
     <attr format="color" name="titleTextColor"/>
     <attr format="dimension" name="titleTextSize"/>
-    <!-- From: file:/D:/workspace/GolfAndroid/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
+    <!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment/>
     <bool name="abc_action_bar_embed_tabs_pre_jb">false</bool>
     <bool name="abc_action_bar_expanded_action_views_exclusive">true</bool>
@@ -81,7 +81,7 @@
     <color name="abc_search_url_text_normal">#7fa87f</color>
     <color name="abc_search_url_text_pressed">@android:color/black</color>
     <color name="abc_search_url_text_selected">@android:color/black</color>
-    <!-- From: file:/D:/workspace/GolfAndroid/res/values/colors.xml -->
+    <!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/res/values/colors.xml -->
     <eat-comment/>
     <color name="bg">#ededed</color>
     <color name="blend_item_divider_color">#ffededed</color>
@@ -128,7 +128,7 @@
     <declare-styleable name="Theme"><attr format="reference" name="actionDropDownStyle"/><attr format="dimension" name="dropdownListPreferredItemHeight"/><attr format="reference" name="popupMenuStyle"/><attr format="dimension" name="panelMenuListWidth"/><attr format="reference" name="panelMenuListTheme"/><attr format="reference" name="listChoiceBackgroundIndicator"/></declare-styleable>
     <declare-styleable name="View"><attr format="dimension" name="paddingStart"/><attr format="dimension" name="paddingEnd"/><attr name="android:focusable"/></declare-styleable>
     <declare-styleable name="slideswitch"><attr format="color" name="themeColor"/><attr format="boolean" name="isOpen"/><attr name="shape1"><enum name="rect" value="1"/><enum name="circle" value="2"/></attr></declare-styleable>
-    <!-- From: file:/D:/workspace/GolfAndroid/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
+    <!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment/>
     <dimen name="abc_action_bar_default_height">48dip</dimen>
     <dimen name="abc_action_bar_icon_vertical_padding">8dip</dimen>
@@ -147,45 +147,45 @@
     <dimen name="abc_panel_menu_list_width">296dp</dimen>
     <dimen name="abc_search_view_preferred_width">320dip</dimen>
     <dimen name="abc_search_view_text_min_width">160dip</dimen>
-    <!-- From: file:/D:/workspace/GolfAndroid/res/values/dimens.xml -->
+    <!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="base_padding">16dp</dimen>
-    <!-- From: file:/D:/workspace/GolfAndroid/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
+    <!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment/>
     <item name="dialog_fixed_height_major" type="dimen">80%</item>
     <item name="dialog_fixed_height_minor" type="dimen">100%</item>
     <item name="dialog_fixed_width_major" type="dimen">320dp</item>
     <item name="dialog_fixed_width_minor" type="dimen">320dp</item>
-    <!-- From: file:/D:/workspace/GolfAndroid/build/intermediates/exploded-aar/GolfAndroid/library/unspecified/res/values/values.xml -->
+    <!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/build/intermediates/exploded-aar/CypressPoint/library/unspecified/res/values/values.xml -->
     <eat-comment/>
     <dimen name="header_footer_left_right_padding">24dp</dimen>
     <dimen name="header_footer_top_bottom_padding">12dp</dimen>
     <dimen name="indicator_corner_radius">12dp</dimen>
     <dimen name="indicator_internal_padding">4dp</dimen>
     <dimen name="indicator_right_padding">10dp</dimen>
-    <!-- From: file:/D:/workspace/GolfAndroid/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
+    <!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment/>
     <item name="action_bar_activity_content" type="id"/>
     <item name="action_menu_divider" type="id"/>
     <item name="action_menu_presenter" type="id"/>
-    <!-- From: file:/D:/workspace/GolfAndroid/build/intermediates/exploded-aar/GolfAndroid/library/unspecified/res/values/values.xml -->
+    <!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/build/intermediates/exploded-aar/CypressPoint/library/unspecified/res/values/values.xml -->
     <eat-comment/>
     <item name="gridview" type="id"/>
-    <!-- From: file:/D:/workspace/GolfAndroid/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
+    <!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment/>
     <item name="home" type="id"/>
     <item name="progress_circular" type="id"/>
     <item name="progress_horizontal" type="id"/>
-    <!-- From: file:/D:/workspace/GolfAndroid/build/intermediates/exploded-aar/GolfAndroid/library/unspecified/res/values/values.xml -->
+    <!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/build/intermediates/exploded-aar/CypressPoint/library/unspecified/res/values/values.xml -->
     <eat-comment/>
     <item name="scrollview" type="id"/>
     <item name="webview" type="id"/>
-    <!-- From: file:/D:/workspace/GolfAndroid/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
+    <!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment/>
     <integer name="abc_max_action_buttons">2</integer>
-    <!-- From: file:/D:/workspace/GolfAndroid/res/values/strings.xml -->
+    <!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/res/values/strings.xml -->
     <eat-comment/>
     <string name="ChooseEnough">最多只可选择三个标签</string>
     <string name="ChooseHint">请先在上一页选择标签</string>
@@ -193,7 +193,7 @@
     <string name="ChooseThree">3/3</string>
     <string name="ChooseTow">2/3</string>
     <string name="NoChoose">0/3</string>
-    <!-- From: file:/D:/workspace/GolfAndroid/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
+    <!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment/>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_up_description">Navigate up</string>
@@ -208,7 +208,7 @@
     <string name="abc_searchview_description_voice">Voice search</string>
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
-    <!-- From: file:/D:/workspace/GolfAndroid/res/values/strings.xml -->
+    <!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/res/values/strings.xml -->
     <eat-comment/>
     <string name="account">帐号与安全</string>
     <string name="action_settings">Settings</string>
@@ -263,7 +263,7 @@
     <string name="pk">PK</string>
     <string name="playset">打球设置</string>
     <string name="pull_to_refresh">下拉可以刷新</string>
-    <!-- From: file:/D:/workspace/GolfAndroid/build/intermediates/exploded-aar/GolfAndroid/library/unspecified/res/values/values.xml -->
+    <!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/build/intermediates/exploded-aar/CypressPoint/library/unspecified/res/values/values.xml -->
     <eat-comment/>
     <string name="pull_to_refresh_from_bottom_pull_label">@string/pull_to_refresh_pull_label</string>
     <string name="pull_to_refresh_from_bottom_refreshing_label">@string/pull_to_refresh_refreshing_label</string>
@@ -271,7 +271,7 @@
     <string name="pull_to_refresh_pull_label">Pull to refresh…</string>
     <string name="pull_to_refresh_refreshing_label">Loading…</string>
     <string name="pull_to_refresh_release_label">Release to refresh…</string>
-    <!-- From: file:/D:/workspace/GolfAndroid/res/values/strings.xml -->
+    <!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/res/values/strings.xml -->
     <eat-comment/>
     <string name="pws">帐号密码</string>
     <string name="qiehuan">搜索</string>
@@ -319,7 +319,7 @@
     <string name="xlistview_header_hint_ready">松开刷新数据</string>
     <string name="xlistview_header_last_time">上次更新时间：</string>
     <string name="zhuce">一键注册</string>
-    <!-- From: file:/D:/workspace/GolfAndroid/res/values/styles.xml -->
+    <!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/res/values/styles.xml -->
     <eat-comment/>
     <style name="AnimBottom" parent="@android:style/Animation">
         <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
@@ -351,7 +351,7 @@
         <item name="android:backgroundDimEnabled">true</item>
  <!-- 模糊 -->
     </style>
-    <!-- From: file:/D:/workspace/GolfAndroid/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
+    <!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment/>
     <style name="TextAppearance.AppCompat.Base.CompactMenu.Dialog" parent="android:TextAppearance.Medium">
         <item name="android:textColor">@android:color/primary_text_light</item>
@@ -714,7 +714,7 @@
     </style>
     <style name="Theme.Base.AppCompat.Light.DialogWhenLarge" parent="Theme.Base.AppCompat.Light"/>
     <style name="Theme.Base.Light" parent="android:Theme.Light"/>
-    <!-- From: file:/D:/workspace/GolfAndroid/res/values/styles.xml -->
+    <!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/res/values/styles.xml -->
     <eat-comment/>
     <style name="Theme_dialog" parent="android:Theme.Dialog">
             <item name="android:windowNoTitle">true</item>
@@ -722,7 +722,7 @@
         <item name="android:windowBackground">@null</item>
  <!-- 背景透明 -->
     </style>
-    <!-- From: file:/D:/workspace/GolfAndroid/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
+    <!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment/>
     <style name="Widget.AppCompat.ActionBar" parent="Widget.AppCompat.Base.ActionBar"/>
     <style name="Widget.AppCompat.ActionBar.Solid" parent="Widget.AppCompat.Base.ActionBar.Solid"/>
@@ -938,7 +938,7 @@
     <style name="Widget.AppCompat.ProgressBar" parent="Widget.AppCompat.Base.ProgressBar"/>
     <style name="Widget.AppCompat.ProgressBar.Horizontal" parent="Widget.AppCompat.Base.ProgressBar.Horizontal"/>
     <style name="Widget.AppCompat.Spinner.DropDown.ActionBar" parent="Widget.AppCompat.Base.Spinner"/>
-    <!-- From: file:/D:/workspace/GolfAndroid/res/values/styles.xml -->
+    <!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/res/values/styles.xml -->
     <eat-comment/>
     <style name="blend_theme_dialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
@@ -955,7 +955,7 @@
         <item name="android:layout_height">21dip</item>
         <item name="android:layout_gravity">center</item>
     </style>
-    <!-- From: file:/D:/workspace/GolfAndroid/res/values/dialogstyles.xml -->
+    <!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/res/values/dialogstyles.xml -->
     <eat-comment/>
     <style name="dialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>

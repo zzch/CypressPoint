@@ -13,8 +13,11 @@ import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.update.UpdateManager;
 import cn.com.zcty.ILovegolf.activity.view.count.CountActivity;
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
+import cn.com.zcty.ILovegolf.activity.view.myself.InformationChangesActivity;
 import cn.com.zcty.ILovegolf.activity.view.myself.Myself;
 import cn.com.zcty.ILovegolf.doudizhu.DoudizhuMain;
+import cn.com.zcty.ILovegolf.doudizhu.entity.User;
+import cn.com.zcty.ILovegolf.doudizhu.utills.CacheUtils;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
@@ -123,10 +126,23 @@ public class HomePageActivity extends Activity {
 				finish();
 				break;
 			case R.id.buttondb:
+				Bitmap myuser_face = null;
+				myuser_face = BitmapFactory.decodeFile("/mnt/sdcard/testfile/golf.jpg");
 				Intent yulemoshi = new Intent(HomePageActivity.this,
 						DoudizhuMain.class);
-				startActivity(yulemoshi);
-				finish();
+				Intent editInfo = new Intent(HomePageActivity.this, InformationChangesActivity.class);
+				if (myuser_face==null)
+				{
+					startActivity(editInfo);
+					Toast.makeText(HomePageActivity.this,"请设置个人资料",Toast.LENGTH_SHORT).show();
+					finish();
+				}else
+				{
+					startActivity(yulemoshi);
+					finish();
+				}
+//				startActivity(yulemoshi);
+//				finish();
 				break;
 		}
 	}

@@ -3,4 +3,4 @@
     <item android:state_checked="true" android:color="@color/bg"/>
 	<item android:state_checked="false" android:color="@color/hei2"/>
 </selector>
-<!-- From: file:/D:/workspace/GolfAndroid/res/drawable/radio_text_selector.xml -->
+<!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/res/drawable/radio_text_selector.xml -->

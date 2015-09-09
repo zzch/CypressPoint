@@ -4,4 +4,4 @@
  <item android:state_pressed="true" android:drawable="@drawable/button_anxia"/>
  <item android:state_focused="false" android:drawable="@drawable/button_moreng"/>
 
-</selector><!-- From: file:/D:/workspace/GolfAndroid/res/drawable/button.xml -->
+</selector><!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/res/drawable/button.xml -->

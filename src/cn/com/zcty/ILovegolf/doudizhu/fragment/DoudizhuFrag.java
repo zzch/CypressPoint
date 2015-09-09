@@ -35,6 +35,7 @@ import cn.com.zcty.ILovegolf.doudizhu.utills.DragGridView;
 import cn.com.zcty.ILovegolf.doudizhu.utills.WmUtil;
 import com.leaking.slideswitch.SlideSwitch;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -66,6 +67,15 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
 
     private Button btnStart2;
     int choosePlayer;
+
+    private Dialog dlg2 = null;
+
+
+    private Dialog dlg3=  null;
+
+
+
+
 
     @Nullable
     @Override
@@ -107,12 +117,12 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
         itemHashMap1.put("ddzplayername", CacheUtils.getString(getActivity(), "nickname", ""));
         itemHashMap1.put("isOwner", true);
         itemHashMap1.put("playernum", "player0");
-        itemHashMap2.put("ddzplayerimg", R.drawable.hugh);
+        itemHashMap2.put("ddzplayerimg", BitmapFactory.decodeResource(this.getResources(),R.drawable.hugh));
         itemHashMap2.put("isOwner", false);
         itemHashMap2.put("ddzplayername", "球手2");
         itemHashMap2.put("playernum", "player1");
         itemHashMap3.put("isOwner", false);
-        itemHashMap3.put("ddzplayerimg", R.drawable.hugh);
+        itemHashMap3.put("ddzplayerimg",  BitmapFactory.decodeResource(this.getResources(),R.drawable.hugh));
         itemHashMap3.put("ddzplayername", "球手3");
         itemHashMap3.put("playernum", "player2");
         dataSourceList.add(itemHashMap1);
@@ -250,6 +260,103 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
         player2 = new Player();
 //        DbUtil.getInstance(getActivity()).savePlayer(player);
 
+        initDlg();
+
+    }
+
+    private void initDlg()
+    {
+        dlg2 = WmUtil.createEditPlayer(getActivity(), new WmUtil.EditPlayerListener()
+        {
+            @Override
+            public void clickOk(EditText et)
+            {
+
+
+                if (et.getText().toString().equals(""))
+                {
+                    player1.setNickname("球手2");
+
+
+                } else
+                {
+                    player1.setNickname(et.getText().toString());
+
+                }
+                dataSourceList.get(1).put("ddzplayername", player1.getNickname());
+                mSimpleAdapter.notifyDataSetChanged();
+//                        player1.setNickname(et.getText().toString());
+
+            }
+
+            @Override
+            public void clickCancel()
+            {
+
+            }
+
+            @Override
+            public void takePicture(ImageView iv)
+            {
+
+                time1 = System.currentTimeMillis() + "";
+
+                dialogFace = iv;
+                takePhoto(1);
+            }
+
+            @Override
+            public void choosePicture(ImageView iv)
+            {
+                time1 = System.currentTimeMillis() + "";
+                dialogFace = iv;
+                setImage(1);
+            }
+        });
+
+        dlg3 = WmUtil.createEditPlayer(getActivity(), new WmUtil.EditPlayerListener()
+        {
+            @Override
+            public void clickOk(EditText et)
+            {
+
+
+                if (et.getText().toString().equals(""))
+                {
+                    player2.setNickname("球手3");
+
+                }else
+                {
+                    player2.setNickname(et.getText().toString());
+                }
+//                            player2.setNickname(et.getText().toString());
+                dataSourceList.get(2).put("ddzplayername", player2.getNickname());
+                mSimpleAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void clickCancel()
+            {
+
+            }
+
+            @Override
+            public void takePicture(ImageView iv)
+            {
+
+                time2 = System.currentTimeMillis() + "";
+                dialogFace = iv;
+                takePhoto(2);
+            }
+
+            @Override
+            public void choosePicture(ImageView iv)
+            {
+                time2 = System.currentTimeMillis() + "";
+                dialogFace = iv;
+                setImage(2);
+            }
+        });
     }
 
     Uri imageUri;
@@ -259,7 +366,7 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
     private void setImage(Player player)
     {
 
-        Intent getAlbum = new Intent("android.intent.action.GET_CONTENT");
+        Intent getAlbum = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         getAlbum.setType("image/*");
         getAlbum.putExtra("crop", true);
         getAlbum.putExtra("scale", true);
@@ -297,14 +404,21 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
                 String nickname = CacheUtils.getString(getActivity(), "nickname", "");
 //                player0.setNickname(nickname);
 //                player0.setPortrait(myUser.getPortrait());
-
+                if(player1.getNickname()==null|| "".equals(player1.getNickname()))
+                {
+                    player1.setNickname("球手2");
+                }
+                if(player2.getNickname()==null|| "".equals(player2.getNickname()))
+                {
+                    player2.setNickname("球手3");
+                }
                 List<Player> list = new ArrayList<>();
                 String playernumber = (String) dataSourceList.get(0).get("playernum");
-                list.add(siwtchNumber(playernumber));
+                list.add(switchNumber(playernumber));
                 String playernumber1 = (String) dataSourceList.get(1).get("playernum");
-                list.add(siwtchNumber(playernumber1));
+                list.add(switchNumber(playernumber1));
                 String playernumber2 = (String) dataSourceList.get(2).get("playernum");
-                list.add(siwtchNumber(playernumber2));
+                list.add(switchNumber(playernumber2));
 
 
                 for (Player player:list){
@@ -313,6 +427,12 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
 
                 }
 
+//                Bitmap bitmap = (Bitmap) dataSourceList.get(0).get("ddzplayerimg");
+//                if(bitmap!=null) bitmap.recycle();
+//                bitmap = (Bitmap) dataSourceList.get(1).get("ddzplayerimg");
+//                if(bitmap!=null) bitmap.recycle();
+//                bitmap = (Bitmap) dataSourceList.get(2).get("ddzplayerimg");
+//                if(bitmap!=null) bitmap.recycle();
 
                 AtyDoudizhuStart.launch(getActivity(), match,list,true);
 //                Intent intent = new Intent(getActivity(), AtyDoudizhuStart.class);
@@ -328,7 +448,7 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
     }
 
 
-    Player siwtchNumber(String str)
+    Player switchNumber(String str)
     {
         if ("player0".equals(str))
         {
@@ -352,7 +472,7 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
         }
 
 
-        Intent getAlbum = new Intent("android.intent.action.GET_CONTENT");
+        Intent getAlbum = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         getAlbum.setType("image/*");
         getAlbum.putExtra("crop", true);
         getAlbum.putExtra("scale", true);
@@ -383,8 +503,8 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
     @Override
     public void onItemClick(AdapterView<?> parent, View view, final int position, long id)
     {
-        boolean isowmer = (boolean) dataSourceList.get(position).get("isOwner");
-        if (isowmer)
+        boolean isower = (boolean) dataSourceList.get(position).get("isOwner");
+        if (isower)
         {
             return;
         } else
@@ -393,81 +513,98 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
             currentPosition = position;
             if("player1".equals(playernumber)){
                 choosePlayer=1;
-                dialog = WmUtil.createEditPlayer(getActivity(), new WmUtil.EditPlayerListener()
-                {
-                    @Override
-                    public void clickOk(EditText et)
-                    {
-
-                        dataSourceList.get(position).put("ddzplayername", et.getText().toString());
-                        mSimpleAdapter.notifyDataSetChanged();
-                            player1.setNickname(et.getText().toString());
-
-                    }
-
-                    @Override
-                    public void clickCancel()
-                    {
-
-                    }
-
-                    @Override
-                    public void takePicture(ImageView iv)
-                    {
-
-                     time1 = System.currentTimeMillis() + "";
-
-                        dialogFace = iv;
-                        takePhoto(1);
-                    }
-
-                    @Override
-                    public void choosePicture(ImageView iv)
-                    {
-                        time1 = System.currentTimeMillis() + "";
-                        dialogFace = iv;
-                        setImage(1);
-                    }
-                });
+//                dialog = WmUtil.createEditPlayer(getActivity(), new WmUtil.EditPlayerListener()
+//                {
+//                    @Override
+//                    public void clickOk(EditText et)
+//                    {
+//
+//                        dataSourceList.get(position).put("ddzplayername", et.getText().toString());
+//                        mSimpleAdapter.notifyDataSetChanged();
+//                        if (et.getText().toString().equals(""))
+//                        {
+//                            player1.setNickname("球手2");
+//
+//                        }else
+//                        {
+//                            player1.setNickname(et.getText().toString());
+//                        }
+////                        player1.setNickname(et.getText().toString());
+//
+//                    }
+//
+//                    @Override
+//                    public void clickCancel()
+//                    {
+//
+//                    }
+//
+//                    @Override
+//                    public void takePicture(ImageView iv)
+//                    {
+//
+//                     time1 = System.currentTimeMillis() + "";
+//
+//                        dialogFace = iv;
+//                        takePhoto(1);
+//                    }
+//
+//                    @Override
+//                    public void choosePicture(ImageView iv)
+//                    {
+//                        time1 = System.currentTimeMillis() + "";
+//                        dialogFace = iv;
+//                        setImage(1);
+//                    }
+//                });
+                dialog = dlg2;
 
             }else{
                 choosePlayer=2;
-                dialog = WmUtil.createEditPlayer(getActivity(), new WmUtil.EditPlayerListener()
-                {
-                    @Override
-                    public void clickOk(EditText et)
-                    {
-
-                        dataSourceList.get(position).put("ddzplayername", et.getText().toString());
-                        mSimpleAdapter.notifyDataSetChanged();
-                            player2.setNickname(et.getText().toString());
-
-                    }
-
-                    @Override
-                    public void clickCancel()
-                    {
-
-                    }
-
-                    @Override
-                    public void takePicture(ImageView iv)
-                    {
-
-                        time2 = System.currentTimeMillis() + "";
-                        dialogFace = iv;
-                        takePhoto(2);
-                    }
-
-                    @Override
-                    public void choosePicture(ImageView iv)
-                    {
-                        time2 = System.currentTimeMillis() + "";
-                        dialogFace = iv;
-                        setImage(2);
-                    }
-                });
-
+//                dialog = WmUtil.createEditPlayer(getActivity(), new WmUtil.EditPlayerListener()
+//                {
+//                    @Override
+//                    public void clickOk(EditText et)
+//                    {
+//
+//                        dataSourceList.get(position).put("ddzplayername", et.getText().toString());
+//                        mSimpleAdapter.notifyDataSetChanged();
+//                        if (et.getText().toString().equals(""))
+//                        {
+//                            player2.setNickname("球手3");
+//
+//                        }else
+//                        {
+//                            player2.setNickname(et.getText().toString());
+//                        }
+////                            player2.setNickname(et.getText().toString());
+//
+//                    }
+//
+//                    @Override
+//                    public void clickCancel()
+//                    {
+//
+//                    }
+//
+//                    @Override
+//                    public void takePicture(ImageView iv)
+//                    {
+//
+//                        time2 = System.currentTimeMillis() + "";
+//                        dialogFace = iv;
+//                        takePhoto(2);
+//                    }
+//
+//                    @Override
+//                    public void choosePicture(ImageView iv)
+//                    {
+//                        time2 = System.currentTimeMillis() + "";
+//                        dialogFace = iv;
+//                        setImage(2);
+//                    }
+//                });
+                dialog = dlg3;
             }
 
 
@@ -509,6 +646,7 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
                         Uri originalUri = data.getData(); // 获得图片的uri
                         bm = MediaStore.Images.Media.getBitmap(resolver,
                                 originalUri);
+                        bm.compress(Bitmap.CompressFormat.JPEG,20,new ByteArrayOutputStream());
                         String[] proj = {MediaStore.MediaColumns.DATA};
                         // 好像是android多媒体数据库的封装接口，具体的看Android文档
                         @SuppressWarnings("deprecation")
@@ -538,6 +676,8 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
                         intent.setDataAndType(data.getData(), "image/*");
                         intent.putExtra("crop", true);
                         intent.putExtra("scale", true);
+                        intent.putExtra("outputX", 800);
+                        intent.putExtra("outputY", 800);
                         intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
 
                         startActivityForResult(intent, 2);
@@ -576,6 +716,7 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
                 {
                     bitmap = BitmapFactory.decodeStream(getActivity().getContentResolver()
                             .openInputStream(imageUri));
+                    bitmap.compress(Bitmap.CompressFormat.JPEG,20,new ByteArrayOutputStream());
                 } catch (FileNotFoundException e)
                 {
                     e.printStackTrace();

@@ -19,4 +19,4 @@
     android:duration="@android:integer/config_longAnimTime"
     android:fromYDelta="-100%p"
     android:toYDelta="0" />
-<!-- From: file:/D:/workspace/GolfAndroid/library/res/anim/slide_in_from_top.xml --><!-- From: file:/D:/workspace/GolfAndroid/build/intermediates/exploded-aar/GolfAndroid/library/unspecified/res/anim/slide_in_from_top.xml -->
+<!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/library/res/anim/slide_in_from_top.xml --><!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/build/intermediates/exploded-aar/CypressPoint/library/unspecified/res/anim/slide_in_from_top.xml -->

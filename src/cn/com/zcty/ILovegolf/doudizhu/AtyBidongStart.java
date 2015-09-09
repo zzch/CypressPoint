@@ -3,14 +3,18 @@ package cn.com.zcty.ILovegolf.doudizhu;
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -37,6 +41,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.TreeMap;
@@ -47,7 +52,7 @@ import java.util.TreeMap;
 public class AtyBidongStart extends Activity implements View.OnClickListener {
     private Button btnSelectPars, btnP1stPars, btnP2stPars, btnPreHole, btnConfirmResult;
     private ImageView bdP1, bdP2;
-    private TextView bdHoles, bdP1Name, bdP1Score, bdP2Name, bdP2Score, tv_bird1, tv_bird2, bdp1stscore, bdp2stscore, bdp1stscore_add, bdp2stscore_add;
+    private TextView bdHoles, bdP1Name, bdP1Score, bdP2Name, bdP2Score, tv_bird1, tv_bird2, bdp1stscore, bdp2stscore, bdp1stscore_add, bdp2stscore_add,bdTieInfo;
 
     private Match match;
     private Player myplayer;
@@ -123,6 +128,18 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
         } else {
             setFinalValue();
         }
+
+        HolesInfo lastInfo = hole_number>1?WmUtil.holesinfos[hole_number - 2]:null;
+        String tienum = lastInfo==null?"0":(""+lastInfo.getTie_nubmer());
+        if(tienum.equals("0"))
+        {
+            bdTieInfo.setVisibility(View.GONE);
+        }
+        else
+        {
+            bdTieInfo.setVisibility(View.VISIBLE);
+            bdTieInfo.setText("上" + tienum + "洞打平分数累计本洞获胜方将获得" + tienum + "洞的分数");
+        }
     }
 
     private void setFinalValue() {
@@ -194,6 +211,7 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
 
         bdP1Name.setText(myplayer.getNickname());
         bdP2Name.setText(player.getNickname());
+
     }
 
     private void initHoleInfos() {
@@ -214,6 +232,8 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
                 if (i > 0) {
                     HolesInfo tmp = WmUtil.holesinfos[i - 1];
                     info.setTie_nubmer(tmp.getTie_nubmer() + 1);
+                }else{
+                    info.setTie_nubmer(1);
                 }
 //                WmUtil.tie_number++;
             } else {
@@ -310,6 +330,15 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
         bdP1.setImageBitmap(BitmapFactory.decodeFile(myplayer.getPortrait()));
 
         bdP1Name.setText(myplayer.getNickname());
+//        if (player.getNickname().toString().equals(""))
+//        {
+//            player.setNickname("球手2");
+//            bdP2Name.setText("球手2");
+//        }
+//        else
+//        {
+//            bdP2Name.setText(player.getNickname());
+//        }
         bdP2Name.setText(player.getNickname());
 
         bname1 = bdP1Name.getText().toString().trim();
@@ -332,6 +361,7 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
         bdP1Score = (TextView) findViewById(R.id.bdp1stscore);
         bdP2Name = (TextView) findViewById(R.id.bdp2stname);
         bdP2Score = (TextView) findViewById(R.id.bdp2stscore);
+        bdTieInfo = (TextView) findViewById(R.id.bdTieInfo);
         btnSelectPars.setOnClickListener(this);
         btnP1stPars.setOnClickListener(this);
         btnP2stPars.setOnClickListener(this);
@@ -358,7 +388,7 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AtyBidongStart.this, DoudizhuMain.class));
+                dialog();
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
             }
         });
@@ -446,48 +476,65 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
 //        if (match.getBirdie_x2().equals("1") && match.getEagle_x4().equals("1"))
 //        {
 
-
-        switch (WmUtil.whatPar(par, parsP1))
+        int p1 = WmUtil.whatPar(par, parsP1);
+        int p2 = WmUtil.whatPar(par, parsP2);
+        switch (p1>p2?p1:p2)
         {
             case 0:
 
                 break;
             case 1:
                 intent = new Intent(AtyBidongStart.this,BirdActivity.class);
-                intent.putExtra("xiao1", bname1);
+                if((p1>p2?p1:p2)==p1)
+                {
+                    intent.putExtra("xiao1", bname1);
+                }
+                else if((p1>p2?p1:p2)==p2)
+                {
+                    intent.putExtra("xiao1", bname2);
+                }
+//                intent.putExtra("xiao1", bname1);
                 startActivity(intent);
                 // tv_bird1.setText("bird ! x 2");
                 // tv_bird1.setVisibility(View.VISIBLE);
                 break;
             case 2:
                 intent = new Intent(AtyBidongStart.this,LaoyingActivity.class);
-                intent.putExtra("lao2", bname1);
+                if((p1>p2?p1:p2)==p1)
+                {
+                    intent.putExtra("lao2", bname1);
+                }
+                else if((p1>p2?p1:p2)==p2)
+                {
+                    intent.putExtra("lao2", bname2);
+                }
+//                intent.putExtra("lao2", bname1);
                 startActivity(intent);
                 //tv_bird1.setText("eagle ! x 4");
                 //  tv_bird1.setVisibility(View.VISIBLE);
                 break;
         }
 
-        switch (WmUtil.whatPar(par, parsP2))
-        {
-            case 0:
-
-                break;
-            case 1:
-                intent = new Intent(AtyBidongStart.this,BirdActivity.class);
-                intent.putExtra("xiao2", bname2);
-                startActivity(intent);
-                // tv_bird2.setText("bird ! x 2");
-                // tv_bird2.setVisibility(View.VISIBLE);
-                break;
-            case 2:
-                intent = new Intent(AtyBidongStart.this,LaoyingActivity.class);
-                intent.putExtra("lao2", bname2);
-                startActivity(intent);
-                // tv_bird2.setText("eagle ! x 4");
-                //tv_bird2.setVisibility(View.VISIBLE);
-                break;
-        }
+//        switch (WmUtil.whatPar(par, parsP2))
+//        {
+//            case 0:
+//
+//                break;
+//            case 1:
+//                intent = new Intent(AtyBidongStart.this,BirdActivity.class);
+//                intent.putExtra("xiao2", bname2);
+//                startActivity(intent);
+//                // tv_bird2.setText("bird ! x 2");
+//                // tv_bird2.setVisibility(View.VISIBLE);
+//                break;
+//            case 2:
+//                intent = new Intent(AtyBidongStart.this,LaoyingActivity.class);
+//                intent.putExtra("lao2", bname2);
+//                startActivity(intent);
+//                // tv_bird2.setText("eagle ! x 4");
+//                //tv_bird2.setVisibility(View.VISIBLE);
+//                break;
+//        }
 
 
 
@@ -696,7 +743,9 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
                     if (hole_number == 18) {
                         finish();
                     }
-                    nextHole();
+                    else{
+                        nextHole();
+                    }
                 } else {
                     if (isReEdit) {
                         btnPreHole.setText("上一洞");
@@ -765,9 +814,21 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
             return;
         }
         bdHoles.setText("球洞" + hole_number);
-
         //get holeinfo
         HolesInfo info = WmUtil.holesinfos[hole_number - 1];
+
+        HolesInfo lastInfo = hole_number>1?WmUtil.holesinfos[hole_number - 2]:null;
+        String tienum = lastInfo==null?"0":(""+lastInfo.getTie_nubmer());
+        if(tienum.equals("0"))
+        {
+            bdTieInfo.setVisibility(View.GONE);
+        }
+        else
+        {
+            bdTieInfo.setVisibility(View.VISIBLE);
+            bdTieInfo.setText("上"+tienum+"洞打平分数累计本洞获胜方将获得"+tienum+"洞的分数");
+        }
+
         isnext = true;
         btnConfirmResult.setText("下一洞");
 
@@ -804,7 +865,14 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
 
         int tieNumber = WmUtil.whoWinsBD(this.parsP1, this.parsP2) == WmUtil.DRAW ? 1 : 0;
 
-        WmUtil.tie_number = info == null ? tieNumber : (tieNumber == 1 ? info.getTie_nubmer() + tieNumber : info.getTie_nubmer());
+        if(match.getDraw_to_next().equals("1"))
+        {
+
+            WmUtil.tie_number = info == null ? tieNumber : (tieNumber == 1 ? info.getTie_nubmer() + tieNumber : info.getTie_nubmer());
+        }else
+        {
+            WmUtil.tie_number = 0;
+        }
 
         int score = WmUtil.bdScore(this.par, this.parsP1, this.parsP2, hole_number);
         //界面设值+动画
@@ -836,6 +904,7 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
             HolesInfo tmpInfo = WmUtil.holesinfos[hole_number - 2];
             if (isnext) tmpInfo.setIsEdit(false);
         }
+
     }
 
     private void insertDB(HolesInfo info) {
@@ -892,8 +961,24 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
     }
 
     private void nextHole() {
+
+
         //1.holeNum++
         hole_number++;
+        //0.加注释
+        HolesInfo lastInfo = hole_number>1?WmUtil.holesinfos[hole_number - 2]:null;
+        String tienum = lastInfo==null?"0":(""+lastInfo.getTie_nubmer());
+        if(tienum.equals("0"))
+        {
+            bdTieInfo.setVisibility(View.GONE);
+        }
+        else
+        {
+            bdTieInfo.setVisibility(View.VISIBLE);
+            bdTieInfo.setText("上"+tienum+"洞打平分数累计本洞获胜方将获得"+tienum+"洞的分数");
+        }
+
+        // continue
         bdHoles.setText("球洞" + hole_number);
         //取下一洞holeinfo判断状态
         HolesInfo nextInfo = WmUtil.holesinfos[hole_number - 1];
@@ -940,25 +1025,30 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
         ObjectAnimator ani1_alpha = ObjectAnimator.ofFloat(bdp1stscore_add, "alpha", 1, 0);
         ani1_alpha.setDuration(1000).start();
         ObjectAnimator ani1_trany = ObjectAnimator.ofFloat(bdp1stscore_add, "translationY", 0, -100);
-        ani1_trany.addListener(new Animator.AnimatorListener() {
+        ani1_trany.addListener(new Animator.AnimatorListener()
+        {
             @Override
-            public void onAnimationStart(Animator animation) {
+            public void onAnimationStart(Animator animation)
+            {
 
             }
 
             @Override
-            public void onAnimationEnd(Animator animation) {
+            public void onAnimationEnd(Animator animation)
+            {
                 bdp1stscore_add.setVisibility(View.GONE);
 
             }
 
             @Override
-            public void onAnimationCancel(Animator animation) {
+            public void onAnimationCancel(Animator animation)
+            {
 
             }
 
             @Override
-            public void onAnimationRepeat(Animator animation) {
+            public void onAnimationRepeat(Animator animation)
+            {
 
             }
         });
@@ -968,24 +1058,29 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
         ObjectAnimator ani2_alpha = ObjectAnimator.ofFloat(bdp2stscore_add, "alpha", 1, 0);
         ani2_alpha.setDuration(1000).start();
         ObjectAnimator ani2_trany = ObjectAnimator.ofFloat(bdp2stscore_add, "translationY", 0, -100);
-        ani2_trany.addListener(new Animator.AnimatorListener() {
+        ani2_trany.addListener(new Animator.AnimatorListener()
+        {
             @Override
-            public void onAnimationStart(Animator animation) {
+            public void onAnimationStart(Animator animation)
+            {
 
             }
 
             @Override
-            public void onAnimationEnd(Animator animation) {
+            public void onAnimationEnd(Animator animation)
+            {
                 bdp2stscore_add.setVisibility(View.GONE);
             }
 
             @Override
-            public void onAnimationCancel(Animator animation) {
+            public void onAnimationCancel(Animator animation)
+            {
 
             }
 
             @Override
-            public void onAnimationRepeat(Animator animation) {
+            public void onAnimationRepeat(Animator animation)
+            {
 
             }
         });
@@ -1033,6 +1128,39 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
             default:
                 break;
         }
+    }
+    private void dialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(AtyBidongStart.this,AlertDialog.THEME_HOLO_LIGHT);
+        builder.setMessage("比赛尚未结束确定要退出吗?");
+        builder.setTitle("提示");
+        builder.setPositiveButton("确认",
+                new android.content.DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        dialog.dismiss();
+                        AtyBidongStart.this.finish();
+                    }
+                });
+        builder.setNegativeButton("取消",
+                new android.content.DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        dialog.dismiss();
+                    }
+                });
+        builder.create().show();
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+            dialog();
+            return false;
+        }
+        return false;
     }
 
 }

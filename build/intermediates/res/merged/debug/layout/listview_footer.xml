@@ -35,4 +35,4 @@
         android:id="@+id/loading"
         style="@style/customProgressBar" />
 
-</LinearLayout><!-- From: file:/D:/workspace/GolfAndroid/res/layout/listview_footer.xml -->
+</LinearLayout><!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/res/layout/listview_footer.xml -->

@@ -3,12 +3,15 @@ package cn.com.zcty.ILovegolf.doudizhu;
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -22,13 +25,15 @@ import com.easyandroidanimations.library.Animation;
 import com.easyandroidanimations.library.AnimationListener;
 import com.easyandroidanimations.library.FoldAnimation;
 import com.easyandroidanimations.library.FoldLayout;
+
 import cn.com.zcty.ILovegolf.doudizhu.db.DbUtil;
 import cn.com.zcty.ILovegolf.doudizhu.entity.HolesInfo;
 import cn.com.zcty.ILovegolf.doudizhu.entity.Match;
 import cn.com.zcty.ILovegolf.doudizhu.entity.Player;
 import cn.com.zcty.ILovegolf.doudizhu.entity.User;
 import cn.com.zcty.ILovegolf.doudizhu.utills.WmUtil;
-import  cn.com.zcty.ILovegolf.activity.R;
+import cn.com.zcty.ILovegolf.activity.R;
+
 import java.io.Serializable;
 import java.lang.annotation.Target;
 import java.util.ArrayList;
@@ -69,10 +74,11 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
     boolean isnew;
     private boolean isReEdit = false;
     private Button back;
-    private TextView textView1;
+    private TextView textView1, bdTieInfo;
     private Button btnTitleHis;
-    private String ddzname1,ddzname2,ddzname3;
+    private String ddzname1, ddzname2, ddzname3;
     private Intent intent;
+
     public static void launch(Context context, Match match, List<Player> list, boolean isnew) {
         Intent intent = new Intent(context, AtyDoudizhuStart.class);
         intent.putExtra("match", match);
@@ -88,7 +94,7 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.doudizhuatystart);
-     //   getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.doudizhu_title);
+        //   getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.doudizhu_title);
         initView();
         isnew = getIntent().getBooleanExtra("isnew", true);
         this.clearHolesInfo();
@@ -121,9 +127,7 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
         namelist.add(ddzP1Name);
         namelist.add(ddzP2Name);
         namelist.add(ddzP3Name);
-        ddzname1 = ddzP1Name.getText().toString().trim();
-        ddzname2 = ddzP2Name.getText().toString().trim();
-        ddzname3 = ddzP3Name.getText().toString().trim();
+
 
         for (int i = 0; i < ddzllayout1.getChildCount(); i++) {
             namelist.get(i).setText(list.get(i).getNickname());
@@ -140,6 +144,9 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
 
         }
 
+        ddzname1 = ddzP1Name.getText().toString().trim();
+        ddzname2 = ddzP2Name.getText().toString().trim();
+        ddzname3 = ddzP3Name.getText().toString().trim();
     }
 
     private void initHistoryData() {
@@ -357,6 +364,8 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
         ddzp2stscore_add = (TextView) findViewById(R.id.ddzp2stscore_add);
         ddzp3stscore_add = (TextView) findViewById(R.id.ddzp3stscore_add);
         ddzllayout1 = (LinearLayout) findViewById(R.id.ddzllayout1);
+        bdTieInfo = (TextView) findViewById(R.id.bdTieInfo);
+
 
         btnSelectPars.setOnClickListener(this);
         btnP1stPars.setOnClickListener(this);
@@ -371,18 +380,18 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
         ddzname1 = ddzP1Name.getText().toString().trim();
         ddzname2 = ddzP2Name.getText().toString().trim();
         ddzname3 = ddzP3Name.getText().toString().trim();
-        textView1 =(TextView) findViewById(R.id.textView1);
+        textView1 = (TextView) findViewById(R.id.textView1);
         textView1.setText("斗地主");
 
         btnTitleHis = (Button) findViewById(R.id.btnTitleHis);
         btnTitleHis.setText("排名");
         btnTitleHis.setOnClickListener(this);
-        back = (Button)findViewById(R.id.back);
+        back = (Button) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AtyDoudizhuStart.this, DoudizhuMain.class));
-                overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+                dialog();
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
             }
         });
         setBtnConfirmResultAni();
@@ -470,71 +479,112 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
 
     }
 
+    private boolean isAniFinish = false;
 
     private void p1_p2Ani() {
-        //p1动画
-        switch (WmUtil.whatPar(par, parsP1)) {
+        int p1 = WmUtil.whatPar(par, parsP1);
+        int p2 = WmUtil.whatPar(par, parsP2);
+        int p3 = WmUtil.whatPar(par, parsP3);
+        int[] whatpar = new int[]{p1, p2, p3};
+        Arrays.sort(whatpar);
+
+        //动画
+        switch (whatpar[2]) {
             case 0:
 
                 break;
             case 1:
                 intent = new Intent(AtyDoudizhuStart.this, BirdActivity.class);
-                intent.putExtra("ddzxiao1", ddzname1);
+                if(whatpar[2]==p1)
+                {
+                    intent.putExtra("ddzxiao1", ddzname1);
+                }
+                else if(whatpar[2]==p2)
+                {
+                    intent.putExtra("ddzxiao1", ddzname2);
+                }
+                else if (whatpar[2]==p3)
+                {
+                    intent.putExtra("ddzxiao1", ddzname3);
+                }
+//                intent.putExtra("ddzxiao1", ddzname1);
                 startActivity(intent);
-
                 //tv_ddzbird1.setText("bird ! x 2");
                 // tv_ddzbird1.setVisibility(View.VISIBLE);
                 break;
             case 2:
-                intent = new Intent(AtyDoudizhuStart.this,LaoyingActivity.class);
-                intent.putExtra("ddzlao1", ddzname1);
+                intent = new Intent(AtyDoudizhuStart.this, LaoyingActivity.class);
+                if(whatpar[2]==p1)
+                {
+                    intent.putExtra("ddzlao1", ddzname1);
+                }
+                else if(whatpar[2]==p2)
+                {
+                    intent.putExtra("ddzlao1", ddzname2);
+                }
+                else if (whatpar[2]==p3)
+                {
+                    intent.putExtra("ddzlao1", ddzname3);
+                }
+//                intent.putExtra("ddzlao1", ddzname1);
                 startActivity(intent);
                 // tv_ddzbird1.setText("eagle ! x 4");
                 // tv_ddzbird1.setVisibility(View.VISIBLE);
                 break;
         }
-        //p2动画
-        switch (WmUtil.whatPar(par, parsP2)) {
-            case 0:
-
-                break;
-            case 1:
-                intent = new Intent(AtyDoudizhuStart.this, BirdActivity.class);
-                intent.putExtra("ddzxiao2", ddzname2);
-                startActivity(intent);
-                //tv_ddzbird1.setText("bird ! x 2");
-                //tv_ddzbird1.setVisibility(View.VISIBLE);
-                break;
-            case 2:
-                intent = new Intent(AtyDoudizhuStart.this,LaoyingActivity.class);
-                intent.putExtra("ddzlao2", ddzname2);
-                startActivity(intent);
-                //tv_ddzbird1.setText("eagle ! x 4");
-                //tv_ddzbird1.setVisibility(View.VISIBLE);
-                break;
-        }
-
-        //p3动画
-        switch (WmUtil.whatPar(par, parsP3)) {
-            case 0:
-
-                break;
-            case 1:
-                intent = new Intent(AtyDoudizhuStart.this, BirdActivity.class);
-                intent.putExtra("ddzxiao3", ddzname3);
-                startActivity(intent);
-                //tv_ddzbird3.setText("bird ! x 2");
-                // tv_ddzbird3.setVisibility(View.VISIBLE);
-                break;
-            case 2:
-                intent = new Intent(AtyDoudizhuStart.this,LaoyingActivity.class);
-                intent.putExtra("ddzlao3", ddzname3);
-                startActivity(intent);
-                // tv_ddzbird3.setText("eagle ! x 4");
-                // tv_ddzbird3.setVisibility(View.VISIBLE);
-                break;
-        }
-
+//        //p2动画
+//        switch (WmUtil.whatPar(par, parsP2)) {
+//            case 0:
+//
+//                break;
+//            case 1:
+//                if (!isAniFinish) {
+//                    intent = new Intent(AtyDoudizhuStart.this, BirdActivity.class);
+//                    intent.putExtra("ddzxiao2", ddzname2);
+//                    startActivity(intent);
+//                    isAniFinish = true;
+//                }
+//                //tv_ddzbird1.setText("bird ! x 2");
+//                //tv_ddzbird1.setVisibility(View.VISIBLE);
+//                break;
+//            case 2:
+//                if (!isAniFinish) {
+//                    intent = new Intent(AtyDoudizhuStart.this, LaoyingActivity.class);
+//                    intent.putExtra("ddzlao2", ddzname2);
+//                    startActivity(intent);
+//                    isAniFinish = true;
+//                }
+//                //tv_ddzbird1.setText("eagle ! x 4");
+//                //tv_ddzbird1.setVisibility(View.VISIBLE);
+//                break;
+//        }
+//
+//        //p3动画
+//        switch (WmUtil.whatPar(par, parsP3)) {
+//            case 0:
+//
+//                break;
+//            case 1:
+//                if (!isAniFinish) {
+//                    intent = new Intent(AtyDoudizhuStart.this, BirdActivity.class);
+//                    intent.putExtra("ddzxiao3", ddzname3);
+//                    startActivity(intent);
+//                    isAniFinish = true;
+//                }
+//                //tv_ddzbird3.setText("bird ! x 2");
+//                // tv_ddzbird3.setVisibility(View.VISIBLE);
+//                break;
+//            case 2:
+//                if (!isAniFinish) {
+//                    intent = new Intent(AtyDoudizhuStart.this, LaoyingActivity.class);
+//                    intent.putExtra("ddzlao3", ddzname3);
+//                    startActivity(intent);
+//                    isAniFinish = true;
+//                }
+//                // tv_ddzbird3.setText("eagle ! x 4");
+//                // tv_ddzbird3.setVisibility(View.VISIBLE);
+//                break;
+//        }
 
 
 //        //
@@ -761,26 +811,26 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
                 break;
             case R.id.ddzselectpars:
 
-                if (isReEditStatus() ) {
-                    if(WmUtil.holesinfos[hole_number - 1].isEdit()) {
+                if (isReEditStatus()) {
+                    if (WmUtil.holesinfos[hole_number - 1].isEdit()) {
                         handleButtonStatus();
                         startActivityForResult(new Intent(this, BdChoosePars.class), 1);
                     }
-                }else {
+                } else {
                     startActivityForResult(new Intent(this, BdChoosePars.class), 1);
                 }
 
                 break;
             case R.id.btnddzp1stpars:
-                if (isReEditStatus() ) {
-                    if(WmUtil.holesinfos[hole_number - 1].isEdit()) {
+                if (isReEditStatus()) {
+                    if (WmUtil.holesinfos[hole_number - 1].isEdit()) {
                         handleButtonStatus();
                         Intent intent = new Intent(this, PlayerChoosePars.class);
                         intent.putExtra("imageUrl", list.get(0).getPortrait());
                         intent.putExtra("nickname", list.get(0).getNickname());
                         startActivityForResult(intent, 2);
                     }
-                }else {
+                } else {
                     Intent intent = new Intent(this, PlayerChoosePars.class);
                     intent.putExtra("imageUrl", list.get(0).getPortrait());
                     intent.putExtra("nickname", list.get(0).getNickname());
@@ -789,15 +839,15 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
 
                 break;
             case R.id.btnddzp2stpars:
-                if (isReEditStatus() ) {
-                    if(WmUtil.holesinfos[hole_number - 1].isEdit()) {
+                if (isReEditStatus()) {
+                    if (WmUtil.holesinfos[hole_number - 1].isEdit()) {
                         handleButtonStatus();
                         Intent intent = new Intent(this, PlayerChoosePars.class);
                         intent.putExtra("imageUrl", list.get(1).getPortrait());
                         intent.putExtra("nickname", list.get(1).getNickname());
                         startActivityForResult(intent, 3);
                     }
-                }else {
+                } else {
                     Intent intent = new Intent(this, PlayerChoosePars.class);
                     intent.putExtra("imageUrl", list.get(1).getPortrait());
                     intent.putExtra("nickname", list.get(1).getNickname());
@@ -805,15 +855,15 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
                 }
                 break;
             case R.id.btnddzp3stpars:
-                if (isReEditStatus() ) {
-                    if(WmUtil.holesinfos[hole_number - 1].isEdit()) {
+                if (isReEditStatus()) {
+                    if (WmUtil.holesinfos[hole_number - 1].isEdit()) {
                         handleButtonStatus();
                         Intent intent = new Intent(this, PlayerChoosePars.class);
                         intent.putExtra("imageUrl", list.get(2).getPortrait());
                         intent.putExtra("nickname", list.get(2).getNickname());
                         startActivityForResult(intent, 4);
                     }
-                }else {
+                } else {
                     Intent intent = new Intent(this, PlayerChoosePars.class);
                     intent.putExtra("imageUrl", list.get(2).getPortrait());
                     intent.putExtra("nickname", list.get(2).getNickname());
@@ -835,30 +885,30 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
                 if (isnext) {
                     if (hole_number == 18) {
                         finish();
+                    } else {
+                        // 点击下一洞按钮事件
+                        this.nextHole();
                     }
-                    // 点击下一洞按钮事件
-                    this.nextHole();
                 } else {
-                    if(isReEdit)
-                    {
+                    if (isReEdit) {
                         btnPreHole.setText("上一洞");
                         isReEdit = false;
                     }
                     // 点击确认成绩按钮事件
 
-                    String btext1 =  btnSelectPars.getText().toString().trim();
+                    String btext1 = btnSelectPars.getText().toString().trim();
                     String btext2 = btnP1stPars.getText().toString().trim();
-                    String  btext3 = btnP2stPars.getText().toString().trim();
-                    String  btext4 = btnP3stPars.getText().toString().trim();
-                    if(btext1.equals("一") ){
-                        Toast.makeText(this,"请选择标准杆",Toast.LENGTH_SHORT).show();
-                    }else if( btext2.equals("一") || btext3.equals("一")||btext4.equals("一")){
-                        Toast.makeText(this,"请选择杆数",Toast.LENGTH_SHORT).show();
-                    }else {
-                    this.confirmRes();
-                    if (hole_number == 18) {
-                        btnConfirmResult.setText("结束比赛");
-                    }
+                    String btext3 = btnP2stPars.getText().toString().trim();
+                    String btext4 = btnP3stPars.getText().toString().trim();
+                    if (btext1.equals("一")) {
+                        Toast.makeText(this, "请选择标准杆", Toast.LENGTH_SHORT).show();
+                    } else if (btext2.equals("一") || btext3.equals("一") || btext4.equals("一")) {
+                        Toast.makeText(this, "请选择杆数", Toast.LENGTH_SHORT).show();
+                    } else {
+                        this.confirmRes();
+                        if (hole_number == 18) {
+                            btnConfirmResult.setText("结束比赛");
+                        }
                     }
                 }
                 //btnConfirmResult.setText("下一洞");
@@ -929,6 +979,18 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
         HolesInfo info = WmUtil.holesinfos[hole_number - 1];
         isnext = true;
         btnConfirmResult.setText("下一洞");
+        // holetienum
+//        HolesInfo lastInfo = hole_number>1?WmUtil.holesinfos[hole_number - 2]:null;
+//        String tienum = lastInfo==null?"0":(""+lastInfo.getTie_nubmer());
+//        if(tienum.equals("0"))
+//        {
+//            bdTieInfo.setVisibility(View.GONE);
+//        }
+//        else
+//        {
+//            bdTieInfo.setVisibility(View.VISIBLE);
+//            bdTieInfo.setText("上"+tienum+"洞打平分数累计本洞获胜方将获得"+tienum+"洞的分数");
+//        }
 
         //2.换位置
         list.clear();
@@ -976,6 +1038,19 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
     private void nextHole() {
         //1.holeNum++
         hole_number++;
+
+//        HolesInfo lastInfo = hole_number>1?WmUtil.holesinfos[hole_number - 2]:null;
+//        String tienum = lastInfo==null?"0":(""+lastInfo.getTie_nubmer());
+//        if(tienum.equals("0"))
+//        {
+//            bdTieInfo.setVisibility(View.GONE);
+//        }
+//        else
+//        {
+//            bdTieInfo.setVisibility(View.VISIBLE);
+//            bdTieInfo.setText("上"+tienum+"洞打平分数累计本洞获胜方将获得"+tienum+"洞的分数");
+//        }
+        //continue
         ddzHoles.setText("球洞" + hole_number);
         //取下一洞holeinfo判断状态
         HolesInfo nextInfo = WmUtil.holesinfos[hole_number - 1];
@@ -996,9 +1071,7 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
             list.add(nextInfo.getP2());
             list.add(nextInfo.getP3());
             btnSelectPars.setText("" + nextInfo.getPar());
-        }
-        else
-        {
+        } else {
             list = sortPlayer();
         }
         changeImg();
@@ -1117,6 +1190,7 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
 
         //5.isNext
         isnext = true;
+        isAniFinish = false;
 
         //6.重置按钮名称
         btnConfirmResult.setText("下一洞");
@@ -1278,8 +1352,7 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(data==null)
-        {
+        if (data == null) {
             btnConfirmResult.setText("下一洞");
             btnPreHole.setText("上一洞");
             isReEdit = false;
@@ -1367,6 +1440,38 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
         }
         info.setTie_nubmer(WmUtil.tie_number);
     }
-
+    private void dialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(AtyDoudizhuStart.this,AlertDialog.THEME_HOLO_LIGHT);
+        builder.setMessage("比赛尚未结束确定要退出吗?");
+        builder.setTitle("提示");
+        builder.setPositiveButton("确认",
+                new android.content.DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        dialog.dismiss();
+                        AtyDoudizhuStart.this.finish();
+                    }
+                });
+        builder.setNegativeButton("取消",
+                new android.content.DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        dialog.dismiss();
+                    }
+                });
+        builder.create().show();
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+            dialog();
+            return false;
+        }
+        return false;
+    }
 
 }

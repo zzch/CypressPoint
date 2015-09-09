@@ -1,641 +1,641 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:2:1-173:12
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:2:1-173:12
 	package
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:3:5-45
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:3:5-45
 	android:versionName
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:5:5-32
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:5:5-32
 	android:versionCode
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:4:5-28
-		INJECTED from D:\workspace\GolfAndroid\AndroidManifest.xml
-		INJECTED from D:\workspace\GolfAndroid\AndroidManifest.xml
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:4:5-28
+		INJECTED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml
+		INJECTED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:2:11-69
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:2:11-69
 uses-sdk
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:7:5-9:41
-MERGED from [GolfAndroid:library:unspecified] D:\workspace\GolfAndroid\build\intermediates\exploded-aar\GolfAndroid\library\unspecified\AndroidManifest.xml:7:5-43
-MERGED from [com.android.support:support-v4:20.0.0] D:\workspace\GolfAndroid\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\AndroidManifest.xml:16:5-42
-MERGED from [com.android.support:appcompat-v7:20.0.0] D:\workspace\GolfAndroid\build\intermediates\exploded-aar\com.android.support\appcompat-v7\20.0.0\AndroidManifest.xml:16:5-42
-MERGED from [com.android.support:support-v4:20.0.0] D:\workspace\GolfAndroid\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\AndroidManifest.xml:16:5-42
-MERGED from [GolfAndroid:library_userimg:unspecified] D:\workspace\GolfAndroid\build\intermediates\exploded-aar\GolfAndroid\library_userimg\unspecified\AndroidManifest.xml:7:5-9:41
-MERGED from [GolfAndroid:SlideSwitch:unspecified] D:\workspace\GolfAndroid\build\intermediates\exploded-aar\GolfAndroid\SlideSwitch\unspecified\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:support-v4:20.0.0] D:\workspace\GolfAndroid\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\AndroidManifest.xml:16:5-42
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:7:5-9:41
+MERGED from [CypressPoint:library:unspecified] D:\Development\Android\AndroidStudioProjects\CypressPoint\build\intermediates\exploded-aar\CypressPoint\library\unspecified\AndroidManifest.xml:7:5-43
+MERGED from [com.android.support:support-v4:20.0.0] D:\Development\Android\AndroidStudioProjects\CypressPoint\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\AndroidManifest.xml:16:5-42
+MERGED from [com.android.support:appcompat-v7:20.0.0] D:\Development\Android\AndroidStudioProjects\CypressPoint\build\intermediates\exploded-aar\com.android.support\appcompat-v7\20.0.0\AndroidManifest.xml:16:5-42
+MERGED from [com.android.support:support-v4:20.0.0] D:\Development\Android\AndroidStudioProjects\CypressPoint\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\AndroidManifest.xml:16:5-42
+MERGED from [CypressPoint:library_userimg:unspecified] D:\Development\Android\AndroidStudioProjects\CypressPoint\build\intermediates\exploded-aar\CypressPoint\library_userimg\unspecified\AndroidManifest.xml:7:5-9:41
+MERGED from [CypressPoint:SlideSwitch:unspecified] D:\Development\Android\AndroidStudioProjects\CypressPoint\build\intermediates\exploded-aar\CypressPoint\SlideSwitch\unspecified\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-v4:20.0.0] D:\Development\Android\AndroidStudioProjects\CypressPoint\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\AndroidManifest.xml:16:5-42
 	android:targetSdkVersion
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:9:9-38
-		INJECTED from D:\workspace\GolfAndroid\AndroidManifest.xml
-		INJECTED from D:\workspace\GolfAndroid\AndroidManifest.xml
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:9:9-38
+		INJECTED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml
+		INJECTED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:8:9-35
-		INJECTED from D:\workspace\GolfAndroid\AndroidManifest.xml
-		INJECTED from D:\workspace\GolfAndroid\AndroidManifest.xml
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:8:9-35
+		INJECTED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml
+		INJECTED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml
 supports-screens
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:11:5-16:39
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:11:5-16:39
 	android:largeScreens
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:13:8-35
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:13:8-35
 	android:smallScreens
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:15:8-35
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:15:8-35
 	android:normalScreens
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:14:8-36
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:14:8-36
 	android:xlargeScreens
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:16:8-36
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:16:8-36
 	android:anyDensity
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:12:8-33
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:12:8-33
 application
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:22:5-148:19
-MERGED from [GolfAndroid:library:unspecified] D:\workspace\GolfAndroid\build\intermediates\exploded-aar\GolfAndroid\library\unspecified\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:support-v4:20.0.0] D:\workspace\GolfAndroid\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\AndroidManifest.xml:17:5-19
-MERGED from [com.android.support:appcompat-v7:20.0.0] D:\workspace\GolfAndroid\build\intermediates\exploded-aar\com.android.support\appcompat-v7\20.0.0\AndroidManifest.xml:17:5-19
-MERGED from [com.android.support:support-v4:20.0.0] D:\workspace\GolfAndroid\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\AndroidManifest.xml:17:5-19
-MERGED from [GolfAndroid:library_userimg:unspecified] D:\workspace\GolfAndroid\build\intermediates\exploded-aar\GolfAndroid\library_userimg\unspecified\AndroidManifest.xml:11:5-12:19
-MERGED from [GolfAndroid:SlideSwitch:unspecified] D:\workspace\GolfAndroid\build\intermediates\exploded-aar\GolfAndroid\SlideSwitch\unspecified\AndroidManifest.xml:11:5-12:19
-MERGED from [com.android.support:support-v4:20.0.0] D:\workspace\GolfAndroid\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\AndroidManifest.xml:17:5-19
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:22:5-148:19
+MERGED from [CypressPoint:library:unspecified] D:\Development\Android\AndroidStudioProjects\CypressPoint\build\intermediates\exploded-aar\CypressPoint\library\unspecified\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-v4:20.0.0] D:\Development\Android\AndroidStudioProjects\CypressPoint\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\AndroidManifest.xml:17:5-19
+MERGED from [com.android.support:appcompat-v7:20.0.0] D:\Development\Android\AndroidStudioProjects\CypressPoint\build\intermediates\exploded-aar\com.android.support\appcompat-v7\20.0.0\AndroidManifest.xml:17:5-19
+MERGED from [com.android.support:support-v4:20.0.0] D:\Development\Android\AndroidStudioProjects\CypressPoint\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\AndroidManifest.xml:17:5-19
+MERGED from [CypressPoint:library_userimg:unspecified] D:\Development\Android\AndroidStudioProjects\CypressPoint\build\intermediates\exploded-aar\CypressPoint\library_userimg\unspecified\AndroidManifest.xml:11:5-12:19
+MERGED from [CypressPoint:SlideSwitch:unspecified] D:\Development\Android\AndroidStudioProjects\CypressPoint\build\intermediates\exploded-aar\CypressPoint\SlideSwitch\unspecified\AndroidManifest.xml:11:5-12:19
+MERGED from [com.android.support:support-v4:20.0.0] D:\Development\Android\AndroidStudioProjects\CypressPoint\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\AndroidManifest.xml:17:5-19
 	android:label
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:27:9-41
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:27:9-41
 	android:allowBackup
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:25:9-35
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:25:9-35
 	android:icon
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:26:9-39
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:26:9-39
 	android:theme
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:28:9-40
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:28:9-40
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:23:10-66
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:23:10-66
 activity#cn.com.zcty.ILovegolf.activity.view.login_register.SplashActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:29:9-38:20
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:29:9-38:20
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:32:13-49
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:32:13-49
 	android:label
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:31:13-45
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:31:13-45
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:30:13-93
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:30:13-93
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:34:13-37:29
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:34:13-37:29
 action#android.intent.action.MAIN
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:35:17-69
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:35:17-69
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:35:25-66
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:35:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:36:17-77
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:36:17-77
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:36:27-74
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:36:27-74
 activity#cn.com.zcty.ILovegolf.activity.view.login_register.LoginActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:39:11-149
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:39:11-149
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:39:101-137
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:39:101-137
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:39:21-100
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:39:21-100
 activity#cn.com.zcty.ILovegolf.activity.view.login_register.RegisterSuccessActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:40:9-157
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:40:9-157
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:40:109-145
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:40:109-145
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:40:19-108
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:40:19-108
 activity#cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:41:9-148
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:41:9-148
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:41:100-136
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:41:100-136
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:41:19-99
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:41:19-99
 activity#cn.com.zcty.ILovegolf.activity.view.login_register.RegisterActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:42:9-150
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:42:9-150
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:42:102-138
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:42:102-138
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:42:19-101
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:42:19-101
 activity#cn.com.zcty.ILovegolf.activity.view.login_register.ForGetPasswordActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:43:9-156
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:43:9-156
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:43:108-144
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:43:108-144
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:43:19-107
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:43:19-107
 activity#cn.com.zcty.ILovegolf.activity.view.ScoreCardUpDateActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:44:9-142
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:44:9-142
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:44:94-130
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:44:94-130
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:44:19-93
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:44:19-93
 activity#cn.com.zcty.ILovegolf.activity.view.TabHostActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:47:9-134
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:47:9-134
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:47:86-122
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:47:86-122
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:47:19-85
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:47:19-85
 activity#cn.com.zcty.ILovegolf.activity.view.SchematicScoreActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:48:9-141
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:48:9-141
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:48:93-129
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:48:93-129
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:48:19-92
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:48:19-92
 activity#cn.com.zcty.ILovegolf.activity.view.myself.Myself
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:49:9-132
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:49:9-132
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:49:84-120
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:49:84-120
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:49:19-83
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:49:19-83
 activity#cn.com.zcty.ILovegolf.activity.view.count.CountActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:50:9-138
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:50:9-138
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:50:90-126
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:50:90-126
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:50:19-89
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:50:19-89
 activity#cn.com.zcty.ILovegolf.activity.view.ExerciseActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:51:9-135
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:51:9-135
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:51:87-123
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:51:87-123
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:51:19-86
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:51:19-86
 activity#cn.com.zcty.ILovegolf.activity.view.ChoosePitchActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:52:9-138
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:52:9-138
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:52:90-126
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:52:90-126
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:52:19-89
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:52:19-89
 activity#cn.com.zcty.ILovegolf.activity.view.PlaySetActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:54:9-134
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:54:9-134
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:54:86-122
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:54:86-122
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:54:19-85
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:54:19-85
 activity#cn.com.zcty.ILovegolf.activity.view.QuickScoreActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:55:9-137
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:55:9-137
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:55:89-125
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:55:89-125
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:55:19-88
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:55:19-88
 activity#cn.com.zcty.ILovegolf.activity.view.ScoreCardActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:56:9-136
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:56:9-136
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:56:88-124
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:56:88-124
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:56:19-87
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:56:19-87
 activity#cn.com.zcty.ILovegolf.activity.view.ListChoosePitchActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:58:9-142
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:58:9-142
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:58:94-130
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:58:94-130
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:58:19-93
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:58:19-93
 activity#cn.com.zcty.ILovegolf.activity.view.MajorChoosePitchActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:60:9-143
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:60:9-143
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:60:95-131
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:60:95-131
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:60:19-94
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:60:19-94
 activity#cn.com.zcty.ILovegolf.activity.view.MajorScoreCardActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:61:9-141
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:61:9-141
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:61:93-129
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:61:93-129
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:61:19-92
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:61:19-92
 activity#cn.com.zcty.ILovegolf.activity.view.MajorScoreActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:62:9-137
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:62:9-137
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:62:89-125
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:62:89-125
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:62:19-88
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:62:19-88
 activity#cn.com.zcty.ILovegolf.activity.view.myself.InformationChangesActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:63:9-152
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:63:9-152
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:63:104-140
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:63:104-140
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:63:19-103
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:63:19-103
 activity#cn.com.zcty.ILovegolf.activity.view.count.AnalyzeActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:64:9-140
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:64:9-140
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:64:92-128
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:64:92-128
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:64:19-91
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:64:19-91
 activity#cn.com.zcty.ILovegolf.activity.view.count.AnalyzeResultActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:65:9-146
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:65:9-146
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:65:98-134
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:65:98-134
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:65:19-97
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:65:19-97
 activity#cn.com.zcty.ILovegolf.activity.view.count.AnalyzePKResultActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:66:9-148
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:66:9-148
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:66:100-136
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:66:100-136
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:66:19-99
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:66:19-99
 activity#cn.com.zcty.ILovegolf.activity.view.count.AnalyzePKActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:67:9-142
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:67:9-142
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:67:94-130
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:67:94-130
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:67:19-93
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:67:19-93
 activity#cn.com.zcty.ILovegolf.activity.view.MajorStatisticsActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:68:9-142
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:68:9-142
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:68:94-130
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:68:94-130
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:68:19-93
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:68:19-93
 activity#cn.com.zcty.ILovegolf.activity.view.AverageAvtivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:69:9-135
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:69:9-135
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:69:86-122
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:69:86-122
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:69:19-85
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:69:19-85
 activity#cn.com.zcty.ILovegolf.activity.view.PuttsActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:70:9-132
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:70:9-132
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:70:84-120
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:70:84-120
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:70:19-83
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:70:19-83
 activity#cn.com.zcty.ILovegolf.activity.view.SandpickActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:71:9-135
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:71:9-135
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:71:87-123
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:71:87-123
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:71:19-86
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:71:19-86
 activity#cn.com.zcty.ILovegolf.activity.view.ChipActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:72:9-131
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:72:9-131
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:72:83-119
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:72:83-119
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:72:19-82
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:72:19-82
 activity#cn.com.zcty.ILovegolf.activity.view.GreenActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:73:9-132
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:73:9-132
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:73:84-120
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:73:84-120
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:73:19-83
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:73:19-83
 activity#cn.com.zcty.ILovegolf.activity.view.ScoreHitActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:74:9-135
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:74:9-135
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:74:87-123
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:74:87-123
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:74:19-86
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:74:19-86
 activity#cn.com.zcty.ILovegolf.activity.view.MajorListChoosePitchActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:75:9-147
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:75:9-147
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:75:99-135
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:75:99-135
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:75:19-98
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:75:19-98
 activity#cn.com.zcty.ILovegolf.activity.view.competition.CompetitionChoosePitchActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:76:9-161
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:76:9-161
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:76:113-149
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:76:113-149
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:76:19-112
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:76:19-112
 activity#cn.com.zcty.ILovegolf.activity.view.competition.CompetitionListChoosePitchActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:77:9-165
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:77:9-165
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:77:117-153
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:77:117-153
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:77:19-116
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:77:19-116
 activity#cn.com.zcty.ILovegolf.activity.view.KickActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:78:9-131
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:78:9-131
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:78:83-119
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:78:83-119
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:78:19-82
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:78:19-82
 activity#cn.com.zcty.ILovegolf.activity.view.GanCountActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:79:9-135
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:79:9-135
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:79:87-123
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:79:87-123
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:79:19-86
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:79:19-86
 activity#cn.com.zcty.ILovegolf.activity.view.QiuGanActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:80:10-134
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:80:10-134
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:80:86-122
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:80:86-122
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:80:20-85
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:80:20-85
 activity#cn.com.zcty.ILovegolf.activity.view.competition.CompetitionScoreActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:81:9-155
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:81:9-155
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:81:107-143
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:81:107-143
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:81:19-106
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:81:19-106
 activity#cn.com.zcty.ILovegolf.activity.view.competition.CompetitionHomeActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:82:9-154
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:82:9-154
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:82:106-142
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:82:106-142
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:82:19-105
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:82:19-105
 activity#cn.com.zcty.ILovegolf.activity.view.competition.CompetitionNewActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:83:9-153
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:83:9-153
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:83:105-141
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:83:105-141
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:83:19-104
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:83:19-104
 activity#cn.com.zcty.ILovegolf.activity.view.competition.CompetitionScordActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:84:9-155
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:84:9-155
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:84:107-143
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:84:107-143
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:84:19-106
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:84:19-106
 activity#cn.com.zcty.ILovegolf.activity.view.competition.CompetitionAdd
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:85:8-144
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:85:8-144
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:85:96-132
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:85:96-132
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:85:18-95
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:85:18-95
 activity#cn.com.zcty.ILovegolf.activity.view.SelfhoodActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:87:9-135
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:87:9-135
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:87:87-123
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:87:87-123
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:87:19-86
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:87:19-86
 activity#cn.com.zcty.ILovegolf.activity.view.competition.CompetitionPassWord
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:88:9-193
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:88:9-193
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:88:145-181
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:88:145-181
 	android:theme
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:88:102-144
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:88:102-144
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:88:19-101
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:88:19-101
 activity#cn.com.zcty.ILovegolf.activity.view.competition.SginText
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:89:9-139
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:89:9-139
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:89:91-127
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:89:91-127
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:89:19-90
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:89:19-90
 activity#cn.com.zcty.ILovegolf.activity.view.RankingActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:90:9-134
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:90:9-134
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:90:86-122
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:90:86-122
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:90:19-85
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:90:19-85
 activity#cn.com.zcty.ILovegolf.activity.view.myself.BingDingActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:91:8-141
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:91:8-141
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:91:93-129
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:91:93-129
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:91:18-92
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:91:18-92
 activity#cn.com.zcty.ILovegolf.activity.view.myself.VerifyPhoneActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:92:9-145
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:92:9-145
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:92:97-133
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:92:97-133
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:92:19-96
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:92:19-96
 activity#cn.com.zcty.ILovegolf.activity.view.myself.SettingActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:93:8-140
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:93:8-140
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:93:92-128
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:93:92-128
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:93:18-91
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:93:18-91
 activity#cn.com.zcty.ILovegolf.activity.view.InviteActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:94:8-132
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:94:8-132
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:94:84-120
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:94:84-120
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:94:18-83
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:94:18-83
 activity#cn.com.zcty.ILovegolf.activity.view.myself.ChangesPwsActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:95:8-143
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:95:8-143
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:95:95-131
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:95:95-131
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:95:18-94
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:95:18-94
 activity#cn.com.zcty.ILovegolf.activity.view.myself.ChangesPhone
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:96:8-137
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:96:8-137
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:96:89-125
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:96:89-125
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:96:18-88
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:96:18-88
 activity#cn.com.zcty.ILovegolf.activity.view.myself.FeedBackActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:97:8-141
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:97:8-141
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:97:93-129
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:97:93-129
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:97:18-92
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:97:18-92
 activity#cn.com.zcty.ILovegolf.activity.view.HomePageActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:98:8-134
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:98:8-134
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:98:86-122
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:98:86-122
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:98:18-85
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:98:18-85
 activity#cn.com.zcty.ILovegolf.activity.view.myself.SettionsActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:100:8-141
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:100:8-141
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:100:93-129
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:100:93-129
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:100:18-92
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:100:18-92
 activity#cn.com.zcty.ILovegolf.activity.view.login_register.GuidActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:101:8-145
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:101:8-145
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:101:97-133
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:101:97-133
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:101:18-96
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:101:18-96
 activity#cn.com.zcty.ILovegolf.activity.view.myself.SelecPicpupExit
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:103:8-183
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:103:8-183
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:103:135-171
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:103:135-171
 	android:theme
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:103:92-134
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:103:92-134
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:103:18-91
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:103:18-91
 activity#cn.com.zcty.ILovegolf.activity.view.myself.SelectPicPopupWindow
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:104:9-189
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:104:9-189
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:104:141-177
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:104:141-177
 	android:theme
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:104:98-140
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:104:98-140
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:104:19-97
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:104:19-97
 activity#cn.com.zcty.ILovegolf.activity.view.count.PicPopupWindow
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:105:8-181
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:105:8-181
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:105:133-169
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:105:133-169
 	android:theme
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:105:90-132
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:105:90-132
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:105:18-89
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:105:18-89
 activity#cn.com.zcty.ILovegolf.activity.view.StatisticsAvtivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:106:9-108:25
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:106:9-108:25
 	android:configChanges
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:107:15-61
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:107:15-61
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:106:19-88
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:106:19-88
 activity#cn.com.zcty.ILovegolf.activity.view.StatisticsActivityLand
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:109:9-111:22
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:109:9-111:22
 	android:configChanges
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:110:15-61
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:110:15-61
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:109:19-92
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:109:19-92
 activity#cn.com.zcty.ILovegolf.activity.view.MajorStatisticsActivityScord
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:113:10-149
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:113:10-149
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:113:100-136
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:113:100-136
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:113:20-99
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:113:20-99
 activity#cn.com.zcty.ILovegolf.activity.view.RankingStatics
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:114:10-144
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:114:10-144
 	android:configChanges
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:114:86-132
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:114:86-132
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:114:20-85
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:114:20-85
 activity#cn.com.zcty.ILovegolf.activity.view.RankingStaticsLand
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:115:10-117:33
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:115:10-117:33
 	android:configChanges
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:116:21-67
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:116:21-67
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:115:20-89
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:115:20-89
 activity#cn.com.zcty.ILovegolf.activity.view.myself.AboutMyself
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:119:9-137
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:119:9-137
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:119:89-125
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:119:89-125
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:119:19-88
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:119:19-88
 activity#cn.com.zcty.ILovegolf.activity.view.HelpAverageActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:121:10-182
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:121:10-182
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:121:91-127
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:121:91-127
 	android:theme
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:121:128-170
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:121:128-170
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:121:20-90
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:121:20-90
 activity#cn.com.zcty.ILovegolf.activity.view.CreateMatchActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:122:10-139
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:122:10-139
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:122:91-127
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:122:91-127
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:122:20-90
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:122:20-90
 activity#cn.com.zcty.ILovegolf.activity.view.CreateScoreCard
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:123:11-136
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:123:11-136
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:123:88-124
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:123:88-124
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:123:21-87
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:123:21-87
 activity#cn.com.zcty.ILovegolf.activity.view.AddMatchActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:124:10-136
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:124:10-136
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:124:88-124
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:124:88-124
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:124:20-87
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:124:20-87
 activity#cn.com.zcty.ILovegolf.doudizhu.DoudizhuMain
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:126:9-116
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:126:9-116
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:126:78-114
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:126:78-114
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:126:19-77
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:126:19-77
 activity#cn.com.zcty.ILovegolf.doudizhu.AtyBidongStart
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:127:9-118
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:127:9-118
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:127:80-116
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:127:80-116
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:127:19-79
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:127:19-79
 activity#cn.com.zcty.ILovegolf.doudizhu.AtyDoudizhuStart
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:128:9-120
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:128:9-120
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:128:82-118
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:128:82-118
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:128:19-81
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:128:19-81
 activity#cn.com.zcty.ILovegolf.doudizhu.AtyVegasStart
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:129:9-117
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:129:9-117
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:129:79-115
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:129:79-115
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:129:19-78
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:129:19-78
 activity#cn.com.zcty.ILovegolf.doudizhu.BdChoosePars
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:130:9-116
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:130:9-116
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:130:78-114
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:130:78-114
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:130:19-77
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:130:19-77
 activity#cn.com.zcty.ILovegolf.doudizhu.PlayerChoosePars
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:131:9-132:15
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:131:9-132:15
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:131:82-118
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:131:82-118
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:131:19-81
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:131:19-81
 activity#cn.com.zcty.ILovegolf.doudizhu.History
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:133:9-111
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:133:9-111
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:133:73-109
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:133:73-109
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:133:19-72
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:133:19-72
 activity#cn.com.zcty.ILovegolf.doudizhu.BirdActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:134:9-159
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:134:9-159
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:134:78-114
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:134:78-114
 	android:theme
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:134:115-157
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:134:115-157
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:134:19-77
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:134:19-77
 activity#cn.com.zcty.ILovegolf.doudizhu.LaoyingActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:135:9-162
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:135:9-162
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:135:81-117
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:135:81-117
 	android:theme
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:135:118-160
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:135:118-160
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:135:19-80
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:135:19-80
 activity#cn.com.zcty.ILovegolf.doudizhu.ShuangBeibzgActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:136:9-167
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:136:9-167
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:136:86-122
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:136:86-122
 	android:theme
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:136:123-165
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:136:123-165
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:136:19-85
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:136:19-85
 activity#cn.com.zcty.ILovegolf.doudizhu.RankActivity
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:137:9-116
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:137:9-116
 	android:screenOrientation
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:137:78-114
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:137:78-114
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:137:19-77
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:137:19-77
 service#com.baidu.location.f
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:139:9-147:19
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:139:9-147:19
 	android:enabled
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:141:13-35
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:141:13-35
 	android:process
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:142:13-38
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:142:13-38
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:140:13-48
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:140:13-48
 intent-filter#com.baidu.location.service_v2.2
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:143:13-146:29
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:143:13-146:29
 action#com.baidu.location.service_v2.2
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:144:17-145:26
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:144:17-145:26
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:144:25-71
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:144:25-71
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:151:5-152:23
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:151:5-152:23
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:151:22-78
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:151:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:153:5-154:23
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:153:5-154:23
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:153:22-76
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:153:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:155:5-156:23
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:155:5-156:23
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:155:22-73
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:155:22-73
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:157:5-158:23
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:157:5-158:23
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:157:22-76
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:157:22-76
 uses-permission#android.permission.CHANGE_WIFI_STATE
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:159:5-160:23
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:159:5-160:23
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:159:22-73
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:159:22-73
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:161:5-162:23
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:161:5-162:23
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:161:22-72
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:161:22-72
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:163:5-164:23
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:163:5-164:23
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:163:22-78
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:163:22-78
 uses-permission#android.permission.INTERNET
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:165:5-67
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:165:5-67
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:165:22-64
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:165:22-64
 uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:166:5-167:23
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:166:5-167:23
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:166:22-81
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:166:22-81
 uses-permission#android.permission.READ_LOGS
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:168:5-169:23
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:168:5-169:23
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:168:22-65
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:168:22-65
 uses-permission#android.permission.VIBRATE
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:170:5-66
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:170:5-66
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:170:22-63
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:170:22-63
 uses-permission#android.permission.WAKE_LOCK
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:171:5-68
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:171:5-68
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:171:22-65
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:171:22-65
 uses-permission#android.permission.WRITE_SETTINGS
-ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:172:5-73
+ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:172:5-73
 	android:name
-		ADDED from D:\workspace\GolfAndroid\AndroidManifest.xml:172:22-70
+		ADDED from D:\Development\Android\AndroidStudioProjects\CypressPoint\AndroidManifest.xml:172:22-70

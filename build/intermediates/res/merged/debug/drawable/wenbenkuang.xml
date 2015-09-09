@@ -3,4 +3,4 @@
  <item android:state_window_focused="false" android:drawable="@drawable/shurukuang"/>
  <item android:state_focused="true" android:drawable="@drawable/shurukuang_dianji"/>
 
-</selector><!-- From: file:/D:/workspace/GolfAndroid/res/drawable/wenbenkuang.xml -->
+</selector><!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/res/drawable/wenbenkuang.xml -->

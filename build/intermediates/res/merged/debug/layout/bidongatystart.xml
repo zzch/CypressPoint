@@ -67,12 +67,14 @@
      <TextView
          android:layout_width="180dp"
          android:layout_height="wrap_content"
-         android:text="上N洞打平分数累计本洞获胜方将获得N洞的分数"
+         android:text="上0洞打平分数累计本洞获胜方将获得0洞的分数"
          android:layout_below="@+id/bdselectpars"
          android:layout_centerHorizontal="true"
          android:layout_marginTop="10dp"
          android:textSize="16dp"
+         android:visibility="gone"
          android:layout_marginBottom="37dp"
+         android:id="@+id/bdTieInfo"
          />
     <TextView
         android:layout_width="wrap_content"
@@ -394,4 +396,4 @@
     </LinearLayout>
 
 </RelativeLayout>
-<!-- From: file:/D:/workspace/GolfAndroid/res/layout/bidongatystart.xml -->
+<!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/res/layout/bidongatystart.xml -->

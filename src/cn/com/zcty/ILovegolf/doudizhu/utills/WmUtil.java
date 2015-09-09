@@ -80,18 +80,25 @@ public class WmUtil {
 
     //判断老鹰小鸟      0  正常  1 小鸟 2 老鹰 3
     public static int whatPar(int par, int playerpar) {
-        Boolean birdSwitcher, eagleSwitcher;
+        Boolean birdSwitcher, eagleSwitcher,doubleSwitcher;
 
         Xlog.d(match.getBirdie_x2() + "===============================");
-        if (match.getBirdie_x2().equals("1")) {
+        if ("1".equals(match.getBirdie_x2())) {
             birdSwitcher = true;
         } else {
             birdSwitcher = false;
         }
-        if (match.getEagle_x4().equals("1")) {
+        if ("1".equals(match.getEagle_x4())) {
             eagleSwitcher = true;
         } else {
             eagleSwitcher = false;
+        }
+        if("1".equals(match.getDouble_par_x2()))
+        {
+            doubleSwitcher = true;
+        }
+        else {
+            doubleSwitcher = false;
         }
 
         if (playerpar >= par) {
@@ -102,7 +109,7 @@ public class WmUtil {
             } else {
                 return 0;
             }
-        } else {
+        } else if(par - playerpar>=2){
             if (eagleSwitcher) {
 
                 return 2;
@@ -110,6 +117,14 @@ public class WmUtil {
                 return 0;
             }
         }
+        else if(playerpar*2>=par) {
+            if (doubleSwitcher) {
+                return 3;
+            } else {
+                return 0;
+            }
+        }
+        else return 0;
 
 
     }
@@ -141,13 +156,17 @@ public class WmUtil {
 
         if(WmUtil.whoWinsBD(parp1,parp2)==DRAW)
         {
-            if(match.getDrawWhoWin()==Match.LEFT)
+            if(match.getDraw_to_win()=="1"&&match.getDrawWhoWin()==Match.LEFT)
             {
                 return 1;
             }
-            else
+            else if(match.getDraw_to_win()=="1"&&match.getDrawWhoWin()==Match.RIGHT)
             {
                 return -1;
+            }
+            else
+            {
+                return 0;
             }
         }else
         {
@@ -751,8 +770,16 @@ public class WmUtil {
 
 
         try {
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inJustDecodeBounds = true;
+
+            // Calculate inSampleSize
+            options.inSampleSize = 4;
+
+            // Decode bitmap with inSampleSize set
+            options.inJustDecodeBounds = false;
             bdP2.setImageBitmap(BitmapFactory.decodeStream(context.getContentResolver()
-                    .openInputStream(imageUri)));
+                    .openInputStream(imageUri),null,options));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

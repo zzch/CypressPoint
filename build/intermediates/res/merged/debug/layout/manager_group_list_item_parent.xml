@@ -13,4 +13,4 @@
 
         <include layout="@layout/major_score_item" />
     </LinearLayout>
-</RelativeLayout><!-- From: file:/D:/workspace/GolfAndroid/res/layout/manager_group_list_item_parent.xml -->
+</RelativeLayout><!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/res/layout/manager_group_list_item_parent.xml -->

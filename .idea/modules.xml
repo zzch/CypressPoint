@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GolfAndroid.iml" filepath="$PROJECT_DIR$/GolfAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CypressPoint.iml" filepath="$PROJECT_DIR$/CypressPoint.iml" />
       <module fileurl="file://$PROJECT_DIR$/SlideSwitch/SlideSwitch.iml" filepath="$PROJECT_DIR$/SlideSwitch/SlideSwitch.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
       <module fileurl="file://$PROJECT_DIR$/library_userimg/library_userimg.iml" filepath="$PROJECT_DIR$/library_userimg/library_userimg.iml" />
