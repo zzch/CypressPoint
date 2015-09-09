@@ -513,8 +513,14 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
                 //tv_bird1.setText("eagle ! x 4");
                 //  tv_bird1.setVisibility(View.VISIBLE);
                 break;
+            case 3:
+                intent = new Intent(AtyBidongStart.this,BirdActivity.class);
+                intent.putExtra("shuang1", bname1);
+                startActivity(intent);
+                break;
         }
 
+//<<<<<<< HEAD
 //        switch (WmUtil.whatPar(par, parsP2))
 //        {
 //            case 0:
@@ -535,6 +541,33 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
 //                //tv_bird2.setVisibility(View.VISIBLE);
 //                break;
 //        }
+//=======
+//        switch (WmUtil.whatPar(par, parsP2))
+//        {
+//            case 0:
+//
+//                break;
+//            case 1:
+//                intent = new Intent(AtyBidongStart.this,BirdActivity.class);
+//                intent.putExtra("xiao2", bname2);
+//                startActivity(intent);
+//                // tv_bird2.setText("bird ! x 2");
+//                // tv_bird2.setVisibility(View.VISIBLE);
+//                break;
+//            case 2:
+//                intent = new Intent(AtyBidongStart.this,LaoyingActivity.class);
+//                intent.putExtra("lao2", bname2);
+//                startActivity(intent);
+//                // tv_bird2.setText("eagle ! x 4");
+//                //tv_bird2.setVisibility(View.VISIBLE);
+//                break;
+//            case 3:
+//                intent = new Intent(AtyBidongStart.this,BirdActivity.class);
+//                intent.putExtra("shuang2", bname2);
+//                startActivity(intent);
+//                break;
+//        }
+//>>>>>>> 89e8e4acd2f7ede6944c0bd587f41db93878dabe
 
 
 
@@ -865,7 +898,11 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
 
         int tieNumber = WmUtil.whoWinsBD(this.parsP1, this.parsP2) == WmUtil.DRAW ? 1 : 0;
 
+//<<<<<<< HEAD
         if(match.getDraw_to_next().equals("1"))
+//=======
+//        if(match.getDraw_to_next()=="1")
+//>>>>>>> 89e8e4acd2f7ede6944c0bd587f41db93878dabe
         {
 
             WmUtil.tie_number = info == null ? tieNumber : (tieNumber == 1 ? info.getTie_nubmer() + tieNumber : info.getTie_nubmer());

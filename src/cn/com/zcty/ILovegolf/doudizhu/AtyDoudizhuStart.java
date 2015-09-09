@@ -531,7 +531,13 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
                 // tv_ddzbird1.setText("eagle ! x 4");
                 // tv_ddzbird1.setVisibility(View.VISIBLE);
                 break;
+            case 3:
+                intent = new Intent(AtyDoudizhuStart.this,ShuangBeibzgActivity.class);
+                intent.putExtra("ddzshuang1", ddzname1);
+                startActivity(intent);
+           break;
         }
+//<<<<<<< HEAD
 //        //p2动画
 //        switch (WmUtil.whatPar(par, parsP2)) {
 //            case 0:
@@ -585,6 +591,61 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
 //                // tv_ddzbird3.setVisibility(View.VISIBLE);
 //                break;
 //        }
+//=======
+//        //p2动画
+//        switch (WmUtil.whatPar(par, parsP2)) {
+//            case 0:
+//
+//                break;
+//            case 1:
+//                intent = new Intent(AtyDoudizhuStart.this, BirdActivity.class);
+//                intent.putExtra("ddzxiao2", ddzname2);
+//                startActivity(intent);
+//                //tv_ddzbird1.setText("bird ! x 2");
+//                //tv_ddzbird1.setVisibility(View.VISIBLE);
+//                break;
+//            case 2:
+//                intent = new Intent(AtyDoudizhuStart.this,LaoyingActivity.class);
+//                intent.putExtra("ddzlao2", ddzname2);
+//                startActivity(intent);
+//                //tv_ddzbird1.setText("eagle ! x 4");
+//                //tv_ddzbird1.setVisibility(View.VISIBLE);
+//                break;
+//            case 3:
+//                intent = new Intent(AtyDoudizhuStart.this,ShuangBeibzgActivity.class);
+//                intent.putExtra("ddzshuang2", ddzname2);
+//                startActivity(intent);
+//                break;
+//
+//        }
+//
+//        //p3动画
+//        switch (WmUtil.whatPar(par, parsP3)) {
+//            case 0:
+//
+//                break;
+//            case 1:
+//                intent = new Intent(AtyDoudizhuStart.this, BirdActivity.class);
+//                intent.putExtra("ddzxiao3", ddzname3);
+//                startActivity(intent);
+//                //tv_ddzbird3.setText("bird ! x 2");
+//                // tv_ddzbird3.setVisibility(View.VISIBLE);
+//                break;
+//            case 2:
+//                intent = new Intent(AtyDoudizhuStart.this,LaoyingActivity.class);
+//                intent.putExtra("ddzlao3", ddzname3);
+//                startActivity(intent);
+//                // tv_ddzbird3.setText("eagle ! x 4");
+//                // tv_ddzbird3.setVisibility(View.VISIBLE);
+//                break;
+//            case 3:
+//                intent = new Intent(AtyDoudizhuStart.this,ShuangBeibzgActivity.class);
+//                intent.putExtra("ddzshuang3", ddzname3);
+//                startActivity(intent);
+//                break;
+//        }
+//
+//>>>>>>> 89e8e4acd2f7ede6944c0bd587f41db93878dabe
 
 
 //        //
@@ -889,6 +950,12 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
                         // 点击下一洞按钮事件
                         this.nextHole();
                     }
+//<<<<<<< HEAD
+//=======
+//                    else{
+//                    // 点击下一洞按钮事件
+//                    this.nextHole();}
+//>>>>>>> 89e8e4acd2f7ede6944c0bd587f41db93878dabe
                 } else {
                     if (isReEdit) {
                         btnPreHole.setText("上一洞");

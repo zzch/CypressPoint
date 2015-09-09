@@ -93,7 +93,11 @@ public class WmUtil {
         } else {
             eagleSwitcher = false;
         }
+//<<<<<<< HEAD
         if("1".equals(match.getDouble_par_x2()))
+//=======
+//        if(match.getDouble_par_x2().equals("1"))
+//>>>>>>> 89e8e4acd2f7ede6944c0bd587f41db93878dabe
         {
             doubleSwitcher = true;
         }

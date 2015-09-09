@@ -499,6 +499,7 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
 
                 }
 
+//<<<<<<< HEAD
 //                Bitmap bitmap = (Bitmap) dataSourceList.get(0).get("ddzplayerimg");
 //                bitmap.recycle();
 //                bitmap = (Bitmap) dataSourceList.get(1).get("ddzplayerimg");
@@ -507,6 +508,16 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
 //                bitmap.recycle();
 //                bitmap = (Bitmap) dataSourceList.get(3).get("ddzplayerimg");
 //                bitmap.recycle();
+//=======
+//                Bitmap bitmap = (Bitmap) dataSourceList.get(0).get("ddzplayerimg");
+//                bitmap.recycle();
+//                bitmap = (Bitmap) dataSourceList.get(1).get("ddzplayerimg");
+//                bitmap.recycle();
+//                bitmap = (Bitmap) dataSourceList.get(2).get("ddzplayerimg");
+//                bitmap.recycle();
+//                bitmap = (Bitmap) dataSourceList.get(3).get("ddzplayerimg");
+//                bitmap.recycle();
+//>>>>>>> 89e8e4acd2f7ede6944c0bd587f41db93878dabe
 
                 AtyVegasStart.launch(getActivity(), match, player1, player2,list);
 //                Intent intent = new Intent(getActivity(), AtyDoudizhuStart.class);

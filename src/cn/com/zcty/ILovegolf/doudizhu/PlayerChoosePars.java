@@ -10,6 +10,8 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import cn.com.zcty.ILovegolf.activity.R;
 /**
  * Created by wangm on 2015/7/23.
@@ -131,12 +133,19 @@ public class PlayerChoosePars extends Activity implements View.OnClickListener
                 break;
             case R.id.pselectparconfirm:
                 Log.d("onClick","onClick=======queding");
+
                 String result = parsSelected.getText().toString();
-                Intent intent = new Intent();
-                intent.putExtra("PCPResult",result);
-                setResult(RESULT_OK, intent);
-                finish();
+                if(!result.equals("")){
+                    Intent intent = new Intent();
+                    intent.putExtra("PCPResult",result);
+                    setResult(RESULT_OK, intent);
+                    finish();
+                }else{
+                    Toast.makeText(this,"请选择杆数",Toast.LENGTH_SHORT);
+                }
+
 //                break;
+
         }
     }
 }

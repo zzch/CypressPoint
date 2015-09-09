@@ -427,12 +427,14 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
 
                 }
 
+
 //                Bitmap bitmap = (Bitmap) dataSourceList.get(0).get("ddzplayerimg");
 //                if(bitmap!=null) bitmap.recycle();
 //                bitmap = (Bitmap) dataSourceList.get(1).get("ddzplayerimg");
 //                if(bitmap!=null) bitmap.recycle();
 //                bitmap = (Bitmap) dataSourceList.get(2).get("ddzplayerimg");
 //                if(bitmap!=null) bitmap.recycle();
+
 
                 AtyDoudizhuStart.launch(getActivity(), match,list,true);
 //                Intent intent = new Intent(getActivity(), AtyDoudizhuStart.class);

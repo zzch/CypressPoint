@@ -143,10 +143,10 @@ public class BidongFrag extends Fragment implements View.OnClickListener
             {
                 if (et.getText().toString().equals(""))
                 {
-                    bdp2Name.setText("球手2");
+//                    bdp2Name.setText("球手2");
                     player.setNickname("球手2");
                 }else {
-                    bdp2Name.setText(et.getText().toString());
+//                    bdp2Name.setText(et.getText().toString());
                     player.setNickname(et.getText().toString());
                 }
 //                bdp2Name.setText(et.getText().toString());
@@ -391,6 +391,10 @@ public class BidongFrag extends Fragment implements View.OnClickListener
                 player.setIs_owner("0");
                 players.add(player);
 
+                if(player.getNickname()==null|| "".equals(player.getNickname()))
+                {
+                    player.setNickname("球手2");
+                }
                 AtyBidongStart.launch(getActivity(), match, players, true);
 
 
