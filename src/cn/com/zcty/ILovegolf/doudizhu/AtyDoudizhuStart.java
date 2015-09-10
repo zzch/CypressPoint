@@ -625,18 +625,22 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
         {
             intent = new Intent(AtyDoudizhuStart.this,BirdActivity.class);
             intent.putExtra("xiao1",showname);
-            startActivity(intent);
         }
         else if (type==2)
         {
             intent = new Intent(AtyDoudizhuStart.this,LaoyingActivity.class);
             intent.putExtra("lao2",showname);
-            startActivity(intent);
         }
         if(isDouble)
         {
-            intent = new Intent(AtyDoudizhuStart.this,ShuangBeibzgActivity.class);
+            if(type==0)
+            {
+                intent = new Intent(AtyDoudizhuStart.this,ShuangBeibzgActivity.class);
+            }
             intent.putExtra("shuang1",showname2.substring(1));
+        }
+        if(type!=0||isDouble)
+        {
             startActivity(intent);
         }
 //<<<<<<< HEAD

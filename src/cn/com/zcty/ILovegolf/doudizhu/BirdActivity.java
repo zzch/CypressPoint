@@ -48,7 +48,6 @@ private void initView(){
     xiaoniao.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
             finish();
         }
     });
@@ -93,4 +92,16 @@ private void initView(){
 
     }
 
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+        String name = getIntent().getStringExtra("shuang1");
+        if(name!=null)
+        {
+            Intent inte = new Intent(BirdActivity.this,ShuangBeibzgActivity.class);
+            inte.putExtra("shuang1",name.substring(1));
+            startActivity(inte);
+        }
+    }
 }
