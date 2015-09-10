@@ -32,7 +32,8 @@ import java.util.Locale;
 /**
  * Created by wangm on 2015/7/25.
  */
-public class WmUtil {
+public class WmUtil
+{
 
     public final static int DZ_WIN = 0;
     public final static int PM_WIN = 1;
@@ -50,9 +51,11 @@ public class WmUtil {
 
 
     //计算earend   比洞
-    public static int getBdEarned(Player player1, Player player2, int par, int hole, Match match) {
+    public static int getBdEarned(Player player1, Player player2, int par, int hole, Match match)
+    {
         int score = 0;
-        for (int i = 1; i <= hole; i++) {
+        for (int i = 1; i <= hole; i++)
+        {
             int player1Par = getStroke(i, player1);
             int player2Par = getStroke(i, player2);
             int tmpPar = match.getPar(i);
@@ -79,57 +82,70 @@ public class WmUtil {
 
 
     //判断老鹰小鸟      0  正常  1 小鸟 2 老鹰 3
-    public static int whatPar(int par, int playerpar) {
-        Boolean birdSwitcher, eagleSwitcher,doubleSwitcher;
+    public static int whatPar(int par, int playerpar)
+    {
+        Boolean birdSwitcher, eagleSwitcher, doubleSwitcher;
 
         Xlog.d(match.getBirdie_x2() + "===============================");
-        if ("1".equals(match.getBirdie_x2())) {
+        if ("1".equals(match.getBirdie_x2()))
+        {
             birdSwitcher = true;
-        } else {
+        } else
+        {
             birdSwitcher = false;
         }
-        if ("1".equals(match.getEagle_x4())) {
+        if ("1".equals(match.getEagle_x4()))
+        {
             eagleSwitcher = true;
-        } else {
+        } else
+        {
             eagleSwitcher = false;
         }
 //<<<<<<< HEAD
-        if("1".equals(match.getDouble_par_x2()))
+        if ("1".equals(match.getDouble_par_x2()))
 //=======
 //        if(match.getDouble_par_x2().equals("1"))
 //>>>>>>> 89e8e4acd2f7ede6944c0bd587f41db93878dabe
         {
             doubleSwitcher = true;
-        }
-        else {
+        } else
+        {
             doubleSwitcher = false;
         }
 
-        if (playerpar >= par) {
-            return 0;
-        } else if (par - playerpar == 1) {
-            if (birdSwitcher) {
+        if (playerpar >= par)
+        {
+            if (playerpar  >= par*2)
+            {
+                if (doubleSwitcher)
+                {
+                    return 3;
+                } else
+                {
+                    return 0;
+                }
+            }
+        } else if (par - playerpar == 1)
+        {
+            if (birdSwitcher)
+            {
                 return 1;
-            } else {
+            } else
+            {
                 return 0;
             }
-        } else if(par - playerpar>=2){
-            if (eagleSwitcher) {
+        } else if (par - playerpar >= 2)
+        {
+            if (eagleSwitcher)
+            {
 
                 return 2;
-            } else {
+            } else
+            {
                 return 0;
             }
-        }
-        else if(playerpar*2>=par) {
-            if (doubleSwitcher) {
-                return 3;
-            } else {
-                return 0;
-            }
-        }
-        else return 0;
-
+        } else return 0;
+        return 0;
 
     }
 
@@ -152,34 +168,34 @@ public class WmUtil {
 //    }
 
 
-    public static int bdScore(int par, int parp1, int parp2,int hole)
+    public static int bdScore(int par, int parp1, int parp2, int hole)
     {
         base = 1;
         //判断平局翻倍
         int count = hole - 1;
 
-        if(WmUtil.whoWinsBD(parp1,parp2)==DRAW)
+        if (WmUtil.whoWinsBD(parp1, parp2) == DRAW)
         {
-            if(match.getDraw_to_win()=="1"&&match.getDrawWhoWin()==Match.LEFT)
+
+            if (match.getDraw_to_win().equals("1") && match.getDrawWhoWin() == Match.LEFT)
             {
                 return 1;
-            }
-            else if(match.getDraw_to_win()=="1"&&match.getDrawWhoWin()==Match.RIGHT)
+
+            } else if (match.getDraw_to_win().equals("1") && match.getDrawWhoWin() == Match.RIGHT)
             {
                 return -1;
-            }
-            else
+            } else
             {
                 return 0;
             }
-        }else
+        } else
         {
-            base+=tie_number;
+            base += tie_number;
         }
 
         //是不是双倍标准杆
         int doublePar = 1;
-        if (match.getDouble_par_x2().equals("1")&&(parp1 - 2 * par >= 0 || parp2 - 2 * par >= 0))
+        if (match.getDouble_par_x2().equals("1") && (parp1 - 2 * par >= 0 || parp2 - 2 * par >= 0))
         {
             doublePar = 2;
         }
@@ -284,50 +300,47 @@ public class WmUtil {
 
         // 计算times
         int times = 1;
-        if(res==DZ_WIN)
+        if (res == DZ_WIN)
         {
             //考虑地主倍数
-            if(parp2<=par-2)
+            if (parp2 <= par - 2)
             {
-                if("1".equals(match.getEagle_x4())) times *= 4;//eagle
-            }
-            else if(parp2==par-1)
+                if ("1".equals(match.getEagle_x4())) times *= 4;//eagle
+            } else if (parp2 == par - 1)
             {
-                if("1".equals(match.getBirdie_x2()))times *= 2;//bird
+                if ("1".equals(match.getBirdie_x2())) times *= 2;//bird
             }
             //考虑平民倍数
-            if((parp1>parp3?parp1:parp3)>=2*par)
+            if ((parp1 > parp3 ? parp1 : parp3) >= 2 * par)
             {
-                if("1".equals(match.getDouble_par_x2()))times *= 2;//double standard
+                if ("1".equals(match.getDouble_par_x2())) times *= 2;//double standard
             }
-        }
-        else if(res==PM_WIN)
+        } else if (res == PM_WIN)
         {
             //考虑地主倍数
-            if(parp2>=2*par)
+            if (parp2 >= 2 * par)
             {
-                if("1".equals(match.getDouble_par_x2())) times *=2;//double standard
+                if ("1".equals(match.getDouble_par_x2())) times *= 2;//double standard
             }
             //考虑平民倍数
-            if((parp1<parp3?parp1:parp3)<=par-2)
+            if ((parp1 < parp3 ? parp1 : parp3) <= par - 2)
             {
-                if("1".equals(match.getEagle_x4())) times *= 4;//eagle
-            }
-            else if((parp1<parp3?parp1:parp3)==par-1)
+                if ("1".equals(match.getEagle_x4())) times *= 4;//eagle
+            } else if ((parp1 < parp3 ? parp1 : parp3) == par - 1)
             {
-                if("1".equals(match.getBirdie_x2())) times *= 2;//bird
+                if ("1".equals(match.getBirdie_x2())) times *= 2;//bird
             }
-        }else if(res==DRAW)
+        } else if (res == DRAW)
         {
 //            WmUtil.tie_number++;
             return 0;
         }
 
         // 最终算分
-        int score = (1+tie_number)*times;
+        int score = (1 + tie_number) * times;
 //        if(res!=DRAW) tie_number=0;
         // tie_number=0;
-        return res==DZ_WIN?score:-score;
+        return res == DZ_WIN ? score : -score;
 //
 //        base = 1;
 ////        int count = hole - 1;
@@ -385,12 +398,13 @@ public class WmUtil {
 
     }
 
-    public static int whoWinsDDZ(int parp1, int parp2, int parp3) {
-        if(parp1+parp3==parp2*2)
+    public static int whoWinsDDZ(int parp1, int parp2, int parp3)
+    {
+        if (parp1 + parp3 == parp2 * 2)
         {
             return DRAW;
         }
-        return parp2*2<parp1+parp3?DZ_WIN:PM_WIN;
+        return parp2 * 2 < parp1 + parp3 ? DZ_WIN : PM_WIN;
     }
 
     public static int vegasScore(int par, int parp1, int parp2, int parp3, int parp4)
@@ -449,12 +463,13 @@ public class WmUtil {
 
     }
 
-    public static int whoWinsBD(int parsP1, int parsP2) {
-        if(parsP1==parsP2)
+    public static int whoWinsBD(int parsP1, int parsP2)
+    {
+        if (parsP1 == parsP2)
         {
             return DRAW;
         }
-        return parsP2<parsP1?LEFT:RIGHT;
+        return parsP2 < parsP1 ? LEFT : RIGHT;
     }
 
     //创建选择头像的dialog
@@ -592,9 +607,9 @@ public class WmUtil {
 
     //保存每洞分数
 
-    public static void saveStroke(int hole_number, Player player, int score,int position)
+    public static void saveStroke(int hole_number, Player player, int score, int position)
     {
-        player.setPosition(player.getPosition()==null?""+position:player.getPosition()+position);
+        player.setPosition(player.getPosition() == null ? "" + position : player.getPosition() + position);
         WmUtil.saveStroke(hole_number, player, score);
     }
 
@@ -761,19 +776,21 @@ public class WmUtil {
     }
 
 
-    public static void setPortrait(Player player,ImageView bdP2,Context context){
+    public static void setPortrait(Player player, ImageView bdP2, Context context)
+    {
 
-        if(player.getPortrait()==null)
+        if (player.getPortrait() == null)
         {
-            bdP2.setImageBitmap(BitmapFactory.decodeResource(context.getResources(),R.drawable.hugh));
+            bdP2.setImageBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.hugh));
             return;
         }
         File outputimage = new File(
-                player.getPortrait() );
-        Uri imageUri=Uri.fromFile(outputimage);
+                player.getPortrait());
+        Uri imageUri = Uri.fromFile(outputimage);
 
 
-        try {
+        try
+        {
             BitmapFactory.Options options = new BitmapFactory.Options();
             options.inJustDecodeBounds = true;
 
@@ -783,8 +800,9 @@ public class WmUtil {
             // Decode bitmap with inSampleSize set
             options.inJustDecodeBounds = false;
             bdP2.setImageBitmap(BitmapFactory.decodeStream(context.getContentResolver()
-                    .openInputStream(imageUri),null,options));
-        } catch (FileNotFoundException e) {
+                    .openInputStream(imageUri), null, options));
+        } catch (FileNotFoundException e)
+        {
             e.printStackTrace();
         }
     }

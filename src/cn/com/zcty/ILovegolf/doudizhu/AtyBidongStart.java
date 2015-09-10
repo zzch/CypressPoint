@@ -478,48 +478,142 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
 
         int p1 = WmUtil.whatPar(par, parsP1);
         int p2 = WmUtil.whatPar(par, parsP2);
-        switch (p1>p2?p1:p2)
+        int type = 0;
+        boolean isDouble = false;
+        String showname = "";
+        String showname2 = "";
+        switch (p1)
         {
             case 0:
 
                 break;
             case 1:
-                intent = new Intent(AtyBidongStart.this,BirdActivity.class);
-                if((p1>p2?p1:p2)==p1)
-                {
-                    intent.putExtra("xiao1", bname1);
+//                intent = new Intent(AtyBidongStart.this,BirdActivity.class);
+                if(1>type) {
+                    type= 1;
+                    showname = bname1;
                 }
-                else if((p1>p2?p1:p2)==p2)
+                else if(1==type)
                 {
-                    intent.putExtra("xiao1", bname2);
+                    showname+="、" + bname1;
                 }
-//                intent.putExtra("xiao1", bname1);
-                startActivity(intent);
+//                if((p1>p2?p1:p2)==p1)
+//                {
+//                    intent.putExtra("xiao1", bname1);
+//                }
+//                else if((p1>p2?p1:p2)==p2)
+//                {
+//                    intent.putExtra("xiao1", bname2);
+//                }
+////                intent.putExtra("xiao1", bname1);
+//                startActivity(intent);
                 // tv_bird1.setText("bird ! x 2");
                 // tv_bird1.setVisibility(View.VISIBLE);
                 break;
             case 2:
-                intent = new Intent(AtyBidongStart.this,LaoyingActivity.class);
-                if((p1>p2?p1:p2)==p1)
-                {
-                    intent.putExtra("lao2", bname1);
+//                intent = new Intent(AtyBidongStart.this,BirdActivity.class);
+                if(2>type) {
+                    type= 2;
+                    showname = bname1;
                 }
-                else if((p1>p2?p1:p2)==p2)
+                else if(2==type)
                 {
-                    intent.putExtra("lao2", bname2);
+                    showname+="、" + bname1;
                 }
-//                intent.putExtra("lao2", bname1);
-                startActivity(intent);
+//                intent = new Intent(AtyBidongStart.this,LaoyingActivity.class);
+//                if((p1>p2?p1:p2)==p1)
+//                {
+//                    intent.putExtra("lao2", bname1);
+//                }
+//                else if((p1>p2?p1:p2)==p2)
+//                {
+//                    intent.putExtra("lao2", bname2);
+//                }
+////                intent.putExtra("lao2", bname1);
+//                startActivity(intent);
                 //tv_bird1.setText("eagle ! x 4");
                 //  tv_bird1.setVisibility(View.VISIBLE);
                 break;
             case 3:
-                intent = new Intent(AtyBidongStart.this,BirdActivity.class);
-                intent.putExtra("shuang1", bname1);
-                startActivity(intent);
+                isDouble = true;
+                showname2+=("、"+bname1);
                 break;
         }
 
+        switch (p2)
+        {
+            case 0:
+
+                break;
+            case 1:
+                if(1>type) {
+                    type= 1;
+                    showname = bname2;
+                }
+                else if(1==type)
+                {
+                    showname+="、" + bname2;
+                }
+//                intent = new Intent(AtyBidongStart.this,BirdActivity.class);
+//                if((p1>p2?p1:p2)==p1)
+//                {
+//                    intent.putExtra("xiao1", bname1);
+//                }
+//                else if((p1>p2?p1:p2)==p2)
+//                {
+//                    intent.putExtra("xiao1", bname2);
+//                }
+////                intent.putExtra("xiao1", bname1);
+//                startActivity(intent);
+//                // tv_bird1.setText("bird ! x 2");
+//                // tv_bird1.setVisibility(View.VISIBLE);
+                break;
+            case 2:
+                if(2>type) {
+                    type= 2;
+                    showname = bname2;
+                }
+                else if(2==type)
+                {
+                    showname+="、" + bname2;
+                }
+//                intent = new Intent(AtyBidongStart.this,LaoyingActivity.class);
+//                if((p1>p2?p1:p2)==p1)
+//                {
+//                    intent.putExtra("lao2", bname1);
+//                }
+//                else if((p1>p2?p1:p2)==p2)
+//                {
+//                    intent.putExtra("lao2", bname2);
+//                }
+////                intent.putExtra("lao2", bname1);
+//                startActivity(intent);
+//                //tv_bird1.setText("eagle ! x 4");
+//                //  tv_bird1.setVisibility(View.VISIBLE);
+                break;
+            case 3:
+                isDouble = true;
+                showname2+=("、"+bname2);
+                break;
+        }
+        if(type==1)
+        {
+            intent = new Intent(AtyBidongStart.this,BirdActivity.class);
+            intent.putExtra("xiao1",showname);
+            startActivity(intent);
+        }
+        else if (type==2)
+        {
+            intent = new Intent(AtyBidongStart.this,LaoyingActivity.class);
+            intent.putExtra("lao2",showname);
+            startActivity(intent);
+        }
+        if(isDouble)
+        {
+            intent = new Intent(AtyBidongStart.this,ShuangBeibzgActivity.class);
+            intent.putExtra("shuang1",showname2.substring(1));
+            startActivity(intent);
+        }
 //<<<<<<< HEAD
 //        switch (WmUtil.whatPar(par, parsP2))
 //        {

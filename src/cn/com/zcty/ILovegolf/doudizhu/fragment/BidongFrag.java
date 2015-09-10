@@ -63,8 +63,7 @@ public class BidongFrag extends Fragment implements View.OnClickListener
     private TextView bdTvDrawP2win;
     private  Bitmap myuser_face;
     private  String nickname;
-    String timechuo
-            ;
+    String timechuo;
 
 
     @Override
@@ -91,7 +90,7 @@ public class BidongFrag extends Fragment implements View.OnClickListener
         match.setEagle_x4("1");
         match.setDouble_par_x2("1");
         match.setDraw_to_next("1");
-        match.setDraw_to_win("1");
+        match.setDraw_to_win("0");
     }
 
     private void initView()

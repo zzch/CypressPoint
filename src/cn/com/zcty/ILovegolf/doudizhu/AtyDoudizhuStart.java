@@ -423,26 +423,31 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
         final ObjectAnimator ani2_sX = ObjectAnimator.ofFloat(root, "scaleX", 0, 1).setDuration(300);
         final ObjectAnimator ani1_sY = ObjectAnimator.ofFloat(root, "scaleY", 1, 0).setDuration(300);
         final ObjectAnimator ani2_sY = ObjectAnimator.ofFloat(root, "scaleY", 0, 1).setDuration(300);
-        ani1_sY.addListener(new Animator.AnimatorListener() {
+        ani1_sY.addListener(new Animator.AnimatorListener()
+        {
             @Override
-            public void onAnimationStart(Animator animation) {
+            public void onAnimationStart(Animator animation)
+            {
 
             }
 
             @Override
-            public void onAnimationEnd(Animator animation) {
+            public void onAnimationEnd(Animator animation)
+            {
                 ani2_alpha.start();
                 ani2_sX.start();
                 ani2_sY.start();
             }
 
             @Override
-            public void onAnimationCancel(Animator animation) {
+            public void onAnimationCancel(Animator animation)
+            {
 
             }
 
             @Override
-            public void onAnimationRepeat(Animator animation) {
+            public void onAnimationRepeat(Animator animation)
+            {
 
             }
         });
@@ -485,57 +490,154 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
         int p1 = WmUtil.whatPar(par, parsP1);
         int p2 = WmUtil.whatPar(par, parsP2);
         int p3 = WmUtil.whatPar(par, parsP3);
+        int type = 0;
+        boolean isDouble = false;
+        String showname = "";
+        String showname2 = "";
         int[] whatpar = new int[]{p1, p2, p3};
         Arrays.sort(whatpar);
 
         //动画
-        switch (whatpar[2]) {
+        switch (p1) {
             case 0:
 
                 break;
             case 1:
-                intent = new Intent(AtyDoudizhuStart.this, BirdActivity.class);
-                if(whatpar[2]==p1)
-                {
-                    intent.putExtra("ddzxiao1", ddzname1);
-                }
-                else if(whatpar[2]==p2)
-                {
-                    intent.putExtra("ddzxiao1", ddzname2);
-                }
-                else if (whatpar[2]==p3)
-                {
-                    intent.putExtra("ddzxiao1", ddzname3);
-                }
-//                intent.putExtra("ddzxiao1", ddzname1);
-                startActivity(intent);
+//                intent = new Intent(AtyDoudizhuStart.this, BirdActivity.class);
+//                if(whatpar[2]==p1)
+//                {
+//                    intent.putExtra("ddzxiao1", ddzname1);
+//                }
+//                else if(whatpar[2]==p2)
+//                {
+//                    intent.putExtra("ddzxiao1", ddzname2);
+//                }
+//                else if (whatpar[2]==p3)
+//                {
+//                    intent.putExtra("ddzxiao1", ddzname3);
+//                }
+////                intent.putExtra("ddzxiao1", ddzname1);
+//                startActivity(intent);
                 //tv_ddzbird1.setText("bird ! x 2");
                 // tv_ddzbird1.setVisibility(View.VISIBLE);
+                if(1>type) {
+                    type= 1;
+                    showname = ddzname1;
+                }
+                else if(1==type)
+                {
+                    showname+="、" + ddzname1;
+                }
                 break;
             case 2:
-                intent = new Intent(AtyDoudizhuStart.this, LaoyingActivity.class);
-                if(whatpar[2]==p1)
-                {
-                    intent.putExtra("ddzlao1", ddzname1);
-                }
-                else if(whatpar[2]==p2)
-                {
-                    intent.putExtra("ddzlao1", ddzname2);
-                }
-                else if (whatpar[2]==p3)
-                {
-                    intent.putExtra("ddzlao1", ddzname3);
-                }
+//                intent = new Intent(AtyDoudizhuStart.this, LaoyingActivity.class);
+//                if(whatpar[2]==p1)
+//                {
+//                    intent.putExtra("ddzlao1", ddzname1);
+//                }
+//                else if(whatpar[2]==p2)
+//                {
+//                    intent.putExtra("ddzlao1", ddzname2);
+//                }
+//                else if (whatpar[2]==p3)
+//                {
+//                    intent.putExtra("ddzlao1", ddzname3);
+//                }
 //                intent.putExtra("ddzlao1", ddzname1);
-                startActivity(intent);
+//                startActivity(intent);
                 // tv_ddzbird1.setText("eagle ! x 4");
                 // tv_ddzbird1.setVisibility(View.VISIBLE);
+                if(2>type) {
+                    type= 2;
+                    showname = ddzname2;
+                }
+                else if(2==type)
+                {
+                    showname+="、" + ddzname2;
+                }
                 break;
             case 3:
-                intent = new Intent(AtyDoudizhuStart.this,ShuangBeibzgActivity.class);
-                intent.putExtra("ddzshuang1", ddzname1);
-                startActivity(intent);
-           break;
+                isDouble = true;
+                showname2+=("、"+ddzname1);
+                break;
+        }
+        switch (p2)
+        {
+            case 0:
+
+                break;
+            case 1:
+                if(1>type) {
+                    type= 1;
+                    showname = ddzname2;
+                }
+                else if(1==type)
+                {
+                    showname+="、" + ddzname2;
+                }
+                break;
+            case 2:
+                if(2>type) {
+                    type= 2;
+                    showname = ddzname2;
+                }
+                else if(2==type)
+                {
+                    showname+="、" + ddzname2;
+                }
+                break;
+            case 3:
+                isDouble = true;
+                showname2+=("、"+ddzname2);
+                break;
+        }
+        switch (p3)
+        {
+            case 0:
+
+                break;
+            case 1:
+                if(1>type) {
+                    type= 1;
+                    showname = ddzname3;
+                }
+                else if(1==type)
+                {
+                    showname+="、" + ddzname3;
+                }
+                break;
+            case 2:
+                if(2>type) {
+                    type= 2;
+                    showname = ddzname3;
+                }
+                else if(2==type)
+                {
+                    showname+="、" + ddzname3;
+                }
+                break;
+            case 3:
+                isDouble = true;
+                showname2+=("、"+ddzname3);
+                break;
+        }
+        if(type==1)
+        {
+            intent = new Intent(AtyDoudizhuStart.this,BirdActivity.class);
+            intent.putExtra("xiao1",showname);
+            startActivity(intent);
+        }
+        else if (type==2)
+        {
+            intent = new Intent(AtyDoudizhuStart.this,LaoyingActivity.class);
+            intent.putExtra("lao2",showname);
+            startActivity(intent);
+        }
+        if(isDouble)
+        {
+            intent = new Intent(AtyDoudizhuStart.this,ShuangBeibzgActivity.class);
+            intent.putExtra("shuang1",showname2.substring(1));
+            startActivity(intent);
         }
 //<<<<<<< HEAD
 //        //p2动画

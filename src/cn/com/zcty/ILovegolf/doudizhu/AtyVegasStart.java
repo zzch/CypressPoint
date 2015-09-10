@@ -377,16 +377,22 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
         btnTitleHis.setText("排名");
         btnTitleHis.setOnClickListener(this);
         back = (Button)findViewById(R.id.back);
-        back.setOnClickListener(new View.OnClickListener() {
+        back.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 dialog();
-                overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
             }
         });
 
 //
         setBtnConfirmResultAni();
+        vergname1 = ddzP1Name.getText().toString().trim();
+        vergname2 = ddzP2Name.getText().toString().trim();
+        vergname3 = ddzP3Name.getText().toString().trim();
+        vergname4 = ddzP4Name.getText().toString().trim();
     }
 
 
@@ -485,130 +491,165 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
 
     private void p1_p2Ani()
     {
+
+        vergname1 = ddzP1Name.getText().toString().trim();
+        vergname2 = ddzP2Name.getText().toString().trim();
+        vergname3 = ddzP3Name.getText().toString().trim();
+        vergname4 = ddzP4Name.getText().toString().trim();
+
+
         int p1 = WmUtil.whatPar(par, parsP1);
         int p2 = WmUtil.whatPar(par, parsP2);
         int p3 = WmUtil.whatPar(par, parsP3);
-        int p4 = WmUtil.whatPar(par, parsP3);
+        int p4 = WmUtil.whatPar(par, parsP4);
+        int type = 0;
+//        boolean isDouble = false;
+        String showname = "";
+//        String showname2 = "";
         int[] whatpar = new int[]{p1, p2, p3,p4};
         Arrays.sort(whatpar);
-        //p1动画
-        switch (whatpar[3])
+
+        switch (p1) {
+            case 0:
+
+                break;
+            case 1:
+
+                if(1>type) {
+                    type= 1;
+                    showname = vergname1;
+                }
+                else if(1==type)
+                {
+                    showname+="、" + vergname1;
+                }
+                break;
+            case 2:
+
+//                startActivity(intent);
+
+                if(2>type) {
+                    type= 2;
+                    showname = vergname1;
+                }
+                else if(2==type)
+                {
+                    showname+="、" + vergname1;
+                }
+                break;
+//            case 3:
+//                isDouble = true;
+//                showname2+=("、"+vergname1);
+//                break;
+        }
+        switch (p2)
         {
             case 0:
 
                 break;
             case 1:
-                intent = new Intent(AtyVegasStart.this,BirdActivity.class);
-                if(whatpar[3]==p1)
-                {
-                    intent.putExtra("vergxiao1", vergname1);
+                if(1>type) {
+                    type= 1;
+                    showname = vergname2;
                 }
-                else if(whatpar[3]==p2)
+                else if(1==type)
                 {
-                    intent.putExtra("vergxiao1", vergname2);
+                    showname+="、" + vergname2;
                 }
-                else if (whatpar[3]==p3)
-                {
-                    intent.putExtra("vergxiao1", vergname3);
-                }
-                else if (whatpar[3]==p4)
-                {
-                    intent.putExtra("vergxiao1", vergname4);
-                }
-//                intent.putExtra("vergxiao1", vergname1);
-                startActivity(intent);
-                //  tv_ddzbird1.setText("bird !");
-                // tv_ddzbird1.setVisibility(View.VISIBLE);
                 break;
             case 2:
-                intent = new Intent(AtyVegasStart.this,LaoyingActivity.class);
-                if(whatpar[3]==p1)
-                {
-                    intent.putExtra("verglao1", vergname1);
+                if(2>type) {
+                    type= 2;
+                    showname = vergname2;
                 }
-                else if(whatpar[3]==p2)
+                else if(2==type)
                 {
-                    intent.putExtra("verglao1", vergname2);
+                    showname+="、" + vergname2;
                 }
-                else if (whatpar[3]==p3)
-                {
-                    intent.putExtra("verglao1", vergname3);
-                }
-                else if (whatpar[3]==p4)
-                {
-                    intent.putExtra("verglao1", vergname4);
-                }
-//                intent.putExtra("verglao1", vergname1);
-                startActivity(intent);
-                //  tv_ddzbird1.setText("eagle !");
-                //  tv_ddzbird1.setVisibility(View.VISIBLE);
                 break;
+//            case 3:
+//                isDouble = true;
+//                showname2+=("、"+vergname2);
+//                break;
         }
-//        //p2动画
-//        switch (WmUtil.whatPar(par, parsP2))
-//        {
-//            case 0:
-//
-//                break;
-//            case 1:
-//                intent = new Intent(AtyVegasStart.this,BirdActivity.class);
-//                intent.putExtra("vergxiao2", vergname2);
-//                startActivity(intent);
-//                //  tv_ddzbird1.setText("bird !");
-//                //  tv_ddzbird1.setVisibility(View.VISIBLE);
-//                break;
-//            case 2:
-//                intent = new Intent(AtyVegasStart.this,LaoyingActivity.class);
-//                intent.putExtra("verglao2", vergname2);
-//                startActivity(intent);
-//                //  tv_ddzbird1.setText("eagle !");
-//                //  tv_ddzbird1.setVisibility(View.VISIBLE);
-//                break;
-//        }
-//
-//        //p3动画
-//        switch (WmUtil.whatPar(par, parsP3))
-//        {
-//            case 0:
-//
-//                break;
-//            case 1:
-//                intent = new Intent(AtyVegasStart.this,BirdActivity.class);
-//                intent.putExtra("vergxiao3", vergname3);
-//                startActivity(intent);
-//                // tv_ddzbird3.setText("bird !");
-//                // tv_ddzbird3.setVisibility(View.VISIBLE);
-//                break;
-//            case 2:
-//                intent = new Intent(AtyVegasStart.this,LaoyingActivity.class);
-//                intent.putExtra("verglao3", vergname3);
-//                startActivity(intent);
-//                // tv_ddzbird3.setText("eagle !");
-//                // tv_ddzbird3.setVisibility(View.VISIBLE);
-//                break;
-//        }
-//        //p4动画
-//        switch (WmUtil.whatPar(par, parsP4))
-//        {
-//            case 0:
-//
-//                break;
-//            case 1:
-//                intent = new Intent(AtyVegasStart.this,BirdActivity.class);
-//                intent.putExtra("vergxiao4", vergname4);
-//                startActivity(intent);
-//                //  tv_ddzbird4.setText("bird ! x 2");
-//                //  tv_ddzbird4.setVisibility(View.VISIBLE);
-//                break;
-//            case 2:
-//                intent = new Intent(AtyVegasStart.this,LaoyingActivity.class);
-//                intent.putExtra("verglao4", vergname4);
-//                startActivity(intent);
-//                // tv_ddzbird4.setText("eagle ! x 4");
-//                // tv_ddzbird4.setVisibility(View.VISIBLE);
-//                break;
-//        }
+        switch (p3)
+        {
+            case 0:
 
+                break;
+            case 1:
+                if(1>type) {
+                    type= 1;
+                    showname = vergname3;
+                }
+                else if(1==type)
+                {
+                    showname+="、" + vergname3;
+                }
+                break;
+            case 2:
+                if(2>type) {
+                    type= 2;
+                    showname = vergname3;
+                }
+                else if(2==type)
+                {
+                    showname+="、" + vergname3;
+                }
+                break;
+//            case 3:
+//                isDouble = true;
+//                showname2+=("、"+vergname3);
+//                break;
+        }
+        switch (p4)
+        {
+            case 0:
+
+                break;
+            case 1:
+                if(1>type) {
+                    type= 1;
+                    showname = vergname4;
+                }
+                else if(1==type)
+                {
+                    showname+="、" + vergname4;
+                }
+                break;
+            case 2:
+                if(2>type) {
+                    type= 2;
+                    showname = vergname4;
+                }
+                else if(2==type)
+                {
+                    showname+="、" + vergname4;
+                }
+                break;
+//            case 3:
+//                isDouble = true;
+//                showname2+=("、"+vergname4);
+//                break;
+        }
+        if(type==1)
+        {
+            intent = new Intent(AtyVegasStart.this,BirdActivity.class);
+            intent.putExtra("xiao1",showname);
+            startActivity(intent);
+        }
+        else if (type==2)
+        {
+            intent = new Intent(AtyVegasStart.this,LaoyingActivity.class);
+            intent.putExtra("lao2",showname);
+            startActivity(intent);
+        }
+//        if(isDouble)
+//        {
+//            intent = new Intent(AtyVegasStart.this,ShuangBeibzgActivity.class);
+//            intent.putExtra("shuang1",showname2.substring(1));
+//            startActivity(intent);
+//        }
     }
 
     //确定成绩后存数据库

@@ -31,7 +31,7 @@ private TextView player_name;
     }
 
     private void initView(){
-        sbbzg = (ImageView) findViewById(R.id.xiaoniao);
+        sbbzg = (ImageView) findViewById(R.id.sbbzg);
         player_name =(TextView) findViewById(R.id.player_name);
 
         sbbzg.setOnClickListener(new View.OnClickListener() {
@@ -46,26 +46,27 @@ private TextView player_name;
     private  void initDate() {
         Intent intent = getIntent();
         String shuang1 = intent.getStringExtra("shuang1");
-        String shuang2 = intent.getStringExtra("shuang2");
+//        String shuang2 = intent.getStringExtra("shuang2");
 
-        String ddzshuang1 = intent.getStringExtra("ddzshuang1");
-        String ddzshuang2 = intent.getStringExtra("ddzshuang2");
-        String ddzshuang3 = intent.getStringExtra("ddzshuang3");
+//        String ddzshuang1 = intent.getStringExtra("ddzshuang1");
+//        String ddzshuang2 = intent.getStringExtra("ddzshuang2");
+//        String ddzshuang3 = intent.getStringExtra("ddzshuang3");
 
 
         if(shuang1!=null){
             player_name.setText(shuang1+"打出了一个双倍标准杆");
-        }else if(shuang2!=null){
-            player_name.setText(shuang2+"打出了一个双倍标准杆");
         }
-
-        if(ddzshuang1!=null){
-            player_name.setText(ddzshuang1+"打出了一个双倍标准杆");
-        }else if(ddzshuang2!=null){
-            player_name.setText(ddzshuang2+"打出了一个双倍标准杆");
-        }else if(ddzshuang3!=null){
-            player_name.setText(ddzshuang3+"打出了一个双倍标准杆");
-        }
+// else if(shuang2!=null){
+//            player_name.setText(shuang2+"打出了一个双倍标准杆");
+//        }
+//
+//        if(ddzshuang1!=null){
+//            player_name.setText(ddzshuang1+"打出了一个双倍标准杆");
+//        }else if(ddzshuang2!=null){
+//            player_name.setText(ddzshuang2+"打出了一个双倍标准杆");
+//        }else if(ddzshuang3!=null){
+//            player_name.setText(ddzshuang3+"打出了一个双倍标准杆");
+//        }
 
     }
 }
