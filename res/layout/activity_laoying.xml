@@ -21,7 +21,7 @@
         android:text="黄大志打出了一个老鹰球"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/laoying"
-        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
         android:textSize="20dp"
         />
 

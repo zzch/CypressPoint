@@ -54,7 +54,7 @@ private TextView player_name;
 
 
         if(shuang1!=null){
-            player_name.setText(shuang1+"打出了一个双倍标准杆");
+            player_name.setText(shuang1+"打出了双倍标准杆");
         }
 // else if(shuang2!=null){
 //            player_name.setText(shuang2+"打出了一个双倍标准杆");

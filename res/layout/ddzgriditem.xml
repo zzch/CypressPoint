@@ -46,6 +46,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_below="@+id/frameLayoutitem"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:maxLength="4"
+        android:textSize="20sp"
         android:layout_centerHorizontal="true" >
     </TextView>
 

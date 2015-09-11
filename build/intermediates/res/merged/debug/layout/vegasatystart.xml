@@ -51,18 +51,6 @@
         android:text="一"/>
 
 
-    <TextView
-        android:id="@+id/textname1"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:text="上N洞打平分数累计本洞获胜方将获得N洞的分数"
-        android:layout_below="@+id/ddzselectpars"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:textSize="16dp"
-
-        />
-
     <LinearLayout
         android:id="@+id/ddzllayout1"
         android:layout_width="match_parent"
@@ -126,6 +114,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:maxLength="4"
                 android:textColor="#ff0000"
                />
 
@@ -175,6 +167,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:maxLength="4"
                 android:textColor="#ff0000"
                />
 
@@ -226,6 +221,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:maxLength="4"
                 android:textColor="#ff8000"
                 />
 
@@ -279,6 +277,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:maxLength="4"
                 android:textColor="#ff8000"
                />
 
@@ -349,10 +350,10 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textname1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_below="@+id/ddzselectpars">
 
         <TextView
             android:id="@+id/textView"
@@ -515,4 +516,4 @@
 
 </RelativeLayout>
 
-<!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/res/layout/vegasatystart.xml -->
+<!-- From: file:/D:/Development/Projects/CypressPoint/res/layout/vegasatystart.xml -->

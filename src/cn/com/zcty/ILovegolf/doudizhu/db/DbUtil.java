@@ -75,7 +75,7 @@ public class DbUtil
     public int getTotalScore()
     {
         int result = 0;
-        Cursor cursor = db.rawQuery("select sum(earned) score from match",null);
+        Cursor cursor = db.rawQuery("select count(earned) score from match",null);
         if (cursor.moveToFirst())
         {
             result = Integer.valueOf(cursor.getString(cursor.getColumnIndex("score")));

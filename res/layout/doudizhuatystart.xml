@@ -125,6 +125,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:maxLength="4"
                 android:textColor="#ff8000"
                />
 
@@ -174,6 +177,9 @@
                 android:layout_height="wrap_content"
                 android:textColor="#ff0000"
                 android:textSize="20dp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:maxLength="4"
                />
 
             <ImageView
@@ -222,6 +228,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:maxLength="4"
                 android:textColor="#ff8000"
                />
 
@@ -244,7 +253,6 @@
                 android:textSize="18dp"
                 android:text="0"/>
             android:text="0"/>
-
             <TextView
                 android:id="@+id/ddzp3stscore_add"
                 android:layout_width="wrap_content"

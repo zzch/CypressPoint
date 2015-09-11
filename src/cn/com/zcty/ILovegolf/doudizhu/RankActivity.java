@@ -72,7 +72,7 @@ public class RankActivity extends Activity
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RankActivity.this.finish();
+                finish();
             }
         });
 
@@ -129,4 +129,9 @@ public class RankActivity extends Activity
         return score;
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        RankActivity.this.finish();
+    }
 }

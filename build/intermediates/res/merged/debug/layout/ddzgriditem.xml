@@ -46,7 +46,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_below="@+id/frameLayoutitem"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:maxLength="4"
+        android:textSize="20sp"
         android:layout_centerHorizontal="true" >
     </TextView>
 
-</RelativeLayout><!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/res/layout/ddzgriditem.xml -->
+</RelativeLayout><!-- From: file:/D:/Development/Projects/CypressPoint/res/layout/ddzgriditem.xml -->

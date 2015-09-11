@@ -600,18 +600,24 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
         {
             intent = new Intent(AtyBidongStart.this,BirdActivity.class);
             intent.putExtra("xiao1",showname);
-            startActivity(intent);
+//            startActivity(intent);
         }
         else if (type==2)
         {
             intent = new Intent(AtyBidongStart.this,LaoyingActivity.class);
             intent.putExtra("lao2",showname);
-            startActivity(intent);
         }
         if(isDouble)
         {
-            intent = new Intent(AtyBidongStart.this,ShuangBeibzgActivity.class);
+            if(type==0)
+            {
+                intent = new Intent(AtyBidongStart.this,ShuangBeibzgActivity.class);
+            }
             intent.putExtra("shuang1",showname2.substring(1));
+//            startActivity(intent);
+        }
+        if(type!=0||isDouble)
+        {
             startActivity(intent);
         }
 //<<<<<<< HEAD
@@ -788,7 +794,7 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
                 if (info == null && hole_number > 1) {
                     info = WmUtil.holesinfos[hole_number - 2];
                 } else {
-                    RankActivity.launch(this, match, new ArrayList<Player>(), 0);
+//                    RankActivity.launch(this, match, new ArrayList<Player>(), 0);
                 }
                 if (info != null) {
                     TreeMap<Integer, Player> treemap = new TreeMap<Integer, Player>() {
@@ -808,7 +814,7 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
                         tmpList.add(treemap.get(key));
                     }
                     Collections.reverse(tmpList);
-                    RankActivity.launch(this, match, tmpList, 0);
+                    RankActivity.launch(AtyBidongStart.this, match, tmpList, 0);
                 }
                 break;
             case R.id.bdselectpars:

@@ -56,4 +56,4 @@
         android:layout_height="15dp"
         android:layout_below="@+id/dialog_back" />
 
-</RelativeLayout><!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/res/layout/register_dialog.xml -->
+</RelativeLayout><!-- From: file:/D:/Development/Projects/CypressPoint/res/layout/register_dialog.xml -->

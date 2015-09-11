@@ -786,7 +786,7 @@ public class AtyVegasStart extends Activity implements View.OnClickListener
                 }
                 else
                 {
-                    RankActivity.launch(this, match, new ArrayList<Player>(), 0);
+//                    RankActivity.launch(this, match, new ArrayList<Player>(), 0);
                 }
                 if(info!=null)
                 {

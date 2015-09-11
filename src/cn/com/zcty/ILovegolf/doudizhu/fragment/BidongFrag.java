@@ -142,10 +142,10 @@ public class BidongFrag extends Fragment implements View.OnClickListener
             {
                 if (et.getText().toString().equals(""))
                 {
-//                    bdp2Name.setText("球手2");
+                    bdp2Name.setText("球手2");
                     player.setNickname("球手2");
                 }else {
-//                    bdp2Name.setText(et.getText().toString());
+                    bdp2Name.setText(et.getText().toString());
                     player.setNickname(et.getText().toString());
                 }
 //                bdp2Name.setText(et.getText().toString());
@@ -484,6 +484,9 @@ public class BidongFrag extends Fragment implements View.OnClickListener
                         intent.setDataAndType(data.getData(), "image/*");
                         intent.putExtra("crop", true);
                         intent.putExtra("scale", true);
+
+                        intent.putExtra("outputX", 800);
+                        intent.putExtra("outputY", 800);
                         intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
 
                         startActivityForResult(intent, 2);

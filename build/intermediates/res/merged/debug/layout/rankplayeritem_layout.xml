@@ -56,7 +56,8 @@ android:layout_marginLeft="10dp"
         android:layout_toRightOf="@+id/frameLayout1"
         android:layout_marginLeft="17dp"
         android:layout_centerVertical="true"
-        android:textSize="20dp"
+        android:maxLength="4"
+        android:textSize="15dp"
         android:text="黄大治"/>
 
     <ImageView
@@ -79,9 +80,9 @@ android:layout_marginLeft="10dp"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="10dp"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:textColor="@color/chengse"
         android:text="0"/>
 
 </RelativeLayout>
-<!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/res/layout/rankplayeritem_layout.xml -->
+<!-- From: file:/D:/Development/Projects/CypressPoint/res/layout/rankplayeritem_layout.xml -->

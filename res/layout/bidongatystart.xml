@@ -199,6 +199,9 @@
             android:textColor="#ff0000"
             android:layout_centerHorizontal="true"
             android:textSize="20dp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:maxLength="4"
             />
 
         <ImageView
@@ -284,6 +287,9 @@
             android:textColor="#ff8000"
             android:layout_centerHorizontal="true"
             android:textSize="20dp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:maxLength="4"
            />
 
         <ImageView

@@ -11,6 +11,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.view.HomePageActivity;
+import cn.com.zcty.ILovegolf.doudizhu.entity.Match;
 import cn.com.zcty.ILovegolf.doudizhu.entity.User;
 
 import cn.com.zcty.ILovegolf.doudizhu.fragment.BidongFrag;

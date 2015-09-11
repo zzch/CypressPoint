@@ -32,9 +32,11 @@ private ImageView laoying;
 private void initView(){
     laoying = (ImageView) findViewById(R.id.laoying);
     player_name =(TextView) findViewById(R.id.player_name);
-    laoying.setOnClickListener(new View.OnClickListener() {
+    laoying.setOnClickListener(new View.OnClickListener()
+    {
         @Override
-        public void onClick(View v) {
+        public void onClick(View v)
+        {
 
             finish();
         }
@@ -55,28 +57,40 @@ private void initView(){
         String verglao3 = intent.getStringExtra("verglao4");
         String verglao4 = intent.getStringExtra("verglao4");
         if(lao1!=null){
-            player_name.setText(lao1+"打出了一个老鹰球");
+            player_name.setText(lao1+"打出了老鹰球");
         }else if(lao2!=null){
-            player_name.setText(lao2+"打出了一个老鹰球");
+            player_name.setText(lao2+"打出了老鹰球");
         }
 
         if(ddzlao1!=null){
-            player_name.setText(ddzlao1+"打出了一个老鹰球");
+            player_name.setText(ddzlao1+"打出了老鹰球");
         }else if(ddzlao2!=null){
-            player_name.setText(ddzlao2+"打出了一个老鹰球");
+            player_name.setText(ddzlao2+"打出了老鹰球");
         }else if(ddzlao3!=null){
-            player_name.setText(ddzlao3+"打出了一个老鹰球");
+            player_name.setText(ddzlao3+"打出了老鹰球");
         }
 
         if(verglao1!=null){
-            player_name.setText(verglao1+"打出了一个老鹰球");
+            player_name.setText(verglao1+"打出了老鹰球");
         }else if(verglao2!=null){
-            player_name.setText(verglao2+"打出了一个老鹰球");
+            player_name.setText(verglao2+"打出了老鹰球");
         }else if(verglao3!=null){
-            player_name.setText(verglao3+"打出了一个老鹰球");
+            player_name.setText(verglao3+"打出了老鹰球");
         }else if(verglao4!=null){
-            player_name.setText(verglao4+"打出了一个老鹰球");
+            player_name.setText(verglao4+"打出了老鹰球");
         }
     }
 
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+        String name = getIntent().getStringExtra("shuang1");
+        if(name!=null)
+        {
+            Intent inte = new Intent(LaoyingActivity.this,ShuangBeibzgActivity.class);
+            inte.putExtra("shuang1",name.substring(0));
+            startActivity(inte);
+        }
+    }
 }

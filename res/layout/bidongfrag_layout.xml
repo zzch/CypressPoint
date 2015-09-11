@@ -72,6 +72,8 @@
                         android:layout_weight="1"
                         android:textColor="#ff0000"
                         android:textSize="20dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
                         android:maxLength="4"
                         android:text="黄大治"/>
 
@@ -141,7 +143,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="200dp"
                         android:layout_weight="1"
-                        android:textSize="20dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:maxLength="4"
+                        android:textSize="20sp"
                         android:textColor="#fff000"
                         android:text="球手2"/>
 

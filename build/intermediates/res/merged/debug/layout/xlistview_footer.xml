@@ -25,4 +25,4 @@
             android:text="" /><!-- @string/xlistview_footer_hint_normal -->
     </RelativeLayout>
 
-</LinearLayout><!-- From: file:/D:/Development/Android/AndroidStudioProjects/CypressPoint/res/layout/xlistview_footer.xml -->
+</LinearLayout><!-- From: file:/D:/Development/Projects/CypressPoint/res/layout/xlistview_footer.xml -->

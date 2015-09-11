@@ -48,7 +48,6 @@ private void initView(){
     xiaoniao.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
             finish();
         }
     });
@@ -68,29 +67,41 @@ private void initView(){
         String vergxiao3 = intent.getStringExtra("vergxiao3");
         String vergxiao4 = intent.getStringExtra("vergxiao4");
         if(xiao1!=null){
-            player_name.setText(xiao1+"打出了一个小鸟球");
+            player_name.setText(xiao1+"打出了小鸟球");
         }else if(xiao2!=null){
-            player_name.setText(xiao2+"打出了一个小鸟球");
+            player_name.setText(xiao2+"打出了小鸟球");
         }
 
         if(ddzxiao1!=null){
-              player_name.setText(ddzxiao1+"打出了一个小鸟球");
+              player_name.setText(ddzxiao1+"打出了小鸟球");
           }else if(ddzxiao2!=null){
-              player_name.setText(ddzxiao2+"打出了一个小鸟球");
+              player_name.setText(ddzxiao2+"打出了小鸟球");
           }else if(ddzxiao3!=null){
-              player_name.setText(ddzxiao3+"打出了一个小鸟球");
+              player_name.setText(ddzxiao3+"打出了小鸟球");
           }
 
         if(vergxiao1!=null){
-            player_name.setText(vergxiao1+"打出了一个小鸟球");
+            player_name.setText(vergxiao1+"打出了小鸟球");
         }else if(vergxiao2!=null){
-            player_name.setText(vergxiao2+"打出了一个小鸟球");
+            player_name.setText(vergxiao2+"打出了小鸟球");
         }else if(vergxiao3!=null){
-            player_name.setText(vergxiao3+"打出了一个小鸟球");
+            player_name.setText(vergxiao3+"打出了小鸟球");
         }else if(vergxiao4!=null){
-            player_name.setText(vergxiao4+"打出了一个小鸟球");
+            player_name.setText(vergxiao4+"打出了小鸟球");
         }
 
     }
 
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+        String name = getIntent().getStringExtra("shuang1");
+        if(name!=null)
+        {
+            Intent inte = new Intent(BirdActivity.this,ShuangBeibzgActivity.class);
+            inte.putExtra("shuang1",name.substring(0));
+            startActivity(inte);
+        }
+    }
 }
