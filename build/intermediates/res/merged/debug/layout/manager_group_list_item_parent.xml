@@ -13,4 +13,4 @@
 
         <include layout="@layout/major_score_item" />
     </LinearLayout>
-</RelativeLayout><!-- From: file:/D:/Development/Projects/CypressPoint/res/layout/manager_group_list_item_parent.xml -->
+</RelativeLayout><!-- From: file:/D:/CypressPoint/res/layout/manager_group_list_item_parent.xml -->

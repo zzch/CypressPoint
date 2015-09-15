@@ -5,4 +5,4 @@
  <item android:state_focused="false" android:drawable="@color/white"/>
 
 </selector>
-<!-- From: file:/D:/Development/Projects/CypressPoint/res/drawable/pith_item_onclick.xml -->
+<!-- From: file:/D:/CypressPoint/res/drawable/pith_item_onclick.xml -->

@@ -423,31 +423,26 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
         final ObjectAnimator ani2_sX = ObjectAnimator.ofFloat(root, "scaleX", 0, 1).setDuration(300);
         final ObjectAnimator ani1_sY = ObjectAnimator.ofFloat(root, "scaleY", 1, 0).setDuration(300);
         final ObjectAnimator ani2_sY = ObjectAnimator.ofFloat(root, "scaleY", 0, 1).setDuration(300);
-        ani1_sY.addListener(new Animator.AnimatorListener()
-        {
+        ani1_sY.addListener(new Animator.AnimatorListener() {
             @Override
-            public void onAnimationStart(Animator animation)
-            {
+            public void onAnimationStart(Animator animation) {
 
             }
 
             @Override
-            public void onAnimationEnd(Animator animation)
-            {
+            public void onAnimationEnd(Animator animation) {
                 ani2_alpha.start();
                 ani2_sX.start();
                 ani2_sY.start();
             }
 
             @Override
-            public void onAnimationCancel(Animator animation)
-            {
+            public void onAnimationCancel(Animator animation) {
 
             }
 
             @Override
-            public void onAnimationRepeat(Animator animation)
-            {
+            public void onAnimationRepeat(Animator animation) {
 
             }
         });
@@ -487,6 +482,8 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
     private boolean isAniFinish = false;
 
     private void p1_p2Ani() {
+        if(parsP2*2==parsP1+parsP3)
+            return;
         int p1 = WmUtil.whatPar(par, parsP1);
         int p2 = WmUtil.whatPar(par, parsP2);
         int p3 = WmUtil.whatPar(par, parsP3);
@@ -522,11 +519,11 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
                 // tv_ddzbird1.setVisibility(View.VISIBLE);
                 if(1>type) {
                     type= 1;
-                    showname = ddzname1;
+                    showname = list.get(0).getNickname();
                 }
                 else if(1==type)
                 {
-                    showname+="、" + ddzname1;
+                    showname+="、" + list.get(0).getNickname();
                 }
                 break;
             case 2:
@@ -549,16 +546,16 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
                 // tv_ddzbird1.setVisibility(View.VISIBLE);
                 if(2>type) {
                     type= 2;
-                    showname = ddzname2;
+                    showname = list.get(0).getNickname();
                 }
                 else if(2==type)
                 {
-                    showname+="、" + ddzname2;
+                    showname+="、" + list.get(0).getNickname();
                 }
                 break;
             case 3:
                 isDouble = true;
-                showname2+=("、"+ddzname1);
+                showname2+=("、"+list.get(0).getNickname());
                 break;
         }
         switch (p2)
@@ -569,26 +566,26 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
             case 1:
                 if(1>type) {
                     type= 1;
-                    showname = ddzname2;
+                    showname = list.get(1).getNickname();
                 }
                 else if(1==type)
                 {
-                    showname+="、" + ddzname2;
+                    showname+="、" + list.get(1).getNickname();
                 }
                 break;
             case 2:
                 if(2>type) {
                     type= 2;
-                    showname = ddzname2;
+                    showname = list.get(1).getNickname();
                 }
                 else if(2==type)
                 {
-                    showname+="、" + ddzname2;
+                    showname+="、" + list.get(1).getNickname();
                 }
                 break;
             case 3:
                 isDouble = true;
-                showname2+=("、"+ddzname2);
+                showname2+=("、"+list.get(1).getNickname());
                 break;
         }
         switch (p3)
@@ -599,26 +596,26 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
             case 1:
                 if(1>type) {
                     type= 1;
-                    showname = ddzname3;
+                    showname = list.get(2).getNickname();
                 }
                 else if(1==type)
                 {
-                    showname+="、" + ddzname3;
+                    showname+="、" + list.get(2).getNickname();
                 }
                 break;
             case 2:
                 if(2>type) {
                     type= 2;
-                    showname = ddzname3;
+                    showname = list.get(2).getNickname();
                 }
                 else if(2==type)
                 {
-                    showname+="、" + ddzname3;
+                    showname+="、" + list.get(2).getNickname();
                 }
                 break;
             case 3:
                 isDouble = true;
-                showname2+=("、"+ddzname3);
+                showname2+=("、"+list.get(2).getNickname());
                 break;
         }
         if(type==1)
@@ -973,6 +970,9 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
                     Collections.reverse(tmpList);
                     RankActivity.launch(this, match, tmpList, 1);
 //                Toast.makeText(this, "rl_right.clicked", Toast.LENGTH_SHORT).show();
+                }else
+                {
+                    RankActivity.launch(this, match, list, 0);
                 }
 
                 break;
@@ -1244,8 +1244,6 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
             list.add(nextInfo.getP2());
             list.add(nextInfo.getP3());
             btnSelectPars.setText("" + nextInfo.getPar());
-        } else {
-            list = sortPlayer();
         }
         changeImg();
 
@@ -1333,8 +1331,8 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
 
         int tieNumber = WmUtil.whoWinsDDZ(this.parsP1, this.parsP2, this.parsP3) == WmUtil.DRAW ? 1 : 0;
 
-        WmUtil.tie_number = info == null ? tieNumber : (tieNumber == 1 ? info.getTie_nubmer() + tieNumber : info.getTie_nubmer());
 
+        WmUtil.tie_number= 0;
         int score = WmUtil.ddzScore(this.par, this.parsP1, this.parsP2, this.parsP3);
         //界面设值+动画
 
@@ -1526,10 +1524,10 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (data == null) {
-            btnConfirmResult.setText("下一洞");
-            btnPreHole.setText("上一洞");
-            isReEdit = false;
-            isnext = true;
+//            btnConfirmResult.setText("下一洞");
+//            btnPreHole.setText("上一洞");
+//            isReEdit = false;
+//            isnext = true;
             return;
         }
         Log.d("onActivityResult", "onActivityResult===================onActivityResult==" + requestCode + "======" + resultCode);
@@ -1540,9 +1538,11 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
                     Log.d("onActivityResult", "onActivityResult===================1");
             {
                 String retunData = data.getStringExtra("whichPar");
-                par = Integer.valueOf(retunData);
-                Log.i("RETURN", retunData);
-                btnSelectPars.setText(retunData);
+                if(retunData!=null) {
+                    par = Integer.valueOf(retunData);
+                    Log.i("RETURN", retunData);
+                    btnSelectPars.setText(retunData);
+                }
 
             }
             break;

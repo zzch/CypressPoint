@@ -244,28 +244,28 @@ public class BidongFrag extends Fragment implements View.OnClickListener
             public void open()
             {
                 match.setDraw_to_next("1");
-                if ("0".equals(match.getDraw_to_win()))
-                {
-                    return;
-                } else
-                {
-                    tieHS.setState(false);
-                    bdDrawWhichWinRoot.setVisibility(View.GONE);
-                    bdDrawP1winRl.setClickable(false);
-                    bdDrawP2winRl.setClickable(false);
-                    match.setDraw_to_win("0");
-                }
+                tieHS.setState(false);
+//                if ("0".equals(match.getDraw_to_win()))
+//                {
+//                    return;
+//                } else
+//                {
+//                    tieHS.setState(false);
+////                    bdDrawWhichWinRoot.setVisibility(View.GONE);
+////                    bdDrawP1winRl.setClickable(false);
+////                    bdDrawP2winRl.setClickable(false);
+////                    match.setDraw_to_win("0");
+//                }
             }
 
             @Override
             public void close()
             {
                 match.setDraw_to_next("0");
-
-                if ("1".equals(match.getDraw_to_win()))
-                {
-                    return;
-                }
+//                if ("1".equals(match.getDraw_to_win()))
+//                {
+//                    return;
+//                }
 //                else
 //                {
 //
@@ -285,40 +285,45 @@ public class BidongFrag extends Fragment implements View.OnClickListener
             public void open()
             {
                 match.setDraw_to_win("1");
-
-                if ("0".equals(match.getDraw_to_next()))
-                {
-                    return;
-                } else
-                {
-                    match.setDraw_to_next("0");
-                    tie2NextHole.setState(false);
-                    bdDrawWhichWinRoot.setVisibility(View.VISIBLE);
-                    bdDrawP1winRl.setClickable(true);
-                    bdDrawP2winRl.setClickable(true);
-                }
+                tie2NextHole.setState(false);
+                bdDrawWhichWinRoot.setVisibility(View.VISIBLE);
+                bdDrawP1winRl.setClickable(true);
+                bdDrawP2winRl.setClickable(true);
+//                if ("0".equals(match.getDraw_to_next()))
+//                {
+//                    return;
+//                } else
+//                {
+//                    match.setDraw_to_next("0");
+//                    tie2NextHole.setState(false);
+//                    bdDrawWhichWinRoot.setVisibility(View.VISIBLE);
+//                    bdDrawP1winRl.setClickable(true);
+//                    bdDrawP2winRl.setClickable(true);
+//                }
             }
-
+//
             @Override
             public void close()
             {
                 match.setDraw_to_win("0");
-
-                if ("1".equals(match.getDraw_to_next()))
-                {
-                    return;
-                }
+                bdDrawWhichWinRoot.setVisibility(View.GONE);
+                bdDrawP1winRl.setClickable(false);
+                bdDrawP2winRl.setClickable(false);
+//                if ("1".equals(match.getDraw_to_next()))
+//                {
+//                    return;
+//                }
 //                else
 //                {
-//                    match.setDraw_to_next("1");
-//                    tie2NextHole.setState(true);
+////                    match.setDraw_to_next("1");
+////                    tie2NextHole.setState(true);
 //                    bdDrawWhichWinRoot.setVisibility(View.GONE);
 //                    bdDrawP1winRl.setClickable(false);
 //                    bdDrawP2winRl.setClickable(false);
 //                }
-
-//                match.setDraw_to_win("0");
-//                tie2NextHole.setState(true);
+//
+////                match.setDraw_to_win("0");
+////                tie2NextHole.setState(true);
             }
         });
 

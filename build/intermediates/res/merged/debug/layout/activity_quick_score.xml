@@ -194,4 +194,4 @@
         android:layout_marginTop="10dp"
         android:src="@drawable/quick_text_gone" />
 
-</LinearLayout><!-- From: file:/D:/Development/Projects/CypressPoint/res/layout/activity_quick_score.xml -->
+</LinearLayout><!-- From: file:/D:/CypressPoint/res/layout/activity_quick_score.xml -->

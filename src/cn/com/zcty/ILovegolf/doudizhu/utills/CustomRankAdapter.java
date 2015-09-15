@@ -90,15 +90,27 @@ public class CustomRankAdapter extends BaseAdapter
 //            ((TextView)ll.getChildAt(i).findViewById(R.id.rankPlayerscore)).setText(score);
 //        }
         int hole = match.getCurrenthole();
-        HolesInfo info  = WmUtil.holesinfos[hole-1];
-        int stroke = info!=null?info.getPlayerscore().get(player):0;
-//        String face = player.getPortrait();
-        String name = player.getNickname();
-        ImageView playerImage = ((ImageView) ll.getChildAt(0).findViewById(R.id.rankPlayerimage));
-        WmUtil.setPortrait(player,playerImage,mContext);
+        if(hole==0)
+        {
+            String name = player.getNickname();
+            ImageView playerImage = ((ImageView) ll.getChildAt(0).findViewById(R.id.rankPlayerimage));
+            WmUtil.setPortrait(player,playerImage,mContext);
 //                ((ImageView) ll.getChildAt(0).findViewById(R.id.rankPlayerimage)).setImageBitmap(BitmapFactory.decodeFile(face));
-        ((TextView) ll.getChildAt(0).findViewById(R.id.rankPlayername)).setText(name);
-        ((TextView) ll.getChildAt(0).findViewById(R.id.rankPlayerscore)).setText(String.valueOf(stroke));
+            ((TextView) ll.getChildAt(0).findViewById(R.id.rankPlayername)).setText(name);
+            ((TextView) ll.getChildAt(0).findViewById(R.id.rankPlayerscore)).setText("0");
+        }else
+        {
+
+            HolesInfo info  = WmUtil.holesinfos[hole-1];
+            int stroke = info!=null?info.getPlayerscore().get(player):0;
+//        String face = player.getPortrait();
+            String name = player.getNickname();
+            ImageView playerImage = ((ImageView) ll.getChildAt(0).findViewById(R.id.rankPlayerimage));
+            WmUtil.setPortrait(player,playerImage,mContext);
+//                ((ImageView) ll.getChildAt(0).findViewById(R.id.rankPlayerimage)).setImageBitmap(BitmapFactory.decodeFile(face));
+            ((TextView) ll.getChildAt(0).findViewById(R.id.rankPlayername)).setText(name);
+            ((TextView) ll.getChildAt(0).findViewById(R.id.rankPlayerscore)).setText(String.valueOf(stroke));
+        }
 
         return view;
     }

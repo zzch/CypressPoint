@@ -103,7 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:text="小鸟球翻转"
+                android:text="小鸟或老鹰球翻转"
                 android:textSize="16sp" />
 
             <com.leaking.slideswitch.SlideSwitch
@@ -131,7 +131,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:text="老鹰球翻转"
+                android:text="双倍标准杆翻转"
                 android:textSize="16sp" />
 
             <com.leaking.slideswitch.SlideSwitch
@@ -229,4 +229,4 @@
 
     </LinearLayout>
 
-<!-- From: file:/D:/Development/Projects/CypressPoint/res/layout/vegasfrag_layout.xml -->
+<!-- From: file:/D:/CypressPoint/res/layout/vegasfrag_layout.xml -->

@@ -3,6 +3,7 @@ package cn.com.zcty.ILovegolf.doudizhu;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -49,7 +50,7 @@ public class DoudizhuMain extends Activity
         myUser.setPassword("1234");
         Gson gson = new Gson();
         String str = gson.toJson(myUser);
-        CacheUtils.putString(this,"myuser",str);
+        CacheUtils.putString(this, "myuser", str);
 
 //        myUser.setPortrait();
 
@@ -67,21 +68,16 @@ public class DoudizhuMain extends Activity
         textView1 =(TextView) findViewById(R.id.textView1);
         bdRdb.setChecked(true);
         getFragmentManager().beginTransaction().replace(R.id.frameLayout, new BidongFrag()).commit();
-        ddzRdg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
-        {
+        ddzRdg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId)
-            {
-                if (checkedId == bdRdb.getId())
-                {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == bdRdb.getId()) {
                     getFragmentManager().beginTransaction().replace(R.id.frameLayout, new BidongFrag()).commit();
                 }
-                if (checkedId == ddzRdb.getId())
-                {
+                if (checkedId == ddzRdb.getId()) {
                     getFragmentManager().beginTransaction().replace(R.id.frameLayout, new DoudizhuFrag()).commit();
                 }
-                if (checkedId == vegasRdb.getId())
-                {
+                if (checkedId == vegasRdb.getId()) {
                     getFragmentManager().beginTransaction().replace(R.id.frameLayout, new VegasFrag()).commit();
                 }
             }
@@ -105,7 +101,14 @@ public class DoudizhuMain extends Activity
         });
     }
 
-
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+            finish();
+            return false;
+        }
+        return false;
+    }
     @Override
     protected void onDestroy()
     {

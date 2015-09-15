@@ -2,116 +2,116 @@
 <items version="2" >
 
     <item
-        jar="D:\Development\Projects\CypressPoint\build\intermediates\exploded-aar\CypressPoint\library\unspecified\jars\classes.jar"
+        jar="D:\CypressPoint\libs\commons-logging-1.1.1.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="7fea43ef0c2f25bfcee0ed728f92ab5824b59464">
-        <dex dex="D:\Development\Projects\CypressPoint\build\intermediates\pre-dexed\debug\classes-eb2b6789f9b11c7fd91209fd6791be1009674faa.jar" />
+        sha1="5043bfebc3db072ed80fbd362e7caf00e885d8ae">
+        <dex dex="D:\CypressPoint\build\intermediates\pre-dexed\debug\commons-logging-1.1.1-f6ccaf0f60ed3342494f516064cb8fd821e08d10.jar" />
+    </item>
+    <item
+        jar="D:\CypressPoint\libs\easyandroidanimationslibrary-v0.5.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="81d390299222db75e62708400b299080d122b28b">
+        <dex dex="D:\CypressPoint\build\intermediates\pre-dexed\debug\easyandroidanimationslibrary-v0.5-fb51ffab37d445e254eb2cee097efd581ca61fb2.jar" />
+    </item>
+    <item
+        jar="D:\CypressPoint\libs\httpmime-4.2.6.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="15b713f66acc0988850b989649174add104083ed">
+        <dex dex="D:\CypressPoint\build\intermediates\pre-dexed\debug\httpmime-4.2.6-95e5e5a5da238690f2c5489f4085f9fe3516ae94.jar" />
+    </item>
+    <item
+        jar="D:\CypressPoint\build\intermediates\exploded-aar\com.android.support\appcompat-v7\20.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef">
+        <dex dex="D:\CypressPoint\build\intermediates\pre-dexed\debug\classes-7bd17e9dbbe91569a62889f675c6b90358a207d1.jar" />
+    </item>
+    <item
+        jar="D:\CypressPoint\libs\gson-2.2.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="973e832af433b44c3ed11c426f2f390b29f3f3f8">
+        <dex dex="D:\CypressPoint\build\intermediates\pre-dexed\debug\gson-2.2.4-4a72d4dfe9d14eeff0b47ff8fa9e54c25df416cb.jar" />
+    </item>
+    <item
+        jar="D:\CypressPoint\libs\commons-codec-1.6.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b7f0fc8f61ecadeb3695f0b9464755eee44374d4">
+        <dex dex="D:\CypressPoint\build\intermediates\pre-dexed\debug\commons-codec-1.6-9459b82a1204cf479a656e62bdf37ed696559be0.jar" />
+    </item>
+    <item
+        jar="D:\CypressPoint\build\intermediates\exploded-aar\CypressPoint\SlideSwitch\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d22a7050f703778fde13fb714cbbf90e20ba3a44">
+        <dex dex="D:\CypressPoint\build\intermediates\pre-dexed\debug\classes-69854c3faab62a18aa19f1a69603d827964f77ae.jar" />
+    </item>
+    <item
+        jar="D:\CypressPoint\libs\locSDK_4.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8b405c3054e12d913fa5aafb160c294e642dc673">
+        <dex dex="D:\CypressPoint\build\intermediates\pre-dexed\debug\locSDK_4.0-f3f20f8f28778b464fc349f51295e6993f5df4bc.jar" />
+    </item>
+    <item
+        jar="D:\CypressPoint\libs\httpclient-cache-4.2.6.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8f80dbdf3a82e1d9d555f7ec7322b1a6507e3ee8">
+        <dex dex="D:\CypressPoint\build\intermediates\pre-dexed\debug\httpclient-cache-4.2.6-7803ddb6585bf06438027fda2da8a1da2aa5aa6f.jar" />
+    </item>
+    <item
+        jar="D:\CypressPoint\libs\android-async-http-1.4.5.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="77bf7cacf9cefe19dc105e5425d2eb1bb5285881">
+        <dex dex="D:\CypressPoint\build\intermediates\pre-dexed\debug\android-async-http-1.4.5-b0a20093b10f8978a9c087feffdb96250418a5d9.jar" />
+    </item>
+    <item
+        jar="D:\CypressPoint\libs\fluent-hc-4.2.6.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="43e7ff34c24fe1ace65b94b9204c7333b3628ef1">
+        <dex dex="D:\CypressPoint\build\intermediates\pre-dexed\debug\fluent-hc-4.2.6-2db4340fce5bba22b2b0684804b61033e27bb6ee.jar" />
     </item>
     <item
         jar="D:\Development\sdk\extras\android\m2repository\com\android\support\support-annotations\20.0.0\support-annotations-20.0.0.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="9d9013e9ff35fc3756411e62873c363c70c638fa">
-        <dex dex="D:\Development\Projects\CypressPoint\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-dff848de71e4ef21de0f0138de149e9d21fe5880.jar" />
+        <dex dex="D:\CypressPoint\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-dff848de71e4ef21de0f0138de149e9d21fe5880.jar" />
     </item>
     <item
-        jar="D:\Development\Projects\CypressPoint\libs\gson-2.2.4.jar"
+        jar="D:\CypressPoint\build\intermediates\exploded-aar\CypressPoint\library\unspecified\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="973e832af433b44c3ed11c426f2f390b29f3f3f8">
-        <dex dex="D:\Development\Projects\CypressPoint\build\intermediates\pre-dexed\debug\gson-2.2.4-a61be72950c98f6309602b206279d7b6a24916b8.jar" />
+        sha1="201c43719f0e4b8a9fad161fb8f6a6934fb199dc">
+        <dex dex="D:\CypressPoint\build\intermediates\pre-dexed\debug\classes-7c1c06a2ee780d660f6526dca3607e17786aa90e.jar" />
     </item>
     <item
-        jar="D:\Development\Projects\CypressPoint\libs\fluent-hc-4.2.6.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="43e7ff34c24fe1ace65b94b9204c7333b3628ef1">
-        <dex dex="D:\Development\Projects\CypressPoint\build\intermediates\pre-dexed\debug\fluent-hc-4.2.6-6157f2a1bf704f9c099654ffa14bd15e9868209e.jar" />
-    </item>
-    <item
-        jar="D:\Development\Projects\CypressPoint\libs\android-async-http-1.4.5.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="77bf7cacf9cefe19dc105e5425d2eb1bb5285881">
-        <dex dex="D:\Development\Projects\CypressPoint\build\intermediates\pre-dexed\debug\android-async-http-1.4.5-4bc06c2274b0b3cb5c8c4787a919c9a79f8eba8c.jar" />
-    </item>
-    <item
-        jar="D:\Development\Projects\CypressPoint\libs\locSDK_4.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="8b405c3054e12d913fa5aafb160c294e642dc673">
-        <dex dex="D:\Development\Projects\CypressPoint\build\intermediates\pre-dexed\debug\locSDK_4.0-b40ba02e77106fa442bd38ee58cd2b310259c162.jar" />
-    </item>
-    <item
-        jar="D:\Development\Projects\CypressPoint\build\intermediates\exploded-aar\CypressPoint\library_userimg\unspecified\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="b434e30d8f3b8813ae33b31d0b940ec199f440b0">
-        <dex dex="D:\Development\Projects\CypressPoint\build\intermediates\pre-dexed\debug\classes-5c8cc5eeb43de3f188ac277099b38cb8f3d7e84c.jar" />
-    </item>
-    <item
-        jar="D:\Development\Projects\CypressPoint\libs\httpmime-4.2.6.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="15b713f66acc0988850b989649174add104083ed">
-        <dex dex="D:\Development\Projects\CypressPoint\build\intermediates\pre-dexed\debug\httpmime-4.2.6-37c8356b3480caedfbea80e06a8075351737a4b3.jar" />
-    </item>
-    <item
-        jar="D:\Development\Projects\CypressPoint\build\intermediates\exploded-aar\CypressPoint\SlideSwitch\unspecified\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="a49c7d76007bc983da28cae9fd8ddec8b6035078">
-        <dex dex="D:\Development\Projects\CypressPoint\build\intermediates\pre-dexed\debug\classes-6dcd6ffd37ad6dc3ddd513e06629dc5e7c3f681a.jar" />
-    </item>
-    <item
-        jar="D:\Development\Projects\CypressPoint\libs\commons-logging-1.1.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="5043bfebc3db072ed80fbd362e7caf00e885d8ae">
-        <dex dex="D:\Development\Projects\CypressPoint\build\intermediates\pre-dexed\debug\commons-logging-1.1.1-8d5c0ad4f57d285e794fc6e8c1e10711b7567985.jar" />
-    </item>
-    <item
-        jar="D:\Development\Projects\CypressPoint\libs\httpclient-cache-4.2.6.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="8f80dbdf3a82e1d9d555f7ec7322b1a6507e3ee8">
-        <dex dex="D:\Development\Projects\CypressPoint\build\intermediates\pre-dexed\debug\httpclient-cache-4.2.6-440edbdc6b6d45c1ea1447f703c8a5c8048ff76b.jar" />
-    </item>
-    <item
-        jar="D:\Development\Projects\CypressPoint\libs\easyandroidanimationslibrary-v0.5.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="81d390299222db75e62708400b299080d122b28b">
-        <dex dex="D:\Development\Projects\CypressPoint\build\intermediates\pre-dexed\debug\easyandroidanimationslibrary-v0.5-c6443c24806e75acfc6265af5a1caf3992f1081f.jar" />
-    </item>
-    <item
-        jar="D:\Development\Projects\CypressPoint\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\jars\classes.jar"
+        jar="D:\CypressPoint\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="8694693636ab36910c8100ce527c258ff3ebece0">
-        <dex dex="D:\Development\Projects\CypressPoint\build\intermediates\pre-dexed\debug\classes-63562408fc624865050c8e286417340de9266dcf.jar" />
+        <dex dex="D:\CypressPoint\build\intermediates\pre-dexed\debug\classes-60d7249f875827279e2b226ad845ad2104703961.jar" />
     </item>
     <item
-        jar="D:\Development\Projects\CypressPoint\build\intermediates\exploded-aar\com.android.support\appcompat-v7\20.0.0\jars\classes.jar"
+        jar="D:\CypressPoint\build\intermediates\exploded-aar\CypressPoint\library_userimg\unspecified\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef">
-        <dex dex="D:\Development\Projects\CypressPoint\build\intermediates\pre-dexed\debug\classes-2494e7ab0e0a8cf3722e6915a75c01cc7bbbfb32.jar" />
+        sha1="84cbc75b8dca0c7cbe2f9a25133d7caea2dcdf68">
+        <dex dex="D:\CypressPoint\build\intermediates\pre-dexed\debug\classes-bc6842fed820b347c0ddecb4e9ad8829229d73d1.jar" />
     </item>
     <item
-        jar="D:\Development\Projects\CypressPoint\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\jars\libs\internal_impl-20.0.0.jar"
+        jar="D:\CypressPoint\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\jars\libs\internal_impl-20.0.0.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d">
-        <dex dex="D:\Development\Projects\CypressPoint\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-cd856ed2b2782906908ba8ea9181ca6097593107.jar" />
-    </item>
-    <item
-        jar="D:\Development\Projects\CypressPoint\libs\commons-codec-1.6.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="b7f0fc8f61ecadeb3695f0b9464755eee44374d4">
-        <dex dex="D:\Development\Projects\CypressPoint\build\intermediates\pre-dexed\debug\commons-codec-1.6-3eaac60e5480d94aadfc9e7a0d472491cbfc7283.jar" />
+        <dex dex="D:\CypressPoint\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-bf5e96e2d49ceb9106fda82e0fea86bc6f02d04a.jar" />
     </item>
 
 </items>

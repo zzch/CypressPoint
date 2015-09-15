@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/D:/Development/Projects/CypressPoint/res/values-1280x720/strings.xml -->
+    <!-- From: file:/D:/CypressPoint/res/values-1280x720/strings.xml -->
     <eat-comment/>
     <dimen name="button_height">40dp</dimen>
     <dimen name="button_jia_x">103dp</dimen>

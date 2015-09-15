@@ -54,4 +54,4 @@
         android:visibility="gone"
         android:contentDescription="@string/d" />
 
-</LinearLayout><!-- From: file:/D:/Development/Projects/CypressPoint/res/layout/pull_to_refresh_header.xml -->
+</LinearLayout><!-- From: file:/D:/CypressPoint/res/layout/pull_to_refresh_header.xml -->

@@ -130,16 +130,15 @@ public class HomePageActivity extends Activity {
 				myuser_face = BitmapFactory.decodeFile("/mnt/sdcard/testfile/golf.jpg");
 				Intent yulemoshi = new Intent(HomePageActivity.this,
 						DoudizhuMain.class);
-				Intent editInfo = new Intent(HomePageActivity.this, InformationChangesActivity.class);
+				Intent editInfo = new Intent(HomePageActivity.this, SelfhoodActivity.class);
 				if (myuser_face==null)
 				{
+					editInfo.putExtra("GetInFromeDoudizhu","editInfo");
 					startActivity(editInfo);
 					Toast.makeText(HomePageActivity.this,"请设置个人资料",Toast.LENGTH_SHORT).show();
-					finish();
 				}else
 				{
 					startActivity(yulemoshi);
-					finish();
 				}
 //				startActivity(yulemoshi);
 //				finish();

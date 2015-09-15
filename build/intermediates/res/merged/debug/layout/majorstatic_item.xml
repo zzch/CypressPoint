@@ -147,4 +147,4 @@
         android:layout_marginBottom="32dp"
         android:src="@drawable/icon_arrow" />
 
-</RelativeLayout><!-- From: file:/D:/Development/Projects/CypressPoint/res/layout/majorstatic_item.xml -->
+</RelativeLayout><!-- From: file:/D:/CypressPoint/res/layout/majorstatic_item.xml -->

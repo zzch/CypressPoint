@@ -185,7 +185,7 @@
 
                     <com.leaking.slideswitch.SlideSwitch
                         android:id="@+id/bdswitch_birdie"
-                        android:layout_width="20dp"
+                        android:layout_width="10dp"
                         android:layout_height="match_parent"
                         android:layout_alignParentRight="true"
                         slideswitch:shape1="circle"
@@ -509,4 +509,4 @@
     </ScrollView>
 
 </LinearLayout>
-<!-- From: file:/D:/Development/Projects/CypressPoint/res/layout/bidongfrag_layout.xml -->
+<!-- From: file:/D:/CypressPoint/res/layout/bidongfrag_layout.xml -->

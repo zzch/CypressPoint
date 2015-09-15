@@ -43,6 +43,7 @@ import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.view.competition.CompetitionAdd;
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
 import cn.com.zcty.ILovegolf.activity.view.myself.SelectPicPopupWindow;
+import cn.com.zcty.ILovegolf.doudizhu.DoudizhuMain;
 import cn.com.zcty.ILovegolf.model.CompetitionAddmatch;
 import cn.com.zcty.ILovegolf.tools.CircleImageView;
 import cn.com.zcty.ILovegolf.utils.APIService;
@@ -219,9 +220,17 @@ public class SelfhoodActivity extends Activity{
 				}else if(nickname.equals("")){
 					Toast.makeText(SelfhoodActivity.this, "请先填写昵称", Toast.LENGTH_LONG).show();
 				}else{
-					
-				
-				new Selfhood().start();
+				Intent in = getIntent();
+					String isFromDoudizhu = in.getStringExtra("GetInFromeDoudizhu");
+					if ("editInfo".equals(isFromDoudizhu))
+					{
+						startActivity(new Intent(SelfhoodActivity.this, DoudizhuMain.class));
+						finish();
+					}
+					else {
+
+						new Selfhood().start();
+					}
 			}
 				}
 		});
@@ -379,8 +388,11 @@ public class SelfhoodActivity extends Activity{
 		}
 		public void getData(){
 			FileUtil.saveMyBitmap(image);
-			
+
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
+			SharedPreferences.Editor editor = sp.edit();
+			editor.putString("nickname",nickname);
+			editor.commit();
 			String token=sp.getString("token", "token");
 			String path = APIService.GENGGXIN+"token="+token+"&gender="+sex+"&nickname="+nickname;
 			String jsonData = HttpUtils.uploadImage(path, "/mnt/sdcard/testfile/golf.jpg");

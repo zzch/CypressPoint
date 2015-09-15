@@ -14,4 +14,4 @@
         android:id="@+id/listView"
         android:layout_weight="1"/>
 </LinearLayout>
-<!-- From: file:/D:/Development/Projects/CypressPoint/res/layout/rank_listview_layout.xml -->
+<!-- From: file:/D:/CypressPoint/res/layout/rank_listview_layout.xml -->

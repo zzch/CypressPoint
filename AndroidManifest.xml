@@ -96,7 +96,7 @@
        <activity android:name="cn.com.zcty.ILovegolf.activity.view.myself.ChangesPwsActivity" android:screenOrientation="portrait"></activity>
        <activity android:name="cn.com.zcty.ILovegolf.activity.view.myself.ChangesPhone" android:screenOrientation="portrait"></activity>
        <activity android:name="cn.com.zcty.ILovegolf.activity.view.myself.FeedBackActivity" android:screenOrientation="portrait"></activity>
-       <activity android:name="cn.com.zcty.ILovegolf.activity.view.HomePageActivity" android:screenOrientation="portrait"></activity>
+       <activity android:name="cn.com.zcty.ILovegolf.activity.view.HomePageActivity" android:screenOrientation="portrait" android:launchMode="singleTask"></activity>
 
        <activity android:name="cn.com.zcty.ILovegolf.activity.view.myself.SettionsActivity" android:screenOrientation="portrait"></activity> 
        <activity android:name="cn.com.zcty.ILovegolf.activity.view.login_register.GuidActivity" android:screenOrientation="portrait"></activity> 
@@ -124,7 +124,7 @@
           <activity android:name="cn.com.zcty.ILovegolf.activity.view.CreateScoreCard" android:screenOrientation="portrait"></activity>
          <activity android:name="cn.com.zcty.ILovegolf.activity.view.AddMatchActivity" android:screenOrientation="portrait"></activity>
 
-        <activity android:name="cn.com.zcty.ILovegolf.doudizhu.DoudizhuMain" android:screenOrientation="portrait"/>
+        <activity android:name="cn.com.zcty.ILovegolf.doudizhu.DoudizhuMain" android:screenOrientation="portrait" android:launchMode="singleTask"/>
         <activity android:name="cn.com.zcty.ILovegolf.doudizhu.AtyBidongStart" android:screenOrientation="portrait"/>
         <activity android:name="cn.com.zcty.ILovegolf.doudizhu.AtyDoudizhuStart" android:screenOrientation="portrait"/>
         <activity android:name="cn.com.zcty.ILovegolf.doudizhu.AtyVegasStart" android:screenOrientation="portrait"/>

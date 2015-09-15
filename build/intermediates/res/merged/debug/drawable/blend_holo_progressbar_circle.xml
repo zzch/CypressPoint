@@ -7,4 +7,4 @@
     <item>
         <rotate android:drawable="@drawable/blend_spinner_76_inner_holo" android:fromDegrees="720.0" android:toDegrees="0.0" android:pivotX="50.0%" android:pivotY="50.0%" />
     </item>
-</layer-list><!-- From: file:/D:/Development/Projects/CypressPoint/res/drawable/blend_holo_progressbar_circle.xml -->
+</layer-list><!-- From: file:/D:/CypressPoint/res/drawable/blend_holo_progressbar_circle.xml -->

@@ -476,6 +476,8 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
 //        if (match.getBirdie_x2().equals("1") && match.getEagle_x4().equals("1"))
 //        {
 
+        if(parsP1==parsP2)
+            return;
         int p1 = WmUtil.whatPar(par, parsP1);
         int p2 = WmUtil.whatPar(par, parsP2);
         int type = 0;
@@ -793,8 +795,6 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
                 HolesInfo info = WmUtil.holesinfos[hole_number - 1];
                 if (info == null && hole_number > 1) {
                     info = WmUtil.holesinfos[hole_number - 2];
-                } else {
-//                    RankActivity.launch(this, match, new ArrayList<Player>(), 0);
                 }
                 if (info != null) {
                     TreeMap<Integer, Player> treemap = new TreeMap<Integer, Player>() {
@@ -814,6 +814,12 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
                         tmpList.add(treemap.get(key));
                     }
                     Collections.reverse(tmpList);
+                    RankActivity.launch(AtyBidongStart.this, match, tmpList, 0);
+                }else
+                {
+                    List<Player> tmpList = new ArrayList<Player>();
+                    tmpList.add(myplayer);
+                    tmpList.add(player);
                     RankActivity.launch(AtyBidongStart.this, match, tmpList, 0);
                 }
                 break;
@@ -1005,7 +1011,21 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
 //>>>>>>> 89e8e4acd2f7ede6944c0bd587f41db93878dabe
         {
 
-            WmUtil.tie_number = info == null ? tieNumber : (tieNumber == 1 ? info.getTie_nubmer() + tieNumber : info.getTie_nubmer());
+            boolean lastDraw = false;
+            if(info!=null) {
+                int lastp1 = info.getP1().getStroke(hole_number - 1);
+                int lastp2 = info.getP2().getStroke(hole_number - 1);
+//                int lastp3 = info.getP3().getStroke(hole_number - 1);
+                lastDraw = (lastp2== lastp1);
+            }
+            if(lastDraw) {
+                WmUtil.tie_number = info == null ? tieNumber : (tieNumber == 1 ? info.getTie_nubmer() + tieNumber : info.getTie_nubmer());
+            }
+            else
+            {
+                WmUtil.tie_number = tieNumber;
+            }
+//            WmUtil.tie_number = info == null ? tieNumber : (tieNumber == 1 ? info.getTie_nubmer() + tieNumber : info.getTie_nubmer());
         }else
         {
             WmUtil.tie_number = 0;
@@ -1230,19 +1250,21 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (data == null) {
-            btnConfirmResult.setText("下一洞");
-            btnPreHole.setText("上一洞");
-            isReEdit = false;
-            isnext = true;
+//            btnConfirmResult.setText("下一洞");
+//            btnPreHole.setText("上一洞");
+//            isReEdit = false;
+//            isnext = true;
             return;
         }
         switch (requestCode) {
             case 1:
                 if (resultCode == RESULT_OK) {
                     String retunData = data.getStringExtra("whichPar");
-                    par = Integer.valueOf(retunData);
-                    Log.i("RETURN", retunData);
-                    btnSelectPars.setText(retunData);
+                    if(retunData!=null) {
+                        par = Integer.valueOf(retunData);
+                        Log.i("RETURN", retunData);
+                        btnSelectPars.setText(retunData);
+                    }
                 }
                 break;
             case 2:

@@ -216,6 +216,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="cn.com.zcty.ILovegolf.activity.view.HomePageActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
             android:name="cn.com.zcty.ILovegolf.activity.view.myself.SettionsActivity"
@@ -268,6 +269,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="cn.com.zcty.ILovegolf.doudizhu.DoudizhuMain"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
             android:name="cn.com.zcty.ILovegolf.doudizhu.AtyBidongStart"

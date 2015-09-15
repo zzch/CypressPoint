@@ -265,4 +265,4 @@
         android:textColor="@color/hei6"
         android:textSize="@dimen/txsize_small_x" />
 
-</LinearLayout><!-- From: file:/D:/Development/Projects/CypressPoint/res/layout/activity_invite.xml -->
+</LinearLayout><!-- From: file:/D:/CypressPoint/res/layout/activity_invite.xml -->

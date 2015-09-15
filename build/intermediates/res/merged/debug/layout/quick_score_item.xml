@@ -166,4 +166,4 @@
         android:layout_alignParentLeft="true"
         android:background="@color/fengexian" />
 
-</RelativeLayout><!-- From: file:/D:/Development/Projects/CypressPoint/res/layout/quick_score_item.xml -->
+</RelativeLayout><!-- From: file:/D:/CypressPoint/res/layout/quick_score_item.xml -->

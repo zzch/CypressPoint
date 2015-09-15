@@ -3,4 +3,4 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_pressed="true" android:drawable="@drawable/btn_style_alert_dialog_special_pressed" />
     <item android:drawable="@drawable/btn_style_alert_dialog_special_normal" />
-</selector><!-- From: file:/D:/Development/Projects/CypressPoint/res/drawable/btn_style_alert_dialog_special.xml -->
+</selector><!-- From: file:/D:/CypressPoint/res/drawable/btn_style_alert_dialog_special.xml -->

@@ -3,4 +3,4 @@
     <item android:state_pressed="true" android:drawable="@drawable/drawable_solid_cor5_bluedark_"/>
     <item android:state_focused="true" android:drawable="@drawable/drawable_solid_cor5_blue_"/>
     <item android:drawable="@drawable/drawable_solid_cor5_blue_" />
-</selector><!-- From: file:/D:/Development/Projects/CypressPoint/res/drawable/selector_solid_cor3_blue_.xml -->
+</selector><!-- From: file:/D:/CypressPoint/res/drawable/selector_solid_cor3_blue_.xml -->

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="D:\Development\Projects\CypressPoint\SlideSwitch\src\main\res"><file name="ic_launcher" path="D:\Development\Projects\CypressPoint\SlideSwitch\src\main\res\drawable-mdpi\ic_launcher.png" qualifiers="mdpi-v4" type="drawable"/><file path="D:\Development\Projects\CypressPoint\SlideSwitch\src\main\res\values\attrs.xml" qualifiers=""><declare-styleable name="slideswitch">
+<merger version="3"><dataSet config="main"><source path="D:\CypressPoint\SlideSwitch\src\main\res"><file name="ic_launcher" path="D:\CypressPoint\SlideSwitch\src\main\res\drawable-mdpi\ic_launcher.png" qualifiers="mdpi-v4" type="drawable"/><file path="D:\CypressPoint\SlideSwitch\src\main\res\values\attrs.xml" qualifiers=""><declare-styleable name="slideswitch">
         <attr format="color" name="themeColor"/>
         <attr format="boolean" name="isOpen"/>
         <attr name="shape1">
             <enum name="rect" value="1"/>
             <enum name="circle" value="2"/>
         </attr>
-    </declare-styleable></file><file path="D:\Development\Projects\CypressPoint\SlideSwitch\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">SlideSwitch</string></file><file path="D:\Development\Projects\CypressPoint\SlideSwitch\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="AppBaseTheme">
+    </declare-styleable></file><file path="D:\CypressPoint\SlideSwitch\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">SlideSwitch</string></file><file path="D:\CypressPoint\SlideSwitch\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style><style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
@@ -14,6 +14,6 @@
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         -->
-    </style></file><file path="D:\Development\Projects\CypressPoint\SlideSwitch\src\main\res\values-v11\styles.xml" qualifiers="v11"><style name="AppBaseTheme" parent="android:Theme.Holo.Light">
+    </style></file><file path="D:\CypressPoint\SlideSwitch\src\main\res\values-v11\styles.xml" qualifiers="v11"><style name="AppBaseTheme" parent="android:Theme.Holo.Light">
         <!-- API 11 theme customizations can go here. -->
-    </style></file></source><source path="D:\Development\Projects\CypressPoint\SlideSwitch\build\generated\res\rs\debug"/><source path="D:\Development\Projects\CypressPoint\SlideSwitch\build\generated\res\resValues\debug"/></dataSet><dataSet config="debug"><source path="D:\Development\Projects\CypressPoint\SlideSwitch\src\debug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="slideswitch"><attr format="color" name="themeColor"/><attr format="boolean" name="isOpen"/><attr name="shape1"><enum name="rect" value="1"/><enum name="circle" value="2"/></attr></declare-styleable></configuration></mergedItems></merger>
+    </style></file></source><source path="D:\CypressPoint\SlideSwitch\build\generated\res\rs\debug"/><source path="D:\CypressPoint\SlideSwitch\build\generated\res\resValues\debug"/></dataSet><dataSet config="debug"><source path="D:\CypressPoint\SlideSwitch\src\debug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="slideswitch"><attr format="color" name="themeColor"/><attr format="boolean" name="isOpen"/><attr name="shape1"><enum name="rect" value="1"/><enum name="circle" value="2"/></attr></declare-styleable></configuration></mergedItems></merger>
