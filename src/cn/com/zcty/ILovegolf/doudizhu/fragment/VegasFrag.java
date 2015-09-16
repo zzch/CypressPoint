@@ -744,8 +744,8 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
                     intent.setDataAndType(data.getData(), "image/*");
                     intent.putExtra("crop", true);
                     intent.putExtra("scale", true);
-                    intent.putExtra("outputX", 800);
-                    intent.putExtra("outputY", 800);
+                    intent.putExtra("outputX", 400);
+                    intent.putExtra("outputY", 400);
                     intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
 
                     startActivityForResult(intent, 2);
@@ -763,6 +763,8 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
                 intent.setDataAndType(imageUri, "image/*");
                 intent.putExtra("crop", true);
                 intent.putExtra("scale", true);
+                intent.putExtra("outputX", 400);
+                intent.putExtra("outputY", 400);
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
                 startActivityForResult(intent, 2);
 

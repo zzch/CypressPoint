@@ -90,6 +90,7 @@ private void initView(){
         {
             Intent inte = new Intent(LaoyingActivity.this,ShuangBeibzgActivity.class);
             inte.putExtra("shuang1",name.substring(0));
+
             startActivity(inte);
         }
     }

@@ -132,7 +132,6 @@ public class SelfhoodActivity extends Activity{
 		userNameEditText = (EditText) findViewById(R.id.selfhood_username);
 		sexRadioGroup = (RadioGroup) findViewById(R.id.main_radio);
 		baocunButton = (Button) findViewById(R.id.selfhood_baocun);
-		
 		baocunButton.setBackgroundColor(0xff64af66);
 		baocunButton.setTextColor(0xffededed);
 		
@@ -224,6 +223,10 @@ public class SelfhoodActivity extends Activity{
 					String isFromDoudizhu = in.getStringExtra("GetInFromeDoudizhu");
 					if ("editInfo".equals(isFromDoudizhu))
 					{
+						SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
+						SharedPreferences.Editor editor = sp.edit();
+						editor.putString("nickname",nickname);
+						editor.commit();
 						startActivity(new Intent(SelfhoodActivity.this, DoudizhuMain.class));
 						finish();
 					}

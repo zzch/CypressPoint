@@ -285,6 +285,7 @@ public class BidongFrag extends Fragment implements View.OnClickListener
             public void open()
             {
                 match.setDraw_to_win("1");
+                match.setDrawWhoWin(Match.LEFT);
                 tie2NextHole.setState(false);
                 bdDrawWhichWinRoot.setVisibility(View.VISIBLE);
                 bdDrawP1winRl.setClickable(true);
@@ -489,9 +490,8 @@ public class BidongFrag extends Fragment implements View.OnClickListener
                         intent.setDataAndType(data.getData(), "image/*");
                         intent.putExtra("crop", true);
                         intent.putExtra("scale", true);
-
-                        intent.putExtra("outputX", 800);
-                        intent.putExtra("outputY", 800);
+                        intent.putExtra("outputX", 400);
+                        intent.putExtra("outputY", 400);
                         intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
 
                         startActivityForResult(intent, 2);
@@ -514,6 +514,8 @@ public class BidongFrag extends Fragment implements View.OnClickListener
                 intent.setDataAndType(imageUri, "image/*");
                 intent.putExtra("crop", true);
                 intent.putExtra("scale", true);
+                intent.putExtra("outputX", 400);
+                intent.putExtra("outputY", 400);
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
                 startActivityForResult(intent, 2);
 
