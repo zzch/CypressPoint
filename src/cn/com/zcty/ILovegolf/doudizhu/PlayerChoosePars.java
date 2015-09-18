@@ -135,14 +135,18 @@ public class PlayerChoosePars extends Activity implements View.OnClickListener
                 Log.d("onClick","onClick=======queding");
 
                 String result = parsSelected.getText().toString();
-                if(!result.equals("")){
+                if(!result.equals("") && !result.equals("0") && !result.equals("00")){
                     Intent intent = new Intent();
                     intent.putExtra("PCPResult",result);
                     setResult(RESULT_OK, intent);
                     finish();
-                }else{
-                    Toast.makeText(this,"请选择杆数",Toast.LENGTH_SHORT);
-                }
+                }else
+
+
+                    {
+                        Toast.makeText(this,"请选择杆数",Toast.LENGTH_SHORT).show();
+                    }
+
 
 //                break;
 

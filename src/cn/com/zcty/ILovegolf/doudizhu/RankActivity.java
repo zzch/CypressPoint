@@ -105,29 +105,29 @@ public class RankActivity extends Activity
 
     }
 
-    private void switchImg(int earned, int position)
-    {
-        for (int i = 0; i < players.size(); i++)
-        {
-            if (earned == getearned(players.get(i), match.getCurrenthole()))
-            {
-                list.add(players.get(i));
-                break;
-            }
-        }
+//    private void switchImg(int earned, int position)
+//    {
+//        for (int i = 0; i < players.size(); i++)
+//        {
+//            if (earned == getearned(players.get(i), match.getCurrenthole()))
+//            {
+//                list.add(players.get(i));
+//                break;
+//            }
+//        }
+//
+//    }
 
-    }
 
-
-    int getearned(Player player, int hole)
-    {
-        int score = 0;
-        for (int i = 0; i < hole; i++)
-        {
-            score += WmUtil.getStroke(hole, player);
-        }
-        return score;
-    }
+//    int getearned(Player player, int hole)
+//    {
+//        int score = 0;
+//        for (int i = 0; i < hole; i++)
+//        {
+//            score += WmUtil.getStroke(hole, player);
+//        }
+//        return score;
+//    }
 
     @Override
     protected void onPause() {

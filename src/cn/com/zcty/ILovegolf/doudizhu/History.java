@@ -17,9 +17,13 @@ import cn.com.zcty.ILovegolf.doudizhu.entity.Match;
 import cn.com.zcty.ILovegolf.doudizhu.entity.Player;
 import cn.com.zcty.ILovegolf.doudizhu.entity.User;
 import cn.com.zcty.ILovegolf.doudizhu.utills.HistoryListAdapter;
+import cn.com.zcty.ILovegolf.doudizhu.utills.WmUtil;
 import cn.com.zcty.ILovegolf.doudizhu.utills.Xlog;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -59,6 +63,26 @@ public class History extends Activity
         hisListView.setOnItemClickListener(this);
 //         = new ArrayList<Match>();
         adapter = new HistoryListAdapter(matchesData,this);
+
+        Collections.sort(matchesData, new Comparator<Match>() {
+            /**
+             *
+             * @param lhs
+             * @param rhs
+             * @return an integer < 0 if lhs is less than rhs, 0 if they are
+             *         equal, and > 0 if lhs is greater than rhs,比较数据大小时,这里比的是时间
+             */
+            @Override
+            public int compare(Match lhs, Match rhs) {
+                Date date1 = WmUtil.stringToDate(lhs.getPlayed_at());
+                Date date2 = WmUtil.stringToDate(rhs.getPlayed_at());
+                // 对日期字段进行升序，如果欲降序可采用after方法
+                if (date1.before(date2)) {
+                    return 1;
+                }
+                return -1;
+            }
+        });
         hisListView.setAdapter(adapter);
         textView1 =(TextView) findViewById(R.id.textView1);
         textView1.setText("历史");
@@ -89,14 +113,17 @@ public class History extends Activity
         if (type.equals("比洞"))
         {
            AtyBidongStart.launch(this,match,players,false);
+            finish();
         }
         if (type.equals("斗地主"))
         {
            AtyDoudizhuStart.launch(this, match, players,false);
+            finish();
         }
         if (type.equals("拉斯维加斯"))
         {
             AtyVegasStart.launch(this, match,players,false);
+            finish();
         }
     }
 }

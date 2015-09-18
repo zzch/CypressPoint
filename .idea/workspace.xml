@@ -2,97 +2,185 @@
 <project version="4">
   <component name="AndroidLayouts">
     <shared>
-      <config>
-        <devices>
-          <device id="Nexus 5" />
-        </devices>
-      </config>
+      <config />
     </shared>
-    <layouts>
-      <layout url="file://$PROJECT_DIR$/res/layout/activity_information.xml">
-        <config>
-          <theme>@style/AppBaseTheme</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/res/layout/bidongfrag_layout.xml">
-        <config>
-          <theme>@style/AppTheme</theme>
-        </config>
-      </layout>
-    </layouts>
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aac14342-9323-4da8-8a5a-6cb6cb60bbce" name="Default" comment="">
+    <list default="true" id="a38c3928-7e7b-44ad-90b2-183e0deabbd9" name="Default" comment="">
+      <change type="DELETED" beforePath="D:\CypressPoint\SlideSwitch\build\intermediates\manifest\tmp\manifestMerger8262941771732274230.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\CypressPoint\SlideSwitch\build\intermediates\manifest\tmp\manifestMerger900813961880702499.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\CypressPoint\build\intermediates\classes\debug\cn\com\zcty\ILovegolf\doudizhu\AtyVegasStart$10.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\CypressPoint\library\build\intermediates\manifest\tmp\manifestMerger3158101753300128611.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\CypressPoint\library\build\intermediates\manifest\tmp\manifestMerger4702060302495593072.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\CypressPoint\library_userimg\build\intermediates\manifest\tmp\manifestMerger1355980789278113577.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\CypressPoint\library_userimg\build\intermediates\manifest\tmp\manifestMerger9141891966672611825.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart$1.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart$2.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart$3.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart$4.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart$4.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart$5.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart$5.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart$6.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart$6.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart$7.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart$7.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart$8.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart$8.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart$1.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart$2.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart$3.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart$4.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart$4.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart$5.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart$5.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart$6.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart$6.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart$7.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart$8.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart$9.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart$9.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/classes/debug/com/meg7/widget/BaseImageView.class" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/classes/debug/com/meg7/widget/BaseImageView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/fragment/BidongFrag$6.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/fragment/BidongFrag$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart$1.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart$2.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart$3.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart$4.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart$5.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart$6.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart$7.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart$8.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart$9.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/tools/AutoListView.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/tools/AutoListView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/BdChoosePars.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/BdChoosePars.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/fragment/BidongFrag$1.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/fragment/BidongFrag$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/fragment/BidongFrag.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/fragment/BidongFrag.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/BirdActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/BirdActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/classes/debug/com/meg7/widget/CircleImageView.class" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/classes/debug/com/meg7/widget/CircleImageView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/classes/debug/com/meg7/widget/CustomShapeImageView.class" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/classes/debug/com/meg7/widget/CustomShapeImageView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/adapter/ClubsAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/adapter/ClubsAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/view/competition/CompetitionScoreActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/view/competition/CompetitionScoreActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/adapter/CompetitionScoreAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/adapter/CompetitionScoreAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/adapter/CreateScoreCardAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/adapter/CreateScoreCardAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/utills/CustomRankAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/utills/CustomRankAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/outputs/apk/CypressPoint-debug-unaligned.apk" afterPath="$PROJECT_DIR$/build/outputs/apk/CypressPoint-debug-unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/outputs/apk/CypressPoint-debug.apk" afterPath="$PROJECT_DIR$/build/outputs/apk/CypressPoint-debug.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/fragment/DoudizhuFrag$6.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/fragment/DoudizhuFrag$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/fragment/DoudizhuFrag$7.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/fragment/DoudizhuFrag$7.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/fragment/DoudizhuFrag.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/fragment/DoudizhuFrag.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/LaoyingActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/LaoyingActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/classes/debug/com/svgandroid/ParserHelper.class" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/classes/debug/com/svgandroid/ParserHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/classes/debug/com/meg7/widget/RectangleImageView.class" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/classes/debug/com/meg7/widget/RectangleImageView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/classes/debug/com/svgandroid/SVGParser$1.class" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/classes/debug/com/svgandroid/SVGParser$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/classes/debug/com/svgandroid/SVGParser$Gradient.class" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/classes/debug/com/svgandroid/SVGParser$Gradient.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/classes/debug/com/svgandroid/SVGParser$Properties.class" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/classes/debug/com/svgandroid/SVGParser$Properties.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/classes/debug/com/svgandroid/SVGParser$SVGHandler.class" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/classes/debug/com/svgandroid/SVGParser$SVGHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/classes/debug/com/svgandroid/SVGParser$StyleSet.class" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/classes/debug/com/svgandroid/SVGParser$StyleSet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/classes/debug/com/svgandroid/SVGParser.class" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/classes/debug/com/svgandroid/SVGParser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/view/SelfhoodActivity$2.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/view/SelfhoodActivity$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/view/SelfhoodActivity$3.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/view/SelfhoodActivity$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/view/SelfhoodActivity$4.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/view/SelfhoodActivity$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/view/SelfhoodActivity$5.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/view/SelfhoodActivity$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/view/SelfhoodActivity$Selfhood.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/view/SelfhoodActivity$Selfhood.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/view/SelfhoodActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/view/SelfhoodActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/classes/debug/com/meg7/widget/SvgImageView.class" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/classes/debug/com/meg7/widget/SvgImageView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/DoudizhuMain.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/DoudizhuMain.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/History$1.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/History$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/History.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/History.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/utills/HistoryListAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/utills/HistoryListAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/tools/ItemAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/tools/ItemAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/tools/ListViewSwipeGesture.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/tools/ListViewSwipeGesture.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/adapter/MajorScoreAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/adapter/MajorScoreAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/adapter/MajorScoreCardGridViewAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/adapter/MajorScoreCardGridViewAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/adapter/MajorScoresAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/adapter/MajorScoresAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/adapter/MajorStatisticsListViewAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/adapter/MajorStatisticsListViewAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/PlayerChoosePars.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/PlayerChoosePars.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/adapter/QuickScoreAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/adapter/QuickScoreAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/R$id.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/handmark/pulltorefresh/library/R$id.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/handmark/pulltorefresh/library/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/R$integer.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/R$integer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/R$layout.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/R$menu.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/R$menu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/R$mipmap.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/R$mipmap.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/R$string.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/R$style.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/R$style.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/R$styleable.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/R$styleable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/R$xml.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/R$xml.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/R.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/RankActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/RankActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/adapter/RankingAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/adapter/RankingAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/view/SchematicScoreActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/view/SchematicScoreActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/adapter/ScoreCardGridViewAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/adapter/ScoreCardGridViewAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/adapter/SectionScoreAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/adapter/SectionScoreAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/tools/SecurityPasswordEditText$onFocusListeners.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/tools/SecurityPasswordEditText$onFocusListeners.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/tools/SecurityPasswordEditText.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/tools/SecurityPasswordEditText.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/adapter/SelectSessionTAdapter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/adapter/SelectSessionTAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlideSwitch/build/outputs/aar/SlideSwitch-debug.aar" afterPath="$PROJECT_DIR$/SlideSwitch/build/outputs/aar/SlideSwitch-debug.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlideSwitch/build/outputs/aar/SlideSwitch-release.aar" afterPath="$PROJECT_DIR$/SlideSwitch/build/outputs/aar/SlideSwitch-release.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/view/fragment/StaticsFragmentTwo.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/view/fragment/StaticsFragmentTwo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/pullandsidesliplistview/lib/SwipeMenuListView.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/pullandsidesliplistview/lib/SwipeMenuListView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/view/TabHostActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/view/TabHostActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/update/UpdateManager.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/activity/update/UpdateManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/fragment/VegasFrag$5.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/fragment/VegasFrag$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/fragment/VegasFrag$6.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/fragment/VegasFrag$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/fragment/VegasFrag$7.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/fragment/VegasFrag$7.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/fragment/VegasFrag.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/fragment/VegasFrag.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/utills/WmUtil$1.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/utills/WmUtil$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/utills/WmUtil$2.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/utills/WmUtil$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/utills/WmUtil$3.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/utills/WmUtil$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/utills/WmUtil$4.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/utills/WmUtil$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/utills/WmUtil.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/doudizhu/utills/WmUtil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/tools/XListView$3.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/tools/XListView$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/tools/XListView$4.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/tools/XListView$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/tools/XListView.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/tools/XListView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/tools/XListViewFooter.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/tools/XListViewFooter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/tools/XListViewHeader.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/cn/com/zcty/ILovegolf/tools/XListViewHeader.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/android-async-http-1.4.5-b0a20093b10f8978a9c087feffdb96250418a5d9.jar" afterPath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/android-async-http-1.4.5-b0a20093b10f8978a9c087feffdb96250418a5d9.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/classes-60d7249f875827279e2b226ad845ad2104703961.jar" afterPath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/classes-60d7249f875827279e2b226ad845ad2104703961.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/classes-69854c3faab62a18aa19f1a69603d827964f77ae.jar" afterPath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/classes-69854c3faab62a18aa19f1a69603d827964f77ae.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/classes-7bd17e9dbbe91569a62889f675c6b90358a207d1.jar" afterPath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/classes-7bd17e9dbbe91569a62889f675c6b90358a207d1.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/classes-7c1c06a2ee780d660f6526dca3607e17786aa90e.jar" afterPath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/classes-7c1c06a2ee780d660f6526dca3607e17786aa90e.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/classes-bc6842fed820b347c0ddecb4e9ad8829229d73d1.jar" afterPath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/classes-bc6842fed820b347c0ddecb4e9ad8829229d73d1.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex/debug/classes.dex" afterPath="$PROJECT_DIR$/build/intermediates/dex/debug/classes.dex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlideSwitch/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/SlideSwitch/build/intermediates/bundles/debug/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlideSwitch/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/SlideSwitch/build/intermediates/bundles/release/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/CypressPoint/SlideSwitch/unspecified/jars/classes.jar" afterPath="$PROJECT_DIR$/build/intermediates/exploded-aar/CypressPoint/SlideSwitch/unspecified/jars/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/CypressPoint/library/unspecified/jars/classes.jar" afterPath="$PROJECT_DIR$/build/intermediates/exploded-aar/CypressPoint/library/unspecified/jars/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/CypressPoint/library_userimg/unspecified/jars/classes.jar" afterPath="$PROJECT_DIR$/build/intermediates/exploded-aar/CypressPoint/library_userimg/unspecified/jars/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/library/build/intermediates/bundles/debug/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/library/build/intermediates/bundles/release/classes.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/bundles/debug/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/bundles/release/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/commons-codec-1.6-9459b82a1204cf479a656e62bdf37ed696559be0.jar" afterPath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/commons-codec-1.6-9459b82a1204cf479a656e62bdf37ed696559be0.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/commons-logging-1.1.1-f6ccaf0f60ed3342494f516064cb8fd821e08d10.jar" afterPath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/commons-logging-1.1.1-f6ccaf0f60ed3342494f516064cb8fd821e08d10.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/easyandroidanimationslibrary-v0.5-fb51ffab37d445e254eb2cee097efd581ca61fb2.jar" afterPath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/easyandroidanimationslibrary-v0.5-fb51ffab37d445e254eb2cee097efd581ca61fb2.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/fluent-hc-4.2.6-2db4340fce5bba22b2b0684804b61033e27bb6ee.jar" afterPath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/fluent-hc-4.2.6-2db4340fce5bba22b2b0684804b61033e27bb6ee.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/gson-2.2.4-4a72d4dfe9d14eeff0b47ff8fa9e54c25df416cb.jar" afterPath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/gson-2.2.4-4a72d4dfe9d14eeff0b47ff8fa9e54c25df416cb.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/httpclient-cache-4.2.6-7803ddb6585bf06438027fda2da8a1da2aa5aa6f.jar" afterPath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/httpclient-cache-4.2.6-7803ddb6585bf06438027fda2da8a1da2aa5aa6f.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/httpmime-4.2.6-95e5e5a5da238690f2c5489f4085f9fe3516ae94.jar" afterPath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/httpmime-4.2.6-95e5e5a5da238690f2c5489f4085f9fe3516ae94.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-bf5e96e2d49ceb9106fda82e0fea86bc6f02d04a.jar" afterPath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-bf5e96e2d49ceb9106fda82e0fea86bc6f02d04a.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/outputs/aar/library-debug.aar" afterPath="$PROJECT_DIR$/library/build/outputs/aar/library-debug.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/outputs/aar/library-release.aar" afterPath="$PROJECT_DIR$/library/build/outputs/aar/library-release.aar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/outputs/aar/library_userimg-debug.aar" afterPath="$PROJECT_DIR$/library_userimg/build/outputs/aar/library_userimg-debug.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/outputs/aar/library_userimg-release.aar" afterPath="$PROJECT_DIR$/library_userimg/build/outputs/aar/library_userimg-release.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/locSDK_4.0-f3f20f8f28778b464fc349f51295e6993f5df4bc.jar" afterPath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/locSDK_4.0-f3f20f8f28778b464fc349f51295e6993f5df4bc.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/outputFileStates.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlideSwitch/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/SlideSwitch/build/intermediates/res/resources-debug-androidTest.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/build/intermediates/res/resources-debug-androidTest.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/library/build/intermediates/res/resources-debug-androidTest.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/res/resources-debug-androidTest.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/build/intermediates/res/resources-debug.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-dff848de71e4ef21de0f0138de149e9d21fe5880.jar" afterPath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-dff848de71e4ef21de0f0138de149e9d21fe5880.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart.java" afterPath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart.java" afterPath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart.java" afterPath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/fragment/BidongFrag.java" afterPath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/fragment/BidongFrag.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/BirdActivity.java" afterPath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/BirdActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/fragment/DoudizhuFrag.java" afterPath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/fragment/DoudizhuFrag.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/LaoyingActivity.java" afterPath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/LaoyingActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/activity/view/SelfhoodActivity.java" afterPath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/activity/view/SelfhoodActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/History.java" afterPath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/History.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/entity/HolesInfo.java" afterPath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/entity/HolesInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/PlayerChoosePars.java" afterPath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/PlayerChoosePars.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/generated/source/r/debug/cn/com/zcty/ILovegolf/activity/R.java" afterPath="$PROJECT_DIR$/build/generated/source/r/debug/cn/com/zcty/ILovegolf/activity/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/generated/source/r/debug/com/handmark/pulltorefresh/library/R.java" afterPath="$PROJECT_DIR$/build/generated/source/r/debug/com/handmark/pulltorefresh/library/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/build/intermediates/symbols/debug/R.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/RankActivity.java" afterPath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/RankActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/activity/view/TabHostActivity.java" afterPath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/activity/view/TabHostActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/fragment/VegasFrag.java" afterPath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/fragment/VegasFrag.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/utills/WmUtil.java" afterPath="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/utills/WmUtil.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/bidongfrag_layout.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/bidongfrag_layout.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/bidongfrag_layout.xml" afterPath="$PROJECT_DIR$/res/layout/bidongfrag_layout.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/doudizhuatystart.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/doudizhuatystart.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/doudizhuatystart.xml" afterPath="$PROJECT_DIR$/res/layout/doudizhuatystart.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/editplayerinfo.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/editplayerinfo.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/editplayerinfo.xml" afterPath="$PROJECT_DIR$/res/layout/editplayerinfo.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/incremental/mergeAssets/androidTest/debug/merger.xml" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/incremental/mergeAssets/androidTest/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/incremental/mergeAssets/debug/merger.xml" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/incremental/mergeAssets/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/incremental/mergeResourcesandroidTest/debug/merger.xml" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/incremental/mergeResourcesandroidTest/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/incremental/packageResourcesdebug/merger.xml" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/incremental/packageResourcesdebug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/bundles/debug/res/values-v11/values-v11.xml" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/bundles/debug/res/values-v11/values-v11.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/res/merged/androidTest/debug/values-v11/values-v11.xml" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/res/merged/androidTest/debug/values-v11/values-v11.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/bundles/debug/res/values-v14/values-v14.xml" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/bundles/debug/res/values-v14/values-v14.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/res/merged/androidTest/debug/values-v14/values-v14.xml" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/res/merged/androidTest/debug/values-v14/values-v14.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/bundles/debug/res/values/values.xml" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/bundles/debug/res/values/values.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_userimg/build/intermediates/res/merged/androidTest/debug/values/values.xml" afterPath="$PROJECT_DIR$/library_userimg/build/intermediates/res/merged/androidTest/debug/values/values.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/build/outputs/logs/manifest-merger-debug-report.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_20_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_annotations_20_0_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_18_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_18_0_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_20_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_20_0_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/vegasatystart.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/vegasatystart.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/vegasatystart.xml" afterPath="$PROJECT_DIR$/res/layout/vegasatystart.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CypressPoint.iws" />
@@ -121,31 +209,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TabHostActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/activity/view/TabHostActivity.java">
+      <file leaf-file-name="AtyVegasStart.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-              <folding />
+            <state vertical-scroll-proportion="-6.3333335">
+              <caret line="966" column="0" selection-start-line="966" selection-start-column="0" selection-end-line="966" selection-end-column="0" />
+              <folding>
+                <element signature="e#26630#26653#0" expanded="true" />
+                <element signature="e#28495#28503#0" expanded="true" />
+                <element signature="e#43788#43796#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SelfhoodActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/activity/view/SelfhoodActivity.java">
+      <file leaf-file-name="AtyBidongStart.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="245" column="28" selection-start-line="245" selection-start-column="28" selection-end-line="245" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SlideSwitch.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SlideSwitch/src/main/java/com/leaking/slideswitch/SlideSwitch.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="139" column="34" selection-start-line="139" selection-start-column="34" selection-end-line="139" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.11089494">
+              <caret line="918" column="22" selection-start-line="918" selection-start-column="22" selection-end-line="918" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -154,20 +236,8 @@
       <file leaf-file-name="BidongFrag.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/fragment/BidongFrag.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9">
-              <caret line="517" column="46" selection-start-line="517" selection-start-column="43" selection-end-line="517" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VegasFrag.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/fragment/VegasFrag.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19843341">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state vertical-scroll-proportion="-4.2">
+              <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -175,42 +245,22 @@
       </file>
       <file leaf-file-name="bidongfrag_layout.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/bidongfrag_layout.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
           <provider editor-type-id="android-designer">
             <state />
           </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.8">
-              <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
         </entry>
       </file>
-      <file leaf-file-name="DoudizhuFrag.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/fragment/DoudizhuFrag.java">
+      <file leaf-file-name="AtyDoudizhuStart.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="685" column="0" selection-start-line="685" selection-start-column="0" selection-end-line="685" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayerChoosePars.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/PlayerChoosePars.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="56" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BirdActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/BirdActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="102" column="12" selection-start-line="102" selection-start-column="12" selection-end-line="102" selection-end-column="12" />
+            <state vertical-scroll-proportion="-10.133333">
+              <caret line="1171" column="0" selection-start-line="1171" selection-start-column="0" selection-end-line="1171" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -2485,6 +2535,7 @@
     <option name="modificationStamps">
       <map>
         <entry key="D:\CypressPoint" value="7205040166000" />
+        <entry key="G:\917\CypressPoint" value="7205040166000" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2893,7 +2944,7 @@
                   </entry>
                 </map>
               </option>
-              <option name="name" value="library" />
+              <option name="name" value="SlideSwitch" />
               <option name="projectBuildClasspath">
                 <list>
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/announce" />
@@ -3023,13 +3074,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/LaoyingActivity.java" />
-        <option value="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/BirdActivity.java" />
-        <option value="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/activity/view/SelfhoodActivity.java" />
-        <option value="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/fragment/BidongFrag.java" />
-        <option value="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/fragment/VegasFrag.java" />
-        <option value="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/fragment/DoudizhuFrag.java" />
+        <option value="$PROJECT_DIR$/res/layout/vegasatystart.xml" />
         <option value="$PROJECT_DIR$/res/layout/bidongfrag_layout.xml" />
+        <option value="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart.java" />
+        <option value="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart.java" />
+        <option value="$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart.java" />
       </list>
     </option>
   </component>
@@ -3065,6 +3114,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -3073,21 +3125,95 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CypressPoint" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CypressPoint" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CypressPoint" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CypressPoint" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ILovegolf" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CypressPoint" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CypressPoint" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ILovegolf" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doudizhu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CypressPoint" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CypressPoint" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ILovegolf" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doudizhu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fragment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
     <property name="recentsLimit" value="5" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="CB5A1XTM74" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="2a2e240" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://G:/917/CypressPoint/src/cn/com/zcty/ILovegolf/doudizhu/utills/WmUtil.java" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_23_x86" />
-    <property name="FullScreen" value="false" />
   </component>
   <component name="RunManager" selected="Android Application.CypressPoint">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -3097,6 +3223,36 @@
       <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
+      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
+      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
+      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
@@ -3156,6 +3312,11 @@
       <patterns />
       <method />
     </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -3200,7 +3361,7 @@
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="true" />
       <option name="PREFERRED_AVD" value="" />
       <option name="USE_COMMAND_LINE" value="true" />
       <option name="COMMAND_LINE" value="" />
@@ -3240,19 +3401,19 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
-    <configuration>C:\Users\WangMeng\AppData\Roaming\Subversion</configuration>
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="aac14342-9323-4da8-8a5a-6cb6cb60bbce" name="Default" comment="" />
-      <created>1442290643587</created>
+      <changelist id="a38c3928-7e7b-44ad-90b2-183e0deabbd9" name="Default" comment="" />
+      <created>1442501924172</created>
       <option name="number" value="Default" />
-      <updated>1442290643587</updated>
+      <updated>1442501924172</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -3262,20 +3423,20 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30872482" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.038590603" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39932886" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -3284,14 +3445,35 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-  </component>
-  <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USER_GROUPS">
-      <collection />
-    </option>
-    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-      <collection />
-    </option>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3997773" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -3300,421 +3482,313 @@
     <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart.java</url>
+          <line>123</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart.java</url>
+          <line>234</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart.java</url>
+          <line>1142</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart.java</url>
+          <line>742</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart.java</url>
+          <line>801</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart.java</url>
+          <line>1009</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/LaoyingActivity.java</url>
+          <line>28</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="14" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/BirdActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="102" column="12" selection-start-line="102" selection-start-column="12" selection-end-line="102" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/activity/view/TabHostActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/activity/view/SelfhoodActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="219" column="54" selection-start-line="219" selection-start-column="54" selection-end-line="219" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SlideSwitch/src/main/java/com/leaking/slideswitch/SlideSwitch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="139" column="34" selection-start-line="139" selection-start-column="34" selection-end-line="139" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/fragment/BidongFrag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="517" column="46" selection-start-line="517" selection-start-column="46" selection-end-line="517" selection-end-column="46" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#26630#26653#0" expanded="true" />
+            <element signature="e#28495#28503#0" expanded="true" />
+            <element signature="e#43788#43796#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/fragment/VegasFrag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="766" column="46" selection-start-line="766" selection-start-column="46" selection-end-line="766" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/fragment/DoudizhuFrag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="685" column="0" selection-start-line="685" selection-start-column="0" selection-end-line="685" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/PlayerChoosePars.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="56" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/BirdActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="102" column="12" selection-start-line="102" selection-start-column="12" selection-end-line="102" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="613" column="23" selection-start-line="613" selection-start-column="23" selection-end-line="613" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/LaoyingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="91" column="12" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/activity/view/TabHostActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/activity/view/SelfhoodActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="518" column="56" selection-start-line="518" selection-start-column="31" selection-end-line="518" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SlideSwitch/src/main/java/com/leaking/slideswitch/SlideSwitch.java">
+    <entry file="file://$PROJECT_DIR$/res/layout/doudizhuatystart.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="139" column="34" selection-start-line="139" selection-start-column="34" selection-end-line="139" selection-end-column="34" />
+          <caret line="312" column="47" selection-start-line="312" selection-start-column="47" selection-end-line="312" selection-end-column="47" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/fragment/BidongFrag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="512" column="17" selection-start-line="512" selection-start-column="17" selection-end-line="512" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/fragment/DoudizhuFrag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="483" column="17" selection-start-line="483" selection-start-column="17" selection-end-line="483" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/PlayerChoosePars.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="56" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/BirdActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="102" column="12" selection-start-line="102" selection-start-column="12" selection-end-line="102" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="613" column="23" selection-start-line="613" selection-start-column="23" selection-end-line="613" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/LaoyingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="91" column="12" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/activity/view/TabHostActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/activity/view/SelfhoodActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SlideSwitch/src/main/java/com/leaking/slideswitch/SlideSwitch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="139" column="34" selection-start-line="139" selection-start-column="34" selection-end-line="139" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/fragment/BidongFrag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="512" column="17" selection-start-line="512" selection-start-column="17" selection-end-line="512" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/fragment/DoudizhuFrag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="483" column="17" selection-start-line="483" selection-start-column="17" selection-end-line="483" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/PlayerChoosePars.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="56" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/BirdActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="102" column="12" selection-start-line="102" selection-start-column="12" selection-end-line="102" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="613" column="23" selection-start-line="613" selection-start-column="23" selection-end-line="613" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/LaoyingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="91" column="12" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/activity/view/TabHostActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/activity/view/SelfhoodActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="382" column="10" selection-start-line="382" selection-start-column="10" selection-end-line="382" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/activity/view/myself/InformationChangesActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="442" column="15" selection-start-line="442" selection-start-column="15" selection-end-line="442" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SlideSwitch/src/main/java/com/leaking/slideswitch/SlideSwitch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="139" column="34" selection-start-line="139" selection-start-column="34" selection-end-line="139" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/fragment/BidongFrag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="67" selection-start-line="71" selection-start-column="67" selection-end-line="71" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/bidongfrag_layout.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_information.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="132" column="32" selection-start-line="132" selection-start-column="32" selection-end-line="132" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="613" column="23" selection-start-line="613" selection-start-column="23" selection-end-line="613" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/LaoyingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="91" column="12" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/BirdActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="102" column="12" selection-start-line="102" selection-start-column="12" selection-end-line="102" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable-ldpi/tongji.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://D:/Development/sdk/sources/android-22/android/view/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4721" column="16" selection-start-line="4721" selection-start-column="16" selection-end-line="4721" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/activity/view/myself/InformationChangesActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="442" column="15" selection-start-line="442" selection-start-column="15" selection-end-line="442" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SlideSwitch/src/main/java/com/leaking/slideswitch/SlideSwitch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="139" column="34" selection-start-line="139" selection-start-column="34" selection-end-line="139" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/PlayerChoosePars.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="56" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/fragment/DoudizhuFrag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="685" column="0" selection-start-line="685" selection-start-column="0" selection-end-line="685" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/activity/view/TabHostActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/activity/view/SelfhoodActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="245" column="28" selection-start-line="245" selection-start-column="28" selection-end-line="245" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable-hdpi/hugh.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/bidongfrag_layout.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/vegasatystart.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="150" column="32" selection-start-line="150" selection-start-column="32" selection-end-line="150" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.8">
-          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="508" column="17" selection-start-line="508" selection-start-column="17" selection-end-line="508" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/fragment/BidongFrag.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/LaoyingActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9">
-          <caret line="517" column="46" selection-start-line="517" selection-start-column="43" selection-end-line="517" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/fragment/VegasFrag.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/entity/HolesInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19843341">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#642#643#0" expanded="false" />
+            <element signature="e#670#671#0" expanded="false" />
+            <element signature="e#768#769#0" expanded="false" />
+            <element signature="e#796#797#0" expanded="false" />
+            <element signature="e#829#830#0" expanded="false" />
+            <element signature="e#854#855#0" expanded="false" />
+            <element signature="e#894#895#0" expanded="false" />
+            <element signature="e#922#923#0" expanded="false" />
+            <element signature="e#955#956#0" expanded="false" />
+            <element signature="e#980#981#0" expanded="false" />
+            <element signature="e#1020#1021#0" expanded="false" />
+            <element signature="e#1048#1049#0" expanded="false" />
+            <element signature="e#1104#1105#0" expanded="false" />
+            <element signature="e#1138#1139#0" expanded="false" />
+            <element signature="e#1210#1211#0" expanded="false" />
+            <element signature="e#1256#1257#0" expanded="false" />
+            <element signature="e#1287#1288#0" expanded="false" />
+            <element signature="e#1316#1317#0" expanded="false" />
+            <element signature="e#1361#1362#0" expanded="false" />
+            <element signature="e#1397#1398#0" expanded="false" />
+            <element signature="e#1494#1495#0" expanded="false" />
+            <element signature="e#1524#1525#0" expanded="false" />
+            <element signature="e#2132#2133#0" expanded="false" />
+            <element signature="e#2165#2166#0" expanded="false" />
+            <element signature="e#2214#2215#0" expanded="false" />
+            <element signature="e#2258#2259#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/src/com/handmark/pulltorefresh/library/PullToRefreshBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1115" column="34" selection-start-line="1115" selection-start-column="34" selection-end-line="1115" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/History.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/entity/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="359" column="0" selection-start-line="359" selection-start-column="0" selection-end-line="359" selection-end-column="0" />
+          <folding>
+            <element signature="e#4173#4174#0" expanded="false" />
+            <element signature="e#4195#4196#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/utills/WmUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/entity/HolesInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#642#643#0" expanded="false" />
+            <element signature="e#670#671#0" expanded="false" />
+            <element signature="e#768#769#0" expanded="false" />
+            <element signature="e#796#797#0" expanded="false" />
+            <element signature="e#829#830#0" expanded="false" />
+            <element signature="e#854#855#0" expanded="false" />
+            <element signature="e#894#895#0" expanded="false" />
+            <element signature="e#922#923#0" expanded="false" />
+            <element signature="e#955#956#0" expanded="false" />
+            <element signature="e#980#981#0" expanded="false" />
+            <element signature="e#1020#1021#0" expanded="false" />
+            <element signature="e#1048#1049#0" expanded="false" />
+            <element signature="e#1104#1105#0" expanded="false" />
+            <element signature="e#1138#1139#0" expanded="false" />
+            <element signature="e#1210#1211#0" expanded="false" />
+            <element signature="e#1256#1257#0" expanded="false" />
+            <element signature="e#1287#1288#0" expanded="false" />
+            <element signature="e#1316#1317#0" expanded="false" />
+            <element signature="e#1361#1362#0" expanded="false" />
+            <element signature="e#1397#1398#0" expanded="false" />
+            <element signature="e#1494#1495#0" expanded="false" />
+            <element signature="e#1524#1525#0" expanded="false" />
+            <element signature="e#2132#2133#0" expanded="false" />
+            <element signature="e#2165#2166#0" expanded="false" />
+            <element signature="e#2214#2215#0" expanded="false" />
+            <element signature="e#2258#2259#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/LaoyingActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/vegasatystart.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="150" column="32" selection-start-line="150" selection-start-column="32" selection-end-line="150" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/doudizhuatystart.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="312" column="47" selection-start-line="312" selection-start-column="47" selection-end-line="312" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/bidongfrag_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/fragment/BidongFrag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.2">
+          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/activity/view/TabHostActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyVegasStart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.3333335">
+          <caret line="966" column="0" selection-start-line="966" selection-start-column="0" selection-end-line="966" selection-end-column="0" />
+          <folding>
+            <element signature="e#26630#26653#0" expanded="true" />
+            <element signature="e#28495#28503#0" expanded="true" />
+            <element signature="e#43788#43796#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyDoudizhuStart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.133333">
+          <caret line="1171" column="0" selection-start-line="1171" selection-start-column="0" selection-end-line="1171" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/com/zcty/ILovegolf/doudizhu/AtyBidongStart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11089494">
+          <caret line="918" column="22" selection-start-line="918" selection-start-column="22" selection-end-line="918" selection-end-column="22" />
           <folding />
         </state>
       </provider>

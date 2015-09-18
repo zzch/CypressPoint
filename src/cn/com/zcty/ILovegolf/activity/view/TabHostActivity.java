@@ -1,9 +1,4 @@
 package cn.com.zcty.ILovegolf.activity.view;
-
-
-
-
-
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.view.count.CountActivity;
 import cn.com.zcty.ILovegolf.activity.view.myself.Myself;

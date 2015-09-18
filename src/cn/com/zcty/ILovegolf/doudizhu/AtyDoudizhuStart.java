@@ -9,7 +9,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -35,12 +34,10 @@ import cn.com.zcty.ILovegolf.doudizhu.utills.WmUtil;
 import cn.com.zcty.ILovegolf.activity.R;
 
 import java.io.Serializable;
-import java.lang.annotation.Target;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 import java.util.TreeMap;
 
 
@@ -347,7 +344,7 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
         tv_ddzbird1 = (TextView) findViewById(R.id.tv_ddzbird1);
         tv_ddzbird2 = (TextView) findViewById(R.id.tv_ddzbird2);
         tv_ddzbird3 = (TextView) findViewById(R.id.tv_ddzbird3);
-        btnSelectPars = (Button) findViewById(R.id.ddzselectpars);
+        btnSelectPars = (Button) findViewById(R.id.bdselectpars);
         btnP1stPars = (Button) findViewById(R.id.btnddzp1stpars);
         btnP2stPars = (Button) findViewById(R.id.btnddzp2stpars);
         btnP3stPars = (Button) findViewById(R.id.btnddzp3stpars);
@@ -357,8 +354,8 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
         ddzP2 = (ImageView) findViewById(R.id.ddzp2image);
         ddzP3 = (ImageView) findViewById(R.id.ddzp3image);
         ddzHoles = (TextView) findViewById(R.id.ddzholes);
-        ddzp1stscore = (TextView) findViewById(R.id.ddzp1stscore);
-        ddzp2stscore = (TextView) findViewById(R.id.ddzp2stscore);
+        ddzp1stscore = (TextView) findViewById(R.id.bdp2stscore);
+        ddzp2stscore = (TextView) findViewById(R.id.bdp2stscore);
         ddzp3stscore = (TextView) findViewById(R.id.ddzp3stscore);
         ddzp1stscore_add = (TextView) findViewById(R.id.ddzp1stscore_add);
         ddzp2stscore_add = (TextView) findViewById(R.id.ddzp2stscore_add);
@@ -775,52 +772,52 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
     }
 
     //确定成绩后存数据库
-    private void insertDb() {
-        Log.d("holenumber", "hole_number==" + hole_number);
-        WmUtil.match = match;
-        WmUtil.saveStroke(hole_number, list.get(0), parsP1, 0);
-        WmUtil.saveStroke(hole_number, list.get(1), parsP2, 1);
-        WmUtil.saveStroke(hole_number, list.get(2), parsP3, 2);
-        WmUtil.savepar(hole_number, match, par);
-
-        earned = WmUtil.earnedbase * WmUtil.ddzScore(par, parsP1, parsP2, parsP3);
-
-        earned += match.getEarned();
-        match.setEarned(earned);
-        match.setCurrenthole(hole_number);
-
-        DbUtil db = DbUtil.getInstance(this);
-        db.saveMatch(match);
-
-        //计算eraned
-
-//        int lastearned=list.get(0).getEArned(hole_number--);
-//        int theEarned = lastearned+earned;
-//        list.get(0).setEArned(hole_number,theEarned);
-
-
-        db.savePlayer(list.get(0));
-
-        db.savePlayer(list.get(1));
-
-        db.savePlayer(list.get(2));
-
-        player0 = list.get(0);
-        player1 = list.get(1);
-        player2 = list.get(2);
-
-        Integer[] arr = new Integer[3];
-        arr[0] = parsP1;
-        arr[1] = parsP2;
-        arr[2] = parsP3;
-        Arrays.sort(arr);
-//        list.clear();
-        for (int i = 0; i < arr.length; i++) {
-            switchImg(arr[i], i);
-        }
-
-
-    }
+//    private void insertDb() {
+//        Log.d("holenumber", "hole_number==" + hole_number);
+//        WmUtil.match = match;
+//        WmUtil.saveStroke(hole_number, list.get(0), parsP1, 0);
+//        WmUtil.saveStroke(hole_number, list.get(1), parsP2, 1);
+//        WmUtil.saveStroke(hole_number, list.get(2), parsP3, 2);
+//        WmUtil.savepar(hole_number, match, par);
+//
+//        earned = WmUtil.earnedbase * WmUtil.ddzScore(par, parsP1, parsP2, parsP3);
+//
+//        earned += match.getEarned();
+//        match.setEarned(earned);
+//        match.setCurrenthole(hole_number);
+//
+//        DbUtil db = DbUtil.getInstance(this);
+//        db.saveMatch(match);
+//
+//        //计算eraned
+//
+////        int lastearned=list.get(0).getEArned(hole_number--);
+////        int theEarned = lastearned+earned;
+////        list.get(0).setEArned(hole_number,theEarned);
+//
+//
+//        db.savePlayer(list.get(0));
+//
+//        db.savePlayer(list.get(1));
+//
+//        db.savePlayer(list.get(2));
+//
+//        player0 = list.get(0);
+//        player1 = list.get(1);
+//        player2 = list.get(2);
+//
+//        Integer[] arr = new Integer[3];
+//        arr[0] = parsP1;
+//        arr[1] = parsP2;
+//        arr[2] = parsP3;
+//        Arrays.sort(arr);
+////        list.clear();
+//        for (int i = 0; i < arr.length; i++) {
+//            switchImg(arr[i], i);
+//        }
+//
+//
+//    }
 
 
     private void switchImg(int par, int position)
@@ -950,25 +947,98 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
 //                    RankActivity.launch(this, match, new ArrayList<Player>(), 0);
                 }
                 if (info != null) {
-                    TreeMap<Integer, Player> treemap = new TreeMap<Integer, Player>() {
+                    TreeMap<Double, Player> treemap = new TreeMap<Double, Player>() {
                         @Override
-                        public Player put(Integer key, Player value) {
+                        public Player put(Double key, Player value) {
                             if (containsKey(key)) {
-                                return super.put(new Integer(key + 1), value);
+                                return super.put(new Double(key + 0.5), value);
                             }
                             return super.put(key, value);
                         }
                     };
-                    treemap.put(new Integer(info.getPlayerscore().get(info.getP1())), info.getP1());
-                    treemap.put(new Integer(info.getPlayerscore().get(info.getP2())), info.getP2());
-                    treemap.put(new Integer(info.getPlayerscore().get(info.getP3())), info.getP3());
+
+                    if(treemap.containsKey(new Double(info.getPlayerscore().get(info.getP1()))))
+                    {
+                        if("1".equals(info.getP1().getIs_owner()))
+                        {
+                            treemap.put(new Double(info.getPlayerscore().get(info.getP1())-0.5), info.getP1());
+                        }
+                        else
+                        {
+                            treemap.put(new Double(info.getPlayerscore().get(info.getP1())+1), info.getP1());
+                        }
+
+                    }
+                    else
+                    {
+                        treemap.put(new Double(info.getPlayerscore().get(info.getP1())), info.getP1());
+                    }
+                    if(treemap.containsKey(new Double(info.getPlayerscore().get(info.getP2()))))
+                    {
+                        treemap.put(new Double(info.getPlayerscore().get(info.getP2())+1), info.getP2());
+                    }
+                    else
+                    {
+                        treemap.put(new Double(info.getPlayerscore().get(info.getP2())), info.getP2());
+                    }
+                    if(treemap.containsKey(new Double(info.getPlayerscore().get(info.getP3()))))
+                    {
+                        treemap.put(new Double(info.getPlayerscore().get(info.getP3())+1), info.getP3());
+                    }
+                    else
+                    {
+                        treemap.put(new Double(info.getPlayerscore().get(info.getP3())), info.getP3());
+                    }
+
+
+
+
+//                    if(treemap.containsKey(new Double(info.getPlayerscore().get(info.getP1()))))
+//                    {
+//                        if("1".equals(info.getP1().getIs_owner()))
+//                        {
+//                            treemap.put(new Double(info.getPlayerscore().get(info.getP1())-0.5), info.getP1());
+//                        }
+//                        else
+//                        {
+//                            treemap.put(new Double(info.getPlayerscore().get(info.getP1())+1), info.getP1());
+//                        }
+//
+//                    }
+//                    else
+//                    {
+//                        treemap.put(new Double(info.getPlayerscore().get(info.getP1())), info.getP1());
+//                    }
+//                    if(treemap.containsKey(new Double(info.getPlayerscore().get(info.getP2()))))
+//                    {
+//                        treemap.put(new Double(info.getPlayerscore().get(info.getP2())+2), info.getP2());
+//                    }
+//                    else
+//                    {
+//                        treemap.put(new Double(info.getPlayerscore().get(info.getP2())), info.getP2());
+//                    }
+//                    if(treemap.containsKey(new Double(info.getPlayerscore().get(info.getP3()))))
+//                    {
+//                        treemap.put(new Double(info.getPlayerscore().get(info.getP3())+3), info.getP3());
+//                    }
+//                    else
+//                    {
+//                        treemap.put(new Double(info.getPlayerscore().get(info.getP3())), info.getP3());
+//                    }
 
                     List<Player> tmpList = new ArrayList<Player>();
-                    for (Integer key : treemap.keySet()) {
+                    for (Double key : treemap.keySet()) {
                         tmpList.add(treemap.get(key));
                     }
-                    Collections.reverse(tmpList);
-                    RankActivity.launch(this, match, tmpList, 1);
+                    if ((info.getPlayerscore().get(info.getP1()) == info.getPlayerscore().get(info.getP2())) && (info.getPlayerscore().get(info.getP1()) == info.getPlayerscore().get(info.getP3())))
+                    {
+
+                        RankActivity.launch(this, match, tmpList, 1);
+                    }else{
+                        Collections.reverse(tmpList);
+                        RankActivity.launch(this, match, tmpList, 1);
+
+                    }
 //                Toast.makeText(this, "rl_right.clicked", Toast.LENGTH_SHORT).show();
                 }else
                 {
@@ -976,7 +1046,7 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
                 }
 
                 break;
-            case R.id.ddzselectpars:
+            case R.id.bdselectpars:
 
                 if (isReEditStatus()) {
                     if (WmUtil.holesinfos[hole_number - 1].isEdit()) {

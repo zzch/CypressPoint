@@ -7,7 +7,8 @@
     android:orientation="vertical">
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scrollbars="none">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -75,7 +76,7 @@
                         android:singleLine="true"
                         android:ellipsize="end"
                         android:maxLength="4"
-                        android:text="黄大治"/>
+                        android:text="球手1"/>
 
 
                 </RelativeLayout>

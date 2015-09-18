@@ -273,7 +273,7 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
             {
 
 
-                if (et.getText().toString().equals(""))
+                if (et.getText().toString().trim().equals(""))
                 {
                     player1.setNickname("球手2");
 
@@ -321,7 +321,7 @@ public class DoudizhuFrag extends Fragment implements View.OnClickListener, Adap
             {
 
 
-                if (et.getText().toString().equals(""))
+                if (et.getText().toString().trim().equals(""))
                 {
                     player2.setNickname("球手3");
 

@@ -38,7 +38,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 import java.util.TreeMap;
 
 /**
@@ -320,7 +322,7 @@ public class AtyVegasStart extends Activity implements View.OnClickListener {
         tv_ddzbird2 = (TextView) findViewById(R.id.tv_ddzbird2);
         tv_ddzbird3 = (TextView) findViewById(R.id.tv_ddzbird3);
         tv_ddzbird4 = (TextView) findViewById(R.id.tv_ddzbird4);
-        btnSelectPars = (Button) findViewById(R.id.ddzselectpars);
+        btnSelectPars = (Button) findViewById(R.id.bdselectpars);
         btnP1stPars = (Button) findViewById(R.id.btnddzp1stpars);
         btnP2stPars = (Button) findViewById(R.id.btnddzp2stpars);
         btnP3stPars = (Button) findViewById(R.id.btnddzp3stpars);
@@ -335,8 +337,8 @@ public class AtyVegasStart extends Activity implements View.OnClickListener {
         ddzP4 = (ImageView) findViewById(R.id.ddzp4image);
 
         ddzHoles = (TextView) findViewById(R.id.ddzholes);
-        ddzp1stscore = (TextView) findViewById(R.id.ddzp1stscore);
-        ddzp2stscore = (TextView) findViewById(R.id.ddzp2stscore);
+        ddzp1stscore = (TextView) findViewById(R.id.bdp1stscore);
+        ddzp2stscore = (TextView) findViewById(R.id.bdp2stscore);
         ddzp3stscore = (TextView) findViewById(R.id.ddzp3stscore);
         ddzp4stscore = (TextView) findViewById(R.id.ddzp4stscore);
 
@@ -751,26 +753,80 @@ public class AtyVegasStart extends Activity implements View.OnClickListener {
 //                    RankActivity.launch(this, match, new ArrayList<Player>(), 0);
                 }
                 if (info != null) {
-                    TreeMap<Integer, Player> treemap = new TreeMap<Integer, Player>() {
-                        @Override
-                        public Player put(Integer key, Player value) {
-                            if (containsKey(key)) {
-                                return super.put(new Integer(key + 1), value);
-                            }
-                            return super.put(key, value);
-                        }
-                    };
-                    treemap.put(new Integer(info.getPlayerscore().get(info.getP1())), info.getP1());
-                    treemap.put(new Integer(info.getPlayerscore().get(info.getP2())), info.getP2());
-                    treemap.put(new Integer(info.getPlayerscore().get(info.getP3())), info.getP3());
-                    treemap.put(new Integer(info.getPlayerscore().get(info.getP4())), info.getP4());
 
-                    List<Player> tmpList = new ArrayList<Player>();
-                    for (Integer key : treemap.keySet()) {
-                        tmpList.add(treemap.get(key));
+                    TreeMap<Integer, List<Player>> treemap = new TreeMap<Integer, List<Player>>();
+
+                    Integer d1 = new Integer(info.getPlayerscore().get(info.getP1()));
+                    Integer d2 = new Integer(info.getPlayerscore().get(info.getP2()));
+                    Integer d3 = new Integer(info.getPlayerscore().get(info.getP3()));
+                    Integer d4 = new Integer(info.getPlayerscore().get(info.getP4()));
+
+
+                    if(!treemap.containsKey(d1)) {
+                        List<Player> list = new ArrayList();
+                        list.add(info.getP1());
+                        treemap.put(d1, list);
                     }
-                    Collections.reverse(tmpList);
-                    RankActivity.launch(this, match, tmpList, 0);
+                    else
+                    {
+                        treemap.get(d1).add(info.getP1());
+                    }
+
+                    if(!treemap.containsKey(d2)) {
+                        List<Player> list = new ArrayList();
+                        list.add(info.getP2());
+                        treemap.put(d2, list);
+                    }
+                    else
+                    {
+                        treemap.get(d2).add(info.getP2());
+                    }
+
+                    if(!treemap.containsKey(d3)) {
+                        List<Player> list = new ArrayList();
+                        list.add(info.getP3());
+                        treemap.put(d3, list);
+                    }
+                    else
+                    {
+                        treemap.get(d3).add(info.getP3());
+                    }
+
+                    if(!treemap.containsKey(d4)) {
+                        List<Player> list = new ArrayList();
+                        list.add(info.getP4());
+                        treemap.put(d4, list);
+                    }
+                    else
+                    {
+                        treemap.get(d4).add(info.getP4());
+                    }
+                    List<Player> tmpList = new ArrayList<Player>();
+                    for(Integer i : treemap.descendingKeySet())
+                    {
+                        List<Player> players = treemap.get(i);
+                        List<Player> curPlayers = new ArrayList<>();
+                        for (Player p: players) {
+                            if("1".equals(p.getIs_owner()))
+                            {
+                                curPlayers.add(0,p);
+                            }
+                            else
+                            {
+                                curPlayers.add(p);
+                            }
+                        }
+                        tmpList.addAll(curPlayers);
+                    }
+                    RankActivity.launch(this, match, tmpList, 1);
+
+//                    if ((info.getPlayerscore().get(info.getP1()) == info.getPlayerscore().get(info.getP2())) && (info.getPlayerscore().get(info.getP1()) == info.getPlayerscore().get(info.getP3())) && (info.getPlayerscore().get(info.getP1()) == info.getPlayerscore().get(info.getP4())))
+//                    {
+//                        RankActivity.launch(this, match, tmpList, 1);
+//                    }else{
+//                        Collections.reverse(tmpList);
+//                        RankActivity.launch(this, match, tmpList, 1);
+//                    }
 //                Toast.makeText(this, "rl_right.clicked", Toast.LENGTH_SHORT).show();
                 }else
                 {
@@ -778,7 +834,7 @@ public class AtyVegasStart extends Activity implements View.OnClickListener {
                 }
 //                RankActivity.launch(this, match, list, 0);
                 break;
-            case R.id.ddzselectpars:
+            case R.id.bdselectpars:
                 if (isReEditStatus()) {
                     if (WmUtil.holesinfos[hole_number - 1].isEdit()) {
                         handleButtonStatus();
@@ -1115,6 +1171,9 @@ public class AtyVegasStart extends Activity implements View.OnClickListener {
             HolesInfo tmpInfo = WmUtil.holesinfos[hole_number - 2];
             if (isnext) tmpInfo.setIsEdit(false);
         }
+
+
+
     }
 
     //根据杆数重新排序，待完成

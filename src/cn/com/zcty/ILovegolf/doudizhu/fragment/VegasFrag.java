@@ -39,7 +39,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-/**
+ /**
  * Created by wangm on 2015/7/21.
  */
 public class VegasFrag extends Fragment implements AdapterView.OnItemClickListener, View.OnClickListener
@@ -542,7 +542,7 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
             {
 
 
-                if (et.getText().toString().equals(""))
+                if (et.getText().toString().trim().equals(""))
                 {
                     player1.setNickname("球手2");
 
@@ -587,7 +587,7 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
             {
 
 
-                if (et.getText().toString().equals(""))
+                if (et.getText().toString().trim().equals(""))
                 {
                     player2.setNickname("球手3");
 
@@ -631,7 +631,7 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
         {
 
 
-            if (et.getText().toString().equals(""))
+            if (et.getText().toString().trim().equals(""))
             {
                 player3.setNickname("球手4");
 

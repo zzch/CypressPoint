@@ -97,6 +97,7 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
         isnew = getIntent().getBooleanExtra("isnew", true);
         // 清空之前历史平局数
         WmUtil.tie_number = 0;
+        this.clearHolesInfo();
         if (isnew) {
             initData();
         } else {
@@ -105,6 +106,10 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
         }
 
 
+    }
+
+    private void clearHolesInfo() {
+        WmUtil.holesinfos = new HolesInfo[18];
     }
 
     private void initHistoryData() {
@@ -116,6 +121,9 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
 
         hole_number = match.getCurrenthole();
         par = WmUtil.getPar(hole_number, match);
+
+        parsP1 = myplayer.getStroke(hole_number);
+        parsP2 = player.getStroke(hole_number);
 
         WmUtil.match = match;
 
@@ -240,7 +248,7 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
                 info.setTie_nubmer(0);
 //                WmUtil.tie_number=0;
             }
-
+            WmUtil.tie_number=info.getTie_nubmer();
             HolesInfo tmpInfo = i > 0 ? WmUtil.holesinfos[i - 1] : null;
 
             if (tmpInfo == null) {
@@ -493,11 +501,11 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
 //                intent = new Intent(AtyBidongStart.this,BirdActivity.class);
                 if(1>type) {
                     type= 1;
-                    showname = bname1;
+                    showname = myplayer.getNickname();
                 }
                 else if(1==type)
                 {
-                    showname+="、" + bname1;
+                    showname+="、" + myplayer.getNickname();
                 }
 //                if((p1>p2?p1:p2)==p1)
 //                {
@@ -516,11 +524,11 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
 //                intent = new Intent(AtyBidongStart.this,BirdActivity.class);
                 if(2>type) {
                     type= 2;
-                    showname = bname1;
+                    showname = myplayer.getNickname();
                 }
                 else if(2==type)
                 {
-                    showname+="、" + bname1;
+                    showname+="、" + myplayer.getNickname();
                 }
 //                intent = new Intent(AtyBidongStart.this,LaoyingActivity.class);
 //                if((p1>p2?p1:p2)==p1)
@@ -538,7 +546,7 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
                 break;
             case 3:
                 isDouble = true;
-                showname2+=("、"+bname1);
+                showname2+=("、"+myplayer.getNickname());
                 break;
         }
 
@@ -550,11 +558,11 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
             case 1:
                 if(1>type) {
                     type= 1;
-                    showname = bname2;
+                    showname = player.getNickname();
                 }
                 else if(1==type)
                 {
-                    showname+="、" + bname2;
+                    showname+="、" + player.getNickname();
                 }
 //                intent = new Intent(AtyBidongStart.this,BirdActivity.class);
 //                if((p1>p2?p1:p2)==p1)
@@ -573,11 +581,11 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
             case 2:
                 if(2>type) {
                     type= 2;
-                    showname = bname2;
+                    showname = player.getNickname();
                 }
                 else if(2==type)
                 {
-                    showname+="、" + bname2;
+                    showname+="、" + player.getNickname();
                 }
 //                intent = new Intent(AtyBidongStart.this,LaoyingActivity.class);
 //                if((p1>p2?p1:p2)==p1)
@@ -595,7 +603,7 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
                 break;
             case 3:
                 isDouble = true;
-                showname2+=("、"+bname2);
+                showname2+=("、"+player.getNickname());
                 break;
         }
         if(type==1)
@@ -813,8 +821,16 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
                     for (Integer key : treemap.keySet()) {
                         tmpList.add(treemap.get(key));
                     }
-                    Collections.reverse(tmpList);
-                    RankActivity.launch(AtyBidongStart.this, match, tmpList, 0);
+                    if (info.getPlayerscore().get(info.getP1()) == info.getPlayerscore().get(info.getP2()))
+                    {
+                        RankActivity.launch(AtyBidongStart.this, match, tmpList, 0);
+
+                    }else {
+
+
+                        Collections.reverse(tmpList);
+                        RankActivity.launch(AtyBidongStart.this, match, tmpList, 0);
+                    }
                 }else
                 {
                     List<Player> tmpList = new ArrayList<Player>();
@@ -824,24 +840,22 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
                 }
                 break;
             case R.id.bdselectpars:
-                if (isReEditStatus()) {
-                    if (WmUtil.holesinfos[hole_number - 1].isEdit()) {
+                if (isReEditStatus()&&WmUtil.holesinfos[hole_number - 1].isEdit()) {
                         handleButtonStatus();
                         startActivityForResult(new Intent(this, BdChoosePars.class), 1);
-                    }
+                        Xlog.d("click work?=========================================================================");
                 } else {
                     startActivityForResult(new Intent(this, BdChoosePars.class), 1);
+
                 }
                 break;
             case R.id.btnbdp1stpars:
-                if (isReEditStatus()) {
-                    if (WmUtil.holesinfos[hole_number - 1].isEdit()) {
+                if (isReEditStatus()&&WmUtil.holesinfos[hole_number - 1].isEdit()) {
                         handleButtonStatus();
                         Intent intent = new Intent(this, PlayerChoosePars.class);
                         intent.putExtra("imageUrl", myplayer.getPortrait());
                         intent.putExtra("nickname", myplayer.getNickname());
                         startActivityForResult(intent, 2);
-                    }
                 } else {
                     Intent intent = new Intent(this, PlayerChoosePars.class);
                     intent.putExtra("imageUrl", myplayer.getPortrait());
@@ -850,14 +864,12 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
                 }
                 break;
             case R.id.btnbdp2stpars:
-                if (isReEditStatus()) {
-                    if (WmUtil.holesinfos[hole_number - 1].isEdit()) {
+                if (isReEditStatus()&&WmUtil.holesinfos[hole_number - 1].isEdit()) {
                         handleButtonStatus();
                         Intent intent = new Intent(this, PlayerChoosePars.class);
                         intent.putExtra("imageUrl", player.getPortrait());
                         intent.putExtra("nickname", player.getNickname());
                         startActivityForResult(intent, 3);
-                    }
                 } else {
                     Intent intent = new Intent(this, PlayerChoosePars.class);
                     intent.putExtra("imageUrl", player.getPortrait());
