@@ -160,10 +160,12 @@ public class WmUtil {
 
         if (WmUtil.whoWinsBD(parp1, parp2) == DRAW) {
 
-            if (match.getDraw_to_win().equals("1") && match.getDrawWhoWin() == Match.LEFT) {
+            if (match.getDraw_to_win().equals("1") && match.getDrawWhoWin() == Match.LEFT)
+            {
                 return 1;
 
-            } else if (match.getDraw_to_win().equals("1") && match.getDrawWhoWin() == Match.RIGHT) {
+            } else if (match.getDraw_to_win().equals("1") && match.getDrawWhoWin() == Match.RIGHT)
+            {
                 return -1;
             } else {
                 return 0;
@@ -174,7 +176,8 @@ public class WmUtil {
 
         //是不是双倍标准杆
         int doublePar = 1;
-        if (match.getDouble_par_x2().equals("1") && (parp1 - 2 * par >= 0 || parp2 - 2 * par >= 0)) {
+        if (match.getDouble_par_x2().equals("1") && (parp1 - 2 * par >= 0 || parp2 - 2 * par >= 0))
+        {
             doublePar = 2;
         }
 
@@ -202,7 +205,7 @@ public class WmUtil {
                     return 4 * base * doublePar;
             }
         }
-        return 99;
+        return 2;
     }
 
     //算分

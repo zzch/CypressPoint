@@ -1107,6 +1107,7 @@ public class AtyVegasStart extends Activity implements View.OnClickListener {
             btnP2stPars.setText("一");
             btnP3stPars.setText("一");
             btnP4stPars.setText("一");
+            btnSelectPars.setText("一");
         }
 
         ddzp1stscore_add.setVisibility(View.GONE);

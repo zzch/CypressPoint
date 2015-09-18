@@ -1174,12 +1174,14 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
         bdp2stscore_add.setText("一");
         bdp2stscore.setText("" + info.getPlayerscore().get(player));
 
+
         if (nextInfo != null) {
             btnP1stPars.setText("" + nextInfo.getP1().getStroke(hole_number));
             btnP2stPars.setText("" + nextInfo.getP2().getStroke(hole_number));
         } else {
             btnP1stPars.setText("一");
             btnP2stPars.setText("一");
+            btnSelectPars.setText("一");
         }
 
         bdp1stscore_add.setVisibility(View.GONE);

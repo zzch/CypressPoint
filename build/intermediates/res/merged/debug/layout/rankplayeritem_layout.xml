@@ -51,13 +51,14 @@ android:layout_marginLeft="10dp"
 
     <TextView
         android:id="@+id/rankPlayername"
-        android:layout_width="wrap_content"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/frameLayout1"
         android:layout_marginLeft="17dp"
         android:layout_centerVertical="true"
         android:maxLength="4"
         android:textSize="15dp"
+        android:maxLines="1"
         android:text="黄大治"/>
 
     <ImageView

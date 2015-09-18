@@ -354,7 +354,7 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
         ddzP2 = (ImageView) findViewById(R.id.ddzp2image);
         ddzP3 = (ImageView) findViewById(R.id.ddzp3image);
         ddzHoles = (TextView) findViewById(R.id.ddzholes);
-        ddzp1stscore = (TextView) findViewById(R.id.bdp2stscore);
+        ddzp1stscore = (TextView) findViewById(R.id.bdp1stscore);
         ddzp2stscore = (TextView) findViewById(R.id.bdp2stscore);
         ddzp3stscore = (TextView) findViewById(R.id.ddzp3stscore);
         ddzp1stscore_add = (TextView) findViewById(R.id.ddzp1stscore_add);
@@ -1335,6 +1335,7 @@ public class AtyDoudizhuStart extends Activity implements View.OnClickListener {
             btnP1stPars.setText("一");
             btnP2stPars.setText("一");
             btnP3stPars.setText("一");
+            btnSelectPars.setText("一");
         }
 
         ddzp1stscore_add.setVisibility(View.GONE);

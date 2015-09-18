@@ -56,7 +56,6 @@ public class History extends Activity
 
         scoreView = (TextView) findViewById(R.id.hisTotalScore);
         int totalScore = DbUtil.getInstance(this).getTotalScore();
-
         scoreView.setText(""+totalScore);
 
         matchesData= DbUtil.getInstance(this).getMatchList();

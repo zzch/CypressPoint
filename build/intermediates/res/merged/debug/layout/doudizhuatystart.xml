@@ -139,7 +139,7 @@
                 android:layout_below="@+id/ddzp1stname"/>
 
             <TextView
-                android:id="@+id/bdp2stscore"
+                android:id="@+id/bdp1stscore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ddzp1stname"
@@ -154,7 +154,7 @@
                 android:id="@+id/ddzp1stscore_add"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/bdp2stscore"
+                android:layout_below="@+id/bdp1stscore"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/ddzp1stgold"
                 android:text="0"
