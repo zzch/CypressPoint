@@ -205,7 +205,7 @@ public class WmUtil {
                     return 4 * base * doublePar;
             }
         }
-        return 2;
+        return 2 + 2 * tie_number;
     }
 
     //算分
