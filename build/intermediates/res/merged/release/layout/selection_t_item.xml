@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        >
+        <ImageView 
+            android:id="@+id/titai"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+           
+            />
+
+        <TextView
+            android:id="@+id/qiudong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/hei5"
+             android:textSize="@dimen/txsize_small_a" 
+            android:text="球洞" />
+
+    </RelativeLayout>
+
+</LinearLayout>
+<!-- From: file:/D:/CypressPoint/res/layout/selection_t_item.xml -->

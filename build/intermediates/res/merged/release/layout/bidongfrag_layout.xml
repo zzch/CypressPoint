@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:slideswitch="http://schemas.android.com/apk/res-auto"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/bg"
+              android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/taimian"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="22dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    >
+
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/bdp1image"
+                            android:layout_width="62dp"
+                            android:layout_height="62dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_centerHorizontal="true"
+                            app:civ_border_color="#00fbff"
+                            app:civ_border_width="2dp"
+                            android:src="@drawable/hugh"/>
+
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/bdp1image"
+                        android:id="@+id/bdp1name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:textColor="#ff0000"
+                        android:textSize="20dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:maxLength="4"
+                        android:text="球手1"/>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="45dp"
+                    android:layout_weight="1"
+                    >
+
+                    <ImageView
+                        android:id="@+id/bdvsimage"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/vs"
+                        android:layout_centerInParent="true"
+                        />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    >
+                    <FrameLayout
+                        android:id="@+id/frameLayout2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        >
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/bdp2image"
+                            android:layout_width="62dp"
+                            android:layout_height="62dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="3dp"
+                            app:civ_border_color="#00ff15"
+                            app:civ_border_width="2dp"
+                            android:src="@drawable/hugh"/>
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/bdp2editname"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/frameLayout2"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="200dp"
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:maxLength="4"
+                        android:textSize="20sp"
+                        android:textColor="#fff000"
+                        android:text="球手2"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="22dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                >
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#aaaaaa"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/bd_bird"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:padding="10dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="小鸟球翻1倍"
+                        android:textSize="16sp"/>
+
+                    <com.leaking.slideswitch.SlideSwitch
+                        android:id="@+id/bdswitch_birdie"
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        slideswitch:shape1="circle"
+                        slideswitch:themeColor="#f200aa96"
+                        >
+                    </com.leaking.slideswitch.SlideSwitch>
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#aaaaaa"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/bd_eagle"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="老鹰球翻2倍"
+                        android:textSize="16sp"/>
+
+                    <com.leaking.slideswitch.SlideSwitch
+                        android:id="@+id/bdswitch_eagle"
+                        android:layout_width="20dip"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        slideswitch:shape1="circle"
+                        slideswitch:themeColor="#f200aa96">
+                    </com.leaking.slideswitch.SlideSwitch>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#aaaaaa"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/bdpardouble"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="双倍标准杆翻一倍"
+                        android:textSize="16sp"/>
+
+                    <com.leaking.slideswitch.SlideSwitch
+                        android:id="@+id/bdswitch_pardouble"
+                        android:layout_width="20dip"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        slideswitch:shape1="circle"
+                        slideswitch:themeColor="#f200aa96">
+                    </com.leaking.slideswitch.SlideSwitch>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#aaaaaa"
+                    />
+                <RelativeLayout
+                    android:id="@+id/bd_tie2next"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="打平进入下一洞"
+                        android:textSize="16sp"/>
+
+                    <com.leaking.slideswitch.SlideSwitch
+                        android:id="@+id/bdswitch_tie2next"
+                        android:layout_width="20dip"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        slideswitch:shape1="circle"
+                        slideswitch:themeColor="#f200aa96">
+                    </com.leaking.slideswitch.SlideSwitch>
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#aaaaaa"
+                    />
+                <RelativeLayout
+                    android:id="@+id/bd_tieEx"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="平局让杆"
+                        android:textSize="16sp"/>
+
+                    <com.leaking.slideswitch.SlideSwitch
+                        android:id="@+id/bdswitch_tieEx"
+                        android:layout_width="20dip"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        slideswitch:shape1="circle"
+                        slideswitch:themeColor="#f200aa96">
+                    </com.leaking.slideswitch.SlideSwitch>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#aaaaaa"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bdDrawWhichWinRoot"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:visibility="gone"
+                >
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#aaaaaa"
+                    />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="118dp"
+                    android:layout_weight="1">
+
+                    <RelativeLayout
+                        android:id="@+id/bdDrawP1winRl"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="#ff771d"
+                        android:layout_weight="1">
+
+                        <FrameLayout
+                            android:id="@+id/frameLayout3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                            >
+
+                            <RelativeLayout
+                                android:id="@+id/myself_layout3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_centerHorizontal="true"
+                                >
+
+                                <ImageView
+                                    android:id="@+id/myself_bg3"
+                                    android:layout_width="68dp"
+                                    android:layout_height="68dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:src="@drawable/huangse" />
+                            </RelativeLayout>
+
+                            <com.meg7.widget.CircleImageView
+                                android:id="@+id/bdDrawP1win"
+                                android:layout_width="62dp"
+                                android:layout_height="62dp"
+                                android:layout_marginLeft="3dp"
+                                android:layout_marginTop="3dp"
+                                android:src="@drawable/hugh"/>
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_below="@+id/frameLayout3"
+                            android:layout_centerHorizontal="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="黄大治"
+                            android:textColor="#ffffff"
+                            android:textSize="18dp"
+                            android:id="@+id/bdTvDrawP1win"/>
+
+                        <ImageView
+                            android:id="@+id/chose_play_0"
+                            android:layout_height="35dp"
+                            android:layout_width="35dp"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:src="@drawable/sheng"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_toStartOf="@+id/frameLayout3"/>
+                        <ImageView
+                            android:id="@+id/chose_play_1"
+                            android:layout_height="35dp"
+                            android:layout_width="35dp"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:src="@drawable/li"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toEndOf="@+id/frameLayout3"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/bdDrawP2winRl"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="#e2e2e2"
+                        android:layout_weight="1">
+                        <FrameLayout
+                            android:id="@+id/frameLayout4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                            >
+                            <RelativeLayout
+                                android:id="@+id/myself_layout4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_centerHorizontal="true"
+                                >
+                                <ImageView
+                                    android:id="@+id/myself_bg4"
+                                    android:layout_width="68dp"
+                                    android:layout_height="68dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:src="@drawable/baiquan" />
+                            </RelativeLayout>
+                            <com.meg7.widget.CircleImageView
+                                android:id="@+id/bdDrawP2win"
+
+                                android:layout_width="62dp"
+                                android:layout_height="62dp"
+                                android:layout_marginTop="3dp"
+                                android:layout_marginLeft="3dp"
+                                android:src="@drawable/hugh"/>
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_below="@+id/frameLayout4"
+                            android:layout_centerHorizontal="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="球手2"
+                            android:textColor="#ffffff"
+                            android:textSize="18dp"
+                            android:id="@+id/bdTvDrawP2win"/>
+                        <ImageView
+                            android:id="@+id/chose_play_3"
+                            android:layout_height="35dp"
+                            android:layout_width="35dp"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:src="@drawable/sheng"
+                            android:layout_centerVertical="true"
+                            android:visibility="gone"
+                            android:layout_marginRight="10dp"
+                            android:layout_toStartOf="@+id/frameLayout4"/>
+
+                        <ImageView
+                            android:id="@+id/chose_play_2"
+                            android:layout_height="35dp"
+                            android:layout_width="35dp"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:src="@drawable/li"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:visibility="gone"
+
+                            android:layout_toEndOf="@+id/frameLayout4"/>
+                    </RelativeLayout>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#aaaaaa"
+                    />
+            </LinearLayout>
+
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="57dp"
+                >
+                <Button
+                    android:id="@+id/btnStart"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="开始"
+                    android:layout_marginBottom="0dp"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:background="#09850c"
+                    android:textSize="20dp"
+
+                    />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
+<!-- From: file:/D:/CypressPoint/res/layout/bidongfrag_layout.xml -->

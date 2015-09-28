@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"    
+    android:orientation="vertical" >
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    <TextView 
+        android:id="@+id/lianxi_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="自己"
+		android:layout_marginLeft="270dp"
+        android:textColor="@color/hei2"
+        android:textSize="@dimen/txsize_mid_xx"
+        />
+   <TextView 
+        android:id="@+id/lianxi_name_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="成绩"
+        android:textColor="@color/fengexian"
+        android:textSize="17dp"
+        />
+   </RelativeLayout>
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- From: file:/D:/CypressPoint/res/layout/analyze_result_item.xml -->

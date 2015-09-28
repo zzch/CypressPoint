@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"   
+    android:orientation="vertical"
+
+     >
+    <LinearLayout
+        
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/pitchname"
+           android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_small_x"
+            android:layout_marginTop="@dimen/view_small_xx_w"
+            android:text="@string/pith_name"
+            android:textColor="@color/hei5"
+            android:textSize="17dp"
+            android:maxEms="13" 
+            android:singleLine="true"
+            android:ellipsize="end"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="@dimen/view_small_xx_w"
+                android:layout_height="@dimen/view_small_xx_w"
+                android:layout_marginLeft="@dimen/view_small_x"
+                android:layout_marginTop="@dimen/view_small_x"
+                android:src="@drawable/address_normal" />
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_small_x"
+                android:layout_marginTop="8dp"
+                android:text="北京市*******路*****号"
+                android:textColor="@color/fengexian"
+                android:textSize="15dp"
+                android:maxEms="13" 
+                android:singleLine="true"
+                android:ellipsize="end"
+                />
+        </LinearLayout>
+    </LinearLayout>
+     <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/fengexian"
+        android:layout_marginTop="10dp"
+       />
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- From: file:/D:/CypressPoint/res/layout/simple_city.xml -->

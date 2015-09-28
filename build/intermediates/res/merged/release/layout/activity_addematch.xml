@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg"
+    android:gravity="center_horizontal"
+    >
+   
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:gravity="center_vertical"
+        android:background="@color/daohang" >
+
+        <Button
+            android:id="@+id/k_build"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="-10dp"
+            android:onClick="onclick"
+            android:background="@null"
+            android:text="@string/new_build"
+            android:textColor="@color/hei2"
+            android:textSize="@dimen/txsize_small_xx"
+            android:visibility="gone" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:layout_centerVertical="true"
+            >
+
+
+        <Button
+            android:id="@+id/add_back"
+            android:layout_width="80dp"
+           android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/title_button_left"
+            android:background="@null"
+            android:text="@string/back"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xx" 
+           android:onClick="onclick"
+             />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_image" />
+
+		</FrameLayout>
+
+        <TextView
+              android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:gravity="center"        
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="加入比赛"
+            android:textColor="@color/white"
+           android:textSize="@dimen/txsize_small_xxx" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="@dimen/view_tongyong"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/shouye_name_top"
+        android:gravity="center"
+        android:text="@string/textdescription"
+        android:textColor="@color/hei5"
+        android:textSize="@dimen/txsize_small_xx" />
+
+ 
+
+            <LinearLayout  
+        android:layout_width="wrap_content"  
+        android:layout_height="wrap_content"  
+        android:layout_gravity="center_horizontal"  
+        android:layout_marginTop="55dp"  
+        android:orientation="horizontal" >  
+  
+        <EditText  
+            android:id="@+id/etPwdOne_setLockPwd"  
+            android:layout_width="@dimen/view_mid_xx_title"
+                    android:layout_height="@dimen/view_mid_xx_title" 
+            android:cursorVisible="false"  
+            android:ems="1"  
+            android:gravity="center"  
+            android:lines="1" 
+            android:background="@drawable/mima_bg"  
+            android:textColor="@color/chengse" 
+            android:textSize="@dimen/txsize_mid_xxx" >  
+        </EditText>  
+  
+        <EditText  
+            android:id="@+id/etPwdTwo_setLockPwd"  
+            android:layout_width="@dimen/view_mid_xx_title"
+            android:layout_height="@dimen/view_mid_xx_title" 
+            android:layout_marginLeft="16dp"  
+            android:background="@drawable/mima_bg"   
+            android:cursorVisible="false"  
+            android:ems="1"  
+            android:gravity="center"  
+            android:textColor="@color/chengse" 
+            android:textSize="@dimen/txsize_mid_xxx" />  
+  
+        <EditText  
+            android:id="@+id/etPwdThree_setLockPwd"  
+            android:layout_width="@dimen/view_mid_xx_title"
+            android:layout_height="@dimen/view_mid_xx_title"  
+            android:layout_marginLeft="16dp"  
+            android:background="@drawable/mima_bg"  
+            android:cursorVisible="false"  
+            android:ems="1"  
+            android:gravity="center"  
+            android:textColor="@color/chengse" 
+            android:textSize="@dimen/txsize_mid_xxx" />  
+  
+        <EditText  
+            android:id="@+id/etPwdFour_setLockPwd"  
+            android:layout_width="@dimen/view_mid_xx_title"
+            android:layout_height="@dimen/view_mid_xx_title" 
+            android:layout_marginLeft="16dp"  
+            android:background="@drawable/mima_bg"   
+            android:cursorVisible="false"  
+            android:ems="1"  
+            android:gravity="center"  
+            android:textColor="@color/chengse" 
+            android:textSize="@dimen/txsize_mid_xxx" />  
+  
+        <EditText  
+            android:id="@+id/etPwdText_setLockPwd"  
+            android:layout_width="wrap_content"  
+            android:layout_height="wrap_content"  
+            android:visibility="gone" />  
+  
+    </LinearLayout>
+
+   
+
+    <RelativeLayout
+        android:layout_width="match_parent"  
+        android:layout_height="match_parent"  
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+        <android.inputmethodservice.KeyboardView  
+            android:id="@+id/keyboard_view"  
+            android:layout_width="match_parent"  
+            android:layout_height="wrap_content"  
+            android:background="@color/bg"  
+            android:focusable="true" 
+            android:layout_centerHorizontal="true" 
+            android:layout_alignParentBottom="true"
+            android:focusableInTouchMode="true"  
+            android:keyPreviewLayout="@layout/key_preview_layout"
+            android:keyBackground="@drawable/jianpan"  
+            android:keyTextColor="#222222" /> 
+    </RelativeLayout>
+
+</LinearLayout><!-- From: file:/D:/CypressPoint/res/layout/activity_addematch.xml -->

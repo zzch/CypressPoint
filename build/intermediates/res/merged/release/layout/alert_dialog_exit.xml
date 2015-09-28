@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="fill_horizontal"
+    android:orientation="vertical" >
+
+<LinearLayout
+    android:id="@+id/pop_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   android:layout_marginTop="@dimen/my_tuichu_top"
+    android:layout_centerHorizontal="true"
+    android:background="@color/bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+	<TextView 
+	    android:id="@+id/tishi"
+	    android:layout_width="@dimen/register_view_width"
+	    android:layout_height="wrap_content"
+	    android:gravity="center"
+	    android:layout_marginTop="10dp"
+	    android:textColor="#7f8c8d"
+	    android:textSize="@dimen/txsize_small_xx"
+	    android:text="您当前未设置账号和密码，请设置，否则您的数据将会丢失"
+	    />
+    
+    <Button
+        android:id="@+id/btn_setting"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="@dimen/shouye_name_top"
+        android:layout_width="@dimen/register_view_width"
+        android:layout_height="@dimen/view_mid_xx_title"
+        android:background="@drawable/green"
+        android:textSize="@dimen/txsize_small_xx"
+        android:textColor="@color/white"
+        android:text="设置帐号和密码"
+         />
+
+    <Button
+        android:id="@+id/btn_exit"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp" 
+        android:layout_width="@dimen/register_view_width"
+        android:layout_height="@dimen/view_mid_xx_title"
+         android:background="@drawable/red_button"
+         android:textSize="@dimen/txsize_small_xx"
+         android:textColor="@color/white"
+        android:text="退出登录"
+         />
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp" 
+	    android:layout_marginBottom="15dip"
+        android:layout_width="@dimen/register_view_width"
+        android:layout_height="@dimen/view_mid_xx_title"
+        android:background="@drawable/huise"
+        android:textSize="@dimen/txsize_small_xx"
+        android:textColor="@color/white"
+        android:text="取消"
+       
+        />
+     </LinearLayout>
+</LinearLayout><!-- From: file:/D:/CypressPoint/res/layout/alert_dialog_exit.xml -->

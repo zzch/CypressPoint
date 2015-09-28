@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+ <item android:state_window_focused="false" android:drawable="@drawable/shurukuang"/>
+ <item android:state_focused="true" android:drawable="@drawable/shurukuang_dianji"/>
+
+</selector><!-- From: file:/D:/CypressPoint/res/drawable/wenbenkuang.xml -->

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/daohang" >
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:layout_centerVertical="true"
+            >
+
+            <Button
+                android:id="@+id/invite_back"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                
+                android:layout_marginLeft="@dimen/title_button_left"
+                android:background="@null"
+                android:onClick="onclick"
+                android:text="@string/back"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txsize_small_xx" />
+
+            <ImageView
+                android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_image" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="邀请好友"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xxx"/>
+
+        <Button
+            android:id="@+id/pk"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="-10dp"
+            android:background="@null"
+            android:text="@string/pk"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xx"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="265dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textSize="@dimen/txsize_small_a"
+            android:text="您输入的比赛口令密码为以下4位数字"
+            android:textColor="@color/hei5" />
+        <TextView
+            android:layout_width="262dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:textSize="@dimen/txsize_small_x"
+            android:text="Ta输入后即可加入到您的比赛"
+            android:textColor="@color/hei5" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/first"
+                    android:layout_width="@dimen/view_mid_xx_title"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text=""
+                    android:background="@drawable/mima_bg"  
+                    android:textColor="@color/chengse" 
+                    android:textSize="@dimen/txsize_mid_xxx" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/second"
+                    android:layout_width="@dimen/view_mid_xx_title"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text=""
+                    android:background="@drawable/mima_bg"  
+                    android:textColor="@color/chengse" 
+                    android:textSize="@dimen/txsize_mid_xxx" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/thirdly"
+                    android:layout_width="@dimen/view_mid_xx_title"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text=""
+                    android:background="@drawable/mima_bg"  
+                    android:textColor="@color/chengse" 
+                    android:textSize="@dimen/txsize_mid_xxx" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/fourthly"
+                    android:layout_width="@dimen/view_mid_xx_title"
+                    android:layout_height="@dimen/view_mid_xx_title"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text=""
+                    android:background="@drawable/mima_bg"  
+                    android:textColor="@color/chengse" 
+                    android:textSize="@dimen/txsize_mid_xxx" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="262dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/text_a"
+            android:textColor="@color/hei5"
+            android:textSize="@dimen/txsize_small_x" />
+
+       
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="@dimen/view_sss_ee"
+        android:layout_height="1dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:background="@color/fengexian" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="@dimen/shouye_name_top"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/xinxi_image" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="朋友如何加入到您的比赛中？"
+            android:textColor="@color/hei2"
+            android:textSize="@dimen/txsize_small_xx" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="@dimen/view_tongyong"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="@dimen/easy_shaozi_bottom"
+        android:textSize="@dimen/txsize_small_x"
+        android:text="        请您让Ta点击“比赛”，之后点击“加入比赛”，输入上面的4位数字口令后，点击加入，即可加入到您创建的比赛中，共同体验高尔夫的乐趣！"
+        android:textColor="@color/hei6" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="@dimen/shouye_name_top"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/xinxi_image" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="一起比赛能做什么？"
+            android:textColor="@color/hei2"
+            android:textSize="@dimen/txsize_small_xx" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="@dimen/view_tongyong"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="@dimen/easy_shaozi_bottom"
+        android:text="        您的朋友加入到比赛后，可以根据成绩进行排名，另外，我们还提供了专业的统计分析工具，可以多维度详细了解您和朋友之间的实力差距，助您提高球技！"
+        android:textColor="@color/hei6"
+        android:textSize="@dimen/txsize_small_x" />
+
+</LinearLayout><!-- From: file:/D:/CypressPoint/res/layout/activity_invite.xml -->

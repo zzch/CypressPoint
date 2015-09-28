@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/red">
+        <View
+            android:id="@+id/ddzRank1Midline"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_centerVertical="true"/>
+        <ImageView
+            android:id="@+id/ddzRankWinnerImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/ddzRank1Midline"
+            android:background="@color/red"
+            />
+
+        <RelativeLayout
+            android:layout_below="@+id/ddzRank1Midline"
+            android:id="@+id/relativeLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="false"
+            android:layout_marginLeft="65dp">
+
+            <TextView
+                android:id="@+id/ddzRankWinnerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="黄大治"/>
+
+            <ImageView
+                android:id="@+id/ddzRankWinnerGold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ddzRankWinnerName"/>
+
+            <TextView
+                android:id="@+id/ddzRankWinnerScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ddzRankWinnerName"
+                android:layout_toRightOf="@+id/ddzRankWinnerGold"
+                android:text="0"/>
+
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ddzGoldCup"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="25dp"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1">
+        <View
+            android:id="@+id/ddzRank2Midline"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_centerVertical="true"/>
+
+        <ImageView
+            android:id="@+id/ddzRankSecImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/ddzRank2Midline"
+            android:background="@color/red"/>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="false"
+            android:layout_below="@+id/ddzRank2Midline"
+            android:layout_alignParentStart="false"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="65dp">
+
+            <TextView
+                android:id="@+id/ddzRankSecName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="黄大治"/>
+
+            <ImageView
+                android:id="@+id/ddzRankSecGold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ddzRankSecName"/>
+
+            <TextView
+                android:id="@+id/ddzRankSecScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ddzRankSecName"
+                android:layout_toRightOf="@+id/ddzRankSecGold"
+                android:text="0"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1">
+        <View
+            android:id="@+id/ddzRank3Midline"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_centerVertical="true"/>
+        <ImageView
+            android:id="@+id/ddzRankLoserImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/ddzRank3Midline"
+            android:background="@color/red"/>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="false"
+            android:layout_below="@+id/ddzRank3Midline"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="65dp">
+
+            <TextView
+                android:id="@+id/ddzRankLoserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="黄大治"/>
+
+            <ImageView
+                android:id="@+id/ddzRankLoserGold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ddzRankLoserName"/>
+
+            <TextView
+                android:id="@+id/ddzRankLoserScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ddzRankLoserName"
+                android:layout_toRightOf="@+id/ddzRankLoserGold"
+                android:text="0"/>
+        </RelativeLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ddzLoserNoCup"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="25dp"/>
+    </RelativeLayout>
+
+</LinearLayout>
+<!-- From: file:/D:/CypressPoint/res/layout/doudizhu_rank_layout.xml -->

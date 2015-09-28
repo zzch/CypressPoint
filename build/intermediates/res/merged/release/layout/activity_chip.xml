@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/daohang" >
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true" >
+
+            <Button
+                android:id="@+id/scorecard_back"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/title_button_left"
+                android:background="@null"
+                android:onClick="onclick"
+                android:text="@string/back"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txsize_small_xx" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/back_image" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="一切一推"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xxx" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#1e1c27" />
+    
+    
+    
+
+        
+    <LinearLayout
+        android:id="@+id/sand_relative_4"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/daohang"
+     
+        android:orientation="vertical" >
+        <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+            <TextView 
+                android:id="@+id/yiqieyitui_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="一切一推(100码内)"
+                android:textColor="@color/bg"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="20dp"
+                android:textSize="@dimen/txsize_small_x"
+                />
+            
+            <LinearLayout
+            android:id="@+id/help_giegan_0"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@+id/yiqieyitui_text"
+            android:gravity="center"
+            android:onClick="onClick" >
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/help" />
+        </LinearLayout>
+             
+        </LinearLayout>
+        
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="0.5"
+            >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_marginTop="5dp"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/chip_chenggong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="17"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txsize_mid_xx"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:text="成功"
+                    android:textColor="@color/bg"
+                    android:textSize="@dimen/txsize_small_x" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/white" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/chip_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="1.2"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txsize_mid_xx"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:text="总计"
+                    android:textColor="@color/bg"
+                    android:textSize="@dimen/txsize_small_x" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/white" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="0.84" >
+
+            <TextView
+                android:id="@+id/chip_chenggonglv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="0.12"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txsize_mid_xx"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:text="成功率"
+                    android:textColor="@color/bg"
+                    android:textSize="@dimen/txsize_small_x" />
+            </LinearLayout>
+        </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/fengexian" />
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        >
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        
+         >
+    </ListView>
+    </LinearLayout>
+    
+     <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/fengexian"
+       
+     />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/white" 
+       
+       >
+
+        <TextView
+            android:id="@+id/chip_average_distance_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="13dp"
+            android:text="切杆进洞"
+            android:textColor="@color/chengse"
+            android:textSize="@dimen/txsize_small_x" />
+        <LinearLayout
+            android:id="@+id/help_giegan_1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@+id/chip_average_distance_1"
+            android:gravity="center"
+            android:onClick="onClick" >
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/help" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/chip_chenggong_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="17"
+                    android:textColor="@color/hei2"
+                    android:textSize="@dimen/txsize_mid_xx"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/chip_chenggong_2"
+                    android:layout_centerHorizontal="true"
+                    android:text="成功"
+                    android:textColor="@color/hei5"
+                    android:textSize="@dimen/txsize_small_x" />
+            </RelativeLayout>
+            
+             <View
+            android:layout_width="0.5dp"
+            android:layout_height="50dp"
+            android:background="@color/fengexian"
+             android:layout_marginTop="40dp"
+             />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/chip_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="0.12"
+                    android:textColor="@color/hei2"
+                    android:textSize="@dimen/txsize_mid_xx"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/chip_distance"
+                    android:layout_centerHorizontal="true"
+                    android:text="最远切杆距离"
+                    android:textColor="@color/hei5"
+                    android:textSize="@dimen/txsize_small_x" />
+            </RelativeLayout>
+            
+        </LinearLayout>
+      
+        
+    </RelativeLayout>
+
+       <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/fengexian"
+        android:layout_marginBottom="10dp"
+        android:visibility="gone"
+     />
+
+</LinearLayout><!-- From: file:/D:/CypressPoint/res/layout/activity_chip.xml -->

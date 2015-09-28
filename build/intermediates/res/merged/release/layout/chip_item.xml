@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_mid_x"
+        android:background="@color/white"
+        >
+        <TextView 
+            android:id="@+id/chip_count"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:text="1"
+            />
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_centerVertical="true"
+            android:text="距离果岭"
+            android:textSize="@dimen/txsize_small_x"
+            android:textColor="@color/hei5"
+            />
+        <TextView 
+            android:id="@+id/chip_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="130dp"
+            android:layout_centerVertical="true"
+            android:text="89码"
+            android:textSize="@dimen/txsize_small_x"
+            android:textColor="@color/hei5"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="180dp"
+            android:layout_centerVertical="true"
+            android:text="推杆距离"
+            android:textSize="@dimen/txsize_small_x"
+            android:textColor="@color/hei5"
+            />
+        <TextView
+            android:id="@+id/chip_putts_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="260dp"
+            android:layout_centerVertical="true"
+            android:text="13码"
+            android:textSize="@dimen/txsize_small_x"
+            android:textColor="@color/hei5"
+            />
+    </RelativeLayout>
+    
+    <View 
+        android:layout_height="0.5dp"
+        android:layout_width="match_parent"
+        android:background="@color/fengexian"
+        />
+
+</LinearLayout>
+<!-- From: file:/D:/CypressPoint/res/layout/chip_item.xml -->

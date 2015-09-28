@@ -144,9 +144,9 @@ public class PlayerChoosePars extends Activity implements View.OnClickListener
                 }else
 
 
-                    {
-                        showTextToast(this,"请选择杆数",Toast.LENGTH_SHORT);
-                    }
+                {
+                    showTextToast(this,"请选择杆数",Toast.LENGTH_SHORT);
+                }
 
 
 //                break;

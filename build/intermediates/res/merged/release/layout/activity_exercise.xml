@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:orientation="vertical" 
+    android:background="@color/bg"
+    >
+
+    <LinearLayout
+      
+        android:layout_width="match_parent"
+         android:layout_height="@dimen/title_height"
+        android:background="@color/daohang"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xxx"/>
+    </LinearLayout>
+   
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/view_exe_x"
+        android:gravity="center"
+        android:orientation="vertical" >
+     
+
+        <Button
+            android:id="@+id/shiyitu_one"
+            android:layout_width="@dimen/view_tongyong"
+            android:layout_height="@dimen/view_sss_e"
+            android:onClick="shiyitu"
+            android:text="@string/major_card"
+            android:background="@drawable/button"
+            android:textSize="@dimen/txsize_mid_x"
+            android:textColor="@color/bg"
+            android:layout_weight="1"
+             />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_small_x"
+            android:text="@string/text_1"
+            android:textColor="@color/fengexian"
+            />
+         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_3"
+            android:textColor="@color/fengexian"
+            />
+
+          <Button
+            android:id="@+id/kuaijie_one"
+            android:layout_width="@dimen/view_tongyong"
+            android:layout_height="@dimen/view_sss_e"
+            android:layout_marginTop="@dimen/view_mid_xx"
+            android:background="@drawable/button"
+            android:onClick="kuaijie"
+             android:layout_weight="1"
+            android:text="@string/easy_card"
+            android:textSize="@dimen/txsize_mid_x"
+            android:textColor="@color/bg" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_small_x"
+            android:text="@string/text_2"
+            android:textColor="@color/fengexian" />
+        <Button
+            android:id="@+id/jingji_one"
+           android:layout_width="@dimen/view_tongyong"
+            android:layout_height="@dimen/view_sss_e"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/view_mid_xx"
+            android:background="@drawable/button"
+            android:onClick="jingji"
+            android:text="@string/athletics"
+            android:textSize="@dimen/txsize_mid_x"
+            android:textColor="@color/bg" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/view_small_x"
+            android:text="@string/text_2"
+            android:textColor="@color/fengexian" />
+    </LinearLayout>
+  
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- From: file:/D:/CypressPoint/res/layout/activity_exercise.xml -->

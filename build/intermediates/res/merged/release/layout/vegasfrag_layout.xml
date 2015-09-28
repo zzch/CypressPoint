@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:slideswitch="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical"
+                android:background="@color/bg"
+    >
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1号发球"
+            android:id="@+id/textView2"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4号发球"
+            android:id="@+id/textView3"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2号发球"
+            android:id="@+id/textView4"
+            android:layout_weight="1"
+            android:gravity="right"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3号发球"
+            android:id="@+id/textView5"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_marginRight="20dp" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+
+        android:background="@drawable/taimian"
+        android:layout_gravity="center_horizontal">
+
+    <cn.com.zcty.ILovegolf.doudizhu.utills.DragGridView
+        android:id="@+id/dragGridView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="@android:color/transparent"
+        android:gravity="center"
+        android:horizontalSpacing="10dip"
+        android:listSelector="@android:color/transparent"
+        android:numColumns="4"
+        android:stretchMode="columnWidth"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:verticalSpacing="10dip">
+    </cn.com.zcty.ILovegolf.doudizhu.utills.DragGridView>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:text="拖动头像来改变开球顺序"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        android:layout_below="@+id/textView6">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#aaaaaa"
+            />
+
+        <RelativeLayout
+            android:id="@+id/vg_bird"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:background="@color/white"
+            android:padding="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="小鸟或老鹰球翻转"
+                android:textSize="16sp" />
+
+            <com.leaking.slideswitch.SlideSwitch
+                android:id="@+id/vgswitch_birdieEx"
+                android:layout_width="20dip"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                slideswitch:shape1="circle"
+                slideswitch:themeColor="#f200aa96" >
+            </com.leaking.slideswitch.SlideSwitch>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#aaaaaa"
+            />
+        <RelativeLayout
+            android:id="@+id/vg_eagleEx"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:background="@color/white"
+            android:padding="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="双倍标准杆翻转"
+                android:textSize="16sp" />
+
+            <com.leaking.slideswitch.SlideSwitch
+                android:id="@+id/vgswitch_eagleEx"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                slideswitch:shape1="circle"
+                slideswitch:themeColor="#f200aa96" >
+            </com.leaking.slideswitch.SlideSwitch>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#aaaaaa"
+            />
+        <RelativeLayout
+            android:id="@+id/vgpardouble"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:padding="10dp"
+            android:visibility="invisible"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="双倍标准杆翻转"
+                android:textSize="16sp" />
+
+            <com.leaking.slideswitch.SlideSwitch
+                android:id="@+id/vgswitch_doubleparEx"
+                android:layout_width="20dip"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                slideswitch:shape1="circle"
+                slideswitch:themeColor="#f200aa96" >
+            </com.leaking.slideswitch.SlideSwitch>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#aaaaaa"
+            android:visibility="gone"
+            />
+        <RelativeLayout
+            android:id="@+id/vg_tie2next"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:padding="10dp"
+            android:visibility="invisible"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="打平进入下一洞"
+                android:textSize="16sp" />
+
+            <com.leaking.slideswitch.SlideSwitch
+                android:id="@+id/vgswitch_draw2next"
+                android:layout_width="20dip"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                slideswitch:shape1="circle"
+                slideswitch:themeColor="#f200aa96" >
+            </com.leaking.slideswitch.SlideSwitch>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#aaaaaa"
+            android:visibility="gone"
+            />
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/btnStart3"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="开始"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="#09850c"
+            android:textSize="20dp"/>
+    </RelativeLayout>
+
+
+    </LinearLayout>
+
+<!-- From: file:/D:/CypressPoint/res/layout/vegasfrag_layout.xml -->

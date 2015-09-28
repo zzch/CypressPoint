@@ -1,0 +1,83 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical"
+     >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+         android:layout_height="@dimen/title_height"
+        android:background="@color/daohang" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+             android:layout_height="47dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/chooisepith"
+            android:textColor="@color/white"
+           android:textSize="@dimen/txsize_small_xxx" />
+
+             <FrameLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            >
+          <Button
+            android:id="@+id/button1"
+           android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/title_button_left"
+            android:background="@null"
+            android:text="@string/back"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xx" 
+            android:onClick="choosepith_back" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_image" />
+		</FrameLayout>
+
+        <Button
+           android:layout_width="80dp"
+           android:layout_height="50dp" 
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="-10dp"
+            android:background="@null"
+            android:textColor="@color/white"
+            android:text="@string/qiehuan"
+            android:onClick="qiehuan"
+            android:textSize="@dimen/txsize_small_xx" />
+
+    </RelativeLayout>
+
+   
+
+
+                <cn.com.zcty.ILovegolf.tools.AutoListView
+                    android:id="@+id/listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:divider="@null"
+                   
+                     />
+            
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+<!-- From: file:/D:/CypressPoint/res/layout/activity_choosepitch.xml -->

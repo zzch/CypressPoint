@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+   android:background="#cccccc"
+    >
+
+    <TextView
+        android:gravity="center_vertical"
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_citylist_xx"
+        
+        android:textColor="@color/hei2"
+        android:textSize="@dimen/txsize_small_xxx"
+        android:layout_marginLeft="@dimen/view_small_x"
+        android:text="北京市" />
+    
+    <View 
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:background="@color/fengexian"
+       />
+
+</LinearLayout>
+<!-- From: file:/D:/CypressPoint/res/layout/ex_item.xml -->

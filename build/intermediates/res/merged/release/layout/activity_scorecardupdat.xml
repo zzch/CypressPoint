@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/bg"
+   >
+   <RelativeLayout 
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/title_height"
+       android:background="@color/daohang"
+         >
+         <TextView 
+            android:id="@+id/ball_hole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="修改记分卡"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xxx"
+             />
+         
+         
+          <FrameLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            >
+        <Button
+            android:id="@+id/scorecard_cancel"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/title_button_left"
+            android:background="@null"
+            android:text="@string/back"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xx" />
+         <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_image"  />
+		</FrameLayout>
+
+           
+
+           <Button
+            android:id="@+id/scorecard_save"
+             android:layout_width="80dp"
+            android:layout_height="47dp" 
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="-10dp"
+            android:background="@null"
+            android:onClick="onClick"
+            android:text="@string/button_save"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xx" 
+           />
+
+     </RelativeLayout>
+     
+   
+     <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#1e1c27"
+        />
+   <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp" 
+         android:background="@color/daohang"
+        >
+
+        <TextView
+            android:id="@+id/score_par"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="4标准杆"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/score_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/score_par"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="70dp"
+            android:text="564码"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/score_t"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/score_distance"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="55dp"
+            android:text="黑T"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        
+
+        
+
+        
+    </RelativeLayout>
+     
+   
+   
+   
+   <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/view_mid_xx_xx"
+       android:orientation="horizontal"
+       android:gravity="center_vertical"
+       >
+
+     
+           
+       <LinearLayout 
+       android:layout_width="@dimen/view_large_x"
+       android:layout_height="@dimen/view_mid_xx_xx"
+       android:gravity="center"
+           >
+         <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:gravity="center_vertical"
+           android:text="总杆数"
+           android:textColor="@color/hei5"
+           android:textSize="@dimen/txsize_small_xx" />
+       </LinearLayout>
+          <View
+             android:layout_width="0.5dp"
+             android:layout_height="match_parent"
+             android:background="@color/fengexian" />
+       <Button 
+         android:id="@+id/but_jian_one"
+         android:layout_width="@dimen/view_small_xxx"
+         android:layout_height="@dimen/view_small_xxx"
+         android:onClick="onClick"
+         android:background="@drawable/jian"
+         android:layout_marginLeft="30dp"
+           />
+       
+        <TextView 
+           android:id="@+id/tv_update_one"
+           android:layout_width="@dimen/view_mid_x"
+           android:layout_height="@dimen/view_mid_x"
+           android:textSize="@dimen/txsize_mid_x"
+           android:text="6"
+           android:textColor="@color/chengse"
+           android:gravity="center"
+           android:layout_marginLeft="30dip"
+           android:background="@drawable/e_textview_bg"
+           /> 
+       
+         <Button 
+           android:id="@+id/but_add_one"
+           android:layout_width="@dimen/view_small_xxx"
+           android:layout_height="@dimen/view_small_xxx"
+           android:onClick="onClick"
+           android:background="@drawable/jia"
+           android:layout_marginLeft="30dip"
+           />
+   </LinearLayout>
+    
+   <View 
+       android:layout_width="match_parent"
+       android:layout_height="0.5dp"
+       android:background="@color/fengexian"
+       />
+   
+
+     <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/view_mid_xx_xx"
+       android:orientation="horizontal"
+       android:gravity="center_vertical"
+       >
+         
+          <LinearLayout 
+       android:layout_width="@dimen/view_large_x"
+       android:layout_height="@dimen/view_mid_xx_xx"
+       android:gravity="center"
+           >
+       <TextView 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="推杆数"
+        
+         android:textSize="@dimen/txsize_small_xx"
+         android:textColor="@color/hei5"
+         android:gravity="center_vertical"
+           />
+       
+       </LinearLayout>
+          <View
+             android:layout_width="0.5dp"
+             android:layout_height="match_parent"
+             android:background="@color/fengexian" />
+       <Button 
+           android:id="@+id/but_jian_two"
+           android:layout_width="@dimen/view_small_xxx"
+           android:layout_height="@dimen/view_small_xxx"
+           android:onClick="onClick"
+           android:background="@drawable/jian"
+           android:layout_marginLeft="30dp"
+           />
+       
+        <TextView 
+            android:id="@+id/tv_update_two"
+           android:layout_width="@dimen/view_mid_x"
+           android:layout_height="@dimen/view_mid_x"
+           android:textSize="@dimen/txsize_mid_x"
+           android:text="2"
+           android:textColor="@color/chengse"
+           android:gravity="center"
+           android:layout_marginLeft="30dip"
+           android:background="@drawable/e_textview_bg"
+           /> 
+       
+         <Button 
+           android:id="@+id/but_add_two"
+           android:layout_width="@dimen/view_small_xxx"
+           android:layout_height="@dimen/view_small_xxx"
+           android:onClick="onClick"
+           android:background="@drawable/jia"
+           android:layout_marginLeft="30dip"
+           />
+   </LinearLayout>
+    
+     <View 
+       android:layout_width="match_parent"
+       android:layout_height="0.5dp"
+       android:background="@color/fengexian"
+       />
+      <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/view_mid_xx_xx"
+       android:orientation="horizontal"
+       android:gravity="center_vertical"
+       >
+          <LinearLayout 
+       android:layout_width="@dimen/view_large_x"
+       android:layout_height="@dimen/view_mid_xx_xx"
+       android:gravity="center"
+           >
+       <TextView 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="罚杆数"
+         android:textSize="@dimen/txsize_small_xx"
+         android:textColor="@color/hei5"
+         android:gravity="center_vertical"
+           />
+       
+       </LinearLayout>
+          <View
+             android:layout_width="0.5dp"
+             android:layout_height="match_parent"
+             android:background="@color/fengexian" />
+       <Button 
+           android:id="@+id/but_jian_three"
+           android:layout_width="@dimen/view_small_xxx"
+           android:layout_height="@dimen/view_small_xxx"
+           android:onClick="onClick"
+           android:background="@drawable/jian"
+           android:layout_marginLeft="30dp"
+           />
+       
+        <TextView 
+           android:id="@+id/tv_update_three"
+           android:layout_width="@dimen/view_mid_x"
+           android:layout_height="@dimen/view_mid_x"
+           android:textSize="@dimen/txsize_mid_x"
+           android:text="2"
+           android:textColor="@color/chengse"
+           android:gravity="center"
+           android:layout_marginLeft="30dip"
+           android:background="@drawable/e_textview_bg"
+           /> 
+       
+         <Button 
+           android:id="@+id/but_add_three"
+           android:layout_width="@dimen/view_small_xxx"
+           android:layout_height="@dimen/view_small_xxx"
+           android:onClick="onClick"
+           android:background="@drawable/jia"
+           android:layout_marginLeft="30dip"
+           />
+   </LinearLayout> 
+      
+     <View 
+       android:layout_width="match_parent"
+       android:layout_height="0.5dp"
+       android:background="@color/fengexian"
+       />
+ 
+     <LinearLayout 
+       android:id="@+id/layout_chooise"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/view_mid_xx_x"
+       android:orientation="horizontal"
+       android:gravity="center"
+       android:onClick="onClick"
+       
+       >
+       <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/view_small_x"
+        android:gravity="center"
+           >
+           <TextView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="第一杆距离球洞"
+          android:textSize="@dimen/txsize_small_xx"
+          android:textColor="@color/hei5"
+         
+          />
+          <TextView 
+          android:id="@+id/distance_scorecard"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="200码"
+          android:textSize="@dimen/txsize_small_x"
+          android:textColor="@color/chengse"
+         
+          />
+           
+       </LinearLayout>
+       
+       <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/view_mid_xx_x"
+        
+        >
+      
+       <TextView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="开球命中"
+          android:textSize="@dimen/txsize_small_xx"
+          android:textColor="@color/hei5"
+          
+          />
+       
+        <TextView 
+          android:id="@+id/hit_scorecard"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="命中"
+          android:textSize="@dimen/txsize_small_x"
+          android:textColor="@color/chengse"
+          />
+         </LinearLayout>
+      
+       <ImageView 
+           android:id="@+id/scorecard_image_up"
+           android:layout_width="@dimen/view_small_xx"
+           android:layout_height="@dimen/view_small_xx"
+           android:src="@drawable/image_icon"
+           android:layout_gravity="center_vertical"
+           android:layout_marginLeft="@dimen/view_small_xx_w"
+           android:layout_marginBottom="8dp"
+           />
+      </LinearLayout>
+      
+      <View 
+       android:layout_width="match_parent"
+       android:layout_height="0.5dp"
+       android:background="@color/fengexian"
+       />
+       <LinearLayout
+       android:id="@+id/wheel_layout"
+       android:orientation="horizontal"
+       android:layout_width="match_parent"
+       android:layout_height="300dp"
+       
+		>
+	
+      <cn.com.zcty.ILovegolf.tools.WheelView 
+		    android:id="@+id/passw_1"
+		    android:layout_weight="1"
+			android:layout_height="@dimen/view_wheel_x"
+			android:layout_marginTop="@dimen/view_wheel_xx"
+			android:layout_width="wrap_content"
+			
+			/>
+		<cn.com.zcty.ILovegolf.tools.WheelView 
+		     android:id="@+id/passw_2"
+			android:layout_height="@dimen/view_wheel_x"
+			android:layout_width="wrap_content"
+			android:layout_marginTop="@dimen/view_wheel_xx"
+			android:layout_weight="1"/>
+		
+	</LinearLayout> 
+     
+    
+    
+</LinearLayout>
+<!-- From: file:/D:/CypressPoint/res/layout/activity_scorecardupdat.xml -->

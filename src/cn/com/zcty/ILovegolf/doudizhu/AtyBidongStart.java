@@ -838,8 +838,8 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
             case R.id.bdselectpars:
                 if (WmUtil.holesinfos[hole_number - 1]==null) {
 //                        handleButtonStatus();
-                        startActivityForResult(new Intent(this, BdChoosePars.class), 1);
-                        Xlog.d("click work?=========================================================================");
+                    startActivityForResult(new Intent(this, BdChoosePars.class), 1);
+                    Xlog.d("click work?=========================================================================");
                 }
                 else if((isReEditStatus()&&WmUtil.holesinfos[hole_number - 1].isEdit()))
                 {
@@ -847,18 +847,14 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
                     startActivityForResult(new Intent(this, BdChoosePars.class), 1);
                     Xlog.d("click work?=========================================================================");
                 }
-//                else {
-//                    startActivityForResult(new Intent(this, BdChoosePars.class), 1);
-//
-//                }
                 break;
             case R.id.btnbdp1stpars:
                 if (WmUtil.holesinfos[hole_number - 1]==null) {
 //                        handleButtonStatus();
-                        Intent intent = new Intent(this, PlayerChoosePars.class);
-                        intent.putExtra("imageUrl", myplayer.getPortrait());
-                        intent.putExtra("nickname", myplayer.getNickname());
-                        startActivityForResult(intent, 2);
+                    Intent intent = new Intent(this, PlayerChoosePars.class);
+                    intent.putExtra("imageUrl", myplayer.getPortrait());
+                    intent.putExtra("nickname", myplayer.getNickname());
+                    startActivityForResult(intent, 2);
                 }
                 else if(isReEditStatus()&&WmUtil.holesinfos[hole_number - 1].isEdit())
                 {
@@ -878,10 +874,10 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
             case R.id.btnbdp2stpars:
                 if (WmUtil.holesinfos[hole_number - 1]==null) {
 //                        handleButtonStatus();
-                        Intent intent = new Intent(this, PlayerChoosePars.class);
-                        intent.putExtra("imageUrl", player.getPortrait());
-                        intent.putExtra("nickname", player.getNickname());
-                        startActivityForResult(intent, 3);
+                    Intent intent = new Intent(this, PlayerChoosePars.class);
+                    intent.putExtra("imageUrl", player.getPortrait());
+                    intent.putExtra("nickname", player.getNickname());
+                    startActivityForResult(intent, 3);
                 }
                 else if(isReEditStatus()&&WmUtil.holesinfos[hole_number - 1].isEdit())
                 {
@@ -1287,10 +1283,6 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (data == null) {
-//            btnConfirmResult.setText("下一洞");
-//            btnPreHole.setText("上一洞");
-//            isReEdit = false;
-//            isnext = true;
             return;
         }
         switch (requestCode) {

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/daohang" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="xxxx球场"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xxx" />
+
+          <FrameLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            >
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/title_button_left"
+            android:background="@null"
+            android:text="@string/back"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xx"
+            android:onClick="choosepith_back" />
+        
+         <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_image" />
+		</FrameLayout>
+
+        <Button
+            android:layout_width="80dp"
+           android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="-10dp"
+            android:background="@null"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xx"
+            android:onClick="qiehuan"/>
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/competition_listview_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+	
+</LinearLayout>
+<!-- From: file:/D:/CypressPoint/res/layout/activity_competition_home.xml -->

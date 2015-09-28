@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linear"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/denglu_bj"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_horizontal"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/woaigaoerfu"
+            android:layout_marginTop="63dp"
+            android:layout_centerHorizontal="true"
+            />
+
+        <Button
+            android:id="@+id/but1"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginLeft="46dp"
+            android:layout_marginRight="46dp"
+            android:layout_above="@+id/but2"
+            android:layout_marginBottom="42dp"
+            android:background="@drawable/yijianzhuceanniu"
+            android:gravity="center"
+            android:onClick="but_register"
+            android:text="@string/zhuce"
+            android:textColor="#615894"
+            android:textSize="@dimen/txsize_mid_m" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="已经有我爱高尔夫账户了？"
+            android:textColor="#615894"
+            android:textSize="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/but2"
+            android:layout_marginBottom="5dp"
+            />
+
+        <Button
+            android:id="@+id/but2"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="70dp"
+            android:background="@drawable/denglu_anniu"
+            android:gravity="center"
+            android:layout_marginLeft="46dp"
+            android:layout_marginRight="46dp"
+            android:text="登录"
+            android:textColor="#615894"
+            android:textSize="@dimen/txsize_mid_m" />
+
+
+    </RelativeLayout>
+
+</LinearLayout><!-- From: file:/D:/CypressPoint/res/layout/activity_shouye.xml -->

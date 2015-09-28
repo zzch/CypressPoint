@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+
+    <TextView
+        android:id="@+id/anlyze_tishi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:text="@string/count_text"
+        android:textColor="@color/hei5" />
+
+    <TextView
+        android:id="@+id/anlyze_tishi_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/anlyze_tishi"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        android:text="您的历史球场"
+        android:textColor="@color/hei5" />
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/anlyze_tishi_1"
+        android:layout_marginTop="10dp"
+        android:divider="@null"
+        android:listSelector="@android:color/transparent" >
+    </ListView>
+
+    <TextView
+        android:id="@+id/anlyze_diamond_tishi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="您还未添加比赛，请先去添加比赛"
+        android:textColor="@color/hei2"
+        android:textSize="20dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/listView1"
+        android:background="@color/fengexian" />
+
+   
+
+</RelativeLayout><!-- From: file:/D:/CypressPoint/res/layout/anlyze_diamond_fragment.xml -->

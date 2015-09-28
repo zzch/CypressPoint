@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:id="@+id/linear"
+    android:orientation="vertical" >
+    
+                
+           
+    <RelativeLayout
+        android:layout_width="match_parent"
+         android:layout_height="@dimen/title_height"
+        android:background="@color/daohang" >
+           
+        
+          <FrameLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            >
+         
+        <Button
+             android:id="@+id/analyze_result_back"
+            android:layout_width="80dp"
+           android:layout_height="50dp"
+            
+            android:layout_marginLeft="@dimen/title_button_left"
+            android:background="@null"
+            android:text="@string/back"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txsize_small_xx"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back_image" />
+		</FrameLayout>
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/anlyzeresult"
+            android:textColor="@color/white"
+           android:textSize="@dimen/txsize_small_xxx" />
+
+        <Button
+            android:id="@+id/pk"
+             android:layout_width="80dp"
+            android:layout_height="47dp" 
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="-10dp"
+            android:background="@null"
+            android:textColor="@color/white"
+            android:text="@string/pk"
+            android:visibility="gone"
+            android:textSize="@dimen/txsize_small_xx" />
+    </RelativeLayout>
+    <ScrollView 
+        android:id="@+id/s1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <RelativeLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            
+            >
+            <LinearLayout 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                 
+           	    android:focusableInTouchMode="true"
+                android:orientation="vertical"
+                >
+	<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+		<TextView
+            android:id="@+id/analyze_result_lately"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="13dp"
+            android:text="最近10场"
+            android:textColor="@color/hei2"
+            android:textSize="@dimen/txsize_small_xx" />
+
+
+        <TextView
+            android:id="@+id/analyze_result_full"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="13dp"
+            android:text="完整场次8场"
+            android:textColor="@color/hei2"
+            android:textSize="@dimen/txsize_small_xx" />
+    </RelativeLayout>
+       <View
+          android:layout_width="match_parent"
+          android:layout_height="0.5dp"
+          android:background="@color/fengexian"
+          android:layout_marginTop="10dp"
+         />
+	<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        >
+		
+		<TextView
+		    android:id="@+id/pingjunganshu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="平均杆数"
+            android:textColor="@color/hei2"
+            android:layout_alignParentLeft="true"
+            android:textSize="@dimen/txsize_small_xx" />
+		
+		<TextView
+            android:id="@+id/analyze_result_avager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/hei2"
+            android:text="74"
+            android:textSize="@dimen/txsize_small_xx" />
+		</RelativeLayout>
+	 	
+	      <View
+          android:layout_width="match_parent"
+          android:layout_height="0.5dp"
+          android:background="@color/fengexian"
+
+         />
+		
+		<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        >
+		
+		  <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/hei2"
+            android:text="差点"
+            android:textSize="@dimen/txsize_small_xx" />
+		
+        <TextView
+            android:id="@+id/analyze_result_chadian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+
+            android:text="3"
+            android:textColor="@color/hei2"
+            android:textSize="@dimen/txsize_small_xx" />
+      
+    </RelativeLayout>
+    
+	<View
+          android:layout_width="match_parent"
+          android:layout_height="0.5dp"
+          android:background="@color/fengexian"
+          
+         />
+	
+	<View
+          android:layout_width="match_parent"
+          android:layout_height="0.5dp"
+          android:background="@color/fengexian"
+          android:layout_marginTop="25dp"
+         />
+	<ListView
+	    android:id="@+id/listView1"
+	    android:layout_width="match_parent"
+	    android:layout_height="370dp"
+	    android:listSelector="@android:color/transparent"
+	    android:divider="@null"
+	     >
+	</ListView>
+	   <View
+          android:layout_width="match_parent"
+          android:layout_height="0.5dp"
+          android:background="@color/fengexian"
+          android:layout_marginTop="10dp"
+         />
+	<ListView
+	    android:id="@+id/listView2"
+	    android:layout_width="match_parent"
+	    android:layout_height="170dp"
+	    android:listSelector="@android:color/transparent"
+	    android:divider="@null"
+	     >
+	</ListView>
+	<View
+          android:layout_width="match_parent"
+          android:layout_height="0.5dp"
+          android:background="@color/fengexian"
+          android:layout_marginTop="10dp"
+         />
+	<ListView
+	    android:id="@+id/listView3"
+	    android:layout_width="match_parent"
+	    android:layout_height="310dp"
+	    android:listSelector="@android:color/transparent"
+	    android:divider="@null"
+	     >
+	</ListView>
+	 </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+     <LinearLayout 
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                >
+    <TextView 
+        android:id="@+id/tishi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:gravity="center"
+        android:textColor="@color/hei2"
+        android:textSize="@dimen/txsize_small_xxx"
+        android:text="目前没有数据"
+        />
+    </LinearLayout>
+</LinearLayout>
+<!-- From: file:/D:/CypressPoint/res/layout/activity_analyze_result.xml -->
