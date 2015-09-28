@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="fill_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-    android:layout_gravity="center_horizontal"
-                android:background="@android:color/transparent" >
+                android:layout_gravity="center_horizontal"
+                android:background="@android:color/transparent">
 
 
     <FrameLayout
@@ -15,28 +16,17 @@
         android:layout_marginLeft="15dp"
         >
 
-    <RelativeLayout
-        android:id="@+id/myself_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        >
-
-        <ImageView
-            android:id="@+id/myself_bg"
-            android:layout_width="68dp"
-            android:layout_height="68dp"
-            android:src="@drawable/hongse" />
-    </RelativeLayout>
-    <com.meg7.widget.CircleImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ddzplayerimg"
         android:scaleType="centerCrop"
         android:layout_width="62dp"
         android:layout_height="62dp"
         android:layout_marginLeft="2.5dp"
+        app:civ_border_color="#00fbff"
+        app:civ_border_width="2dp"
         android:layout_marginTop="3dp"
         android:layout_centerHorizontal="true" >
-    </com.meg7.widget.CircleImageView>
+    </de.hdodenhof.circleimageview.CircleImageView>
 
     </FrameLayout>
 

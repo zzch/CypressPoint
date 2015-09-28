@@ -140,7 +140,7 @@ public class BidongFrag extends Fragment implements View.OnClickListener
             @Override
             public void clickOk(EditText et)
             {
-                if (et.getText().toString().equals(""))
+                if (et.getText().toString().trim().equals(""))
                 {
                     bdp2Name.setText("球手2");
                     player.setNickname("球手2");

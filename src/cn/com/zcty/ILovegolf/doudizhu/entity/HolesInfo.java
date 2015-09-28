@@ -27,7 +27,7 @@ public class HolesInfo
 
     private int par;
 
-    private cn.com.zcty.ILovegolf.doudizhu.entity.Player p1;
+    private Player p1;
 
     private Player p2;
 

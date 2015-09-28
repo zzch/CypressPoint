@@ -94,4 +94,5 @@ dependencies {
     compile files('libs/fluent-hc-4.2.6.jar')
     compile project(':library_userimg')
     compile project(':SlideSwitch')
+    compile 'de.hdodenhof:circleimageview:2.0.0'
 }

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:slideswitch="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/bg"
-    android:orientation="vertical">
+              xmlns:slideswitch="http://schemas.android.com/apk/res-auto"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/bg"
+              android:orientation="vertical">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -30,40 +31,23 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     >
-                    <FrameLayout
-                        android:id="@+id/frameLayout1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        >
 
-                        <RelativeLayout
-                            android:id="@+id/myself_layout"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            >
 
-                            <ImageView
-                                android:id="@+id/myself_bg"
-                                android:layout_width="68dp"
-                                android:layout_height="68dp"
-                                android:src="@drawable/hongse" />
-                        </RelativeLayout>
-
-                        <com.meg7.widget.CircleImageView
+                        <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/bdp1image"
                             android:layout_width="62dp"
                             android:layout_height="62dp"
                             android:layout_marginLeft="3dp"
                             android:layout_marginTop="3dp"
                             android:layout_centerHorizontal="true"
+                            app:civ_border_color="#00fbff"
+                            app:civ_border_width="2dp"
                             android:src="@drawable/hugh"/>
 
-                    </FrameLayout>
                     <TextView
                         android:layout_marginTop="10dp"
                         android:layout_centerHorizontal="true"
-                        android:layout_below="@+id/frameLayout1"
+                        android:layout_below="@+id/bdp1image"
                         android:id="@+id/bdp1name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -75,7 +59,7 @@
                         android:singleLine="true"
                         android:ellipsize="end"
                         android:maxLength="4"
-                        android:text="黄大治"/>
+                        android:text="球手1"/>
 
 
                 </RelativeLayout>
@@ -111,25 +95,15 @@
                         android:layout_marginLeft="15dp"
                         >
 
-                        <RelativeLayout
-                            android:id="@+id/myself_layout2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            >
-
-                            <ImageView
-                                android:id="@+id/myself_bg2"
-                                android:layout_width="68dp"
-                                android:layout_height="68dp"
-                                android:src="@drawable/huangse" />
-                        </RelativeLayout>
-                        <com.meg7.widget.CircleImageView
+                        <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/bdp2image"
                             android:layout_width="62dp"
                             android:layout_height="62dp"
                             android:layout_centerHorizontal="true"
                             android:layout_marginLeft="3dp"
                             android:layout_marginTop="3dp"
+                            app:civ_border_color="#00ff15"
+                            app:civ_border_width="2dp"
                             android:src="@drawable/hugh"/>
 
                     </FrameLayout>

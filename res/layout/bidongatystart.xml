@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/root"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-    android:background="@color/bg"
+                android:background="@drawable/startbg"
                 android:gravity="right">
    <include
        android:id="@+id/i_title"
@@ -25,29 +26,22 @@
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="20dp"
         android:layout_below="@+id/i_title"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp">
 
         <TextView
-            android:id="@+id/bdholes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="7dp"
-            android:textSize="16dp"
-            android:text="球洞"/>
-
-        <TextView
-            android:id="@+id/bdpars"
+            android:id="@+id/bdTieInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:text="标准杆"
-            android:textSize="20dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
+            android:textSize="15sp"
+            android:visibility="gone"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+
+            />
 
     </RelativeLayout>
 
@@ -58,34 +52,12 @@
         android:background="@drawable/ganshuluru"
         android:layout_below="@+id/relativeLayout"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="10dp"
         android:textColor="@color/white"
         android:textSize="26dp"
         android:text="一"
         />
 
-     <TextView
-         android:layout_width="180dp"
-         android:layout_height="wrap_content"
-         android:text="上0洞打平分数累计本洞获胜方将获得0洞的分数"
-         android:layout_below="@+id/bdselectpars"
-         android:layout_centerHorizontal="true"
-         android:layout_marginTop="10dp"
-         android:textSize="16dp"
-         android:visibility="gone"
-         android:layout_marginBottom="37dp"
-         android:id="@+id/bdTieInfo"
-         />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#222222"
-        android:text="杆数"
-        android:textSize="18dp"
-        android:layout_marginTop="10dp"
-        android:layout_above="@+id/linearLayout"
-        android:layout_centerHorizontal="true"
-        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -133,6 +105,7 @@
             android:layout_weight="1.2"
             android:background="#08bc50"
             android:textSize="20dp"
+            android:layout_gravity="center"
             android:textColor="@color/white"
             android:text="上一洞"/>
 
@@ -144,6 +117,7 @@
             android:background="#ff961d"
             android:textSize="20dp"
             android:textColor="@color/white"
+            android:layout_gravity="center"
             android:text="确定成绩"/>
     </LinearLayout>
 
@@ -155,28 +129,30 @@
         android:layout_alignBottom="@+id/bdhmidline"
         >
 
-    <RelativeLayout
-        android:id="@+id/myself_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/myself_layout"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
 
-        >
+        <!-->-->
 
-        <ImageView
-            android:id="@+id/myself_bg"
-            android:layout_width="68dp"
-            android:layout_height="68dp"
-            android:src="@drawable/hongse" />
-    </RelativeLayout>
+        <!--<ImageView-->
+            <!--android:id="@+id/myself_bg"-->
+            <!--android:layout_width="68dp"-->
+            <!--android:layout_height="68dp"-->
+            <!--android:src="@drawable/hongse" />-->
+    <!--</RelativeLayout>-->
 
-    <com.meg7.widget.CircleImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/bdp1mage"
         android:layout_width="62dp"
         android:layout_height="62dp"
         android:layout_alignBottom="@+id/bdhmidline"
         android:layout_marginTop="3dp"
         android:layout_marginLeft="3dp"
-        android:src="@drawable/hugh"
+        app:civ_border_color="#00fbff"
+        app:civ_border_width="2dp"
+        android:src="@drawable/file"
         />
 
     </FrameLayout>
@@ -246,27 +222,29 @@
         android:layout_alignBottom="@+id/bdhmidline"
         >
 
-    <RelativeLayout
-        android:id="@+id/myself_layout2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/myself_layout2"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
 
-        >
+        <!-->-->
 
-        <ImageView
-            android:id="@+id/myself_bg2"
-            android:layout_width="68dp"
-            android:layout_height="68dp"
-            android:src="@drawable/huangse" />
-    </RelativeLayout>
+        <!--<ImageView-->
+            <!--android:id="@+id/myself_bg2"-->
+            <!--android:layout_width="68dp"-->
+            <!--android:layout_height="68dp"-->
+            <!--android:src="@drawable/huangse" />-->
+    <!--</RelativeLayout>-->
 
-    <com.meg7.widget.CircleImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/bdp2stimage"
         android:layout_width="62dp"
         android:layout_height="62dp"
         android:layout_alignBottom="@+id/bdhmidline"
         android:layout_marginTop="3dp"
         android:layout_marginLeft="3dp"
+        app:civ_border_color="#00ff15"
+        app:civ_border_width="2dp"
         android:src="@drawable/hugh"
         />
     </FrameLayout>
@@ -302,7 +280,7 @@
             />
 
         <TextView
-            android:id="@+id/bdp2stscore"
+            android:id="@+id/ddzp2stscore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/bdp2stname"
@@ -320,7 +298,7 @@
             android:id="@+id/bdp2stscore_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/bdp2stscore"
+            android:layout_below="@+id/ddzp2stscore"
             android:layout_toRightOf="@+id/bdp2stgold"
             android:visibility="gone"
             android:textColor="@color/red"

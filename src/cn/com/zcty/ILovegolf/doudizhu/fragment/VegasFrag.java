@@ -10,7 +10,6 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.annotation.Nullable;
 import android.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -39,7 +38,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-/**
+ /**
  * Created by wangm on 2015/7/21.
  */
 public class VegasFrag extends Fragment implements AdapterView.OnItemClickListener, View.OnClickListener
@@ -74,7 +73,6 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
 
 
 
-    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
@@ -197,12 +195,14 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
             public void open()
             {
                 match.setBirdie_x2("1");
+                match.setEagle_x4("1");
             }
 
             @Override
             public void close()
             {
                 match.setBirdie_x2("0");
+                match.setEagle_x4("0");
             }
         });
 //老鹰球
@@ -212,14 +212,13 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
             @Override
             public void open()
             {
-                match.setEagle_x4("1");
-
+                match.setDouble_par_x2("1");
             }
 
             @Override
             public void close()
             {
-                match.setEagle_x4("0");
+                match.setDouble_par_x2("0");
 
             }
         });
@@ -542,7 +541,7 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
             {
 
 
-                if (et.getText().toString().equals(""))
+                if (et.getText().toString().trim().equals(""))
                 {
                     player1.setNickname("球手2");
 
@@ -587,7 +586,7 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
             {
 
 
-                if (et.getText().toString().equals(""))
+                if (et.getText().toString().trim().equals(""))
                 {
                     player2.setNickname("球手3");
 
@@ -631,7 +630,7 @@ public class VegasFrag extends Fragment implements AdapterView.OnItemClickListen
         {
 
 
-            if (et.getText().toString().equals(""))
+            if (et.getText().toString().trim().equals(""))
             {
                 player3.setNickname("球手4");
 

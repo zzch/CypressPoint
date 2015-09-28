@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.doudizhu.entity.HolesInfo;
@@ -23,6 +24,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -169,6 +171,7 @@ public class WmUtil {
             }
         } else {
             base += tie_number;
+            tie_number=0;
         }
 
         //是不是双倍标准杆
@@ -186,6 +189,8 @@ public class WmUtil {
                     return -2 * base * doublePar;
                 case 2:
                     return -4 * base * doublePar;
+                case 3:
+                    return  -1*base * doublePar;
             }
 
         } else if (parp1 - parp2 == 0) {
@@ -199,9 +204,11 @@ public class WmUtil {
 
                 case 2:
                     return 4 * base * doublePar;
+                case 3:
+                    return  base * doublePar;
             }
         }
-        return 99;
+        return 2;
     }
 
     //算分
@@ -427,7 +434,7 @@ public class WmUtil {
         } else {
             birdSwitcher = false;
         }
-        if ("1".equals(match.getEagle_x4())) {
+        if ("1".equals(match.getDouble_par_x2())) {
             doubleSwitcher = true;
         } else {
             doubleSwitcher = false;
@@ -867,5 +874,15 @@ public class WmUtil {
         String dateString = formatter.format(currentTime);
         return dateString;
     }
+
+    public static Date stringToDate(String dateString) {
+        ParsePosition position = new ParsePosition(0);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        Date dateValue = simpleDateFormat.parse(dateString, position);
+        return dateValue;
+    }
+
+
+
 
 }

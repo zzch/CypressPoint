@@ -20,6 +20,7 @@ MERGED from [com.android.support:support-v4:20.0.0] D:\CypressPoint\build\interm
 MERGED from [CypressPoint:library_userimg:unspecified] D:\CypressPoint\build\intermediates\exploded-aar\CypressPoint\library_userimg\unspecified\AndroidManifest.xml:7:5-9:41
 MERGED from [CypressPoint:SlideSwitch:unspecified] D:\CypressPoint\build\intermediates\exploded-aar\CypressPoint\SlideSwitch\unspecified\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:support-v4:20.0.0] D:\CypressPoint\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\AndroidManifest.xml:16:5-42
+MERGED from [de.hdodenhof:circleimageview:2.0.0] D:\CypressPoint\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\2.0.0\AndroidManifest.xml:5:5-7:41
 	android:targetSdkVersion
 		ADDED from D:\CypressPoint\AndroidManifest.xml:9:9-38
 		INJECTED from D:\CypressPoint\AndroidManifest.xml
@@ -49,6 +50,7 @@ MERGED from [com.android.support:support-v4:20.0.0] D:\CypressPoint\build\interm
 MERGED from [CypressPoint:library_userimg:unspecified] D:\CypressPoint\build\intermediates\exploded-aar\CypressPoint\library_userimg\unspecified\AndroidManifest.xml:11:5-12:19
 MERGED from [CypressPoint:SlideSwitch:unspecified] D:\CypressPoint\build\intermediates\exploded-aar\CypressPoint\SlideSwitch\unspecified\AndroidManifest.xml:11:5-12:19
 MERGED from [com.android.support:support-v4:20.0.0] D:\CypressPoint\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\AndroidManifest.xml:17:5-19
+MERGED from [de.hdodenhof:circleimageview:2.0.0] D:\CypressPoint\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\2.0.0\AndroidManifest.xml:9:5-20
 	android:label
 		ADDED from D:\CypressPoint\AndroidManifest.xml:27:9-41
 	android:allowBackup

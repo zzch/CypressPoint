@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.Toast;
 import cn.com.zcty.ILovegolf.activity.R;
 import cn.com.zcty.ILovegolf.activity.view.login_register.ShouYeActivity;
+import cn.com.zcty.ILovegolf.doudizhu.db.DbUtil;
 import cn.com.zcty.ILovegolf.utils.APIService;
 import cn.com.zcty.ILovegolf.utils.FileUtil;
 import cn.com.zcty.ILovegolf.utils.HttpUtils;
@@ -36,6 +37,7 @@ public class SelecPicpupExit extends Activity{
 				SharedPreferences sharedpre=getSharedPreferences("register",Context.MODE_PRIVATE);
 				Editor editor = sharedpre.edit();
 				editor.clear().apply();
+				DbUtil.getInstance(SelecPicpupExit.this).cleanAll();
 				Intent intent = new Intent(SelecPicpupExit.this,ShouYeActivity.class);
 				startActivity(intent);
 				finish();
@@ -74,6 +76,7 @@ public class SelecPicpupExit extends Activity{
 				
 				
 				new SginOut().start();
+
 			}
 		});
 		settingButton.setOnClickListener(new OnClickListener() {
@@ -113,6 +116,7 @@ public class SelecPicpupExit extends Activity{
 			// TODO Auto-generated method stub
 			super.run();
 			getData();
+
 		}
 		public void getData(){
 			SharedPreferences sp=getSharedPreferences("register",Context.MODE_PRIVATE);
@@ -125,5 +129,6 @@ public class SelecPicpupExit extends Activity{
 			handler.sendMessage(msg);
 			
 		}
+
 	}
 }

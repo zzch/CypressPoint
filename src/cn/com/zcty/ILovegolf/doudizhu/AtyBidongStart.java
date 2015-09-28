@@ -7,12 +7,9 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -41,7 +38,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.TreeMap;
@@ -53,6 +49,7 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
     private Button btnSelectPars, btnP1stPars, btnP2stPars, btnPreHole, btnConfirmResult;
     private ImageView bdP1, bdP2;
     private TextView bdHoles, bdP1Name, bdP1Score, bdP2Name, bdP2Score, tv_bird1, tv_bird2, bdp1stscore, bdp2stscore, bdp1stscore_add, bdp2stscore_add,bdTieInfo;
+    private Toast toast = null;
 
     private Match match;
     private Player myplayer;
@@ -97,6 +94,7 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
         isnew = getIntent().getBooleanExtra("isnew", true);
         // 清空之前历史平局数
         WmUtil.tie_number = 0;
+        this.clearHolesInfo();
         if (isnew) {
             initData();
         } else {
@@ -105,6 +103,10 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
         }
 
 
+    }
+
+    private void clearHolesInfo() {
+        WmUtil.holesinfos = new HolesInfo[18];
     }
 
     private void initHistoryData() {
@@ -116,6 +118,9 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
 
         hole_number = match.getCurrenthole();
         par = WmUtil.getPar(hole_number, match);
+
+        parsP1 = myplayer.getStroke(hole_number);
+        parsP2 = player.getStroke(hole_number);
 
         WmUtil.match = match;
 
@@ -164,7 +169,7 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
         tv_bird1.setVisibility(View.GONE);
         tv_bird2.setVisibility(View.GONE);
 
-        bdHoles.setText("球洞 " + hole_number);
+        textView1.setText("球洞 " + hole_number);
     }
 
     private void setValue() {
@@ -191,7 +196,7 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
 
         hole_number++;
 
-        bdHoles.setText("球洞 " + hole_number);
+        textView1.setText("球洞 " + hole_number);
     }
 
     private void changeImg() {
@@ -240,7 +245,7 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
                 info.setTie_nubmer(0);
 //                WmUtil.tie_number=0;
             }
-
+            WmUtil.tie_number=info.getTie_nubmer();
             HolesInfo tmpInfo = i > 0 ? WmUtil.holesinfos[i - 1] : null;
 
             if (tmpInfo == null) {
@@ -308,7 +313,7 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
 
         player.setMatch_id(timechuo);
         player.setUid("p1" + WmUtil.getTime());
-        bdHoles.setText("球洞 " + hole_number);
+        textView1.setText("球洞 " + hole_number);
 
         if(player.getPortrait()==null)
         {
@@ -356,11 +361,10 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
         btnConfirmResult = (Button) findViewById(R.id.bdresultcomfirm);
         bdP1 = (ImageView) findViewById(R.id.bdp1mage);
         bdP2 = (ImageView) findViewById(R.id.bdp2stimage);
-        bdHoles = (TextView) findViewById(R.id.bdholes);
         bdP1Name = (TextView) findViewById(R.id.bdp1stname);
         bdP1Score = (TextView) findViewById(R.id.bdp1stscore);
         bdP2Name = (TextView) findViewById(R.id.bdp2stname);
-        bdP2Score = (TextView) findViewById(R.id.bdp2stscore);
+        bdP2Score = (TextView) findViewById(R.id.ddzp2stscore);
         bdTieInfo = (TextView) findViewById(R.id.bdTieInfo);
         btnSelectPars.setOnClickListener(this);
         btnP1stPars.setOnClickListener(this);
@@ -376,10 +380,10 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
         bdp2stscore_add = (TextView) findViewById(R.id.bdp2stscore_add);
         //
         bdp1stscore = (TextView) findViewById(R.id.bdp1stscore);
-        bdp2stscore = (TextView) findViewById(R.id.bdp2stscore);
+        bdp2stscore = (TextView) findViewById(R.id.ddzp2stscore);
 //
         textView1 = (TextView) findViewById(R.id.textView1);
-        textView1.setText("比洞赛");
+        textView1.setText("球洞 " + hole_number);
 
         btnTitleHis = (Button) findViewById(R.id.btnTitleHis);
         btnTitleHis.setText("排名");
@@ -493,11 +497,11 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
 //                intent = new Intent(AtyBidongStart.this,BirdActivity.class);
                 if(1>type) {
                     type= 1;
-                    showname = bname1;
+                    showname = myplayer.getNickname();
                 }
                 else if(1==type)
                 {
-                    showname+="、" + bname1;
+                    showname+="、" + myplayer.getNickname();
                 }
 //                if((p1>p2?p1:p2)==p1)
 //                {
@@ -516,11 +520,11 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
 //                intent = new Intent(AtyBidongStart.this,BirdActivity.class);
                 if(2>type) {
                     type= 2;
-                    showname = bname1;
+                    showname = myplayer.getNickname();
                 }
                 else if(2==type)
                 {
-                    showname+="、" + bname1;
+                    showname+="、" + myplayer.getNickname();
                 }
 //                intent = new Intent(AtyBidongStart.this,LaoyingActivity.class);
 //                if((p1>p2?p1:p2)==p1)
@@ -538,7 +542,7 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
                 break;
             case 3:
                 isDouble = true;
-                showname2+=("、"+bname1);
+                showname2+=("、"+myplayer.getNickname());
                 break;
         }
 
@@ -550,11 +554,11 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
             case 1:
                 if(1>type) {
                     type= 1;
-                    showname = bname2;
+                    showname = player.getNickname();
                 }
                 else if(1==type)
                 {
-                    showname+="、" + bname2;
+                    showname+="、" + player.getNickname();
                 }
 //                intent = new Intent(AtyBidongStart.this,BirdActivity.class);
 //                if((p1>p2?p1:p2)==p1)
@@ -573,11 +577,11 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
             case 2:
                 if(2>type) {
                     type= 2;
-                    showname = bname2;
+                    showname = player.getNickname();
                 }
                 else if(2==type)
                 {
-                    showname+="、" + bname2;
+                    showname+="、" + player.getNickname();
                 }
 //                intent = new Intent(AtyBidongStart.this,LaoyingActivity.class);
 //                if((p1>p2?p1:p2)==p1)
@@ -595,7 +599,7 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
                 break;
             case 3:
                 isDouble = true;
-                showname2+=("、"+bname2);
+                showname2+=("、"+player.getNickname());
                 break;
         }
         if(type==1)
@@ -712,7 +716,7 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
 
     //从数据库查当前洞的数据
     private void getCurrentData() {
-        bdHoles.setText("球洞 " + hole_number);
+        textView1.setText("球洞 " + hole_number);
         par = WmUtil.getPar(hole_number, match);
         btnSelectPars.setText(String.valueOf(par));
 
@@ -813,8 +817,16 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
                     for (Integer key : treemap.keySet()) {
                         tmpList.add(treemap.get(key));
                     }
-                    Collections.reverse(tmpList);
-                    RankActivity.launch(AtyBidongStart.this, match, tmpList, 0);
+                    if (info.getPlayerscore().get(info.getP1()) == info.getPlayerscore().get(info.getP2()))
+                    {
+                        RankActivity.launch(AtyBidongStart.this, match, tmpList, 0);
+
+                    }else {
+
+
+                        Collections.reverse(tmpList);
+                        RankActivity.launch(AtyBidongStart.this, match, tmpList, 0);
+                    }
                 }else
                 {
                     List<Player> tmpList = new ArrayList<Player>();
@@ -824,46 +836,67 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
                 }
                 break;
             case R.id.bdselectpars:
-                if (isReEditStatus()) {
-                    if (WmUtil.holesinfos[hole_number - 1].isEdit()) {
-                        handleButtonStatus();
+                if (WmUtil.holesinfos[hole_number - 1]==null) {
+//                        handleButtonStatus();
                         startActivityForResult(new Intent(this, BdChoosePars.class), 1);
-                    }
-                } else {
-                    startActivityForResult(new Intent(this, BdChoosePars.class), 1);
+                        Xlog.d("click work?=========================================================================");
                 }
+                else if((isReEditStatus()&&WmUtil.holesinfos[hole_number - 1].isEdit()))
+                {
+                    handleButtonStatus();
+                    startActivityForResult(new Intent(this, BdChoosePars.class), 1);
+                    Xlog.d("click work?=========================================================================");
+                }
+//                else {
+//                    startActivityForResult(new Intent(this, BdChoosePars.class), 1);
+//
+//                }
                 break;
             case R.id.btnbdp1stpars:
-                if (isReEditStatus()) {
-                    if (WmUtil.holesinfos[hole_number - 1].isEdit()) {
-                        handleButtonStatus();
+                if (WmUtil.holesinfos[hole_number - 1]==null) {
+//                        handleButtonStatus();
                         Intent intent = new Intent(this, PlayerChoosePars.class);
                         intent.putExtra("imageUrl", myplayer.getPortrait());
                         intent.putExtra("nickname", myplayer.getNickname());
                         startActivityForResult(intent, 2);
-                    }
-                } else {
+                }
+                else if(isReEditStatus()&&WmUtil.holesinfos[hole_number - 1].isEdit())
+                {
+                    handleButtonStatus();
                     Intent intent = new Intent(this, PlayerChoosePars.class);
                     intent.putExtra("imageUrl", myplayer.getPortrait());
-                    intent.putExtra("nickname",myplayer.getNickname());
+                    intent.putExtra("nickname", myplayer.getNickname());
                     startActivityForResult(intent, 2);
                 }
+//                else {
+//                    Intent intent = new Intent(this, PlayerChoosePars.class);
+//                    intent.putExtra("imageUrl", myplayer.getPortrait());
+//                    intent.putExtra("nickname",myplayer.getNickname());
+//                    startActivityForResult(intent, 2);
+//                }
                 break;
             case R.id.btnbdp2stpars:
-                if (isReEditStatus()) {
-                    if (WmUtil.holesinfos[hole_number - 1].isEdit()) {
-                        handleButtonStatus();
+                if (WmUtil.holesinfos[hole_number - 1]==null) {
+//                        handleButtonStatus();
                         Intent intent = new Intent(this, PlayerChoosePars.class);
                         intent.putExtra("imageUrl", player.getPortrait());
                         intent.putExtra("nickname", player.getNickname());
                         startActivityForResult(intent, 3);
-                    }
-                } else {
+                }
+                else if(isReEditStatus()&&WmUtil.holesinfos[hole_number - 1].isEdit())
+                {
+                    handleButtonStatus();
                     Intent intent = new Intent(this, PlayerChoosePars.class);
-                    intent.putExtra("imageUrl", player.getPortrait());
-                    intent.putExtra("nickname",player.getNickname());
+                    intent.putExtra("imageUrl", myplayer.getPortrait());
+                    intent.putExtra("nickname", myplayer.getNickname());
                     startActivityForResult(intent, 3);
                 }
+//                else {
+//                    Intent intent = new Intent(this, PlayerChoosePars.class);
+//                    intent.putExtra("imageUrl", player.getPortrait());
+//                    intent.putExtra("nickname",player.getNickname());
+//                    startActivityForResult(intent, 3);
+//                }
                 break;
             //点击上一洞
             case R.id.bdprevioushole:
@@ -894,9 +927,9 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
                     String btext2 = btnP1stPars.getText().toString().trim();
                     String  btext3 = btnP2stPars.getText().toString().trim();
                     if(btext1.equals("一") ){
-                        Toast.makeText(this,"请选择标准杆",Toast.LENGTH_SHORT).show();
+                        showTextToast(this, "请选择标准杆", Toast.LENGTH_SHORT);
                     }else if( btext2.equals("一") || btext3.equals("一")){
-                        Toast.makeText(this,"请选择杆数",Toast.LENGTH_SHORT).show();
+                        showTextToast(this,"请选择杆数",Toast.LENGTH_SHORT);
                     }else {
                         confirmRes();
                         if (hole_number == 18) {
@@ -948,11 +981,11 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
         //1.holeNum--
         hole_number--;
         if (hole_number == 0) {
-            Toast.makeText(AtyBidongStart.this, "没有了", Toast.LENGTH_SHORT).show();
+            showTextToast( this,"已经是第一洞了", 1000);
             hole_number++;
             return;
         }
-        bdHoles.setText("球洞" + hole_number);
+        textView1.setText("球洞" + hole_number);
         //get holeinfo
         HolesInfo info = WmUtil.holesinfos[hole_number - 1];
 
@@ -1004,11 +1037,7 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
 
         int tieNumber = WmUtil.whoWinsBD(this.parsP1, this.parsP2) == WmUtil.DRAW ? 1 : 0;
 
-//<<<<<<< HEAD
         if(match.getDraw_to_next().equals("1"))
-//=======
-//        if(match.getDraw_to_next()=="1")
-//>>>>>>> 89e8e4acd2f7ede6944c0bd587f41db93878dabe
         {
 
             boolean lastDraw = false;
@@ -1136,10 +1165,12 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
         }
 
         // continue
-        bdHoles.setText("球洞" + hole_number);
+        textView1.setText("球洞" + hole_number);
         //取下一洞holeinfo判断状态
         HolesInfo nextInfo = WmUtil.holesinfos[hole_number - 1];
-        if (nextInfo != null && !nextInfo.isEdit()) {
+        // 20150920 modify 下一洞状态
+//        if (nextInfo != null && !nextInfo.isEdit()) {
+        if (nextInfo != null) {
             btnConfirmResult.setText("下一洞");
             isnext = true;
         } else {
@@ -1153,6 +1184,10 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
         if (nextInfo != null) {
             btnSelectPars.setText("" + nextInfo.getPar());
         }
+        else
+        {
+            btnSelectPars.setText("一");
+        }
 
         //3.重新赋值
         HolesInfo info = WmUtil.holesinfos[hole_number - 2];
@@ -1165,6 +1200,8 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
         if (nextInfo != null) {
             btnP1stPars.setText("" + nextInfo.getP1().getStroke(hole_number));
             btnP2stPars.setText("" + nextInfo.getP2().getStroke(hole_number));
+            bdp1stscore.setText("" + nextInfo.getPlayerscore().get(myplayer));
+            bdp2stscore.setText("" + nextInfo.getPlayerscore().get(player));
         } else {
             btnP1stPars.setText("一");
             btnP2stPars.setText("一");
@@ -1321,5 +1358,15 @@ public class AtyBidongStart extends Activity implements View.OnClickListener {
         }
         return false;
     }
+    private void showTextToast(Context context,String msg,int duration) {
+        if (toast == null) {
+            toast = Toast.makeText(context, msg, duration);
+        } else {
+            toast.setText(msg);
+            toast.setDuration(duration);
+        }
+        toast.show();
+    }
+
 
 }

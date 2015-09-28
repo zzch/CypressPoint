@@ -1,6 +1,7 @@
 package cn.com.zcty.ILovegolf.doudizhu;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -21,7 +22,7 @@ public class PlayerChoosePars extends Activity implements View.OnClickListener
     private ImageView pChooseparsImage;
     private TextView pChooseparsName,parsSelected;
     private Button btnS0,btnS1,btnS2,btnS3,btnS4,btnS5,btnS6,btnS7,btnS8,btnS9,btnSdel,btnSconfirm;
-
+    private Toast toast = null;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -135,17 +136,30 @@ public class PlayerChoosePars extends Activity implements View.OnClickListener
                 Log.d("onClick","onClick=======queding");
 
                 String result = parsSelected.getText().toString();
-                if(!result.equals("")){
+                if(!result.equals("") && !result.equals("0") && !result.equals("00")){
                     Intent intent = new Intent();
                     intent.putExtra("PCPResult",result);
                     setResult(RESULT_OK, intent);
                     finish();
-                }else{
-                    Toast.makeText(this,"请选择杆数",Toast.LENGTH_SHORT);
-                }
+                }else
+
+
+                    {
+                        showTextToast(this,"请选择杆数",Toast.LENGTH_SHORT);
+                    }
+
 
 //                break;
 
         }
+    }
+    private void showTextToast(Context context,String msg,int duration) {
+        if (toast == null) {
+            toast = Toast.makeText(context, msg, duration);
+        } else {
+            toast.setText(msg);
+            toast.setDuration(duration);
+        }
+        toast.show();
     }
 }

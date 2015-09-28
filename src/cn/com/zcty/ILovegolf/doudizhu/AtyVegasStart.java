@@ -37,7 +37,6 @@ import cn.com.zcty.ILovegolf.doudizhu.utills.WmUtil;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.TreeMap;
 
@@ -51,6 +50,7 @@ public class AtyVegasStart extends Activity implements View.OnClickListener {
     private TextView ddzHoles, ddzP1Name, ddzp1stscore, ddzP2Name, ddzp2stscore, ddzP3Name, ddzP4Name, ddzp3stscore, ddzp4stscore, ddzp1stscore_add, ddzp2stscore_add, ddzp3stscore_add, ddzp4stscore_add, tv_ddzbird1, tv_ddzbird2, tv_ddzbird3, tv_ddzbird4;
     List<Player> list;
     List<TextView> namelist;
+    private Toast toast = null;
 
     private Match match;
     private Player myplayer;
@@ -196,7 +196,7 @@ public class AtyVegasStart extends Activity implements View.OnClickListener {
         tv_ddzbird3.setVisibility(View.GONE);
         tv_ddzbird4.setVisibility(View.GONE);
 
-        ddzHoles.setText("球洞 " + hole_number);
+        textView1.setText("球洞 " + hole_number);
     }
 
     private void setValue() {
@@ -233,7 +233,7 @@ public class AtyVegasStart extends Activity implements View.OnClickListener {
 
         hole_number++;
 
-        ddzHoles.setText("球洞 " + hole_number);
+        textView1.setText("球洞 " + hole_number);
     }
 
     private void initHoleInfos() {
@@ -320,7 +320,7 @@ public class AtyVegasStart extends Activity implements View.OnClickListener {
         tv_ddzbird2 = (TextView) findViewById(R.id.tv_ddzbird2);
         tv_ddzbird3 = (TextView) findViewById(R.id.tv_ddzbird3);
         tv_ddzbird4 = (TextView) findViewById(R.id.tv_ddzbird4);
-        btnSelectPars = (Button) findViewById(R.id.ddzselectpars);
+        btnSelectPars = (Button) findViewById(R.id.bdselectpars);
         btnP1stPars = (Button) findViewById(R.id.btnddzp1stpars);
         btnP2stPars = (Button) findViewById(R.id.btnddzp2stpars);
         btnP3stPars = (Button) findViewById(R.id.btnddzp3stpars);
@@ -334,8 +334,7 @@ public class AtyVegasStart extends Activity implements View.OnClickListener {
         ddzP3 = (ImageView) findViewById(R.id.ddzp3image);
         ddzP4 = (ImageView) findViewById(R.id.ddzp4image);
 
-        ddzHoles = (TextView) findViewById(R.id.ddzholes);
-        ddzp1stscore = (TextView) findViewById(R.id.ddzp1stscore);
+        ddzp1stscore = (TextView) findViewById(R.id.bdp1stscore);
         ddzp2stscore = (TextView) findViewById(R.id.ddzp2stscore);
         ddzp3stscore = (TextView) findViewById(R.id.ddzp3stscore);
         ddzp4stscore = (TextView) findViewById(R.id.ddzp4stscore);
@@ -362,7 +361,7 @@ public class AtyVegasStart extends Activity implements View.OnClickListener {
 
 
         textView1 = (TextView) findViewById(R.id.textView1);
-        textView1.setText("拉斯维加斯");
+        textView1.setText("球洞 " + hole_number);
 
         btnTitleHis = (Button) findViewById(R.id.btnTitleHis);
         btnTitleHis.setText("排名");
@@ -751,26 +750,80 @@ public class AtyVegasStart extends Activity implements View.OnClickListener {
 //                    RankActivity.launch(this, match, new ArrayList<Player>(), 0);
                 }
                 if (info != null) {
-                    TreeMap<Integer, Player> treemap = new TreeMap<Integer, Player>() {
-                        @Override
-                        public Player put(Integer key, Player value) {
-                            if (containsKey(key)) {
-                                return super.put(new Integer(key + 1), value);
-                            }
-                            return super.put(key, value);
-                        }
-                    };
-                    treemap.put(new Integer(info.getPlayerscore().get(info.getP1())), info.getP1());
-                    treemap.put(new Integer(info.getPlayerscore().get(info.getP2())), info.getP2());
-                    treemap.put(new Integer(info.getPlayerscore().get(info.getP3())), info.getP3());
-                    treemap.put(new Integer(info.getPlayerscore().get(info.getP4())), info.getP4());
 
-                    List<Player> tmpList = new ArrayList<Player>();
-                    for (Integer key : treemap.keySet()) {
-                        tmpList.add(treemap.get(key));
+                    TreeMap<Integer, List<Player>> treemap = new TreeMap<Integer, List<Player>>();
+
+                    Integer d1 = new Integer(info.getPlayerscore().get(info.getP1()));
+                    Integer d2 = new Integer(info.getPlayerscore().get(info.getP2()));
+                    Integer d3 = new Integer(info.getPlayerscore().get(info.getP3()));
+                    Integer d4 = new Integer(info.getPlayerscore().get(info.getP4()));
+
+
+                    if(!treemap.containsKey(d1)) {
+                        List<Player> list = new ArrayList();
+                        list.add(info.getP1());
+                        treemap.put(d1, list);
                     }
-                    Collections.reverse(tmpList);
-                    RankActivity.launch(this, match, tmpList, 0);
+                    else
+                    {
+                        treemap.get(d1).add(info.getP1());
+                    }
+
+                    if(!treemap.containsKey(d2)) {
+                        List<Player> list = new ArrayList();
+                        list.add(info.getP2());
+                        treemap.put(d2, list);
+                    }
+                    else
+                    {
+                        treemap.get(d2).add(info.getP2());
+                    }
+
+                    if(!treemap.containsKey(d3)) {
+                        List<Player> list = new ArrayList();
+                        list.add(info.getP3());
+                        treemap.put(d3, list);
+                    }
+                    else
+                    {
+                        treemap.get(d3).add(info.getP3());
+                    }
+
+                    if(!treemap.containsKey(d4)) {
+                        List<Player> list = new ArrayList();
+                        list.add(info.getP4());
+                        treemap.put(d4, list);
+                    }
+                    else
+                    {
+                        treemap.get(d4).add(info.getP4());
+                    }
+                    List<Player> tmpList = new ArrayList<Player>();
+                    for(Integer i : treemap.descendingKeySet())
+                    {
+                        List<Player> players = treemap.get(i);
+                        List<Player> curPlayers = new ArrayList<>();
+                        for (Player p: players) {
+                            if("1".equals(p.getIs_owner()))
+                            {
+                                curPlayers.add(0,p);
+                            }
+                            else
+                            {
+                                curPlayers.add(p);
+                            }
+                        }
+                        tmpList.addAll(curPlayers);
+                    }
+                    RankActivity.launch(this, match, tmpList, 1);
+
+//                    if ((info.getPlayerscore().get(info.getP1()) == info.getPlayerscore().get(info.getP2())) && (info.getPlayerscore().get(info.getP1()) == info.getPlayerscore().get(info.getP3())) && (info.getPlayerscore().get(info.getP1()) == info.getPlayerscore().get(info.getP4())))
+//                    {
+//                        RankActivity.launch(this, match, tmpList, 1);
+//                    }else{
+//                        Collections.reverse(tmpList);
+//                        RankActivity.launch(this, match, tmpList, 1);
+//                    }
 //                Toast.makeText(this, "rl_right.clicked", Toast.LENGTH_SHORT).show();
                 }else
                 {
@@ -778,7 +831,7 @@ public class AtyVegasStart extends Activity implements View.OnClickListener {
                 }
 //                RankActivity.launch(this, match, list, 0);
                 break;
-            case R.id.ddzselectpars:
+            case R.id.bdselectpars:
                 if (isReEditStatus()) {
                     if (WmUtil.holesinfos[hole_number - 1].isEdit()) {
                         handleButtonStatus();
@@ -885,9 +938,9 @@ public class AtyVegasStart extends Activity implements View.OnClickListener {
                     String btext4 = btnP3stPars.getText().toString().trim();
                     String btext5 = btnP4stPars.getText().toString().trim();
                     if (btext1.equals("一")) {
-                        Toast.makeText(this, "请选择标准杆", Toast.LENGTH_SHORT).show();
+                        showTextToast(this, "请选择标准杆", Toast.LENGTH_SHORT);
                     } else if (btext2.equals("一") || btext3.equals("一") || btext4.equals("一") || btext5.equals("一")) {
-                        Toast.makeText(this, "请选择杆数", Toast.LENGTH_SHORT).show();
+                        showTextToast(this, "请选择杆数", Toast.LENGTH_SHORT);
                     } else {
                         confirmRem();
                         if (hole_number == 18) {
@@ -949,11 +1002,11 @@ public class AtyVegasStart extends Activity implements View.OnClickListener {
         //1.holeNum--
         hole_number--;
         if (hole_number == 0) {
-            Toast.makeText(AtyVegasStart.this, "没有了", Toast.LENGTH_SHORT).show();
+            showTextToast(AtyVegasStart.this, "没有了", Toast.LENGTH_SHORT);
             hole_number++;
             return;
         }
-        ddzHoles.setText("球洞" + hole_number);
+        textView1.setText("球洞" + hole_number);
 
         //get holeinfo
         HolesInfo info = WmUtil.holesinfos[hole_number - 1];
@@ -1005,7 +1058,7 @@ public class AtyVegasStart extends Activity implements View.OnClickListener {
     private void nextHole() {
         //1.holeNum++
         hole_number++;
-        ddzHoles.setText("球洞" + hole_number);
+        textView1.setText("球洞" + hole_number);
         //取下一洞holeinfo判断状态
         HolesInfo nextInfo = WmUtil.holesinfos[hole_number - 1];
         if (nextInfo != null) {
@@ -1046,11 +1099,16 @@ public class AtyVegasStart extends Activity implements View.OnClickListener {
             btnP2stPars.setText("" + nextInfo.getP2().getStroke(hole_number));
             btnP3stPars.setText("" + nextInfo.getP3().getStroke(hole_number));
             btnP4stPars.setText("" + nextInfo.getP4().getStroke(hole_number));
+            ddzp1stscore.setText("" + nextInfo.getPlayerscore().get(list.get(0)));
+            ddzp2stscore.setText("" + nextInfo.getPlayerscore().get(list.get(1)));
+            ddzp3stscore.setText("" + nextInfo.getPlayerscore().get(list.get(2)));
+            ddzp4stscore.setText("" + nextInfo.getPlayerscore().get(list.get(3)));
         } else {
             btnP1stPars.setText("一");
             btnP2stPars.setText("一");
             btnP3stPars.setText("一");
             btnP4stPars.setText("一");
+            btnSelectPars.setText("一");
         }
 
         ddzp1stscore_add.setVisibility(View.GONE);
@@ -1115,6 +1173,9 @@ public class AtyVegasStart extends Activity implements View.OnClickListener {
             HolesInfo tmpInfo = WmUtil.holesinfos[hole_number - 2];
             if (isnext) tmpInfo.setIsEdit(false);
         }
+
+
+
     }
 
     //根据杆数重新排序，待完成
@@ -1513,5 +1574,14 @@ public class AtyVegasStart extends Activity implements View.OnClickListener {
             return false;
         }
         return false;
+    }
+    private void showTextToast(Context context,String msg,int duration) {
+        if (toast == null) {
+            toast = Toast.makeText(context, msg, duration);
+        } else {
+            toast.setText(msg);
+            toast.setDuration(duration);
+        }
+        toast.show();
     }
 }
